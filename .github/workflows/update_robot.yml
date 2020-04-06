@@ -1,4 +1,4 @@
-name: Auto update data
+name: AutoUpdate
 
 on: 
   schedule:
