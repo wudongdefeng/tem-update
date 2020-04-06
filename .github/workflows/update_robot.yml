@@ -1,9 +1,11 @@
 name: Auto update data
+# 这里的空格在readme.md中的badge里需要使用`%20`替换
 
 on: 
   schedule:
     - cron: '0 12 * * 1'
-    
+# 按时间更新：https://www.yuque.com/lart/linux/crontab
+
 # https://github.com/graueneko/aktools/blob/master/.github/workflows/autoupdate.yml
 # https://github.com/Seniru/LineGraph-TFM/blob/master/.github/workflows/build.yml
 jobs:
@@ -24,4 +26,5 @@ jobs:
         if: github.ref == 'refs/heads/master'
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }} 
+          # `secrets.GITHUB_TOKEN` 是由GITHUB自动生成的
