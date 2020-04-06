@@ -1,1 +1,28 @@
+name: Auto update data
 
+on: 
+  schedule:
+    # - cron: '0 0 * * 1'
+    - cron: '/5 * * * *'
+    
+# https://github.com/graueneko/aktools/blob/master/.github/workflows/autoupdate.yml
+# https://github.com/Seniru/LineGraph-TFM/blob/master/.github/workflows/build.yml
+jobs:
+  auto-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Download files
+        run: curl -sO https://packagecontrol.io/channel_v3.json
+      - name: Commit files
+        run: |
+          echo ${{ github.ref }}
+          git add .
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "ci: Automated build push" -a | exit 0
+      - name: Push changes
+        if: github.ref == 'refs/heads/master'
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
