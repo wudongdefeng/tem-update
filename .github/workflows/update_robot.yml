@@ -3,7 +3,7 @@ name: Auto update data
 on: 
   schedule:
     # - cron: '0 0 * * 1'
-    - cron: '/5 * * * *'
+    - cron: '/10 * * * *'
     
 # https://github.com/graueneko/aktools/blob/master/.github/workflows/autoupdate.yml
 # https://github.com/Seniru/LineGraph-TFM/blob/master/.github/workflows/build.yml
