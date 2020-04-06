@@ -31,7 +31,7 @@ jobs:
     # Required The type of machine to run the job on. 
     # The machine can be either a GitHub-hosted runner, or a self-hosted runner.
     runs-on: ubuntu-latest
-		# A job contains a sequence of tasks called steps. Steps can run commands, 
+    # A job contains a sequence of tasks called steps. Steps can run commands, 
     # run setup tasks, or run an action in your repository, a public repository, 
     # or an action published in a Docker registry. Not all steps run actions, 
     # but all actions run as a step. Each step runs in its own process in the runner 
