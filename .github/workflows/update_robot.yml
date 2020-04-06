@@ -13,11 +13,13 @@ name: Auto update data
 # or an event configuration map that schedules a workflow or restricts the 
 # execution of a workflow to specific files, tags, or branch changes. 
 # For a list of available events, see "Events that trigger workflows."
-on: 
-  # schedule:
-  #   - cron: '0 12 * * 1'
-  push
-    
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: '0 12 * * 1'
+
 # A workflow run is made up of one or more jobs. 
 # Jobs run in parallel by default. To run jobs sequentially, 
 # you can define dependencies on other jobs using the jobs.<job_id>.needs keyword.
@@ -45,7 +47,6 @@ jobs:
       - name: Download files
         run: |
           curl -sO https://packagecontrol.io/channel_v3.json
-          ls -a
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
