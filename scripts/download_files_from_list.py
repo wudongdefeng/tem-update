@@ -3,8 +3,10 @@ from datetime import datetime
 
 
 def download_with_wget(url, savepath, need_overwrite):
+    if not os.path.exists(savepath):
+        os.makedirs(savepath)
+
     filename = os.path.basename(url)
-    # 判断文件是否存在，如果不存在则下载
     if not os.path.exists(os.path.join(savepath, filename)):
         print(f'Downloading data from {url}')
         wget.download(url, os.path.join(savepath, filename))
