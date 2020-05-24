@@ -1,0 +1,1 @@
+2020-05-24 16:12:54.133036 ==>> The size of all files in the folder ../files = 0.57 MB
