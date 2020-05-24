@@ -44,14 +44,30 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v2
+            
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          # Version range or exact version of a Python version to use, 
+          # using SemVer's version range syntax.
+          python-version: 3.8 # optional, default is 3.x
+          # The target architecture (x86, x64) of the Python interpreter.
+          # architecture: x64 # optional
+          # Used to pull python distributions from actions/python-versions. 
+          # Since there's a default, this is typically not supplied by the user.
+          # token: # optional, default is ${{ github.token }}
+		
       - name: Download files
         run: |
-          curl -sO https://packagecontrol.io/channel_v3.json
+          cd scripts
+          python download_files_from_list.py
+      
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git commit -m "Add changes" -a
+      
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
