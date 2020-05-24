@@ -58,6 +58,7 @@ jobs:
       - name: Download files
         run: |
           cd scripts
+          pip install wget
           python download_files_from_list.py
       - name: Commit files
         run: |
