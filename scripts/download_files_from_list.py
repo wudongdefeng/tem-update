@@ -31,9 +31,13 @@ def record_size(folder_path):
 if __name__ == '__main__':
     input_path = '../links.txt'
     output_path = '../files'
+    
     with open(input_path, encoding='utf-8', mode='r') as lst:
         # 以下载cifar-10数据集为例
-        link_info = lst.readline().strip().split(',')
+        link_list = lst.readlines()
+        link_list = [x.strip().split(',') for x in link_list]
+    
+    for link_info in link_list:
         assert len(link_info) == 2
         url, need_overwrite = [x.strip() for x in link_info]
         assert need_overwrite in ['0', '1']
