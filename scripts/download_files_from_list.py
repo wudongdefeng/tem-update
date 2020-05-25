@@ -1,4 +1,4 @@
-import os, wget
+import os
 from datetime import datetime
 
 
@@ -7,17 +7,14 @@ def download_with_wget(url, savepath, need_overwrite):
         os.makedirs(savepath)
 
     filename = os.path.basename(url)
-    if not os.path.exists(os.path.join(savepath, filename)):
+    if need_overwrite:
         print(f'Downloading data from {url}')
-        wget.download(url, os.path.join(savepath, filename))
+        os.system(f"wget {url} -O {os.path.join(savepath, filename)}")
         print(f'Download file {filename} finished!')
     else:
-        if need_overwrite:
-            print(f'Downloading data from {url}')
-            wget.download(url, os.path.join(savepath, filename))
-            print(f'Overwrite file {filename} finished!')
-        else:
-            print(f'File {filename} need not be downloaded.')
+        print(f'Downloading data from {url}')
+        os.system(f"wget {url} -nc -O {os.path.join(savepath, filename)}")
+        print(f'Download file {filename} finished!')
 
 
 def record_size(folder_path):
