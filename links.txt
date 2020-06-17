@@ -1,1 +1,2 @@
 https://packagecontrol.io/channel_v3.json,1
+http://arxiv.org/pdf/1904.00607.pdf,1
