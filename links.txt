@@ -1,2 +1,10 @@
 https://halflife.coding.net/p/list/d/list/git/raw/master/ad3.txt,1
 https://raw.githubusercontent.com/tenpiece/wxrss/master/README.md,1
+https://gitee.com/william533036/iptv-m3u-maker/raw/dev/tv.m3u8,
+https://gitee.com/qiusunshine233/hikerView/raw/master/tv/20200609/1-1160channels.m3u,
+https://gitee.com/qiusunshine233/hikerView/raw/master/tv/20200609/2-北京移动.m3u,
+https://cdn.jsdelivr.net/gh/s-veido/so@b0880137b815fac31289f67b1959bb7bfd64933c/1203.m3u,
+https://cdn.jsdelivr.net/gh/wudongdefeng/daima@master/mandytv.m3u,
+https://cdn.jsdelivr.net/gh/FanchangWang/iptv@master/dist/china_mobile.m3u,
+https://gitee.com/guyuexuan/iptv/raw/master/dist/ysp.m3u,
+https://cdn.jsdelivr.net/gh/FanchangWang/iptv@master/dist/iptv.m3u,
