@@ -1,2 +1,2 @@
-https://packagecontrol.io/channel_v3.json,1
-http://arxiv.org/pdf/1904.00607.pdf,1
+https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad3.txt,1
+https://raw.githubusercontent.com/tenpiece/wxrss/master/README.md,1
