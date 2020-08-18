@@ -54,7 +54,7 @@ jobs:
           # architecture: x64 # optional
           # Used to pull python distributions from actions/python-versions. 
           # Since there's a default, this is typically not supplied by the user.
-          # token: # optional, default is ${{ USER.Token }}
+          # token: # optional, default is ${{ github.token }}
       - name: Download files
         run: |
           cd scripts
