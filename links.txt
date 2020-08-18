@@ -1,2 +1,2 @@
-https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad3.txt,1
+https://halflife.coding.net/p/list/d/list/git/raw/master/ad3.txt,1
 https://raw.githubusercontent.com/tenpiece/wxrss/master/README.md,1
