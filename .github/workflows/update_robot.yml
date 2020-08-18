@@ -54,7 +54,7 @@ jobs:
           # architecture: x64 # optional
           # Used to pull python distributions from actions/python-versions. 
           # Since there's a default, this is typically not supplied by the user.
-          # token: # optional, default is ${{ github.token }}
+          # token: # optional, default is ${{ USER.Token }}
       - name: Download files
         run: |
           cd scripts
@@ -68,5 +68,5 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.USER_TOKEN }}
           # `secrets.GITHUB_TOKEN` 是由GITHUB自动生成的
