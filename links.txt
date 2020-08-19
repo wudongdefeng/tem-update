@@ -8,3 +8,4 @@ https://cdn.jsdelivr.net/gh/wudongdefeng/daima@master/mandytv.m3u,1
 https://cdn.jsdelivr.net/gh/FanchangWang/iptv@master/dist/china_mobile.m3u,1
 https://gitee.com/guyuexuan/iptv/raw/master/dist/ysp.m3u,1
 https://cdn.jsdelivr.net/gh/FanchangWang/iptv@master/dist/iptv.m3u,1
+https://raw.fastgit.org/LiuYi0526/IPTV/master/IPTV.m3u,2
