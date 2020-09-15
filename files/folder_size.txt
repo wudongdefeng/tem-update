@@ -1,1 +1,1 @@
-2020-09-14 11:34:48.839820 ==>> The size of all files in the folder ../files = 5.24 MB
+2020-09-15 11:41:32.330578 ==>> The size of all files in the folder ../files = 5.24 MB
