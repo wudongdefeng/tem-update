@@ -71,9 +71,7 @@ jobs:
           github_token: ${{ secrets.USER_TOKEN }}
           # `secrets.GITHUB_TOKEN` 是由GITHUB自动生成的
        
-      - name: Zip artifact
-        run: |
-          zip --junk-paths -r streams data
+    
 
       - name: Create Release
         id: create_release
