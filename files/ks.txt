@@ -15,6 +15,9 @@ CCTV13,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225599/index.m3u8#
 CCTV14,http://39.134.66.66/PLTV/88888888/224/3221225674/index.m3u8#http://39.130.206.213:6410/gitv_live/G_CCTV-14-HD/G_CCTV-14-HD.m3u8#http://117.169.120.160:8080/live/cctv-14/1.m3u8
 CCTV15,http://ott.fj.chinamobile.com/PLTV/88888888/224/3221225818/1.m3u8#http://117.169.120.160:8080/live/cctv-15/1.m3u8
 CCTV17,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225765/index.m3u8#http://39.134.66.66/PLTV/88888888/224/3221225708/index.m3u8
+CCTV_第一剧场,http://39.135.9.77/gz.ucdn.10086.cn/PLTV/88888888/224/3221225702/1/index.m3u8?fmt=ts2hls
+CCTV_风云剧场,http://39.135.9.77/gz.ucdn.10086.cn/PLTV/88888888/224/3221225700/1/index.m3u8?fmt=ts2hls
+CCTV_世界地理,http://39.135.9.77/gz.ucdn.10086.cn/PLTV/88888888/224/3221225733/1/index.m3u8?fmt=ts2hls
 卫视频道,#genre#
 北京卫视,http://111.13.42.43/PLTV/88888888/224/3221226160/3.m3u8#http://liveplay-kk.rtxapp.com/live/program/live/bjwshd/2300000/mnf.m3u8#http://39.134.66.66/PLTV/88888888/224/3221225678/index.m3u8#http://121.31.30.87:8085/ysten-business/live/hdbeijingstv/1.m3u8#http://116.199.5.52:8114/00000000/index.m3u8?&Fsv_ctype=LIVES&Fsv_otype=1&FvSeid=5abd1660af1babb4&Fsv_filetype=1&Fsv_ctype=LIVES&Fsv_cid=0&Fsv_chan_hls_se_idx=30&Fsv_rate_id=1&Fsv_SV_PARAM1=0&Fsv_ShiftEnable=0&Fsv_ShiftTsp=0&Provider_id=&Pcontent_id=&Fsv_CMSID=&Fsv_otype=1
 东方卫视,http://liveplay-kk.rtxapp.com/live/program/live/hddfws/2300000/mnf.m3u8#http://39.134.66.66/PLTV/88888888/224/3221225672/index.m3u8
@@ -44,9 +47,6 @@ CCTV17,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225765/index.m3u8#
 海南卫视,http://39.134.39.38/PLTV/88888888/224/3221226301/index.m3u8#http://ivi.bupt.edu.cn/hls/lyhd.m3u8
 黑龙江卫视,http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225640/index.m3u8#http://liveplay-kk.rtxapp.com/live/program/live/hljwshd/2300000/mnf.m3u8
 内蒙古卫视,http://live.m2oplus.nmtv.cn/1/sd/live.m3u8
-CCTV_第一剧场,http://39.135.9.77/gz.ucdn.10086.cn/PLTV/88888888/224/3221225702/1/index.m3u8?fmt=ts2hls
-CCTV_风云剧场,http://39.135.9.77/gz.ucdn.10086.cn/PLTV/88888888/224/3221225700/1/index.m3u8?fmt=ts2hls
-CCTV_世界地理,http://39.135.9.77/gz.ucdn.10086.cn/PLTV/88888888/224/3221225733/1/index.m3u8?fmt=ts2hls
 地方频道,#genre#
 武汉综合,http://stream.appwuhan.com/1tzb/sd/live.m3u8
 武汉电视,http://stream.appwuhan.com/2tzb/sd/live.m3u8
@@ -167,16 +167,6 @@ TVBS欢乐台,p8p://user3.shusongw.mobi:16871/5dbad7cb0007c9accdfc423fb19c38d1
 卫视电影台,p8p://user3.shusongw.mobi:16871/5f2fa80600019b1b22a18525902e8b26
 星卫电影台,p8p://user3.shusongw.mobi:16871/5f37c890000d9cd54260a3480355f72a
 少儿频道,#genre#
-超级飞侠,http://live.hcs.cmvideo.cn:8088/wd_r2/virtuallive/5102010213/50/index.m3u8?ProgramID=&encrypt= 超级飞侠#http://live.hcs.cmvideo.cn:8088/wd_r2/virtuallive/5102010213/75/index.m3u8?ProgramID=&encrypt= 超级飞侠
-小猪佩奇,http://live.hcs.cmvideo.cn:8088/wd_r2/virtuallive/5102010216/50/index.m3u8?ProgramID=&encrypt= 小猪佩奇#http://live.hcs.cmvideo.cn:8088/wd_r2/virtuallive/5102010216/75/index.m3u8?ProgramID=&encrypt= 小猪佩奇
-少儿动漫,http://live.hcs.cmvideo.cn:8088/wd_r1/2018/wasu/sedm/350/index.m3u8?ProgramID=&encrypt= 少儿动漫#http://live.hcs.cmvideo.cn:8088/wd_r1/2018/wasu/sedm/1000/index.m3u8?ProgramID=&encrypt= 少儿动漫
-快乐儿歌,http://live.hcs.cmvideo.cn:8088/migu/gunbo/5102439680/50/20190827/index.m3u8?ProgramID=&encrypt= 快乐儿歌#http://live.hcs.cmvideo.cn:8088/migu/gunbo/5102439680/51/20190827/index.m3u8?ProgramID=&encrypt= 快乐儿歌
-益智学堂,http://live.hcs.cmvideo.cn:8088/migu/gunbo/5102440005/50/20190827/index.m3u8?ProgramID=&encrypt= 益智学堂#http://live.hcs.cmvideo.cn:8088/migu/gunbo/5102440005/51/20190827/index.m3u8?ProgramID=&encrypt= 益智学堂
-梦幻童话,http://live.hcs.cmvideo.cn:8088/migu/gunbo/5102439963/50/20190827/index.m3u8?ProgramID=&encrypt= 梦幻童话#http://live.hcs.cmvideo.cn:8088/migu/gunbo/5102439963/51/20190827/index.m3u8?ProgramID=&encrypt= 梦幻童话
-英语启蒙,http://live.hcs.cmvideo.cn:8088/migu/gunbo/5102440001/50/20190827/index.m3u8?ProgramID=&encrypt= 英语启蒙#http://live.hcs.cmvideo.cn:8088/migu/gunbo/5102440001/51/20190827/index.m3u8?ProgramID=&encrypt= 英语启蒙
-优漫卡通,http://live.hcs.cmvideo.cn:8088/wd_r2/jstv/ymkt/350/index.m3u8?ProgramID=&encrypt= 优漫卡通#http://live.hcs.cmvideo.cn:8088/wd_r2/jstv/ymkt/600/index.m3u8?ProgramID=&encrypt= 优漫卡通
-哈哈炫动,http://live.hcs.cmvideo.cn:8088/ws_w/2018/xdkt/xdkt450/350/index.m3u8?ProgramID=&encrypt= 哈哈炫动#http://live.hcs.cmvideo.cn:8088/ws_w/2018/xdkt/xdkt711/1000/index.m3u8?ProgramID=&encrypt= 哈哈炫动
-嘉佳卡通,http://live.hcs.cmvideo.cn:8088/wd_r1/2018/nfmedia/jjkt/350/index.m3u8?ProgramID=&encrypt= 嘉佳卡通#http://live.hcs.cmvideo.cn:8088/wd_r1/2018/nfmedia/jjkt/1000/index.m3u8?ProgramID=&encrypt= 嘉佳卡通
 狮子王国,https://newcntv.qcloudcdn.com/asp/hls/850/0303000a/3/default/c2e7e767f3144bed959ef20b8b961fe5/850.m3u8
 倒霉特熊,https://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/87f87ba569c147e3805f80e4844d2de9/1200.m3u8
 反转星球,https://newcntv.qcloudcdn.com/asp/hls/1200/0303000a/3/default/3ccdecc7d6e341c1920ad4eac5d82f38/1200.m3u8
@@ -405,15 +395,8 @@ iHOT爱体育,http://112.17.40.140/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888
 iHOT爱赛车,http://112.17.40.140/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221230032/index.m3u8
 iHOT爱浪漫,http://112.17.40.140/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221230005/index.m3u8?fmt=ts2hls
 轮播电影,#genre#
-海爷TV 2号厅,https://cn-zjwz-dx-live-01.bilivideo.com/live-bvc/731624/live_268522326_2538218.m3u8
-海爷TV 4号厅,https://cn-hbyc2-dx-live-05.live-play.acgvideo.com/live-bvc/live_189986442_7728008.m3u8
-海爷TV 5号厅,https://cn-hbyc2-dx-live-05.live-play.acgvideo.com/live-bvc/live_199793349_7660540.m3u8
-海爷TV 6号厅,https://cn-hbyc2-dx-live-05.live-play.acgvideo.com/live-bvc/live_255137759_7132099.m3u8
-海爷TV 7号厅,https://cn-hbyc2-dx-live-05.live-play.acgvideo.com/live-bvc/live_261831479_8429255.m3u8
-海爷TV 8号厅,https://cn-hbyc2-dx-live-05.live-play.acgvideo.com/live-bvc/live_280698572_9101071.m3u8
-海爷TV 9号厅,https://cn-hbyc2-dx-live-05.live-play.acgvideo.com/live-bvc/live_82436982_2406441.m3u8
-周星驰-爱美剧,https://zb3.qhqsnedu.com/live/zhouxingxinga/playlist.m3u8
-林正英-爱美剧,https://zb3.qhqsnedu.com/live/chingyinglam/playlist.m3u8
+周星驰,https://zb3.qhqsnedu.com/live/zhouxingxingaa/playlist.m3u8
+林正英,https://zb3.qhqsnedu.com/live/chingyinglama/playlist.m3u8
 NewTv,#genre#
 NewTv-动作电影,http://112.17.40.140/PLTV/88888888/224/3221226747/index.m3u8
 NewTv-古装剧场,http://112.17.40.140/PLTV/88888888/224/3221226753/index.m3u8
