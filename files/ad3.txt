@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
-! Checksum: NGTc4/nqDlNOAHs/tlSOtA
+! Checksum: dTTXIBG/a98IWhu8Uoz2RQ
 ! Title: AdFilters
 ! Expires: 12 hours
-! Version: 202011111612
-! Last Modified: 2020年11月11日 16:12
+! Version: 202011121211
+! Last Modified: 2020年11月12日 12:11
 ! Homepage: https://adf.minggo.eu.org
 ! 本规则合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance、EasyPrivacy，感谢各位大大的分享！
 ! 仅合并规则，未做其余任何处理
@@ -1242,11 +1242,13 @@ _xiuno_com_ad/
 ##img[src*=".sinaimg."][style="width:150px;height:300px"]
 ##script + #coupletBox
 ##script + #rbbox
+###app > .publicAllContentBg > .bigBannerBg
 ##script[src="/js/sy2.js"] + div[align="center"]
 ##span[title="neteasefooter"]
 ##table[style="border:#7D8C8E solid 1px;height: 30px;text-align: center;"]
 !----------------------------------Ads-Union----------------------------------!
 .8ox.cn
+||xyadtlyya.com^
 .cc/s.php?id=$script,third-party
 .cn/?ss=$script,third-party
 .cn/s.php?id=$script,third-party
@@ -4149,6 +4151,7 @@ _yad_jsonp_
 ||0460.com/js/txtrec.js
 ||04cmm.com:8888/js
 ||04stream.tv/sda/
+||0573fang.com/ads/
 ||0575bbs.com/js/float.js
 ||0575bbs.com/updateimeags/
 ||0579.cn/SHow/Showplacenew.aspx
@@ -4203,6 +4206,7 @@ _yad_jsonp_
 ||112.124.15.130/res/linuxde_www/images/cxy-ad.jpg
 ||112.126.66.58^*?mid=
 ||113.17.188.*.js
+||114la.com/static/js/egg.js
 ||114shouji.com/a/1.js
 ||115.28.114.149^*_proxy.
 ||115.29.141.121^
@@ -8632,6 +8636,7 @@ _yad_jsonp_
 ||yalingba.com/ggtxjs/
 ||yam.com/ad_yam/
 ||yan007.com/js/sss/ad.js
+||yangpinwang.com/wp-content/uploads/*E5%B9%BF%E5%91%8A.
 ||yanjiao.com/zt/indexad/
 ||yantuchina.com/Upload/Ad/
 ||yanu.qiniudn.com/*x60.
@@ -8944,19 +8949,9 @@ _yad_jsonp_
 ||zzsky.cn/images/a_d_
 ||zzz4.com/JS_AD/
 ||zzzyk.com/js/
-||yangpinwang.com/wp-content/uploads/*E5%B9%BF%E5%91%8A.
-||0573fang.com/ads/
-||114la.com/static/js/egg.js
+||933m.com/1.js
 !------------------------Specific element hiding rules------------------------!
 szxx.com.cn###A0
-bde4.cc##div[onclick*=".yabo816.com"]
-bejson.com#?#body>:-abp-has(>:-abp-properties(/新人|香港/))
-bejson.com#?#:-abp-properties(/data:/)
-comicat.org,kisssub.org##A[href*=".jd.com"]
-114la.com##.search_ad
-114la.com###Gamepng
-114la.com###egg-packet
-jjhuashui.com##DIV[id^="jinsom-widget-slider-"]
 szxx.com.cn###A1
 szxx.com.cn###A2
 gpcxw.com###AA2
@@ -8994,6 +8989,7 @@ chinatp.com.cn###FloatLa
 chinatp.com.cn###FloatRb
 angelweb.cn###G640x60
 114la.com,ylmf.com###GameAdv
+114la.com###Gamepng
 hupu.com###HCFull
 114la.com,ylmf.com###HDtopBar
 azofreeware.com,pttjoke.com###HTML3
@@ -9481,6 +9477,7 @@ baidu.com###ec_im_container
 hao123.com###ecom
 image.baidu.com###ecomContainer
 gcxa.cn###edu_ad63
+114la.com###egg-packet
 yeshen.com###egg-section
 qq.com###emailLogin > .hd-slider
 21cn.com###embed_hzh_div
@@ -12546,6 +12543,7 @@ hao.rising.cn##.search-right
 dict.cn##.search-right-ad5
 dict.cn##.search-right-ad7
 china.cn##.search_RightShow
+114la.com##.search_ad
 duba.com,newduba.cn,timeon.cn##.search_promotion
 china.cn##.search_video
 qiuziti.com##.search_wordimg
@@ -13229,7 +13227,7 @@ zhibo8.cc##a[href*=".ftxgame.com"]
 wigcw.cn##a[href*=".gwents.com"]
 ctfile.com##a[href*=".henghost.com"]
 hanjutv.com##a[href*=".hujiang.com"]
-dapenti.com,douyu.com,iqiyi.com,jinti.com,rufengso.net,v.qq.com##a[href*=".jd.com"]
+comicat.org,dapenti.com,douyu.com,iqiyi.com,jinti.com,kisssub.org,rufengso.net,v.qq.com##a[href*=".jd.com"]
 chinanews.com##a[href*=".jiuxianfeng.com"]
 tiexue.net##a[href*=".junp"]
 zhangxinxu.com##a[href*=".ke.qq."]
@@ -13246,7 +13244,7 @@ v.qq.com##a[href*=".renrendai.com"]
 makepolo.com##a[href*=".rong360.com"]
 ccav5.com##a[href*=".sinaimg."]
 chdbits.co##a[href*=".taobao"]
-18comic.org,18comic.vip,52movieba.com,5dm.tv,acglala.net,ainuody.com,awaker.cn,bimiacg.com,cangku.in,ccav1.com,cdsoso.me,cgown.com,cn163.net,cosersuki.org,dzbhdm.com,epinv.com,eroacg.com,galacg.me,gmgard.com,halitv.com,haochi123.com,hexieshe.cn,hexieshe.com,hexieshe.xyz,hggard.com,hmghmg.com,hmog.me,htcui.com,huan.moe,idanmu.at,jitapu.com,kisssub.org,languang.co,liuli.pw,meijutt.tv,mikuclub.org,mtrend.cn,mydrivers.com,nxing.cn,oyksoft.com,rijutv.com,souxue8.com,speedtest.cn,toutiao.com,tucao.one,vpansou.com,xxshe.info,xxshe.xyz,youku.com##a[href*=".taobao.com"]
+18comic.org,18comic.vip,52movieba.com,5dm.tv,acglala.net,ainuody.com,awaker.cn,bimiacg.com,cangku.in,ccav1.com,cdsoso.me,cgown.com,cn163.net,comicat.org,cosersuki.org,dzbhdm.com,epinv.com,eroacg.com,galacg.me,gmgard.com,halitv.com,haochi123.com,hexieshe.cn,hexieshe.com,hexieshe.xyz,hggard.com,hmghmg.com,hmog.me,htcui.com,huan.moe,idanmu.at,jitapu.com,kisssub.org,languang.co,liuli.pw,meijutt.tv,mikuclub.org,mtrend.cn,mydrivers.com,nxing.cn,oyksoft.com,rijutv.com,souxue8.com,speedtest.cn,toutiao.com,tucao.one,vpansou.com,xxshe.info,xxshe.xyz,youku.com##a[href*=".taobao.com"]
 boke112.com##a[href*=".tencent.com"]
 acgdoge.net,chinalawedu.com,douyu.com,dzbhdm.com,gmgard.com,hggard.com,iqiyi.com,jinti.com,youku.com##a[href*=".tmall.com"]
 xianzhenyuan.cn##a[href*=".tmall.com"]:not(#xztba)
@@ -13482,6 +13480,8 @@ cn.bing.com#?##b_results > li:-abp-has(.b_adProvider)
 baidu.com#?#.c-gap-bottom-small:-abp-has(>a>div>div[class^="jr-stock-open-account-"])
 baidu.com#?#.ec_wise_ad
 bdimg.com,tieba.baidu.com,tieba.com#?#.tl_shadow:-abp-has(> .ti_item > .ti_infos > .label_text_tag:-abp-contains(广告))
+bejson.com#?#:-abp-properties(/data:/)
+bejson.com#?#body>:-abp-has(>:-abp-properties(/新人|香港/))
 benyixiwang.com#?#p:-abp-has(a[href="http://www.sm9166.com"])
 api.so.lianmeng.360.cn,pos.baidu.com##body
 qzwb.com##body > .area[style^="height:60px;"]
@@ -13739,6 +13739,7 @@ hinews.cn##div[id^="hi_gg_"]
 fx678.com##div[id^="hta_"]
 wenku.baidu.com##div[id^="html-reader-AD-"]
 wenku.baidu.com##div[id^="html-reader-banner-"]
+jjhuashui.com##div[id^="jinsom-widget-slider-"]
 tyenews.com##div[id^="media_image-"]
 tyenews.com##div[id^="metaslider_widget-"]
 jd.com##div[id^="miaozhen"]
@@ -13772,6 +13773,7 @@ eyuyao.com##div[id^="x_ad_"]
 oschina.net##div[name="detail_show_footer"]
 oschina.net##div[name="floatAdbox"]
 oschina.net##div[name^="index_banner_"]
+bde4.cc##div[onclick*=".yabo816.com"]
 qq.com,sogou.com##div[pbflag="bt_newsb_ad"]
 qq.com,sogou.com##div[pbflag="coolsitefeed_ad"]
 psdhtml.cn##div[role^="structure_"]
@@ -16303,7 +16305,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||256k.xyz^
 ||258580w.cn^
 ||258zw.com^$third-party
-||266ks.com/xtws/true.js
+||266ks.com^*/true.js
 ||27f35.cn^
 ||282l1.cn^
 ||2byuf.cn^
@@ -16328,6 +16330,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||365yigou.cn^
 ||36ia2.cn^
 ||381s.net^
+||3hbox.com^
 ||3y0h.cn^
 ||3ye924.cn^
 ||40ic.cn^
@@ -17253,7 +17256,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||jqpvv.cn^
 ||jskang.cn^
 ||jsku.cc^
-||jsr9.com^
+||jsr9.com^$third-party
 ||jssumei.cn^
 ||jsszxx.com^
 ||jstdjq.com^
@@ -30124,6 +30127,7 @@ _mongo_stats/
 ||topstat.com^$third-party
 ||tracdelight.com^$third-party
 ||tracdelight.io^$third-party
+||trackboxx.info^$third-party
 ||trafficmaxx.de^$third-party
 ||trbo.com^$third-party
 ||trendcounter.de^$third-party
@@ -30904,7 +30908,7 @@ _mongo_stats/
 ||amazonaws.com/prod/report-only
 ||amazonaws.com/prod/v2
 ||amazonaws.com/production_beacon
-||amazonaws.com/production|$third-party,domain=~amazon.com
+||amazonaws.com/production|$third-party,xmlhttprequest,domain=~amazon.com
 ||amazonaws.com/searchdiscovery-satellite-production/
 ||amazonaws.com/statics.reedge.com/
 ||amazonaws.com/wgntrk/
@@ -36004,7 +36008,7 @@ _mongo_stats/
 ||tracking.chacha.com^
 ||tracking.christianpost.com^
 ||tracking.conduit.com^
-||tracking.epicgames.com^$image
+||tracking.epicgames.com^
 ||tracking.eurosport.com^
 ||tracking.gfycat.com/viewCount/
 ||tracking.hsn.com^
@@ -38130,7 +38134,7 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 @@||bookmate.com^*/impressions?$xmlhttprequest
 @@||bootcamp.mit.edu/js/angulartics-google-analytics.min.js
 @@||boxberry.ru/local/templates/site-boxberry/js/tracking_service.js$xmlhttprequest
-@@||browser.sentry-cdn.com^$domain=cardiffmedia.co.uk|crrowd.com|gina-phillips.com|gracevanberkum.com|imperial.ac.uk|loveotv.com|onginnovations.com|simonparkes.org|stockforecasttoday.com|tekku.co.za|theangryviking1776.com|thegivingblock.com|thepittsburghoratory.org|washingtonpost.com|wix.com
+@@||browser.sentry-cdn.com^$domain=cardiffmedia.co.uk|crrowd.com|gina-phillips.com|gracevanberkum.com|imperial.ac.uk|loveotv.com|onginnovations.com|simonparkes.org|stockforecasttoday.com|tekku.co.za|theangryviking1776.com|thegivingblock.com|thepittsburghoratory.org|truenews4u.com|washingtonpost.com|wix.com
 @@||brsrvr.com/api/$xmlhttprequest,domain=dollargeneral.com
 @@||bugzilla.mozilla.org^*/extensions/TrackingFlags/$script
 @@||c.paypal.com/da/r/fb.js$script
