@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
-! Checksum: Yxb1p7XCYxJBeKjdePmVsw
+! Checksum: f1EU1yVUQ+03+8NmnUPBcQ
 ! Title: AdFilters
 ! Expires: 12 hours
-! Version: 202011171212
-! Last Modified: 2020年11月17日 12:12
+! Version: 202011181612
+! Last Modified: 2020年11月18日 16:12
 ! Homepage: https://adf.minggo.eu.org
 ! 本规则合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance、EasyPrivacy，感谢各位大大的分享！
 ! 仅合并规则，未做其余任何处理
@@ -95,13 +95,13 @@ huya.com###hy-ad,#hy-ab,#huya-ab
 ||91p20.space^
 ||waust.at^
 ||www.dililitv.com/*.php?ad=$script
-www.dililitv.com,www.hmtv.me,imeiju.io,www.mkvdo.com,www.zxfun.net##+js(acis,Object.defineProperty,location.href)
+dililitv.com,hmtv.me,imeiju.io,mkvdo.com,zxfun.net##+js(acis,Object.defineProperty,location.href)
 www.dyjihe.com##.tempWrap
 haitur.com,www.haicaoys.com,www.cdfdy.com,www.labays.com,www.meiyuktv.cn##.dplayer-web-fullscreen-fix .float-box
 haitur.com##.container:style(max-width:90%!important;width:90%!important)
 haitur.com##.left-content:style(width:77%!important)
-www.imomoe.ai,hehua.net,kakadm.com##+js(ra, target, a[href^="/"])
-!www.imomoe.ai###adl,#adr
+imomoe.*,hehua.net,kakadm.com,milimili.tv##+js(ra, target, a[href^="/"])
+!imomoe.*###adl,#adr
 ||alicdn.com/$image,domain=api.xiaomingming.org
 yatu.tv###loadtop,[id^=myas],#myds1,#daohang
 3z9e.cn
@@ -6507,7 +6507,6 @@ _yad_jsonp_
 ||i-gamer.net^$domain=cartomad.com|cartonmad.com|cartoomad.com|cartoonad.com|cartoonmad.com
 ||i-part.com.tw/js2/newShineStar
 ||i.alipayobjects.com/i/ecmng/$image,domain=my.alipay.com
-||i.syasn.com^
 ||i322.com/ad_avshow/
 ||i8.com.cn/images/a.swf
 ||i8.com.cn/images/tiandijie.jpg
@@ -7429,6 +7428,8 @@ _yad_jsonp_
 ||onx8.com/theme/tange/add/
 ||onx8.com/zb_users/theme/ydgreen/style/ad/
 ||oodcd.cn/pan/config/ad.json
+||oodcd.cn/pan/config/history.
+||oodcd.cn/pan/config/copy.
 ||ooo.0o0.ooo/2017/11/03/59fc6b3c5b723.jpg
 ||ooqiu.com/ad_js/
 ||opticsky.cn/images/2015/gy-px201
@@ -8469,7 +8470,7 @@ _yad_jsonp_
 ||wmzhe.com/static/wmzhe/images/cjzg/
 ||wmzhe.com/static/wmzhe/images/suishenbao/
 ||wn789.com/wp-content/uploads/*/SugarHosts
-||wnacg.*/1605524662754.
+||wnacg.*/themes/mo/images/*.gif
 ||wnacg.*/1sdfdc1/
 ||wnacg.*/58s/
 ||wnacg.*/5eg/
@@ -8970,6 +8971,9 @@ _yad_jsonp_
 ||zzzyk.com/js/
 !------------------------Specific element hiding rules------------------------!
 szxx.com.cn###A0
+mzh.ren##A[href*=".jd.com"]
+mzh.ren##A[href*=".taobao.com"]
+mzh.ren##A[href*=".aliyun.com"]
 szxx.com.cn###A1
 szxx.com.cn###A2
 gpcxw.com###AA2
@@ -10512,7 +10516,7 @@ ishuhui.com##.a_xx_d
 qq.com##.aaddvv__list
 159i.com,china.com.cn##.ab
 jd.com##.ab-goods
-tophub.today##.abc
+tophub.today##.am
 jiyingdm.com##.abcde
 yesky.com##.abox
 w3cschool.cn##.abox-item
@@ -14206,7 +14210,7 @@ icbc.com.cn#@#.adRight
 dnwx.com#@#.ad_250
 psahz.com#@#.ad_960
 eastday.com#@#.ad_center
-workercn.cn#@#.ad_content
+bfmusic.com.tw,workercn.cn#@#.ad_content
 mx-fm.com,ts.21cn.com#@#.ad_img
 yxdown.com#@#.ad_l
 workercn.cn#@#.ad_main
@@ -16204,6 +16208,11 @@ $script,subdocument,third-party,websocket,xmlhttprequest,domain=00ksw.com|01zww.
 @@||libs.baidu.com^$domain=138txt.com|18xs.org|1biqu.com|1kanshu.cc|230book.com|23hh.com|23txt.com|23wxx.com|258zw.com|266ks.com|27xsw.com|2baob.com|30sy.com|33yq.com|365book.net|37zw.net|39shubao.com|3yt.com|52biquge.com|58xs.com|5ccc.tw|78zw.com|81zw.me|99mk.com|99shumeng.net|aikantxt.la|balingtxt.com|baoshuu.com|bbiqugew.com|biduo.cc|biqiuge.com|biqubao.com|biqudu.tv|biquga.com|biquge.com.cn|biquge.info|biquge.lu|biquge.tv|biquge11.com|biquge6.com|biquge98.com|biqugecd.com|biqugego.com|biqugemm.com|biqugesc.com|biqukan.com|biquku.la|biqusan.com|biquyi.com|bixia.org|biyuwu.cc|bodekang.net|boluoxs.com|bookbao.org|booksky.cc|booktxt.net|bshuku.com|bxwx.org|bxwx.tw|bxwx8.la|bxwxorg.com|cits0871.com|clewx.com|damengzhu6.com|dashenxiaoshuo.com|day66.com|ddxs.cc|ddxsku.com|dushuge.net|farpop.com|gdbzkz.com|guaili.org|hatxt.com|hbfie.org|hehuamei.com|heikexs.com|heiyanwang.com|hongyeshuzhai.com|hybiquge.com|imiaobige.com|iqishu.la|ishisetianxia.com|ixiatxt.com|ixs.la|ixuanquge.com|jianlaixiaoshuo.com|jinshulo.com|jx.la|kkbiqu2.com|liewen.la|lindiankanshu.cc|liudatxt.com|lwtxt.net|lwxstxt.com|mhtwx.la|mubige.com|paoshu8.com|pfwx.com|piaotianxs.com|pingshuku.com|qbxs8.net|qianrenge.cc|qiqint.la|qq717.com|quledu.net|qushuba.com|rmxs8.com|shu008.com|shuhaige.net|shuhaiwu.com|shumil.co|shuquge.com|siluke.tv|soxscc.com|swshuge.com|tangsanshu.com|tpszw.com|ttzw.tv|txshuku.net|tycqxs.com|u33.me|v63xs.com|vipxs.la|wanwenhui.com|wenxuem.com|wrlwx.com|x23us.me|x81zw.com|xaixs.org|xbiquge.la|xbiqugecc.com|xbiqugew.net|xbiquke.com|xbqge.net|xcmxsw.com|xdingdiann.com|xiangcunxiaoshuo.com|xiaoshuosk.com|xieyixs.com|xinxs.la|xqiushu.com|xs222.co|xs5200.com|xs98.com|xsbiqu.com|xsqishu.com|xsw55.com|xszww.com|xuehong.cc|xuehongxs.com|yawenb.com|yikanxiaoshuo.com|yq-888.com|yruan.com|yssm.tv|yunxs.com|zbzw.la|zhuaji.org|zwdu.com|zzs5.com
 @@||zmtt.net^$script,domain=luoqiuzw.com
 !#Novels
+||ywqpgy.com^
+||b83pmp.cn^
+||hbkhqc.com^
+||gng5.cn^
+||vq7736.com^
 bxwx666.org###addiv3
 bxwx666.org###bdstatic
 55shuba.com###botDiv
@@ -18705,6 +18714,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||sinaimg.cn/tech/https_index/share.
 @@||sohu.com/play/videonew.do?*/share_play.
 @@||sohu.com/upload/static/share/share_play.html
+@@||soufunimg.com/??*/fshare.
 @@||steamcn.com/source/plugin/steamcn_gift/template/images/*steam.png
 @@||toolfk.com/tools/js/share/js/jquery.share.min.js
 @@||vipstatic.com/img/share/blank.png
@@ -26937,6 +26947,7 @@ _mongo_stats/
 ||bridgevine.com^$third-party
 ||brightfunnel.com^$third-party
 ||brilig.com^$third-party
+||brilliantcollector.com^$third-party
 ||britepool.com^$third-party
 ||bronto.com^$third-party
 ||browser-statistik.de^$third-party
@@ -27819,6 +27830,7 @@ _mongo_stats/
 ||kameleoon.eu^$third-party
 ||kampyle.com^$third-party
 ||kantartns.lt^$third-party
+||kaptcha.com^$third-party
 ||kaxsdc.com^$third-party
 ||keen.io^$third-party,domain=~keen.github.io|~keen.io
 ||keet1liod.com^$third-party
@@ -31044,6 +31056,7 @@ _mongo_stats/
 ||analytics.strangeloopnetworks.com^
 ||analytics.supplyframe.com^
 ||analytics.themarketiq.com^
+||analytics.threedeepmarketing.com^
 ||analytics.tiktok.com^
 ||analytics.tooso.ai^
 ||analytics.tout.com^
@@ -34739,6 +34752,7 @@ _mongo_stats/
 ||gumtree.com.au/?pc=
 ||h.cliphunter.com^
 ||hanksgalleries.com/stxt/counter.php?
+||harryrosen.com/analytics/
 ||harvester.eu.square-enix.com^
 ||harvester.hbpl.co.uk^
 ||hclips.com/js/0818.js
@@ -38283,8 +38297,7 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 @@||flippingbook.com^*/static/analytics.js$script,~third-party
 @@||flsenate.gov/Scripts/GoogleAnalytics.js$~third-party
 @@||fmz.com/pkg/fingerprint2.min.js$~third-party,xmlhttprequest
-@@||fncstatic.com^*/visitorapi.js$script,domain=foxbusiness.com|foxnews.com
-@@||foxnews.com^*/visitorapi.js$script,domain=foxnews.com
+@@||foxnews.com^*/VisitorAPI.js$script,domain=foxbusiness.com|foxnews.com
 @@||friendbuy.com^$domain=butcherbox.com
 @@||gannettdigital.com/universal-web-client/master/latest/elements/$xmlhttprequest
 @@||gatsbyjs.org/packages/$xmlhttprequest
@@ -38379,6 +38392,7 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 @@||mxpnl.com/libs/mixpanel-*.min.js$domain=change.org|frigidaire.com|greentoe.com
 @@||mxpnl.com^$domain=mixpanel.com
 @@||mywebar.com/js/tracking_worker.js$~third-party
+@@||nintendo.com/apps/noa/scripts/analytics.js
 @@||newrelic.com/nr-*.min.js$domain=surveymonkey.co.uk|surveymonkey.com|surveymonkey.de|surveymonkey.ru
 @@||newrelic.com/public/charts/$subdocument,xmlhttprequest
 @@||nfltags.com/omniture/$script,domain=nfl.com
@@ -38611,11 +38625,15 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 @@||gstatic.com^*/analytics.js$domain=google.com
 !----------------Allowlists to fix broken international sites-----------------!
 !---------- German ----------
+@@||adconsole.ch/api/ws-businessclick/*/data.json$domain=finanzen.ch
+@@||adnz.co/dmp/publisher.js$domain=finanzen.ch
+@@||adnz.co/header.js?adTagId=$domain=finanzen.ch
 @@||adobedtm.com^*/mbox-contents-$script,domain=dhl.de
 @@||adobedtm.com^*/satelliteLib-$script,domain=dhl.de|sbb.ch
 @@||analytics.edgekey.net/html5/akamaihtml5-min.js$domain=br.de
 @@||apps.derstandard.at^*/TrackingCookieCheck?$subdocument
 @@||asadcdn.com/adlib/pages/sport1.js$domain=sport1.de
+@@||businessclick.ch/index.js$domain=finanzen.ch
 @@||cdn.privacy-mgmt.com^$subdocument,xmlhttprequest,domain=ekstrabladet.dk|giga.de|manager-magazin.de|spiegel.de|sport1.de|vtm.begmt.com|welt.de
 @@||darmstadt.ui-traffic.de/mobile/webapp/bower_components/heatmap.js$domain=darmstadt.ui-traffic.de
 @@||deutschlandfunkkultur.de/themes/*/js.php?files=*,script/smarttag.js,$script,~third-party
@@ -38624,6 +38642,7 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 @@||google-analytics.com/analytics.js$domain=saturn.at|schweizerfleisch.ch
 @@||google-analytics.com/plugins/ua/ec.js$domain=saturn.at
 @@||googletagmanager.com/gtm.js$domain=bunte.de|computerbild.de|finanzen.net|radiorur.de|saturn.at|sport1.de
+@@||img.adnz.co^$image,domain=finanzen.ch
 @@||imrworldwide.com/novms/*/ggcm*.js$domain=tvnow.de
 @@||kameleoon.eu/kameleoon.js$domain=welt.de
 @@||ksta.de/cre-1.0/tracking/call.js?$domain=ksta.de
@@ -38699,6 +38718,7 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 !---------- Finnish ----------
 @@||adobedtm.com^*/satelliteLib-$script,domain=gigantti.fi
 @@||api.cxense.com/public/widget/data?json=$script,domain=ksml.fi|savonsanomat.fi
+@@||api.etherscan.io/api$domain=sushiswap.fi
 @@||certona.net^*/resonance.js$domain=zooplus.fi
 @@||cnetcontent.com/jsc/h.js$domain=atea.fi
 @@||d2wzl9lnvjz3bh.cloudfront.net/frosmo.easy.js$domain=lippu.fi
@@ -38793,7 +38813,7 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 @@||webcdn.stream.ne.jp^*/referrer.js$domain=stream.ne.jp
 @@||yu.xyz.mn/images/event.gif?$image,~third-party
 !---------- Korean ----------
-@@||daumcdn.net/tiara/js/v1/tiara.min.js$domain=map.kakao.com|tv.kakao.com
+@@||daumcdn.net/tiara/js/v1/tiara.min.js$domain=kakao.com
 @@||naver.net/wcslog.js$domain=m.tv.naver.com
 @@||vod.midas-i.com^$media,domain=pandora.tv
 @@||wcs.naver.com/m$image,domain=sooldamhwa.com
