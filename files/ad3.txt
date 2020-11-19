@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
-! Checksum: f1EU1yVUQ+03+8NmnUPBcQ
+! Checksum: Hz3SF/rAt/SMLHTf41U/9g
 ! Title: AdFilters
 ! Expires: 12 hours
-! Version: 202011181612
-! Last Modified: 2020年11月18日 16:12
+! Version: 202011190829
+! Last Modified: 2020年11月19日 08:29
 ! Homepage: https://adf.minggo.eu.org
 ! 本规则合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance、EasyPrivacy，感谢各位大大的分享！
 ! 仅合并规则，未做其余任何处理
@@ -3034,6 +3034,7 @@ ubmcmm.baidustatic.com
 ||padsreds.com^
 ||pagechoice.net^$third-party
 ||panel-cn.com^
+||papa9394.com^$third-party
 ||papa999.xyz^
 ||pay838.com^
 ||pcmzn.com^
@@ -7428,8 +7429,8 @@ _yad_jsonp_
 ||onx8.com/theme/tange/add/
 ||onx8.com/zb_users/theme/ydgreen/style/ad/
 ||oodcd.cn/pan/config/ad.json
-||oodcd.cn/pan/config/history.
 ||oodcd.cn/pan/config/copy.
+||oodcd.cn/pan/config/history.
 ||ooo.0o0.ooo/2017/11/03/59fc6b3c5b723.jpg
 ||ooqiu.com/ad_js/
 ||opticsky.cn/images/2015/gy-px201
@@ -8470,11 +8471,11 @@ _yad_jsonp_
 ||wmzhe.com/static/wmzhe/images/cjzg/
 ||wmzhe.com/static/wmzhe/images/suishenbao/
 ||wn789.com/wp-content/uploads/*/SugarHosts
-||wnacg.*/themes/mo/images/*.gif
 ||wnacg.*/1sdfdc1/
 ||wnacg.*/58s/
 ||wnacg.*/5eg/
 ||wnacg.*/sd
+||wnacg.*/themes/mo/images/*.gif
 ||wnacg.*/themes/weitu/images/0
 ||wnacg.*/w7z/
 ||wnacg.*/w8z/
@@ -8971,9 +8972,6 @@ _yad_jsonp_
 ||zzzyk.com/js/
 !------------------------Specific element hiding rules------------------------!
 szxx.com.cn###A0
-mzh.ren##A[href*=".jd.com"]
-mzh.ren##A[href*=".taobao.com"]
-mzh.ren##A[href*=".aliyun.com"]
 szxx.com.cn###A1
 szxx.com.cn###A2
 gpcxw.com###AA2
@@ -9640,6 +9638,7 @@ xiazaizhijia.com###gg_3
 miniie.com,tisai.com###gg_content
 yy.com###gg_left
 yy.com###gg_right
+kukuw.com###gg_rl
 7654.com###gg_top
 shouji56.com###gg_top_banner
 baidu.com###ggbtm
@@ -10516,7 +10515,6 @@ ishuhui.com##.a_xx_d
 qq.com##.aaddvv__list
 159i.com,china.com.cn##.ab
 jd.com##.ab-goods
-tophub.today##.am
 jiyingdm.com##.abcde
 yesky.com##.abox
 w3cschool.cn##.abox-item
@@ -10845,6 +10843,7 @@ caibaojian.com##.aliyun-inner
 cnfol.com##.allAd
 bkill.com##.alliance-ad
 pilifx.com##.alltop
+tophub.today##.am
 gugeys.cc##.am-g
 gufengmh.com##.animated
 qzone.qq.com##.app-recommend
@@ -13237,7 +13236,7 @@ backchina.com##a[href*=".21usdeal.com"]
 cnzol.com##a[href*=".91comics.com/"]
 163.com,bilibili.com,longzhu.com##a[href*=".admaster."]
 itboth.com,itkeyword.com##a[href*=".aliyun."]
-boke112.com,dzbhdm.com,techweb.com.cn##a[href*=".aliyun.com"]
+boke112.com,dzbhdm.com,mzh.ren,techweb.com.cn##a[href*=".aliyun.com"]
 iqiyi.com##a[href*=".banggo."]
 zhanqi.tv##a[href*=".bfun.cn/ad."]:not([href*=".zhanqi."])
 backchina.com##a[href*=".cardbenefit.com/"]
@@ -13248,7 +13247,7 @@ zhibo8.cc##a[href*=".ftxgame.com"]
 wigcw.cn##a[href*=".gwents.com"]
 ctfile.com##a[href*=".henghost.com"]
 hanjutv.com##a[href*=".hujiang.com"]
-comicat.org,dapenti.com,douyu.com,iqiyi.com,jinti.com,kisssub.org,rufengso.net,v.qq.com##a[href*=".jd.com"]
+comicat.org,dapenti.com,douyu.com,iqiyi.com,jinti.com,kisssub.org,mzh.ren,rufengso.net,v.qq.com##a[href*=".jd.com"]
 chinanews.com##a[href*=".jiuxianfeng.com"]
 tiexue.net##a[href*=".junp"]
 zhangxinxu.com##a[href*=".ke.qq."]
@@ -13265,7 +13264,7 @@ v.qq.com##a[href*=".renrendai.com"]
 makepolo.com##a[href*=".rong360.com"]
 ccav5.com##a[href*=".sinaimg."]
 chdbits.co##a[href*=".taobao"]
-18comic.org,18comic.vip,52movieba.com,5dm.tv,acglala.net,ainuody.com,awaker.cn,bimiacg.com,cangku.in,ccav1.com,cdsoso.me,cgown.com,cn163.net,comicat.org,cosersuki.org,dzbhdm.com,epinv.com,eroacg.com,galacg.me,gmgard.com,halitv.com,haochi123.com,hexieshe.cn,hexieshe.com,hexieshe.xyz,hggard.com,hmghmg.com,hmog.me,htcui.com,huan.moe,idanmu.at,jitapu.com,kisssub.org,languang.co,liuli.pw,meijutt.tv,mikuclub.org,mtrend.cn,mydrivers.com,nxing.cn,oyksoft.com,rijutv.com,souxue8.com,speedtest.cn,toutiao.com,tucao.one,vpansou.com,xxshe.info,xxshe.xyz,youku.com##a[href*=".taobao.com"]
+18comic.org,18comic.vip,52movieba.com,5dm.tv,acglala.net,ainuody.com,awaker.cn,bimiacg.com,cangku.in,ccav1.com,cdsoso.me,cgown.com,cn163.net,comicat.org,cosersuki.org,dzbhdm.com,epinv.com,eroacg.com,galacg.me,gmgard.com,halitv.com,haochi123.com,hexieshe.cn,hexieshe.com,hexieshe.xyz,hggard.com,hmghmg.com,hmog.me,htcui.com,huan.moe,idanmu.at,jitapu.com,kisssub.org,languang.co,liuli.pw,meijutt.tv,mikuclub.org,mtrend.cn,mydrivers.com,mzh.ren,nxing.cn,oyksoft.com,rijutv.com,souxue8.com,speedtest.cn,toutiao.com,tucao.one,vpansou.com,xxshe.info,xxshe.xyz,youku.com##a[href*=".taobao.com"]
 boke112.com##a[href*=".tencent.com"]
 acgdoge.net,chinalawedu.com,douyu.com,dzbhdm.com,gmgard.com,hggard.com,iqiyi.com,jinti.com,youku.com##a[href*=".tmall.com"]
 xianzhenyuan.cn##a[href*=".tmall.com"]:not(#xztba)
@@ -16208,20 +16207,19 @@ $script,subdocument,third-party,websocket,xmlhttprequest,domain=00ksw.com|01zww.
 @@||libs.baidu.com^$domain=138txt.com|18xs.org|1biqu.com|1kanshu.cc|230book.com|23hh.com|23txt.com|23wxx.com|258zw.com|266ks.com|27xsw.com|2baob.com|30sy.com|33yq.com|365book.net|37zw.net|39shubao.com|3yt.com|52biquge.com|58xs.com|5ccc.tw|78zw.com|81zw.me|99mk.com|99shumeng.net|aikantxt.la|balingtxt.com|baoshuu.com|bbiqugew.com|biduo.cc|biqiuge.com|biqubao.com|biqudu.tv|biquga.com|biquge.com.cn|biquge.info|biquge.lu|biquge.tv|biquge11.com|biquge6.com|biquge98.com|biqugecd.com|biqugego.com|biqugemm.com|biqugesc.com|biqukan.com|biquku.la|biqusan.com|biquyi.com|bixia.org|biyuwu.cc|bodekang.net|boluoxs.com|bookbao.org|booksky.cc|booktxt.net|bshuku.com|bxwx.org|bxwx.tw|bxwx8.la|bxwxorg.com|cits0871.com|clewx.com|damengzhu6.com|dashenxiaoshuo.com|day66.com|ddxs.cc|ddxsku.com|dushuge.net|farpop.com|gdbzkz.com|guaili.org|hatxt.com|hbfie.org|hehuamei.com|heikexs.com|heiyanwang.com|hongyeshuzhai.com|hybiquge.com|imiaobige.com|iqishu.la|ishisetianxia.com|ixiatxt.com|ixs.la|ixuanquge.com|jianlaixiaoshuo.com|jinshulo.com|jx.la|kkbiqu2.com|liewen.la|lindiankanshu.cc|liudatxt.com|lwtxt.net|lwxstxt.com|mhtwx.la|mubige.com|paoshu8.com|pfwx.com|piaotianxs.com|pingshuku.com|qbxs8.net|qianrenge.cc|qiqint.la|qq717.com|quledu.net|qushuba.com|rmxs8.com|shu008.com|shuhaige.net|shuhaiwu.com|shumil.co|shuquge.com|siluke.tv|soxscc.com|swshuge.com|tangsanshu.com|tpszw.com|ttzw.tv|txshuku.net|tycqxs.com|u33.me|v63xs.com|vipxs.la|wanwenhui.com|wenxuem.com|wrlwx.com|x23us.me|x81zw.com|xaixs.org|xbiquge.la|xbiqugecc.com|xbiqugew.net|xbiquke.com|xbqge.net|xcmxsw.com|xdingdiann.com|xiangcunxiaoshuo.com|xiaoshuosk.com|xieyixs.com|xinxs.la|xqiushu.com|xs222.co|xs5200.com|xs98.com|xsbiqu.com|xsqishu.com|xsw55.com|xszww.com|xuehong.cc|xuehongxs.com|yawenb.com|yikanxiaoshuo.com|yq-888.com|yruan.com|yssm.tv|yunxs.com|zbzw.la|zhuaji.org|zwdu.com|zzs5.com
 @@||zmtt.net^$script,domain=luoqiuzw.com
 !#Novels
-||ywqpgy.com^
-||b83pmp.cn^
-||hbkhqc.com^
-||gng5.cn^
-||vq7736.com^
-bxwx666.org###addiv3
-bxwx666.org###bdstatic
-55shuba.com###botDiv
 ###chaptername + div > div[style="padding:10px;border-radius:10px;background-color:green;"]
 ###downdiv > .downcode
 ##.box_con[style="border-radius:10px;background-color:#ff0000;padding:15px;"]
+##.layui-row[style="height:160px;border-radius:10px;background-color:#ff0000;padding:15px;margin:15px;"]
+##.readerListADbox
+##a[href*=".1956hl.com/"]
+##a[href*=".com/tg.html?id="]
+##a[href*="://mgzs.cdn.bcebos.com/"]
+##a[href="/ad2.html"]
+##dd[style="padding:16px 16px 20px;margin: 15px;border-radius:50%;background-color:green;"]
+##div[style="border-radius:8px;background-color:#005737;padding:6px;"]
 .ca.bxwx3.org^
 .com/code.php?a=index&z=$script,third-party,xmlhttprequest
-##.layui-row[style="height:160px;border-radius:10px;background-color:#ff0000;padding:15px;margin:15px;"]
 .m.23txt.com^
 .m.biduo.cc^
 .m.biquge5200.cc^
@@ -16242,8 +16240,6 @@ bxwx666.org###bdstatic
 .m.zineworm.com^
 .m.zwda.com^
 .m.zwdu.com^
-duanwenxue.com##.qgzdwx
-##.readerListADbox
 .wap.x4399.com^
 .wap.xsbiquge.com^
 .wap.yb3.cc^
@@ -16256,23 +16252,21 @@ duanwenxue.com##.qgzdwx
 /xxgg/book.js
 /xxgg/gzh.js
 /xxgg/xsggs.js
+52biquge.com##[onclick*="app"]
+52biquge.com##a[href^="http://html.350.com/"]
+55shuba.com###botDiv
 @@||31xiaoshuo.org/style/pxne5d.js
 @@||dzz8.com/public/ptcms/*.js?g=$domain=m.daizhuzai.com
 @@||meiwenfen.com^$xmlhttprequest,domain=520tingshu.com
-jx.la##[onclick*="apk"]
-52biquge.com##[onclick*="app"]
-dukankan.com,ibqg5200.com,snwx3.com##[style*="fixed"]
-##a[href*=".1956hl.com/"]
-##a[href*=".com/tg.html?id="]
-##a[href*="://mgzs.cdn.bcebos.com/"]
-##a[href="/ad2.html"]
-52biquge.com##a[href^="http://html.350.com/"]
-bixia.org##dd[style*="bottom:"]
-##dd[style="padding:16px 16px 20px;margin: 15px;border-radius:50%;background-color:green;"]
-xuehongxs.com##div[id^="cs_DIV_cscpvrich"]
-##div[style="border-radius:8px;background-color:#005737;padding:6px;"]
 biqubao.com##div[style="width:976px;"]
+bixia.org##dd[style*="bottom:"]
+bxwx666.org###addiv3
+bxwx666.org###bdstatic
+duanwenxue.com##.qgzdwx
+dukankan.com,ibqg5200.com,snwx3.com##[style*="fixed"]
+jx.la##[onclick*="apk"]
 piaotian5.com##script + div[style="padding:15px;"]
+xuehongxs.com##div[id^="cs_DIV_cscpvrich"]
 ||01w47q.cn^
 ||0217qpineuxbcdhopswkvf.xyz^
 ||0224fqpowiuxybnmvdfghj.xyz^
@@ -16575,6 +16569,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||b0lc.cn^
 ||b2b5.net^
 ||b54ah.cn^
+||b83pmp.cn^
 ||babalink.net^
 ||babalink.top^
 ||baful.net^
@@ -16985,6 +16980,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||gaohuduo.cn^
 ||gb686.cn^
 ||gbeik.com^
+||gbzumh.cn^
 ||gc8fjz.cn^
 ||gcaog.com^
 ||gdfc0563.com^
@@ -17013,6 +17009,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||gmuqa.cn^
 ||gmxyorg.cn^
 ||gneusqa.cn^
+||gng5.cn^
 ||gnmbd.top^
 ||gnncc.cc^
 ||gobali.cn^
@@ -17081,6 +17078,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||hbbww.com^
 ||hbfie.org/mh
 ||hbhxqcw.com^
+||hbkhqc.com^
 ||hblanghun.cn^
 ||hbnygj.com^
 ||hbttcc.com^
@@ -18038,6 +18036,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||vodtw.la/js/a1.
 ||vodtw.la^*xhtml
 ||voterlin.cn^
+||vq7736.com^
 ||vvnna.com^
 ||vwb4p.cn^
 ||w13qh.cn^
@@ -18313,6 +18312,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||yushengyuancaishui.com^
 ||yuxiny.com^
 ||ywbwsm.com^
+||ywqpgy.com^
 ||ywqum.cn^
 ||ywxtmox.cn^
 ||yxhxs.com^
@@ -21619,6 +21619,7 @@ weibo.com##.apps_PCD_reco_detail_right
 /analytics-social.
 /analytics-tag.
 /analytics-tracker/*
+/analytics-tracking.
 /analytics-v1.
 /analytics.*/event?
 /analytics.*/ping/?
@@ -23119,7 +23120,7 @@ weibo.com##.apps_PCD_reco_detail_right
 /google_analytics.$~image
 /google_analytics/*
 /google_analytics3_
-/google_analytics_
+/google_analytics_$domain=~github.com
 /google_page_track
 /google_tag.
 /google_tag/*
@@ -30919,7 +30920,8 @@ _mongo_stats/
 ||afrigator.com/track/
 ||agendize.com^*/counts.jsp?
 ||aiya.com.cn/stat.js
-||akamaized.net/sc/$domain=msn.com
+||akamaized.net/sc/*.gif$domain=msn.com
+||akamaized.net/sc/*.js$domain=msn.com
 ||akanoo.com/tracker/
 ||akatracking.esearchvision.com^
 ||aklamio.com/ovlbtntrk?
@@ -32273,6 +32275,7 @@ _mongo_stats/
 ||ping.dozuki.com^
 ||ping.hellobar.com^
 ||ping.smyte.com^
+||ping.staticmoly.me^
 ||pings.conviva.com^
 ||pings.vidpulse.com^
 ||pipe-collect.ebu.io^
@@ -33200,6 +33203,7 @@ _mongo_stats/
 ||mlm.de/pagerank-ranking/
 ||movad.de/c.ount?
 ||myv-img.de/m2/e?
+||nct.ui-portal.de/gmx/gmx/s?$image
 ||newelements.de/tracker/
 ||ntmb.de/count.html?
 ||oe-static.de^*/wws.js
@@ -37320,6 +37324,7 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 ||vip.de^*/tracking.js
 ||viviano.de/cgi-bin/stat_gateway.cgi?
 ||vv.ricardo.ch^
+||wa.gmx.net/gmxde/gmxde/s?$image
 ||wdm.map24.com^
 ||web-track.telekom-dienste.de^
 ||web.de/ivw/cp/
@@ -38217,7 +38222,6 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 @@||cdn-ds.com/analytics/sockjs.js$script,domain=tuttleclickgenesis.com
 @@||cdn-net.com/cc.js$script,domain=uber.com|ubereats.com
 @@||cdn.optimizely.com/js/*.js$domain=compassion.com|creditsesame.com|freeshipping.com|heroku.com|imageshack.com
-@@||cdn.privacy-mgmt.com^$domain=telegraph.co.uk
 @@||certona.net^*/scripts/resonance.js$script,domain=canadiantire.ca
 @@||changenow.io/js/tracking.js$script
 @@||chasecdn.com^*/@ccb-blueanalytics/$script,domain=chase.com
@@ -38312,7 +38316,7 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 @@||geoplugin.net/json.gp?jsoncallback=$script,domain=worldc.am
 @@||geostag.cardinalcommerce.com/DeviceFingerprintWeb/includes/js/fingerprint2.min.js$script
 @@||ghstatic.com/images/site/zylom/scripts/google-analytics.js?$domain=zylom.com
-@@||google-analytics.com/analytics.js$domain=afternic.com|allmusic.com|amctv.com|anchor.fm|bebo.com|bennysva.com|blastingnews.com|ch10.co.il|cliphunter.com|daemon-tools.cc|desigual.com|easyjet.com|firehousesubs.com|gamepix.com|greentoe.com|health2000.co.nz|housing.wisc.edu|infogr.am|jackbox.tv|jobs.net|keygames.com|m.timesofindia.com|manowthaimordialloc.com.au|maxiclimber.com|orbitum.com|pluto.tv|pure.com|rebtel.com|sbnation.com|sci2.tv|seatgeek.com|stitcher.com|support.amd.com|tagheuer.com.au|tracking.narvar.com|tv10play.se|tv3play.se|tv6play.se|tv8play.se|video.pbs.org|vox.com|vpnster.com|weather.gov|westernunion.at|westernunion.be|westernunion.ca|westernunion.ch|westernunion.cl|westernunion.co.jp|westernunion.co.nz|westernunion.co.uk|westernunion.co.za|westernunion.com|westernunion.com.au|westernunion.com.co|westernunion.com.hk|westernunion.com.my|westernunion.com.pe|westernunion.de|westernunion.fr|westernunion.ie|westernunion.it|westernunion.nl|westernunion.ph|westernunion.pl|westernunion.se|westernunion.sg|www.google.com
+@@||google-analytics.com/analytics.js$domain=afternic.com|allmusic.com|amctv.com|anchor.fm|bebo.com|beinsports.com|bennysva.com|blastingnews.com|ch10.co.il|cliphunter.com|daemon-tools.cc|desigual.com|easyjet.com|firehousesubs.com|gamepix.com|greentoe.com|health2000.co.nz|housing.wisc.edu|infogr.am|jackbox.tv|jobs.net|keygames.com|m.timesofindia.com|manowthaimordialloc.com.au|maxiclimber.com|orbitum.com|pluto.tv|pure.com|rebtel.com|sbnation.com|sci2.tv|seatgeek.com|stitcher.com|support.amd.com|tagheuer.com.au|tracking.narvar.com|tv10play.se|tv3play.se|tv6play.se|tv8play.se|video.pbs.org|vox.com|vpnster.com|weather.gov|westernunion.at|westernunion.be|westernunion.ca|westernunion.ch|westernunion.cl|westernunion.co.jp|westernunion.co.nz|westernunion.co.uk|westernunion.co.za|westernunion.com|westernunion.com.au|westernunion.com.co|westernunion.com.hk|westernunion.com.my|westernunion.com.pe|westernunion.de|westernunion.fr|westernunion.ie|westernunion.it|westernunion.nl|westernunion.ph|westernunion.pl|westernunion.se|westernunion.sg|www.google.com
 @@||google-analytics.com/ga.js$domain=7digital.com|account.hirezstudios.com|aebn.net|aftonbladet.se|alatest.com|americanapparel.net|apps.facebook.com|asus.com|avast.com|babylon.com|bangbros.com|banshee.fm|billabong.com|billboard.com|bolha.com|bookadumpster.com|boostmobile.com|break.com|brobible.com|cinemassacre.com|comingsoon.net|dailyfreegames.com|donanimhaber.com|ehow.com|eonline.com|everydayhealth.com|expensify.com|filmweb.pl|fora.tv|fossil.com|foxsports.com.au|frequency.com|g4tv.com|gasbuddy.com|globaltv.com|google.com|gumtree.com.au|hoerzu.de|imageshack.us|intellicast.com|jetbrains.com|jobsite.co.uk|justjared.com|juxtapoz.com|kleinanzeigen.ebay.de|latimes.com|lemonfree.com|liptonicetea.com|logitech.com|lucasarts.com|mashable.com|maxcdn.com|medonet.pl|meetme.com|mevio.com|mommyish.com|newyorker.com|nme.com|nuts.co.uk|opendns.com|oyster.com|philips.com|photobucket.com|priceme.co.nz|priestville.org|salon.com|search.diy.com|seekingalpha.com|sundance.org|techbargains.com|tempe12.com|theblaze.com|thegrindstone.com|thevine.com.au|theweek.com|threatfire.com|timberland.com|tomshardware.com|tube8.com|tvunetworks.com|tweetgrid.com|umbro.com|weeworld.com|wonka.com|xda-developers.com|yellow.co.nz|youtube.com|zoo.org.au
 @@||google-analytics.com/gtm/js$script,domain=curbed.com|eater.com|funnyordie.com|gumtree.com|mmafighting.com|mmamania.com|nflgamepass.com|polygon.com|racked.com|reuters.com|riftherald.com|sbnation.com|theringer.com|theta.tv|toysrus.ca|vox.com
 @@||google-analytics.com/plugins/ga/inpage_linkid.js$domain=lovehoney.co.uk|maxiclimber.com|opendns.com|openshift.com|vimeo.com|westernunion.at|westernunion.be|westernunion.ca|westernunion.ch|westernunion.cl|westernunion.co.jp|westernunion.co.nz|westernunion.co.uk|westernunion.co.za|westernunion.com|westernunion.com.au|westernunion.com.co|westernunion.com.hk|westernunion.com.my|westernunion.com.pe|westernunion.de|westernunion.fr|westernunion.ie|westernunion.it|westernunion.nl|westernunion.ph|westernunion.pl|westernunion.se|westernunion.sg
@@ -38634,7 +38638,6 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 @@||apps.derstandard.at^*/TrackingCookieCheck?$subdocument
 @@||asadcdn.com/adlib/pages/sport1.js$domain=sport1.de
 @@||businessclick.ch/index.js$domain=finanzen.ch
-@@||cdn.privacy-mgmt.com^$subdocument,xmlhttprequest,domain=ekstrabladet.dk|giga.de|manager-magazin.de|spiegel.de|sport1.de|vtm.begmt.com|welt.de
 @@||darmstadt.ui-traffic.de/mobile/webapp/bower_components/heatmap.js$domain=darmstadt.ui-traffic.de
 @@||deutschlandfunkkultur.de/themes/*/js.php?files=*,script/smarttag.js,$script,~third-party
 @@||energy.de^*/ivw.js?$domain=energy.de
@@ -38650,10 +38653,14 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 @@||ksta.de^*/tracking/tracking.js$domain=ksta.de
 @@||orginio.de/api/analytics/$~third-party,xmlhttprequest
 @@||rtl.de^*/videotracking.min.js$domain=rtl.de
+@@||showheroes.com/playlist/vast3?$xmlhttprequest,domain=rtl.de
+@@||showheroes.com/publishertag.js$domain=rtl.de
+@@||showheroes.com/pubtag.js$domain=rtl.de
+@@||showheroes.com/spot/iframe?pageurl=$script,subdocument,domain=rtl.de
 @@||spatialbuzz.com/piwik/piwik.js$domain=spatialbuzz.com
 @@||spiegel.de/layout/js/http/netmind-$script
 @@||sunday.de/skin/*/googleanalytics.js$script
-@@||taboola.com/libtrc/impl.$script,domain=bild.de|bz-berlin.de|computerbild.de|fitbook.de|jetzt.de|metal-hammer.de|musikexpress.de|noizz.de|rollingstone.de|stylebook.de|techbook.de|travelbook.de|wieistmeineip.at|wieistmeineip.ch|wieistmeineip.de
+@@||taboola.com/libtrc/impl.$script,domain=bild.de|bz-berlin.de|computerbild.de|fitbook.de|jetzt.de|metal-hammer.de|musikexpress.de|noizz.de|rollingstone.de|stylebook.de|techbook.de|travelbook.de|welt.de|wieistmeineip.at|wieistmeineip.ch|wieistmeineip.de
 @@||tipico.de/js/modules/fingerprintjs2/fingerprint2.min.js$script,~third-party
 @@||uim.tifbs.net/js/$script,domain=web.de
 @@||widgets.trustedshops.com/reviews/tsSticker/$domain=koziol-shop.de
