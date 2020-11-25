@@ -45,6 +45,14 @@ http://hdtv.haust.edu.cn/hls/btv2hd.m3u8
 http://hdtv.haust.edu.cn/hls/btv9hd.m3u8
 #EXTINF:-1 tvg-name="BTV影视",北京影视
 http://hdtv.haust.edu.cn/hls/btv4hd.m3u8
+#EXTINF:-1 tvg-name="BTV科教",北京科教
+http://hdtv.haust.edu.cn/hls/btv3hd.m3u8
+#EXTINF:-1 tvg-name="BTV财经",北京财经
+http://hdtv.haust.edu.cn/hls/btv5hd.m3u8
+#EXTINF:-1 tvg-name="BTV生活",北京生活
+http://hdtv.haust.edu.cn/hls/btv7hd.m3u8
+#EXTINF:-1 tvg-name="BTV青年",北京青年
+http://hdtv.haust.edu.cn/hls/btv8hd.m3u8
 #EXTINF:-1 tvg-name="湖南卫视",湖南卫视
 http://hdtv.haust.edu.cn/hls/hunanhd.m3u8
 #EXTINF:-1 tvg-name="江苏卫视",江苏卫视
@@ -99,13 +107,4 @@ http://hdtv.haust.edu.cn/hls/btv11hd.m3u8
 http://hdtv.haust.edu.cn/hls/docuchina.m3u8
 #EXTINF:-1 tvg-name="金鹰纪实",金鹰纪实
 http://hdtv.haust.edu.cn/hls/gedocu.m3u8
-#EXTINF:-1 tvg-name="第一剧场 ",第一剧场 
-http://hdtv.haust.edu.cn/hls/dyjctv.m3u8
-#EXTINF:-1 tvg-name="怀旧剧场",怀旧剧场
-http://hdtv.haust.edu.cn/hls/hjjctv.m3u8
-#EXTINF:-1 tvg-name="兵器科技",兵器科技
-http://hdtv.haust.edu.cn/hls/gfjstv.m3u8
-#EXTINF:-1 tvg-name="风云足球",风云足球
-http://hdtv.haust.edu.cn/hls/fyzqtv.m3u8
-#EXTINF:-1 tvg-name="足球频道",足球频道
-http://hdtv.haust.edu.cn/hls/zqhd.m3u8
+
