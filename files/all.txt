@@ -1,6 +1,6 @@
 其他地区,#genre#
-凤凰中文台,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221225942/1.m3u8
-凤凰资讯台,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221225949/1.m3u8
+凤凰中文台,http://117.169.124.37:6610/ysten-businessmobile/live/fhchinese/1.m3u8
+凤凰资讯台,http://117.169.124.37:6610/ysten-businessmobile/live/fhzixun/1.m3u8
 凤凰香港台,http://223.110.245.136/ott.js.chinamobile.com/PLTV/3/224/3221226975/index.m3u8
 凤凰电影台,rtmp://58.200.131.2/livetv/fhdy
 香港卫视,http://zhibo.hkstv.tv/livestream/mutfysrq.flv
@@ -181,8 +181,8 @@ I爱动漫,http://101.71.255.229:6610/zjhs/2/10107/index.m3u8?virtualDomain=zjhs
 经典音乐,http://nas.330421.cn:8000/iptv/cibn/?id=1108&code=162
 
 港台新,#genre#
-凤凰中文台,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221225942/1.m3u8
-凤凰资讯台,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221225949/1.m3u8
+凤凰中文台,http://117.169.124.37:6610/ysten-businessmobile/live/fhchinese/1.m3u8
+凤凰资讯台,http://117.169.124.37:6610/ysten-businessmobile/live/fhzixun/1.m3u8
 凤凰香港台,http://223.110.245.136/ott.js.chinamobile.com/PLTV/3/224/3221226975/index.m3u8
 凤凰电影台,rtmp://58.200.131.2/livetv/fhdy
 香港卫视,http://zhibo.hkstv.tv/livestream/mutfysrq.flv
