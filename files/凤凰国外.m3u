@@ -10,9 +10,9 @@ http://live-hwcdn.utvlive.top/live/551a1a8c3aca46708fd285217be3c96e/4538203d786e
 ## http://117.169.124.43:6610/ysten-businessmobile/live/fhchinese/index.m3u8
 ## http://221.179.217.70/PLTV/88888888/224/3221225942/1.m3u8
 #EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/supzhang/epg/tb1/gt/fenghuangzixun.png" group-title="港台新",凤凰资讯台
-http://111.13.42.10/PLTV/88888888/224/3221225949/1.m3u8
+http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221225949/1.m3u8
 ## http://117.169.124.37:6610/ysten-businessmobile/live/fhzixun/1.m3u8
-## http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221225949/1.m3u8
+## http://111.13.42.10/PLTV/88888888/224/3221225949/1.m3u8
 ## http://hls111.dszbdq.cn/tm1.php?id=PhoenixinfoTVHD
 ## http://117.169.124.43:6610/ysten-businessmobile/live/fhzixun/index.m3u8
 #EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/supzhang/epg/tb1/gt/fenghuangxianggang.png" group-title="港台新",凤凰香港台
@@ -73,8 +73,6 @@ http://116.199.5.52:8114/00000000/index.m3u8?&Fsv_ctype=LIVES&Fsv_otype=1&FvSeid
 http://hls.globaliptv.ml/viu99.php
 ## https://ws.matchupstream.tuboshu.com/live/a4f368f754e45486cb68710020cc6a5d.flv
 ## http://61.238.6.49:8000/bysid/99
-## http://520574.xyz/dl/iptv.php?id=8
-## http://a.315600.xyz/dl/iptv.php?id=8
 #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/viutv6.png" group-title="港台新",ViuTV6 HD
 http://hls.globaliptv.ml/viu96.php
 ## http://61.238.6.49:8000/bysid/96
@@ -94,7 +92,6 @@ https://rthkcnews-lh.akamaihd.net/i/rthknews_1@312607/index_190000011_av-b.m3u8
 ## https://15813114727637862976168173814320.live.prod.hkatv.com/a1_cbr_lo_720p.m3u8
 #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/HBOHD.png" group-title="港台新",HBO HD
 https://4gc5nhcji8rzdkqbq8y5y.ourdvsss.com/pullhls3948069e.live.126.net/live/6d3465d93b1bc75d3ad06c1b22aa1ce2/playlist.m3u8?wshc_tag=0&wsts_tag=5f9eeb4e&wsid_tag=75882755&wsiphost=ipdbm
-## http://a.315600.xyz/dl/iptv.php?id=27
 #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/foxaction.png" group-title="港台新",FOX Action Movies
 http://104.250.154.42:8080/ZZ_foxaction/ZZ_foxaction.m3u8
 
