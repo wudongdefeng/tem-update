@@ -107,3 +107,11 @@ http://hdtv.haust.edu.cn/hls/btv11hd.m3u8
 http://hdtv.haust.edu.cn/hls/docuchina.m3u8
 #EXTINF:-1 tvg-name="金鹰纪实",金鹰纪实
 http://hdtv.haust.edu.cn/hls/gedocu.m3u8
+#EXTINF:-1 tvg-name="第一剧场",第一剧场
+http://hdtv.haust.edu.cn/hls/dyjctv.m3u8
+#EXTINF:-1 tvg-name="风云足球",风云足球
+http://hdtv.haust.edu.cn/hls/fyzqtv.m3u8
+#EXTINF:-1 tvg-name="怀旧剧场",怀旧剧场
+http://hdtv.haust.edu.cn/hls/hjjctv.m3u8
+#EXTINF:-1 tvg-name="兵器科技",兵器科技
+http://hdtv.haust.edu.cn/hls/gfjstv.m3u8
