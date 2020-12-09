@@ -5,9 +5,6 @@
 凤凰电影台,rtmp://58.200.131.2/livetv/fhdy
 香港卫视,http://zhibo.hkstv.tv/livestream/mutfysrq.flv
 亚旅卫视,http://hls.jingchangkan.tv/jingchangkan/156722438_0HaM/index.m3u8
-综合娱乐台,http://live-hwcdn.utvlive.top/live/d4e03afe056a4f2da070d5f789f3ac9e/a5ed7598a90246199df373924de367d4-3.m3u8
-有线新闻台,http://live-hwcdn.utvlive.top/live/97609933ef744f008e19a6e0d5ef9f2b/edd34677cc9548539d36b10c1c594b94-3.m3u8
-财经资讯台,http://live-hwcdn.utvlive.top/live/add598ff3f90428da3fbebb644ba135b/2bbaa83758ba412bbdd8d08626c56eb4-3.m3u8
 Channel [CNA],https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8
 Bloomberg TV,http://liveproduseast.akamaized.net/us/Channel-USTV-AWS-virginia-1/Source-USTV-1000-1_live.m3u8
 United Nations TV,http://bcliveunivsecure-lh.akamaihd.net/i/un150_A1_1@575439/index_1328_av-p.m3u8?sd=10&rebase=on
@@ -90,7 +87,6 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 都市生活,http://live.826pc.com/cdtv/live.php?id=3
 成都公共,http://live.826pc.com/cdtv/live.php?id=5
 峨眉电影,http://scgctvshow.sctv.com/hdlive/emei/1.m3u8
-重庆新闻,http://cbnlive.cbchot.com/live/CQTV_xw_hd_1.m3u8
 重庆都市,http://219.153.252.50/PLTV/88888888/224/3221225640/chunklist.m3u8
 湖南电影,http://luotuo.ycchenrong.cn/dl/woniu.php?id=10000044
 湖南电视剧,http://luotuo.ycchenrong.cn/dl/woniu.php?id=10000045
@@ -173,9 +169,6 @@ I爱动漫,http://101.71.255.229:6610/zjhs/2/10107/index.m3u8?virtualDomain=zjhs
 凤凰电影台,rtmp://58.200.131.2/livetv/fhdy
 香港卫视,http://zhibo.hkstv.tv/livestream/mutfysrq.flv
 亚旅卫视,http://hls.jingchangkan.tv/jingchangkan/156722438_0HaM/index.m3u8
-综合娱乐台,http://live-hwcdn.utvlive.top/live/d4e03afe056a4f2da070d5f789f3ac9e/a5ed7598a90246199df373924de367d4-3.m3u8
-有线新闻台,http://live-hwcdn.utvlive.top/live/97609933ef744f008e19a6e0d5ef9f2b/edd34677cc9548539d36b10c1c594b94-3.m3u8
-财经资讯台,http://live-hwcdn.utvlive.top/live/add598ff3f90428da3fbebb644ba135b/2bbaa83758ba412bbdd8d08626c56eb4-3.m3u8
 Channel [CNA],https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8
 Bloomberg TV,http://liveproduseast.akamaized.net/us/Channel-USTV-AWS-virginia-1/Source-USTV-1000-1_live.m3u8
 United Nations TV,http://bcliveunivsecure-lh.akamaihd.net/i/un150_A1_1@575439/index_1328_av-p.m3u8?sd=10&rebase=on
@@ -264,7 +257,6 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 都市生活,http://live.826pc.com/cdtv/live.php?id=3
 成都公共,http://live.826pc.com/cdtv/live.php?id=5
 峨眉电影,http://scgctvshow.sctv.com/hdlive/emei/1.m3u8
-重庆新闻,http://cbnlive.cbchot.com/live/CQTV_xw_hd_1.m3u8
 重庆都市,http://219.153.252.50/PLTV/88888888/224/3221225640/chunklist.m3u8
 湖南电影,http://luotuo.ycchenrong.cn/dl/woniu.php?id=10000044
 湖南电视剧,http://luotuo.ycchenrong.cn/dl/woniu.php?id=10000045
