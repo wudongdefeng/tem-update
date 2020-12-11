@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
-! Checksum: rzRErfG0urIXVtwgenlWkA
+! Checksum: 7pyVeSH0sQQSwm75fKOChg
 ! Title: AdFilters
 ! Expires: 12 hours
-! Version: 202012101616
-! Last Modified: 2020年12月10日 16:16
+! Version: 202012111217
+! Last Modified: 2020年12月11日 12:17
 ! Homepage: https://adf.minggo.eu.org
 ! 本规则合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance、EasyPrivacy，感谢各位大大的分享！
 ! 仅合并规则，未做其余任何处理
@@ -1173,6 +1173,7 @@ _xiuno_com_ad/
 ##a[href*=".gsxzq.com/"]
 ##a[href*=".guzaosf.com/"]
 ##a[href*=".hbjimin.com/"]
+##a[href*=".hndazhan.com/"]
 ##a[href*=".iziyo.com/"]
 ##a[href*=".liaochuo.com/"]
 ##a[href*=".mieseng.com/"]
@@ -1248,13 +1249,13 @@ _xiuno_com_ad/
 ##img[src*=".sinaimg."][style="width:150px;height:300px"]
 ##script + #coupletBox
 ##script + #rbbox
-##A[href*=".hndazhan.com/"]
 ##script[src="/js/sy2.js"] + div[align="center"]
 ##script[src="/templates/frontend/frontend-jiucao/js/jquery.lazyload.min.js"] + .footer_app_box
 ##span[title="neteasefooter"]
 ##table[style="border:#7D8C8E solid 1px;height: 30px;text-align: center;"]
 !----------------------------------Ads-Union----------------------------------!
 .8ox.cn
+||depnegj.cn^
 .cc/s.php?id=$script,third-party
 .cn/?ss=$script,third-party
 .cn/s.php?id=$script,third-party
@@ -4054,7 +4055,7 @@ $image,domain=ip.cn
 $image,third-party,domain=lady1.top
 $script,third-party,domain=52movieba.com|66s.cc|ab126.com|audio699.com|dm530.net|kan-tv.com|m.supfree.net|wltmv.com|xiepp.com
 $script,third-party,websocket,domain=52codes.net|m.ting56.com
-$script,third-party,xmlhttprequest,domain=btsow.surf
+$script,third-party,xmlhttprequest,domain=btsow.cam
 $websocket,domain=5nj.com|cechi8.com
 .194007.com/4058.gif
 .gif|$domain=7mshipin.org|viidii.info|xgan.cn
@@ -5253,6 +5254,7 @@ _yad_jsonp_
 ||baidu.com/forum/pic/item/9e3df8dcd100baa14e5258e25010b912c8fc2e68.jpg
 ||baidu.com/forum/pic/item/a044ad345982b2b7c044449a26adcbef77099b90.jpg
 ||baidu.com/forum/pic/item/aec379310a55b319b1963d3754a98226cffc1700.jpg
+||baidu.com/forum/pic/item/bf096b63f6246b60ced6e830fcf81a4c500fa29e.jpg
 ||baidu.com/forum/pic/item/c2cec3fdfc039245b36885579094a4c27c1e258c.jpg
 ||baidu.com/forum/pic/item/d000baa1cd11728b45991441dffcc3cec3fd2c18.jpg
 ||baidu.com/forum/pic/item/e5dde71190ef76c6211836cc9316fdfaae51670b.jpg
@@ -5867,7 +5869,7 @@ _yad_jsonp_
 ||diaoyu123.com/cpro/show.js
 ||dieka888.com/app_ad/
 ||dig.chouti.com/advert
-||dilidili8.com/static/*.js
+||dilidili3.com/static/*.js
 ||dingniugu.com/newskin/js/backTop.js
 ||dingniugu.com^*public.
 ||dio66.net/images/*.gif
@@ -6987,6 +6989,7 @@ _yad_jsonp_
 ||kxd56.com/qq.js
 ||kxd56.com/tg.gif
 ||l.qq.com/lview?
+||labuladong.github.io/algo/pictures/ad/
 ||lagou.com/js/cooperation/
 ||lahoo.ca/api.php?mod=ad&
 ||lahoo.ca/slider
@@ -8215,6 +8218,7 @@ _yad_jsonp_
 ||toolfk.com/common/11/
 ||toolfk.com/common/cp.js
 ||toolfk.com/common/other/11.png
+||toolfk.com/common/other/elm.png
 ||toolfk.com/tools/images/vps/
 ||toolnb.com/Public/aliyun/900x60.png
 ||topmba.mobi/ad/
@@ -8996,7 +9000,6 @@ _yad_jsonp_
 ||zzz4.com/JS_AD/
 ||zzzyk.com/js/
 !------------------------Specific element hiding rules------------------------!
-crsky.com##.Adown_v_gs
 szxx.com.cn###A0
 szxx.com.cn###A1
 szxx.com.cn###A2
@@ -10431,6 +10434,7 @@ cnfol.com##.AdAsideW300H250
 hung-ya.com##.AdBottom
 qq.com##.AdBox-Article-QQ
 qq.com##.AdTop-Article-QQ
+crsky.com##.Adown_v_gs
 cnfol.com##.AdvDL
 fx110.com,fx110.uk##.Adv_1
 bestopview.com##.Adv_c
@@ -13718,7 +13722,7 @@ mail.126.com,mail.163.com##div[id$="_FooterDiv"]
 anoneko.com,dmhy.org,ye1213.com##div[id$="_ad"] > a:first-child > img
 58.com##div[id$="_gdbg"]
 mail.126.com,mail.163.com##div[id$="_succAd"]
-mydrivers.com##div[id$="_tab"] > ul > li[style="height:143px;"]
+mydrivers.com##div[id$="_tab"] > ul > li[style]
 my0511.com##div[id$="bdbc"]
 pixnet.net##div[id*="-AD-"]
 pixnet.net##div[id*="-Ad-"]
@@ -16181,6 +16185,7 @@ fuliba.net,uliba.net##.widget_custom_html:nth-child(2)
 !#g
 !#hboav.com
 @@$image,xmlhttprequest,domain=hboav.com
+@@||5278.cc/js/gg0.js
 @@||5278.cc^$script,domain=hboav.com
 @@||hboav.com/guga/$script,~third-party
 @@||hboav.com^$generichide
@@ -16246,7 +16251,10 @@ $image,third-party,domain=258zw.com
 /svr/*.aspx?placeid=$third-party
 /xxgg/app.js
 ://*modelBudai*.js?$third-party
-:18443/*/*-*-*.js
+:10443/*/*-*-*.html$subdocument,third-party
+:10443/*/*-*-*.js$third-party
+:18443/*/*-*-*.html$subdocument,third-party
+:18443/*/*-*-*.js$third-party
 _1xhtml?$script
 xhtml?%22+$script,third-party
 $script,subdocument,third-party,websocket,xmlhttprequest,domain=bhshu.net|louzhong8.com|miwens.com
@@ -16270,7 +16278,8 @@ $script,subdocument,third-party,websocket,xmlhttprequest,domain=00ksw.com|01zww.
 @@||libs.baidu.com^$domain=138txt.com|18xs.org|1biqu.com|1kanshu.cc|230book.com|23hh.com|23txt.com|23wxx.com|258zw.com|266ks.com|27xsw.com|2baob.com|30sy.com|33yq.com|365book.net|37zw.net|39shubao.com|3yt.com|52biquge.com|58xs.com|5ccc.tw|78zw.com|81zw.me|99mk.com|99shumeng.net|aikantxt.la|balingtxt.com|baoshuu.com|biduo.cc|biqiuge.com|biqubao.com|biqudu.tv|biquga.com|biquge.com.cn|biquge.info|biquge.lu|biquge.tv|biquge11.com|biquge6.com|biquge98.com|biqugecd.com|biqugego.com|biqugemm.com|biqugesc.com|biqukan.com|biquku.la|biqusan.com|biquyi.com|bixia.org|biyuwu.cc|bodekang.net|boluoxs.com|bookbao.org|booksky.cc|booktxt.net|bshuku.com|bxwx.org|bxwx.tw|bxwx8.la|bxwxorg.com|clewx.com|damengzhu6.com|dashenxiaoshuo.com|day66.com|ddxs.cc|ddxsku.com|dushuge.net|farpop.com|gdbzkz.com|guaili.org|hatxt.com|hbfie.org|hehuamei.com|heikexs.com|heiyanwang.com|hongyeshuzhai.com|hybiquge.com|imiaobige.com|iqishu.la|ishisetianxia.com|ixiatxt.com|ixs.la|ixuanquge.com|jianlaixiaoshuo.com|jinshulo.com|jx.la|kkbiqu2.com|liewen.la|lindiankanshu.cc|liudatxt.com|lwtxt.net|lwxstxt.com|mhtwx.la|mubige.com|paoshu8.com|pfwx.com|piaotianxs.com|pingshuku.com|qbxs8.net|qianrenge.cc|qiqint.la|qq717.com|quledu.net|qushuba.com|rmxs8.com|shu008.com|shuhaige.net|shuhaiwu.com|shumil.co|shuquge.com|siluke.tv|soxscc.com|swshuge.com|tangsanshu.com|tpszw.com|ttzw.tv|txshuku.net|tycqxs.com|u33.me|v63xs.com|vipxs.la|wanwenhui.com|wenxuem.com|wrlwx.com|x23us.me|x81zw.com|xaixs.org|xbiquge.la|xbiqugecc.com|xbiqugew.net|xbiquke.com|xbqge.net|xcmxsw.com|xdingdiann.com|xiaoshuosk.com|xieyixs.com|xinxs.la|xqiushu.com|xs222.co|xs5200.com|xs98.com|xsbiqu.com|xsbiqugew.com|xsqishu.com|xsw55.com|xszww.com|xuehong.cc|xuehongxs.com|xxiangcun.com|yawenb.com|yikanxiaoshuo.com|yq-888.com|yruan.com|yssm.tv|yunxs.com|zbzw.la|zhuaji.org|zwdu.com|zzs5.com
 @@||zmtt.net^$script,domain=luoqiuzw.com
 !#Novels
-||loli.net^$domain=xinqingdou.com
+||ohthub.com.cn^
+||jtwlj.cn^
 bxwx666.org###addiv3
 bxwx666.org###bdstatic
 55shuba.com###botDiv
@@ -17517,6 +17526,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||lnwow.net/1.gif
 ||lobmuc.cn^
 ||loli.net^$domain=rmxs8.com
+||loli.net^$domain=xinqingdou.com
 ||lolvsdota.cn^
 ||longfenfa.com^
 ||longkoupeanut.cn^
@@ -18066,6 +18076,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||toujing5.top^
 ||toujing7.top^
 ||toujing8.top^
+||toujing9.top^
 ||tozvhcq.cn^
 ||travel-together.cn^
 ||trhccn.cn^
@@ -23412,6 +23423,7 @@ weibo.com##.apps_PCD_reco_detail_right
 /hlog.asp
 /hm.pl?p=
 /hmapxy.js
+/hnpprivacy-min.
 /home/Analytic?
 /homeCounter.
 /homepage/analytics.
@@ -27932,6 +27944,7 @@ _mongo_stats/
 ||infopro-insight.com^$third-party
 ||infoprodata.com^$third-party
 ||informz.net^$third-party
+||ingage.tech^$third-party
 ||inimbus.com.au^$third-party
 ||inmoment.com^$third-party
 ||innomdc.com^$third-party
@@ -30586,6 +30599,7 @@ _mongo_stats/
 ||logly.co.jp^$third-party
 ||mediav.com^$third-party
 ||miaozhen.com^$third-party
+||mmstat.com^$third-party
 ||oadz.com^$third-party
 ||p0y.cn^$third-party
 ||phpstat.com^$third-party
@@ -33427,6 +33441,7 @@ _mongo_stats/
 ||d.omsnative.de^
 ||data.econa.com^
 ||datacomm.ch^*/count.cgi?
+||datalayer.p7s1.io^
 ||et.twyn.com^
 ||events.kaloo.ga^$third-party
 ||export.newscube.de^$~subdocument
@@ -33682,6 +33697,7 @@ _mongo_stats/
 ||dup.baidustatic.com^
 ||epro.sogou.com^
 ||etwun.com:8080/counter.php?
+||fourier.taobao.com^
 ||g.yccdn.com^
 ||haostat.qihoo.com^
 ||hudong.com/flux.js
@@ -38112,7 +38128,6 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 ||log.suumo.jp^
 ||logql.yahoo.co.jp^
 ||measure.ameblo.jp^
-||mmstat.com^$image,ping
 ||mtc.nhk.or.jp^
 ||nhk.or.jp^*/bc.js
 ||ppf.rakuten.co.jp^$~script
