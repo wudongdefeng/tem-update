@@ -5,7 +5,7 @@
 凤凰电影台,rtmp://58.200.131.2/livetv/fhdy
 香港卫视,http://zhibo.hkstv.tv/livestream/mutfysrq.flv
 亚旅卫视,http://hls.jingchangkan.tv/jingchangkan/156722438_0HaM/index.m3u8
-Channel [CNA],https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8
+Channel [CNA],http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_4.m3u8
 Bloomberg TV,http://liveproduseast.akamaized.net/us/Channel-USTV-AWS-virginia-1/Source-USTV-1000-1_live.m3u8
 United Nations TV,http://bcliveunivsecure-lh.akamaihd.net/i/un150_A1_1@575439/index_1328_av-p.m3u8?sd=10&rebase=on
 CCTV-1 综合,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240127_1/encoder/0/playlist.m3u8?CONTENTID=00000110240127_1
@@ -88,7 +88,7 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 成都公共,http://live.826pc.com/cdtv/live.php?id=5
 峨眉电影,http://scgctvshow.sctv.com/hdlive/emei/1.m3u8
 重庆都市,http://219.153.252.50/PLTV/88888888/224/3221225640/chunklist.m3u8
-东方影视,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221225970/3.m3u8
+东方影视,http://140.207.241.3:8080/live/program/live/dsjpdhd/4000000/mnf.m3u8
 上海新闻,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226135/3.m3u8
 上海ICS,http://39.135.249.210/huaweicdn.hb.chinamobile.com/PLTV/88888888/224/3221226136/3.m3u8
 上海都市,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226141/3.m3u8
@@ -117,8 +117,9 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 欢笑剧场4K,http://ott.fj.chinamobile.com/PLTV/88888888/224/3221226729/1.m3u8
 广东综艺4K,http://player.ioioz.com/1786/gd/gdtvm3u8.php?id=gdzy
 南国都市4K,http://120.221.226.226/aplay.gztv.com/sec/shenghuos.m3u8
+4K超清-北京IPTV,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221226550/1.m3u8
 黑莓电影,http://39.134.66.66/PLTV/88888888/224/3221225523/index.m3u8
-Y+影视,http://39.135.98.8/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229999/01.m3u8?fmt=ts2hlsrrsip=ltcottcdn.ln.chinamobile.com&zoneoffset=0&servicetype=1
+Y+影视,http://112.17.40.137/wh7f454c46tw2431502278_-1330208715/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229999/index.m3u8?fmt=ts2hls&icpid=88888888&from=30&RTS=1592889837&ocs=2_112.17.40.15_80&hms_devid=1457&online=1592889837&vqe=1
 欧美影院,http://112.17.40.199/wh7f454c46tw2819951733_-141826655/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228384/index.m3u8?fmt=ts2hls&icpid=88888888&from=30&RTS=1592890225&hms_devid=1460&online=1592890225&vqe=1
 Dox环映,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226020/1/index.m3u8?fmt=ts2hls
 Dox剧场,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226013/1/index.m3u8?fmt=ts2hls
@@ -166,7 +167,7 @@ I爱动漫,http://101.71.255.229:6610/zjhs/2/10107/index.m3u8?virtualDomain=zjhs
 凤凰电影台,rtmp://58.200.131.2/livetv/fhdy
 香港卫视,http://zhibo.hkstv.tv/livestream/mutfysrq.flv
 亚旅卫视,http://hls.jingchangkan.tv/jingchangkan/156722438_0HaM/index.m3u8
-Channel [CNA],https://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index.m3u8
+Channel [CNA],http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_4.m3u8
 Bloomberg TV,http://liveproduseast.akamaized.net/us/Channel-USTV-AWS-virginia-1/Source-USTV-1000-1_live.m3u8
 United Nations TV,http://bcliveunivsecure-lh.akamaihd.net/i/un150_A1_1@575439/index_1328_av-p.m3u8?sd=10&rebase=on
 
@@ -255,7 +256,7 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 成都公共,http://live.826pc.com/cdtv/live.php?id=5
 峨眉电影,http://scgctvshow.sctv.com/hdlive/emei/1.m3u8
 重庆都市,http://219.153.252.50/PLTV/88888888/224/3221225640/chunklist.m3u8
-东方影视,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221225970/3.m3u8
+东方影视,http://140.207.241.3:8080/live/program/live/dsjpdhd/4000000/mnf.m3u8
 上海新闻,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226135/3.m3u8
 上海ICS,http://39.135.249.210/huaweicdn.hb.chinamobile.com/PLTV/88888888/224/3221226136/3.m3u8
 上海都市,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226141/3.m3u8
@@ -288,10 +289,11 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 欢笑剧场4K,http://ott.fj.chinamobile.com/PLTV/88888888/224/3221226729/1.m3u8
 广东综艺4K,http://player.ioioz.com/1786/gd/gdtvm3u8.php?id=gdzy
 南国都市4K,http://120.221.226.226/aplay.gztv.com/sec/shenghuos.m3u8
+4K超清-北京IPTV,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221226550/1.m3u8
 
 高清影视,#genre#
 黑莓电影,http://39.134.66.66/PLTV/88888888/224/3221225523/index.m3u8
-Y+影视,http://39.135.98.8/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229999/01.m3u8?fmt=ts2hlsrrsip=ltcottcdn.ln.chinamobile.com&zoneoffset=0&servicetype=1
+Y+影视,http://112.17.40.137/wh7f454c46tw2431502278_-1330208715/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229999/index.m3u8?fmt=ts2hls&icpid=88888888&from=30&RTS=1592889837&ocs=2_112.17.40.15_80&hms_devid=1457&online=1592889837&vqe=1
 欧美影院,http://112.17.40.199/wh7f454c46tw2819951733_-141826655/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228384/index.m3u8?fmt=ts2hls&icpid=88888888&from=30&RTS=1592890225&hms_devid=1460&online=1592890225&vqe=1
 Dox环映,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226020/1/index.m3u8?fmt=ts2hls
 Dox剧场,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226013/1/index.m3u8?fmt=ts2hls
