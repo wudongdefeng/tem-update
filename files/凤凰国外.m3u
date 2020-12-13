@@ -1,7 +1,8 @@
 #EXTM3U
 ###### 凤凰台
 #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/pcc.png" group-title="港台新",凤凰中文台
-http://111.13.42.10/PLTV/88888888/224/3221225942/1.m3u8
+http://223.110.245.139/ott.js.chinamobile.com/PLTV/3/224/3221226922/index.m3u8
+## http://111.13.42.10/PLTV/88888888/224/3221225942/1.m3u8
 ## http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221225942/1.m3u8   
 ## http://live-hwcdn.utvlive.top/live/551a1a8c3aca46708fd285217be3c96e/4538203d786e4803bac20e36392cffd9.m3u8
 ## http://live-hwcdn.utvlive.top/live/551a1a8c3aca46708fd285217be3c96e/4538203d786e4803bac20e36392cffd9-1.m3u8
@@ -9,10 +10,10 @@ http://111.13.42.10/PLTV/88888888/224/3221225942/1.m3u8
 ## http://221.179.217.70/PLTV/88888888/224/3221225942/1.m3u8
 #EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/supzhang/epg/tb1/gt/fenghuangzixun.png" group-title="港台新",凤凰资讯台
 http://112.17.40.140/PLTV/88888888/224/3221226491/index.m3u8
+## http://117.169.124.37:6610/ysten-businessmobile/live/fhzixun/1.m3u8
 ## http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221225949/1.m3u8
 ## http://111.13.42.10/PLTV/88888888/224/3221225949/1.m3u8
 ## http://117.169.124.43:6610/ysten-businessmobile/live/fhzixun/index.m3u8
-## http://117.169.120.138:8080/live/fhzixun/.m3u8
 #EXTINF:-1 tvg-logo="https://cdn.jsdelivr.net/gh/supzhang/epg/tb1/gt/fenghuangxianggang.png" group-title="港台新",凤凰香港台
 http://live-hwcdn.utvlive.top/live/a4e8cf74196e40959485a9ef4c532d02/6286b2bbb78341cd9fa92c7b37ccc03c-1.m3u8
 ## http://live-hwcdn.utvlive.top/live/a4e8cf74196e40959485a9ef4c532d02/6286b2bbb78341cd9fa92c7b37ccc03c.m3u8
@@ -64,7 +65,8 @@ http://antvlive.ab5c6921.cdnviet.com/antv/playlist.m3u8
 #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/hongkongkai.png" group-title="港台新",开电视
 http://media.fantv.hk/m3u8/archive/channel2_stream1.m3u8
 #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/tvb-kf.png" group-title="港台新",功夫台
-http://dlhls-cdn-mp.zhanqi.tv/zqlive/301200_QSU3A.m3u8
+http://dlhdl-cdn.zhanqi.tv/zqlive/301200_QSU3A.flv
+## http://dlhls-cdn-mp.zhanqi.tv/zqlive/301200_QSU3A.m3u8
 #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/tvb.png" group-title="港台新",TVB港剧
 http://dlhls-cdn-mp.zhanqi.tv/zqlive/123407_XhQs9.m3u8
 #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/viutv.png" group-title="港台新",ViuTV HD
