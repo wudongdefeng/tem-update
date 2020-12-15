@@ -94,13 +94,15 @@ http://61.238.6.49:8001/bysid/82
 
 #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/SkyNews.png" group-title="港台新",Sky News
 https://skynews2-plutolive-vo.akamaized.net/cdhlsskynewsamericas/1013/latest.m3u8?serverSideAds=true
-#EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/NHKWorld.png" group-title="港台新",NHK Chinese Vision
+#EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/nhkworld.png" group-title="港台新",NHK Chinese Vision
 https://nhkworld.webcdn.stream.ne.jp/www11/nhkworld-tv/zh/725580/livecom_zh.m3u8
 ## https://nhkw-zh-hlscomp.akamaized.net/ixxemlzk1vqvy44o/playlist.m3u8#https://nhkw-zh-hlscomp.akamaized.net/8thz5iufork8wjip/playlist.m3u8
 #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/DW.png" group-title="港台新",DW
 https://dwstream1-lh.akamaihd.net/i/dwstream1_live@120422/index_1_av-p.m3u8
 #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/abcnews.png" group-title="港台新",ABC News
 https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/6e1cc6d25ec0480ea099a5399d73bc4b/index.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/cbs.png" group-title="港台新",CBSN
+https://dai.google.com/linear/hls/event/26FJK7wRSo6RhPsK70XS_w/master.m3u8
 
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/hongkongkai.png" group-title="港台新",开电视
 ## http://media.fantv.hk/m3u8/archive/channel2_stream1.m3u8
@@ -176,6 +178,5 @@ https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/6e1cc6d25ec0480ea09
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/CtiVariety.png" group-title="港台新",中天综合
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/CtiEntertainment.png" group-title="港台新",中天娱乐
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/NHKWorld.png" group-title="港台新",NHK World
-## #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/cbs.jpg" group-title="港台新",CBSN
 ## #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/voa.jpeg" group-title="港台新",VOA
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/tv5monde.png" group-title="港台新",TV5Monde Info
