@@ -114,7 +114,7 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 纯享4K,http://121.18.168.149/cache.ott.ystenlive.itv.cmvideo.cn/000000001000/1000000004000011651/index.m3u8?channel-id=ystenlive&Contentid=1000000004000011651&livemode=1&authCode=3a&stbId=8A3603DD004735200000049573C4E39B&version=1.0&owaccmark=1000000004000011651&owchid=ystenlive&owsid=6721581571186720581&AuthInfo=QejU%2ByFkapDLEHjn7Vi7Bsh98cz5RjIeOqbMi0Qqlame2O8Id%2BgCUUdS4cJUD1ieqKIx8wFJ0pPdF5P8MGRzRrjFLuuRCIZ2D2ha%2Fr9iiM%2BAnSOfyc4s5zWrjzUdrEbf
 爱上4K,http://39.134.24.220/PLTV/88888888/224/3221226005/index.m3u8
 百视通4K,http://112.17.40.140/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229311/01.m3u8?fmt=ts2hls
-欢笑剧场4K,http://ott.fj.chinamobile.com/PLTV/88888888/224/3221226729/1.m3u8
+欢笑剧场4K,http://39.134.39.38/PLTV/88888888/224/3221226203/index.m3u8
 广东综艺4K,http://player.ioioz.com/1786/gd/gdtvm3u8.php?id=gdzy
 南国都市4K,http://120.221.226.226/aplay.gztv.com/sec/shenghuos.m3u8
 4K超清-北京IPTV,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221226550/1.m3u8
@@ -286,7 +286,7 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 纯享4K,http://121.18.168.149/cache.ott.ystenlive.itv.cmvideo.cn/000000001000/1000000004000011651/index.m3u8?channel-id=ystenlive&Contentid=1000000004000011651&livemode=1&authCode=3a&stbId=8A3603DD004735200000049573C4E39B&version=1.0&owaccmark=1000000004000011651&owchid=ystenlive&owsid=6721581571186720581&AuthInfo=QejU%2ByFkapDLEHjn7Vi7Bsh98cz5RjIeOqbMi0Qqlame2O8Id%2BgCUUdS4cJUD1ieqKIx8wFJ0pPdF5P8MGRzRrjFLuuRCIZ2D2ha%2Fr9iiM%2BAnSOfyc4s5zWrjzUdrEbf
 爱上4K,http://39.134.24.220/PLTV/88888888/224/3221226005/index.m3u8
 百视通4K,http://112.17.40.140/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229311/01.m3u8?fmt=ts2hls
-欢笑剧场4K,http://ott.fj.chinamobile.com/PLTV/88888888/224/3221226729/1.m3u8
+欢笑剧场4K,http://39.134.39.38/PLTV/88888888/224/3221226203/index.m3u8
 广东综艺4K,http://player.ioioz.com/1786/gd/gdtvm3u8.php?id=gdzy
 南国都市4K,http://120.221.226.226/aplay.gztv.com/sec/shenghuos.m3u8
 4K超清-北京IPTV,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221226550/1.m3u8
