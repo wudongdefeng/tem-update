@@ -1,7 +1,8 @@
 #EXTM3U
 ###### 凤凰台
 #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/pcc.png" group-title="港台新",凤凰中文台
-http://221.179.217.70/PLTV/88888888/224/3221225942/1.m3u8
+http://221.179.217.9/PLTV/88888888/224/3221225942/1.m3u8
+## http://221.179.217.70/PLTV/88888888/224/3221225942/1.m3u8
 ## http://111.13.42.10/PLTV/88888888/224/3221225942/1.m3u8
 ## http://223.110.245.139/ott.js.chinamobile.com/PLTV/3/224/3221226922/index.m3u8
 ## http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221225942/1.m3u8   
