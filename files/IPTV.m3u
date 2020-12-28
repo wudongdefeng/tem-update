@@ -569,6 +569,9 @@ http://teslagram.com/live/channel_109.m3u8
 #EXTINF:-1 tvg-id="YZB.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/iCABLELiveNewsChannel.png" group-title="香港", 有線直播新聞台
 http://teslagram.com/live/channel_110.m3u8
 
+#EXTINF:-1 tvg-id="618.HK" tvg-logo="http://www.nettvplus.live/uploads/20/1-200319145514C3.jpg" group-title="香港", 有線電影台 HD
+http://141.164.41.198/PPP/ppppp.php?cid=354
+
 #EXTINF:-1 tvg-id="YYL.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/iCABLEFamilyEntertainmentChannelHD.png" group-title="香港", 有線綜合娛樂台 HD
 http://live-hwcdn.utvlive.top/live/d4e03afe056a4f2da070d5f789f3ac9e/a5ed7598a90246199df373924de367d4-3.m3u8
 
@@ -689,8 +692,20 @@ http://202.175.127.77/live/show/ch2/index.m3u8
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="http://www.macaucabletv.com/wp-content/uploads/CH3.png" group-title="澳門", 澳門有線 CH3
 http://202.175.127.77/live/show/ch3/index.m3u8
 
+#EXTINF:-1 tvg-id="ZST.TW" tvg-logo="http://new.ctv.com.tw/Cms_Data/Sites/CTV3/Themes/default/images/logo_new.png" group-title="台灣", 中視 HD
+rtmp://59.124.75.156/sat/tv091
+
+#EXTINF:-1 tvg-id="HST.TW" tvg-logo="https://www.cts.com.tw/images/2018cts/cts-logo.png" group-title="台灣", 華視 HD
+rtmp://59.124.75.156/sat/tv111
+
+#EXTINF:-1 tvg-id="TST.TW" tvg-logo="https://www.ttv.com.tw/group/15/images/TTV_HD_LOGO_36.png" group-title="台灣", 台視 HD
+rtmp://59.124.75.156/sat/tv071
+
 #EXTINF:-1 tvg-id="7135" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/民视.png" group-title="台灣", 民視 HD
 http://seb.sason.top/ptv/ftv.php?id=ms
+
+#EXTINF:-1 tvg-id="7135" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/民视.png" group-title="台灣", 民視 HD
+rtmp://59.124.75.156/sat/tv051
 
 #EXTINF:-1 tvg-id="6034" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/yuanzhumin.png" group-title="台灣", 原住民族電視台
 https://bcovlive-a.akamaihd.net/82be3b97f67745058447484cc8a2d015/ap-southeast-1/5817780548001/profile_0/chunklist.m3u8
@@ -773,6 +788,9 @@ http://seb.sason.top/ptv/ftv.php?id=zy
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="http://tv.sason.xyz/logo/msly.png" group-title="台灣", 民視旅游
 http://seb.sason.top/ptv/ftv.php?id=ly
 
+#EXTINF:-1 tvg-id="TBL.TW" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/f/fa/Tvbs-logo-42.png" group-title="台灣", TVBS歡樂台 HD
+rtmp://59.124.75.156/sat/tv421
+
 #EXTINF:-1 tvg-id="6057" tvg-logo="https://cdn.jsdelivr.net/gh/supzhang/epg/tb1/gt/TVBS欢乐.png" group-title="台灣", TVBS娛樂台 HD
 http://220.158.149.28:8180/TV00000000000000000079@HHZT;LIVE
 
@@ -787,6 +805,12 @@ http://153.99.180.70:5021/live/226/playlist.m3u8
 
 #EXTINF:-1 tvg-id="WXY.TW" tvg-logo="https://www.fng.tw/scm/images/StarChinesMovies_logo.png" group-title="台灣", 衛視電影台
 http://103.47.132.164/PLTV/88888888/224/3221227147/index.m3u8
+
+#EXTINF:-1 tvg-id="DA1.TW" tvg-logo="http://www.daai.tv/images/logo.png" group-title="台灣", 大愛1
+https://pulltv1.wanfudaluye.com/live/tv1.m3u8
+
+#EXTINF:-1 tvg-id="DA2.TW" tvg-logo="https://www.cns.net.tw/web/upload/20141017171303RmzVY9Z.png" group-title="台灣", 大愛2
+https://pulltv2.wanfudaluye.com/live/tv2.m3u8
 
 #EXTINF:-1 tvg-id="6086" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/HMC.png" group-title="台灣", Hollywood HD
 http://104.250.154.42:8080/ZZ_haolaiwu/ZZ_haolaiwu.m3u8
