@@ -8,7 +8,7 @@
 Channel [CNA],http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_4.m3u8
 Bloomberg TV,http://liveproduseast.akamaized.net/us/Channel-USTV-AWS-virginia-1/Source-USTV-1000-1_live.m3u8
 United Nations TV,http://bcliveunivsecure-lh.akamaihd.net/i/un150_A1_1@575439/index_1328_av-p.m3u8?sd=10&rebase=on
-CCTV-1 综合,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240127_1/encoder/0/playlist.m3u8?CONTENTID=00000110240127_1
+CCTV-1 综合,http://39.135.43.69:80/PLTV/88888888/224/3221226481/index.m3u8
 CCTV-2 财经,http://39.134.115.163:8080/PLTV/88888910/224/3221225643/index.m3u8
 CCTV-3 综艺,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240245_1/encoder/0/playlist.m3u8?CONTENTID=00000110240245_1
 CCTV-4 中文国际,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240316_1/playlist.m3u8?CONTENTID=00000110240316_1
@@ -86,20 +86,21 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 经济资讯,http://live.826pc.com/cdtv/live.php?id=2
 都市生活,http://live.826pc.com/cdtv/live.php?id=3
 成都公共,http://live.826pc.com/cdtv/live.php?id=5
+美食天府,https://www.ootori.xyz/tv/cditv-hd.php?cid=2763&id=17
 峨眉电影,http://scgctvshow.sctv.com/hdlive/emei/1.m3u8
 重庆都市,http://219.153.252.50/PLTV/88888888/224/3221225640/chunklist.m3u8
-东方影视,http://140.207.241.3:8080/live/program/live/dsjpdhd/4000000/mnf.m3u8
-上海新闻,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226135/3.m3u8
-上海ICS,http://39.135.249.210/huaweicdn.hb.chinamobile.com/PLTV/88888888/224/3221226136/3.m3u8
-上海都市,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226141/3.m3u8
-生活时尚,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226140/3.m3u8
-极速汽车,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226152/3.m3u8
+东方影视,http://39.134.39.41/PLTV/88888888/224/3221226189/index.m3u8
+上海新闻,http://39.135.253.54/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221225973/3.m3u8
+上海ICS,http://39.135.253.54/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226136/3.m3u8
+上海都市,http://39.135.253.54/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226141/3.m3u8
+生活时尚,http://39.135.253.54/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226140/3.m3u8
+极速汽车,http://39.135.253.54/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226152/3.m3u8
 内江综合,http://njzb.scnj.tv:90/live/xwzh_xwzh800.m3u8
 内江公共,http://njzb.scnj.tv:90/live/gggy_gggy800.m3u8
 内江科教,http://njzb.scnj.tv:90/live/kjpd_kjpd800.m3u8
 中华特产,http://play.zhtctv.cn/portal/btv.flv
 群岛旅游,http://live.wifizs.cn/qdly/sd/live.m3u8
-纯享4K,http://121.18.168.149/cache.ott.ystenlive.itv.cmvideo.cn/000000001000/1000000004000011651/index.m3u8?channel-id=ystenlive&Contentid=1000000004000011651&livemode=1&authCode=3a&stbId=8A3603DD004735200000049573C4E39B&version=1.0&owaccmark=1000000004000011651&owchid=ystenlive&owsid=6721581571186720581&AuthInfo=QejU%2ByFkapDLEHjn7Vi7Bsh98cz5RjIeOqbMi0Qqlame2O8Id%2BgCUUdS4cJUD1ieqKIx8wFJ0pPdF5P8MGRzRrjFLuuRCIZ2D2ha%2Fr9iiM%2BAnSOfyc4s5zWrjzUdrEbf
+纯享4K,http://39.135.43.69:80/PLTV/88888888/224/3221226530/index.m3u8
 爱上4K,http://39.134.24.220/PLTV/88888888/224/3221226005/index.m3u8
 百视通4K,http://117.148.187.46/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229311/01.m3u8?fmt=ts2hls
 欢笑剧场4K,http://39.134.39.38/PLTV/88888888/224/3221226203/index.m3u8
@@ -108,7 +109,6 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 4K超清-北京IPTV,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221226550/1.m3u8
 全纪实,http://140.207.241.2:8080/live/program/live/qjshd/4000000/mnf.m3u8
 纪实人文,http://39.135.140.99:6610/PLTV/88888888/224/3221225655/2/index.m3u8?fmt=ts2hls
-国家地理频道,http://tv.wakds.xyz:8080/tangyuan/12345678/102
 求索记录,http://112.17.40.140/PLTV/88888888/224/3221226610/index.m3u8
 求索科学,http://112.17.40.200/PLTV/88888888/224/3221226608/index.m3u8#http://112.17.40.200/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228975/01.m3u8?fmt=ts2hls
 求索动物,http://112.17.40.15/PLTV/88888888/224/3221226695/index.m3u8
@@ -173,7 +173,7 @@ Bloomberg TV,http://liveproduseast.akamaized.net/us/Channel-USTV-AWS-virginia-1/
 United Nations TV,http://bcliveunivsecure-lh.akamaihd.net/i/un150_A1_1@575439/index_1328_av-p.m3u8?sd=10&rebase=on
 
 央視,#genre#
-CCTV-1 综合,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240127_1/encoder/0/playlist.m3u8?CONTENTID=00000110240127_1
+CCTV-1 综合,http://39.135.43.69:80/PLTV/88888888/224/3221226481/index.m3u8
 CCTV-2 财经,http://39.134.115.163:8080/PLTV/88888910/224/3221225643/index.m3u8
 CCTV-3 综艺,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240245_1/encoder/0/playlist.m3u8?CONTENTID=00000110240245_1
 CCTV-4 中文国际,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240316_1/playlist.m3u8?CONTENTID=00000110240316_1
@@ -255,14 +255,15 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 经济资讯,http://live.826pc.com/cdtv/live.php?id=2
 都市生活,http://live.826pc.com/cdtv/live.php?id=3
 成都公共,http://live.826pc.com/cdtv/live.php?id=5
+美食天府,https://www.ootori.xyz/tv/cditv-hd.php?cid=2763&id=17
 峨眉电影,http://scgctvshow.sctv.com/hdlive/emei/1.m3u8
 重庆都市,http://219.153.252.50/PLTV/88888888/224/3221225640/chunklist.m3u8
-东方影视,http://140.207.241.3:8080/live/program/live/dsjpdhd/4000000/mnf.m3u8
-上海新闻,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226135/3.m3u8
-上海ICS,http://39.135.249.210/huaweicdn.hb.chinamobile.com/PLTV/88888888/224/3221226136/3.m3u8
-上海都市,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226141/3.m3u8
-生活时尚,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226140/3.m3u8
-极速汽车,http://39.135.249.210/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226152/3.m3u8
+东方影视,http://39.134.39.41/PLTV/88888888/224/3221226189/index.m3u8
+上海新闻,http://39.135.253.54/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221225973/3.m3u8
+上海ICS,http://39.135.253.54/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226136/3.m3u8
+上海都市,http://39.135.253.54/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226141/3.m3u8
+生活时尚,http://39.135.253.54/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226140/3.m3u8
+极速汽车,http://39.135.253.54/hwcdntest.hb.chinamobile.com/PLTV/88888888/224/3221226152/3.m3u8
 内江综合,http://njzb.scnj.tv:90/live/xwzh_xwzh800.m3u8
 内江公共,http://njzb.scnj.tv:90/live/gggy_gggy800.m3u8
 内江科教,http://njzb.scnj.tv:90/live/kjpd_kjpd800.m3u8
@@ -270,7 +271,7 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 群岛旅游,http://live.wifizs.cn/qdly/sd/live.m3u8
 
 4K频道,#genre#
-纯享4K,http://121.18.168.149/cache.ott.ystenlive.itv.cmvideo.cn/000000001000/1000000004000011651/index.m3u8?channel-id=ystenlive&Contentid=1000000004000011651&livemode=1&authCode=3a&stbId=8A3603DD004735200000049573C4E39B&version=1.0&owaccmark=1000000004000011651&owchid=ystenlive&owsid=6721581571186720581&AuthInfo=QejU%2ByFkapDLEHjn7Vi7Bsh98cz5RjIeOqbMi0Qqlame2O8Id%2BgCUUdS4cJUD1ieqKIx8wFJ0pPdF5P8MGRzRrjFLuuRCIZ2D2ha%2Fr9iiM%2BAnSOfyc4s5zWrjzUdrEbf
+纯享4K,http://39.135.43.69:80/PLTV/88888888/224/3221226530/index.m3u8
 爱上4K,http://39.134.24.220/PLTV/88888888/224/3221226005/index.m3u8
 百视通4K,http://117.148.187.46/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229311/01.m3u8?fmt=ts2hls
 欢笑剧场4K,http://39.134.39.38/PLTV/88888888/224/3221226203/index.m3u8
@@ -281,7 +282,6 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 纪录片,#genre#
 全纪实,http://140.207.241.2:8080/live/program/live/qjshd/4000000/mnf.m3u8
 纪实人文,http://39.135.140.99:6610/PLTV/88888888/224/3221225655/2/index.m3u8?fmt=ts2hls
-国家地理频道,http://tv.wakds.xyz:8080/tangyuan/12345678/102
 求索记录,http://112.17.40.140/PLTV/88888888/224/3221226610/index.m3u8
 求索科学,http://112.17.40.200/PLTV/88888888/224/3221226608/index.m3u8#http://112.17.40.200/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228975/01.m3u8?fmt=ts2hls
 求索动物,http://112.17.40.15/PLTV/88888888/224/3221226695/index.m3u8

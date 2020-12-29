@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
-! Checksum: jlX8CddX/3oteKyJ1jF0DA
+! Checksum: dCbZErcr2Z2UljYmuG32aw
 ! Title: AdFilters
 ! Expires: 12 hours
-! Version: 202012281620
-! Last Modified: 2020年12月28日 16:20
+! Version: 202012291622
+! Last Modified: 2020年12月29日 16:22
 ! Homepage: https://adf.minggo.eu.org
 ! 本规则合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance、EasyPrivacy，感谢各位大大的分享！
 ! 仅合并规则，未做其余任何处理
@@ -1213,6 +1213,7 @@ _xiuno_com_ad/
 ##a[href*="/mdb1.site/"]
 ##a[href*="/ppffj.me/"]
 ##a[href*="itoon.app"]
+##a[href*="mdapp01.com/"]
 ##a[href*="nnqp.vip"]
 ##a[href*="ywslxq.com"]
 ##a[href="/e/member/register/index.php?tobind=0&groupid=1"]
@@ -1254,6 +1255,7 @@ _xiuno_com_ad/
 ##script[src="/templates/frontend/frontend-jiucao/js/jquery.lazyload.min.js"] + .footer_app_box
 ##span[title="neteasefooter"]
 ##table[style="border:#7D8C8E solid 1px;height: 30px;text-align: center;"]
+##A[href*=".shssfyh.com/"]
 !----------------------------------Ads-Union----------------------------------!
 .8ox.cn
 .cc/s.php?id=$script,third-party
@@ -2897,6 +2899,7 @@ ubmcmm.baidustatic.com
 ||medi-8.net^$third-party
 ||media8.cn^$third-party
 ||mediav.com^$third-party,domain=~dev.360.cn|~g.360.cn
+||meethanshi.com^
 ||meicubao.cn^
 ||meihaoxiangwang.com^
 ||meilides.com^
@@ -9037,6 +9040,9 @@ _yad_jsonp_
 ||zzzyk.com/js/
 !------------------------Specific element hiding rules------------------------!
 szxx.com.cn###A0
+18board.com,18p2p.com##A[target="_blank"] > IMG[width="900"]
+aiqiyivip.com##[ontouchstart]
+nfstar.net#?#.myui-panel-bg:-abp-has(strong:-abp-contains(广告))
 szxx.com.cn###A1
 szxx.com.cn###A2
 gpcxw.com###AA2
@@ -16267,13 +16273,13 @@ fuliba.net##.widget_custom_html:nth-child(2)
 @@||5278.cc^$script,domain=hboav.com
 @@||5278.cc^$~third-party,xmlhttprequest
 @@||hboav.com/guga/$script,~third-party
-@@||hboav.com/js/axdd.
 @@||hboav.com/js/AD_tv.js
+@@||hboav.com/js/axdd.
 @@||hboav.com/js/bpolknm.js
 @@||hboav.com/js/gg*.js
 @@||hboav.com^$generichide
-@@||realsrv.com/iframe.php?idzone=3476965&size=300x250$subdocument,domain=hboav.com
 ||hboav.com/guga/$~subdocument
+||5278.cc/js/check.js
 !#Hh010.com
 hh010.com##.a_hong_c
 hh010.com##.a_hong_h
@@ -16361,9 +16367,12 @@ $script,subdocument,third-party,websocket,xmlhttprequest,domain=00ksw.com|01zww.
 @@||libs.baidu.com^$domain=138txt.com|18xs.org|1biqu.com|1kanshu.cc|230book.com|23hh.com|23txt.com|23wxx.com|258zw.com|266ks.com|27xsw.com|2baob.com|30sy.com|33yq.com|365book.net|37zw.net|39shubao.com|3yt.com|52biquge.com|58xs.com|5ccc.tw|78zw.com|81zw.me|99mk.com|99shumeng.net|aikantxt.la|aomolit.com|balingtxt.com|baoshuu.com|biduo.cc|biqiuge8.com|biqubao.com|biqudu.tv|biquga.com|biquge.com.cn|biquge.info|biquge.lu|biquge.tv|biquge11.com|biquge18.co|biquge6.com|biquge98.com|biqugecd.com|biqugego.com|biqugemm.com|biqugesc.com|biquku.la|biqusan.com|biquyi.com|bixia.org|biyuwu.cc|bodekang.net|boluoxs.com|bookbao.org|booktxt.net|botaodz.com|bqkan.com|bshuku.com|bxwx.org|bxwx.tw|bxwx8.la|bxwxorg.com|clewx.com|dashenxiaoshuo.com|day66.com|ddxs.cc|ddxsku.com|dushuge.net|farpop.com|gdbzkz.com|guaili.org|hatxt.com|hbfie.org|hehuamei.com|heikexs.com|heiyanwang.com|hongyeshuzhai.com|hybiquge.com|imiaobige.com|ishisetianxia.com|ixiatxt.com|ixs.la|ixuanquge.com|jianlaixiaoshuo.com|jinshulo.com|jx.la|kkbiqu2.com|liewen.la|lindiankanshu.cc|liudatxt.com|lwtxt.net|lwxstxt.com|mhtwx.la|mubige.com|paoshu8.com|pfwx.com|piaotianxs.com|ppskw.com|qbxs8.net|qianrenge.cc|qiqint.la|qq717.com|quledu.net|qushuba.com|rmxs8.com|shu008.com|shuhaiwu.com|shumil.co|shuquge.com|siluke.tv|skyzww.com|soxscc.com|tangsanshu.com|tpszw.com|ttzw.tv|txshuku.net|tycqxs.com|u33.me|uidzhx.com|v63xs.com|vipxs.la|wanwenhui.com|wenxuem.com|wrlwx.com|x23us.me|x81zw.com|xaixs.org|xbiquge.la|xbiqugecc.com|xbiqugew.net|xbiquke.com|xbqge.net|xcmxsw.com|xdingdiann.com|xieyixs.com|xinshuhaige.com|xinxs.la|xs222.co|xs5200.com|xs98.com|xsbiqu.com|xsbiqugew.com|xsqishu.com|xsw55.com|xszww.com|xuanshu.com|xuehong.cc|xuehongxs.com|xyusk.com|yawenb.com|yikanxiaoshuo.com|yq-888.com|yruan.com|yssm.info|yunxs.com|zbzw.la|zhnxcw.com|zhuaji.org|zwdu.com|zzs5.com
 @@||zmtt.net^$script,domain=luoqiuzw.com
 !#Novels
+||0ij3tm.com^
 bxwx666.org###addiv3
 bxwx666.org###bdstatic
 55shuba.com###botDiv
+##div[style="box-sizing:border-box;padding:20px 16px;border-radius:8px;width:90%;margin:0 auto;"]
+##[class][onclick="window.location.href='https://luodijs.gz.bcebos.com/index.html'"]
 ###chaptername + div > div[style="padding:10px;border-radius:10px;background-color:green;"]
 ###downdiv > .downcode
 ##.box_con[style="border-radius:10px;background-color:#ff0000;padding:15px;"]
@@ -16477,6 +16486,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||17ys.top^
 ||183pu.cn^
 ||1fv3b.cn^
+||1pzskg.cn^
 ||1x26q3.cn^
 ||215to.cn^
 ||216pu.cn^
@@ -23393,6 +23403,7 @@ weibo.com##.apps_PCD_reco_detail_right
 /gemius1.js
 /gemius_
 /gemiusAudience.
+/gen204?
 /generictracking.
 /geo-ip-detect?
 /geo-location/v1
@@ -24178,6 +24189,7 @@ weibo.com##.apps_PCD_reco_detail_right
 /metrics/statsd/*
 /metrics/survey/*
 /metrics/track/*
+/metrics/v1/frontend/*
 /metrics/vanity/?
 /metricsISCS.
 /metrika/*&ident=
@@ -26958,6 +26970,7 @@ _mongo_stats/
 ||g5150192710.co^
 ||g5348277045.co^
 ||g5546361380.co^
+||g5744445715.co^
 ||mors22.com^
 ||nxakpj4ac8gkd53.info^
 ||propeller-tracking.com^
@@ -27469,6 +27482,7 @@ _mongo_stats/
 ||clickreport.com^$third-party
 ||clicksagent.com^$third-party
 ||clicksen.se^$third-party
+||clicksgate.com^$third-party
 ||clickshift.com^$third-party
 ||clickstream.co.za^$third-party
 ||clicktale.net^$third-party
@@ -28568,6 +28582,7 @@ _mongo_stats/
 ||nicequest.com^$third-party
 ||niftymaps.com^$third-party
 ||nik.io^$third-party
+||ninjacat.io^$third-party
 ||nitropay.com^$third-party
 ||noibu.com^$third-party
 ||noowho.com^$third-party
@@ -28687,6 +28702,7 @@ _mongo_stats/
 ||pendo.io^$third-party
 ||pepperjam.com^$third-party
 ||percentmobile.com^$third-party
+||perf-serving.com^$third-party
 ||perfdrive.com^$third-party
 ||perfectaudience.com^$third-party
 ||perfiliate.com^$third-party
@@ -32016,6 +32032,7 @@ _mongo_stats/
 ||d2san7t27xb2pn.cloudfront.net^
 ||d2tcg4i9q4js4a.cloudfront.net^
 ||d2tgfbvjf3q6hn.cloudfront.net^
+||d2wy8f7a9ursnm.cloudfront.net^
 ||d2xgf76oeu9pbh.cloudfront.net^
 ||d303e3cdddb4ded4b6ff495a7b496ed5.s3.amazonaws.com^
 ||d31bfnnwekbny6.cloudfront.net/customers/
@@ -32128,6 +32145,7 @@ _mongo_stats/
 ||e-merchant.com/^*/edr.js$third-party
 ||e.ebidtech.com/cv/
 ||early-birds.fr/tracker/
+||ebayadservices.com/marketingtracking/
 ||ebayrtm.com/rtm?RtmCmd&a=img&$image
 ||ebaystatic.com^*/pulsar.js
 ||ebaystatic.com^*/rover_$script
@@ -34355,6 +34373,7 @@ _mongo_stats/
 ||tms-st.cdn.ngenix.net^
 ||top.elec.ru^
 ||track.recreativ.ru^
+||tracking.gpm-rtv.ru^
 ||tracking.retailrocket.net^
 ||traktor.ru^*/counter.php?
 ||ulogin.ru/js/stats.js
@@ -36083,8 +36102,6 @@ _mongo_stats/
 ||rismedia.com/tracking.js
 ||ritzcarlton.com/ritz/crossDomainTracking.mi?
 ||riverisland.com^*/mindshare.min.js
-||rkdms.com/order.gif?
-||rkdms.com/sid.gif?
 ||ro89.com/hitme.php?
 ||roadandtrack.com^*/RTdartSite.js
 ||roblox.com/www/e.png?
@@ -37536,6 +37553,7 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 ||hayneedle.com/js/s_code.min.*.js
 ||images-amazon.com/images/*/wcs-help-omniture/wcs-help-omniture-$script
 ||img-bahn.de/v/*/js/s_code.js$domain=bahn.de
+||jsfiddle.net/xdmuj68e/
 ||loc.gov/js/*/s_code.js
 ||mercedes-benz.ca/js/omniture.js
 ||mercola.com/Assets/js/omniture/sitecatalyst/mercola_s_code.js
