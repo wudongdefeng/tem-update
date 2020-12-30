@@ -27,7 +27,7 @@ CCTV-13 新闻,http://39.135.138.59:18890/PLTV/88888910/224/3221225638/index.m3u
 CCTV-14 少儿,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240253_1/encoder/0/playlist.m3u8?CONTENTID=00000110240253_1
 CCTV-15 音乐,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240329_1/playlist.m3u8?CONTENTID=00000110240329_1
 CCTV-17 农业农村,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240326_1/encoder/0/playlist.m3u8?CONTENTID=00000110240326_1
-CCTV-4K 超高清,http://111.161.121.211/livews-4k.5club.CCTV.cn/live/4K1210.stream/playlist.m3u8
+CCTV-4K 超高清,http://39.134.176.148/PLTV/88888888/224/3221226758/index.m3u8
 央视文化精品,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226100/1/index.m3u8?fmt=ts2hls
 世界地理,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226071/1/index.m3u8?fmt=ts2hls
 电视指南,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226120/1/index.m3u8?fmt=ts2hls
@@ -36,7 +36,7 @@ CCTV-4K 超高清,http://111.161.121.211/livews-4k.5club.CCTV.cn/live/4K1210.str
 风云音乐,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226083/1/index.m3u8?fmt=ts2hls
 第一剧场,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226124/1/index.m3u8?fmt=ts2hls
 风云剧场,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226107/1/index.m3u8?fmt=ts2hls
-怀旧剧场,http://hdtv.haust.edu.cn/hls/hjjctv.m3u8
+怀旧剧场,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226097/1/index.m3u8?fmt=ts2hls
 中学生,http://39.135.139.214:6610/PLTV/88888888/224/3221225515/2/index.m3u8
 老故事,http://39.135.139.214:6610/PLTV/88888888/224/3221225517/2/index.m3u8
 发现之旅,http://125.210.152.18:9090/live/FXZL.m3u8
@@ -192,7 +192,7 @@ CCTV-13 新闻,http://39.135.138.59:18890/PLTV/88888910/224/3221225638/index.m3u
 CCTV-14 少儿,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240253_1/encoder/0/playlist.m3u8?CONTENTID=00000110240253_1
 CCTV-15 音乐,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240329_1/playlist.m3u8?CONTENTID=00000110240329_1
 CCTV-17 农业农村,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240326_1/encoder/0/playlist.m3u8?CONTENTID=00000110240326_1
-CCTV-4K 超高清,http://111.161.121.211/livews-4k.5club.CCTV.cn/live/4K1210.stream/playlist.m3u8
+CCTV-4K 超高清,http://39.134.176.148/PLTV/88888888/224/3221226758/index.m3u8
 央视文化精品,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226100/1/index.m3u8?fmt=ts2hls
 世界地理,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226071/1/index.m3u8?fmt=ts2hls
 电视指南,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226120/1/index.m3u8?fmt=ts2hls
@@ -201,7 +201,7 @@ CCTV-4K 超高清,http://111.161.121.211/livews-4k.5club.CCTV.cn/live/4K1210.str
 风云音乐,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226083/1/index.m3u8?fmt=ts2hls
 第一剧场,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226124/1/index.m3u8?fmt=ts2hls
 风云剧场,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226107/1/index.m3u8?fmt=ts2hls
-怀旧剧场,http://hdtv.haust.edu.cn/hls/hjjctv.m3u8
+怀旧剧场,http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226097/1/index.m3u8?fmt=ts2hls
 中学生,http://39.135.139.214:6610/PLTV/88888888/224/3221225515/2/index.m3u8
 老故事,http://39.135.139.214:6610/PLTV/88888888/224/3221225517/2/index.m3u8
 发现之旅,http://125.210.152.18:9090/live/FXZL.m3u8
