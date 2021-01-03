@@ -70,6 +70,7 @@ jobs:
         with:
           github_token: ${{ secrets.USER_TOKEN }}
           # `secrets.GITHUB_TOKEN` 是由GITHUB自动生成的
+          branch: ${{ github.ref }}
        
     
 
