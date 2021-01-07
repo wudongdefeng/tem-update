@@ -96,6 +96,13 @@ http://116.199.5.52:8114/00000000/index.m3u8?&Fsv_ctype=LIVES&Fsv_otype=1&FvSeid
 #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/tvb.png" group-title="港台新",TVB港剧
 http://dlhls-cdn-mp.zhanqi.tv/zqlive/123407_XhQs9.m3u8
 
+#EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/TVBS%E6%96%B0%E9%97%BB.png" group-title="港台新",TVBS新闻
+http://seb.sason.top/sc/tvbsxw_fhd.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/yxw.png" group-title="港台新",壹新闻
+http://stream.nexttv.com.tw/n001/hd/live.m3u8
+#EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCFinancialNews.png" group-title="港台新",东森新闻
+http://seb.sason.top/sc/dsxw_fhd.m3u8
+
 #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/DW.png" group-title="港台新",DW
 https://dwstream1-lh.akamaihd.net/i/dwstream1_live@120422/index_1_av-p.m3u8
 #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/skynews.png" group-title="港台新",Sky News
@@ -105,7 +112,9 @@ https://dai.google.com/linear/hls/event/26FJK7wRSo6RhPsK70XS_w/master.m3u8
 #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/abcnews.png" group-title="港台新",ABC News
 https://abc-iview-mediapackagestreams-2.akamaized.net/out/v1/6e1cc6d25ec0480ea099a5399d73bc4b/index.m3u8
 #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/nhk.png" group-title="港台新",NHK Chinese Vision
-https://nhkw-zh-hlscomp.akamaized.net/8thz5iufork8wjip/playlist.m3u8
+https://nhkw-zh-hlscomp.akamaized.net/ixxemlzk1vqvy44o/playlist.m3u8
+## http://161.0.157.5/PLTV/88888888/224/3221227026/03.m3u8
+## https://nhkw-zh-hlscomp.akamaized.net/8thz5iufork8wjip/playlist.m3u8
 ## https://nhkworld.webcdn.stream.ne.jp/www11/nhkworld-tv/zh/725580/livecom_zh.m3u8
 
 #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/ntd.png" group-title="港台新",亞太台 NTD TV
@@ -128,7 +137,7 @@ https://live.ntdimg.com/aplive200/playlist.m3u8
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/hongkongkai.png" group-title="港台新",开电视
 ## #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/xwdy.png" group-title="港台新",星卫电影台
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/davinci.png" group-title="港台新",达文西
-## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCFinancialNews.png" group-title="港台新",东森新闻
+## 
 ## #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/yx603.png" group-title="港台新",有线603
 ## #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/foxaction.png" group-title="港台新",FOX Action Movies
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/TVBS%E7%B2%BE%E9%87%87.png" group-title="港台新",TVBS精采台
@@ -153,7 +162,7 @@ https://live.ntdimg.com/aplive200/playlist.m3u8
 ## #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/tvb-jd.png" group-title="港台新",经典台
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/youxianxinwen.png" group-title="港台新",有线电影台
 ## #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/yx18.png" group-title="港台新",有线18
-## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/TVBS%E6%96%B0%E9%97%BB.png" group-title="港台新",TVBS新闻
+## 
 ## #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/sanlinew.png" group-title="港台新",三立新闻
 ## #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/ch8.png" group-title="港台新",Channel [8]
 ## #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/ch5.png" group-title="港台新",Channel [5]
@@ -166,7 +175,7 @@ https://live.ntdimg.com/aplive200/playlist.m3u8
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/PublicTV.png" group-title="港台新",公视
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/%E5%8F%B0%E8%A7%86.png" group-title="港台新",台视
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/%E4%B8%AD%E8%A7%86.png" group-title="港台新",中视
-## #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/yxw.png" group-title="港台新",一新闻
+
 ## #EXTINF:-1 tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/FTVNews.png" group-title="港台新",民视新闻
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/%E5%8F%B0%E8%A7%86%E6%96%B0%E9%97%BB.png" group-title="港台新",台视新闻
 ## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/%E4%B8%AD%E8%A7%86%E6%96%B0%E9%97%BB.png" group-title="港台新",中视新闻
