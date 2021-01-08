@@ -8,19 +8,19 @@
 Channel [CNA],http://d2e1asnsl7br7b.cloudfront.net/7782e205e72f43aeb4a48ec97f66ebbe/index_4.m3u8
 Bloomberg TV,http://liveproduseast.akamaized.net/us/Channel-USTV-AWS-virginia-1/Source-USTV-1000-1_live.m3u8
 United Nations TV,http://bcliveunivsecure-lh.akamaihd.net/i/un150_A1_1@575439/index_1328_av-p.m3u8?sd=10&rebase=on
-CCTV-1 综合,http://39.135.43.69:80/PLTV/88888888/224/3221226481/index.m3u8
+CCTV-1 综合,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240127_1/encoder/0/playlist.m3u8?CONTENTID=00000110240127_1
 CCTV-2 财经,http://39.134.115.163:8080/PLTV/88888910/224/3221225643/index.m3u8
 CCTV-3 综艺,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240245_1/encoder/0/playlist.m3u8?CONTENTID=00000110240245_1
 CCTV-4 中文国际,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240316_1/playlist.m3u8?CONTENTID=00000110240316_1
 CCTV-4 中文国际美洲,http://cctvalih5ca.v.myalicdn.com/live/cctvamerica_2/index.m3u8
-CCTV-4 中文国际欧洲,http://cctvalih5ca.v.myalicdn.com/live/cctveurope_2/index.m3u8
+CCTV-4 中文国际欧洲,https://cctvcnch5ca.v.wscdns.com/live/cctveurope_2/index.m3u8?contentid=2820180516001
 CCTV-5 体育,http://dbiptv.sn.chinamobile.com/pltv/88888890/224/3221226395/index.m3u8
 CCTV-5+ 体育赛事,http://39.134.66.66/PLTV/88888888/224/3221225590/index.m3u8
 CCTV-6 电影,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240247_1/encoder/0/playlist.m3u8?CONTENTID=00000110240247_1
 CCTV-7 国防军事,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240248_1/encoder/0/playlist.m3u8?CONTENTID=00000110240248_1
 CCTV-8 电视剧,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240249_1/encoder/0/playlist.m3u8?CONTENTID=00000110240249_1
 CCTV-9 记录,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240250_1/encoder/0/playlist.m3u8?CONTENTID=00000110240250_1
-CCTV-10 科教,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240251_1/encoder/0/playlist.m3u8?CONTENTID=00000110240251_1
+CCTV-10 科教,http://39.134.66.66/PLTV/88888888/224/3221225677/index.m3u8
 CCTV-11 戏曲,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240328_1/playlist.m3u8?CONTENTID=00000110240328_1
 CCTV-12 社会与法,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240252_1/encoder/0/playlist.m3u8?CONTENTID=00000110240252_1
 CCTV-13 新闻,http://39.135.138.59:18890/PLTV/88888910/224/3221225638/index.m3u8
@@ -40,10 +40,10 @@ CCTV-4K 超高清,http://39.134.176.148/PLTV/88888888/224/3221226758/index.m3u8
 中学生,http://39.135.139.214:6610/PLTV/88888888/224/3221225515/2/index.m3u8
 老故事,http://39.135.139.214:6610/PLTV/88888888/224/3221225517/2/index.m3u8
 发现之旅,http://125.210.152.18:9090/live/FXZL.m3u8
-CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
+CGTN News,http://39.134.115.163:8080/PLTV/88888910/224/3221225896/index.m3u8
 新华社中文,http://source07.v.news.cn/live/CNC_CN/playlist.m3u8
 新华社英文,http://source07.v.news.cn/live/CNC_EN/playlist.m3u8
-四川卫视,http://182.138.51.71/PLTV/88888920/224/3221225696/index.m3u8
+四川卫视,http://39.134.39.39/PLTV/88888888/224/3221226307/index.m3u8
 重庆卫视,http://112.17.40.140/PLTV/88888888/224/3221226217/index.m3u8
 安徽卫视,http://112.17.40.140/PLTV/88888888/224/3221226185/index.m3u8
 江苏卫视,http://112.17.40.140/PLTV/88888888/224/3221226140/index.m3u8
@@ -86,7 +86,6 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 经济资讯,http://live.826pc.com/cdtv/live.php?id=2
 都市生活,http://live.826pc.com/cdtv/live.php?id=3
 成都公共,http://live.826pc.com/cdtv/live.php?id=5
-美食天府,https://www.ootori.xyz/tv/cditv-hd.php?cid=2763&id=17
 峨眉电影,http://scgctvshow.sctv.com/hdlive/emei/1.m3u8
 重庆都市,http://219.153.252.50/PLTV/88888888/224/3221225640/chunklist.m3u8
 东方影视,http://39.134.39.41/PLTV/88888888/224/3221226189/index.m3u8
@@ -99,15 +98,14 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 内江公共,http://njzb.scnj.tv:90/live/gggy_gggy800.m3u8
 内江科教,http://njzb.scnj.tv:90/live/kjpd_kjpd800.m3u8
 中华特产,http://play.zhtctv.cn/portal/btv.flv
-群岛旅游,http://live.wifizs.cn/qdly/sd/live.m3u8
 纯享4K,http://39.134.155.159/PLTV/88888888/224/3221225670/index.m3u8
 爱上4K,http://39.134.24.24/PLTV/88888888/224/3221226005/index.m3u8
-百视通4K,http://117.148.187.47/PLTV/88888888/224/3221226718/index.m3u8
+百视通4K,http://39.134.176.157/PLTV/88888888/224/3221226718/index.m3u8
 欢笑剧场4K,http://39.134.39.38/PLTV/88888888/224/3221226203/index.m3u8
 4K超清-北京IPTV,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221226550/1.m3u8
 广东综艺4K,http://player.ioioz.com/1786/gd/gdtvm3u8.php?id=gdzy
-全纪实,http://140.207.241.2:8080/live/program/live/qjshd/4000000/mnf.m3u8
-纪实人文,http://39.135.140.99:6610/PLTV/88888888/224/3221225655/2/index.m3u8?fmt=ts2hls
+全纪实,http://183.207.255.190/live/program/live/qjshd/4000000/mnf.m3u8
+纪实人文,http://121.18.168.149/cache.ott.ystenlive.itv.cmvideo.cn:80/000000001000/1000000001000010606/1.m3u8?stbId=005301FF001589101611549359B92C46&channel-id=ystenlive&Contentid=1000000001000010606&mos=jbjhhzstsl&livemode=1&version=1.0&owaccmark=1000000001000010606&owchid=ystenlive&owsid=5474771579530255373&AuthInfo=2TOfGIahP4HrGWrHbpJXVOhAZZf%2B%2BRvFCOimr7PCGr%2Bu3lLj0NrV6tPDBIsVEpn3QZdNn969VxaznG4qedKIxPvWqo6nkyvxK0SnJLSEP%2FF4Wxm5gCchMH9VO%2BhWyofF
 求索记录,http://112.17.40.140/PLTV/88888888/224/3221226610/index.m3u8
 求索科学,http://112.17.40.200/PLTV/88888888/224/3221226608/index.m3u8#http://112.17.40.200/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228975/01.m3u8?fmt=ts2hls
 求索动物,http://112.17.40.15/PLTV/88888888/224/3221226695/index.m3u8
@@ -116,7 +114,7 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 探索记录,http://112.17.40.154/wh7f454c46tw2874385578_-650182391/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228366/index.m3u8?fmt=ts2hls&icpid=88888888&from=30&RTS=1592890280&hms_devid=1455&online=1592890280&vqe=1
 金鹰纪实,http://112.17.40.140/PLTV/88888888/224/3221226831/index.m3u8
 环球旅游,http://125.210.152.18:9090/live/HQLY.m3u8
-环球奇观,http://nas.330421.cn:8000/iptv/cibn/?id=1108&code=8
+环球奇观,http://v.iam7.cn/iptv/cibn.php?code=8
 陶瓷频道,http://d-mail.vicp.net:4000/udp/239.45.3.50:5140
 黑莓电影,http://39.134.66.66/PLTV/88888888/224/3221225523/index.m3u8
 Y+影视,http://112.17.40.137/wh7f454c46tw2431502278_-1330208715/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229999/index.m3u8?fmt=ts2hls&icpid=88888888&from=30&RTS=1592889837&ocs=2_112.17.40.15_80&hms_devid=1457&online=1592889837&vqe=1
@@ -172,19 +170,19 @@ Bloomberg TV,http://liveproduseast.akamaized.net/us/Channel-USTV-AWS-virginia-1/
 United Nations TV,http://bcliveunivsecure-lh.akamaihd.net/i/un150_A1_1@575439/index_1328_av-p.m3u8?sd=10&rebase=on
 
 央視,#genre#
-CCTV-1 综合,http://39.135.43.69:80/PLTV/88888888/224/3221226481/index.m3u8
+CCTV-1 综合,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240127_1/encoder/0/playlist.m3u8?CONTENTID=00000110240127_1
 CCTV-2 财经,http://39.134.115.163:8080/PLTV/88888910/224/3221225643/index.m3u8
 CCTV-3 综艺,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240245_1/encoder/0/playlist.m3u8?CONTENTID=00000110240245_1
 CCTV-4 中文国际,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240316_1/playlist.m3u8?CONTENTID=00000110240316_1
 CCTV-4 中文国际美洲,http://cctvalih5ca.v.myalicdn.com/live/cctvamerica_2/index.m3u8
-CCTV-4 中文国际欧洲,http://cctvalih5ca.v.myalicdn.com/live/cctveurope_2/index.m3u8
+CCTV-4 中文国际欧洲,https://cctvcnch5ca.v.wscdns.com/live/cctveurope_2/index.m3u8?contentid=2820180516001
 CCTV-5 体育,http://dbiptv.sn.chinamobile.com/pltv/88888890/224/3221226395/index.m3u8
 CCTV-5+ 体育赛事,http://39.134.66.66/PLTV/88888888/224/3221225590/index.m3u8
 CCTV-6 电影,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240247_1/encoder/0/playlist.m3u8?CONTENTID=00000110240247_1
 CCTV-7 国防军事,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240248_1/encoder/0/playlist.m3u8?CONTENTID=00000110240248_1
 CCTV-8 电视剧,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240249_1/encoder/0/playlist.m3u8?CONTENTID=00000110240249_1
 CCTV-9 记录,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240250_1/encoder/0/playlist.m3u8?CONTENTID=00000110240250_1
-CCTV-10 科教,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240251_1/encoder/0/playlist.m3u8?CONTENTID=00000110240251_1
+CCTV-10 科教,http://39.134.66.66/PLTV/88888888/224/3221225677/index.m3u8
 CCTV-11 戏曲,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240328_1/playlist.m3u8?CONTENTID=00000110240328_1
 CCTV-12 社会与法,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240252_1/encoder/0/playlist.m3u8?CONTENTID=00000110240252_1
 CCTV-13 新闻,http://39.135.138.59:18890/PLTV/88888910/224/3221225638/index.m3u8
@@ -204,12 +202,12 @@ CCTV-4K 超高清,http://39.134.176.148/PLTV/88888888/224/3221226758/index.m3u8
 中学生,http://39.135.139.214:6610/PLTV/88888888/224/3221225515/2/index.m3u8
 老故事,http://39.135.139.214:6610/PLTV/88888888/224/3221225517/2/index.m3u8
 发现之旅,http://125.210.152.18:9090/live/FXZL.m3u8
-CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
+CGTN News,http://39.134.115.163:8080/PLTV/88888910/224/3221225896/index.m3u8
 新华社中文,http://source07.v.news.cn/live/CNC_CN/playlist.m3u8
 新华社英文,http://source07.v.news.cn/live/CNC_EN/playlist.m3u8
 
 地方卫视,#genre#
-四川卫视,http://182.138.51.71/PLTV/88888920/224/3221225696/index.m3u8
+四川卫视,http://39.134.39.39/PLTV/88888888/224/3221226307/index.m3u8
 重庆卫视,http://112.17.40.140/PLTV/88888888/224/3221226217/index.m3u8
 安徽卫视,http://112.17.40.140/PLTV/88888888/224/3221226185/index.m3u8
 江苏卫视,http://112.17.40.140/PLTV/88888888/224/3221226140/index.m3u8
@@ -254,7 +252,6 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 经济资讯,http://live.826pc.com/cdtv/live.php?id=2
 都市生活,http://live.826pc.com/cdtv/live.php?id=3
 成都公共,http://live.826pc.com/cdtv/live.php?id=5
-美食天府,https://www.ootori.xyz/tv/cditv-hd.php?cid=2763&id=17
 峨眉电影,http://scgctvshow.sctv.com/hdlive/emei/1.m3u8
 重庆都市,http://219.153.252.50/PLTV/88888888/224/3221225640/chunklist.m3u8
 东方影视,http://39.134.39.41/PLTV/88888888/224/3221226189/index.m3u8
@@ -267,19 +264,18 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 内江公共,http://njzb.scnj.tv:90/live/gggy_gggy800.m3u8
 内江科教,http://njzb.scnj.tv:90/live/kjpd_kjpd800.m3u8
 中华特产,http://play.zhtctv.cn/portal/btv.flv
-群岛旅游,http://live.wifizs.cn/qdly/sd/live.m3u8
 
 4K频道,#genre#
 纯享4K,http://39.134.155.159/PLTV/88888888/224/3221225670/index.m3u8
 爱上4K,http://39.134.24.24/PLTV/88888888/224/3221226005/index.m3u8
-百视通4K,http://117.148.187.47/PLTV/88888888/224/3221226718/index.m3u8
+百视通4K,http://39.134.176.157/PLTV/88888888/224/3221226718/index.m3u8
 欢笑剧场4K,http://39.134.39.38/PLTV/88888888/224/3221226203/index.m3u8
 4K超清-北京IPTV,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221226550/1.m3u8
 广东综艺4K,http://player.ioioz.com/1786/gd/gdtvm3u8.php?id=gdzy
 
 纪录片,#genre#
-全纪实,http://140.207.241.2:8080/live/program/live/qjshd/4000000/mnf.m3u8
-纪实人文,http://39.135.140.99:6610/PLTV/88888888/224/3221225655/2/index.m3u8?fmt=ts2hls
+全纪实,http://183.207.255.190/live/program/live/qjshd/4000000/mnf.m3u8
+纪实人文,http://121.18.168.149/cache.ott.ystenlive.itv.cmvideo.cn:80/000000001000/1000000001000010606/1.m3u8?stbId=005301FF001589101611549359B92C46&channel-id=ystenlive&Contentid=1000000001000010606&mos=jbjhhzstsl&livemode=1&version=1.0&owaccmark=1000000001000010606&owchid=ystenlive&owsid=5474771579530255373&AuthInfo=2TOfGIahP4HrGWrHbpJXVOhAZZf%2B%2BRvFCOimr7PCGr%2Bu3lLj0NrV6tPDBIsVEpn3QZdNn969VxaznG4qedKIxPvWqo6nkyvxK0SnJLSEP%2FF4Wxm5gCchMH9VO%2BhWyofF
 求索记录,http://112.17.40.140/PLTV/88888888/224/3221226610/index.m3u8
 求索科学,http://112.17.40.200/PLTV/88888888/224/3221226608/index.m3u8#http://112.17.40.200/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228975/01.m3u8?fmt=ts2hls
 求索动物,http://112.17.40.15/PLTV/88888888/224/3221226695/index.m3u8
@@ -288,7 +284,7 @@ CGTN News,http://live.cgtn.com/1000/prog_index.m3u8
 探索记录,http://112.17.40.154/wh7f454c46tw2874385578_-650182391/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228366/index.m3u8?fmt=ts2hls&icpid=88888888&from=30&RTS=1592890280&hms_devid=1455&online=1592890280&vqe=1
 金鹰纪实,http://112.17.40.140/PLTV/88888888/224/3221226831/index.m3u8
 环球旅游,http://125.210.152.18:9090/live/HQLY.m3u8
-环球奇观,http://nas.330421.cn:8000/iptv/cibn/?id=1108&code=8
+环球奇观,http://v.iam7.cn/iptv/cibn.php?code=8
 陶瓷频道,http://d-mail.vicp.net:4000/udp/239.45.3.50:5140
 
 高清影视,#genre#

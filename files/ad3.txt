@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
-! Checksum: m39vf53r89hTmY6uOy2SmA
+! Checksum: F5FBQ2T06XTYUKdEu1mkqg
 ! Title: AdFilters
 ! Expires: 12 hours
-! Version: 202101071627
-! Last Modified: 2021年01月07日 16:27
+! Version: 202101081237
+! Last Modified: 2021年01月08日 12:37
 ! Homepage: https://adf.minggo.eu.org
 ! 本规则合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance、EasyPrivacy，感谢各位大大的分享！
 ! 仅合并规则，未做其余任何处理
@@ -3802,6 +3802,7 @@ ubmcmm.baidustatic.com
 ||yanglaopt.net^
 ||yaohq.com^
 ||yaoxiaoli.com^
+||yapusheji.com^
 ||yatemy.cn^
 ||ycfgnau.cn^
 ||ychml.com^
@@ -6827,7 +6828,7 @@ _yad_jsonp_
 ||iztwp.com/images/
 ||izzs.cc/wp-content/mm/
 ||j.avz4.com^
-||j.s.weibo.com/widget.html
+||s.weibo.com/widget.html
 ||ja*.gamersky.com^
 ||jable.tv/assets/*0.gif
 ||jandan.net/static/sos/recreate-games.gif
@@ -7851,7 +7852,6 @@ _yad_jsonp_
 ||rjsos.com/channel/laomo_dibu.png
 ||rjzxw.com/include/
 ||rkanr.com/data/cpcache/cp*.js
-||rm.sina.com.cn^$domain=~sea.sina.com.cn
 ||rm66.me/ri.js
 ||rm66.me/tpl/js/i.js
 ||rm66.me/tpl/js/t.js
@@ -9067,8 +9067,13 @@ _yad_jsonp_
 ||zzsky.cn/images/a_d_
 ||zzz4.com/JS_AD/
 ||zzzyk.com/js/
+||kiwi8.top/media/plugins/jquery_confirm/
+||myqcloud.com/ad/
+||jsdelivr.net/gh/supfree/supfree/top.gif
+||tlyy.cc/js/tlyy/
 !------------------------Specific element hiding rules------------------------!
 szxx.com.cn###A0
+weibo.com#?#.card-wrap:-abp-has(> .card-film > .card-head > .title:-abp-contains(广告))
 szxx.com.cn###A1
 szxx.com.cn###A2
 gpcxw.com###AA2
@@ -13772,10 +13777,13 @@ zhicheng.com##div[class^="all-"][style^="position:relative;width:50%;float:"]
 265g.com##div[class^="ban"]
 cztv.com##div[class^="banner_"]
 elecfans.com##div[class^="banner_ad"]
+ifeng.com##div[class^="bottomDbox"]
 tucao.one##div[class^="c_c"]
 ifeng.com##div[class^="container-"][content^="[object"]
 78dm.net##div[class^="couple-"]
 ifeng.com##div[class^="coupletBox"]
+ifeng.com##div[class^="d_box-"]
+ifeng.com##div[class^="dbox"]
 fx678.com##div[class^="dl_"]
 eastday.com##div[class^="double"]
 syd.com.cn##div[class^="eap"]
@@ -13807,6 +13815,7 @@ sogou.com##div[class^="rt-gameright"]
 ifeng.com##div[class^="slideBannerBox"]
 ifeng.com##div[class^="topAd-"]
 21cn.com##div[class^="topAds"]
+ifeng.com##div[class^="topBox-"]
 gpsuu.com##div[class^="top_96"]
 zhangxinxu.com##div[class^="top_da_out_"]
 gamme.com.tw##div[class^="topad_"]
@@ -16393,9 +16402,7 @@ $script,subdocument,third-party,websocket,xmlhttprequest,domain=00ksw.com|01zww.
 @@||libs.baidu.com^$domain=138txt.com|18xs.org|1biqu.com|1kanshu.cc|230book.com|23hh.com|23txt.com|23wxx.com|258zw.com|266ks.com|27xsw.com|2baob.com|30sy.com|33yq.com|365book.net|37zw.net|39shubao.com|3yt.com|52biquge.com|58xs.com|5ccc.tw|78zw.com|81zw.me|99mk.com|99shumeng.net|aikantxt.la|aixswx.com|aomolit.com|aoyuge.com|balingtxt.com|baoshuu.com|biduo.cc|biqiuge8.com|biqubao.com|biqudu.tv|biquga.com|biquge.com.cn|biquge.info|biquge.lu|biquge.tv|biquge11.com|biquge6.com|biquge98.com|biqugecd.com|biqugego.com|biqugemm.com|biqugesc.com|biquku.la|biqusan.com|biquyi.com|bixia.org|biyuwu.cc|bodekang.net|boluoxs.com|bookbao.org|booktxt.net|botaodz.com|bqkan.com|bshuku.com|bxwx.org|bxwx.tw|bxwx8.la|bxwxorg.com|clewx.com|damengzhu1.com|dashenxiaoshuo.com|day66.com|ddxs.cc|ddxsku.com|dushuge.net|farpop.com|gdbzkz.com|guaili.org|hatxt.com|hbfie.org|hehuamei.com|heikexs.com|heiyanwang.com|hongyeshuzhai.com|hybiquge.com|imiaobige.com|ishisetianxia.com|ixiatxt.com|ixs.la|ixuanquge.com|jianlaixiaoshuo.com|jinshulo.com|jx.la|kkbiqu2.com|liewen.la|lindiankanshu.cc|liudatxt.com|lwtxt.net|lwxstxt.com|mhtwx.la|mubige.com|paoshu8.com|pfwx.com|piaotianxs.com|ppskw.com|qbxs8.net|qianrenge.cc|qiqint.la|qq717.com|quledu.net|qushuba.com|rmxs8.com|shu008.com|shuhaiwu.com|shumil.co|shuquge.com|siluke.tv|skyzww.com|soxscc.com|tangsanshu.com|tpszw.com|ttzw.tv|txshuku.net|tycqxs.com|u33.me|uidzhx.com|v63xs.com|vipxs.la|wanwenhui.com|wenxuem.com|wrlwx.com|x23us.me|x81zw.com|xbiquge.la|xbiqugecc.com|xbiqugew.net|xbiquke.com|xbqge.net|xcmxsw.com|xdingdiann.com|xieyixs.com|xinshuhaige.com|xinxs.la|xs222.co|xs5200.com|xs98.com|xsbiqu.com|xsbiqugew.com|xsqishu.com|xsw55.com|xszww.com|xuanshu.com|xuehongxs.com|xyusk.com|yawenb.com|yikanxiaoshuo.com|yq-888.com|yruan.com|yssm.info|yunxs.com|zbzw.la|zhnxcw.com|zhuaji.org|zwdu.com|zzs5.com
 @@||zmtt.net^$script,domain=luoqiuzw.com
 !#Novels
-||shidaikejivip.cn^
-||9uh94c.cn^
-||ygnoqu.cn^
+||dacedsfa.cn^
 bxwx555.org###addiv3
 bxwx555.org###bdstatic
 55shuba.com###botDiv
@@ -16659,6 +16666,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||9d7in.cn^
 ||9pb0h.cn^
 ||9ucm.com^
+||9uh94c.cn^
 ||9y88.com^
 ||a3pz36.cn^
 ||a7t89g4a.cn^
@@ -18105,6 +18113,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||shenyunkeji.com^
 ||shffcy.cn^
 ||shforu.com^
+||shidaikejivip.cn^
 ||shidailw.com^
 ||shiguangyx.cn^
 ||shjrwh.cn^
@@ -18181,6 +18190,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||sxmdxy.com^
 ||sxmutan.com^
 ||sxtyhl.top^
+||sxxfmc.com^
 ||sxying.top^
 ||sxzcrq.com^
 ||sxzzhj.com^
@@ -18572,6 +18582,7 @@ piaotian5.com##script + div[style="padding:15px;"]
 ||yg10x.cn^
 ||ygblogtag.cn^
 ||ygiqfnn.cn^
+||ygnoqu.cn^
 ||ygqczh.com^
 ||yicang8.com^
 ||yicuntian.cn^
@@ -28160,6 +28171,7 @@ _mongo_stats/
 ||hotjar.io^$third-party
 ||hotlog.ru^$third-party
 ||hs-analytics.net^$third-party
+||hs-scripts.com^$third-party
 ||hsadspixel.net^$third-party
 ||hscta.net^$third-party
 ||htlbid.com^$third-party
@@ -29769,18 +29781,7 @@ _mongo_stats/
 ||zroitracker.com^$third-party
 ||ztsrv.com^$third-party
 ||zuzab.com^$third-party
-||5centscdn.com^$third-party,xmlhttprequest
-||azioncdn.net^$third-party,xmlhttprequest
-||azureedge.net^$third-party,xmlhttprequest
-||belugacdn.link^$third-party,xmlhttprequest
-||blazingcdn.net^$third-party,xmlhttprequest
-||cdn-tech.io^$third-party,xmlhttprequest
-||cf-china.info^$third-party,xmlhttprequest
-||doracdn.com^$third-party,xmlhttprequest
-||gocache.net^$third-party,xmlhttprequest
-||mncdn.com^$third-party,xmlhttprequest
-||psychz.net^$third-party,xmlhttprequest
-||worldssl.net^$third-party,xmlhttprequest
+$third-party,xmlhttprequest,domain=opensubtitles.org
 ||artfin.club^
 ||bemarts.club^
 ||bogglecool.club^
@@ -32999,7 +33000,7 @@ _mongo_stats/
 ||quora.com/_/ad/
 ||quora.com/qevents.js
 ||qzzr.com/_uid.gif
-||r.mail.ru^
+||r.mail.ru^$script
 ||r.msn.com^
 ||r.ypcdn.com^*/rtd?ptid$image
 ||rackcdn.com/easie.js
@@ -34393,6 +34394,7 @@ _mongo_stats/
 ||clck.yandex.ru^$~other
 ||climatecontrol.ru/counters/
 ||cnstats.cdev.eu^
+||cnt.krasland.ru^
 ||cnt.logoslovo.ru^
 ||cnt.nov.ru^
 ||cnt.rambler.ru^
@@ -35212,6 +35214,7 @@ _mongo_stats/
 ||facebook.com/a/bz?
 ||facebook.com/ajax/*/log.php
 ||facebook.com/ajax/*logging.
+||facebook.com/ajax/mtouch_perf_page_load_timings/
 ||facebook.com/ct.php
 ||facebook.com/search/web/instrumentation.php?
 ||facebook.com/xti.php?
@@ -39192,6 +39195,7 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 @@||sahibinden.com/assets/analytics*.js$script
 @@||sbphototours.com/includes/AWStats.js$~third-party
 @@||scorecardresearch.com/beacon.js$domain=agame.com|allmusic.com|amctv.com|apl.tv|babycenter.com|bonappetit.com|calgaryherald.com|canada.com|cbc.ca|dailymail.co.uk|dailymotion.com|deviantart.com|discovery.com|doctoroz.com|edmontonjournal.com|fastcompany.com|financialpost.com|firstwefeast.com|hitfix.com|investigationdiscovery.com|landandfarm.com|last.fm|leaderpost.com|m.tmz.com|montrealgazette.com|nationalpost.com|newsday.com|ottawacitizen.com|outsideonline.com|radaronline.com|salon.com|sci2.tv|syfy.com|theprovince.com|thestar.com|thestarphoenix.com|thinkatheist.com|tlc.com|tmz.com|v3.co.uk|vancouversun.com|windsorstar.com
+@@||scorecardresearch.com/c2/plugins/streamingtag_plugin_jwplayer.js
 @@||scorecardresearch.com/c2/plugins/streamsense_plugin_html5.js
 @@||scorecardresearch.com/c2/plugins/streamsense_plugin_theplatform.js
 @@||screen9.com/players/*/amber-google-analytics.esm.js$script,domain=api.screen9.com
@@ -39395,7 +39399,7 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 @@||caf.fr^*/smarttag.js$script,~third-party
 @@||connect.facebook.net^*/fbevents.js$domain=elinoi.com
 @@||forecast.lemonde.fr/p/event/pageview?$image,~third-party
-@@||getviously.com/js$script,domain=futura-sciences.com|wamiz.com
+@@||getviously.com/js$script,domain=futura-sciences.com|gossip-room.fr|wamiz.com
 @@||google-analytics.com/analytics.js$domain=infoconso-multimedia.fr|viandesuisse.ch
 @@||googletagmanager.com/gtm.js$script,domain=linternaute.com|sciencesetavenir.fr|wamiz.com
 @@||maxmind.com/geoip/$xmlhttprequest,domain=dcshoes.fr
