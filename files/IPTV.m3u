@@ -522,16 +522,10 @@ http://61.238.6.49:8001/bysid/2
 http://sl.tmtv.me/20201226/ubtl.php?cid=392
 
 #EXTINF:-1 tvg-id="FC2.HK" tvg-logo="https://static.epg.best/hk/TVBJ2.hk.png" group-title="香港", J2
-http://www.aclive.live/dvr/2ee368c0/xmj3kp59/index.m3u8
-
-#EXTINF:-1 tvg-id="FC2.HK" tvg-logo="https://static.epg.best/hk/TVBJ2.hk.png" group-title="香港", J2
 http://61.238.6.49:8001/bysid/82
 
 #EXTINF:-1 tvg-id="XHP.HK" tvg-logo="https://plus.tvbanywhere.com/img/logo_tvb_xing_he_channel.png" group-title="香港", TVB 星河頻道
 http://sl.tmtv.me/20201226/ubtl.php?cid=1079
-
-#EXTINF:-1 tvg-id="XHP.HK" tvg-logo="https://plus.tvbanywhere.com/img/logo_tvb_xing_he_channel.png" group-title="香港", TVB 星河頻道
-http://104.250.154.42:8080/ZZ_xinghe/ZZ_xinghe.m3u8
 
 #EXTINF:-1 tvg-id="WXX.HK" tvg-logo="http://www.tvyan.com/uploads/dianshi/tvb-news.jpg" group-title="香港", 無綫新聞台
 http://livetv.dnsfor.me:80/channel.10.m3u8
@@ -555,33 +549,39 @@ http://sl.tmtv.me/20201226/ubtl.php?cid=1083
 http://sl.tmtv.me/20201226/ubtl.php?cid=1084
 
 #EXTINF:-1 tvg-id="V96.HK" tvg-logo="http://www.tvyan.com/uploads/dianshi/viutv6.jpg" group-title="香港", ViuTVsix
+http://sl.tmtv.me/20201226/ubtl.php?cid=176
+
+#EXTINF:-1 tvg-id="V96.HK" tvg-logo="http://www.tvyan.com/uploads/dianshi/viutv6.jpg" group-title="香港", ViuTVsix
 http://61.238.6.49:8000/bysid/96
+
+#EXTINF:-1 tvg-id="V99.HK" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/viutv.png" group-title="香港", ViuTV
+http://sl.tmtv.me/20201226/ubtl.php?cid=72
 
 #EXTINF:-1 tvg-id="V99.HK" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/viutv.png" group-title="香港", ViuTV
 http://61.238.6.49:8000/bysid/99
 
 #EXTINF:-1 tvg-id="YCJ.HK" tvg-logo="http://utvhk.com/maint/images/channel/be75ddf0144b7fccdd03bf8016a61f64.png" group-title="香港", 有線財經資訊台 HD
-http://live-hwcdn.utvlive.top/live/add598ff3f90428da3fbebb644ba135b/2bbaa83758ba412bbdd8d08626c56eb4-3.m3u8
+http://livetv.dnsfor.me:80/channel.6.m3u8
 
 #EXTINF:-1 tvg-id="YXW.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/iCABLENewsChannelHD.png" group-title="香港", 有線新聞台 HD
-http://live-hwcdn.utvlive.top/live/97609933ef744f008e19a6e0d5ef9f2b/edd34677cc9548539d36b10c1c594b94-3.m3u8
+http://livetv.dnsfor.me:80/channel.5.m3u8
 
 #EXTINF:-1 tvg-id="YZB.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/iCABLELiveNewsChannel.png" group-title="香港", 有線直播新聞台
 http://teslagram.com/live/channel_110.m3u8
 
 #EXTINF:-1 tvg-id="YYL.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/iCABLEFamilyEntertainmentChannelHD.png" group-title="香港", 有線綜合娛樂台 HD
-http://live-hwcdn.utvlive.top/live/d4e03afe056a4f2da070d5f789f3ac9e/a5ed7598a90246199df373924de367d4-3.m3u8
+http://livetv.dnsfor.me:80/channel.7.m3u8
 
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://cdn.jsdelivr.net/gh/supzhang/epg/tb1/gt/hongkong603.png" group-title="香港", 有線高清603台
+#EXTINF:-1 tvg-id="603 高清603台" tvg-logo="https://cdn.jsdelivr.net/gh/supzhang/epg/tb1/gt/hongkong603.png" group-title="香港", 有線高清603台
 http://sl.tmtv.me/20201226/ubtl.php?cid=398
 
 #EXTINF:-1 tvg-id="618.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/iCABLEChannel18.png" group-title="香港", 有線18台
 http://sl.tmtv.me/20201226/ubtl.php?cid=44
 
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://upload.wikimedia.org/wikipedia/zh/0/05/I-CABLE_Sports_Channel.png" group-title="香港", 有線Sports Plus 1
+#EXTINF:-1 tvg-id="602 Sports Plus 1" tvg-logo="https://upload.wikimedia.org/wikipedia/zh/0/05/I-CABLE_Sports_Channel.png" group-title="香港", 有線Sports Plus 1
 http://sl.tmtv.me/20201226/ubtl.php?cid=401
 
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://upload.wikimedia.org/wikipedia/zh/0/05/I-CABLE_Sports_Channel.png" group-title="香港", 有線Sports Plus 2
+#EXTINF:-1 tvg-id="604 Sports Plus 2" tvg-logo="https://upload.wikimedia.org/wikipedia/zh/0/05/I-CABLE_Sports_Channel.png" group-title="香港", 有線Sports Plus 2
 http://sl.tmtv.me/20201226/ubtl.php?cid=356
 
 #EXTINF:-1 tvg-id="618.HK" tvg-logo="http://www.nettvplus.live/uploads/20/1-200319145514C3.jpg" group-title="香港", 有線電影台 HD
@@ -599,20 +599,20 @@ http://220.158.149.28:8180/TV00000000000000000068@HHZT;LIVE
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="http://tv.sason.xyz/logo/fhdy.png" group-title="香港", 鳳凰電影
 rtmp://58.200.131.2:1935/livetv/fhdy
 
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://asia.nowbaogumovies.com/baogucms/cmsfrontend/img/icons/baogu_logo_head.png" group-title="香港", now爆谷台
+http://sl.tmtv.me/20201226/ubtl.php?cid=152
+
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/nowdirect.png" group-title="香港", now直播台
 http://livetv.dnsfor.me:80/channel.3.m3u8
 
 #EXTINF:-1 tvg-id="NOW.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/nownews.png" group-title="香港", now新聞台
 http://livetv.dnsfor.me:80/channel.4.m3u8
 
-#EXTINF:-1 tvg-id="NOP.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/nowsportsprime.png" group-title="香港", now SPORTS PRIME
-http://livetv.dnsfor.me:80/channel.12.m3u8
-
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Now_Business_News_logo.svg/1200px-Now_Business_News_logo.svg.png" group-title="香港", now財經台
 http://hktv.ga/live/nowfin.m3u8
 
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://asia.nowbaogumovies.com/baogucms/cmsfrontend/img/icons/baogu_logo_head.png" group-title="香港", now爆谷台
-http://sl.tmtv.me/20201226/ubtl.php?cid=152
+#EXTINF:-1 tvg-id="NOP.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/nowsportsprime.png" group-title="香港", now SPORTS PRIME
+http://livetv.dnsfor.me:80/channel.12.m3u8
 
 #EXTINF:-1 tvg-id="668.HK" tvg-logo="http://pcm.my-magazine.me/main/public/resources/original/aa75cb81c244e01b15105ae14707d759b0561a65.jpg" group-title="香港", 賽馬直擊
 http://liveima.utvlive.top/livehls/MOB-HR/02.m3u8
@@ -710,6 +710,21 @@ rtmp://59.124.75.156/sat/tv051
 #EXTINF:-1 tvg-id="6034" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/yuanzhumin.png" group-title="台灣", 原住民族電視台
 https://bcovlive-a.akamaihd.net/82be3b97f67745058447484cc8a2d015/ap-southeast-1/5817780548001/profile_0/chunklist.m3u8
 
+#EXTINF:-1 tvg-id="6074" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/TVBS.png" group-title="台灣",TVBS HD
+http://sl.tmtv.me/20201226/ubtl.php?cid=88
+
+#EXTINF:-1 tvg-id="6050" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCVariety.png" group-title="台灣", 東森綜合 HD
+http://sl.tmtv.me/20201226/ubtl.php?cid=372
+
+#EXTINF:-1 tvg-id="7196" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/huanyuzonghe.png" group-title="台灣", 寰宇HD綜合
+http://sl.tmtv.me/20201226/ubtl.php?cid=190
+
+#EXTINF:-1 tvg-id="6239" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/SETZonghe.png" group-title="台灣", 三立綜合台
+http://sl.tmtv.me/20201226/ubtl.php?cid=315
+
+#EXTINF:-1 tvg-id="608" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/NEXTTVZonghe.png" group-title="台灣", 壹綜合 HD
+http://sl.tmtv.me/20201226/ubtl.php?cid=305
+
 #EXTINF:-1 tvg-id="7176" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/中视新闻.png" group-title="台灣", 中視新聞 HD
 http://seb.sason.top/sc/zsxw_fhd.m3u8
 
@@ -734,17 +749,11 @@ http://sl.tmtv.me/20201226/ubtl.php?cid=87
 #EXTINF:-1 tvg-id="6070" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/CtiNews.png" group-title="台灣", 中天新聞 HD
 http://seb.sason.top/sc/ztxw_fhd.m3u8
 
-#EXTINF:-1 tvg-id="6075" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCFinancialNews.png" group-title="台灣", 東森財經新聞 HD
-http://seb.sason.top/sc/dscjxw_fhd.m3u8
-
 #EXTINF:-1 tvg-id="6069" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCNews.png" group-title="台灣", 東森新聞 HD
 http://seb.sason.top/sc/dsxw_fhd.m3u8
 
 #EXTINF:-1 tvg-id="6069" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCNews.png" group-title="台灣", 東森新聞 HD
 http://104.250.154.42:8080/ZZ_dongsenxinwen/ZZ_dongsenxinwen.m3u8
-
-#EXTINF:-1 tvg-id="6069" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCNews.png" group-title="台灣", 東森美洲 HD
-http://seb.sason.top/sc/dsmz_fhd.m3u8
 
 #EXTINF:-1 tvg-id="6073" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/TVBS新闻.png" group-title="台灣", TVBS新聞台 HD
 http://seb.sason.top/sc/tvbsxw_fhd.m3u8
@@ -776,6 +785,21 @@ http://sl.tmtv.me/20201226/ubtl.php?cid=314
 #EXTINF:-1 tvg-id="6068" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/年代ERANewsHD.png" group-title="台灣", 年代新聞 HD
 http://sl.tmtv.me/20201226/ubtl.php?cid=236
 
+#EXTINF:-1 tvg-id="6144" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/台视财经.png" group-title="台灣", 台視財經 HD
+http://sl.tmtv.me/20201226/ubtl.php?cid=300
+
+#EXTINF:-1 tvg-id="7204" tvg-logo="http://www.nettvplus.live/uploads/allimg/19/1-1Z4211SH50-L.jpg" group-title="台灣", 寰宇財經台
+http://sl.tmtv.me/20201226/ubtl.php?cid=320
+
+#EXTINF:-1 tvg-id="6075" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCFinancialNews.png" group-title="台灣", 東森財經新聞 HD
+http://seb.sason.top/sc/dscjxw_fhd.m3u8
+
+#EXTINF:-1 tvg-id="6069" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCNews.png" group-title="台灣", 東森美洲 HD
+http://seb.sason.top/sc/dsmz_fhd.m3u8
+
+#EXTINF:-1 tvg-id="6107" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/UniqueUSTVHDUSTVHD.png" group-title="台灣", 非凡商業 HD
+http://sl.tmtv.me/20201226/ubtl.php?cid=187
+
 #EXTINF:-1 tvg-id="7133" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/ftv-1.png" group-title="台灣", 民視第一台 HD
 http://seb.sason.top/ptv/ftv.php?id=dy
 
@@ -801,7 +825,10 @@ http://104.250.154.42:8080/ZZ_dongsendianying/ZZ_dongsendianying.m3u8
 http://104.250.154.42:8080/ZZ_dongsenyangpian/ZZ_dongsenyangpian.m3u8
 
 #EXTINF:-1 tvg-id="6048" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/SETCity.png" group-title="台灣", 三立都會台 HD
-http://153.99.180.70:5021/live/226/playlist.m3u8
+http://sl.tmtv.me/20201226/ubtl.php?cid=38
+
+#EXTINF:-1 tvg-id="6047" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/SETTaiwan.png" group-title="台灣", 三立台灣台 HD
+http://sl.tmtv.me/20201226/ubtl.php?cid=35
 
 #EXTINF:-1 tvg-id="WXY.TW" tvg-logo="https://www.fng.tw/scm/images/StarChinesMovies_logo.png" group-title="台灣", 衛視電影台
 http://103.47.132.164/PLTV/88888888/224/3221227147/index.m3u8
@@ -1394,60 +1421,3 @@ https://gcalic.v.myalicdn.com/gc/sjzc01_1/index.m3u8?contentid=2820180516001
 
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="https://wx2.sinaimg.cn/thumb180/7f791501ly1fwgrnmr9haj20kr0krt9n.jpg" group-title="直播中国", 广东-丹霞山丹梯铁锁
 https://gcalic.v.myalicdn.com/gc/dxsdtts_1/index.m3u8?contentid=2820180516001
-
-#EXTINF:-1 tvg-id="565" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/PublicTV2.png" group-title="不可用", 公視台語台
-http://p06.iptv2asia.com:18888/http/017
-
-#EXTINF:-1 tvg-id="6022" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/PublicTV3HD.png" group-title="不可用", 公视3
-http://p06.iptv2asia.com:18888/http/018
-
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://www.4gtv.tv/promo/2019new-4g/0620/images/logo_4gtv_4gtv-4gtv035_mobile.png" group-title="不可用", 鳳梨直擊台
-http://520574.xyz/dl/gt.php?id=4gtvlive1
-
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://www.4gtv.tv/promo/2019new-4g/0620/images/logo_4gtv_4gtv-4gtv038_mobile.png" group-title="不可用", 香蕉直擊台
-http://520574.xyz/dl/gt.php?id=4gtvlive2
-
-#EXTINF:-1 tvg-id="6074" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/TVBS.png" group-title="不可用", TVBS HD
-http://hdtv.ub1818.com/ublive/index_5.m3u8
-
-#EXTINF:-1 tvg-id="6050" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCVariety.png" group-title="不可用", 東森綜合 HD
-http://sl.tmtv.me/20201226/ubtl.php?cid=372
-
-#EXTINF:-1 tvg-id="608" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/NEXTTVZonghe.png" group-title="不可用", 壹電視綜合台
-http://sl.tmtv.me/20201226/ubtl.php?cid=305
-
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="noimage.png" group-title="不可用", 寰宇HD綜合
-http://sl.tmtv.me/20201226/ubtl.php?cid=190
-
-#EXTINF:-1 tvg-id="6076" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/UniqueNews.png" group-title="不可用", 非凡新聞 HD
-http://hdtv.ub1818.com/ublive/index_8.m3u8
-
-#EXTINF:-1 tvg-id="6068" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/年代ERANewsHD.png" group-title="不可用", 年代新聞 HD
-http://104.250.154.42:8080/ZZ_niandaixinwen/ZZ_niandianxinwen.m3u8
-
-#EXTINF:-1 tvg-id="7136" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/中视菁采.png" group-title="不可用", 中視菁釆
-http://p06.iptv2asia.com:18888/http/008
-
-#EXTINF:-1 tvg-id="7172" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/中视经典.png" group-title="不可用", 中視經典
-http://p06.iptv2asia.com:18888/http/007
-
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/CTSIQ.png" group-title="不可用", 華視教育體育文化 HD
-http://p06.iptv2asia.com:18888/http/011
-
-#EXTINF:-1 tvg-id="6145" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/台视综合.png" group-title="不可用", 台視綜合
-http://p06.iptv2asia.com:18888/http/002
-
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="noimage.png" group-title="不可用", 中天亞洲 HD
-http://sl.tmtv.me/20201226/ubtl.php?cid=322
-
-#EXTINF:-1 tvg-id="6054" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/CtiVariety.png" group-title="不可用", 中天綜合 HD
-http://sl.tmtv.me/20201226/ubtl.php?cid=325
-
-#EXTINF:-1 tvg-id="6057" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/CtiEntertainment.png" group-title="不可用",中天娛樂 HD
-http://sl.tmtv.me/20201226/ubtl.php?cid=324
-
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="noimage.png" group-title="不可用", 非凡商業
-http://sl.tmtv.me/20201226/ubtl.php?cid=187
-
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="noimage.png" group-title="不可用", 中華財經
-http://sl.tmtv.me/20201226/ubtl.php?cid=317
