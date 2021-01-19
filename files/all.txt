@@ -28,16 +28,14 @@ CCTV-14 少儿,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.c
 CCTV-15 音乐,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-15/index.m3u8?IAS
 CCTV-17 农业农村,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-17/index.m3u8?IAS
 CCTV-4K 超高清,http://39.134.176.148/PLTV/88888888/224/3221226758/index.m3u8
-央视文化精品,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/ysjp/ysjp711/1000/index.m3u8?ProgramID=&encrypt=1
-世界地理,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/sjdl/sjdl711/1000/index.m3u8?ProgramID=&encrypt=1
-女性时尚,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/nxss/nxss711/1000/index.m3u8?ProgramID=&encrypt=1
-兵器科技,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/gfjs/gfjs711/1000/index.m3u8?ProgramID=&encrypt=1
-风云音乐,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/fyyy/fyyy711/1000/index.m3u8?ProgramID=&encrypt=1
-第一剧场,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/dyjc/dyjc711/1000/index.m3u8?ProgramID=&encrypt=1
-风云剧场,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/fyjc/fyjc711/1000/index.m3u8?ProgramID=&encrypt=1
-怀旧剧场,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/hjjc/hjjc711/1000/index.m3u8?ProgramID=&encrypt=1
-中学生,http://39.135.139.214:6610/PLTV/88888888/224/3221225515/2/index.m3u8
-老故事,http://39.135.139.214:6610/PLTV/88888888/224/3221225517/2/index.m3u8
+央视文化精品,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225675/1.m3u8?fmt=ts2hls
+世界地理,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225733/1.m3u8?fmt=ts2hls
+女性时尚,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221226104/1.m3u8?fmt=ts2hls
+兵器科技,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225676/1.m3u8?fmt=ts2hls
+风云音乐,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221226083/1.m3u8?fmt=ts2hls
+第一剧场,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221226124/1.m3u8?fmt=ts2hls
+风云剧场,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221226107/1.m3u8?fmt=ts2hls
+怀旧剧场,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225765/1.m3u8?fmt=ts2hls
 发现之旅,http://125.210.152.18:9090/live/FXZL.m3u8
 CGTN News,http://39.134.115.163:8080/PLTV/88888910/224/3221225896/index.m3u8
 新华社中文,http://source07.v.news.cn/live/CNC_CN/playlist.m3u8
@@ -170,16 +168,14 @@ CCTV-14 少儿,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.c
 CCTV-15 音乐,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-15/index.m3u8?IAS
 CCTV-17 农业农村,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-17/index.m3u8?IAS
 CCTV-4K 超高清,http://39.134.176.148/PLTV/88888888/224/3221226758/index.m3u8
-央视文化精品,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/ysjp/ysjp711/1000/index.m3u8?ProgramID=&encrypt=1
-世界地理,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/sjdl/sjdl711/1000/index.m3u8?ProgramID=&encrypt=1
-女性时尚,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/nxss/nxss711/1000/index.m3u8?ProgramID=&encrypt=1
-兵器科技,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/gfjs/gfjs711/1000/index.m3u8?ProgramID=&encrypt=1
-风云音乐,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/fyyy/fyyy711/1000/index.m3u8?ProgramID=&encrypt=1
-第一剧场,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/dyjc/dyjc711/1000/index.m3u8?ProgramID=&encrypt=1
-风云剧场,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/fyjc/fyjc711/1000/index.m3u8?ProgramID=&encrypt=1
-怀旧剧场,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_v/2018/hjjc/hjjc711/1000/index.m3u8?ProgramID=&encrypt=1
-中学生,http://39.135.139.214:6610/PLTV/88888888/224/3221225515/2/index.m3u8
-老故事,http://39.135.139.214:6610/PLTV/88888888/224/3221225517/2/index.m3u8
+央视文化精品,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225675/1.m3u8?fmt=ts2hls
+世界地理,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225733/1.m3u8?fmt=ts2hls
+女性时尚,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221226104/1.m3u8?fmt=ts2hls
+兵器科技,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225676/1.m3u8?fmt=ts2hls
+风云音乐,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221226083/1.m3u8?fmt=ts2hls
+第一剧场,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221226124/1.m3u8?fmt=ts2hls
+风云剧场,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221226107/1.m3u8?fmt=ts2hls
+怀旧剧场,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225765/1.m3u8?fmt=ts2hls
 发现之旅,http://125.210.152.18:9090/live/FXZL.m3u8
 CGTN News,http://39.134.115.163:8080/PLTV/88888910/224/3221225896/index.m3u8
 新华社中文,http://source07.v.news.cn/live/CNC_CN/playlist.m3u8
