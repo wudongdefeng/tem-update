@@ -1,5 +1,5 @@
 其他地区,#genre#
-凤凰中文台,http://125.89.166.215/live-hwcdn.utvlive.top/live/551a1a8c3aca46708fd285217be3c96e/4538203d786e4803bac20e36392cffd9-1.m3u8
+凤凰中文台,http://bjyd1.jilu8.cn/PLTV/88888888/224/3221225948/3.m3u8
 凤凰资讯台,http://bjyd1.jilu8.cn/PLTV/88888888/224/3221225949/3.m3u8
 凤凰香港台,http://125.89.166.215:80/live-hwcdn.utvlive.top/live/a4e8cf74196e40959485a9ef4c532d02/6286b2bbb78341cd9fa92c7b37ccc03c-1.m3u8
 凤凰电影台,rtmp://58.200.131.2/livetv/fhdy
@@ -27,7 +27,7 @@ CCTV-13 新闻,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.c
 CCTV-14 少儿,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-14/index.m3u8?IAS
 CCTV-15 音乐,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-15/index.m3u8?IAS
 CCTV-17 农业农村,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-17/index.m3u8?IAS
-CCTV-4K 超高清,http://39.134.176.148/PLTV/88888888/224/3221226758/index.m3u8
+CCTV-4K 超高清,http://112.17.40.140/PLTV/88888888/224/3221226758/index.m3u8
 央视文化精品,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225675/1.m3u8?fmt=ts2hls
 世界地理,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225733/1.m3u8?fmt=ts2hls
 女性时尚,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221226104/1.m3u8?fmt=ts2hls
@@ -137,7 +137,7 @@ I爱动漫,http://117.148.187.52/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/2
 优漫卡通,http://223.113.54.41/live.hcs.cmvideo.cn:8088/wd_r2/jstv/ymkt/600/index.m3u8?ProgramID=&encrypt=1
 
 港台新,#genre#
-凤凰中文台,http://125.89.166.215/live-hwcdn.utvlive.top/live/551a1a8c3aca46708fd285217be3c96e/4538203d786e4803bac20e36392cffd9-1.m3u8
+凤凰中文台,http://bjyd1.jilu8.cn/PLTV/88888888/224/3221225948/3.m3u8
 凤凰资讯台,http://bjyd1.jilu8.cn/PLTV/88888888/224/3221225949/3.m3u8
 凤凰香港台,http://125.89.166.215:80/live-hwcdn.utvlive.top/live/a4e8cf74196e40959485a9ef4c532d02/6286b2bbb78341cd9fa92c7b37ccc03c-1.m3u8
 凤凰电影台,rtmp://58.200.131.2/livetv/fhdy
@@ -167,7 +167,7 @@ CCTV-13 新闻,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.c
 CCTV-14 少儿,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-14/index.m3u8?IAS
 CCTV-15 音乐,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-15/index.m3u8?IAS
 CCTV-17 农业农村,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-17/index.m3u8?IAS
-CCTV-4K 超高清,http://39.134.176.148/PLTV/88888888/224/3221226758/index.m3u8
+CCTV-4K 超高清,http://112.17.40.140/PLTV/88888888/224/3221226758/index.m3u8
 央视文化精品,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225675/1.m3u8?fmt=ts2hls
 世界地理,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225733/1.m3u8?fmt=ts2hls
 女性时尚,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221226104/1.m3u8?fmt=ts2hls
