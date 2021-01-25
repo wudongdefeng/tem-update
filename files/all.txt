@@ -1,6 +1,6 @@
 其他地区,#genre#
-凤凰中文台,http://bjyd1.jilu8.cn/PLTV/88888888/224/3221225948/3.m3u8
-凤凰资讯台,http://bjyd1.jilu8.cn/PLTV/88888888/224/3221225949/3.m3u8
+凤凰中文台,http://221.179.217.69/PLTV/88888888/224/3221225942/1.m3u8
+凤凰资讯台,http://112.17.40.45/PLTV/88888888/224/3221226491/index.m3u8
 凤凰香港台,http://125.89.166.215:80/live-hwcdn.utvlive.top/live/a4e8cf74196e40959485a9ef4c532d02/6286b2bbb78341cd9fa92c7b37ccc03c-1.m3u8
 凤凰电影台,rtmp://58.200.131.2/livetv/fhdy
 香港卫视,http://zhibo.hkstv.tv/livestream/mutfysrq.flv
@@ -27,7 +27,7 @@ CCTV-13 新闻,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.c
 CCTV-14 少儿,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-14/index.m3u8?IAS
 CCTV-15 音乐,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-15/index.m3u8?IAS
 CCTV-17 农业农村,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-17/index.m3u8?IAS
-CCTV-4K 超高清,http://112.17.40.140/PLTV/88888888/224/3221226758/index.m3u8
+CCTV-4K 超高清,http://live.aikan.miguvideo.com/PLTV/88888888/224/3221229683/index.m3u8
 央视文化精品,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225675/1.m3u8?fmt=ts2hls
 世界地理,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225733/1.m3u8?fmt=ts2hls
 女性时尚,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221226104/1.m3u8?fmt=ts2hls
@@ -99,7 +99,7 @@ Y+,http://117.148.187.46/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/32212
 纯享4K,http://39.134.155.159/PLTV/88888888/224/3221225670/index.m3u8
 爱上4K,http://39.134.24.24/PLTV/88888888/224/3221226005/index.m3u8
 百视通4K,http://39.134.176.157/PLTV/88888888/224/3221226718/index.m3u8
-欢笑剧场4K,http://39.134.39.38/PLTV/88888888/224/3221226203/index.m3u8
+欢笑剧场4K,http://live.aikan.miguvideo.com/PLTV/88888888/224/3221230739/index.m3u8
 4K超清-北京IPTV,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221226550/1.m3u8
 广东综艺4K,http://player.ioioz.com/1786/gd/gdtvm3u8.php?id=gdzy
 全纪实,http://183.207.255.190/live/program/live/qjshd/4000000/mnf.m3u8
@@ -137,8 +137,8 @@ I爱动漫,http://117.148.187.52/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/2
 优漫卡通,http://223.113.54.41/live.hcs.cmvideo.cn:8088/wd_r2/jstv/ymkt/600/index.m3u8?ProgramID=&encrypt=1
 
 港台新,#genre#
-凤凰中文台,http://bjyd1.jilu8.cn/PLTV/88888888/224/3221225948/3.m3u8
-凤凰资讯台,http://bjyd1.jilu8.cn/PLTV/88888888/224/3221225949/3.m3u8
+凤凰中文台,http://221.179.217.69/PLTV/88888888/224/3221225942/1.m3u8
+凤凰资讯台,http://112.17.40.45/PLTV/88888888/224/3221226491/index.m3u8
 凤凰香港台,http://125.89.166.215:80/live-hwcdn.utvlive.top/live/a4e8cf74196e40959485a9ef4c532d02/6286b2bbb78341cd9fa92c7b37ccc03c-1.m3u8
 凤凰电影台,rtmp://58.200.131.2/livetv/fhdy
 香港卫视,http://zhibo.hkstv.tv/livestream/mutfysrq.flv
@@ -167,7 +167,7 @@ CCTV-13 新闻,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.c
 CCTV-14 少儿,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-14/index.m3u8?IAS
 CCTV-15 音乐,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-15/index.m3u8?IAS
 CCTV-17 农业农村,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-17/index.m3u8?IAS
-CCTV-4K 超高清,http://112.17.40.140/PLTV/88888888/224/3221226758/index.m3u8
+CCTV-4K 超高清,http://live.aikan.miguvideo.com/PLTV/88888888/224/3221229683/index.m3u8
 央视文化精品,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225675/1.m3u8?fmt=ts2hls
 世界地理,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221225733/1.m3u8?fmt=ts2hls
 女性时尚,http://117.187.54.44/gz.ucdn.10086.cn/PLTV/88888888/224/3221226104/1.m3u8?fmt=ts2hls
@@ -245,7 +245,7 @@ Y+,http://117.148.187.46/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/32212
 纯享4K,http://39.134.155.159/PLTV/88888888/224/3221225670/index.m3u8
 爱上4K,http://39.134.24.24/PLTV/88888888/224/3221226005/index.m3u8
 百视通4K,http://39.134.176.157/PLTV/88888888/224/3221226718/index.m3u8
-欢笑剧场4K,http://39.134.39.38/PLTV/88888888/224/3221226203/index.m3u8
+欢笑剧场4K,http://live.aikan.miguvideo.com/PLTV/88888888/224/3221230739/index.m3u8
 4K超清-北京IPTV,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221226550/1.m3u8
 广东综艺4K,http://player.ioioz.com/1786/gd/gdtvm3u8.php?id=gdzy
 
