@@ -12,8 +12,8 @@ CCTV-1 综合,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cN
 CCTV-2 财经,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-2/index.m3u8?IAS
 CCTV-3 综艺,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-3/index.m3u8?IAS
 CCTV-4 中文国际,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-4/index.m3u8?IAS
-CCTV-4 中文国际美洲,http://223.113.54.41/live.hcs.cmvideo.cn:8088/migu/kailu/20200324/cctv4meihd/57/index.m3u8?ProgramID=&encrypt=1
-CCTV-4 中文国际欧洲,http://223.113.54.41/live.hcs.cmvideo.cn:8088/migu/kailu/20200324/cctv4ouhd/57/index.m3u8?ProgramID=&encrypt=1
+CCTV-4 中文国际美洲,http://cctvalih5ca.v.myalicdn.com/live/cctvamerica_2/index.m3u8
+CCTV-4 中文国际欧洲,http://cctvalih5ca.v.myalicdn.com/live/cctveurope_2/index.m3u8
 CCTV-5 体育,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-5/index.m3u8?IAS
 CCTV-5+ 体育赛事,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/hdcctv05plus/index.m3u8?IAS
 CCTV-6 电影,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-6/index.m3u8?IAS
@@ -27,8 +27,7 @@ CCTV-13 新闻,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.c
 CCTV-14 少儿,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-14/index.m3u8?IAS
 CCTV-15 音乐,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-15/index.m3u8?IAS
 CCTV-17 农业农村,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-17/index.m3u8?IAS
-CCTV-4K 超高清,http://live.aikan.miguvideo.com/PLTV/88888888/224/3221229683/index.m3u8
-发现之旅,http://125.210.152.18:9090/live/FXZL.m3u8
+CCTV-4K 超高清,http://111.161.121.211/livews-4k.5club.cctv.cn/live/4K1218.stream/playlist.m3u8
 CGTN News,http://39.134.115.163:8080/PLTV/88888910/224/3221225896/index.m3u8
 新华社中文,http://source07.v.news.cn/live/CNC_CN/playlist.m3u8
 新华社英文,http://source07.v.news.cn/live/CNC_EN/playlist.m3u8
@@ -37,7 +36,7 @@ CGTN News,http://39.134.115.163:8080/PLTV/88888910/224/3221225896/index.m3u8
 安徽卫视,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/anhuistv/index.m3u8?IAS
 江苏卫视,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/jiangsustv/index.m3u8?IAS
 东方卫视,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/dongfangstv/index.m3u8?IAS
-深圳卫视,http://221.179.217.9/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226245/1.m3u8
+深圳卫视,http://39.135.138.59:18890/PLTV/88888910/224/3221225741/index.m3u8
 天津卫视,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/tianjinstv/index.m3u8?IAS
 山东卫视,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/shandongstv/index.m3u8?IAS
 黑龙江卫视,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/hljtv1/index.m3u8?IAS
@@ -91,11 +90,10 @@ Y+,http://117.148.187.46/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/32212
 纯享4K,http://39.134.155.159/PLTV/88888888/224/3221225670/index.m3u8
 爱上4K,http://39.134.24.24/PLTV/88888888/224/3221226005/index.m3u8
 百视通4K,http://39.134.176.157/PLTV/88888888/224/3221226718/index.m3u8
-欢笑剧场4K,http://live.aikan.miguvideo.com/PLTV/88888888/224/3221230739/index.m3u8
-4K超清-北京IPTV,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221226550/1.m3u8
+欢笑剧场4K,http://39.134.39.24/PLTV/88888888/224/3221226318/index.m3u8
 广东综艺4K,http://player.ioioz.com/1786/gd/gdtvm3u8.php?id=gdzy
 全纪实,http://183.207.255.190/live/program/live/qjshd/4000000/mnf.m3u8
-纪实人文,http://121.18.168.149/cache.ott.ystenlive.itv.cmvideo.cn:80/000000001000/1000000001000010606/1.m3u8?stbId=005301FF001589101611549359B92C46&channel-id=ystenlive&Contentid=1000000001000010606&mos=jbjhhzstsl&livemode=1&version=1.0&owaccmark=1000000001000010606&owchid=ystenlive&owsid=5474771579530255373&AuthInfo=2TOfGIahP4HrGWrHbpJXVOhAZZf%2B%2BRvFCOimr7PCGr%2Bu3lLj0NrV6tPDBIsVEpn3QZdNn969VxaznG4qedKIxPvWqo6nkyvxK0SnJLSEP%2FF4Wxm5gCchMH9VO%2BhWyofF
+纪实人文,http://39.135.138.59:18890/PLTV/88888910/224/3221225655/index.m3u8
 求索记录,http://39.134.66.66/PLTV/88888888/224/3221225713/index.m3u8
 求索科学,http://39.134.66.66/PLTV/88888888/224/3221225728/index.m3u8
 求索动物,http://39.134.66.66/PLTV/88888888/224/3221225730/index.m3u8
@@ -104,8 +102,6 @@ Y+,http://117.148.187.46/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/32212
 探索记录,http://112.17.40.154/wh7f454c46tw2874385578_-650182391/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228366/index.m3u8?fmt=ts2hls&icpid=88888888&from=30&RTS=1592890280&hms_devid=1455&online=1592890280&vqe=1
 金鹰纪实,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240303_1/encoder/0/playlist.m3u8?CONTENTID=00000110240303_1
 环球旅游,http://125.210.152.18:9090/live/HQLY.m3u8
-环球奇观,http://v.iam7.cn/iptv/cibn.php?code=8
-陶瓷频道,http://d-mail.vicp.net:4000/udp/239.45.3.50:5140
 黑莓电影,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/jdianying/index.m3u8?IAS
 欧美影院,http://112.17.40.199/wh7f454c46tw2819951733_-141826655/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228384/index.m3u8?fmt=ts2hls&icpid=88888888&from=30&RTS=1592890225&hms_devid=1460&online=1592890225&vqe=1
 邵氏电影,http://42.56.91.136/live-bvc/164219/live_97065163_17925468.m3u8
@@ -121,12 +117,11 @@ I爱院线,http://101.71.255.229:6610/zjhs/2/10116/index.m3u8?virtualDomain=zjhs
 Newtv-四川,## http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225793/index.m3u8
 Newtv-广东,## http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225791/index.m3u8
 Newtv-山东,## http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225788/index.m3u8
-教育综合,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/jiaoyutv/index.m3u8?IAS
 I爱动漫,http://117.148.187.52/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221230136/index.m3u8
+教育综合,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/jiaoyutv/index.m3u8?IAS
 黑莓动画,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/donghuawg/index.m3u8?IAS
-哈哈炫动,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_w/2018/xdkt/xdkt711/1000/index.m3u8?ProgramID=&encrypt=1
+哈哈炫动,http://39.135.138.59:18890/PLTV/88888910/224/3221225902/index.m3u8
 金鹰卡通,http://223.110.241.149:6610/gitv/live1/G_JINYING/G_JINYING/1.m3u8
-优漫卡通,http://223.113.54.41/live.hcs.cmvideo.cn:8088/wd_r2/jstv/ymkt/600/index.m3u8?ProgramID=&encrypt=1
 
 港台新,#genre#
 凤凰中文台,http://117.148.187.59/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228608/index.m3u8
@@ -144,8 +139,8 @@ CCTV-1 综合,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cN
 CCTV-2 财经,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-2/index.m3u8?IAS
 CCTV-3 综艺,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-3/index.m3u8?IAS
 CCTV-4 中文国际,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-4/index.m3u8?IAS
-CCTV-4 中文国际美洲,http://223.113.54.41/live.hcs.cmvideo.cn:8088/migu/kailu/20200324/cctv4meihd/57/index.m3u8?ProgramID=&encrypt=1
-CCTV-4 中文国际欧洲,http://223.113.54.41/live.hcs.cmvideo.cn:8088/migu/kailu/20200324/cctv4ouhd/57/index.m3u8?ProgramID=&encrypt=1
+CCTV-4 中文国际美洲,http://cctvalih5ca.v.myalicdn.com/live/cctvamerica_2/index.m3u8
+CCTV-4 中文国际欧洲,http://cctvalih5ca.v.myalicdn.com/live/cctveurope_2/index.m3u8
 CCTV-5 体育,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-5/index.m3u8?IAS
 CCTV-5+ 体育赛事,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/hdcctv05plus/index.m3u8?IAS
 CCTV-6 电影,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-6/index.m3u8?IAS
@@ -159,8 +154,7 @@ CCTV-13 新闻,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.c
 CCTV-14 少儿,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-14/index.m3u8?IAS
 CCTV-15 音乐,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-15/index.m3u8?IAS
 CCTV-17 农业农村,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/cctv-17/index.m3u8?IAS
-CCTV-4K 超高清,http://live.aikan.miguvideo.com/PLTV/88888888/224/3221229683/index.m3u8
-发现之旅,http://125.210.152.18:9090/live/FXZL.m3u8
+CCTV-4K 超高清,http://111.161.121.211/livews-4k.5club.cctv.cn/live/4K1218.stream/playlist.m3u8
 CGTN News,http://39.134.115.163:8080/PLTV/88888910/224/3221225896/index.m3u8
 新华社中文,http://source07.v.news.cn/live/CNC_CN/playlist.m3u8
 新华社英文,http://source07.v.news.cn/live/CNC_EN/playlist.m3u8
@@ -171,7 +165,7 @@ CGTN News,http://39.134.115.163:8080/PLTV/88888910/224/3221225896/index.m3u8
 安徽卫视,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/anhuistv/index.m3u8?IAS
 江苏卫视,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/jiangsustv/index.m3u8?IAS
 东方卫视,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/dongfangstv/index.m3u8?IAS
-深圳卫视,http://221.179.217.9/otttv.bj.chinamobile.com/PLTV/88888888/224/3221226245/1.m3u8
+深圳卫视,http://39.135.138.59:18890/PLTV/88888910/224/3221225741/index.m3u8
 天津卫视,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/tianjinstv/index.m3u8?IAS
 山东卫视,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/shandongstv/index.m3u8?IAS
 黑龙江卫视,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/hljtv1/index.m3u8?IAS
@@ -229,13 +223,12 @@ Y+,http://117.148.187.46/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/32212
 纯享4K,http://39.134.155.159/PLTV/88888888/224/3221225670/index.m3u8
 爱上4K,http://39.134.24.24/PLTV/88888888/224/3221226005/index.m3u8
 百视通4K,http://39.134.176.157/PLTV/88888888/224/3221226718/index.m3u8
-欢笑剧场4K,http://live.aikan.miguvideo.com/PLTV/88888888/224/3221230739/index.m3u8
-4K超清-北京IPTV,http://221.179.217.9//otttv.bj.chinamobile.com/PLTV/88888888/224/3221226550/1.m3u8
+欢笑剧场4K,http://39.134.39.24/PLTV/88888888/224/3221226318/index.m3u8
 广东综艺4K,http://player.ioioz.com/1786/gd/gdtvm3u8.php?id=gdzy
 
 纪录片,#genre#
 全纪实,http://183.207.255.190/live/program/live/qjshd/4000000/mnf.m3u8
-纪实人文,http://121.18.168.149/cache.ott.ystenlive.itv.cmvideo.cn:80/000000001000/1000000001000010606/1.m3u8?stbId=005301FF001589101611549359B92C46&channel-id=ystenlive&Contentid=1000000001000010606&mos=jbjhhzstsl&livemode=1&version=1.0&owaccmark=1000000001000010606&owchid=ystenlive&owsid=5474771579530255373&AuthInfo=2TOfGIahP4HrGWrHbpJXVOhAZZf%2B%2BRvFCOimr7PCGr%2Bu3lLj0NrV6tPDBIsVEpn3QZdNn969VxaznG4qedKIxPvWqo6nkyvxK0SnJLSEP%2FF4Wxm5gCchMH9VO%2BhWyofF
+纪实人文,http://39.135.138.59:18890/PLTV/88888910/224/3221225655/index.m3u8
 求索记录,http://39.134.66.66/PLTV/88888888/224/3221225713/index.m3u8
 求索科学,http://39.134.66.66/PLTV/88888888/224/3221225728/index.m3u8
 求索动物,http://39.134.66.66/PLTV/88888888/224/3221225730/index.m3u8
@@ -244,8 +237,6 @@ Y+,http://117.148.187.46/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/32212
 探索记录,http://112.17.40.154/wh7f454c46tw2874385578_-650182391/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228366/index.m3u8?fmt=ts2hls&icpid=88888888&from=30&RTS=1592890280&hms_devid=1455&online=1592890280&vqe=1
 金鹰纪实,http://61.189.255.139/live.aishang.ctlcdn.com/00000110240303_1/encoder/0/playlist.m3u8?CONTENTID=00000110240303_1
 环球旅游,http://125.210.152.18:9090/live/HQLY.m3u8
-环球奇观,http://v.iam7.cn/iptv/cibn.php?code=8
-陶瓷频道,http://d-mail.vicp.net:4000/udp/239.45.3.50:5140
 
 高清影视,#genre#
 黑莓电影,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/jdianying/index.m3u8?IAS
@@ -267,10 +258,9 @@ Newtv-广东,## http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225791/in
 Newtv-山东,## http://ottrrs.hl.chinamobile.com/PLTV/88888888/224/3221225788/index.m3u8
 
 少儿,#genre#
-教育综合,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/jiaoyutv/index.m3u8?IAS
 I爱动漫,http://117.148.187.52/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221230136/index.m3u8
+教育综合,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/jiaoyutv/index.m3u8?IAS
 黑莓动画,http://39.134.198.8:6610/yst.live.scmobile.com/otvzte.scmcc.com.cNF:8080/ysten-business/live/donghuawg/index.m3u8?IAS
-哈哈炫动,http://223.113.54.41/live.hcs.cmvideo.cn:8088/ws_w/2018/xdkt/xdkt711/1000/index.m3u8?ProgramID=&encrypt=1
+哈哈炫动,http://39.135.138.59:18890/PLTV/88888910/224/3221225902/index.m3u8
 金鹰卡通,http://223.110.241.149:6610/gitv/live1/G_JINYING/G_JINYING/1.m3u8
-优漫卡通,http://223.113.54.41/live.hcs.cmvideo.cn:8088/wd_r2/jstv/ymkt/600/index.m3u8?ProgramID=&encrypt=1
 
