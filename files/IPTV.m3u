@@ -48,10 +48,10 @@ http://39.135.138.8:6610/PLTV/88888888/224/3221225634/2/index.m3u8?fmt=ts2hls
 http://39.135.138.8:6610/PLTV/88888888/224/3221225841/2/index.m3u8?fmt=ts2hls
 
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/CCTV4America.jpg" group-title="中国央视", CCTV-4 中文国际美洲 高清
-http://223.113.54.41/live.hcs.cmvideo.cn:8088/migu/kailu/20200324/cctv4meihd/57/index.m3u8?ProgramID=&encrypt=1
+http://cctvalih5ca.v.myalicdn.com/live/cctvamerica_2/index.m3u8
 
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/CCTV4Europe.jpg" group-title="中国央视", CCTV-4 中文国际欧洲 高清
-http://223.113.54.41/live.hcs.cmvideo.cn:8088/migu/kailu/20200324/cctv4ouhd/57/index.m3u8?ProgramID=&encrypt=1
+http://cctvalih5ca.v.myalicdn.com/live/cctveurope_2/index.m3u8
 
 #EXTINF:-1 tvg-id="5" tvg-logo="http://tv.sason.xyz/logo/cctv5.png" group-title="中国央视", CCTV-5 体育 高清
 http://39.135.138.8:6610/PLTV/88888888/224/3221225633/2/index.m3u8?fmt=ts2hls
@@ -91,6 +91,9 @@ http://101.71.255.229:6610/zjhs/2/10088/index.m3u8?virtualDomain=zjhs.live_hls.z
 
 #EXTINF:-1 tvg-id="17" tvg-logo="http://tv.sason.xyz/logo/cctv17.png" group-title="中国央视", CCTV-17 农业农村 高清
 http://39.135.138.8:6610/PLTV/88888888/224/3221225909/2/index.m3u8?fmt=ts2hls
+
+#EXTINF:-1 tvg-id="106" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4k.png" group-title="中国央视", CCTV-4K 超高清
+http://111.161.121.211/livews-4k.5club.cctv.cn/live/4K1218.stream/playlist.m3u8
 
 #EXTINF:-1 tvg-id="106" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTV4k.png" group-title="中国央视", CCTV-4K 超高清
 http://112.17.40.12/PLTV/88888888/224/3221226758/index.m3u8
@@ -509,7 +512,7 @@ https://rthkcnews-lh.akamaihd.net/i/rthknews_1@312607/index_190000011_av-b.m3u8
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/RTHKPTHRadio.png" group-title="香港", 香港電台普通話台
 https://rthkaudio6-lh.akamaihd.net/i/radiopth_1@355869/index_56_a-p.m3u8
 
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/HKIBC.png" group-title="香港", HKIBC
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/HKIBC.png" group-title="香港", HKIBC 香港國際財經台
 http://113.255.161.76:9981/stream/channelid/392499728
 
 #EXTINF:-1 tvg-id="KAI.HK" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/hongkongkai.png" group-title="香港", 香港開電視
@@ -546,10 +549,10 @@ http://61.238.6.49:8001/bysid/82
 http://sl.tmtv.me/20201226/ubtl.php?cid=1079
 
 #EXTINF:-1 tvg-id="WXX.HK" tvg-logo="http://www.tvyan.com/uploads/dianshi/tvb-news.jpg" group-title="香港", 無綫新聞台
-http://livetv.dnsfor.me:80/channel.10.m3u8
+http://113.255.161.76:9981/stream/channelid/489782037
 
 #EXTINF:-1 tvg-id="WXX.HK" tvg-logo="http://www.tvyan.com/uploads/dianshi/tvb-news.jpg" group-title="香港", 無綫新聞台
-http://113.255.161.76:9981/stream/channelid/489782037
+http://livetv.dnsfor.me:80/channel.10.m3u8
 
 #EXTINF:-1 tvg-id="WXX.HK" tvg-logo="http://www.tvyan.com/uploads/dianshi/tvb-news.jpg" group-title="香港", 無綫新聞台
 http://61.238.6.49:8001/bysid/83
@@ -584,16 +587,16 @@ http://113.255.161.76:9981/stream/channelid/1273121849
 #EXTINF:-1 tvg-id="V99.HK" tvg-logo="http://epg.51zmt.top:8000/tb1/gt/viutv.png" group-title="香港", ViuTV
 http://61.238.6.49:8000/bysid/99
 
-#EXTINF:-1 tvg-id="YCJ.HK" tvg-logo="http://utvhk.com/maint/images/channel/be75ddf0144b7fccdd03bf8016a61f64.png" group-title="香港", 有線財經資訊台 HD
+#EXTINF:-1 tvg-id="YCJ.HK" tvg-logo="http://utvhk.com/maint/images/channel/be75ddf0144b7fccdd03bf8016a61f64.png" group-title="香港", 有線財經資訊台
 http://livetv.dnsfor.me:80/channel.6.m3u8
 
-#EXTINF:-1 tvg-id="YXW.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/iCABLENewsChannelHD.png" group-title="香港", 有線新聞台 HD
+#EXTINF:-1 tvg-id="YXW.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/iCABLENewsChannelHD.png" group-title="香港", 有線新聞台
 http://livetv.dnsfor.me:80/channel.5.m3u8
 
 #EXTINF:-1 tvg-id="YZB.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/iCABLELiveNewsChannel.png" group-title="香港", 有線直播新聞台
 http://teslagram.com/live/channel_110.m3u8
 
-#EXTINF:-1 tvg-id="YYL.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/iCABLEFamilyEntertainmentChannelHD.png" group-title="香港", 有線綜合娛樂台 HD
+#EXTINF:-1 tvg-id="YYL.HK" tvg-logo="https://raw.githubusercontent.com/LiuYi0526/IPTV/master/TVlogos/iCABLEFamilyEntertainmentChannelHD.png" group-title="香港", 有線綜合娛樂台
 http://livetv.dnsfor.me:80/channel.7.m3u8
 
 #EXTINF:-1 tvg-id="603 高清603台" tvg-logo="https://cdn.jsdelivr.net/gh/supzhang/epg/tb1/gt/hongkong603.png" group-title="香港", 有線高清603台
