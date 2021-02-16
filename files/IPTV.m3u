@@ -99,43 +99,43 @@ http://111.161.121.211/livews-4k.5club.cctv.cn/live/4K1218.stream/playlist.m3u8
 http://112.17.40.12/PLTV/88888888/224/3221226758/index.m3u8
 
 #EXTINF:-1 tvg-id="6562" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/hjjc.png" group-title="中国央视", CCTV 怀旧剧场 高清
-http://183.131.128.233/mgsp.live.miguvideo.com:8088/ws_v/2018/hjjc/hjjc711/1000/index.m3u8?&encrypt=1
+http://cdn.chxjon.cn/iptv/QQ582185381/gzyx.php?id=hjjc
 
 #EXTINF:-1 tvg-id="6557" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/fyyy.png" group-title="中国央视", CCTV 风云音乐 高清
-http://183.131.128.233/mgsp.live.miguvideo.com:8088/ws_v/2018/fyyy/fyyy711/1000/index.m3u8?&encrypt=1
+http://cdn.chxjon.cn/iptv/QQ582185381/gzyx.php?id=fyyy
 
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/wsjk.png" group-title="中国央视", ★CCTV 卫生健康 高清
-http://ikands.xyz/dl/91kds?u=0&id=wsjk&token=1216154892
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/wsjk.png" group-title="中国央视", CCTV 卫生健康 高清
+http://cdn.chxjon.cn/iptv/QQ582185381/gzyx.php?id=wsjk
 
 #EXTINF:-1 tvg-id="6563" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/bqkj.png" group-title="中国央视", CCTV 兵器科技 高清
-http://183.131.128.233/mgsp.live.miguvideo.com:8088/ws_v/2018/gfjs/gfjs711/1000/index.m3u8?&encrypt=1
+http://cdn.chxjon.cn/iptv/QQ582185381/gzyx.php?id=bqkj
 
 #EXTINF:-1 tvg-id="6558" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/dyjc.png" group-title="中国央视", CCTV 第一剧场 高清
-http://183.131.128.233/mgsp.live.miguvideo.com:8088/ws_v/2018/dyjc/dyjc711/1000/index.m3u8?&encrypt=1
+http://cdn.chxjon.cn/iptv/QQ582185381/gzyx.php?id=dyjc
 
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/dszn.png" group-title="中国央视", ★CCTV 电视指南 高清
-http://39.135.138.5:6610/PLTV/88888888/224/3221225673/1.m3u8
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/dszn.png" group-title="中国央视", CCTV 电视指南 高清
+http://cdnrrs.gz.chinamobile.com/PLTV/88888888/224/3221226120/1/index.m3u8?fmt=ts2hls
 
 #EXTINF:-1 tvg-id="6559" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/fyjc.png" group-title="中国央视", CCTV 风云剧场 高清
-http://183.131.128.233/mgsp.live.miguvideo.com:8088/ws_v/2018/fyjc/fyjc711/1000/index.m3u8?&encrypt=1
+http://cdn.chxjon.cn/iptv/QQ582185381/gzyx.php?id=fyjc
 
 #EXTINF:-1 tvg-id="6000" tvg-logo="http://tv.sason.xyz/logo/cctvfyzq.png" group-title="中国央视", CCTV 风云足球 高清
-http://183.131.128.233/mgsp.live.miguvideo.com:8088/ws_v/2018/fyzq/fyzq711/1000/index.m3u8?&encrypt=1
+http://cdn.chxjon.cn/iptv/QQ582185381/gzyx.php?id=fyzq
 
 #EXTINF:-1 tvg-id="6568" tvg-logo="http://tv.sason.xyz/logo/cctvgolf.png" group-title="中国央视", CCTV 高尔夫·网球 高清
-http://183.131.128.233/mgsp.live.miguvideo.com:8088/ws_v/2018/gefwq/gefwq711/1000/index.m3u8?&encrypt=1
+http://cdn.chxjon.cn/iptv/QQ582185381/gzyx.php?id=gefwq
 
 #EXTINF:-1 tvg-id="6564" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/nxss.png" group-title="中国央视", CCTV 女性时尚 高清
-http://183.131.128.233/mgsp.live.miguvideo.com:8088/ws_v/2018/nxss/nxss711/1000/index.m3u8?&encrypt=1
+http://cdn.chxjon.cn/iptv/QQ582185381/gzyx.php?id=nxss
 
 #EXTINF:-1 tvg-id="6560" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/sjdl.png" group-title="中国央视", CCTV 世界地理 高清
-http://183.131.128.233/mgsp.live.miguvideo.com:8088/ws_v/2018/sjdl/sjdl711/1000/index.m3u8?&encrypt=1
+http://cdn.chxjon.cn/iptv/QQ582185381/gzyx.php?id=sjdl
 
 #EXTINF:-1 tvg-id="6569" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/icon/ysjp.png" group-title="中国央视", CCTV 央视文化精品 高清
-http://183.131.128.233/mgsp.live.miguvideo.com:8088/ws_v/2018/ysjp/ysjp711/1000/index.m3u8?&encrypt=1
+http://cdn.chxjon.cn/iptv/QQ582185381/gzyx.php?id=ysjp
 
 #EXTINF:-1 tvg-id="6584" tvg-logo="http://epg.51zmt.top:8000/tb1/CCTV/CCTVtaiqiu.png" group-title="中国央视", CCTV 央视台球 高清
-http://183.131.128.233/mgsp.live.miguvideo.com:8088/ws_v/2018/ystq/ystq711/1000/index.m3u8?&encrypt=1
+http://cdn.chxjon.cn/iptv/QQ582185381/gzyx.php?id=ystq
 
 #EXTINF:-1 tvg-id="6594" tvg-logo="http://www.nettvplus.live/uploads/20/1-200H51R442500.jpg" group-title="中国央视", 中央新影 老故事
 http://39.135.138.5:6610/PLTV/88888888/224/3221225517/2/index.m3u8
@@ -356,7 +356,7 @@ http://player.ioioz.com/1786/gd/gdtvm3u8.php?id=gdzy
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/4KUHD.jpeg" group-title="4K", 南国都市 4K
 http://hls222.dszbdq.cn/gdgz.php?id=gzsh
 
-#EXTINF:-1 tvg-id="Dummy" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/hxjc.png" group-title="4K",欢笑剧场 4K
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="http://gitee.com/dyanj311/iptv/raw/master/logo/hxjc.png" group-title="4K", 欢笑剧场 4K
 http://39.134.39.24/PLTV/88888888/224/3221226318/index.m3u8
 
 #EXTINF:-1 tvg-id="Dummy" https://img4.orsoon.com/ico/202003/30160037_52e99d3fbd.png" group-title="4K", 芒果TV 4K
