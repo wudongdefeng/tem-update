@@ -300,7 +300,7 @@ http://39.134.115.163:8080/PLTV/88888910/224/3221225879/index.m3u8
 http://live.ybtvyun.com/video/s10006-44f040627ca1/index.m3u8
 
 #EXTINF:-1 tvg-id="68" tvg-logo="http://tv.sason.xyz/logo/xmws.png" group-title="中国卫视", 厦门卫视 高清
-http://cstvpull.live.wscdns.com/live/xiamen.flv
+http://xiamencncc.v.wscdns.com/xiamen/xiamen_1/index.m3u8
 
 #EXTINF:-1 tvg-id="70" tvg-logo="http://tv.sason.xyz/logo/kbws.png" group-title="中国卫视", 康巴卫视 高清
 http://scgctvshow.sctv.com/hdlive/kangba/index.m3u8
@@ -1267,6 +1267,156 @@ http://101.71.255.229:6610/zjhs/2/10110/index.m3u8?virtualDomain=zjhs.live_hls.z
 
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="noimage.png" group-title="iHOT", 爱动漫
 http://101.71.255.229:6610/zjhs/2/10107/index.m3u8?virtualDomain=zjhs.live_hls.zte.com
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN今日推荐
+https://live.elibei.com/tv/channel/cibn?id=6
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN文旅中国
+https://live.elibei.com/tv/channel/cibn?id=5
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN古装剧场
+https://live.elibei.com/tv/channel/cibn?id=31
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN生活
+https://live.elibei.com/tv/channel/cibn?id=1
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN全球购
+https://live.elibei.com/tv/channel/cibn?id=20
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN全球购
+https://live.elibei.com/tv/channel/cibn?id=27
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN全电竞
+https://live.elibei.com/tv/channel/cibn?id=21
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN好莱坞
+https://live.elibei.com/tv/channel/cibn?id=34
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN朵丫乐园
+https://live.elibei.com/tv/channel/cibn?id=36
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN快乐购
+https://live.elibei.com/tv/channel/cibn?id=26
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN快乐购物
+https://live.elibei.com/tv/channel/cibn?id=13
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN汽车
+https://live.elibei.com/tv/channel/cibn?id=12
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN怡家
+https://live.elibei.com/tv/channel/cibn?id=4
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN品质生活
+https://live.elibei.com/tv/channel/cibn?id=30
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN映画
+https://live.elibei.com/tv/channel/cibn?id=14
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN流金岁月
+https://live.elibei.com/tv/channel/cibn?id=39
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN炫佳动漫
+https://live.elibei.com/tv/channel/cibn?id=23
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN军事
+https://live.elibei.com/tv/channel/cibn?id=2
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN风尚运动
+https://live.elibei.com/tv/channel/cibn?id=11
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN家居用品
+https://live.elibei.com/tv/channel/cibn?id=35
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN时尚生活
+https://live.elibei.com/tv/channel/cibn?id=8
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN留学世界
+https://live.elibei.com/tv/channel/cibn?id=9
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN真人秀
+https://live.elibei.com/tv/channel/cibn?id=3
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN院线大片
+https://live.elibei.com/tv/channel/cibn?id=29
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN健康
+https://live.elibei.com/tv/channel/cibn?id=18
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN动作影院
+http://v.iam7.top/iptv/cibn/?id=1108&code=ShengHuo
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN动漫剧场
+https://live.elibei.com/tv/channel/cibn?id=33
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN情感影院
+https://live.elibei.com/tv/channel/cibn?id=16
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN喜剧影院
+https://live.elibei.com/tv/channel/cibn?id=22
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN嗨播1
+https://live.elibei.com/tv/channel/cibn?id=7
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN嗨播2
+https://live.elibei.com/tv/channel/cibn?id=15
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN嗨播3
+https://live.elibei.com/tv/channel/cibn?id=19
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN嗨播4
+https://live.elibei.com/tv/channel/cibn?id=25
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN嗨播5
+https://live.elibei.com/tv/channel/cibn?id=32
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN嗨播6
+https://live.elibei.com/tv/channel/cibn?id=37
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN嗨播7
+https://live.elibei.com/tv/channel/cibn?id=40
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN嗨播8
+https://live.elibei.com/tv/channel/cibn?id=43
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN嗨播9
+https://live.elibei.com/tv/channel/cibn?id=44
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN嗨播10
+https://live.elibei.com/tv/channel/cibn?id=45
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN微电影
+https://live.elibei.com/tv/channel/cibn?id=24
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN新知
+https://live.elibei.com/tv/channel/cibn?id=46
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN经典剧场
+https://live.elibei.com/tv/channel/cibn?id=10
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN电影
+https://live.elibei.com/tv/channel/cibn?id=47
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN精品影院
+https://live.elibei.com/tv/channel/cibn?id=0
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN综合
+http://v.iam7.top/iptv/cibn/?id=1108&code=DianJing
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN热卖推荐
+https://live.elibei.com/tv/channel/cibn?id=28
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN艺术院线
+https://live.elibei.com/tv/channel/cibn?id=42
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", CIBN骄阳剧场
+https://live.elibei.com/tv/channel/cibn?id=17
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", 中国交通
+https://live.elibei.com/tv/channel/cibn?id=48
+
+#EXTINF:-1 tvg-id="Dummy" tvg-logo="https://data.znds.com/attachment/portal/201411/21/133915x8xujr441zsun1r1.jpg" group-title="CIBN", 斗牛财经
+https://live.elibei.com/tv/channel/cibn?id=38
 
 #EXTINF:-1 tvg-id="Dummy" tvg-logo="https://wx2.sinaimg.cn/thumb180/7f791501ly1fwgrnmr9haj20kr0krt9n.jpg" group-title="直播中国", 全国风景总览
 https://gcalic.v.myalicdn.com/gc/wgw05_1/index.m3u8?contentid=2820180516001
