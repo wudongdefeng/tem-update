@@ -13,4 +13,3 @@ https://raw.githubusercontent.com/1771245847/1771245847.github.io/master/ks.txt,
 https://raw.githubusercontent.com/wudongdefeng/iptv-tools/gh-pages/all.txt,1
 https://raw.githubusercontent.com/YueChan/IPTV/master/HDTV.m3u,1
 https://gitee.com/dyanj311/iptv/raw/master/凤凰国外.m3u,1
-
