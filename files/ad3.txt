@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
-! Checksum: DVi/NyIgVjew3vZrz//2AQ
+! Checksum: 5qoYDFDxClrPT1OYeIcN/Q
 ! Title: AdFilters
 ! Expires: 12 hours
-! Version: 202103111622
-! Last Modified: 2021年03月11日 16:22
+! Version: 202103120415
+! Last Modified: 2021年03月12日 04:15
 ! Homepage: https://adf.minggo.eu.org
 ! 本规则合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance、EasyPrivacy，感谢各位大大的分享！
 ! 仅合并规则，未做其余任何处理
@@ -1286,6 +1286,9 @@ _xiuno_com_ad/
 ##table[style="border:#7D8C8E solid 1px;height: 30px;text-align: center;"]
 !----------------------------------Ads-Union----------------------------------!
 .8ox.cn
+||3336673.com^
+||3338877.com^
+||simaoer.com^
 ||2lian.com^$third-party
 .cc/s.php?id=$script,third-party
 .cn/?ss=$script,third-party
@@ -8141,7 +8144,6 @@ _yad_jsonp_
 ||videowood.me/assets/js/popup.js
 ||videowood.tv/popjavascript
 ||vip.luanren.com/data/*.gif
-||vipbuluo.com/2/123.png
 ||vipcn.com/hezuo/
 ||vipcn.com/hz/down_r.js
 ||vipcn.com/js/indexfoot.js
@@ -8766,8 +8768,12 @@ _yad_jsonp_
 ||zzsky.cn/images/a_d_
 ||zzz4.com/JS_AD/
 ||zzzyk.com/js/
+||picsuperfast.xyz/imageUpload/images/*AD_
 !------------------------Specific element hiding rules------------------------!
 szxx.com.cn###A0
+159i.com###sop > DIV:first-child
+vpsmm.com##.sidebarx
+vpsmm.com##DIV[id^="topads"]
 szxx.com.cn###A1
 szxx.com.cn###A2
 gpcxw.com###AA2
@@ -14218,6 +14224,7 @@ fjsen.com,nuomi.com#@#.right-ad
 perfectmatch.tw#@#.right_ad
 360zbz.com#@#.rightad
 zdface.com#@#.top-ad
+qqaiqin.com#@#.ad_468
 andylain.com,bee.coupons,blogspot.com,blogspot.hk,blogspot.jp,blogspot.tw,comic.tw,jasonblog.tw#@#.vertical-ads
 i-cable.com#@#.video_ad
 bitauto.com,yinyuetai.com#@#a[href^="http://ad.doubleclick.net/"]
@@ -16164,6 +16171,8 @@ $script,subdocument,third-party,websocket,xmlhttprequest,domain=00ksw.com|01zww.
 @@||libs.baidu.com^$domain=138txt.com|18xs.org|1biqu.com|1kanshu.cc|230book.com|23hh.com|23txt.com|23wxx.com|258zw.com|266ks.com|27xsw.com|2baob.com|30sy.com|33yq.com|37zw.la|39shubao.com|3yt.com|477zw.com|52biquge.com|5ccc.tw|81zw.me|877zw.com|99mk.com|99shumeng.net|aikantxt.la|aixswx.com|aomolit.com|aoyuge.com|balingtxt.com|baoshuu.com|biqiuge8.com|biqubao.com|biqudu.tv|biquduo.com|biquga.com|biquge.com.cn|biquge.lu|biquge.tv|biquge11.com|biquge98.net|biqugecd.com|biqugego.com|biqugemm.com|biqugesc.com|biqusan.com|biquyi.com|bixia.org|bodekang.net|boluoxs.com|bookbao.org|botaodz.com|bqkan.com|bshuku.com|bswtan.com|bxwx.org|bxwx.tw|bxwx8.la|bxwxorg.com|clewx.com|damengzhu1.com|dashenxiaoshuo.com|day66.com|ddxs0.com|ddxsku.com|dushuge.net|farpop.com|fbxsw.com|gdbzkz.com|guaili.org|hatxt.com|hbfie.org|hehuamei.com|heikexs.com|heiyanwang.com|hongyeshuzhai.com|hybiquge.com|iddwx.com|imiaobige.com|ishisetianxia.com|ixiatxt.com|ixs.la|jianlaixiaoshuo.com|jinshulo.com|jx.la|kkbiqu2.com|liewen.la|lindiankanshu.cc|liudatxt.com|loubiqu.com|lwtxt.net|lwxstxt.com|mhtwx.la|mubige.com|paoshu8.com|paoshuzw.com|pfwx.com|piaotianxs.com|ppskw.com|qbxs8.net|qianrenge.cc|qishusk.com|quge6.com|quledu.net|qushuba.com|rmxsba.com|shu008.com|shuhaiwu.com|shumil.co|siluke.tv|siluwx.org|sizhicn.com|skyzww.com|soxscc.com|tangsanshu.com|thxsw.com|ttzw.tv|tutengzw.com|txshuku.la|u33.me|uidzhx.com|v63xs.com|vipsk.org|wanwenhui.com|wenxuem.com|wrlwx.com|x23us.me|x81zw.com|xbiqugecc.com|xbiqugew.net|xbiquke.com|xbqge.net|xcmxsw.com|xdingdiann.com|xieyixs.com|xinshuhaige.com|xinxs.la|xs5200.com|xs98.com|xsbiqu.com|xsbiqugew.com|xsbooktxt.com|xsqishu.com|xsw55.net|xszww.com|xuanshu.com|xuehongxs.com|xyusk.com|yawenb.com|yikanxiaoshuoa.com|yq-888.com|yruan.com|yssm.info|yunxs.com|zbzw.la|zhnxcw.com|zhuaji.org|zmccx.com|zwdu.com|zzs5.com
 @@||zmtt.net^$script,domain=luoqiuzw.com
 !#Novels
+||2gz9nc.cn^
+||youpukeji.cn^
 bxwx3.org###addiv3
 bxwx3.org###bdstatic
 55shuba.com###botDiv
@@ -23387,6 +23396,7 @@ weibo.com##.apps_PCD_reco_detail_right
 /leadgen/ga.js
 /leadgen_track
 /leads-tracker-
+/leadtag.js
 /lftracker.
 /lftracker_
 /lib.tailtarget/*
@@ -25391,6 +25401,7 @@ weibo.com##.apps_PCD_reco_detail_right
 /trackingapi.
 /TrackingBreadcrumbs.
 /TrackingCentral.js
+/trackingcheck.min.js
 /trackingCode-
 /trackingCode.js
 /TrackingCookieCheck.
@@ -26254,6 +26265,7 @@ cgi-bin/counter
 .sendibm1.com/mk/
 .simplicitycrm.com/rd/
 .starbucks.com/a/
+.titus.de/oo/$image
 .webex.com/q/
 .wix.com/_api/ping/
 .zalando.com/images/probe.png
@@ -27246,6 +27258,7 @@ _mongo_stats/
 ||domodomain.com^$third-party
 ||donreach.com^$third-party
 ||dotaki.com^$third-party
+||dotjs.com^$third-party
 ||dotomi.com^$third-party
 ||doubleclick.net/activity$third-party
 ||doubleclick.net/imp%$third-party
@@ -31161,7 +31174,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||arclk.net/trax?
 ||areyouahuman.com/kitten?
 ||argos.citruserve.com^
-||ariane.abtasty.com^$third-party
+||ariane.abtasty.com^
 ||asayer.io/tracker.js
 ||aserve.directorym.com^
 ||ask.com^*/i.gif?
@@ -31628,7 +31641,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||data.studybreakmedia.com^
 ||data.woosmap.com^
 ||data2.gosquared.com^$third-party
-||datacollect*.abtasty.com^$third-party
 ||datadog-service.mvfglobal.com^
 ||daumcdn.net/tiara/
 ||daxab.com/logger/
@@ -32546,6 +32558,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||rum.nccgroup-webperf.com^
 ||rum.perfops.net^
 ||rum.uptime.com^$third-party
+||rum.vhwrz.net^
 ||rva.outbrain.com^
 ||s-microsoft.com/mscc/$~stylesheet
 ||s-vop.sundaysky.com^$third-party
@@ -32608,6 +32621,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||sitefinity.com/collect/
 ||skimresources.com/api/ref-banners.js
 ||skysa.com/tracker/
+||slgnt.us/track
 ||sli-spark.com/b.png$third-party
 ||slidedeck.com^$image,third-party
 ||smartertravel.com/ext/pixel/
@@ -32989,7 +33003,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||trustedform.com/trustedform.js?provide_referrer
 ||trustpilot.com/stats/
 ||trustsquare.net/trafficmonitor/
-||try.abtasty.com^$third-party
+||try.abtasty.com^
 ||ts.tradetracker.net^
 ||tsk5.com/17*?*=ex-
 ||ttdetect.staticimgfarm.com^
@@ -34022,11 +34036,13 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||g-stats.openhost.es^
 ||hits.eluniversal.com.mx^
 ||leadzu.com^$third-party
+||mtm.qdqmedia.com^
 ||pixel.zumby.io^
 ||reachandrich.antevenio.com^
 ||s3wfg.com/js/vortexloader.js
 ||stats.bitban.com^
 ||stats.miarroba.info^
+||stats.qdq.com^
 ||stats.sec.telefonica.com^
 ||tag.shopping-feed.com^
 ||track.sunmedia.tv^
@@ -35626,6 +35642,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||playstation.com/beacon/
 ||playstation.net/event/
 ||plentyoffish.com/tracking.js
+||pnc.com/content/
 ||pnet.co.za/js/ga.js
 ||pocket-lint.com/media/pf304.js
 ||pokernews.com/track-views.php?
@@ -42001,7 +42018,6 @@ $csp=worker-src 'none',domain=alltube.pl|alltube.tv|animeteatr.ru|annuaire-bleu.
 @@||zeit.de/cre-*/tracking/call.js?$domain=zeit.de
 @@||zeit.de/cre-*/tracking/tracking.js$domain=zeit.de
 !---------- French ----------
-@@||abtasty.com/datacollectHeatmap.php$xmlhttprequest,domain=cdiscount.com
 @@||actiris.be/urchin.js
 @@||adobedtm.com^*/mbox-contents-$script,domain=fcbarcelona.fr
 @@||adobedtm.com^*/satelliteLib-$script,domain=fcbarcelona.fr|icimusique.ca|laredoute.be|laredoute.ch|laredoute.fr|lci.fr|nrj.fr|tou.tv
