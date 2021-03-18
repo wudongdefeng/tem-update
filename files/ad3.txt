@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
-! Checksum: WowGj3bsRuQuRPgswzgHiQ
+! Checksum: CSVV1WmsD2yqSrF7mw6UXQ
 ! Title: AdFilters
 ! Expires: 12 hours
-! Version: 202103181622
-! Last Modified: 2021年03月18日 16:22
+! Version: 202103190029
+! Last Modified: 2021年03月19日 00:29
 ! Homepage: https://adf.minggo.eu.org
 ! 本规则合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance、EasyPrivacy，感谢各位大大的分享！
 ! 仅合并规则，未做其余任何处理
@@ -1297,6 +1297,9 @@ _xiuno_com_ad/
 ##table[style="border:#7D8C8E solid 1px;height: 30px;text-align: center;"]
 !----------------------------------Ads-Union----------------------------------!
 .8ox.cn
+||qingniao.me^$third-party
+||szpgzn.com^
+||zhongjiayuan.xyz^
 .cc/s.php?id=$script,third-party
 .cn/?ss=$script,third-party
 .cn/d/*-*-*.ap|$script,third-party
@@ -7480,7 +7483,6 @@ _yad_jsonp_
 ||qingkai.com/2009/html/top.htm
 ||qingkai.com/gg_img/
 ||qingkong.net/skin/htcs/images/980.jpg
-||qingniao.me/banner.jpg
 ||qingsedhh.com/images/gg.gif
 ||qiuw.com/static/xin-ad.js
 ||qiuyi.cn/Baojian/
@@ -8808,8 +8810,11 @@ _yad_jsonp_
 ||zzzyk.com/js/
 ||aldtop.com/scrtips/
 ||ting56.com/xiezhewan/
+||ed2000k.com/ad/
+||d56p.com/love/
 !------------------------Specific element hiding rules------------------------!
 szxx.com.cn###A0
+vpsmm.com##A[href*="/go/"]
 szxx.com.cn###A1
 vpsmm.com##A[href^="http"]:not([href^="https://www.vpsmm.com/"])
 szxx.com.cn###A2
@@ -10386,7 +10391,7 @@ tools.2345.com##._hb-box + .mod
 qq.com##._switchad
 pincong.rocks##.a-a
 gamer.com.tw##.a-mercy-d:not([href*=".gamer."])
-159i.com##.a1.style25
+159i.com##.a2.style25
 159i.com##.a1d
 159i.com##.a2d
 159i.com##.a3d
@@ -13209,7 +13214,6 @@ chinanews.com##a[href*=".jiuxianfeng.com"]
 tiexue.net##a[href*=".junp"]
 zhangxinxu.com##a[href*=".ke.qq."]
 doudoudm.site##a[href*=".kxyike.com/"]
-ed2000.com##a[href*=".lanzous.com/"]
 gucheng.com##a[href*=".liaogu.com"]
 apprcn.com,yeyulingfeng.com##a[href*=".lizhi."]
 mumujita.com##a[href*=".makeding.com/"]
@@ -29152,6 +29156,7 @@ _mongo_stats/
 ||vinlens.com^$third-party
 ||vinub.com^$third-party
 ||viralninjas.com^$third-party
+||viraltrackings.com^$third-party
 ||virgul.com^$third-party
 ||virool.com^$third-party
 ||virtualnet.co.uk^$third-party
@@ -31057,6 +31062,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||agendize.com^*/counts.jsp?
 ||aiya.com.cn/stat.js
 ||akamaihd.net/p1lakjen.gif
+||akamaized.net/cookie_check/
 ||akanoo.com/tracker/
 ||akatracking.esearchvision.com^
 ||aklamio.com/ovlbtntrk?
@@ -31117,6 +31123,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||analytics-static.ugc.bazaarvoice.com^
 ||analytics.30m.com^
 ||analytics.agoda.com^
+||analytics.aimtell.com^
 ||analytics.amakings.com^
 ||analytics.anvato.net^
 ||analytics.apnewsregistry.com^
