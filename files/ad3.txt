@@ -1,9 +1,9 @@
 [Adblock Plus 2.0]
-! Checksum: 18+kNaK7krLvtu7w3NPKWw
+! Checksum: MXOfiY9BtcLMnQdQ0eCvAg
 ! Title: AdFilters
 ! Expires: 12 hours
-! Version: 202104021623
-! Last Modified: 2021年04月02日 16:23
+! Version: 202104030033
+! Last Modified: 2021年04月03日 00:33
 ! Homepage: https://adf.minggo.eu.org
 ! 本规则合并自乘风视频广告过滤规则、EasylistChina、EasylistLite、CJX'sAnnoyance、EasyPrivacy，感谢各位大大的分享！
 ! 仅合并规则，未做其余任何处理
@@ -6991,7 +6991,6 @@ _yad_jsonp_
 ||loli.net/2020/07/10/wMqf6ivLVZc92UY.png
 ||loli.net/2020/07/13/b1gRsV4OutfYhvp.gif
 ||loli.net/2020/07/25/pRqtQvjgE74SzaW.gif
-||loli.net/2020/08/05/6orxItEVzlTjKam.png
 ||loli.net/2020/08/31/j6NV3wFeIxCtnBX.gif
 ||loli.net/2020/09/04/Wx3MdOVvsTPwIlE.gif
 ||loli.net/2020/10/26/cSHbJifFgNoyaz8.png
@@ -8329,7 +8328,6 @@ _yad_jsonp_
 ||whnews.cn/wh_public/xuxu/
 ||wholehk.com/atttuop.js
 ||wholehk.com/ptpptt.js
-||whsir.com/image/aliyun
 ||wigcw.cn/20180109150051.png
 ||wigcw.cn/240X355.jpg
 ||williamlong.info/script/sidebar.js
@@ -8478,7 +8476,6 @@ _yad_jsonp_
 ||xinshijue6080.com/Runtime/js/
 ||xinshijueba.com/js/home/
 ||xinshijuecn.com/js/home/
-||xinshuige.com/static/images/115AD.jpg
 ||xinwenren.com/index.php?m=poster&
 ||xinyi.com/Public/config/Couplet/Index39.js
 ||xinyi.com/Public/config/Couplet/Index40.js
@@ -8861,6 +8858,7 @@ _yad_jsonp_
 ||zzzyk.com/js/
 !------------------------Specific element hiding rules------------------------!
 szxx.com.cn###A0
+whsir.com##A[href*=".aliyun.com"]
 szxx.com.cn###A1
 szxx.com.cn###A2
 gpcxw.com###AA2
@@ -16291,6 +16289,7 @@ $script,subdocument,third-party,websocket,xmlhttprequest,domain=00ksw.com|01zww.
 @@||zmtt.net^$script,domain=luoqiuzw.com
 !#Novels
 ||lylifa.com^
+||jpqgxy.com^
 ||gssdsj.com^
 bxwx3.org###addiv3
 bxwx3.org###bdstatic
@@ -31636,6 +31635,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||cnevids.com/metrics/
 ||cnnx.io^*/tracker.js
 ||cnnx.io^*/tracking.js
+||cnnx.link/roi/
 ||cnpapers.com/scripts/library/
 ||cnt.3dmy.net^
 ||cnt.mastorage.net^
@@ -36297,6 +36297,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||streetfire.net/handlers/logstreamfileimpression.ashx?
 ||streetinsider.com/*.php?
 ||stribe.com/00/logs?
+||strtape.cloud/stat/
 ||stubhub.com/bfx/api/logging
 ||studyisland.com^*/ga.js
 ||stuff.afterdawn.com/views.cfm
@@ -42452,6 +42453,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=extratorrent.cd|sky
 @@||cleverpush.com/channel/$script,domain=bsdex.de
 @@||community.brave.com/t/$xmlhttprequest
 @@||googleoptimize.com/optimize.js$script,domain=tentree.ca
+@@||lenovo.com/fea/js/adobeAnalytics/adobeAnalytics-searchComponent.js$xmlhttprequest,domain=lenovo.com
 @@||browser.sentry-cdn.com^$domain=eco-clobber.co.uk
 @@||brsrvr.com/api/$xmlhttprequest,domain=dollargeneral.com
 @@||c.paypal.com/da/r/fb.js$script
