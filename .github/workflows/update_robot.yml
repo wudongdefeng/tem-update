@@ -18,7 +18,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: '30 11/12 * * *'
+    - cron: '5 0/4 * * *'
 
 # A workflow run is made up of one or more jobs. 
 # Jobs run in parallel by default. To run jobs sequentially, 
