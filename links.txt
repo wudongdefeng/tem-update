@@ -37,4 +37,3 @@ https://share.r2ray.com/dust/normal/monk_shop_lottery.js,1
 https://share.r2ray.com/dust/normal/monk_skyworth.js,1
 https://share.r2ray.com/dust/rewrite/m_get_inter_shop_sign.js,1
 https://share.r2ray.com/dust/rewrite/m_get_shop_lottery.js,1
-
