@@ -1,0 +1,1 @@
+2021-04-13 09:45:33.988418 ==>> The size of all files in the folder ../files = 1.83 MB
