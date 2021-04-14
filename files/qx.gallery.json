@@ -1,0 +1,31 @@
+{
+  "name": "一堆Bug",
+  "task": [
+    {
+      "config": "5 1,6,11,16,21 * 3-4 *  https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_super5g.js, tag=5G超级盲盒,img-url=https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/img/icon.png, enabled=true"
+    },
+    {
+      "config": "5 8,14,20 6-13 4 * https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_mother_jump.js, tag=母婴-跳一跳, img-url=https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/img/icon.png, enabled=true"
+    },
+    {
+      "config": "3 10 * * * https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_marketLottery.js, tag=京东超市-大转盘, img-url=https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/img/icon.png, enabled=true"
+    },
+    {
+      "config": "3 10 * * * https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_fanslove.js, tag=粉丝互动, img-url=https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/img/icon.png, enabled=true"
+    },
+    {
+      "config": "10 10,11 * * 2-5 https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_entertainment.js, tag=百变大咖秀, img-url=https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/img/icon.png, enabled=true"
+    },
+    {
+      "config": "3 20 * * * https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_shake.js, tag=摇一摇, img-url=https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/img/icon.png, enabled=true"
+    },
+    {
+      "config": "10 10 7-9 4 * https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_xmf.js, tag=京东小魔方, img-url=https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/img/icon.png, enabled=true"
+    },
+    {
+      "config": "2 0-18/6 1-20 4 * https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/z_carnivalcity.js, tag=手机狂欢城, img-url=https://raw.githubusercontent.com/monk-coder/dust/dust/i-chenzhe/img/icon.png, enabled=true"
+    }
+
+  ],
+  "description": "https://github.com/i-chenzhe/qx"
+}
