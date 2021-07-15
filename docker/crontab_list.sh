@@ -60,7 +60,7 @@
 #京喜签到
 11 0 * * * node /scripts/jd_wind_windsign.js >> /scripts/logs/jd_wind_windsign.log 2>&1
 #点点卷
-10 2,22 * * * node /scripts/jd_wind0_wind_necklace_new.js >> /scripts/logs/jd_wind0_wind_necklace_new.log 2>&1
+10 2,22 * * * node /scripts/jd_smiek_wind_necklace.js >> /scripts/logs/jd_smiek_wind_necklace.log 2>&1
 # 东东超市兑换奖品
 0,30 0 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
 # 摇京豆
