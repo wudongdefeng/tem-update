@@ -1,26 +1,25 @@
-/*
-翻翻乐
-更新: 2021-06-05 09:15
+/*翻翻乐
+更新: 2021-07-15 21:15
+活动时间 : 7-15 - 8-15
 抄自 @yangtingxiao 抽奖机脚本
-活动入口： 京东极速版-我的-省钱大赢家-翻翻乐
-极速版大赢家翻翻乐活动
+活动入口： 京东极速版-我的-发财大赢家-翻翻乐
 https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_618redpacket.js
 已支持IOS双京东账号, Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, 小火箭，JSBox, Node.js
 ============Quantumultx===============
 [task_local]
 #翻翻乐
-1 6-21/1 * 6 * https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_618redpacket.js, tag=新潮品牌狂欢, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+1 6-21/1 * * * https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_618redpacket.js, tag=新潮品牌狂欢, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 ================Loon==============
 [Script]
-cron "1 6-21/1 * 6 *" script-path=https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_618redpacket.js tag=翻翻乐
+cron "1 6-21/1 * * *" script-path=https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_618redpacket.js tag=翻翻乐
 
 ===============Surge=================
-翻翻乐 = type=cron,cronexp="1 6-21/1 * 6 *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_618redpacket.js
+翻翻乐 = type=cron,cronexp="1 6-21/1 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_618redpacket.js
 
 ============小火箭=========
-翻翻乐 = type=cron,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_618redpacket.js, cronexpr="1 6-21/1 * 6 *", timeout=3600, enable=true
+翻翻乐 = type=cron,script-path=https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_618redpacket.js, cronexpr="1 6-21/1 * * *", timeout=3600, enable=true
 
  */
 const $ = new Env('翻翻乐');
@@ -116,6 +115,7 @@ message = ""
 function check() {
     return new Promise(async (resolve) => {
         let options = taskUrl("gambleHomePage", `{"linkId":"${$.linkid}"}`)
+    //    console.log(options)
         $.get(options, async (err, resp, data) => {
             try {
                 if (err) {
@@ -275,7 +275,7 @@ function Draw(id, poolBaseId, prizeGroupId, prizeBaseId, prizeType) {
 
 function taskUrl(function_id, body) {
     return {
-        url: `${JD_API_HOST}/?functionId=${function_id}&body=${encodeURIComponent(body)}&t=${Date.now()}&appid=activities_platform&clientVersion=3.5.0`,
+        url: `${JD_API_HOST}/?functionId=${function_id}&body=${encodeURIComponent(body)}&t=${Date.now()}&appid=activities_platform&clientVersion=3.5.6`,
         headers: {
             "Accept": "*/*",
             "Accept-Encoding": "gzip, deflate, br",
@@ -283,8 +283,8 @@ function taskUrl(function_id, body) {
             "Connection": "keep-alive",
             "Content-Type": "application/x-www-form-urlencoded",
             "Host": "api.m.jd.com",
-            "Referer": "https://618redpacket.jd.com/?activityId=DA4SkG7NXupA9sksI00L0g&channel=wjicon&sid=0a1ec8fa2455796af69028f8410996aw&un_area=1_2803_2829_0",
-            "Cookie": cookie,
+            "Referer": "https://618redpacket.jd.com/?activityId=yMVR-_QKRd2Mq27xguJG-w&sid=56e4a523a1a60d6f495c89db3c05055w&un_area=8_573_6627_52446",
+             "Cookie": cookie,
             "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1"),
         }
     }
