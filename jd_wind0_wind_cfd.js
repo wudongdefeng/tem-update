@@ -553,7 +553,7 @@ function makeShareCodes() {
                     shareCodes.push(res.strMyShareId);
                     pin = cookie.match(/pt_pin=([^;]*)/)[1];
                     pin = ts_md5_1.Md5.hashStr(pin);
-                    axios_1["default"].get("https://api.sharecode.ga/api/autoInsert?db=jxcfd&code=" + res.strMyShareId + "&bean=" + bean + "&farm=" + farm + "&pin=" + pin)
+                    axios_1["default"].get("https://api.sharecode.ga/api/jxcfd/20")
                         .then(function (res) {
                         if (res.data.code === 200)
                             console.log('已自动提交助力码');
