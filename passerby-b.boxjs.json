@@ -186,6 +186,34 @@
       "author": "@passerby-b",
       "repo": "https://gitee.com/passerby-b/javascript/raw/master/JD/passerby-b.boxjs.json",
       "script": "https://raw.githubusercontent.com/passerby-b/didi_fruit/main/dd_fruit.js"
+    },
+    {
+      "id": "ks_fruit",
+      "name": "快手果园",
+      "keys": [
+        "kscookies"
+      ],
+      "descs_html": [
+        "填写cookie,多账号用英文逗号(,)分开"
+      ],
+      "settings": [
+        {
+          "id": "kscookies",
+          "name": "kscookies",
+          "val": "",
+          "type": "textarea",
+          "autoGrow": true,
+          "rows": 8,
+          "desc": "kscookies"
+        }
+      ],
+      "icons": [
+        "https://gitee.com/passerby-b/javascript/raw/master/icon/ks.png",
+        "https://gitee.com/passerby-b/javascript/raw/master/icon/ks.png"
+      ],
+      "author": "@passerby-b",
+      "repo": "https://gitee.com/passerby-b/javascript/raw/master/JD/passerby-b.boxjs.json",
+      "script": "https://raw.githubusercontent.com/passerby-b/ks_fruit/main/ks_fruit.js"
     }
   ]
 }

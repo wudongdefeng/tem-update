@@ -18,8 +18,6 @@
 11 13 * * * node /scripts/jd_wind_joypark_task.js >> /scripts/logs/jd_wind_joypark_task.log 2>&1
 #汪汪乐园
 11 12 * * * node /scripts/jd_wind_joy_park.js >> /scripts/logs/jd_wind_joy_park.log 2>&1
-#抢京豆
-0 2 * * * node /scripts/jd_wind_qjd.js >> /scripts/logs/jd_wind_qjd.log 2>&1
 #特物
 0 3 * * * node /scripts/jd_wind_twoly.js >> /scripts/logs/jd_wind_twoly.log 2>&1
 #超级直播间红包雨(活动时间不定期，出现异常提示请忽略。红包雨期间会正常)
