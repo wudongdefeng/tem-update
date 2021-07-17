@@ -72,7 +72,6 @@
 # 宠汪汪
 57 7,15,23 * * * node /scripts/jd_validate.js >> /scripts/logs/jd_validate.log 2>&1
 01 16 * * * node /scripts/jd_validate.js >> /scripts/logs/jd_validate.log 2>&1
-45 */4 * * * node /scripts/jd_smiek_wind_joy.js >> /scripts/logs/jd_smiek_wind_joy.log 2>&1
 0 0,8,16 * * * node /scripts/jd_wind_joy_reward_new.js >> /scripts/logs/jd_wind_joy_reward_new.log 2>&1
 04 16 * * * node /scripts/jd_wind_joy_reward_20.js >> /scripts/logs/jd_wind_joy_reward_20.log 2>&1
 #宠汪汪任务喂食
