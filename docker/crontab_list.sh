@@ -98,7 +98,7 @@
 # 京东抽奖机
 0 0,12,23 * * * node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
 # 京东排行榜
-21 9 * * * node /scripts/jd_wind4_jd_rankingList.js >> /scripts/logs/jd_wind4_jd_rankingList.log 2>&1
+21 9 * * * node /scripts/jd_wind4_wind_rankingList.js >> /scripts/logs/jd_wind4_wind_rankingList.log 2>&1
 # 天天提鹅
 28 * * * * node /scripts/jd_daily_egg.js >> /scripts/logs/jd_daily_egg.log 2>&1
 # 金融养猪
