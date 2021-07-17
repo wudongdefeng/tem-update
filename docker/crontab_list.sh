@@ -53,6 +53,8 @@
 48 11 * * * node /scripts/jd_tsuk_wind_wyw.js >> /scripts/logs/jd_tsuk_wind_wyw.log 2>&1
 #京东试用
 15 12 * * * node /scripts/jd_wind1_wind_try.js >> /scripts/logs/jd_wind1_wind_try.log 2>&1
+#图形签到
+20 5 * * * node /scripts/jd_sign_graphics.js >> /scripts/logs/jd_sign_graphics.log 2>&1
 # 签到
 7 0,17 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
 #京喜签到
@@ -73,8 +75,8 @@
 45 */4 * * * node /scripts/jd_smiek_wind_joy.js >> /scripts/logs/jd_smiek_wind_joy.log 2>&1
 0 0,8,16 * * * node /scripts/jd_wind_joy_reward_new.js >> /scripts/logs/jd_wind_joy_reward_new.log 2>&1
 04 16 * * * node /scripts/jd_wind_joy_reward_20.js >> /scripts/logs/jd_wind_joy_reward_20.log 2>&1
-# 宠汪汪喂食
-#35 */1 * * * node /scripts/jd_joy_feed_new.js >> /scripts/logs/jd_joy_feed_new.log 2>&1
+#宠汪汪任务喂食
+35 */4 * * * node /scripts/jd_wind0_wind_joy_new.js >> /scripts/logs/jd_wind0_wind_joy_new.log 2>&1
 #宠汪汪偷狗粮
 10 0-21/3 * * * node /scripts/jd_smiek_wind_joy_steal.js >> /scripts/logs/jd_smiek_wind_joy_steal.log 2>&1
 # 摇钱树
