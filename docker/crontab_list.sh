@@ -35,6 +35,8 @@
 45 4 * * * node /scripts/jd_wind_sendBeans.js >> /scripts/logs/jd_wind_sendBeans.log 2>&1
 #翻翻乐
 20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
+# 赚30
+3 1,6 * * * node /scripts/jd_wind_earn30.js >> /scripts/logs/jd_wind_earn30.log 2>&1
 
 
 
