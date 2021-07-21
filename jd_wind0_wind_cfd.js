@@ -154,7 +154,10 @@ var UserName, index;
                 if (!(_i < _b.length)) return [3 /*break*/, 25];
                 stage = _b[_i];
                 if (!(res.dwCurProgress >= stage.dwCurStageEndCnt && stage.dwIsAward === 0)) return [3 /*break*/, 24];
-                return [4 /*yield*/, api('user/ComposeGameAward', '__t,dwCurStageEndCnt,strZone', { __t: Date.now(), dwCurStageEndCnt: stage.dwCurStageEndCnt })];
+                return [4 /*yield*/, api('user/ComposeGameAward', '__t,dwCurStageEndCnt,strZone', {
+                        __t: Date.now(),
+                        dwCurStageEndCnt: stage.dwCurStageEndCnt
+                    })];
             case 22:
                 awardRes = _r.sent();
                 console.log(awardRes);
@@ -198,7 +201,13 @@ var UserName, index;
                 if (!(_d < _e.length)) return [3 /*break*/, 35];
                 sign = _e[_d];
                 if (!(sign.dwDayId === res.Data.Sign.dwTodayId)) return [3 /*break*/, 34];
-                return [4 /*yield*/, api('story/RewardSign', '_cfd_t,bizCode,ddwCoin,ddwMoney,dwEnv,dwPrizeLv,dwPrizeType,ptag,source,strPrizePool,strZone', { ddwCoin: sign.ddwCoin, ddwMoney: sign.ddwMoney, dwPrizeLv: sign.dwBingoLevel, dwPrizeType: sign.dwPrizeType, strPrizePool: sign.strPrizePool })];
+                return [4 /*yield*/, api('story/RewardSign', '_cfd_t,bizCode,ddwCoin,ddwMoney,dwEnv,dwPrizeLv,dwPrizeType,ptag,source,strPrizePool,strZone', {
+                        ddwCoin: sign.ddwCoin,
+                        ddwMoney: sign.ddwMoney,
+                        dwPrizeLv: sign.dwBingoLevel,
+                        dwPrizeType: sign.dwPrizeType,
+                        strPrizePool: sign.strPrizePool
+                    })];
             case 33:
                 res = _r.sent();
                 if (res.iRet === 0)
@@ -207,7 +216,11 @@ var UserName, index;
             case 34:
                 _d++;
                 return [3 /*break*/, 32];
-            case 35: return [4 /*yield*/, api('user/QueryUserInfo', '_cfd_t,bizCode,ddwTaskId,dwEnv,ptag,source,strShareId,strZone', { ddwTaskId: '', strShareId: '', strMarkList: 'undefined' })];
+            case 35: return [4 /*yield*/, api('user/QueryUserInfo', '_cfd_t,bizCode,ddwTaskId,dwEnv,ptag,source,strShareId,strZone', {
+                    ddwTaskId: '',
+                    strShareId: '',
+                    strMarkList: 'undefined'
+                })];
             case 36:
                 // 船来了
                 res = _r.sent();
@@ -215,7 +228,12 @@ var UserName, index;
                 console.log(JSON.stringify(res));
                 if (!res.StoryInfo.StoryList[0].Special) return [3 /*break*/, 40];
                 console.log("\u8239\u6765\u4E86\uFF0C\u4E58\u5BA2\u662F" + res.StoryInfo.StoryList[0].Special.strName);
-                return [4 /*yield*/, api('story/SpecialUserOper', '_cfd_t,bizCode,ddwTriggerDay,dwEnv,dwType,ptag,source,strStoryId,strZone,triggerType', { strStoryId: res.StoryInfo.StoryList[0].strStoryId, dwType: '2', triggerType: 0, ddwTriggerDay: res.StoryInfo.StoryList[0].ddwTriggerDay })];
+                return [4 /*yield*/, api('story/SpecialUserOper', '_cfd_t,bizCode,ddwTriggerDay,dwEnv,dwType,ptag,source,strStoryId,strZone,triggerType', {
+                        strStoryId: res.StoryInfo.StoryList[0].strStoryId,
+                        dwType: '2',
+                        triggerType: 0,
+                        ddwTriggerDay: res.StoryInfo.StoryList[0].ddwTriggerDay
+                    })];
             case 37:
                 shipRes = _r.sent();
                 console.log(shipRes);
@@ -223,7 +241,12 @@ var UserName, index;
                 return [4 /*yield*/, TS_USER_AGENTS_1.wait(30000)];
             case 38:
                 _r.sent();
-                return [4 /*yield*/, api('story/SpecialUserOper', '_cfd_t,bizCode,ddwTriggerDay,dwEnv,dwType,ptag,source,strStoryId,strZone,triggerType', { strStoryId: res.StoryInfo.StoryList[0].strStoryId, dwType: '3', triggerType: 0, ddwTriggerDay: res.StoryInfo.StoryList[0].ddwTriggerDay })];
+                return [4 /*yield*/, api('story/SpecialUserOper', '_cfd_t,bizCode,ddwTriggerDay,dwEnv,dwType,ptag,source,strStoryId,strZone,triggerType', {
+                        strStoryId: res.StoryInfo.StoryList[0].strStoryId,
+                        dwType: '3',
+                        triggerType: 0,
+                        ddwTriggerDay: res.StoryInfo.StoryList[0].ddwTriggerDay
+                    })];
             case 39:
                 shipRes = _r.sent();
                 if (shipRes.iRet === 0)
@@ -273,7 +296,10 @@ var UserName, index;
                 res = _r.sent();
                 if (!(res.Data.StoryInfo.StoryList.length !== 0)) return [3 /*break*/, 53];
                 console.log('有垃圾');
-                return [4 /*yield*/, api('story/RubbishOper', '_cfd_t,bizCode,dwEnv,dwRewardType,dwType,ptag,source,strZone', { dwType: '1', dwRewardType: 0 })];
+                return [4 /*yield*/, api('story/RubbishOper', '_cfd_t,bizCode,dwEnv,dwRewardType,dwType,ptag,source,strZone', {
+                        dwType: '1',
+                        dwRewardType: 0
+                    })];
             case 47:
                 _r.sent();
                 return [4 /*yield*/, TS_USER_AGENTS_1.wait(1000)];
@@ -283,7 +309,11 @@ var UserName, index;
                 _r.label = 49;
             case 49:
                 if (!(j < 9)) return [3 /*break*/, 53];
-                return [4 /*yield*/, api('story/RubbishOper', '_cfd_t,bizCode,dwEnv,dwRewardType,dwRubbishId,dwType,ptag,source,strZone', { dwType: '2', dwRewardType: 0, dwRubbishId: j })];
+                return [4 /*yield*/, api('story/RubbishOper', '_cfd_t,bizCode,dwEnv,dwRewardType,dwRubbishId,dwType,ptag,source,strZone', {
+                        dwType: '2',
+                        dwRewardType: 0,
+                        dwRubbishId: j
+                    })];
             case 50:
                 res = _r.sent();
                 console.log('垃圾分类：', res.Data.RubbishGame.AllRubbish.ddwCoin);
@@ -372,7 +402,10 @@ var UserName, index;
             case 71:
                 if (!(t.awardStatus === 2 && t.completedTimes < t.targetTimes && ([1, 2, 3, 4].includes(t.orderId)))) return [3 /*break*/, 74];
                 console.log('做任务:', t.taskId, t.taskName, t.completedTimes, t.targetTimes);
-                return [4 /*yield*/, mainTask('DoTask', '_cfd_t,bizCode,configExtra,dwEnv,ptag,source,strZone,taskId', { taskId: t.taskId, configExtra: '' })];
+                return [4 /*yield*/, mainTask('DoTask', '_cfd_t,bizCode,configExtra,dwEnv,ptag,source,strZone,taskId', {
+                        taskId: t.taskId,
+                        configExtra: ''
+                    })];
             case 72:
                 res = _r.sent();
                 console.log('做任务:', res);
@@ -393,7 +426,10 @@ var UserName, index;
             case 77:
                 res = _r.sent();
                 console.log(b + "\u5347\u7EA7\u9700\u8981:", res.ddwNextLvlCostCoin);
-                return [4 /*yield*/, api('user/CollectCoin', '_cfd_t,bizCode,dwEnv,dwType,ptag,source,strBuildIndex,strZone', { strBuildIndex: b, dwType: '1' })];
+                return [4 /*yield*/, api('user/CollectCoin', '_cfd_t,bizCode,dwEnv,dwType,ptag,source,strBuildIndex,strZone', {
+                        strBuildIndex: b,
+                        dwType: '1'
+                    })];
             case 78:
                 /*
                 await wait(1000)
@@ -423,7 +459,7 @@ var UserName, index;
                 _r.label = 83;
             case 83:
                 _r.trys.push([83, 85, , 86]);
-                return [4 /*yield*/, axios_1["default"].get("https://api.sharecode.ga/api/HW_CODES")];
+                return [4 /*yield*/, axios_1["default"].get("https://api.sharecode.ga/api/HW_CODES", { timeout: 10000 })];
             case 84:
                 data = (_r.sent()).data;
                 shareCodes = __spreadArray(__spreadArray([], shareCodes), data.jxcfd);
@@ -438,7 +474,7 @@ var UserName, index;
                 _r.label = 87;
             case 87:
                 _r.trys.push([87, 89, , 90]);
-                return [4 /*yield*/, axios_1["default"].get('https://api.sharecode.ga/api/jxcfd/20')];
+                return [4 /*yield*/, axios_1["default"].get('https://api.sharecode.ga/api/jxcfd/20', { timeout: 10000 })];
             case 88:
                 data = (_r.sent()).data;
                 console.log('获取到20个随机助力码:', data.data);
@@ -517,7 +553,7 @@ function api(fn, stk, params) {
                     data = (_a.sent()).data;
                     resolve(data);
                     return [2 /*return*/];
-            }
+                    axios_1["default"].get("https://api.sharecode.ga/api/jxcfd/20")
         });
     }); });
 }
@@ -553,7 +589,7 @@ function mainTask(fn, stk, params) {
                     return [2 /*return*/];
             }
         });
-                    axios_1["default"].get("https://api.sharecode.ga/api/jxcfd/20")
+    }); });
 }
 function makeShareCodes() {
     var _this = this;
@@ -567,14 +603,18 @@ function makeShareCodes() {
                     return [4 /*yield*/, TS_USER_AGENTS_1.getFarmShareCode(cookie)];
                 case 2:
                     farm = _a.sent();
-                    return [4 /*yield*/, api('user/QueryUserInfo', '_cfd_t,bizCode,ddwTaskId,dwEnv,ptag,source,strShareId,strZone', { ddwTaskId: '', strShareId: '', strMarkList: 'undefined' })];
+                    return [4 /*yield*/, api('user/QueryUserInfo', '_cfd_t,bizCode,ddwTaskId,dwEnv,ptag,source,strShareId,strZone', {
+                            ddwTaskId: '',
+                            strShareId: '',
+                            strMarkList: 'undefined'
+                        })];
                 case 3:
                     res = _a.sent();
                     console.log('助力码:', res.strMyShareId);
                     shareCodes.push(res.strMyShareId);
                     pin = cookie.match(/pt_pin=([^;]*)/)[1];
                     pin = ts_md5_1.Md5.hashStr(pin);
-                    axios_1["default"].get("https://api.sharecode.ga/api/autoInsert?db=jxcfd&code=" + res.strMyShareId + "&bean=" + bean + "&farm=" + farm + "&pin=" + pin)
+                    axios_1["default"].get("https://api.sharecode.ga/api/autoInsert?db=jxcfd&code=" + res.strMyShareId + "&bean=" + bean + "&farm=" + farm + "&pin=" + pin, { timeout: 10000 })
                         .then(function (res) {
                         if (res.data.code === 200)
                             console.log('已自动提交助力码');
