@@ -37,6 +37,8 @@
 20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 # 赚30
 3 1,6 * * * node /scripts/jd_wind_earn30.js >> /scripts/logs/jd_wind_earn30.log 2>&1
+# MM领京豆
+20 9 * * * node /scripts/jd_smiek_gua_MMdou.js >> /scripts/logs/jd_smiek_gua_MMdou.log 2>&1
 
 
 
