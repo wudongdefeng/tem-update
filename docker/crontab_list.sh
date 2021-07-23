@@ -23,8 +23,7 @@
 #超级直播间红包雨(活动时间不定期，出现异常提示请忽略。红包雨期间会正常)
 1,31 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
 #燃动夏季
-12 6-14/2 * * * node /scripts/jd_wind9_wind_summer_movement.js >> /scripts/logs/jd_wind9_wind_summer_movement.log 2>&1
-21 16-22/2 * * * node /scripts/jd_smiek_wind_summer_movement.js >> /scripts/logs/jd_smiek_wind_summer_movement.log 2>&1
+21 6-22/4 * * * node /scripts/jd_smiek_wind_summer_movement.js >> /scripts/logs/jd_smiek_wind_summer_movement.log 2>&1
 #粉丝互动
 12 15 * * * node /scripts/jd_wind8_wind_wxFans.js >> /scripts/logs/jd_wind8_wind_wxFans.log 2>&1
 #运动会
