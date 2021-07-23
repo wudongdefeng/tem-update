@@ -23,7 +23,7 @@
 #超级直播间红包雨(活动时间不定期，出现异常提示请忽略。红包雨期间会正常)
 1,31 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
 #燃动夏季
-21 6-22/4 * * * node /scripts/jd_smiek_wind_summer_movement.js >> /scripts/logs/jd_smiek_wind_summer_movement.log 2>&1
+21 6-22/2 * * * node /scripts/jd_smiek_wind_summer_movement.js >> /scripts/logs/jd_smiek_wind_summer_movement.log 2>&1
 #粉丝互动
 12 15 * * * node /scripts/jd_wind8_wind_wxFans.js >> /scripts/logs/jd_wind8_wind_wxFans.log 2>&1
 #运动会
@@ -63,7 +63,7 @@
 #京喜签到
 11 0 * * * node /scripts/jd_wind_windsign.js >> /scripts/logs/jd_wind_windsign.log 2>&1
 #点点卷
-10 2,22 * * * node /scripts/jd_smiek_wind_necklace.js >> /scripts/logs/jd_smiek_wind_necklace.log 2>&1
+10 2,22 * * * node /scripts/jd_necklace.js >> /scripts/logs/jd_necklace.log 2>&1
 # 东东超市兑换奖品
 0,30 0 * * * node /scripts/jd_wind0_wind_blueCoin.js >> /scripts/logs/jd_wind0_wind_blueCoin.log 2>&1
 # 摇京豆
