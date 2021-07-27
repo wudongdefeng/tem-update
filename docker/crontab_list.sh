@@ -110,7 +110,7 @@
 # 京喜工厂
 50 * * * * node /scripts/jd_wind_dreamFactory2.js >> /scripts/logs/jd_wind_dreamFactory2.log 2>&1
 # 东东小窝
-#46 6,23 * * * node /scripts/jd_small_home.js >> /scripts/logs/jd_small_home.log 2>&1
+#46 6,23 * * * node /scripts/jd_wind_small_home.js >> /scripts/logs/jd_wind_small_home.log 2>&1
 # 东东工厂
 26 * * * * node /scripts/jd_jdfactory.js >> /scripts/logs/jd_jdfactory.log 2>&1
 # 赚京豆(微信小程序)
@@ -172,7 +172,7 @@
 #京喜牧场
 15 */2 * * * node /scripts/jd_wind9_wind_windmc.js >> /scripts/logs/jd_wind9_wind_windmc.log 2>&1
 #东东小窝
-11 0 * * * node /scripts/jd_wind4_wind_woHome.js >> /scripts/logs/jd_wind4_wind_woHome.log 2>&1
+11 0 * * * node /scripts/jd_wind_small_home.js >> /scripts/logs/jd_wind_small_home.log 2>&1
 #京东到家果园
 10 0,3,8,11,17 * * * node /scripts/jd_winddj_fruit.js >> /scripts/logs/jd_winddj_fruit.log 2>&1
 #京东到家鲜豆任务
