@@ -1,122 +1,81 @@
 /*
-愤怒的现金
-更新时间：2021-7-14
-备注：极速助力，打击黑产盗取现金的犯罪行为。默认向前助力9个账号，若要指定被助力账号，需cashHelpPins环境变量中填入需要助力的pt_pin，有多个请用@符号连接。
-0 0 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_angryCash.js
+活动：早起赢现金
+更新时间：2021-7-17
+入口：京东汽车-瓜分万元
+备注：支付一元才能参与活动，填写环境变量morningScPins给指定账号打卡
+TG学习交流群：https://t.me/cdles
+30 7 * * * https://raw.githubusercontent.com/cdle/jd_study/main/jd_morningSc.js
 */
-const $ = new Env("愤怒的现金")
+const $ = new Env("早起赢现金")
 const ua = `jdltapp;iPhone;3.1.0;${Math.ceil(Math.random()*4+10)}.${Math.ceil(Math.random()*4)};${randomString(40)}`
-const JD_API_HOST = 'https://api.m.jd.com/client.action';
 let cookiesArr = []
-var pins = process.env.cashHelpPins ?? ""
-var helps = [];
-var tools = [];
+var pins = process.env.morningScPins ?? ""
+let cookie = '';
 !(async () => {
     await requireConfig()
-    len = cookiesArr.length
+    if (!cookiesArr[0]) {
+        $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {
+            "open-url": "https://bean.m.jd.com/bean/signIndex.action"
+        });
+        return;
+    }
     if(!pins){
-        console.log("未设置环境变量cashHelpPins，默认助力前9个账号")
+        console.log("未设置环境变量morningScPins")
     }
-    for (let i = 0; i < len; i++) {
-        cookie = cookiesArr[i];
-        pin = cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]
-        if((!pins && i<9) || (pins && pins.indexOf(pin)!=-1)){
-            data = await requestApi("cash_mob_home", cookie)
-            inviteCode = data?.data?.result?.inviteCode
-            if (inviteCode) {
-                shareDate = data?.data?.result?.shareDate
-                helps.push({inviteCode: inviteCode, key: i})
-                tools.push({success: 0, shareDate:"", cookie: cookie, key: i, shareDate: shareDate})
+    for (let i = 0; i < cookiesArr.length; i++) {
+        if (cookiesArr[i]) {
+            cookie = cookiesArr[i];
+            pin = cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]
+            if(!pins || pins.indexOf(pin)==-1){
+                continue
             }
-        } else {
-            tools.push({success: 0, shareDate:"", cookie: cookie, key: i})
-        }
-    }
-    while(tools.length && helps.length) {
-        var tool = tools.pop()
-        var cookie = tool.cookie
-        if(!tool.shareDate){
-            requestApi("cash_mob_home", cookie, {}, tool).then(function(data){
-                var tool = data.tool
-                if(data.code === undefined){
-                    tools.unshift(tool)
-                    return
+            $.cookie = cookie;
+            $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
+            $.index = i + 1;
+            $.isLogin = true;
+            $.nickName = '';
+            message = '';
+            await TotalBean();
+            console.log(`\n开始【京东账号${$.index}】${$.nickName || $.UserName}\n`);
+            if (!$.isLogin) {
+                $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {
+                    "open-url": "https://bean.m.jd.com/bean/signIndex.action"
+                });
+                if ($.isNode()) {
+                    await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
                 }
-                shareDate = data?.data?.result?.shareDate
-                if(!shareDate){
-                    return
-                }
-                tool.shareDate = shareDate
-                help(tool)
-            })
-        }else{
-            help(tool)
-        }
-        await $.wait(20)
-    }
-    await $.wait(2000)
-    
-})().catch((e) => {
-    $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
-}).finally(() => {
-    $.done();
-})
-
-function help(tool){
-    var cookie = tool.cookie
-    var inviteCode = helps[0].inviteCode
-    var key = helps[0].key
-    requestApi("cash_mob_assist", cookie, {
-        source: 3,
-        inviteCode: inviteCode,
-        shareDate: tool.shareDate
-    }).then(function(data){
-        console.log(`${tool.key+1}->${key+1}`,data?.data?.bizMsg)
-        switch (data?.data?.bizCode) {
-            case 0: //助力成功
-                tool.success++
-                break;
-            case 210: //您无法为自己助力哦~
-                if(tools.length==0){
-                    console.log("跳出循环")
-                    tool.success = 3
-                }
-                break;
-            case 188: //活动太火爆啦\n看看其他活动吧~'
-                tool.success = 3
-                break
-            case 206: //今日已为Ta助力过啦~
-                if(!tool.helps){
-                    tool.helps = []
+                continue
+            }
+            data = await queryUserInfo()
+            if (!data?.body?.isClockDay) {
+                if(data?.body?.clockStatus){
+                    if(data?.body?.paymentStatus){
+                        console.log("已经打过卡了，明天再来打卡吧")
+                    }else{
+                        console.log("已经打过卡了，未参加明天的打卡")
+                    }
+                    
                 }else{
-                    if(tool.helps.indexOf(key)!=-1)
-                    if(helps[0]?.inviteCode==inviteCode)helps.shift()
+                    console.log("未参与打卡活动")
                 }
-                tool.helps.push(key)
-                break;
-            case 207: //啊哦~今日助力次数用完啦
-                tool.success = 3
-                break
-            case 208: //您来晚啦，您的好友已经领到全部奖励了
-                if(helps[0]?.inviteCode==inviteCode)helps.shift()
-                break;
-            case 106: //你点击的太快啦\n请稍后尝试~
-                break;
-            default:
-                console.log("异常", data)
-                tool.success = 3
-                break;
-        }
-        if(tool.success<3){
-            tools.unshift(tool)
-        }         
-    })
-}
+                continue
+            } else {
 
-function requestApi(functionId, cookie, body = {}, tool) {
+            }
+            data = await clockIn()
+            if (data?.head?.code == 200) {
+                notify.sendNotify(`早起赢现金打卡成功，记得参与明天的打卡活动哦`);
+            } else {
+                notify.sendNotify(`早起赢现金打卡错误`, data);
+            }
+        }
+    }
+})()
+
+function queryUserInfo() {
     return new Promise(resolve => {
         $.post({
-            url: `${JD_API_HOST}?functionId=${functionId}&body=${escape(JSON.stringify(body))}&appid=CashRewardMiniH5Env&appid=9.1.0`,
+            url: 'https://api.m.jd.com/client.action?functionId=morning_sc_queryUserInfo',
             headers: {
                 'Cookie': cookie,
                 'Accept': '*/*',
@@ -124,19 +83,53 @@ function requestApi(functionId, cookie, body = {}, tool) {
                 'Accept-Encoding': 'gzip, deflate, br',
                 'User-Agent': ua,
                 'Accept-Language': 'zh-Hans-CN;q=1',
-                'Host': 'api.m.jd.com',
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Referer': 'http://wq.jd.com/wxapp/pages/hd-interaction/index/index',
+                'Host': 'api.m.jd.com'
             },
-        }, (_, resp, data) => {
+            body: `adid=BC3866ED-A85F-40FA-830E-508F0F7226EE&body={}&build=167724&client=apple&clientVersion=10.0.6&openudid=84106e1c43687f454bfb69b7831034a7f02e2d62&sign=ddf05193cf9b3960b8bb486e1861a70f&st=1626353585939&sv=110`
+        }, (err, resp, data) => {
             try {
                 data = JSON.parse(data)
+                if (data.data) {
+                    console.log(data.data.bizMsg)
+                }
+                if (data.errorMessage) {
+                    console.log(data.errorMessage)
+                }
             } catch (e) {
                 $.logErr('Error: ', e, resp)
             } finally {
-                if(tool){
-                    data.tool = tool
+                resolve(data)
+            }
+        })
+    })
+}
+
+function clockIn() {
+    return new Promise(resolve => {
+        $.post({
+            url: 'https://api.m.jd.com/client.action?functionId=morning_sc_clockIn',
+            headers: {
+                'Cookie': cookie,
+                'Accept': '*/*',
+                'Connection': 'keep-alive',
+                'Accept-Encoding': 'gzip, deflate, br',
+                'User-Agent': ua,
+                'Accept-Language': 'zh-Hans-CN;q=1',
+                'Host': 'api.m.jd.com'
+            },
+            body: `adid=BC3866ED-A85F-40FA-830E-508F0F7226EE&area=20_1726_22885_51456&body={}&build=167724&client=apple&clientVersion=10.0.6&d_brand=apple&d_model=iPhone10,4&joycious=94&lang=zh_CN&networkType=4g&networklibtype=JDNetworkBaseAF&openudid=84106e1c43687f454bfb69b7831034a7f02e2d62&osVersion=14.4.2&partner=apple&rfs=0000&scope=10&screen=750*1334&sign=493d44a41b6d852e024c75cbaacf51d2&st=1626478320220&sv=121&uemps=0-0&uts=0f31TVRjBSulv7BX1PVDEL+N224mGHmcXDxrm4KUU12U5TiWKO80M8NhmREN8AbYjX/cYxQZMj6dPyVM7JTDXDlk8K/RJ8KM1Yvh9BQ39IZXuuMt6KCAs0vkhr0Vpi91T+T36Xjdi/wgv3BzIR3BjFcMnccL+ht5gtKPSCNseuUCFsj9Sn6tgKI8QlIk4/oKAUhYBd5NKA+FS1ya0bJSBQ==&uuid=hjudwgohxzVu96krv/T6Hg==`
+        }, (err, resp, data) => {
+            try {
+                data = JSON.parse(data)
+                if (data.data) {
+                    console.log(data.data.bizMsg)
                 }
+                if (data.errorMessage) {
+                    console.log(data.errorMessage)
+                }
+            } catch (e) {
+                $.logErr('Error: ', e, resp)
+            } finally {
                 resolve(data)
             }
         })
@@ -159,6 +152,51 @@ function requireConfig() {
         }
         console.log(`共${cookiesArr.length}个京东账号\n`)
         resolve()
+    })
+}
+
+function TotalBean() {
+    return new Promise(async resolve => {
+        const options = {
+            "url": `https://wq.jd.com/user/info/QueryJDUserInfo?sceneval=2`,
+            "headers": {
+                "Accept": "application/json,text/plain, */*",
+                "Content-Type": "application/x-www-form-urlencoded",
+                "Accept-Encoding": "gzip, deflate, br",
+                "Accept-Language": "zh-cn",
+                "Connection": "keep-alive",
+                "Cookie": cookie,
+                "Referer": "https://wqs.jd.com/my/jingdou/my.shtml?sceneval=2",
+                "User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")
+            }
+        }
+        $.post(options, (err, resp, data) => {
+            try {
+                if (err) {
+                    console.log(`${JSON.stringify(err)}`)
+                    console.log(`${$.name} API请求失败，请检查网路重试`)
+                } else {
+                    if (data) {
+                        data = JSON.parse(data);
+                        if (data['retcode'] === 13) {
+                            $.isLogin = false; //cookie过期
+                            return
+                        }
+                        if (data['retcode'] === 0) {
+                            $.nickName = (data['base'] && data['base'].nickname) || $.UserName;
+                        } else {
+                            $.nickName = $.UserName
+                        }
+                    } else {
+                        console.log(`京东服务器返回空数据`)
+                    }
+                }
+            } catch (e) {
+                $.logErr(e, resp)
+            } finally {
+                resolve();
+            }
+        })
     })
 }
 
@@ -509,7 +547,7 @@ function Env(t, e) {
         done(t = {}) {
             const e = (new Date).getTime(),
                 s = (e - this.startTime) / 1e3;
-            this.log("", `🔔${this.name}, 结束! 🕛 ${s-2} 秒`), this.log(), (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t)
+            this.log("", `🔔${this.name}, 结束! 🕛 ${s} 秒`), this.log(), (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t)
         }
     }(t, e)
 }
