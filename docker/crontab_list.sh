@@ -38,8 +38,8 @@
 3 1,6 * * * node /scripts/jd_wind_earn30.js >> /scripts/logs/jd_wind_earn30.log 2>&1
 # MM领京豆
 20 9 * * * node /scripts/jd_smiek_gua_MMdou.js >> /scripts/logs/jd_smiek_gua_MMdou.log 2>&1
-
-
+#全民摸冰
+20 17,18 * * * node /scripts/jd_wind8_wind_mb.js >> /scripts/logs/jd_wind8_wind_mb.log 2>&1
 
 #整点红包雨
 0 0-23/1 * * * node /scripts/jd_wind2_long_super_redrain.js >> /scripts/logs/jd_wind2_long_super_redrain.log 2>&1
