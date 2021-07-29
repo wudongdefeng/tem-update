@@ -46,8 +46,8 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
-  await getAuthorShareCode('');
-  await getAuthorShareCode('');
+  await getAuthorShareCode('http://cdn.annnibb.me/jd_zz.json');
+  await getAuthorShareCode('https://raw.githubusercontent.com/gitupdate/updateTeam/master/shareCodes/jd_zz.json');
   await getRandomCode();
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
@@ -558,7 +558,7 @@ async function distributeBeanActivity() {
         url: `http://go.chiang.fun/autocommit`,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ "act": "zuan", code }),
-        timeout: 10000
+        timeout: 30000
       }).then((resp) => {
         if (resp.statusCode === 200) {
           try {
@@ -714,7 +714,7 @@ function getAuthorShareCode(url) {
       try {
         if (err) {
         } else {
-          $.authorTuanList = []
+          $.authorTuanList = $.authorTuanList.concat(JSON.parse(data))
         }
       } catch (e) {
         $.logErr(e, resp)
@@ -725,17 +725,17 @@ function getAuthorShareCode(url) {
   })
 }
 async function getRandomCode() {
-  await $.http.get({url: ``, timeout: 10000}).then(async (resp) => {
+  await $.http.get({url: `http://go.chiang.fun/read/zuan/${randomCount}`, timeout: 10000}).then(async (resp) => {
     if (resp.statusCode === 200) {
       try {
         let { body } = resp;
         body = JSON.parse(body);
         if (body && body['code'] === 200) {
           console.log(`随机取【赚京豆-瓜分京豆】${randomCount}个邀请码成功\n`);
-          $.body = [];
+          $.body = body['data'];
           $.body1 = [];
           $.body.map(item => {
-            // $.body1.push(JSON.parse(item));
+            $.body1.push(JSON.parse(item));
           })
         }
       } catch (e) {
