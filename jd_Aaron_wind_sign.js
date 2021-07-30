@@ -77,8 +77,9 @@ if ($.isNode()) {
         }
         continue
       }
-      await signhb()
+      await signhb(false)
       await $.wait(2000);
+      await signhb()
       if (!$.black) {
         if ($.commonlist && $.commonlist.length) {
           console.log("开始做红包任务")
@@ -99,10 +100,13 @@ if ($.isNode()) {
       cookie = cookiesArr[i]
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
       if ($.shareCodes && $.shareCodes.length && !$.blackInfo[$.UserName]) {
-        await signhb(false)
-        await $.wait(2000);
         console.log(`\n开始内部互助\n`)
         for (let j = 0; j < $.shareCodes.length; j++) {
+          if ($.shareCodes[j].num == $.domax) {
+            $.shareCodes.splice(j, 1)
+            j--
+            continue
+          }
           if ($.shareCodes[j].use === $.UserName) {
             console.log(`不能助力自己`)
             continue
@@ -113,6 +117,7 @@ if ($.isNode()) {
             continue
           }
           await helpSignhb($.shareCodes[j].smp);
+          $.shareCodes[j].num++
           await $.wait(2000);
         }
       }
@@ -145,6 +150,7 @@ function signhb(type = true) {
               sharetask: { domax, helppic, status },
               signlist = []
             } = data
+            $.domax = domax
             for (let key of Object.keys(signlist)) {
               let vo = signlist[key]
               if (vo.istoday === 1) {
@@ -171,6 +177,7 @@ function signhb(type = true) {
               $.shareCodes.push({
                 'use': $.UserName,
                 'smp': smp,
+                'num': helpNum || 0,
                 'max': max
               })
             }
