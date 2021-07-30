@@ -33,8 +33,6 @@
 45 4 * * * node /scripts/jd_wind_sendBeans.js >> /scripts/logs/jd_wind_sendBeans.log 2>&1
 #翻翻乐
 20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
-# 赚30
-3 1,6 * * * node /scripts/jd_wind_earn30.js >> /scripts/logs/jd_wind_earn30.log 2>&1
 # MM领京豆
 20 9 * * * node /scripts/jd_smiek_gua_MMdou.js >> /scripts/logs/jd_smiek_gua_MMdou.log 2>&1
 #全民摸冰
@@ -164,8 +162,6 @@
 10 10,23 * * * node /scripts/jd_market_lottery.js >> /scripts/logs/jd_market_lottery.log 2>&1
 # 领金贴
 5 0 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
-# 东东电竞经理
-15 0-23/2 * * * node /scripts/jd_hello_wind_EsportsManager.js >> /scripts/logs/jd_hello_wind_EsportsManager.log 2>&1
 # 跳跳乐瓜分京豆
 15 0,12,22 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 #京喜牧场
