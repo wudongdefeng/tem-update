@@ -1,4 +1,4 @@
-# 每3天的23:50分清理一次日志(互助码不清理，proc_file.sh对该文件进行了去重)
+﻿# 每3天的23:50分清理一次日志(互助码不清理，proc_file.sh对该文件进行了去重)
 50 23 */3 * * find /scripts/logs -name '*.log' | grep -v 'sharecodeCollection' | xargs rm -rf
 #收集助力码
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
@@ -61,7 +61,7 @@
 11 0 * * * node /scripts/jd_Aaron_wind_sign.js >> /scripts/logs/jd_Aaron_jind_sign.log 2>&1
 #点点卷
 10 2,22 * * * node /scripts/jd_smiek_wind_necklace.js >> /scripts/logs/jd_smiek_wind_necklace.log 2>&1
-# 东东超市兑换奖品
+# 东东超市兑换奖品#
 0,30 0 * * * node /scripts/jd_hello_wind_blueCoin.js >> /scripts/logs/jd_hello_wind_blueCoin.log 2>&1
 # 摇京豆
 6 0,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
