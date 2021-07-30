@@ -60,7 +60,7 @@
 # 签到
 7 0,17 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
 #京喜签到
-11 0 * * * node /scripts/jd_Aaron_jx_sign.js >> /scripts/logs/jd_Aaron_jx_sign.log 2>&1
+11 0 * * * node /scripts/jd_Aaron_wind_sign.js >> /scripts/logs/jd_Aaron_jind_sign.log 2>&1
 #点点卷
 10 2,22 * * * node /scripts/jd_smiek_wind_necklace.js >> /scripts/logs/jd_smiek_wind_necklace.log 2>&1
 # 东东超市兑换奖品
