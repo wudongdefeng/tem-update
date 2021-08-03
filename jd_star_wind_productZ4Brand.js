@@ -1,13 +1,15 @@
 /*
-* 最新特务活动为冲榜活动，由于奖品较少且只有排名靠前的才有奖励，故此脚本只会给作者助力，感谢运行此脚本；
-* 希望大家踊跃助力，帮助作者提升排名
-* cron 14 14,17 * * *
-* */
+特务Z
+cron 23 8,9 3 8 *
+要跑2次
+*/
 const $ = new Env('特务Z');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let cookiesArr = [];
+let UA = ``;
 $.allInvite = [];
+let useInfo = {};
 $.helpEncryptAssignmentId = '';
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -25,19 +27,10 @@ if ($.isNode()) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
-  let res = [];
-  try{res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/wudongdefeng/jd-temporary@main/superBrand.json');}catch (e) {}
-  if(!res){
-    try{res = await getAuthorShareCode('https://cdn.jsdelivr.net/gh/wudongdefeng/jd-temporary@main/superBrand.json');}catch (e) {}
-    if(!res){res = [];}
-  }
-  if(res.length === 0){console.log(`获取作者助力码失败或者作者已不需要助力，感谢`);return ;}
-  console.log(`新版特务为冲榜活动，由于奖品较少且只有排名靠前的才有奖励，故此脚本只会给作者助力，感谢运行此脚本；`);
-  $.shareUuid = res[0];
   for (let i = 0; i < cookiesArr.length; i++) {
+    UA = `jdapp;iPhone;10.0.8;14.6;${randomWord(false,40,40)};network/wifi;JDEbook/openapp.jdreader;model/iPhone9,2;addressid/2214222493;appBuild/168841;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16E158;supportJDSHWK/1`;
     $.index = i + 1;
     $.cookie = cookiesArr[i];
-    $.cookie2 = cookiesArr[i];
     $.isLogin = true;
     $.nickName = '';
     await TotalBean();
@@ -56,329 +49,227 @@ if ($.isNode()) {
     }catch (e) {
       console.log(JSON.stringify(e));
     }
+    await $.wait(1000);
+  }
+  if($.allInvite.length > 0 ){
+    console.log(`\n开始脚本内互助\n`);
+  }
+  for (let i = 0; i < cookiesArr.length; i++) {
+    $.cookie = cookiesArr[i];
+    $.canHelp = true;
+    $.UserName = decodeURIComponent($.cookie.match(/pt_pin=([^; ]+)(?=;?)/) && $.cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+    $.encryptProjectId = useInfo[$.nickName];
+    for (let j = 0; j < $.allInvite.length && $.canHelp; j++) {
+      $.codeInfo = $.allInvite[j];
+      $.code = $.codeInfo.code;
+      if($.UserName ===  $.codeInfo.userName || $.codeInfo.time === 3){
+        continue;
+      }
+      console.log(`${$.UserName},去助力:${$.code}`);
+      await takeRequest('help');
+      await $.wait(2000);
+    }
   }
 })().catch((e) => {$.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')}).finally(() => {$.done();})
-async function main() {
-  await getToken();
-  await $.wait(1000)
-  console.log('token:'+$.token);
-  await getActCookie();
-  await $.wait(1000)
-  $.myPingInfo = {};
-  await getMyPing();
-  await $.wait(1000)
-  if(JSON.stringify($.myPingInfo) === '{}'){console.log(`初始化失败`);return ;}
-  await getUserInfo();
-  await $.wait(1000)
-  await getMyPing();
-  await $.wait(1000)
-  await accessLogWithAD();
-  await $.wait(1000);
-  $.activityInfo = {};
-  await getActivityInfo();
-  if(JSON.stringify($.activityInfo) === '{}'){console.log(`获取活动详情失败`);return ;}
-  await $.wait(1000);
-  console.log(`开始助力作者`)
-  await help();
-}
-async function accessLogWithAD(){
-  const url = `https://lzdz-isv.isvjcloud.com/common/accessLogWithAD`;
-  const method = `POST`;
-  const headers = {
-    'Host' : `lzdz-isv.isvjcloud.com`,
-    'Accept' : `application/json`,
-    'Origin' : `https://lzdz-isv.isvjcloud.com`,
-    'X-Requested-With' : `XMLHttpRequest`,
-    'Accept-Encoding' : `gzip, deflate, br`,
-    'Content-Type' : `application/x-www-form-urlencoded`,
-    'Connection' : `keep-alive`,
-    'User-Agent' : `JD4iPhone/162751 (iPhone; iOS 14.6; Scale/3.00)`,
-    'Cookie' : $.cookie ,
-    'Referer' : `https://lzdz-isv.isvjcloud.com/dingzhi/pg/phototGame/activity/3656401d=1000004064`,
-    'Accept-Language' : `zh-cn`,
-  };
-  const body = `venderId=1000004064&code=99&pin=${encodeURIComponent($.myPingInfo.secretPin)}&activityId=dz2107100000406401&pageUrl=https%3A%2F%2Flzdz-isv.isvjcloud.com%2Fdingzhi%2Fpg%2FphototGame%2Factivity%3FactivityId%3Ddz2107100000406401%26un_area%3D2_2830_51828_0&subType=app&adSource=`;
-  let myRequest = {url: url, method: method, headers: headers, body: body};
-  return new Promise(async resolve => {
-    $.post(myRequest, (err, resp, data) => {
-      try {
 
-      } catch (e) {
-        console.log(data);
-        $.logErr(e, resp)
-      } finally {
-        resolve();
-      }
-    })
-  })
-}
-async function help(){
-  const url = `https://lzdz-isv.isvjcloud.com/dingzhi/pg/phototGame/share`;
-  const method = `POST`;
-  const headers = {
-    'Host' : `lzdz-isv.isvjcloud.com`,
-    'Accept' : `application/json`,
-    'Origin' : `https://lzdz-isv.isvjcloud.com`,
-    'X-Requested-With' : `XMLHttpRequest`,
-    'Accept-Encoding' : `gzip, deflate, br`,
-    'Content-Type' : `application/x-www-form-urlencoded`,
-    'Connection' : `keep-alive`,
-    'User-Agent' : `JD4iPhone/162751 (iPhone; iOS 14.6; Scale/3.00)`,
-    'Cookie' : $.cookie ,
-    'Referer' : `https://lzdz-isv.isvjcloud.com/dingzhi/pg/phototGame/activity/3656401d=1000004064`,
-    'Accept-Language' : `zh-cn`,
-  };
-  const body = `activityId=dz2107100000406401&actorUuid=${$.activityInfo.actorUuid}&pin=${encodeURIComponent($.myPingInfo.secretPin)}&shareUuid=${$.shareUuid}`;
-  let myRequest = {url: url, method: method, headers: headers, body: body};
-  return new Promise(async resolve => {
-    $.post(myRequest, (err, resp, data) => {
-      try {
-        console.log(data);
-        if(data){
-          data = JSON.parse(data);
-          if(data.result && data.count===0){
-            let info = data.data;
-            if(info.assistStatus === 1){
-              console.log(`助力成功`);
-            }else if(info.assistStatus === 2){
-              console.log(`已助力过`);
-            }
-          }
-        }
-      } catch (e) {
-        console.log(data);
-        $.logErr(e, resp)
-      } finally {
-        resolve();
-      }
-    })
-  })
-}
-async function getActivityInfo(){
-  const url = `https://lzdz-isv.isvjcloud.com/dingzhi/pg/phototGame/activityContent`;
-  const method = `POST`;
-  const headers = {
-    'X-Requested-With' : `XMLHttpRequest`,
-    'Connection' : `keep-alive`,
-    'Accept-Encoding' : `gzip, deflate, br`,
-    'Content-Type' : `application/x-www-form-urlencoded`,
-    'Origin' : `https://lzdz-isv.isvjcloud.com`,
-    'User-Agent' : `JD4iPhone/162751 (iPhone; iOS 14.6; Scale/3.00)`,
-    'Cookie' :$.cookie ,
-    'Host' : `lzdz-isv.isvjcloud.com`,
-    'Referer' : `https://lzdz-isv.isvjcloud.com/dingzhi/pg/phototGame/activity/3656401`,
-    'Accept-Language' : `zh-cn`,
-    'Accept' : `application/json`
-  };
-  const body = `activityId=dz2107100000406401&pin=${encodeURIComponent($.myPingInfo.secretPin)}&pinImg=${encodeURIComponent($.attrTouXiang)}&nick=${encodeURIComponent($.myPingInfo.nickname)}&cjyxPin=&cjhyPin=&shareUuid=`;
-  let myRequest = {url: url, method: method, headers: headers, body: body};
-  return new Promise(async resolve => {
-    $.post(myRequest, (err, resp, data) => {
-      try {
-        if(data){
-          data = JSON.parse(data);
-          if(data.count === 0 && data.result){
-            $.activityInfo = data.data;
-          }
-        }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve();
-      }
-    })
-  })
-}
-function getActCookie() {
-  let opt = {
-    url: `https://lzdz-isv.isvjcloud.com/dingzhi/pg/phototGame/activity?activityId=dz2107100000406401&un_area=2_2830_51828_0`,
-    headers : {
-      'Host': 'lzdz-isv.isvjcloud.com',
-      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-      'Cookie' : $.cookie ,
-      'User-Agent' : `JD4iPhone/162751 (iPhone; iOS 14.6; Scale/3.00)`,
-      'Accept-Language': 'zh-cn',
-      'Accept-Encoding': 'gzip, deflate, br',
-      'Connection': 'keep-alive',
-    },
+async function main() {
+  $.runFlag = false;
+  $.activityInfo = {};
+  await takeRequest('superBrandSecondFloorMainPage');
+  if(JSON.stringify($.activityInfo) === '{}'){
+    console.log(`获取活动详情失败`);
+    return ;
   }
-  return new Promise(resolve => {
-    $.get(opt, (err, resp, data) => {
-      try {
-        if (err) {
-         // console.log(`${JSON.stringify(err)}`)
-        } else {
-          if ($.isNode())
-            for (let sk of resp['headers']['set-cookie']) {
-              $.cookie = `${$.cookie}${sk.split(";")[0]};`
-            }
-          else {
-            for (let ck of resp['headers']['Set-Cookie'].split(',')) {
-              $.cookie = `${$.cookie}${ck.split(";")[0]};`
-            }
-          }
-        }
-      } catch (e) {
-        console.log(e)
-      } finally {
-        resolve();
-      }
-    })
-  })
+  console.log(`获取活动详情成功`);
+  $.activityId = $.activityInfo.activityBaseInfo.activityId;
+  $.activityName = $.activityInfo.activityBaseInfo.activityName;
+  $.callNumber = $.activityInfo.activityUserInfo.userStarNum;
+  console.log(`当前活动:${$.activityName},ID：${$.activityId},可抽奖次数:${$.callNumber}`);
+  $.encryptProjectId = $.activityInfo.activityBaseInfo.encryptProjectId;
+  useInfo[$.nickName] = $.encryptProjectId;
+  await $.wait(2000);
+  $.taskList = [];
+  await takeRequest('superBrandTaskList');
+  await $.wait(2000);
+  await doTask();
+  if($.runFlag){
+    await takeRequest('superBrandSecondFloorMainPage');
+    $.callNumber = $.activityInfo.activityUserInfo.userStarNum;
+    console.log(`可抽奖次数:${$.callNumber}`);
+  }
+  for (let i = 0; i < $.callNumber; i++) {
+    console.log(`进行抽奖`);
+    await takeRequest('superBrandTaskLottery');//抽奖
+    await $.wait(2000);
+  }
 }
-async function getUserInfo() {
-  const url = `https://lzdz-isv.isvjcloud.com/wxActionCommon/getUserInfo`;
-  const method = `POST`;
-  const headers = {
-    'X-Requested-With' : `XMLHttpRequest`,
-    'Connection' : `keep-alive`,
-    'Accept-Encoding' : `gzip, deflate, br`,
-    'Content-Type' : `application/x-www-form-urlencoded`,
-    'Origin' : `https://lzdz-isv.isvjcloud.com`,
-    'User-Agent' : `JD4iPhone/162751 (iPhone; iOS 14.6; Scale/3.00)`,
-    'Cookie' : $.cookie ,
-    'Host' : `lzdz-isv.isvjcloud.com`,
-    'Referer' : `https://lzdz-isv.isvjcloud.com/dingzhi/pg/phototGame/activity/3656401d=1000004064`,
-    'Accept-Language' : `zh-cn`,
-    'Accept' : `application/json`
-  };
-  const body = `pin=${encodeURIComponent($.myPingInfo.secretPin)}`;
-  let myRequest = {url: url, method: method, headers: headers, body: body};
-  return new Promise(resolve => {
-    $.post(myRequest, (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${JSON.stringify(err)}`)
-        }
-        else {
-          if(data){
-            data = JSON.parse(data);
-            if(data.count === 0 && data.result){
-              $.attrTouXiang = data.data.yunMidImageUrl
-              != data.data.yunMidImageUrl ? $.attrTouXiang = data.data.yunMidImageUrl : $.attrTouXiang = "https://img10.360buyimg.com/imgzone/jfs/t1/7020/27/13511/6142/5c5138d8E4df2e764/5a1216a3a5043c5d.png"
-            }
-          }
-        }
-      } catch (e) {
-        console.log(e, resp)
-      } finally {
-        resolve();
-      }
-    })
-  })
-}
-async function getMyPing(){
-  const url = `https://lzdz-isv.isvjcloud.com/customer/getMyPing`;
-  const method = `POST`;
-  const headers = {
-    'X-Requested-With' : `XMLHttpRequest`,
-    'Connection' : `keep-alive`,
-    'Accept-Encoding' : `gzip, deflate, br`,
-    'Content-Type' : `application/x-www-form-urlencoded`,
-    'Origin' : `https://lzdz-isv.isvjcloud.com`,
-    'User-Agent' : `JD4iPhone/162751 (iPhone; iOS 14.6; Scale/3.00)`,
-    'Cookie' : $.cookie ,
-    'Host' : `lzdz-isv.isvjcloud.com`,
-    'Referer' : `https://lzdz-isv.isvjcloud.com/dingzhi/pg/phototGame/activity/3656401d=1000004064`,
-    'Accept-Language' : `zh-cn`,
-    'Accept' : `application/json`
-  };
-  const body = `userId=1000004064&token=${$.token}&fromType=APP`;
-  let myRequest = {url: url, method: method, headers: headers, body: body};
-  return new Promise(async resolve => {
-    $.post(myRequest, (err, resp, data) => {
-      try {
-        $.cookie2 = `${$.cookie2}IsvToken=${$.token};`
-        for (let sk of resp['headers']['set-cookie']) {
-          $.cookie2 = `${$.cookie2}${sk.split(";")[0]};`
-        }
-        if(data){
-          data = JSON.parse(data);
-          if(data.count === 0 && data.result){
-            $.myPingInfo = data.data;
-          }
-        }
-      } catch (e) {
-        console.log(data);
-        $.logErr(e, resp)
-      } finally {
-        resolve();
-      }
-    })
-  })
-}
-async function getToken(){
-  const url = `https://api.m.jd.com/client.action?functionId=isvObfuscator`;
-  const method = `POST`;
-  const headers = {
-    'Accept-Encoding' : `gzip, deflate, br`,
-    'Cookie' : $.cookie ,
-    'Connection' : `keep-alive`,
-    'Content-Type' : `application/x-www-form-urlencoded`,
-    'Accept' : `*/*`,
-    'Host' : `api.m.jd.com`,
-    'User-Agent' : `JD4iPhone/162751 (iPhone; iOS 14.6; Scale/3.00)`,
-    'Referer' : ``,
-    'Accept-Language' : `zh-Hans-CN;q=1, en-CN;q=0.9`
-  };
-  const body = `area=2_2830_51828_0&body=%7B%22url%22%3A%22https%3A%5C/%5C/lzdz-isv.isvjcloud.com%22%2C%22id%22%3A%22%22%7D&client=apple&clientVersion=10.0.8&openudid=5a8a5743a5d2a4110a8ed396bb047471ea120c6a&sign=e7d54d5a1ee1afc8938063490ec5641e&st=1627424031538&sv=121&uemps=0-0&uts=&uuid=&wifiBssid=`;
-  let myRequest = {url: url, method: method, headers: headers, body: body};
-  return new Promise(async resolve => {
-    $.post(myRequest, (err, resp, data) => {
-      try {
-        if(data){
-          data = JSON.parse(data);
-          if(data.code === '0' && data.token){
-            $.token = data.token;
-            $.cookie = `${$.cookie}IsvToken=${$.token};`
-          }
-        }
-      } catch (e) {
-        console.log(data);
-        $.logErr(e, resp)
-      } finally {
-        resolve();
-      }
-    })
-  })
-}
-function getAuthorShareCode(url) {
-  return new Promise(async resolve => {
-    const options = {
-      "url": `${url}`,
-      "timeout": 10000,
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
-      }
-    };
-    if ($.isNode() && process.env.TG_PROXY_HOST && process.env.TG_PROXY_PORT) {
-      const tunnel = require("tunnel");
-      const agent = {
-        https: tunnel.httpsOverHttp({
-          proxy: {
-            host: process.env.TG_PROXY_HOST,
-            port: process.env.TG_PROXY_PORT * 1
-          }
-        })
-      }
-      Object.assign(options, { agent })
+async function doTask(){
+  for (let i = 0; i < $.taskList.length; i++) {
+    $.oneTask = $.taskList[i];
+    if($.oneTask.completionFlag){
+      console.log(`任务：${$.oneTask.assignmentName}，已完成`);
+      continue;
     }
-    $.get(options, async (err, resp, data) => {
+    if($.oneTask.assignmentType === 3 || $.oneTask.assignmentType === 0){
+      console.log(`任务：${$.oneTask.assignmentName}，去执行`);
+      if($.oneTask.ext && $.oneTask.ext.followShop && $.oneTask.ext.followShop[0]){
+        $.runInfo = $.oneTask.ext.followShop[0]
+      }else{
+        $.runInfo = {'itemId':null};
+      }
+      await takeRequest('superBrandDoTask');
+      await $.wait(2000);
+      $.runFlag = true;
+    }else if($.oneTask.assignmentType === 2){
+      console.log(`助力码：${$.oneTask.ext.assistTaskDetail.itemId}`);
+      $.allInvite.push({
+        'userName':$.UserName,
+        'code':$.oneTask.ext.assistTaskDetail.itemId,
+        'time':0,
+        'max':true
+      });
+      $.helpEncryptAssignmentId = $.oneTask.encryptAssignmentId;
+    }
+  }
+}
+
+async function takeRequest(type) {
+  let url = ``;
+  let myRequest = ``;
+  switch (type) {
+    case 'superBrandSecondFloorMainPage':
+      url = `https://api.m.jd.com/api?functionId=superBrandSecondFloorMainPage&appid=ProductZ4Brand&client=wh5&t=${Date.now()}&body=%7B%22source%22:%22secondfloor%22%7D`;
+      break;
+    case 'superBrandTaskList':
+      url = `https://api.m.jd.com/api?functionId=superBrandTaskList&appid=ProductZ4Brand&client=wh5&t=${Date.now()}&body=%7B%22source%22:%22secondfloor%22,%22activityId%22:${$.activityId},%22assistInfoFlag%22:1%7D`;
+      break;
+    case 'superBrandDoTask':
+      if($.runInfo.itemId === null){
+        url = `https://api.m.jd.com/api?functionId=superBrandDoTask&appid=ProductZ4Brand&client=wh5&t=${Date.now()}&body=%7B%22source%22:%22secondfloor%22,%22activityId%22:${$.activityId},%22encryptProjectId%22:%22${$.encryptProjectId}%22,%22encryptAssignmentId%22:%22${$.oneTask.encryptAssignmentId}%22,%22assignmentType%22:${$.oneTask.assignmentType},%22completionFlag%22:1,%22itemId%22:%22${$.runInfo.itemId}%22,%22actionType%22:0%7D`;
+      }else{
+        url = `https://api.m.jd.com/api?functionId=superBrandDoTask&appid=ProductZ4Brand&client=wh5&t=${Date.now()}&body=%7B%22source%22:%22secondfloor%22,%22activityId%22:${$.activityId},%22encryptProjectId%22:%22${$.encryptProjectId}%22,%22encryptAssignmentId%22:%22${$.oneTask.encryptAssignmentId}%22,%22assignmentType%22:${$.oneTask.assignmentType},%22itemId%22:%22${$.runInfo.itemId}%22,%22actionType%22:0%7D`;
+      }
+      break;
+    case 'superBrandTaskLottery':
+      url = `https://api.m.jd.com/api?functionId=superBrandTaskLottery&appid=ProductZ4Brand&client=wh5&t=${Date.now()}&body=%7B%22source%22:%22secondfloor%22,%22activityId%22:${$.activityId}%7D`;
+      break;
+    case 'help':
+      url = `https://api.m.jd.com/api?functionId=superBrandDoTask&appid=ProductZ4Brand&client=wh5&t=${Date.now()}&body=%7B%22source%22:%22secondfloor%22,%22activityId%22:${$.activityId},%22encryptProjectId%22:%22${$.encryptProjectId}%22,%22encryptAssignmentId%22:%22${$.helpEncryptAssignmentId}%22,%22assignmentType%22:2,%22itemId%22:%22${$.code}%22,%22actionType%22:0%7D`;
+      break;
+    default:
+      console.log(`错误${type}`);
+  }
+  myRequest = getRequest(url);
+  return new Promise(async resolve => {
+    $.post(myRequest, (err, resp, data) => {
       try {
-        if (err) {
-        } else {
-          if (data) data = JSON.parse(data)
-        }
+        dealReturn(type, data);
       } catch (e) {
-        // $.logErr(e, resp)
+        console.log(data);
+        $.logErr(e, resp)
       } finally {
-        resolve(data || []);
+        resolve();
       }
     })
-    await $.wait(10000)
-    resolve();
   })
 }
+
+function dealReturn(type, data) {
+  try {
+    data = JSON.parse(data);
+  }catch (e) {
+    console.log(`返回信息异常：${data}\n`);
+    return;
+  }
+  switch (type) {
+    case 'superBrandSecondFloorMainPage':
+      if(data.code === '0' &&  data.data && data.data.result){
+        $.activityInfo = data.data.result;
+      }
+      break;
+    case 'superBrandTaskList':
+      if(data.code === '0'){
+        $.taskList = data.data.result.taskList;
+      }
+      break;
+    case 'superBrandDoTask':
+      if(data.code === '0'){
+        console.log(JSON.stringify(data.data.bizMsg));
+      }
+      break;
+    case 'superBrandTaskLottery':
+      if(data.code === '0' && data.data.bizCode !== 'TK000'){
+        $.runFlag = false;
+        console.log(`抽奖次数已用完`);
+      }else if(data.code === '0' && data.data.bizCode == 'TK000'){
+        if(data.data && data.data.result && data.data.result.rewardComponent && data.data.result.rewardComponent.beanList){
+          if(data.data.result.rewardComponent.beanList.length >0){
+            console.log(`获得豆子：${data.data.result.rewardComponent.beanList[0].quantity}`)
+          }
+        }
+      }else{
+        $.runFlag = false;
+        console.log(`抽奖失败`);
+      }
+      console.log(JSON.stringify(data));
+      break;
+
+    case 'help':
+      if(data.code === '0' && data.data.bizCode === '0'){
+        $.codeInfo.time ++;
+        console.log(`助力成功`);
+      }else if (data.code === '0' && data.data.bizCode === '104'){
+        $.codeInfo.time ++;
+        console.log(`已助力过`);
+      }else if (data.code === '0' && data.data.bizCode === '108'){
+        $.canHelp = false;
+        console.log(`助力次数已用完`);
+      }else if (data.code === '0' && data.data.bizCode === '103'){
+        console.log(`助力已满`);
+        $.codeInfo.time = 3;
+      }else if (data.code === '0' && data.data.bizCode === '2001'){
+        $.canHelp = false;
+        console.log(`黑号`);
+      }else{
+        console.log(JSON.stringify(data));
+      }
+      break;
+    default:
+      console.log(JSON.stringify(data));
+  }
+}
+
+function getRequest(url) {
+  const headers = {
+    'Origin' : `https://pro.m.jd.com`,
+    'Cookie' : $.cookie ,
+    'Connection' : `keep-alive`,
+    'Accept' : `application/json, text/plain, */*`,
+    'Referer' : `https://pro.m.jd.com/mall/active/4UgUvnFebXGw6CbzvN6cadmfczuP/index.html`,
+    'Host' : `api.m.jd.com`,
+    'User-Agent' : UA,
+    'Accept-Language' : `zh-cn`,
+    'Accept-Encoding' : `gzip, deflate, br`
+  };
+  return {url: url, headers: headers,body:``};
+}
+
+function randomWord(randomFlag, min, max){
+  var str = "",
+    range = min,
+    arr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+  // 随机产生
+  if(randomFlag){
+    range = Math.round(Math.random() * (max-min)) + min;
+  }
+  for(var i=0; i<range; i++){
+    pos = Math.round(Math.random() * (arr.length-1));
+    str += arr[pos];
+  }
+  return str;
+}
+
 function TotalBean() {
   return new Promise(async resolve => {
     const options = {

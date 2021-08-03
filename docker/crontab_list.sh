@@ -167,7 +167,7 @@
 # 跳跳乐瓜分京豆
 15 0,12,22 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 #京喜牧场
-15 */2 * * * node /scripts/jd_star_wind_jxmc.js >> /scripts/logs/jd_star_wind_jxmc.log 2>&1
+15 */2 * * * node /scripts/jd_star_wind_windmc.js >> /scripts/logs/jd_star_wind_windmc.log 2>&1
 #东东小窝
 11 0 * * * node /scripts/jd_wind_small_home.js >> /scripts/logs/jd_wind_small_home.log 2>&1
 #京东到家果园
