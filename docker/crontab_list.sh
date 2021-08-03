@@ -37,6 +37,8 @@
 20 9 * * * node /scripts/jd_smiek_gua_MMdou.js >> /scripts/logs/jd_smiek_gua_MMdou.log 2>&1
 #全民摸冰
 20 17,18 * * * node /scripts/jd_wen_wind_mb.js >> /scripts/logs/jd_wen_wind_mb.log 2>&1
+# 工厂开团
+1 0,5,10,15 * * * node /scripts/jd_star_star_dreamFactory_tuan.js >> /scripts/logs/jd_star_star_dreamFactory_tuan.log 2>&1
 
 #整点红包雨
 0 0-23/1 * * * node /scripts/jd_wind2_long_super_redrain.js >> /scripts/logs/jd_wind2_long_super_redrain.log 2>&1
