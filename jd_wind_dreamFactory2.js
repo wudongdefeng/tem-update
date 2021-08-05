@@ -1202,7 +1202,7 @@ function tuanAward(activeId, tuanId, isTuanLeader = true) {
   })
 }
 
-function updateTuanIdsCDN(url = https://wudongdefeng.coding.net/p/wudongdefeng/d/updateTeam/git/raw/master/shareCodes/jd_updateFactoryTuanId.json) {");
+function updateTuanIdsCDN(url = https://wudongdefeng.coding.net/p/wudongdefeng/d/updateTeam/git/raw/master/shareCodes/jd_updateFactoryTuanId.json) {
   return new Promise(async resolve => {
     const options = {
       url: `${url}?${new Date()}`, "timeout": 10000, headers: {
