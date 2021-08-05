@@ -26,7 +26,8 @@
 21 6-22/2 * * * node /scripts/jd_smiek_wind_summer_movement.js >> /scripts/logs/jd_smiek_wind_summer_movement.log 2>&1
 #粉丝互动
 12 15 * * * node /scripts/jd_wen_wind_wxFans.js >> /scripts/logs/jd_wen_wind_wxFans.log 2>&1
-
+#店铺签到
+12 13 * * * node /scripts/jd_Aaron_wind_shop_sign.js >> /scripts/logs/jd_Aaron_wind_shop_sign.log 2>&1
 #早起福利
 30 6 * * * node /scripts/jd_wind_goodMorning.js >> /scripts/logs/jd_wind_goodMorning.log 2>&1
 #来客有礼小程序
