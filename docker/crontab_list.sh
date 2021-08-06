@@ -22,8 +22,8 @@
 21 5,12 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 #超级直播间红包雨(活动时间不定期，出现异常提示请忽略。红包雨期间会正常)
 1,31 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
-#燃动夏季
-21 6-22/2 * * * node /scripts/jd_smiek_wind_summer_movement.js >> /scripts/logs/jd_smiek_wind_summer_movement.log 2>&1
+# 七夕情报局
+36 0,10,21 4-15 8 * node /scripts/jd_smiek_gua_doge.js >> /scripts/logs/jd_smiek_gua_doge.log 2>&1
 #粉丝互动
 12 15 * * * node /scripts/jd_wen_wind_wxFans.js >> /scripts/logs/jd_wen_wind_wxFans.log 2>&1
 #店铺签到
