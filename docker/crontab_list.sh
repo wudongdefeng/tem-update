@@ -65,7 +65,7 @@
 #点点卷
 10 2,22 * * * node /scripts/jd_smiek_wind_necklace.js >> /scripts/logs/jd_smiek_wind_necklace.log 2>&1
 # 东东超市兑换奖品#
-#0,30 0 * * * node /scripts/jd_hello_wind_blueCoin.js >> /scripts/logs/jd_hello_wind_blueCoin.log 2>&1
+#0,30 0 * * * node /scripts/jd_Aaron_wind_blueCoin.js >> /scripts/logs/jd_Aaron_wind_blueCoin.log 2>&1
 # 摇京豆
 6 0,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 东东农场
