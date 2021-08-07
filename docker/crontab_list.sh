@@ -25,7 +25,7 @@
 # 七夕情报局
 36 0,10,21 4-15 8 * node /scripts/jd_smiek_gua_doge.js >> /scripts/logs/jd_smiek_gua_doge.log 2>&1
 #粉丝互动
-12 15 * * * node /scripts/jd_wen_wind_wxFans.js >> /scripts/logs/jd_wen_wind_wxFans.log 2>&1
+34 6,18 * * * node /scripts/jd_star_wind_fan.js >> /scripts/logs/jd_star_wind_fan.log 2>&1
 #店铺签到
 12 13 * * * node /scripts/jd_Aaron_wind_shop_sign.js >> /scripts/logs/jd_Aaron_wind_shop_sign.log 2>&1
 #早起福利
