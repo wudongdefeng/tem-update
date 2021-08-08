@@ -64,9 +64,10 @@ function SignIn (cookie) {
     magicJS.get(options, (err, resp, data) => {
       if (err) {
         magicJS.logWarning(`每日签到，请求异常：${err}`);
-        resolve("每日签到，请求异常");
+        resolve("");
       } else {
         magicJS.log(`每日签到成功`);
+        resolve("");
       }
     });
   });
