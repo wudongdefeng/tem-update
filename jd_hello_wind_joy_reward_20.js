@@ -460,7 +460,7 @@ $.get = injectToRequest($.get.bind($))
 $.post = injectToRequest($.post.bind($))
 
 // 目标值
-let target = process.env.JD_JOY_REWARD_NAME ? parseInt(process.env.JD_JOY_REWARD_NAME) : 20;
+ let target = process.env.JD_JOY_REWARD_NAME ? parseInt(process.env.JD_JOY_REWARD_NAME) : 20;
 let flag = true;
 
 !(async () => {

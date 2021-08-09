@@ -49,7 +49,7 @@ $.shareId = [];
       '更新时间：2021-8-8 19:00');
   $.http.get({url: 'https://purge.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/jd_shareCodes.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
   await $.wait(1000)
-  await updateShareCodesCDN('https://cdn.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/jd_shareCodes.json')
+await updateShareCodesCDN('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jd_shareCodes.json')
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];

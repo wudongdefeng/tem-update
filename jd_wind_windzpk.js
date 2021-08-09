@@ -167,7 +167,7 @@ function checkRisk() {
 async function getFriendPinList() {
     console.log("获取好友Pk列表");
     let allFriends = [];
-for (let i = 0; i < 30; i++) {
+     for (let i = 0; i < 30; i++) {
         let friends = await getUserFriendsPage(i + 1);
         if (friends.length === 0) {
             break;
