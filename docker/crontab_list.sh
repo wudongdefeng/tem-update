@@ -48,6 +48,8 @@
 0 6,20 * * * node /scripts/jd_Aaron_wind_carnivalcity_help.js >> /scripts/logs/jd_Aaron_wind_carnivalcity_help.log 2>&1
 # 女装盲盒
 4 2,10 * * * node /scripts/jd_tsuk_wind_by_nzmh.js >> /scripts/logs/jd_tsuk_wind_by_nzmh.log 2>&1
+# 荣耀换新季
+0 1 * * *  node /scripts/jd_tsuk_wind_by_ryhxj.js >> /scripts/logs/jd_tsuk_wind_by_ryhxj.log 2>&1
 
 #整点红包雨
 0 0-23/1 * * * node /scripts/jd_wind2_long_super_redrain.js >> /scripts/logs/jd_wind2_long_super_redrain.log 2>&1
