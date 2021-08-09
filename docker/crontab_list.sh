@@ -91,7 +91,7 @@
 # 东东萌宠
 35 6-18/6 * * * node /scripts/jd_pet.js >> /scripts/logs/jd_pet.log 2>&1
 # 京东种豆得豆
-10 7-22/1 * * * node /scripts/zero_plantBean.js >> /scripts/logs/zero_plantBean.log 2>&1
+10 7-22/1 * * * node /scripts/jd_wind_plantBean.js >> /scripts/logs/jd_wind_plantBean.log 2>&1
 # 京东全民开红包
 12 0-23/4 * * * node /scripts/jd_redPacket.js >> /scripts/logs/jd_redPacket.log 2>&1
 # 进店领豆
