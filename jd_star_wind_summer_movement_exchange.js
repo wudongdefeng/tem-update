@@ -125,7 +125,7 @@ async function dealReturn(type, data) {
                 if (data.data['bizCode'] === 0) {
                     let info = data.data.result;
                     console.log(`成功兑换,剩余${info.poolMoney}元可以兑换`);
-                    if(info.poolMoney < 20){
+                    if(info.poolMoney < 5){
                         $.runFlag = false;
                     }
                 }else{
