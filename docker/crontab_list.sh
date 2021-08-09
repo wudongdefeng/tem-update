@@ -42,6 +42,8 @@
 1 0,5,10,15 * * * node /scripts/jd_star_star_dreamFactory_tuan.js >> /scripts/logs/jd_star_star_dreamFactory_tuan.log 2>&1
 # 京喜领88元红包
 4 2,10 * * * node /scripts/jd_Aaron_wind_windlhb.js >> /scripts/logs/jd_Aaron_wind_windlhb.log 2>&1
+# 女装盲盒
+4 2,10 * * * node /scripts/jd_tsuk_wind_by_nzmh.js >> /scripts/logs/jd_tsuk_wind_by_nzmh.log 2>&1
 
 #整点红包雨
 0 0-23/1 * * * node /scripts/jd_wind2_long_super_redrain.js >> /scripts/logs/jd_wind2_long_super_redrain.log 2>&1
