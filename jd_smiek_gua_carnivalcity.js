@@ -543,12 +543,31 @@ async function doHelp() {
     let item = $.newShareCodes[i]
     if (!item) continue;
     const helpRes = await toHelp(item.trim());
-    if (helpRes.data.status === 5) {
-      console.log(`助力机会已耗尽，跳出助力`);
-      break;
-    }else if (helpRes.data.status === 4){
-      console.log(`该助力码[${item}]已达上限`);
-      $.newShareCodes[i] = ''
+    if (typeof helpRes === 'object') {
+      if (helpRes.data.status === 5) {
+        console.log(`助力机会已耗尽，跳出助力`);
+        break;
+      }else if (helpRes.data.status === 4){
+        console.log(`该助力码[${item}]已达上限`);
+        $.newShareCodes[i] = ''
+      }else if (helpRes.data.status === 3){
+        console.log(`已经助力过`);
+      }else if (helpRes.data.status === 2){
+        console.log(`该助力码[${item}]过期`);
+        $.newShareCodes[i] = ''
+      }else if (helpRes.data.status === 1){
+        console.log(`不能助力自己`);
+      }else if (helpRes.msg.indexOf('请求参数不合规') > -1){
+        console.log(`该助力码[${item}]助力码有问题`)
+        $.newShareCodes[i] = ''
+      }else if (helpRes.msg.indexOf('未登录') > -1 || helpRes.msg.indexOf('火爆') > -1){
+        console.log(`${helpRes.msg}，跳出助力`)
+        break;
+      }else{
+        console.log(`该助力码[${item}]助力结果\n${$.toStr(helpRes)}`)
+      }
+    }else{
+      console.log(`该助力码[${item}]助力结果\n${$.toStr(helpRes)}`)
     }
   }
 }
@@ -563,7 +582,7 @@ function toHelp(code = "ddd345fb-57bb-4ece-968b-7bf4c92be7cc") {
           console.log(`${JSON.stringify(err)}`)
           console.log(`${$.name} API请求失败，请检查网路重试`)
         } else {
-          console.log(`助力结果:${data}`);
+          // console.log(`助力结果:${data}`);
           data = JSON.parse(data);
           if (data && data['code'] === 200) {
             if (data['data']['status'] === 6) console.log(`助力成功\n`)
@@ -684,7 +703,7 @@ function getListRank() {
           if (data.code === 200) {
             if (data.data.myRank) {
               $.integer = data.data.myRank.integral;//当前获得积分
-              $.num = data.data.myRank.rank;//当前排名
+function updateShareCodesCDN(url = 'https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jd_cityShareCodes.json') {
               message += `当前获得积分：${$.integer}\n`;
               message += `当前获得排名：${$.num}\n`;
             }
@@ -703,7 +722,7 @@ function getListRank() {
   })
 }
 
-function updateShareCodesCDN(url = 'https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jd_cityShareCodes.json') {
+function updateShareCodesCDN(url = 'https://cdn.jsdelivr.net/gh/smiek2221/updateTeam@master/shareCodes/jd_cityShareCodes.json') {
   return new Promise(resolve => {
     $.get({url , headers:{"User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")}, timeout: 200000}, async (err, resp, data) => {
       try {
