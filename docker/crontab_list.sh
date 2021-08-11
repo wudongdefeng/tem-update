@@ -196,3 +196,5 @@
 */5 * * * * node /scripts/jd_winddj_getPoints.js >> /scripts/logs/jd_winddj_getPoints.log 2>&1
 #京东到家庄园浇水
 15 0 * * * node /scripts/jd_winddj_plantBeans.js >> /scripts/logs/jd_winddj_plantBeans.log 2>&1
+#清空购物车
+#50 23 * * * node /scripts/jd_cleancart.js >> /scripts/logs/jd_cleancart.log 2>&1
