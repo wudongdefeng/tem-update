@@ -82,8 +82,8 @@ $.appId = 10032;
   if (HelpAuthorFlag) {
     $.innerInviteList = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/cfd.json');
     if(!$.innerInviteList[0]) $.innerInviteList = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/cfd.json');
-    res2 = await getAuthorShareCode('https://raw.githubusercontent.com/smiek2221/updateTeam/master/shareCodes/wealth_island_code.json');
-    if(!res2[0]) res2 = await getAuthorShareCode('https://gitee.com/smiek2221/updateTeam/raw/master/shareCodes/wealth_island_code.json');
+    res2 = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/cfd.json');
+    if(!res2[0]) res2 = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/cfd.json');
     getShareNums = [...res, ...res2].length >= getShareNum ? getShareNum : [...res, ...res2].length
     $.innerInviteLists = getRandomArrayElements([...res, ...res2], [...res, ...res2].length >= getShareNum ? getShareNum : [...res, ...res2].length );
     $.InviteLists.push(...$.InviteList,...$.innerInviteList,...$.innerInviteLists);
