@@ -703,7 +703,7 @@ function getListRank() {
           if (data.code === 200) {
             if (data.data.myRank) {
               $.integer = data.data.myRank.integral;//当前获得积分
-function updateShareCodesCDN(url = 'https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jd_cityShareCodes.json') {
+              $.num = data.data.myRank.rank;//当前排名
               message += `当前获得积分：${$.integer}\n`;
               message += `当前获得排名：${$.num}\n`;
             }
@@ -722,7 +722,7 @@ function updateShareCodesCDN(url = 'https://code.aliyun.com/wudongdefeng/updatet
   })
 }
 
-function updateShareCodesCDN(url = 'https://cdn.jsdelivr.net/gh/smiek2221/updateTeam@master/shareCodes/jd_cityShareCodes.json') {
+function updateShareCodesCDN(url = 'https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jd_cityShareCodes.json') {
   return new Promise(resolve => {
     $.get({url , headers:{"User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")}, timeout: 200000}, async (err, resp, data) => {
       try {
