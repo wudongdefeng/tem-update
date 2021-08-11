@@ -44,6 +44,7 @@
 4 2,10 * * * node /scripts/jd_Aaron_wind_windlhb.js >> /scripts/logs/jd_Aaron_wind_windlhb.log 2>&1
 #京东手机狂欢城
 20 0-18/6 * * * node /scripts/jd_smiek_gua_carnivalcity.js >> /scripts/logs/jd_smiek_gua_carnivalcity.log 2>&1
+40 20 * * * node /scripts/jd_Aaron_wind_carnivalcity.js >> /scripts/logs/jd_Aaron_wind_carnivalcity.log 2>&1
 #京东手机狂欢城助力
 0 6,20 * * * node /scripts/jd_Aaron_wind_carnivalcity_help.js >> /scripts/logs/jd_Aaron_wind_carnivalcity_help.log 2>&1
 # 女装盲盒
