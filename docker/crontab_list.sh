@@ -66,6 +66,8 @@
 0 1,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 ##############长期活动##############
 
+# 清空购物车
+22 19 * * * node /scripts/jd_cleancart.js >> /scripts/logs/jd_cleancart.log 2>&1
 #玩一玩成就
 48 11 * * * node /scripts/jd_tsuk_wind_wyw.js >> /scripts/logs/jd_tsuk_wind_wyw.log 2>&1
 #京东试用
