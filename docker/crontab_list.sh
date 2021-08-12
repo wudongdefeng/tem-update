@@ -55,6 +55,8 @@
 33 4,7 8-20 8 *  node /scripts/jd_star_wind_golden_machine.js >> /scripts/logs/jd_star_wind_golden_machine.log 2>&1
 # 来电好物季
 22 1 * * * node /scripts/jd_Ariszy_zy_ldhwj.js >> /scripts/logs/jd_Ariszy_zy_ldhwj.log 2>&1
+# 汽车生活节
+30 9,21 12-20 8 * node /scripts/jd_qcshj.js >> /scripts/logs/jd_qcshj.log 2>&1
 
 #整点红包雨
 0 0-23/1 * * * node /scripts/jd_wind2_long_super_redrain.js >> /scripts/logs/jd_wind2_long_super_redrain.log 2>&1
