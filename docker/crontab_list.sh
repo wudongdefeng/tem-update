@@ -56,7 +56,9 @@
 # 来电好物季
 22 1 * * * node /scripts/jd_Ariszy_zy_ldhwj.js >> /scripts/logs/jd_Ariszy_zy_ldhwj.log 2>&1
 # 汽车生活节
-30 9,21 12-20 8 * node /scripts/jd_qcshj.js >> /scripts/logs/jd_qcshj.log 2>&1
+30 9,21 12-20 8 * node /scripts/jd_smiek_wind_qcshj.js >> /scripts/logs/jd_smiek_wind_qcshj.log 2>&1
+#开卡任务
+0 23 12 8 4 node /scripts/jd_smiek_gua_opencard6.js >> /scripts/logs/jd_smiek_gua_opencard6.log 2>&1
 
 #整点红包雨
 0 0-23/1 * * * node /scripts/jd_wind2_long_super_redrain.js >> /scripts/logs/jd_wind2_long_super_redrain.log 2>&1
