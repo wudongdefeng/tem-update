@@ -1,5 +1,3 @@
-hostname = api.m.jd.com
-*/
 const $ = new Env('领现金自动获得酬劳');
 const printDetail = false;
 //Node.js用户请在jdCookie.js处填写京东ck;
