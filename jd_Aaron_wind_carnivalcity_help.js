@@ -96,9 +96,9 @@ $.updatePkActivityIdRes = await getAuthorShareCode('https://code.aliyun.com/wudo
         }
       }
       if ($.canHelp && ($.newShareCodes && $.newShareCodes.length)) {
-        console.log(`\n\n如果有剩余助力机会，则给作者以及随机码助力`)
-        console.log(`\n开始助力好友`);
+        console.log(`\n\n如果有剩余助力机会，则给作者助力`)
         for (let j = 0; j < $.newShareCodes.length && $.canHelp; j++) {
+          console.log(`\n${$.UserName} 去助力 ${$.newShareCodes[j]}`);
           $.delcode = false;
           await toHelp($.newShareCodes[j].trim());
           if ($.delcode) {
