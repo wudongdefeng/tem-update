@@ -49,7 +49,7 @@ const BASE_URL = 'https://wq.jd.com/cubeactive/steprewardv3'
   let res = []
   res = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jxhb.json')
   if (!res) {
-    $.http.get({url: 'https://purge.jsdelivr.net/gh/Aaron-lv/updateTeam@master/shareCodes/jxhb.json'}).then((resp) => {}).catch((e) => $.log('刷新CDN异常', e));
+    $.http.get({url: 'https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jxhb.json'}).then((resp) => {}).catch((e) => $.log('刷新CDN异常', e));
     await $.wait(1000)
     res = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jxhb.json')
   }
