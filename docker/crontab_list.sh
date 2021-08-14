@@ -61,6 +61,8 @@
 31 8,22 13-31 8 * node /scripts/jd_smiek_gua_xmGame.js >> /scripts/logs/jd_smiek_gua_xmGame.log 2>&1
 #开卡任务
 0 23 12 8 4 node /scripts/jd_smiek_gua_opencard6.js >> /scripts/logs/jd_smiek_gua_opencard6.log 2>&1
+# 骁龙品牌日
+18 9,19 13-25 8 * node /scripts/jd_smiek_gua_xiaolong.js >> /scripts/logs/jd_smiek_gua_xiaolong.log 2>&1
 
 #整点红包雨
 0 0-23/1 * * * node /scripts/jd_wind2_long_super_redrain.js >> /scripts/logs/jd_wind2_long_super_redrain.log 2>&1
@@ -132,7 +134,7 @@
 # 金融养猪
 32 0-23/6 * * * node /scripts/jd_pigPet.js >> /scripts/logs/jd_pigPet.log 2>&1
 # 京喜工厂
-50 * * * * node /scripts/jd_wind_dreamFactory2.js >> /scripts/logs/jd_wind_dreamFactory2.log 2>&1
+50 * * * * node /scripts/jd_Aaron_wind_dreamFactory.js >> /scripts/logs/jd_Aaron_wind_dreamFactory.log 2>&1
 # 东东小窝
 #46 6,23 * * * node /scripts/jd_wind_small_home.js >> /scripts/logs/jd_wind_small_home.log 2>&1
 # 东东工厂
