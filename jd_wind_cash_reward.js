@@ -59,6 +59,7 @@ function Withdraw_Cash(){
 			else{
 				$.message = '无剩余现金领取';
 				$.amount  = 0.0;
+				console.log(`响应结果：${JSON.stringify(data)}`);
 			}
           }
         }
