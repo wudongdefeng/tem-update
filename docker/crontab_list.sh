@@ -22,8 +22,6 @@
 21 5,12 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
 #超级直播间红包雨(活动时间不定期，出现异常提示请忽略。红包雨期间会正常)
 1,31 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
-# 七夕情报局
-36 0,10,21 4-15 8 * node /scripts/jd_smiek_gua_doge.js >> /scripts/logs/jd_smiek_gua_doge.log 2>&1
 #粉丝互动
 34 6,18 * * * node /scripts/jd_star_wind_fan.js >> /scripts/logs/jd_star_wind_fan.log 2>&1
 #店铺签到
@@ -63,6 +61,8 @@
 0 23 12 8 4 node /scripts/jd_smiek_gua_opencard6.js >> /scripts/logs/jd_smiek_gua_opencard6.log 2>&1
 # 骁龙品牌日
 18 9,19 13-25 8 * node /scripts/jd_smiek_gua_xiaolong.js >> /scripts/logs/jd_smiek_gua_xiaolong.log 2>&1
+# 明星小店
+10 9,18 9-25 8 * node /scripts/jd_star_wind_star_shop.js >> /scripts/logs/jd_star_wind_star_shop.log 2>&1
 
 #整点红包雨
 0 0-23/1 * * * node /scripts/jd_wind2_long_super_redrain.js >> /scripts/logs/jd_wind2_long_super_redrain.log 2>&1
