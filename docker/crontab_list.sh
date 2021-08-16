@@ -63,6 +63,8 @@
 18 9,19 13-25 8 * node /scripts/jd_smiek_gua_xiaolong.js >> /scripts/logs/jd_smiek_gua_xiaolong.log 2>&1
 # 明星小店
 10 9,18 9-25 8 * node /scripts/jd_star_wind_star_shop.js >> /scripts/logs/jd_star_wind_star_shop.log 2>&1
+# 热血心跳
+5 6,10 12-24 8 * node /scripts/jd_star_wind_decompression.js >> /scripts/logs/jd_star_wind_decompression.log 2>&1
 
 #整点红包雨
 0 0-23/1 * * * node /scripts/jd_wind2_long_super_redrain.js >> /scripts/logs/jd_wind2_long_super_redrain.log 2>&1
