@@ -14,7 +14,7 @@ cron "10 7 1-31/7 * *" script-path=https://raw.githubusercontent.com/jiulan/plat
 ====================================小火箭=============================
 京东月资产变动通知 = type=cron,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_all_bean_change.js, cronexpr="10 7 1-31/7 * *", timeout=3600, enable=true
  */
-const $ = new Env('京东月资产变动通知');
+const $ = new Env('京东详细资产变动通知');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -42,6 +42,7 @@ if ($.isNode()) {
       $.beanCount = 0;
       $.incomeBean = 0;
       $.expenseBean = 0;
+      $.todayIncomeBean = 0;
       $.allincomeBean = 0;
       $.allexpenseBean = 0;
       $.errorMsg = '';
@@ -77,11 +78,8 @@ if ($.isNode()) {
     })
 async function showMsg() {
   if ($.errorMsg) return
-  allMessage += `账号${$.index}：${$.nickName || $.UserName}\n当月收入(截至昨日)：${$.allincomeBean}京豆 🐶\n当月支出(截至昨日)：${$.allexpenseBean}京豆 🐶\n昨日收入：${$.incomeBean}京豆 🐶\n昨日支出：${$.expenseBean}京豆 🐶\n当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆 🐶${$.message}${$.index !== cookiesArr.length ? '\n\n' : ''}`;
-  // if ($.isNode()) {
-  //   await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `账号${$.index}：${$.nickName || $.UserName}\n昨日收入：${$.incomeBean}京豆 🐶\n昨日支出：${$.expenseBean}京豆 🐶\n当前京豆：${$.beanCount}京豆 🐶${$.message}`, { url: `https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean` })
-  // }
-  $.msg($.name, '', `账号${$.index}：${$.nickName || $.UserName}\n当月收入(截至昨日)：${$.allincomeBean}京豆 🐶\n当月支出(截至昨日)：${$.allexpenseBean}京豆 🐶\n昨日收入：${$.incomeBean}京豆 🐶\n昨日支出：${$.expenseBean}京豆 🐶\n当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆🐶${$.message}`, {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
+  allMessage += `账号${$.index}：${$.nickName || $.UserName}\n今日收入：${$.todayIncomeBean}京豆 🐶\n昨日收入：${$.incomeBean}京豆 🐶\n昨日支出：${$.expenseBean}京豆 🐶\n当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆 🐶\n当月收入(截至昨日)：${$.allincomeBean}京豆 🐶\n当月支出(截至昨日)：${$.allexpenseBean}京豆 🐶${$.message}${$.index !== cookiesArr.length ? '\n\n' : ''}`;
+  $.msg($.name, '', `账号${$.index}：${$.nickName || $.UserName}\n今日收入：${$.todayIncomeBean}京豆 🐶\n昨日收入：${$.incomeBean}京豆 🐶\n昨日支出：${$.expenseBean}京豆 🐶\n当月收入(截至昨日)：${$.allincomeBean}京豆 🐶\n当月支出(截至昨日)：${$.allexpenseBean}京豆 🐶\n当前京豆：${$.beanCount}(今日将过期${$.expirejingdou})京豆 🐶${$.message}`, {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
 }
 async function bean() {
   // console.log(`北京时间零点时间戳:${parseInt((Date.now() + 28800000) / 86400000) * 86400000 - 28800000}`);
@@ -92,7 +90,7 @@ async function bean() {
   const tm = parseInt((Date.now() + 28800000) / 86400000) * 86400000 - 28800000 - (24 * 60 * 60 * 1000);
   // 今天0:0:0时间戳
   const tm1 = parseInt((Date.now() + 28800000) / 86400000) * 86400000 - 28800000;
-  let page = 1, t = 0, yesterdayArr = [];
+  let page = 1, t = 0, yesterdayArr = [];todayArr = [];
   do {
     let response = await getJingBeanBalanceDetail(page);
     // console.log(`第${page}页: ${JSON.stringify(response)}`);
@@ -102,7 +100,11 @@ async function bean() {
       if (detailList && detailList.length > 0) {
         for (let item of detailList) {
           const date = item.date.replace(/-/g, '/') + "+08:00";
-          if (tm <= new Date(date).getTime() && new Date(date).getTime() < tm1) {
+
+          if (new Date(date).getTime() >= tm1 && (!item['eventMassage'].includes("退还") && !item['eventMassage'].includes('扣赠'))) {
+            todayArr.push(item);
+          }
+          else if (tm <= new Date(date).getTime() && new Date(date).getTime() < tm1) {
             //昨日的
             yesterdayArr.push(item);
           } else if (tm > new Date(date).getTime()) {
@@ -191,7 +193,11 @@ async function bean() {
     }
   }
 
-
+  for (let item of todayArr) {
+    if (Number(item.amount) > 0) {
+      $.todayIncomeBean += Number(item.amount);
+    }
+  }
 
   await queryexpirejingdou();//过期京豆
   await redPacket();//过期红包
