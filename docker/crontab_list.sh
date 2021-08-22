@@ -1,4 +1,4 @@
-﻿# 每3天的23:50分清理一次日志(互助码不清理，proc_file.sh对该文件进行了去重)
+# 每3天的23:50分清理一次日志(互助码不清理，proc_file.sh对该文件进行了去重)
 50 23 */3 * * find /scripts/logs -name '*.log' | grep -v 'sharecodeCollection' | xargs rm -rf
 #收集助力码
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
@@ -27,7 +27,7 @@
 #粉丝互动
 34 6,18 * * * node /scripts/jd_star_wind_fan.js >> /scripts/logs/jd_star_wind_fan.log 2>&1
 #店铺签到
-12 13 * * * node /scripts/jd_Aaron_wind_shop_sign.js >> /scripts/logs/jd_Aaron_wind_shop_sign.log 2>&1
+12 13 * * * node /scripts/jd_shop_sign.js >> /scripts/logs/jd_shop_sign.log 2>&1
 #早起福利
 30 6 * * * node /scripts/jd_wind_goodMorning.js >> /scripts/logs/jd_wind_goodMorning.log 2>&1
 #来客有礼小程序
@@ -41,14 +41,14 @@
 # 工厂开团
 1 0,5,10,15 * * * node /scripts/jd_star_star_dreamFactory_tuan.js >> /scripts/logs/jd_star_star_dreamFactory_tuan.log 2>&1
 # 京喜领88元红包
-4 2,10 * * * node /scripts/jd_Aaron_wind_windlhb.js >> /scripts/logs/jd_Aaron_wind_windlhb.log 2>&1
+4 2,10 * * * node /scripts/jd_windlhb.js >> /scripts/logs/jd_windlhb.log 2>&1
 #京东手机狂欢城
 20 0-18/6 * * * node /scripts/jd_smiek_gua_carnivalcity.js >> /scripts/logs/jd_smiek_gua_carnivalcity.log 2>&1
-40 20 * * * node /scripts/jd_Aaron_wind_carnivalcity.js >> /scripts/logs/jd_Aaron_wind_carnivalcity.log 2>&1
+40 20 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 #京东手机狂欢城助力
-0 6,20 * * * node /scripts/jd_Aaron_wind_carnivalcity_help.js >> /scripts/logs/jd_Aaron_wind_carnivalcity_help.log 2>&1
+0 6,20 * * * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
 # 女装盲盒
-4 2,10 * * * node /scripts/jd_Aaron_wind_nzmh.js >> /scripts/logs/jd_Aaron_wind_nzmh.log 2>&1
+4 2,10 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
 # 荣耀换新季
 0 1 * * *  node /scripts/jd_tsuk_wind_by_ryhxj.js >> /scripts/logs/jd_tsuk_wind_by_ryhxj.log 2>&1
 # 金机馆
@@ -74,7 +74,7 @@
 30 0-23/1 * * * node /scripts/jd_wind2_long_half_redrain.js >> /scripts/logs/jd_wind2_long_half_redrain.log 2>&1
 
 #5G超级盲盒(活动时间：2021-06-2到2021-07-31)
-0 0-23/4 * * * node /scripts/jd_Aaron_wind_mohe.js >> /scripts/logs/jd_Aaron_wind_mohe.log 2>&1
+0 0-23/4 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 #金榜创造营 活动时间：2021-05-21至2021-12-31
 0 1,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 ##############长期活动##############
@@ -90,11 +90,11 @@
 # 签到
 7 0,17 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
 #京喜签到
-11 0 * * * node /scripts/jd_Aaron_wind_sign.js >> /scripts/logs/jd_Aaron_jind_sign.log 2>&1
+11 0 * * * node /scripts/jd_sign.js >> /scripts/logs/jd_Aaron_jind_sign.log 2>&1
 #点点卷
 10 2,22 * * * node /scripts/jd_smiek_wind_necklace.js >> /scripts/logs/jd_smiek_wind_necklace.log 2>&1
 # 东东超市兑换奖品#
-#0,30 0 * * * node /scripts/jd_Aaron_wind_blueCoin.js >> /scripts/logs/jd_Aaron_wind_blueCoin.log 2>&1
+#0,30 0 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
 # 摇京豆
 6 0,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 东东农场
@@ -138,7 +138,7 @@
 # 金融养猪
 32 0-23/6 * * * node /scripts/jd_pigPet.js >> /scripts/logs/jd_pigPet.log 2>&1
 # 京喜工厂
-50 * * * * node /scripts/jd_Aaron_wind_dreamFactory.js >> /scripts/logs/jd_Aaron_wind_dreamFactory.log 2>&1
+50 * * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
 # 东东小窝
 #46 6,23 * * * node /scripts/jd_wind_small_home.js >> /scripts/logs/jd_wind_small_home.log 2>&1
 # 东东工厂
