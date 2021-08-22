@@ -30,8 +30,8 @@ ADD_CART = $.isNode() ? (process.env.PURCHASE_SHOPS ? process.env.PURCHASE_SHOPS
 // 加入购物车开关，与东东小窝共享
 
 let inviteCodes = [
-  '28a699ac78d74aa3b31f7103597f8927@2f14ee9c92954cf79829320dd482bf49@fdf827db272543d88dbb51a505c2e869@ce2536153a8742fb9e8754a9a7d361da@38ba4e7ba8074b78851e928af2b4f6b2',
-  '28a699ac78d74aa3b31f7103597f8927@2f14ee9c92954cf79829320dd482bf49@fdf827db272543d88dbb51a505c2e869'
+  '6f46a1538969453d9a730ee299f2fc41@3ad242a50e9c4f2d9d2151aee38630b1@1a68165088b345c4ba2d8ce6464fa92b@bf4071c7fcde43828fddb83a08f53d28@abf5065d45e84851b972b37ac205e56a@3d9e58dbf2274db88afa177c7c2dccb0@341de42184724278b617e93a84d8bfff@195193ae706b477c9d232d38ec10fe03@41bee16aaa8d46cd86a5ca1efbabe156@9fd860599abf40ff819efc721a952dbc',
+  '6f46a1538969453d9a730ee299f2fc41@3ad242a50e9c4f2d9d2151aee38630b1@1a68165088b345c4ba2d8ce6464fa92b@bf4071c7fcde43828fddb83a08f53d28@abf5065d45e84851b972b37ac205e56a@3d9e58dbf2274db88afa177c7c2dccb0@341de42184724278b617e93a84d8bfff@195193ae706b477c9d232d38ec10fe03@41bee16aaa8d46cd86a5ca1efbabe156@9fd860599abf40ff819efc721a952dbc',
 ]
 
 if ($.isNode()) {
@@ -88,6 +88,7 @@ async function jdBeauty() {
   await getActCk()
   await getActInfo()
   await getToken()
+  await accessLogWithAD()
   await getUserInfo()
   await getActContent(false, shareUuid)
   if ($.exit) return
@@ -99,7 +100,7 @@ async function jdBeauty() {
     console.log(`金币大于800，去抽奖`)
     while ($.gold >= 800) {
       await draw()
-      await $.wait(1000)
+      await $.wait(2000)
       $.gold -= 800
     }
   }
@@ -113,7 +114,7 @@ async function helpFriends() {
     if (!code) continue
     console.log(`去助力好友${code}`)
     await getActContent(true, code)
-    await $.wait(500)
+    await $.wait(2000)
   }
 }
 
@@ -264,7 +265,35 @@ function getUserInfo() {
     })
   })
 }
-
+// 获得用户信息
+function accessLogWithAD() {
+  return new Promise(resolve => {
+    let body = `venderId=${ $.shopId}&code=99&pin=${encodeURIComponent($.token)}&activityId=${ACT_ID}&pageUrl=https%3A%2F%2Flzdz-isv.isvjcloud.com%2Fdingzhi%2Fbook%2Fdevelop%2Factivity%3FactivityId%3Ddz2010100034444201%26lng%3D107.146945%26lat%3D33.255267%26sid%3Dcad74d1c843bd47422ae20cadf6fe5aw%26un_area%3D27_2442_2444_31912&subType=app&adSource=`
+    $.post(taskPostUrl('common/accessLogWithAD', body), async (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(`${$.name} API请求失败，请检查网路重试`)
+        } else {
+    //      if (safeGet(data)) {
+          if($.isNode())
+            for (let ck of resp['headers']['set-cookie']) {
+              cookie = `${cookie}; ${ck.split(";")[0]};`
+            }
+          else{
+            for (let ck of resp['headers']['Set-Cookie'].split(',')) {
+              cookie = `${cookie}; ${ck.split(";")[0]};`
+            }
+          }
+       //   }
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve(data);
+      }
+    })
+  })
+}
 // 获得游戏信息
 function getActContent(info = false, shareUuid = '') {
   return new Promise(resolve => {
@@ -301,7 +330,7 @@ function getActContent(info = false, shareUuid = '') {
                       console.log(`去做${task.title}任务`)
                       for (let set of task.settings.filter(vo => vo.status === 0)) {
                         await doTask(set.type, set.value)
-                        await $.wait(500)
+                        await $.wait(2000)
                       }
                     }
                   } else if(task.title === '每日签到'){
@@ -311,13 +340,14 @@ function getActContent(info = false, shareUuid = '') {
                       for (let set of task.settings.filter(vo => vo.status === 0)) {
                         let res = await doTask(set.type, set.value)
                         if (res.result) break
-                        await $.wait(500)
+                        await $.wait(2000)
                       }
                     }
                   } else if (ADD_CART && ['加购商品'].includes(task.title)) {
                     if (task.okNum < task.dayMaxNum) {
                       console.log(`去做${task.title}任务`)
                       await doTask(task.settings[0].type, task.settings[0].value)
+                      await $.wait(2000)
                     }
                   }
                 }

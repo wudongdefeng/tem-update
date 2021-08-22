@@ -41,7 +41,7 @@
 # 工厂开团
 1 0,5,10,15 * * * node /scripts/jd_star_star_dreamFactory_tuan.js >> /scripts/logs/jd_star_star_dreamFactory_tuan.log 2>&1
 # 京喜领88元红包
-4 2,10 * * * node /scripts/jd_windlhb.js >> /scripts/logs/jd_windlhb.log 2>&1
+4 2,10 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 #京东手机狂欢城
 20 0-18/6 * * * node /scripts/jd_smiek_gua_carnivalcity.js >> /scripts/logs/jd_smiek_gua_carnivalcity.log 2>&1
 40 20 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
