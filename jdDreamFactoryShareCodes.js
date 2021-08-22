@@ -26,7 +26,7 @@ if (process.env.DREAM_FACTORY_SHARE_CODES) {
     console.log(`您的互助码选择的是用换行隔开\n`)
     shareCodes = process.env.DREAM_FACTORY_SHARE_CODES.split('\n');
   } else {
-    shareCodes = process.env.DREAM_FACTORY_SHARE_CODES.split();
+,
   }
 } else {
   console.log(`由于您环境变量(DREAM_FACTORY_SHARE_CODES)里面未提供助力码，故此处运行将会给脚本内置的码进行助力，请知晓！`)
