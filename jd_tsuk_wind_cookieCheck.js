@@ -1,5 +1,8 @@
-// [task_local]
-// 0 0 1/6 * * ?
+/*
+[task_local]
+#jd_cookieCheck
+5 0-23/6 * * * ? jd_cookieCheck.js, tag=cookieCheck, img-url=https://raw.githubusercontent.com/tsukasa007/icon/master/cookieCheck.png, enabled=true
+ */
 const $ = new Env('CK检测');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -40,8 +43,8 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
             $.isLogin = true;
             $.nickName = '';
             message = '';
-            await GetJDUserInfoUnion();
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
+            await GetJDUserInfoUnion();
             if (!$.isLogin) {
                 $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
 
@@ -88,9 +91,11 @@ async function GetJDUserInfoUnion() {
                         data = data.replace("GetJDUserInfoUnion(","")
                         data = data.substr(0, data.length - 1);
                         data = JSON.parse(data)
-                        if (data.data && data.data.userInfo &&  data.data.userInfo.baseInfo && data.data.userInfo.baseInfo.nickname){
-                            $.log(`cookie正常\t 昵称:${data.data.userInfo.baseInfo.nickname}\t等级名称:${data.data.userInfo.baseInfo.levelName}\t用户等级:${data.data.userInfo.baseInfo.userLevel}`)
-                            $.isLogin = true
+                        if (data.data && data.data.userInfo && data.data.userInfo.baseInfo && data.data.userInfo.baseInfo.nickname) {
+                            $.log(`cookie正常\t 昵称:${data.data.userInfo.baseInfo.nickname}\t等级名称:${data.data.userInfo.baseInfo.levelName}\t用户等级:${data.data.userInfo.baseInfo.userLevel}`);
+                            $.isLogin = true;
+                        } else {
+                            $.isLogin = false;
                         }
                     } else{
                         console.log(`京东服务器返回空数据`)
