@@ -94,6 +94,8 @@
 01 16 * * * node /scripts/jd_validate.js >> /scripts/logs/jd_validate.log 2>&1
 0 0,8,16 * * * node /scripts/jd_hello_wind_joy_reward_new.js >> /scripts/logs/jd_hello_wind_joy_reward_new.log 2>&1
 04 16 * * * node /scripts/jd_hello_wind_joy_reward_20.js >> /scripts/logs/jd_hello_wind_joy_reward_20.log 2>&1
+# 宠汪汪赛跑
+45 14,19 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
 #宠汪汪任务喂食
 35 */4 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
 #宠汪汪偷狗粮
