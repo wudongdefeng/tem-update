@@ -50,7 +50,7 @@ let allMessage = '';
     return;
   }
   await requireConfig()
- $.authorCode = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jd_updateCash.json')
+  $.authorCode = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jd_updateCash.json')
   if (!$.authorCode) {
     $.http.get({url: 'https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jd_updateCash.json'}).then((resp) => {}).catch((e) => $.log('刷新CDN异常', e));
     await $.wait(1000)
