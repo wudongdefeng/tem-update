@@ -99,7 +99,7 @@ async function GetJDUserInfoUnion() {
                         }
                     } else{
                         console.log(`京东服务器返回空数据`)
-                        $.isLogin = false
+                        $.isLogin = true
                     }
                 }
             } catch (e) {
