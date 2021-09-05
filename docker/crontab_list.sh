@@ -42,18 +42,8 @@
 4 2,10 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
 # 荣耀换新季
 0 1 * * *  node /scripts/jd_Ariszy_zy_ryhxj.js >> /scripts/logs/jd_Ariszy_zy_ryhxj.log 2>&1
-# 金机馆
-33 4,7 8-20 8 *  node /scripts/jd_star_wind_golden_machine.js >> /scripts/logs/jd_star_wind_golden_machine.log 2>&1
 # 来电好物季
 22 1 * * * node /scripts/jd_Ariszy_zy_ldhwj.js >> /scripts/logs/jd_Ariszy_zy_ldhwj.log 2>&1
-# 汽车生活节
-30 9,21 12-20 8 * node /scripts/jd_smiek_wind_qcshj.js >> /scripts/logs/jd_smiek_wind_qcshj.log 2>&1
-# 骁龙品牌日
-18 9,19 13-25 8 * node /scripts/jd_smiek_gua_xiaolong.js >> /scripts/logs/jd_smiek_gua_xiaolong.log 2>&1
-# 明星小店
-10 9,18 9-25 8 * node /scripts/jd_star_wind_star_shop.js >> /scripts/logs/jd_star_wind_star_shop.log 2>&1
-# 热血心跳
-5 6,10 12-24 8 * node /scripts/jd_star_wind_decompression.js >> /scripts/logs/jd_star_wind_decompression.log 2>&1
 
 #整点红包雨
 0 0-23/1 * * * node /scripts/jd_wind2_long_super_redrain.js >> /scripts/logs/jd_wind2_long_super_redrain.log 2>&1
@@ -90,8 +80,7 @@
 # 东东乐园
 30 7 * * * node /scripts/jd_wen_wind_ddnc_farmpark.js >> /scripts/logs/jd_wen_wind_ddnc_farmpark.log 2>&1
 # 宠汪汪
-57 7,15,23 * * * node /scripts/jd_validate.js >> /scripts/logs/jd_validate.log 2>&1
-01 16 * * * node /scripts/jd_validate.js >> /scripts/logs/jd_validate.log 2>&1
+57 7,15,23 * * * node /scripts/jd_hello_wind_joy_reward_20.js >> /scripts/logs/jd_hello_wind_joy_reward_20.log 2>&1
 0 0,8,16 * * * node /scripts/jd_hello_wind_joy_reward_new.js >> /scripts/logs/jd_hello_wind_joy_reward_new.log 2>&1
 04 16 * * * node /scripts/jd_hello_wind_joy_reward_20.js >> /scripts/logs/jd_hello_wind_joy_reward_20.log 2>&1
 # 宠汪汪赛跑
