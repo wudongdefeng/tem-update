@@ -7,10 +7,10 @@
 开10张卡(2组) 抽奖可能获得30京豆/每组(有可能有抽到空气💨
 关注10京豆 (有可能是空气💨
 加购没有豆只有游戏机会 (有可能是空气💨 默认不加购 如需加购请设置环境变量[guaopencard]为"true"
-抽奖 (有可能是空气💨 默认不抽奖 如需抽奖请设置环境变量[guaopencard]为"true"
+抽奖 (有可能是空气💨 默认不抽奖 如需抽奖请设置环境变量[guadraw]为"true"
 100积分抽1次
 填写要抽奖的次数 不足已自身次数为准
-guaopencard="3"
+guadraw="3"
 
 第一个账号助力作者 其他依次助力CK1
 第一个CK失效会退出脚本
@@ -55,7 +55,7 @@ if ($.isNode()) {
 let guaopencard_addSku = "false"
 guaopencard_addSku = $.isNode() ? (process.env.guaopencard ? process.env.guaopencard : guaopencard_addSku) : ($.getdata('guaopencard') ? $.getdata('guaopencard') : guaopencard_addSku);
 let guaopencard_draw = "0"
-guaopencard_draw = $.isNode() ? (process.env.guaopencard ? process.env.guaopencard : guaopencard_draw) : ($.getdata('guaopencard') ? $.getdata('guaopencard') : guaopencard_draw);
+guaopencard_draw = $.isNode() ? (process.env.guadraw ? process.env.guadraw : guaopencard_draw) : ($.getdata('guadraw') ? $.getdata('guadraw') : guaopencard_draw);
 let guaopencard = "false"
 guaopencard = $.isNode() ? (process.env.guaopencard ? process.env.guaopencard : guaopencard) : ($.getdata('guaopencard') ? $.getdata('guaopencard') : guaopencard);
 message = ""
@@ -196,7 +196,7 @@ async function run(){
         await draw(99)
         await $.wait(parseInt(Math.random() * 1000 + 4000, 10))
       }
-    }else console.log('如需抽奖请设置环境变量[guaopencard]为"3" 3为次数');
+    }else console.log('如需抽奖请设置环境变量[guadraw]为"3" 3为次数');
     if(gameFlag == 1){
       await $.wait(parseInt(Math.random() * 1000 + 2000, 10))
       await getActorUuid()
