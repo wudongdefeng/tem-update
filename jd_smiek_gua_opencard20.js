@@ -6,7 +6,7 @@
 邀请一人10豆 被邀请也有5豆(有可能没有豆
 开6张卡 抽奖可能获得40京豆(有可能有抽到空气💨
 关注10京豆 (有可能是空气💨
-加购没有豆只有金币 (有可能是空气💨 默认不加购 如需加购请设置环境变量[guaopencard_addSku20]为"true"
+加购没有豆只有金币 (有可能是空气💨 默认不加购 如需加购请设置环境变量[guaopencard]为"true"
 
 第一个账号助力作者 其他依次助力CK1
 第一个CK失效会退出脚本
@@ -16,7 +16,7 @@ ck1满10人自动换ck2
 
 默认脚本不执行
 如需执行脚本请设置环境变量
-guaopencard20="true"
+guaopencard="true"
 ————————————————
 入口：[8.31-9.21 中秋酒水 (https://lzdz1-isv.isvjcloud.com/dingzhi/jddrinks/grandceremony/activity/1988328?activityId=dz2108100001566301&shareUuid=1644bc91f825400a856e4d2a15f311af)]
 
@@ -51,9 +51,9 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 let guaopencard_addSku = "false"
-guaopencard_addSku = $.isNode() ? (process.env.guaopencard_addSku20 ? process.env.guaopencard_addSku20 : `${guaopencard_addSku}`) : ($.getdata('guaopencard_addSku20') ? $.getdata('guaopencard_addSku20') : `${guaopencard_addSku}`);
+guaopencard_addSku = $.isNode() ? (process.env.guaopencard ? process.env.guaopencard : `${guaopencard_addSku}`) : ($.getdata('guaopencard') ? $.getdata('guaopencard') : `${guaopencard_addSku}`);
 let guaopencard = "false"
-guaopencard = $.isNode() ? (process.env.guaopencard20 ? process.env.guaopencard20 : `${guaopencard}`) : ($.getdata('guaopencard20') ? $.getdata('guaopencard20') : `${guaopencard}`);
+guaopencard = $.isNode() ? (process.env.guaopencard ? process.env.guaopencard : `${guaopencard}`) : ($.getdata('guaopencard') ? $.getdata('guaopencard') : `${guaopencard}`);
 message = ""
 !(async () => {
   if (!cookiesArr[0]) {
@@ -64,7 +64,7 @@ message = ""
   }
   if ($.isNode()) {
     if(guaopencard+"" != "true"){
-      console.log('如需执行脚本请设置环境变量[guaopencard20]为"true"')
+      console.log('如需执行脚本请设置环境变量[guaopencard]为"true"')
     }
     if(guaopencard+"" != "true"){
       return
@@ -156,7 +156,7 @@ async function run(){
         if(s.status == false) await saveTask('加购', 2, s.value);
         if(s.status == false) await $.wait(parseInt(Math.random() * 1000 + 1000, 10))
       }
-    }else console.log('如需加购请设置环境变量[guaopencard_addSku20]为"true"');
+    }else console.log('如需加购请设置环境变量[guaopencard]为"true"');
     await $.wait(parseInt(Math.random() * 1000 + 1000, 10))
     await getActorUuid()
     console.log(`共${$.score}金币 剩余${$.score2}金币 ${$.assistCount}次抽奖`)

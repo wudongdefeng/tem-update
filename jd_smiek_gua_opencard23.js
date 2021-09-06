@@ -5,11 +5,11 @@
 邀请一人20豆 (有可能没有豆
 开9张卡(1组) 抽奖可能获得50京豆/每组(有可能有抽到空气💨
 关注10京豆 (有可能是空气💨
-加购没有豆只有游戏机会 (有可能是空气💨 默认不加购 如需加购请设置环境变量[guaopencard_addSku23]为"true"
-博饼 (有可能是空气💨 默认不博饼 如需博饼请设置环境变量[guaopencard_draw23]为"3"
+加购没有豆只有游戏机会 (有可能是空气💨 默认不加购 如需加购请设置环境变量[guaopencard]为"true"
+博饼 (有可能是空气💨 默认不博饼 如需博饼请设置环境变量[guaopencard]为"3"
 100积分抽1次
 填写要博饼的次数 不足已自身次数为准
-guaopencard_draw23="3"
+guaopencard="3"
 填非数字会全都抽奖
 
 第一个账号助力作者 其他依次助力CK1
@@ -17,7 +17,7 @@ guaopencard_draw23="3"
 
 默认脚本不执行
 如需执行脚本请设置环境变量
-guaopencard23="true"
+guaopencard="true"
 ————————————————
 入口：[9.6-9.17 福满中秋 (https://lzdz1-isv.isvjcloud.com/dingzhi/midautumn/jointactivity/activity/9367058?activityId=dz2109100000119501&shareUuid=814e2d8458c7402ba088c0efe0e4274d)]
 
@@ -53,11 +53,11 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 let guaopencard_addSku = "false"
-guaopencard_addSku = $.isNode() ? (process.env.guaopencard_addSku23 ? process.env.guaopencard_addSku23 : guaopencard_addSku) : ($.getdata('guaopencard_addSku23') ? $.getdata('guaopencard_addSku23') : guaopencard_addSku);
+guaopencard_addSku = $.isNode() ? (process.env.guaopencard ? process.env.guaopencard : guaopencard_addSku) : ($.getdata('guaopencard') ? $.getdata('guaopencard') : guaopencard_addSku);
 let guaopencard_draw = "0"
-guaopencard_draw = $.isNode() ? (process.env.guaopencard_draw23 ? process.env.guaopencard_draw23 : guaopencard_draw) : ($.getdata('guaopencard_draw23') ? $.getdata('guaopencard_draw23') : guaopencard_draw);
+guaopencard_draw = $.isNode() ? (process.env.guaopencard ? process.env.guaopencard : guaopencard_draw) : ($.getdata('guaopencard') ? $.getdata('guaopencard') : guaopencard_draw);
 let guaopencard = "false"
-guaopencard = $.isNode() ? (process.env.guaopencard23 ? process.env.guaopencard23 : guaopencard) : ($.getdata('guaopencard23') ? $.getdata('guaopencard23') : guaopencard);
+guaopencard = $.isNode() ? (process.env.guaopencard ? process.env.guaopencard : guaopencard) : ($.getdata('guaopencard') ? $.getdata('guaopencard') : guaopencard);
 message = ""
 !(async () => {
   if (!cookiesArr[0]) {
@@ -68,7 +68,7 @@ message = ""
   }
   if ($.isNode()) {
     if(guaopencard+"" != "true"){
-      console.log('如需执行脚本请设置环境变量[guaopencard23]为"true"')
+      console.log('如需执行脚本请设置环境变量[guaopencard]为"true"')
     }
     if(guaopencard+"" != "true"){
       return
@@ -156,7 +156,7 @@ async function run(){
     if(guaopencard_addSku+"" == "true"){
       if(!$.skuAddCart) await saveTask('加购商品', 21, 21);
       if(!$.skuAddCart) await $.wait(parseInt(Math.random() * 1000 + 2000, 10))
-    }else console.log('如需加购请设置环境变量[guaopencard_addSku23]为"true"');
+    }else console.log('如需加购请设置环境变量[guaopencard]为"true"');
     let flag = 1
     for (let s of $.skuVisit && $.skuVisit || []) {
       if(s.status !== true) {
@@ -183,7 +183,7 @@ async function run(){
         await draw("draw")
         await $.wait(parseInt(Math.random() * 1000 + 4000, 10))
       }
-    }else console.log('如需博饼请设置环境变量[guaopencard_draw23]为"3" 3为次数');
+    }else console.log('如需博饼请设置环境变量[guaopencard]为"3" 3为次数');
     if(gameFlag == 1){
       await $.wait(parseInt(Math.random() * 1000 + 2000, 10))
       await getActorUuid()

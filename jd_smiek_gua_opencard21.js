@@ -7,7 +7,7 @@
 开14张卡 每张有机会获得5京豆(有可能是空气💨
 开完卡获得抽奖1次
 关注获得抽奖1次 有机会获得10京豆 (有可能是空气💨
-加购获得抽奖1次 有机会获得5京豆 (有可能是空气💨 默认不加购 如需加购请设置环境变量[guaopencard_addSku21]为"true"
+加购获得抽奖1次 有机会获得5京豆 (有可能是空气💨 默认不加购 如需加购请设置环境变量[guaopencard]为"true"
 抽奖有机会获得京豆(有可能是空气💨
 
 第一个账号助力作者 其他依次助力CK1
@@ -15,7 +15,7 @@
 
 默认脚本不执行
 如需执行脚本请设置环境变量
-guaopencard21="true"
+guaopencard="true"
 ————————————————
 入口
 复制👇：
@@ -52,9 +52,9 @@ if ($.isNode()) {
   cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 let guaopencard_addSku = "false"
-guaopencard_addSku = $.isNode() ? (process.env.guaopencard_addSku21 ? process.env.guaopencard_addSku21 : `${guaopencard_addSku}`) : ($.getdata('guaopencard_addSku21') ? $.getdata('guaopencard_addSku21') : `${guaopencard_addSku}`);
+guaopencard_addSku = $.isNode() ? (process.env.guaopencard ? process.env.guaopencard : `${guaopencard_addSku}`) : ($.getdata('guaopencard') ? $.getdata('guaopencard') : `${guaopencard_addSku}`);
 let guaopencard = "false"
-guaopencard = $.isNode() ? (process.env.guaopencard21 ? process.env.guaopencard21 : guaopencard) : ($.getdata('guaopencard21') ? $.getdata('guaopencard21') : guaopencard);
+guaopencard = $.isNode() ? (process.env.guaopencard ? process.env.guaopencard : guaopencard) : ($.getdata('guaopencard') ? $.getdata('guaopencard') : guaopencard);
 message = ""
 !(async () => {
   if (!cookiesArr[0]) {
@@ -65,7 +65,7 @@ message = ""
   }
   if ($.isNode()) {
     if(guaopencard+"" != "true"){
-      console.log('如需执行脚本请设置环境变量[guaopencard21]为"true"')
+      console.log('如需执行脚本请设置环境变量[guaopencard]为"true"')
     }
     if(guaopencard+"" != "true"){
       return
@@ -131,7 +131,7 @@ async function run(){
     // if($.isCartAward == 0){
       // console.log('未加购')
       if(guaopencard_addSku+"" != "true"){
-        console.log('如需加购请设置环境变量[guaopencard_addSku21]为"true"');
+        console.log('如需加购请设置环境变量[guaopencard]为"true"');
       }else await addCart();
       
     // }else console.log('已加购')
