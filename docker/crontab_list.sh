@@ -58,6 +58,10 @@
 0 1,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 ##############长期活动##############
 
+# 领卷中心签到
+15 0 * * * node /scripts/jd_wind_ccSign.js >> /scripts/logs/jd_wind_ccSign.log 2>&1
+# 京东保价
+48 */8 * * * node /scripts/jd_air_wind_work_price.js >> /scripts/logs/jd_air_wind_work_price.log 2>&1
 # 清空购物车
 22 19 * * * node /scripts/jd_cleancart.js >> /scripts/logs/jd_cleancart.log 2>&1
 #玩一玩成就
