@@ -59,7 +59,7 @@
 ##############长期活动##############
 
 # 领卷中心签到
-15 0 * * * node /scripts/jd_wind_ccSign.js >> /scripts/logs/jd_wind_ccSign.log 2>&1
+15 0 * * * node /scripts/jd_ccSign.js >> /scripts/logs/jd_ccSign.log 2>&1
 # 京东保价
 48 */8 * * * node /scripts/jd_air_wind_work_price.js >> /scripts/logs/jd_air_wind_work_price.log 2>&1
 # 清空购物车
