@@ -48,6 +48,8 @@
 22 1 * * * node /scripts/jd_Ariszy_zy_ldhwj.js >> /scripts/logs/jd_Ariszy_zy_ldhwj.log 2>&1
 # 心相印店铺古墓寻宝
 12 9,15 1-30 9,10 * node /scripts/jd_star_wind_xinxiangyin.js >> /scripts/logs/jd_star_wind_xinxiangyin.log 2>&1
+# 京粮
+0 0 10 9 * node /scripts/jd_smiek_gua_opencard26.js >> /scripts/logs/jd_smiek_gua_opencard26.log 2>&1
 
 #整点红包雨
 0 0-23/1 * * * node /scripts/jd_wind2_long_super_redrain.js >> /scripts/logs/jd_wind2_long_super_redrain.log 2>&1
