@@ -1,11 +1,11 @@
 /*
-* 活动在点点券那个界面，奖励上限100份，能集齐的是欧皇，正常人都是跑个寂寞
-* cron  34 3,4 1-8 8 *
+京东APP 领券 --》浮窗集卡
+cron 25 12,16 1-12 9 *  https://raw.githubusercontent.com/star261/jd/main/scripts/jd_necklacecard.js
 */
-const $ = new Env('集胜券点亮金牌');
+const $ = new Env('天天集卡券');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const activityKey = 'ebac35856fbbb121653a4006cbb681c9';
+const activityKey = '66f241a0515adf04b2ecb500827b119d';
 $.inviteList = [];
 let cookiesArr = [];
 if ($.isNode()) {
@@ -101,8 +101,16 @@ async function main() {
       await  takeGetRequest('necklacecard_openCard');
       await $.wait(3000);
     }
+    await  takeGetRequest('necklacecard_cardHomePage');
+    await $.wait(2000);
   }else{
     console.log(`没有抽奖次数`);
+  }
+  if($.activityDetail.collectedCardsNum === $.activityDetail.totalCardsNum){
+    let thisMessage = `第【${$.index}】个账号，卡片已满，进APP查看`;
+    await notify.sendNotify('天天集卡券',thisMessage);
+  }else{
+      console.log(`已有卡片【${$.activityDetail.collectedCardsNum}】张，总共需要卡片【${$.activityDetail.totalCardsNum}】张`);
   }
 }
 
