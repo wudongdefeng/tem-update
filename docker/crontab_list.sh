@@ -64,8 +64,6 @@
 48 11 * * * node /scripts/jd_tsuk_wind_wyw.js >> /scripts/logs/jd_tsuk_wind_wyw.log 2>&1
 #京东试用
 15 12 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
-#图形签到
-20 5 * * * node /scripts/jd_smiek_wind_sign_graphics.js >> /scripts/logs/jd_smiek_wind_sign_graphics.log 2>&1
 # 签到
 7 0,17 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
 #京喜签到
