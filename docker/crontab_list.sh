@@ -4,6 +4,8 @@
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
 ##############短期活动##############
+# 希捷品牌日
+17 10 * 9,10 * node /scripts/jd_smiek_gua_UnknownTask4.js >> /scripts/logs/jd_smiek_gua_UnknownTask4.log 2>&1
 #开学充电站
 30 1 * * * node /scripts/jd_Ariszy_zy_kxcdz.js >> /scripts/logs/jd_Ariszy_zy_kxcdz.log 2>&1
 #内容鉴赏官
