@@ -4,6 +4,8 @@
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
 ##############短期活动##############
+# 跳跳乐
+1 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 希捷品牌日
 17 10 * 9,10 * node /scripts/jd_smiek_gua_UnknownTask4.js >> /scripts/logs/jd_smiek_gua_UnknownTask4.log 2>&1
 #开学充电站
