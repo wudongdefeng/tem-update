@@ -4,6 +4,8 @@
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
 ##############短期活动##############
+# 企有此礼
+30 0 * * *  node /scripts/jd_Ariszy_zy_qycl.js >> /scripts/logs/jd_Ariszy_zy_qycl.log 2>&1
 # 跳跳乐
 1 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 希捷品牌日
