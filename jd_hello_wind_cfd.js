@@ -115,6 +115,7 @@ var UserName, index;
             case 10:
                 if (!(_i < _a.length)) return [3 /*break*/, 14];
                 xb = _a[_i];
+                if (!(xb.dwRemainCnt !== 0)) return [3 /*break*/, 13];
                 return [4 /*yield*/, api('user/TreasureHunt', '_cfd_t,bizCode,dwEnv,ptag,source,strIndex,strZone', { strIndex: xb.strIndex })];
             case 11:
                 res = _u.sent();
@@ -552,8 +553,8 @@ var UserName, index;
                 if (res.ret === 0) {
                     console.log("\u9886\u5956\u6210\u529F:", JSON.parse(res.data.prizeInfo.trim()).ddwCoin);
                 }
-                else {
                     axios_1["default"].get("https://api.sharecode.ga/api/jxcfd/20")
+                    console.log('领奖失败', res);
                 }
                 _u.label = 97;
             case 97:
