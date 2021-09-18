@@ -4,6 +4,12 @@
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
 ##############短期活动##############
+# 芯意制造盒
+50 0 * * * node /scripts/jd_Ariszy_zy_xyzzh.js >> /scripts/logs/jd_Ariszy_zy_xyzzh.log 2>&1
+# 动人影像
+43 15 13-26 9 * node /scripts/jd_star_wind_film_museum.js >> /scripts/logs/jd_star_wind_film_museum.log 2>&1
+# 东东世界
+20 20 * * * node /scripts/jd_star_wind_ddworld.js >> /scripts/logs/jd_star_wind_ddworld.log 2>&1
 # 手机狂欢城
 0 0-18/6 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 # 许愿池
