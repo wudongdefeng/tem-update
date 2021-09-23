@@ -7,7 +7,7 @@
 # 东东游戏
 17 12-23/4 * * * node /scripts/jd_smiek_gua_ddgame.js >> /scripts/logs/jd_smiek_gua_ddgame.log 2>&1
 # 东东玩家
-20 10 * * * node /scripts/jd_Ariszy_zy_ddwj.js >> /scripts/logs/jd_Ariszy_zy_ddwj.log 2>&1
+20 3,10 * * * node /scripts/jd_Ariszy_zy_ddwj.js >> /scripts/logs/jd_Ariszy_zy_ddwj.log 2>&1
 # 动人影像
 43 15 13-26 9 * node /scripts/jd_star_wind_film_museum.js >> /scripts/logs/jd_star_wind_film_museum.log 2>&1
 # 东东世界
