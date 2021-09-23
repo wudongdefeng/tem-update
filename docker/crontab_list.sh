@@ -8,8 +8,6 @@
 17 12-23/4 * * * node /scripts/jd_smiek_gua_ddgame.js >> /scripts/logs/jd_smiek_gua_ddgame.log 2>&1
 # 东东玩家
 20 10 * * * node /scripts/jd_Ariszy_zy_ddwj.js >> /scripts/logs/jd_Ariszy_zy_ddwj.log 2>&1
-# 芯意制造盒
-50 0 * * * node /scripts/jd_Ariszy_zy_xyzzh.js >> /scripts/logs/jd_Ariszy_zy_xyzzh.log 2>&1
 # 动人影像
 43 15 13-26 9 * node /scripts/jd_star_wind_film_museum.js >> /scripts/logs/jd_star_wind_film_museum.log 2>&1
 # 东东世界
@@ -18,8 +16,6 @@
 0 0-18/6 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 # 许愿池
 40 0,2 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
-# 企有此礼
-30 0 * * *  node /scripts/jd_Ariszy_zy_qycl.js >> /scripts/logs/jd_Ariszy_zy_qycl.log 2>&1
 # 跳跳乐
 1 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
 # 希捷品牌日
