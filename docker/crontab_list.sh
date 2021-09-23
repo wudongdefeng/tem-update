@@ -11,7 +11,7 @@
 # 动人影像
 43 15 13-26 9 * node /scripts/jd_star_wind_film_museum.js >> /scripts/logs/jd_star_wind_film_museum.log 2>&1
 # 东东世界
-20 20 * * * node /scripts/jd_star_wind_ddworld.js >> /scripts/logs/jd_star_wind_ddworld.log 2>&1
+20 20 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
 # 手机狂欢城
 0 0-18/6 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 # 许愿池
