@@ -26,7 +26,8 @@ const $ = new Env('东东玩家')
 cookiesArr = []
 CodeArr = []
 cookie = ''
-	var list2tokenArr = [], list4tokenArr = [], list6tokenArr = [], list5tokenArr = [], list4tokenArr = [], list3tokenArr = [], list1tokenArr = [], list2tokenArr = [], listtokenArr = [], list0tokenArr = [], list1tokenArr = []
+$.shareCodes = []
+var list2tokenArr = [], list4tokenArr = [], list6tokenArr = [], list5tokenArr = [], list4tokenArr = [], list3tokenArr = [], list1tokenArr = [], list2tokenArr = [], listtokenArr = [], list0tokenArr = [], list1tokenArr = []
 var taskid, token, helpcode, secretp, userUnlockedPlaceNum;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
