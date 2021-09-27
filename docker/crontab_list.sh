@@ -4,8 +4,9 @@
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
 ##############短期活动##############
-# 开卡38
-5,7,9 17 26 9 7 node /scripts/jd_smiek_gua_opencard38.js >> /scripts/logs/jd_smiek_gua_opencard38.log 2>&1
+
+# 京东小魔方
+31 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.js.log 2>&1
 # 东东游戏
 17 12-23/4 * * * node /scripts/jd_smiek_gua_ddgame.js >> /scripts/logs/jd_smiek_gua_ddgame.log 2>&1
 # 东东玩家
