@@ -77,8 +77,6 @@ if ($.isNode()) {
        await zy()
        //await userScore()
    }
-   let res = await getAuthorShareCode('https://wuzhi03.coding.net/p/dj/d/shareCodes/git/raw/main/ddwj.json')
-  $.shareCodes = [...(res || []), ...$.shareCodes]
 for(let i = 0; i < cookiesArr.length; i++){
       cookie = cookiesArr[i];
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
