@@ -29,8 +29,6 @@
 30 10,15 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
 #京东极速版红包(活动时间：2021-5-5至2021-5-31)
 45 0,23 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
-#QQ星系牧场
-7 0-23/3 * * * node /scripts/jd_tsuk_wind_qqxing.js >> /scripts/logs/jd_tsuk_wind_qqxing.log 2>&1
 #汪汪乐园养joy
 11 1-23/4 * * * node /scripts/jd_wind_joypark_joy.js >> /scripts/logs/jd_wind_joypark_joy.log 2>&1
 #汪汪乐园每日任务
