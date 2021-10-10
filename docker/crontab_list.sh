@@ -7,6 +7,8 @@
 
 # 一加手机
 10 14 * * * node /scripts/jd_star_wind_yijia.js >> /scripts/logs/jd_star_wind_yijia.log 2>&1
+#  海尔
+10 19 * * * node /scripts/jd_star_wind_haier.js >> /scripts/logs/jd_star_wind_haier.log 2>&1
 # 京东小魔方
 31 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.js.log 2>&1
 # 东东游戏
