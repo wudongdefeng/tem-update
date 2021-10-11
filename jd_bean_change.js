@@ -8,6 +8,11 @@ const JXUserAgent =  $.isNode() ? (process.env.JX_USER_AGENT ? process.env.JX_US
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //通知分为单账号 默认 false,环境变量 BEAN_CHANGE_NOTIFYTIP
 const notifyTip = $.isNode() ? process.env.BEAN_CHANGE_NOTIFYTIP : false;
+
+const thefs = require('fs');
+const thepath = '/jd/scripts/0sendNotify_Annyooo.js'
+const thenotifyTip = $.isNode() ? process.env.MY_NOTIFYTIP : false;
+
 let allMessage = '';
 let ReturnMessage = '';
 //IOS等用户直接用NobyDa的jd cookie
@@ -65,6 +70,12 @@ if ($.isNode()) {
         if ($.isNode()) {
           await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
         }
+
+        if ($.isNode() && thefs.existsSync(thepath) && thenotifyTip){
+            let thenotify = require(thepath);
+            await thenotify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
+        }
+
         continue
       }
 	  await getJdZZ();
@@ -176,12 +187,21 @@ async function showMsg() {
 		//ReturnMessage += `          已有${response.result.medalNum}块勋章，还需${response.result.needCollectMedalNum}块\n`;
 	  }
 	}
-	
+
     if ($.jxFactoryInfo) {
         ReturnMessage += `京喜工厂：${$.jxFactoryInfo}🏭\n`
     }
-	
+
   ReturnMessage+=`🧧🧧🧧🧧红包明细🧧🧧🧧🧧`;
+  
+  if ($.isNode() && thefs.existsSync(thepath) && thenotifyTip){
+      console.log("单账号一对一通知")
+      let theMessage = ReturnMessage;
+      theMessage += `${$.message}`;
+      let thenotify = require(thepath);
+      await thenotify.sendNotify(`${$.name}`, `${theMessage}`);
+  }
+  
   ReturnMessage+=`${$.message}\n\n`;
   allMessage+=ReturnMessage;
   $.msg($.name, '', ReturnMessage , {"open-url": "https://bean.m.jd.com/beanDetail/index.action?resourceValue=bean"});
