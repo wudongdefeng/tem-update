@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 扭蛋
+10 17 * * * node /scripts/jd_star_wind_lucky_egg.js >> /scripts/logs/jd_star_wind_lucky_egg.log 2>&1
 # 一加手机
 10 14 * * * node /scripts/jd_star_wind_yijia.js >> /scripts/logs/jd_star_wind_yijia.log 2>&1
 #  海尔
