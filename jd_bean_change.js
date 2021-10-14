@@ -169,10 +169,14 @@ if ($.isNode()) {
 			$.joylevel = 0;
 			TempBaipiao="";
 			console.log(`******开始查询【京东账号${$.index}】${$.nickName || $.UserName}*********`);
-
+			
+			
+			
 			await TotalBean();
 			await TotalBean2();
-
+			if (!$.isLogin) {
+				await isLoginByX1a0He();
+			}
 			if (!$.isLogin) {
 				$.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {
 					"open-url": "https://bean.m.jd.com/bean/signIndex.action"
@@ -183,6 +187,7 @@ if ($.isNode()) {
 				}
 				continue
 			}
+			
 			await getJoyBaseInfo();
 			await getJdZZ();
 			await getMs();
@@ -461,7 +466,10 @@ async function showMsg() {
 		if (userIndex2 == -1 && userIndex3 == -1 && userIndex4 == -1) {
 			allMessageMonth += ReturnMessageMonth + `\n`;
 		}
-
+		if ($.isNode() && WP_APP_TOKEN_ONE) {
+			await notify.sendNotifybyWxPucher("京东月资产变动", `${ReturnMessageMonth}`,`${$.UserName}`);
+		}
+	
 	}
 
 	ReturnMessage += `\n【今日京豆】收${$.todayIncomeBean}豆`;
@@ -1015,9 +1023,9 @@ function TotalBean2() {
 					$.logErr(err);
 				} else {
 					if (data) {
-						data = JSON.parse(data);
-						if (!data.user) {
-							$.isLogin = false; //cookie过期
+						data = JSON.parse(data);						
+						if (!data.user) {	
+							$.log('微信小程序接口返回空数据');
 							return;
 						}
 						const userInfo = data.user;
@@ -1044,6 +1052,41 @@ function TotalBean2() {
 		});
 	});
 }
+
+function isLoginByX1a0He() {
+	return new Promise((resolve) => {
+		const options = {
+			url: 'https://plogin.m.jd.com/cgi-bin/ml/islogin',
+			headers: {
+				"Cookie": cookie,
+				"referer": "https://h5.m.jd.com/",
+				"User-Agent": "jdapp;iPhone;10.1.2;15.0;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 15_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
+			},
+		}
+		$.get(options, (err, resp, data) => {
+			try {
+				if (data) {
+					data = JSON.parse(data);
+					if (data.islogin === "1") {
+						console.log(`使用X1a0He写的接口加强检测: Cookie有效\n`)
+					} else if (data.islogin === "0") {
+						$.isLogin = false;
+						console.log(`使用X1a0He写的接口加强检测: Cookie无效\n`)
+					} else {
+						console.log(`使用X1a0He写的接口加强检测: 未知返回，不作变更...\n`)
+						$.error = `${$.nickName} :` + `使用X1a0He写的接口加强检测: 未知返回...\n`
+					}
+				}
+			} catch (e) {
+				console.log(e);
+			}
+			finally {
+				resolve();
+			}
+		});
+	});
+}
+
 function getJingBeanBalanceDetail(page) {
 	return new Promise(async resolve => {
 		const options = {
