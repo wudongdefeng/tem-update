@@ -797,15 +797,20 @@ function task() {
                     t = _a[_i];
                     if (!(t.awardStatus === 2 && t.completedTimes === t.targetTimes)) return [3 /*break*/, 8];
                     console.log('可领奖:', t.taskName);
-                    return [4 /*yield*/, api('Award', '_cfd_t,bizCode,dwEnv,ptag,source,strZone,taskId', { taskId: t.taskId })];
+                    return [4 /*yield*/, api('Award', '_cfd_t,bizCode,dwEnv,ptag,source,strZone,taskId', { taskId: t.taskId, bizCode: t.bizCode })];
                 case 4:
                     res = _b.sent();
                     return [4 /*yield*/, (0, TS_USER_AGENTS_1.wait)(2000)];
                 case 5:
                     _b.sent();
                     if (!(res.ret === 0)) return [3 /*break*/, 7];
-                    res = JSON.parse(res.data.prizeInfo);
-                    console.log("\u9886\u5956\u6210\u529F:", res.ddwCoin, res.ddwMoney);
+                    try {
+                        res = JSON.parse(res.data.prizeInfo);
+                        console.log("\u9886\u5956\u6210\u529F:", res.ddwCoin, res.ddwMoney);
+                    }
+                    catch (e) {
+                        console.log('领奖成功:', res.data);
+                    }
                     return [4 /*yield*/, (0, TS_USER_AGENTS_1.wait)(1000)];
                 case 6:
                     _b.sent();
