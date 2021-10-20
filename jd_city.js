@@ -109,7 +109,12 @@ let inviteCodes = []
             console.log(`助力次数已耗尽，跳出`)
             break
           }
-          if (!Object.keys(res['data']['result']['toasts']).length) {
+          if (res['data']['result']['toasts']) {
+            if (!Object.keys(res['data']['result']['toasts']).length) {
+              console.log(`未知错误，跳出`)
+              break
+            }
+          } else {
             console.log(`未知错误，跳出`)
             break
           }
@@ -132,7 +137,12 @@ let inviteCodes = []
             console.log(`助力次数已耗尽，跳出`)
             break
           }
-          if (!Object.keys(res['data']['result']['toasts']).length) {
+          if (res['data']['result']['toasts']) {
+            if (!Object.keys(res['data']['result']['toasts']).length) {
+              console.log(`未知错误，跳出`)
+              break
+            }
+          } else {
             console.log(`未知错误，跳出`)
             break
           }
@@ -227,29 +237,58 @@ function getInfo(inviteId, flag = false) {
     })
   })
 }
-function receiveCash(roundNum) {
-  let body = {"cashType":1,"roundNum":roundNum}
+function receiveCash(roundNum, type = 1) {
   return new Promise((resolve) => {
-    $.post(taskPostUrl("city_receiveCash",body), async (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} API请求失败，请检查网路重试`)
-        } else {
-          if (safeGet(data)) {
-            console.log(`领红包结果${data}`);
-            data = JSON.parse(data);
-            if (data['data']['bizCode'] === 0) {
-              console.log(`获得 ${data.data.result.currentTimeCash} 元，共计 ${data.data.result.totalCash} 元`)
+    let body;
+    switch (type) {
+      case 1:
+        body = {"cashType":1,"roundNum":roundNum}
+        $.post(taskPostUrl("city_receiveCash", body), async (err, resp, data) => {
+          try {
+            if (err) {
+              console.log(`${JSON.stringify(err)}`)
+              console.log(`${$.name} API请求失败，请检查网路重试`)
+            } else {
+              if (safeGet(data)) {
+                console.log(`领红包结果${data}`);
+                data = JSON.parse(data);
+                if (data['data']['bizCode'] === 0) {
+                  console.log(`获得 ${data.data.result.currentTimeCash} 元，共计 ${data.data.result.totalCash} 元`)
+                }
+              }
             }
+          } catch (e) {
+            $.logErr(e, resp)
+          } finally {
+            resolve(data);
           }
-        }
-      } catch (e) {
-        $.logErr(e, resp)
-      } finally {
-        resolve(data);
-      }
-    })
+        })
+        break;
+      case 2:
+        body = {"cashType":"4"}
+        $.post(taskPostUrl("city_receiveCash", body), async (err, resp, data) => {
+          try {
+            if (err) {
+              console.log(`${JSON.stringify(err)}`)
+              console.log(`${$.name} API请求失败，请检查网路重试`)
+            } else {
+              if (safeGet(data)) {
+                data = JSON.parse(data);
+                if (data['data']['bizCode'] === 0) {
+                  console.log(`领取赏金 ${data.data.result.currentTimeCash} 元，共计 ${data.data.result.totalCash} 元`)
+                }
+              }
+            }
+          } catch (e) {
+            $.logErr(e, resp)
+          } finally {
+            resolve(data);
+          }
+        })
+        break;
+      default:
+        break;
+    }
   })
 }
 function getInviteInfo() {
@@ -263,7 +302,12 @@ function getInviteInfo() {
         } else {
           if (safeGet(data)) {
             data = JSON.parse(data);
-            // console.log(data)
+            if (data.code === 0 && data.data.bizCode ===0) {
+              if (data.data.result.masterData.actStatus === 2) {
+                await receiveCash('', 2)
+                await $.wait(2000)
+              }
+            }
           }
         }
       } catch (e) {
