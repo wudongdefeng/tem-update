@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 城城分现金
+0 0-23/5,22 * 10 * node /scripts/jd_city.js >> /scripts/logs/jd_city.log 2>&1
 # 扭蛋
 10 17 * * * node /scripts/jd_star_wind_lucky_egg.js >> /scripts/logs/jd_star_wind_lucky_egg.log 2>&1
 # 攥金币
