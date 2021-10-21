@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 预售福利机
+46 0,9 * * * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
 # 限时领金豆
 23 0,9 * * * node /scripts/jd_star_wind_xsqjd.js >> /scripts/logs/jd_star_wind_xsqjd.log 2>&1
 # 城城分现金
