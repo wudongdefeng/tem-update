@@ -106,7 +106,7 @@ $.shareCodesArr = [];
                                     if (tmp[o].status == 1) {
                                         conti = true
                                         await travel_collectScore(tmp[o].taskToken, task.taskId)
-                                        await $.wait(10000)
+                                        await $.wait(5000)
                                     }
 
                                 }
@@ -126,7 +126,7 @@ $.shareCodesArr = [];
                                     if (r.productInfoVos[o].status == 1) {
                                         conti = true
                                         await travel_collectScore(r.productInfoVos[o].taskToken, task.taskId)
-                                        await $.wait(8000) 
+                                        await $.wait(5000) 
                                         t++
                                         if (t >= 5) break
                                     }
@@ -141,7 +141,7 @@ $.shareCodesArr = [];
                                         conti = true
                                         await travel_collectScore(r.browseShopVo[o].taskToken, task.taskId)
                                         t++
-                                        await $.wait(8000)
+                                        await $.wait(5000)
                                         if (t >= 5) break
                                     }
 
@@ -156,7 +156,7 @@ $.shareCodesArr = [];
                                         if (i < 10) //限制开卡账号数目
                                             await join(task.brandMemberVos[o].vendorIds, memberUrl.channel, memberUrl.shopId ? memberUrl.shopId : "")
                                         await travel_collectScore(task.brandMemberVos[o].taskToken, task.taskId)
-                                        await $.wait(8000)
+                                        await $.wait(5000)
                                     }
 
                                 }
