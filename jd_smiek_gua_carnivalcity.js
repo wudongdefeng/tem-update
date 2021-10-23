@@ -1,6 +1,6 @@
 /*
 京东手机狂欢城活动
-活动时间: 2021-9-16至2021-10-1
+活动时间: 2021-9-23至2021-11-13
 活动入口：暂无 [活动地址](https://carnivalcity.m.jd.com)
 
 往期奖励：
@@ -13,17 +13,17 @@ c、 每日第10001-30000名可获得20个京豆
 ===================quantumultx================
 [task_local]
 #京东手机狂欢城
-0 0-18/6 * * * gua_carnivalcity.js, tag=京东手机狂欢城, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+0 0-18/6 * 10,11 * gua_carnivalcity.js, tag=京东手机狂欢城, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 
 =====================Loon================
 [Script]
-cron "0 0-18/6 * * *" script-path=gua_carnivalcity.js, tag=京东手机狂欢城
+cron "0 0-18/6 * 10,11 *" script-path=gua_carnivalcity.js, tag=京东手机狂欢城
 
 ====================Surge================
-京东手机狂欢城 = type=cron,cronexp=0 0-18/6 * * *,wake-system=1,timeout=3600,script-path=gua_carnivalcity.js
+京东手机狂欢城 = type=cron,cronexp=0 0-18/6 * 10,11 *,wake-system=1,timeout=3600,script-path=gua_carnivalcity.js
 
 ============小火箭=========
-5G狂欢城 = type=cron,script-path=gua_carnivalcity.js, cronexpr="0 0,6,12,18 * * *", timeout=3600, enable=true
+5G狂欢城 = type=cron,script-path=gua_carnivalcity.js, cronexpr="0 0-18/6 * 10,11 *", timeout=3600, enable=true
 */
 const $ = new Env('京东手机狂欢城');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -34,9 +34,9 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 
 let cookiesArr = [], cookie = '', message = '', allMessage = '';
 
+
 let gua_carnivalcity_draw = "false"
 gua_carnivalcity_draw = $.isNode() ? (process.env.gua_carnivalcity_draw ? process.env.gua_carnivalcity_draw : `${gua_carnivalcity_draw}`) : ($.getdata('gua_carnivalcity_draw') ? $.getdata('gua_carnivalcity_draw') : `${gua_carnivalcity_draw}`);
-
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
@@ -49,7 +49,7 @@ if ($.isNode()) {
 let inviteCodes = [];
 $.shareCodesArr = [];
 const JD_API_HOST = 'https://api.m.jd.com/api';
-const activeEndTime = '2021/10/02 00:00:00+08:00';//活动结束时间
+const activeEndTime = '2021/11/14 00:00:00+08:00';//活动结束时间
 let nowTime = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000;
 !(async () => {
   if (!cookiesArr[0]) {
@@ -82,7 +82,7 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*
       message = '';
       console.log(`\n开始【京东账号${$.index}】${$.nickName || $.UserName}\n`);
       getUA()
-      // await shareCodesFormat();
+      await shareCodesFormat();
       await JD818();
     }
   }
@@ -128,14 +128,20 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*
 async function JD818() {
   try {
     await indexInfo();//获取任务
-    // await supportList();//助力情况
-    // await getHelp();//获取邀请码
+    await supportList();//助力情况
+    await getHelp();//获取邀请码
     if ($.blockAccount) return
     // await indexInfo(true);//获取任务
+    $.headInfoFlag = true
+    let s = 0
+    do{
+      await headInfo();
+      s++
+      await $.wait(1000);
+    }while ($.headInfoFlag && s<24)
     await doHotProducttask();//做热销产品任务
     await doBrandTask();//做品牌手机任务
     await doBrowseshopTask();//逛好货街，做任务
-    if ($.blockAccount) return
     // await doHelp();
     await myRank();//领取往期排名奖励
     await getListRank();
@@ -151,7 +157,6 @@ async function doHotProducttask() {
   $.hotProductList = $.hotProductList.filter(v => !!v && v['status'] === "1");
   if ($.hotProductList && $.hotProductList.length) console.log(`开始 【浏览热销手机产品】任务,需等待6秒`)
   for (let item of $.hotProductList) {
-    if ($.blockAccount) break
     await doBrowse(item['id'], "", "hot", "browse", "browseHotSku");
     await $.wait(1000 * 6);
     if ($.browseId) {
@@ -177,7 +182,6 @@ function doBrowse(id = "", brandId = "", taskMark = "hot", type = "browse", logM
             $.browseId = data['data']['browseId'] || "";
           } else {
             console.log(`doBrowse异常`);
-            if (data.code && (data.code === 1002 || data.code === 1001)) $.blockAccount = true;
           }
         }
       } catch (e) {
@@ -203,8 +207,31 @@ function getBrowsePrize(browseId, brandId = '') {
           data = JSON.parse(data);
           if (data && data['code'] === 200) {
             if (data['data']['jingBean']) $.beans += data['data']['jingBean'];
-          }else{
-            if (data.code && (data.code === 1002 || data.code === 1001)) $.blockAccount = true;
+          }
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve(data);
+      }
+    })
+  })
+}
+//领取奖励
+function getHeadBrowsePrize(browseId, brandId = '') {
+  return new Promise(resolve => {
+    const body = {"browseId":browseId};
+    const options = taskPostUrl('/khc/task/getHeadBrowsePrize', body)
+    $.post(options, (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(`${JSON.stringify(err)}`)
+          console.log(`${$.name} API请求失败，请检查网路重试`)
+        } else {
+          console.log(`getHeadBrowsePrize 领取奖励 结果:${data}`);
+          data = JSON.parse(data);
+          if (data && data['code'] === 200) {
+            if (data['data']['jingBean']) $.beans += data['data']['jingBean'];
           }
         }
       } catch (e) {
@@ -243,7 +270,6 @@ function followShop(browseId, brandId = '') {
 
 async function doBrandTask() {
   for (let brand of $.brandList) {
-    if ($.blockAccount) break
     await brandTaskInfo(brand['brandId']);
   }
 }
@@ -357,13 +383,72 @@ async function doBrowseshopTask() {
   $.browseshopList = $.browseshopList.filter(v => !!v && v['status'] === "6");
   if ($.browseshopList && $.browseshopList.length) console.log(`\n开始 【逛好货街，做任务】，需等待10秒`)
   for (let shop of $.browseshopList) {
-    if ($.blockAccount) break
     await doBrowse(shop['id'], "", "browseShop", "browse", "browseShop");
     await $.wait(10000);
     if ($.browseId) {
       await getBrowsePrize($.browseId)
     }
   }
+}
+function headInfo() {
+  const options = taskPostUrl(`/khc/index/headInfo`, {})
+  return new Promise( (resolve) => {
+    $.post(options, async (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(`${JSON.stringify(err)}`)
+          console.log(`${$.name} API请求失败，请检查网路重试`)
+        } else {
+          data = $.toObj(data);
+          if (data.code === 200) {
+            if([13,15].includes(Number(data['data']['taskType']))){
+              await toTaskApi('doBrowseHead',{"taskIndex":data['data']['taskIndex'],"taskId":data['data']['taskId'],"taskType":data['data']['taskType']+""})
+              if($.browseId) {
+                await $.wait(1000 * 6);
+                await toTaskApi('getHeadBrowsePrize',{"browseId":$.browseId})
+              }
+            }else if(data['data']['taskType'] == 14){
+              await toTaskApi('getHeadJoinPrize',{"taskId":data['data']['taskId'],"taskIndex":data['data']['taskIndex']})
+            }else{
+              $.headInfoFlag = false
+            }
+          }else{
+            $.headInfoFlag = false
+          }
+        }
+      } catch (e) {
+        $.logErr(e, resp);
+      } finally {
+        resolve();
+      }
+    })
+  });
+}
+//领取奖励
+function toTaskApi(url, body) {
+  $.browseId = ""
+  return new Promise(resolve => {
+    const options = taskPostUrl('/khc/task/'+url, body)
+    $.post(options, (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(`${JSON.stringify(err)}`)
+          console.log(`${$.name} API请求失败，请检查网路重试`)
+        } else {
+          console.log(`${url} 领取奖励 结果:${data}`);
+          data = JSON.parse(data);
+          if (data && data['code'] === 200) {
+            $.browseId = data['data']['browseId'] || "";
+            if (data['data']['jingBean']) $.beans += data['data']['jingBean'];
+          }
+        }
+      } catch (e) {
+        $.logErr(e, resp)
+      } finally {
+        resolve(data);
+      }
+    })
+  })
 }
 function indexInfo(flag = false) {
   const options = taskPostUrl(`/khc/index/indexInfo`, {})
@@ -379,12 +464,12 @@ function indexInfo(flag = false) {
         } else {
           data = $.toObj(data);
           if (data.code === 200) {
-            $.hotProductList = data['data']['hotProductList'];
-            $.brandList = data['data']['brandList'];
-            $.browseshopList = data['data']['browseshopList'];
+            $.hotProductList = data['data']['hotProductList'] || [];
+            $.brandList = data['data']['brandList'] || [];
+            $.browseshopList = data['data']['browseshopList'] || [];
           } else {
             console.log(`异常：${JSON.stringify(data)}`)
-            if (data.code && (data.code === 1002 || data.code === 1001)) $.blockAccount = true;
+            if (data.code === 1002 || data.code === 1001) $.blockAccount = true;
           }
         }
       } catch (e) {
@@ -585,7 +670,8 @@ async function doHelp() {
   }
 }
 //助力API
-function toHelp(code = "ddd345fb-57bb-4ece-968b-7bf4c92be7cc") {
+function toHelp(code = "") {
+  if(!code) return
   return new Promise(resolve => {
     const body = {"shareId":`${code}`};
     const options = taskPostUrl('/khc/task/doSupport', body)
@@ -598,7 +684,7 @@ function toHelp(code = "ddd345fb-57bb-4ece-968b-7bf4c92be7cc") {
           // console.log(`助力结果:${data}`);
           data = JSON.parse(data);
           if (data && data['code'] === 200) {
-            // if (data['data']['status'] === 6) console.log(`助力成功\n`)
+            if (data['data']['status'] === 6) console.log(`助力成功\n`)
             if (data['data']['jdNums']) $.beans += data['data']['jdNums'];
           }
         }
@@ -627,7 +713,7 @@ function getHelp() {
             $.temp.push(data.data.shareId);
           } else {
             console.log(`获取邀请码失败：${JSON.stringify(data)}`);
-            if (data.code && (data.code === 1002 || data.code === 1001)) $.blockAccount = true;
+            if (data.code === 1002 || data.code === 1001) $.blockAccount = true;
           }
         }
       } catch (e) {
@@ -735,7 +821,7 @@ function getListRank() {
   })
 }
 
-function updateShareCodesCDN(url = 'https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jd_cityShareCodes.json') {
+function updateShareCodesCDN(url = 'https://cdn.jsdelivr.net/gh/smiek2221/updateTeam@master/shareCodes/jd_cityShareCodes.json') {
   return new Promise(resolve => {
     $.get({url , headers:{"User-Agent": $.isNode() ? (process.env.JD_USER_AGENT ? process.env.JD_USER_AGENT : (require('./USER_AGENTS').USER_AGENT)) : ($.getdata('JDUA') ? $.getdata('JDUA') : "jdapp;iPhone;9.4.4;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1")}, timeout: 200000}, async (err, resp, data) => {
       try {
@@ -773,7 +859,6 @@ function readShareCode() {
         resolve(data);
       }
     })
-    await $.wait(20000);
     resolve()
   })
 }
@@ -794,7 +879,7 @@ function shareCodesFormat() {
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
     }
-    // console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify($.newShareCodes)}`)
+    console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify($.newShareCodes)}`)
     resolve();
   })
 }
