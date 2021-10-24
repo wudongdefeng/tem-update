@@ -6,7 +6,7 @@
 ##############短期活动##############
 
 # 电竞预言家
-10 9,15 * * * node /scripts/jd_Ariszy_zy_djyyj.js >> /scripts/logs/jd_Ariszy_zy_djyyj.log 2>&1
+10 9,15 * * * node /scripts/jd_star_wind_lol.js >> /scripts/logs/jd_star_wind_lol.log 2>&1
 # 狂欢节
 0 0-18/6 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
 10 0,8 * * * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
