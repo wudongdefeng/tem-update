@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 潮玩制燥团
+23 10,12 * * *  node /scripts/jd_star_wind_zzt.js >> /scripts/logs/jd_star_wind_zzt.log 2>&1
 # 电竞预言家
 10 9,15 * * * node /scripts/jd_star_wind_lol.js >> /scripts/logs/jd_star_wind_lol.log 2>&1
 # 狂欢节
