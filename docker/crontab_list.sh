@@ -204,7 +204,7 @@
 # 领金贴
 5 0 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
 #京喜牧场
-15 */2 * * * node /scripts/jd_star_wind_windmc.js >> /scripts/logs/jd_star_wind_windmc.log 2>&1
+15 */2 * * * node /scripts/jd_jxmc.js >> /scripts/logs/jd_jxmc.log 2>&1
 #京东到家果园
 10 0,3,8,11,17 * * * node /scripts/jd_winddj_fruit.js >> /scripts/logs/jd_winddj_fruit.log 2>&1
 #京东到家鲜豆任务
