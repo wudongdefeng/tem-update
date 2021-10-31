@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 沸腾之夜
+1 12 * * * node /scripts/jd_star_wind_hotNeight.js >> /scripts/logs/jd_star_wind_hotNeight.log 2>&1
 # 双十一无门槛红包
 1 0,12,18 * * * node /scripts/jd_smiek_gua_1111RedEnvelope.js >> /scripts/logs/jd_smiek_gua_1111RedEnvelope.log 2>&1
 # 潮玩制燥团
