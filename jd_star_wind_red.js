@@ -1,11 +1,12 @@
 /*
 双十一无门槛红包
-cron 0 0,12 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_red.js
+cron 0 0,12,20 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_red.js
 返利变量：FLCODE，默认给脚本作者返利，若需要返利给自己，请自己修改返利变量FLCODE；例：FLCODE="你的返利code"
 * */
 const $ = new Env('双11红包');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const flCode = $.isNode() ? (process.env.FLCODE ? process.env.FLCODE : '3MXlMUn'):'3MXlMUn';
+const notify = $.isNode() ? require('./sendNotify') : '';
+const flCode = $.isNode() ? (process.env.FLCODE ? process.env.FLCODE : 'yww4UVL'):'yww4UVL';
 let cookiesArr = [];
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
@@ -34,7 +35,7 @@ $.shareCode = '';
             $.index = i + 1;
             $.isLogin = true;
             $.nickName = '';
-            //await TotalBean();
+            await TotalBean();
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
             if (!$.isLogin) {
                 $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
@@ -103,6 +104,7 @@ function mainInfo() {
                     let res = $.toObj(data,data);
                     if(typeof res == 'object'){
                         if(res.code == 0 && res.data && res.data.shareUrl){
+                            // $.shareCode = res.data.shareUrl.match(/$.code\?s=([^&]+)/) && res.data.shareUrl.match(/$.code\?s=([^&]+)/)[1] || ''
                             $.shareCode = res.data.shareUrl.match(/\?s=([^&]+)/) && res.data.shareUrl.match(/\?s=([^&]+)/)[1] || ''
                             console.log('助力码:'+$.shareCode)
                         }
