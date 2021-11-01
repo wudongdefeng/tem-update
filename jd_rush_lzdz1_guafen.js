@@ -132,7 +132,7 @@ async function member() {
             }
             await task('linkgame/checkOpenCard', `pin=${encodeURIComponent($.secretPin)}&activityId=${$.activityId}`)
             if ($.openCardStatus) {
-                console.log('去助力 -> ' + $.authorCode)
+                // console.log('去助力 -> ' + $.authorCode)
                 if ($.openCardStatus.allOpenCard) {
                     await task('linkgame/assist/status', `pin=${encodeURIComponent($.secretPin)}&activityId=${$.activityId}&shareUuid=${$.authorCode}`)
                     await task('linkgame/assist', `pin=${encodeURIComponent($.secretPin)}&activityId=${$.activityId}&shareUuid=${$.authorCode}`)
@@ -239,6 +239,8 @@ function task(function_id, body, isCommon = 0, own = 0) {
                         } else {
                             // $.log(JSON.stringify(data))
                         }
+                    } else {
+                        // $.log("京东没有返回数据")
                     }
                 }
             } catch (error) {
