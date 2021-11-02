@@ -1,10 +1,10 @@
 /*
-11.1~11.11 联合开卡 [gua_opencard55.js]
+10.29~11.3 联合开卡 [gua_opencard64.js]
 新增开卡脚本
 一次性脚本
 
 1.邀请一人20豆(有可能没有豆
-2.开17张 成功开1张 可能获得5京豆
+2.开18张 成功开1张 可能获得5京豆
   全部开完获得1次抽奖
 3.关注10京豆 获得1次抽奖
 4.加购5京豆 获得1次抽奖(默认不加购 如需加购请设置环境变量[guaopencard]为"true"
@@ -21,22 +21,22 @@ guadraw="3"
 guaopencard="true"
 每个账号之间延迟 100=延迟100秒 0=延迟0秒会使用每3个账号延迟60秒
 guaopenwait_All 所有
-guaopenwait55="0"
+guaopenwait64="0"
 
 
 All变量适用
 ————————————————
-入口：[ 11.1~11.11 联合开卡 (https://3.cn/103-i8Nva)]
+入口：[ 10.29~11.3 联合开卡 (https://3.cn/103jBB2-0)]
 
 请求太频繁会被黑ip
 过10分钟再执行
 
-12:/#X4fjm5t5xaVYeJ@
+18:/￥R0mkcE4Qg2uhKH￥
 
 ============Quantumultx===============
 [task_local]
-#11.1~11.11 联合开卡
-47 6 1-11 11 * https://raw.githubusercontent.com/smiek2121/scripts/master/gua_opencard55.js, tag=11.1~11.11 联合开卡, enabled=true
+#10.29~11.3 联合开卡
+47 14 1-3 11 * https://raw.githubusercontent.com/smiek2121/scripts/master/gua_opencard64.js, tag=10.29~11.3 联合开卡, enabled=true
 
 */
 let guaopencard_addSku = "false"
@@ -44,7 +44,7 @@ let guaopencard = "false"
 let guaopenwait = "0"
 let guaopencard_draw = "0"
 
-const $ = new Env('11.1~11.11 联合开卡');
+const $ = new Env('10.29~11.3 联合开卡');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cleanCart = ''
@@ -73,7 +73,7 @@ guaopencard_addSku = $.isNode() ? (process.env.guaopencard ? process.env.guaopen
 guaopencard_addSku = $.isNode() ? (process.env.guaopencard_addSku_All ? process.env.guaopencard_addSku_All : `${guaopencard_addSku}`) : ($.getdata('guaopencard_addSku_All') ? $.getdata('guaopencard_addSku_All') : `${guaopencard_addSku}`);
 guaopencard = $.isNode() ? (process.env.guaopencard ? process.env.guaopencard : `${guaopencard}`) : ($.getdata('guaopencard') ? $.getdata('guaopencard') : `${guaopencard}`);
 guaopencard = $.isNode() ? (process.env.guaopencard_All ? process.env.guaopencard_All : `${guaopencard}`) : ($.getdata('guaopencard_All') ? $.getdata('guaopencard_All') : `${guaopencard}`);
-guaopenwait = $.isNode() ? (process.env.guaopenwait55 ? process.env.guaopenwait55 : `${guaopenwait}`) : ($.getdata('guaopenwait55') ? $.getdata('guaopenwait55') : `${guaopenwait}`);
+guaopenwait = $.isNode() ? (process.env.guaopenwait64 ? process.env.guaopenwait64 : `${guaopenwait}`) : ($.getdata('guaopenwait64') ? $.getdata('guaopenwait64') : `${guaopenwait}`);
 guaopenwait = $.isNode() ? (process.env.guaopenwait_All ? process.env.guaopenwait_All : `${guaopenwait}`) : ($.getdata('guaopenwait_All') ? $.getdata('guaopenwait_All') : `${guaopenwait}`);
 guaopenwait = parseInt(guaopenwait, 10) || 0
 guaopencard_draw = $.isNode() ? (process.env.guadraw ? process.env.guadraw : guaopencard_draw) : ($.getdata('guadraw') ? $.getdata('guadraw') : guaopencard_draw);
@@ -104,7 +104,7 @@ let activityCookie =''
   // return
   $.appkey = '51B59BB805903DA4CE513D29EC448375'
   $.userId = '10299171'
-  $.actId = '5256d57baccc480f94_11012'
+  $.actId = '26d52498bc034abbb91521_1029'
   $.MixNicks = ''
   $.inviteNick = 'jJngxInVOgsjftAvjP1dgF4tLNYA4seuA67MOIYQxEk3Vl9+AVo4NF+tgyeIc6A6kdK3rLBQpEQH9V4tdrrh0w=='
   for (let i = 0; i < cookiesArr.length; i++) {
