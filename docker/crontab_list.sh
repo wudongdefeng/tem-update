@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 手机竞猜
+40 7,13 * * * node /scripts/jd_Ariszy_zy_sjjc.js >> /scripts/logs/jd_Ariszy_zy_sjjc.log 2>&1
 # 星推官
 1 7,13 * * * node /scripts/jd_xtgsign.js >> /scripts/logs/jd_xtgsign.log 2>&1
 # 双十一无门槛
