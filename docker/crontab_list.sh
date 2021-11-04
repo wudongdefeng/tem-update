@@ -12,7 +12,7 @@
 # 手机竞猜
 40 7,13 * * * node /scripts/jd_Ariszy_zy_sjjc.js >> /scripts/logs/jd_Ariszy_zy_sjjc.log 2>&1
 # 星推官
-1 7,13 * * * node /scripts/jd_xtgsign.js >> /scripts/logs/jd_xtgsign.log 2>&1
+1 7,13 * * * node /scripts/jd_star_wind_xtg.js >> /scripts/logs/jd_star_wind_xtg.log 2>&1
 # 双十一无门槛
 1 0,12,18 * * * node /scripts/jd_star_wind_red.js >> /scripts/logs/jd_star_wind_red.log 2>&1
 # 潮玩制燥团
