@@ -10,7 +10,7 @@
 # 星推官
 1 7,13 * * * node /scripts/jd_xtgsign.js >> /scripts/logs/jd_xtgsign.log 2>&1
 # 双十一无门槛
-1 0,12,18 * * * node /scripts/jd_smiek_gua_1111RedEnvelope.js >> /scripts/logs/jd_smiek_gua_1111RedEnvelope.log 2>&1
+1 0,12,18 * * * node /scripts/jd_star_wind_red.js >> /scripts/logs/jd_star_wind_red.log 2>&1
 # 潮玩制燥团
 23 10,12 * * *  node /scripts/jd_star_wind_zzt.js >> /scripts/logs/jd_star_wind_zzt.log 2>&1
 # 电竞预言家
