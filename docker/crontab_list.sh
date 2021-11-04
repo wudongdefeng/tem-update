@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 家电盲盒
+20 9 1-20 11 * node /scripts/jd_zero_wind_dqmh.js >> /scripts/logs/jd_zero_wind_dqmh.log 2>&1
 # 选品官
 23 9,10 * * * node /scripts/jd_faker_wind_selectionOfficer.js >> /scripts/logs/jd_faker_wind_selectionOfficer.log 2>&1
 # 魔方兑换
