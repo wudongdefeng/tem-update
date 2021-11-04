@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 选品官
+23 9,10 * * * node /scripts/jd_faker_wind_selectionOfficer.js >> /scripts/logs/jd_faker_wind_selectionOfficer.log 2>&1
 # 魔方兑换
 0 0,7 * * * node /scripts/jd_faker_wind_mofang_exchange.js >> /scripts/logs/jd_faker_wind_mofang_exchange.log 2>&1
 # 牛牛福利
