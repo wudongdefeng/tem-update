@@ -92,7 +92,7 @@ async function jdFruit() {
       message = `【水果名称】${$.farmInfo.farmUserPro.name}\n`;
       console.log(`\n【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${$.farmInfo.farmUserPro.shareCode}\n`);
       await $.get({
-        url: 'http://51.15.187.136:8080/activeJdFruitCode?code=' + $.farmInfo.farmUserPro.shareCode
+        url: 'http://106.13.233.51:8080/activeJdFruitCode?code=' + $.farmInfo.farmUserPro.shareCode
       }, function (err, resp, data) {
         console.log('互助码状态:' + resp.body);
       })
@@ -1261,7 +1261,7 @@ function timeFormat(time) {
 function readShareCode() {
   return new Promise(async resolve => {
     //$.get({ url: `http://share.turinglabs.net/api/v3/farm/query/${randomCount}/`, timeout: 10000, }, (err, resp, data) => {
-    $.get({ url: `http://51.15.187.136:8080/queryJdFruitCode`, timeout: 20000, }, (err, resp, data) => {
+    $.get({ url: `http://106.13.233.51:8080/queryJdFruitCode`, timeout: 20000, }, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
