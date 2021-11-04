@@ -12,7 +12,7 @@
 # 魔方兑换
 0 0,7 * * * node /scripts/jd_faker_wind_mofang_exchange.js >> /scripts/logs/jd_faker_wind_mofang_exchange.log 2>&1
 # 牛牛福利
-40 8,17 * * * node /scripts/jd_faker_wind_nnfls.js >> /scripts/logs/jd_faker_wind_nnfls.log 2>&1
+40 8,17 * * * node /scripts/jd_hello_wind_nnfls.js >> /scripts/logs/jd_hello_wind_nnfls.log 2>&1
 # 手机竞猜
 40 7,13 * * * node /scripts/jd_Ariszy_zy_sjjc.js >> /scripts/logs/jd_Ariszy_zy_sjjc.log 2>&1
 # 星推官
