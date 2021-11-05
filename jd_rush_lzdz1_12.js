@@ -1,7 +1,7 @@
 /*
 11.11 狂欢节
 11-5 ~ 11-12
-https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=dzcjlhkk20211101A&shareUuid=7f80f94561db4f0593d21998f209c67d
+https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=ak8842783h0bxbsyn8y26tsftcvp1105&shareUuid=1c917755f3d94865986b2c7d843fcb3c
 
 默认执行脚本。如果需要不执行
 环境变量 NO_RUSH=false
