@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 热血心跳,狂解压
+10 2,9,17 * * * node /scripts/jd_star_wind_vivo.js >> /scripts/logs/jd_star_wind_vivo.log 2>&1
 # 家电盲盒
 20 9 1-20 11 * node /scripts/jd_zero_wind_dqmh.js >> /scripts/logs/jd_zero_wind_dqmh.log 2>&1
 # 选品官
