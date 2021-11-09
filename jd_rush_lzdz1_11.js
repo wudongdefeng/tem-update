@@ -1,6 +1,6 @@
 /*
 11.11 疯狂抢购
-10-23 ~ 10~29
+11.1 11-12
 https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=dzcjlhkk20211101A&shareUuid=7f80f94561db4f0593d21998f209c67d
 
 默认执行脚本。如果需要不执行
