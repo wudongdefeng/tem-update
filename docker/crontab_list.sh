@@ -57,8 +57,6 @@
 40 0,2 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 # 跳跳乐
 1 0,11,21 * * * node /scripts/jd_jump.js >> /scripts/logs/jd_jump.log 2>&1
-# 希捷品牌日
-17 10 * 9,10 * node /scripts/jd_smiek_gua_UnknownTask4.js >> /scripts/logs/jd_smiek_gua_UnknownTask4.log 2>&1
 #开学充电站
 30 1 * * * node /scripts/jd_Ariszy_zy_kxcdz.js >> /scripts/logs/jd_Ariszy_zy_kxcdz.log 2>&1
 #内容鉴赏官
@@ -91,8 +89,6 @@
 4 2,10 * * * node /scripts/jd_jxlhb.js >> /scripts/logs/jd_jxlhb.log 2>&1
 # 女装盲盒
 4 2,10 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
-# 心相印店铺古墓寻宝
-12 9,15 1-30 9,10 * node /scripts/jd_star_wind_xinxiangyin.js >> /scripts/logs/jd_star_wind_xinxiangyin.log 2>&1
 
 #整点红包雨
 0 0-23/1 * * * node /scripts/jd_wind2_long_super_redrain.js >> /scripts/logs/jd_wind2_long_super_redrain.log 2>&1
