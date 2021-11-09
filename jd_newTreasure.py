@@ -69,7 +69,7 @@ class Judge_env(object):
     def v4_cookie(self):
         a=[]
         b=re.compile(r'Cookie'+'.*?=\"(.*?)\"', re.I)
-        with open('....../jd/config/config.sh', 'r') as f:
+        with open('......../jd/config/config.sh', 'r') as f:
             for line in f.readlines():
                 try:
                     regular=b.match(line).group(1)
