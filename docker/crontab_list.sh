@@ -5,7 +5,7 @@
 
 ##############短期活动##############
 # 特物
-21 9,13,16,19,20 * * * node /scripts/jd_star_wind_superBrand.js >> /scripts/logs/jd_star_wind_superBrand.log 2>&1
+33 14,20 * * * node /scripts/jd_star_wind_productZ4Brand.js >> /scripts/logs/jd_star_wind_productZ4Brand.log 2>&1
 # 热血心跳,狂解压
 10 2,9,17 * * * node /scripts/jd_star_wind_vivo.js >> /scripts/logs/jd_star_wind_vivo.log 2>&1
 # 家电盲盒
