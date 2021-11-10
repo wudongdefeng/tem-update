@@ -4,8 +4,6 @@
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
 ##############短期活动##############
-#饭粒
-10 16 10 11 3 * * * node /scripts/jd_zero_wind_fanli.js >> /scripts/logs/jd_zero_wind_fanli.log 2>&1
 # 特物
 21 9,13,16,19,20 * * * node /scripts/jd_star_wind_superBrand.js >> /scripts/logs/jd_star_wind_superBrand.log 2>&1
 # 热血心跳,狂解压
