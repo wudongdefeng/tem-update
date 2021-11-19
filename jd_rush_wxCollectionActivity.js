@@ -6,7 +6,16 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
-
+    '4d22b316e58146b4963efcfd3f8435c5',
+    '8b43007f031941b28c60f9a189a162e4',
+    '784dabd0ebef415cb3e6b78c56817a1a',
+    'b2fc22cf0de3441b863bfe49011cfd72',
+    'c3824b8abf17456c9c8283ff2c5a272c',
+    '486b29c49dc34018b10b452348b7e929',
+    '1ac66ba5b742490bb904b4ad690ef9fa',
+    'b18bec7121da406c9ce479ab17f5b51e',
+    'feb560aee629495da986cea82a6391b9',
+    
 ]
 let lz_cookie = {}
 
@@ -37,7 +46,7 @@ $.keywordsNum = 0;
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
-    activityIdList = await getActivityIdList('https://raw.githubusercontent.com/FKPYW/dongge/master/code/wxCollectionActivity.json')
+    // activityIdList = await getActivityIdList('https://raw.githubusercontent.com/FKPYW/dongge/master/code/wxCollectionActivity.json')
     for(let a in activityIdList){
         activityId = activityIdList[a];
         console.log("开起第 "+ a +" 个活动，活动id："+activityId)
