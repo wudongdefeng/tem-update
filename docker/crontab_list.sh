@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 饭粒
+40 9,13 * * * node /scripts/jd_wind_fanli_Mod.js >> /scripts/logs/jd_wind_fanli_Mod.log 2>&1
 # 逛好物 赚京豆 
 39 18 * * * node /scripts/jd_tsuk_wind_GuangHaoWu_enc.js >> /scripts/logs/jd_tsuk_wind_GuangHaoWu_enc.log 2>&1
 # 特物
