@@ -6,16 +6,11 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let activityIdList = [
-    '4d22b316e58146b4963efcfd3f8435c5',
-    '8b43007f031941b28c60f9a189a162e4',
-    '784dabd0ebef415cb3e6b78c56817a1a',
-    'b2fc22cf0de3441b863bfe49011cfd72',
-    'c3824b8abf17456c9c8283ff2c5a272c',
-    '486b29c49dc34018b10b452348b7e929',
-    '1ac66ba5b742490bb904b4ad690ef9fa',
-    'b18bec7121da406c9ce479ab17f5b51e',
-    'feb560aee629495da986cea82a6391b9',
-    
+    'a39eca744f604aeea030d4b3fc022f11',
+    'be78234b03294ef4a56df820bb88a554',
+    'c8ae3304db0e4277901933c5fe92fb06',
+    'fc071a14fc884244bdc1943965b2983f',
+    'c40105ba403e4b2cbde742ab11fc38c3',
 ]
 let lz_cookie = {}
 
