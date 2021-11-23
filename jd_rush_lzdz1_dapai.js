@@ -1,13 +1,17 @@
 /*
-大牌强联合 好物提前购
+奢宠会员  瓜分万元大奖
+11.23 - 11.30
+https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity/8743676?activityId=dzkmladn20211123A&shareUuid=9ab24fa3e2ba4f4aa15ff4f18afa1b51
 
-https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=dz2021101420000sjleowq&shareUuid=d259bceb218e40af9490693e8f48a370
+默认执行脚本。如果需要不执行
+环境变量 NO_RUSH=false
 */
-const $ = new Env("大牌强联合 好物提前购");
+const $ = new Env("奢宠会员  瓜分万元大奖");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let ownCode = null;
+let isRush = true;
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
         cookiesArr.push(jdCookieNode[item])
@@ -22,16 +26,20 @@ if ($.isNode()) {
     cookiesArr.reverse();
     cookiesArr = cookiesArr.filter(item => !!item);
 }
+if (process.env.NO_RUSH && process.env.NO_RUSH != "") {
+    isRush = process.env.NO_RUSH;
+}
 !(async () => {
+    $.getAuthorCodeListerr = false
     if (!cookiesArr[0]) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
     
-    authorCodeList = await getAuthorCodeList('https://gitee.com/fatelight/dongge/raw/master/dongge/lzdz1_dapai.json')
-    if(authorCodeList === '404: Not Found'){
+    authorCodeList = await getAuthorCodeList('https://gitee.com/fatelight/code/raw/master/lzdz1_dapai.json')
+    if($.getAuthorCodeListerr === true){
         authorCodeList = [
-            'd259bceb218e40af9490693e8f48a370',
+            '9ab24fa3e2ba4f4aa15ff4f18afa1b51',
         ]
     }
 
@@ -49,7 +57,7 @@ if ($.isNode()) {
             if (!$.isLogin) {
                 $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
                 if ($.isNode()) {
-                    await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
+                    // await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
                 }
                 continue
             }
@@ -60,10 +68,16 @@ if ($.isNode()) {
             $.authorCode = ownCode ? ownCode : authorCodeList[random(0, authorCodeList.length)]
             $.authorNum = `${random(1000000, 9999999)}`
             $.randomCode = random(1000000, 9999999)
-            $.activityId = 'dz2021101420000sjleowq'
-            $.activityShopId = '1000221763'
+            $.activityId = 'dzkmladn20211123A'
+            $.activityShopId = '1000004123'
             $.activityUrl = `https://lzdz1-isv.isvjd.com/dingzhi/dz/openCard/activity/${$.authorNum}?activityId=${$.activityId}&shareUuid=${encodeURIComponent($.authorCode)}&adsource=null&shareuserid4minipg=null&shopid=${$.activityShopId}&lng=00.000000&lat=00.000000&sid=&un_area=`
-            await marry();
+            if (isRush) {
+                console.log("未检测到不执行环境变量，执行任务")
+                await rush();
+            } else {
+                console.log("检测到不执行环境变量，退出任务，环境变量 NO_RUSH")
+                break
+            }
             await $.wait(3000)
             if ($.bean > 0) {
                 message += `\n【京东账号${$.index}】${$.nickName || $.UserName} \n       └ 获得 ${$.bean} 京豆。`
@@ -86,8 +100,7 @@ if ($.isNode()) {
     })
 
 
-async function marry() {
-    $.log('那就开始吧。')
+async function rush() {
     $.token = null;
     $.secretPin = null;
     $.openCardActivityId = null
@@ -121,7 +134,7 @@ async function marry() {
             if ($.openCardStatus) {
                 for (let i = 0; i < ($.openCardStatus.cardList1.length + $.openCardStatus.cardList2.length); i++) {
                     $.log("模拟上报访问记录")
-                    await task('crm/pageVisit/insertCrmPageVisit', `venderId=1000221763&pageId=dz2021101420000sjleowq&elementId=${encodeURIComponent(`去开卡${i}`)}&pin=${encodeURIComponent($.secretPin)}`, 1)
+                    await task('crm/pageVisit/insertCrmPageVisit', `venderId=1000004065&pageId=dz20211013skcnurdk11jhdue84752hp&elementId=${encodeURIComponent(`去开卡${i}`)}&pin=${encodeURIComponent($.secretPin)}`, 1)
                     await $.wait(2000)
                 }
                 t1TaskList = []
@@ -362,9 +375,11 @@ function getAuthorCodeList(url) {
         $.get(options, async (err, resp, data) => {
             try {
                 if (err) {
-                    $.log(err)
+                    // $.log(err)
+                    $.getAuthorCodeListerr = false
                 } else {
                 if (data) data = JSON.parse(data)
+                    $.getAuthorCodeListerr = true
                 }
             } catch (e) {
                 $.logErr(e, resp)
