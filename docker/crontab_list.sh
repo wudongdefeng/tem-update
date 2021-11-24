@@ -163,7 +163,7 @@
 # 东东工厂
 26 * * * * node /scripts/jd_jdfactory.js >> /scripts/logs/jd_jdfactory.log 2>&1
 # 赚京豆(微信小程序)
-12 0,9 * * * node /scripts/jd_syj.js >> /scripts/logs/jd_syj.log 2>&1
+12 0,9 * * * node /scripts/jd_wind_syj_Mod.js >> /scripts/logs/jd_wind_syj_Mod.log 2>&1
 # 送豆得豆(京东赚赚)
 47 2,13 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 # 京东快递签到
