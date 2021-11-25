@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 金榜
+33 0,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 # 饭粒
 40 9,13 * * * node /scripts/jd_wind_fanli_Mod.js >> /scripts/logs/jd_wind_fanli_Mod.log 2>&1
 40 9,13 * * * python /scripts/jd_fanli.py >> /scripts/logs/jd_wind_fanli_Mod.log 2>&1
@@ -35,8 +37,6 @@
 0 0-23/5,22 * 10 * node /scripts/jd_smiek_gua_city.js >> /scripts/logs/jd_smiek_gua_city.log 2>&1
 # 扭蛋
 10 17 * * * node /scripts/jd_star_wind_lucky_egg.js >> /scripts/logs/jd_star_wind_lucky_egg.log 2>&1
-# 攥金币
-10 5,10 * * * node /scripts/jd_GoldcoinToGift.js >> /scripts/logs/jd_GoldcoinToGift.log 2>&1
 # 一加手机
 10 14 * * * node /scripts/jd_star_wind_yijia.js >> /scripts/logs/jd_star_wind_yijia.log 2>&1
 #  海尔
