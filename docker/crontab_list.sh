@@ -35,12 +35,6 @@
 46 0,9 * * * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
 # 城城分现金
 0 0-23/5,22 * 10 * node /scripts/jd_smiek_gua_city.js >> /scripts/logs/jd_smiek_gua_city.log 2>&1
-# 扭蛋
-10 17 * * * node /scripts/jd_star_wind_lucky_egg.js >> /scripts/logs/jd_star_wind_lucky_egg.log 2>&1
-# 一加手机
-10 14 * * * node /scripts/jd_star_wind_yijia.js >> /scripts/logs/jd_star_wind_yijia.log 2>&1
-#  海尔
-10 19 * * * node /scripts/jd_star_wind_haier.js >> /scripts/logs/jd_star_wind_haier.log 2>&1
 # 京东小魔方
 31 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.js.log 2>&1
 # 东东游戏
@@ -94,6 +88,8 @@
 0 0-23/4 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 ##############长期活动##############
 
+# 运费券提醒
+33 19 * * * node /scripts/jd_wind_yfcoupon.js >> /scripts/logs/jd_wind_yfcoupon.log 2>&1
 # 领卷中心签到
 15 0 * * * node /scripts/jd_ccSign.js >> /scripts/logs/jd_ccSign.log 2>&1
 # 京东保价
