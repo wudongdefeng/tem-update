@@ -103,11 +103,11 @@ if ($.isNode()) {
     await pasture();
     await $.wait(2000);
   }
-  $.res = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jxmc.json')
+  $.res = await getAuthorShareCode('https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jxmc.json')
   if (!$.res) {
-    $.http.get({url: 'https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jxmc.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
+    $.http.get({url: 'https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jxmc.json'}).then((resp) => {}).catch((e) => console.log('刷新CDN异常', e));
     await $.wait(1000)
-    $.res = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jxmc.json')
+    $.res = await getAuthorShareCode('https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jxmc.json')
   }
   await shareCodesFormat()
   for (let i = 0; i < cookiesArr.length; i++) {

@@ -80,10 +80,10 @@ $.appId = 10032;
   let getShareNum = 10
   let getShareNums = 0
   if (HelpAuthorFlag) {
-    $.innerInviteList = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/cfd.json');
-    if(!$.innerInviteList[0]) $.innerInviteList = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/cfd.json');
-    res2 = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/cfd.json');
-    if(!res2[0]) res2 = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/cfd.json');
+    $.innerInviteList = await getAuthorShareCode('https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/cfd.json');
+    if(!$.innerInviteList[0]) $.innerInviteList = await getAuthorShareCode('https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/cfd.json');
+    res2 = await getAuthorShareCode('https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/cfd.json');
+    if(!res2[0]) res2 = await getAuthorShareCode('https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/cfd.json');
     getShareNums = [...res, ...res2].length >= getShareNum ? getShareNum : [...res, ...res2].length
     $.innerInviteLists = getRandomArrayElements([...res, ...res2], [...res, ...res2].length >= getShareNum ? getShareNum : [...res, ...res2].length );
     $.InviteLists.push(...$.InviteList,...$.innerInviteList,...$.innerInviteLists);

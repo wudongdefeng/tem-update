@@ -58,9 +58,9 @@ if ($.isNode()) {
   }
   let res = await getAuthorShareCode('https://raw.githubusercontent.com/DX3242/updateTeam/master/shareCodes/jxSign.json')
   if (!res) {
-    $.http.get({url: 'https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jxSign.json'}).then((resp) => {}).catch((e) => $.log('刷新CDN异常', e));
+    $.http.get({url: 'https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jxSign.json'}).then((resp) => {}).catch((e) => $.log('刷新CDN异常', e));
     await $.wait(1000)
-    res = await getAuthorShareCode('https://code.aliyun.com/wudongdefeng/updateteam/raw/master/shareCodes/jxSign.json')
+    res = await getAuthorShareCode('https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jxSign.json')
   }
   $.shareCodes = [...(res || []), ...$.shareCodes]
   for (let i = 0; i < cookiesArr.length; i++) {
