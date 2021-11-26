@@ -147,7 +147,7 @@ async function downFile () {
   if ($.body) {
     url = 'https://raw.fastgit.org/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js';
   } else {
-    url = 'https://ghproxy.com/https://raw.fastgit.org/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js';
+    url = 'https://ghproxy.com/https://raw.githubusercontent.com/NobyDa/Script/master/JD-DailyBonus/JD_DailyBonus.js';
   }
   try {
     const options = { }
