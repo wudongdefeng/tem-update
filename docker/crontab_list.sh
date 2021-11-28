@@ -88,6 +88,8 @@
 0 0-23/4 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 ##############长期活动##############
 
+# 美妆签到
+33 8 * * * node /scripts/jd_wind_sign_graphics1.js >> /scripts/logs/jd_wind_sign_graphics1.log 2>&1
 # 运费券提醒
 33 19 * * * node /scripts/jd_wind_yfcoupon.js >> /scripts/logs/jd_wind_yfcoupon.log 2>&1
 # 领卷中心签到
