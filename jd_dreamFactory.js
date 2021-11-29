@@ -1399,28 +1399,28 @@ function shareCodesFormat() {
 }
 function requireConfig() {
   return new Promise(async resolve => {
-    // tuanActiveId = $.isNode() ? (process.env.TUAN_ACTIVEID || tuanActiveId) : ($.getdata('tuanActiveId') || tuanActiveId);
-    // if (!tuanActiveId) {
-    //   await updateTuanIdsCDN('https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jd_updateFactoryTuanId.json');
-    //   if ($.tuanConfigs && $.tuanConfigs['tuanActiveId']) {
-    //     tuanActiveId = $.tuanConfigs['tuanActiveId'];
-    //     console.log(`拼团活动ID: 获取成功 ${tuanActiveId}\n`)
-    //   } else {
-    //     if (!$.tuanConfigs) {
-    //       $.http.get({url: 'https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jd_updateFactoryTuanId.json'}).then((resp) => {}).catch((e) => $.log('刷新CDN异常', e));
-    //       await $.wait(1000)
-    //       await updateTuanIdsCDN('https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jd_updateFactoryTuanId.json');
-    //       if ($.tuanConfigs && $.tuanConfigs['tuanActiveId']) {
-    //         tuanActiveId = $.tuanConfigs['tuanActiveId'];
-    //         console.log(`拼团活动ID: 获取成功 ${tuanActiveId}\n`)
-    //       } else {
-    //         console.log(`拼团活动ID：获取失败，将采取脚本内置活动ID\n`)
-    //       }
-    //     }
-    //   }
-    // } else {
-    //   console.log(`自定义拼团活动ID: 获取成功 ${tuanActiveId}`)
-    // }
+     tuanActiveId = $.isNode() ? (process.env.TUAN_ACTIVEID || tuanActiveId) : ($.getdata('tuanActiveId') || tuanActiveId);
+     if (!tuanActiveId) {
+       await updateTuanIdsCDN('https:gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jd_updateFactoryTuanId.json');
+       if ($.tuanConfigs && $.tuanConfigs['tuanActiveId']) {
+         tuanActiveId = $.tuanConfigs['tuanActiveId'];
+         console.log(`拼团活动ID: 获取成功 ${tuanActiveId}\n`)
+       } else {
+         if (!$.tuanConfigs) {
+           $.http.get({url: 'https:gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jd_updateFactoryTuanId.json'}).then((resp) => {}).catch((e) => $.log('刷新CDN异常', e));
+           await $.wait(1000)
+           await updateTuanIdsCDN('https:gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jd_updateFactoryTuanId.json');
+           if ($.tuanConfigs && $.tuanConfigs['tuanActiveId']) {
+             tuanActiveId = $.tuanConfigs['tuanActiveId'];
+             console.log(`拼团活动ID: 获取成功 ${tuanActiveId}\n`)
+           } else {
+             console.log(`拼团活动ID：获取失败，将采取脚本内置活动ID\n`)
+           }
+         }
+       }
+     } else {
+       console.log(`自定义拼团活动ID: 获取成功 ${tuanActiveId}`)
+     }
     console.log(`开始获取${$.name}配置文件\n`);
     //Node.js用户请在jdCookie.js处填写京东ck;
     const shareCodes = $.isNode() ? require('./jdDreamFactoryShareCodes.js') : '';
