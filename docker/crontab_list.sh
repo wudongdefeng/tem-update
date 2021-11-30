@@ -24,17 +24,10 @@
 40 8,17 * * * node /scripts/jd_faker_wind_nnfls.js >> /scripts/logs/jd_faker_wind_nnfls.log 2>&1
 # 手机竞猜
 40 7,13 * * * node /scripts/jd_Ariszy_zy_sjjc.js >> /scripts/logs/jd_Ariszy_zy_sjjc.log 2>&1
-# 潮玩制燥团
-23 10,12 * * *  node /scripts/jd_star_wind_zzt.js >> /scripts/logs/jd_star_wind_zzt.log 2>&1
-# 电竞预言家
-10 9,15 * * * node /scripts/jd_star_wind_lol.js >> /scripts/logs/jd_star_wind_lol.log 2>&1
-# 狂欢节
-0 0-18/6 * * * node /scripts/jd_carnivalcity.js >> /scripts/logs/jd_carnivalcity.log 2>&1
-10 0,8 * * * node /scripts/jd_carnivalcity_help.js >> /scripts/logs/jd_carnivalcity_help.log 2>&1
+
 # 预售福利机
 46 0,9 * * * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
-# 城城分现金
-0 0-23/5,22 * 10 * node /scripts/jd_smiek_gua_city.js >> /scripts/logs/jd_smiek_gua_city.log 2>&1
+
 # 京东小魔方
 31 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.js.log 2>&1
 # 东东游戏
@@ -71,7 +64,7 @@
 # MM领京豆
 20 9 * * * node /scripts/jd_smiek_gua_MMdou.js >> /scripts/logs/jd_smiek_gua_MMdou.log 2>&1
 # 工厂开团
-1 0,5,10,15 * * * node /scripts/jd_star_star_dreamFactory_tuan.js >> /scripts/logs/jd_star_star_dreamFactory_tuan.log 2>&1
+1 0,5,10,15 * * * node /scripts/jd_star_wind_dreamFactory_tuan.js >> /scripts/logs/jd_star_star_dreamFactory_tuan.log 2>&1
 # 京喜购物返红包
 44 */6 * * * node /scripts/jd_air_wind_aid_cashback.js >> /scripts/logs/jd_air_wind_aid_cashback.log 2>&1
 # 京喜领88元红包

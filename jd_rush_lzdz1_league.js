@@ -1,7 +1,7 @@
 /**
 大牌联合 赢大额京豆
-11.4 - 11.11
-https://lzdz1-isv.isvjcloud.com/dingzhi/shop/league/activity/6758593?activityId=dz211104100001616201shop&shareUuid=02556abaff6b43dfbe6e92912ce069a4
+12.1 - 12.12
+https://lzdz1-isv.isvjcloud.com/dingzhi/shop/league/activity/6758593?activityId=dz211122100001616201shop&shareUuid=6579dde1e3b34091baecb2cd4381786f
 **/
 
 const $ = new Env("大牌联合 赢大额京豆");
@@ -24,17 +24,18 @@ if ($.isNode()) {
     cookiesArr = cookiesArr.filter(item => !!item);
 }
 !(async () => {
+    $.getAuthorCodeListerr = false
     if (!cookiesArr[0]) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
-    authorCodeList = await getAuthorCodeList('https://gitee.com/fatelight/dongge/raw/master/dongge/lzdz1_league.json')
-    if(authorCodeList === '404: Not Found'){
+    
+    authorCodeList = await getAuthorCodeList('https://gitee.com/fatelight/code/raw/master/lzdz1_league.json')
+    if($.getAuthorCodeListerr === false){
         authorCodeList = [
-            '02556abaff6b43dfbe6e92912ce069a4',
+            '6579dde1e3b34091baecb2cd4381786f',
         ]
     }
-
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {
             cookie = cookiesArr[i]
@@ -50,17 +51,14 @@ if ($.isNode()) {
                 console.log('更新ck');
                 continue
             }
-            // authorCodeList = [
-            //     '99bff25ecc6c4e8d81daedc5a205aab4',
-            // ]
             $.bean = 0;
             $.ADID = getUUID('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 1);
             $.UUID = getUUID('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
             // $.authorCode = authorCodeList[random(0, authorCodeList.length)]
             $.authorCode = ownCode ? ownCode : authorCodeList[random(0, authorCodeList.length)]
             $.authorNum = `${random(1000000, 9999999)}`
-            $.activityId = 'dz211104100001616201shop'
-            $.activityShopId = '1000016184'
+            $.activityId = 'dz211122100001616201shop'
+            $.activityShopId = '1000334325'
             $.activityUrl = `https://lzdz1-isv.isvjcloud.com/dingzhi/shop/league/activity?activityId=${$.activityId}&shareUuid=${encodeURIComponent($.authorCode)}&adsource=null&shareuserid4minipg=null&shopid=${$.activityShopId}&lng=00.000000&lat=00.000000&sid=&un_area=`
             await superFans();
 
@@ -157,6 +155,9 @@ async function superFans() {
                     } else {
                         $.log("已经关注过了\n")
                     }
+
+                    $.log("\c抽奖")
+                    await task('shop/league/startDraw', `activityId=${$.activityId}&pin=${encodeURIComponent($.secretPin)}&actorUuid=${$.actorUuid}`)
                 } else {
                     $.log("没有获取到对应的任务。\n");
                 }
@@ -218,6 +219,9 @@ function task(function_id, body, isCommon = 0) {
                                     break;
                                 case 'shop/league/checkOpenCard':
                                     $.openCardStatus = data.data;
+                                    break;
+                                case 'shop/league/startDraw':
+                                    console.log(data.data)
                                     break;
                                 case 'shop/league/saveTask':
                                     if (data.data) {
@@ -427,9 +431,11 @@ function getAuthorCodeList(url) {
         $.get(options, async (err, resp, data) => {
             try {
                 if (err) {
-                    $.log(err)
+                    // $.log(err)
+                    $.getAuthorCodeListerr = false
                 } else {
                 if (data) data = JSON.parse(data)
+                    $.getAuthorCodeListerr = true
                 }
             } catch (e) {
                 $.logErr(e, resp)
