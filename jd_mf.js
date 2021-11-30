@@ -42,11 +42,11 @@ let allMessage = '';
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
-  $.res = await getAuthorShareCode('https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jd_mf.json')
+  $.res = await getAuthorShareCode('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/jd_mf.json')
   if (!$.res) {
-    $.http.get({url: 'https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jd_mf.json'}).then((resp) => {}).catch((e) => $.log('刷新CDN异常', e));
+    $.http.get({url: 'https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/jd_mf.json'}).then((resp) => {}).catch((e) => $.log('刷新CDN异常', e));
     await $.wait(1000)
-    $.res = await getAuthorShareCode('https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jd_mf.json') || []
+    $.res = await getAuthorShareCode('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/jd_mf.json') || []
   }
   $.shareCodes=[...$.shareCodes, ...$.res || []];
   for (let i = 0; i < cookiesArr.length; i++) {

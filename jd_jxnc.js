@@ -189,7 +189,7 @@ function requireConfig() {
 
     try {
       let options = {
-        "url": `https://gitlab.com/wudongdefeng/updateteam/-/raw/main/shareCodes/jxnc.txt`,
+        "url": `https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/jxnc.txt`,
         "headers": {
           "Accept": "application/json,text/plain, */*",
           "Content-Type": "application/x-www-form-urlencoded",
