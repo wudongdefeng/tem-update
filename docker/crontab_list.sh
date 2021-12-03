@@ -22,16 +22,12 @@
 0 0,7 * * * node /scripts/jd_faker_wind_mofang_exchange.js >> /scripts/logs/jd_faker_wind_mofang_exchange.log 2>&1
 # 牛牛福利
 40 8,17 * * * node /scripts/jd_faker_wind_nnfls.js >> /scripts/logs/jd_faker_wind_nnfls.log 2>&1
-# 手机竞猜
-40 7,13 * * * node /scripts/jd_Ariszy_zy_sjjc.js >> /scripts/logs/jd_Ariszy_zy_sjjc.log 2>&1
 
 # 预售福利机
 46 0,9 * * * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
 
 # 京东小魔方
 31 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.js.log 2>&1
-# 东东游戏
-17 12-23/4 * * * node /scripts/jd_smiek_gua_ddgame.js >> /scripts/logs/jd_smiek_gua_ddgame.log 2>&1
 
 # 动人影像
 43 15 13-26 9 * node /scripts/jd_star_wind_film_museum.js >> /scripts/logs/jd_star_wind_film_museum.log 2>&1
