@@ -158,7 +158,7 @@
 # 领京豆额外奖励(每日可获得3京豆)
 23 1,12,22 * * * node /scripts/jd_bean_home.js >> /scripts/logs/jd_bean_home.log 2>&1
 # 微信小程序京东赚赚
-6 0-5/1,11 * * * node /scripts/jd_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
+6 0-5/1,11 * * * node /scripts/jd_wind_jdzz.js >> /scripts/logs/jd_jdzz.log 2>&1
 # 京东汽车旅程赛点兑换金豆
 0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
 # 导到所有互助码
