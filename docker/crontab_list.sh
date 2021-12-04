@@ -9,7 +9,12 @@
 33 0,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 # 饭粒
 40 9,13 * * * node /scripts/jd_wind_fanli_Mod.js >> /scripts/logs/jd_wind_fanli_Mod.log 2>&1
-40 9,13 * * * python /scripts/jd_fanli.py >> /scripts/logs/jd_wind_fanli_Mod.log 2>&1
+# 飞利浦
+40 11,14 * * * node /scripts/jd_wind_FLP.js >> /scripts/logs/jd_wind_FLP.log 2>&1
+# QQ星
+40 11,14 * * * node /scripts/jd_zero_wind_qqxing.js >> /scripts/logs/jd_zero_wind_qqxing.log 2>&1
+#蒙牛
+40 11,14 * * * node /scripts/jd_zero_mengniu.js >> /scripts/logs/jd_zero_mengniu.log 2>&1
 # 逛好物 赚京豆 
 39 18 * * * node /scripts/jd_tsuk_wind_GuangHaoWu_enc.js >> /scripts/logs/jd_tsuk_wind_GuangHaoWu_enc.log 2>&1
 # 特物
@@ -29,8 +34,6 @@
 # 京东小魔方
 31 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.js.log 2>&1
 
-# 动人影像
-43 15 13-26 9 * node /scripts/jd_star_wind_film_museum.js >> /scripts/logs/jd_star_wind_film_museum.log 2>&1
 # 东东世界
 20 20 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
 # 许愿池
@@ -59,8 +62,7 @@
 20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
 # MM领京豆
 20 9 * * * node /scripts/jd_smiek_gua_MMdou.js >> /scripts/logs/jd_smiek_gua_MMdou.log 2>&1
-# 工厂开团
-1 0,5,10,15 * * * node /scripts/jd_star_wind_dreamFactory_tuan.js >> /scripts/logs/jd_star_star_dreamFactory_tuan.log 2>&1
+
 # 京喜购物返红包
 44 */6 * * * node /scripts/jd_air_wind_aid_cashback.js >> /scripts/logs/jd_air_wind_aid_cashback.log 2>&1
 # 京喜领88元红包
