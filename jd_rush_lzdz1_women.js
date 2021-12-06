@@ -1,7 +1,7 @@
 /*
 品质女装 年终狂欢
 
-https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=dzkbblntbt20211101A&shareUuid=0f38ece139354e3e9b849034d3c6b6fd
+https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=dzsdfkl20211204A&shareUuid=8208fc186f0241f785c38c0a934aa6b7
 
 默认执行脚本。如果需要不执行
 环境变量 NO_RUSH=false
@@ -30,15 +30,15 @@ if (process.env.NO_RUSH && process.env.NO_RUSH != "") {
     isRush = process.env.NO_RUSH;
 }
 !(async () => {
+    $.getAuthorCodeListerr = false
     if (!cookiesArr[0]) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
-    
-    authorCodeList = await getAuthorCodeList('https://gitee.com/fatelight/dongge/raw/master/dongge/lzdz1_women.json')
-    if(authorCodeList === '404: Not Found'){
+    authorCodeList = await getAuthorCodeList('https://gitee.com/fatelight/code/raw/master/lzdz1_women.json')
+    if($.getAuthorCodeListerr === false){
         authorCodeList = [
-            '0f38ece139354e3e9b849034d3c6b6fd',
+            '8208fc186f0241f785c38c0a934aa6b7',
         ]
     }
 
@@ -67,8 +67,8 @@ if (process.env.NO_RUSH && process.env.NO_RUSH != "") {
             $.authorCode = ownCode ? ownCode : authorCodeList[random(0, authorCodeList.length)]
             $.authorNum = `${random(1000000, 9999999)}`
             $.randomCode = random(1000000, 9999999)
-            $.activityId = 'dzkbblntbt20211101A'
-            $.activityShopId = '1000007653'
+            $.activityId = 'dzsdfkl20211204A'
+            $.activityShopId = '14287'
             $.activityUrl = `https://lzdz1-isv.isvjd.com/dingzhi/dz/openCard/activity/${$.authorNum}?activityId=${$.activityId}&shareUuid=${encodeURIComponent($.authorCode)}&adsource=null&shareuserid4minipg=null&shopid=${$.activityShopId}&lng=00.000000&lat=00.000000&sid=&un_area=`
             if (isRush === true) {
                 console.log("未检测到不执行环境变量，执行任务")
@@ -374,9 +374,11 @@ function getAuthorCodeList(url) {
         $.get(options, async (err, resp, data) => {
             try {
                 if (err) {
-                    $.log(err)
+                    // $.log(err)
+                    $.getAuthorCodeListerr = false
                 } else {
                 if (data) data = JSON.parse(data)
+                    $.getAuthorCodeListerr = true
                 }
             } catch (e) {
                 $.logErr(e, resp)
