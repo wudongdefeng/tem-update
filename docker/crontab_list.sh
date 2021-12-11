@@ -73,10 +73,9 @@
 4 2,10 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
 
 #整点红包雨
-0 0-23/1 * * * node /scripts/jd_wind2_long_super_redrain.js >> /scripts/logs/jd_wind2_long_super_redrain.log 2>&1
+0 0-23/1 * node /scripts/jd_wind_redrain.js >> /scripts/logs/jd_wind_redrain.log
 #半点红包雨
-30 0-23/1 * * * node /scripts/jd_wind2_long_half_redrain.js >> /scripts/logs/jd_wind2_long_half_redrain.log 2>&1
-
+30 20-23/1 * * * node /scripts/jd_wind_redrain_half.js >> /scripts/logs/jd_wind_redrain_half.log
 #5G超级盲盒(活动时间：2021-06-2到2021-07-31)
 0 0-23/4 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 ##############长期活动##############
