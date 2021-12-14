@@ -1,16 +1,20 @@
 /*
 逛京东会场
-0 0,12 * * * jd_mall_active.js
+自定义环境变量 ACT_URL 为json地址，格式参考默认
+0 0,18 * * * jd_mall_active.js
 */
 const $ = new Env("逛京东会场");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 let cookiesArr = [], cookie;
+let actURL = ''
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item]);
   });
   if (process.env.JD_DEBUG && process.env.JD_DEBUG === "false")
     console.log = () => {};
+  if (process.env.ACT_URL && process.env.ACT_URL === '') console.log = () => {};
+  actURL = process.env.ACT_URL || 'https://gitee.com/fatelight/code/raw/master/mall_active.json'
 } else {
   cookiesArr = [$.getdata("CookieJD"), $.getdata("CookieJD2"), ...$.toObj($.getdata("CookiesJD") || "[]").map((item) => item.cookie)].filter((item) => !!item);
 }
@@ -19,31 +23,37 @@ if ($.isNode()) {
     $.msg($.name, "【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取", "https://bean.m.jd.com/bean/signIndex.action", { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
     return;
   }
-  for (let i = 0; i < cookiesArr.length; i++) {
-    if (cookiesArr[i]) {
-      cookie = cookiesArr[i];
-      $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
-      $.index = i + 1;
-      $.isLogin = true;
-      $.nickName = "";
-      //await TotalBean();
-      console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
-      if (!$.isLogin) {
-        $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
-        if ($.isNode()) {
-          await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
+  $.getCodeListerr = false;
+  mallActiveList = await getCodeList(actURL)
+  if ($.getCodeListerr === true) {
+    for (let i = 0; i < cookiesArr.length; i++) {
+      if (cookiesArr[i]) {
+        cookie = cookiesArr[i];
+        $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+        $.index = i + 1;
+        $.isLogin = true;
+        $.nickName = "";
+        //await TotalBean();
+        console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
+        if (!$.isLogin) {
+          $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
+          if ($.isNode()) {
+            await notify.sendNotify(`${$.name}cookie已失效 - ${$.UserName}`, `京东账号${$.index} ${$.UserName}\n请重新登录获取cookie`);
+          }
+          continue;
         }
-        continue;
+        for (let vo in mallActiveList) {
+          for (let index = 0; index < mallActiveList[vo].length; index++) {
+            await main(vo,mallActiveList[vo][index].split(',')[random(0, mallActiveList[vo][index].split(',').length)]);
+          }
+          
+        }
       }
-      await main(1,'pro');
-      await main(2,'prodev');
-      await main(3,'pro');
-      await main(4,'pro');
-      await main(5,'pro');
-      await main(6,'pro');
-      await main(7,'pro');
     }
+  } else {
+    console.log('请正确配置自定义环境变量 ACT_URL 为json地址，格式参考默认')
   }
+
 })()
   .catch((e) => {
     $.log("", `❌ ${$.name}, 失败! 原因: ${e}!`, "");
@@ -52,44 +62,12 @@ if ($.isNode()) {
     $.done();
   });
 
-async function main(actID,urlID) {
+async function main(urlID,code) {
   let userName = decodeURIComponent(cookie.match(/pt_pin=(.+?);/) && cookie.match(/pt_pin=(.+?);/)[1]);
   $.UA = `jdapp;iPhone;10.2.0;13.1.2;${randomString(40)};M/5.0;network/wifi;ADID/;model/iPhone8,1;addressid/2308460622;appBuild/167853;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1;`;
   $.max = false;
   $.hotFlag = false;
-  switch (actID) {
-    case 1:
-      let codeLsit = ['vdrqdZC']
-      $.code = codeLsit[random(0, codeLsit.length)];
-      break;
-    case 2:
-      let codeLsit2 = ['nLhu1LP']
-      $.code = codeLsit2[random(0, codeLsit2.length)];
-      break;
-    case 3:
-      let codeLsit3 = ['vKr3VPf']
-      $.code = codeLsit3[random(0, codeLsit3.length)];
-      break;
-    case 4:
-      let codeLsit4 = ['vIrbYgr']
-      $.code = codeLsit4[random(0, codeLsit4.length)];
-      break;
-    case 5:
-      let codeLsit5 = ['vMrb7VH']
-      $.code = codeLsit5[random(0, codeLsit5.length)];
-      break;
-    case 6:
-      let codeLsit6 = ['vCr13l9']
-      $.code = codeLsit6[random(0, codeLsit6.length)];
-      break;
-    case 7:
-      let codeLsit7 = ['vdr8oam']
-      $.code = codeLsit7[random(0, codeLsit7.length)];
-      break;
-    default:
-      break;
-  }
-
+  $.code = code;
   for (let i = 0; i < 1 && !$.max; i++) {
     $.newCookie = "";
     $.url1 = "";
@@ -111,45 +89,10 @@ async function main(actID,urlID) {
     let arr = getBody($.UA, $.url2);
     await getEid(arr);
     console.log(`$.actId:` + $.actId);
-    await $.wait(1000);
+    await $.wait(500);
   }
 }
 
-function getcouponUrl() {
-  return new Promise((resolve) => {
-    const options = {
-      url: $.url2,
-      headers: {
-        "Host": "prodev.m.jd.com",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "User-Agent": $.UA,
-        "Accept-Language": "zh-CN,zh-Hans;q=0.9",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Cookie": cookie
-      },
-    };
-    $.post(options, async (err, resp, data) => {
-      try {
-        if (err) {
-          console.log(`${$.toStr(err)}`);
-          console.log(`${$.name} getcouponUrl API请求失败，请检查网路重试`);
-        } else {
-          if (data) {
-            if ($.code === "nt5zCmM" || $.code === "nLhu1LP" || $.code === "ndhM07k") {
-              $.couponUrl = (data.match(/"value":"(.*)"\}'/) && data.match(/"value":"(.*)"\}'/)[1]) || ''
-            } else {
-              $.couponUrl = ''
-            }
-          }
-        }
-      } catch (e) {
-        $.logErr(e, resp);
-      } finally {
-        resolve(data);
-      }
-    });
-  });
-}
 function getEid(arr) {
   return new Promise((resolve) => {
     const options = {
@@ -3354,4 +3297,29 @@ function Env(t, e) {
 }
 function random(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
+}
+function getCodeList(url) {
+  return new Promise(resolve => {
+      const options = {
+          url: `${url}?${new Date()}`, "timeout": 10000, headers: {
+          "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
+          }
+      };
+      $.get(options, async (err, resp, data) => {
+          try {
+              if (err) {
+                  // $.log(err)
+                  $.getCodeListerr = false
+              } else {
+              if (data) data = JSON.parse(data)
+                  $.getCodeListerr = true
+              }
+          } catch (e) {
+              $.logErr(e, resp)
+              data = null;
+          } finally {
+              resolve(data);
+          }
+      })
+  })
 }
