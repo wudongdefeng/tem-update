@@ -51,7 +51,7 @@ async function main() {
   $.UA = `jdapp;iPhone;10.2.0;13.1.2;${randomString(40)};M/5.0;network/wifi;ADID/;model/iPhone8,1;addressid/2308460622;appBuild/167853;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1;`;
   $.max = false;
   $.hotFlag = false;
-  let codeLsit = ['nt5zCmM','nLhu1LP','ndhM07k']
+  let codeLsit = ['ndhM07k']
   $.code = codeLsit[random(0, codeLsit.length)];
   for (let i = 0; i < 1 && !$.max; i++) {
     $.newCookie = "";
@@ -74,10 +74,10 @@ async function main() {
     let arr = getBody($.UA, $.url2);
     await getEid(arr);
     console.log(`$.actId:` + $.actId);
-    await getcouponUrl()
-    if ($.eid) {
-      await getCoupons("");
-    }
+    // await getcouponUrl()
+    // if ($.eid) {
+    //   await getCoupons("");
+    // }
     await $.wait(2000);
   }
 }
