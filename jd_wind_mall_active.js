@@ -41,6 +41,7 @@ if ($.isNode()) {
       await main(4,'pro');
       await main(5,'pro');
       await main(6,'pro');
+      await main(7,'pro');
     }
   }
 })()
@@ -80,6 +81,10 @@ async function main(actID,urlID) {
     case 6:
       let codeLsit6 = ['vCr13l9']
       $.code = codeLsit6[random(0, codeLsit6.length)];
+      break;
+    case 7:
+      let codeLsit7 = ['vdr8oam']
+      $.code = codeLsit7[random(0, codeLsit7.length)];
       break;
     default:
       break;
