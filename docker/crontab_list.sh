@@ -7,8 +7,6 @@
 
 # 我的理想家
 3 1,8 * * * node /scripts/jd_xiao_wind_lxLottery.js >> /scripts/logs/jd_xiao_wind_lxLottery.log 2>&1
-# 金榜年终奖
-3 2,10 * * * node /scripts/jd_split.js >> /scripts/logs/jd_split.log 2>&1
 # 金榜
 33 0,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 # 饭粒
