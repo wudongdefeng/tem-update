@@ -11,12 +11,6 @@
 33 0,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 # 饭粒
 40 9,13 * * * node /scripts/jd_wind_fanli_Mod.js >> /scripts/logs/jd_wind_fanli_Mod.log 2>&1
-# 飞利浦
-40 11,14 * * * node /scripts/jd_wind_FLP.js >> /scripts/logs/jd_wind_FLP.log 2>&1
-# QQ星
-40 11,14 * * * node /scripts/jd_zero_wind_qqxing.js >> /scripts/logs/jd_zero_wind_qqxing.log 2>&1
-#蒙牛
-40 11,14 * * * node /scripts/jd_zero_mengniu.js >> /scripts/logs/jd_zero_mengniu.log 2>&1
 # 逛好物 赚京豆 
 39 18 * * * node /scripts/jd_tsuk_wind_GuangHaoWu_enc.js >> /scripts/logs/jd_tsuk_wind_GuangHaoWu_enc.log 2>&1
 # 特物
@@ -78,8 +72,6 @@
 0 0-23/4 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 ##############长期活动##############
 
-# 美妆签到
-33 8 * * * node /scripts/jd_wind_sign_graphics1.js >> /scripts/logs/jd_wind_sign_graphics1.log 2>&1
 # 运费券提醒
 33 19 * * * node /scripts/jd_wind_yfcoupon.js >> /scripts/logs/jd_wind_yfcoupon.log 2>&1
 # 领卷中心签到
