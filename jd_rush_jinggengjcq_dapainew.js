@@ -1,13 +1,10 @@
 /*
-https://jinggengjcq-isv.isvjcloud.com/fronth5/#/pages/unitedCardNew20211029/unitedCardNew20211029?actId=26d52498bc034abbb91521_1029
-10-29 11-3
+
 */
 const $ = new Env("大牌联合");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
-const cp = $.isNode() ? require('child_process') : '';
 let cookiesArr = [], cookie = '', message = '';
-const Base64 = require("js-base64")
 let ownCode = null;
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
@@ -51,10 +48,14 @@ if ($.isNode()) {
             $.UUID = getUUID('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
             authorCodeList = [
                 'fuMB6t0LHdtq7Dc8pm+TwF4tLNYA4seuA67MOIYQxEk3Vl9+AVo4NF+tgyeIc6A6kdK3rLBQpEQH9V4tdrrh0w==',
+                'nYXy96GqoNLmoZYWMzThH14tLNYA4seuA67MOIYQxEk3Vl9+AVo4NF+tgyeIc6A6kdK3rLBQpEQH9V4tdrrh0w==',
+                'NIIGH1E3ihp+jukMM7UfkV4tLNYA4seuA67MOIYQxEk3Vl9+AVo4NF+tgyeIc6A6kdK3rLBQpEQH9V4tdrrh0w==',
+                'gHLldBJLPdovONAzAjPTUMjNhNaYFy2HteErE6izlhTf9nrGY7gBkCdGU4C6z/xD',
+                // 'cFxEkKf5CaLEDTshm0NcCVs/ye9oluZX4nOTK56TeMXbR7I2OlzZch4hTs22oCUS',
             ]
             $.appkey = "51B59BB805903DA4CE513D29EC448375"
             $.userId = "10299171"
-            $.actId = "4fed35939fc348969bff_120103"
+            $.actId = "ceec991880424cd093aa7c58e8c05_788"
             // $.authorCode = authorCodeList[random(0, authorCodeList.length)]
             $.authorCode = ownCode ? ownCode : authorCodeList[random(0, authorCodeList.length)]
             console.log('去助力 -> '+$.authorCode);
