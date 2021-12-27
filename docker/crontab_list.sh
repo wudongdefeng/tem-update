@@ -15,8 +15,6 @@
 39 18 * * * node /scripts/jd_tsuk_wind_GuangHaoWu_enc.js >> /scripts/logs/jd_tsuk_wind_GuangHaoWu_enc.log 2>&1
 # 特物
 33 14,20 * * * node /scripts/jd_star_wind_productZ4Brand.js >> /scripts/logs/jd_star_wind_productZ4Brand.log 2>&1
-# 选品官
-23 9,10 * * * node /scripts/jd_faker_wind_selectionOfficer.js >> /scripts/logs/jd_faker_wind_selectionOfficer.log 2>&1
 # 牛牛福利
 40 8,17 * * * node /scripts/jd_faker_wind_nnfls.js >> /scripts/logs/jd_faker_wind_nnfls.log 2>&1
 
