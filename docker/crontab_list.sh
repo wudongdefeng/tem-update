@@ -121,8 +121,6 @@
 20 10,21 * * * node /scripts/jd_wind_bean_change.js >> /scripts/logs/jd_wind_bean_change.log 2>&1
 #天天加速
 5 18,23 * * * node /scripts/jd_speed.js >> /scripts/logs/jd_speed.log 2>&1
-# 京东抽奖机
-0 0,12,23 * * * node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
 # 京东排行榜
 21 9 * * * node /scripts/jd_rankingList.js >> /scripts/logs/jd_rankingList.log 2>&1
 # 天天提鹅
