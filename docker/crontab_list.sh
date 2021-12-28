@@ -5,8 +5,6 @@
 
 ##############短期活动##############
 
-# 天天拼图
-3 10,20 * * * node /scripts/jd_faker_wind_ttpt.js >> /scripts/logs/jd_faker_wind_ttpt.log 2>&1
 # 我的理想家
 3 1,8 * * * node /scripts/jd_xiao_wind_lxLottery.js >> /scripts/logs/jd_xiao_wind_lxLottery.log 2>&1
 # 金榜
