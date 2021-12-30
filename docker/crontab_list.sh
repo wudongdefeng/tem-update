@@ -24,8 +24,6 @@
 # 京东小魔方
 31 2,8 * * * node /scripts/jd_mf.js >> /scripts/logs/jd_mf.js.log 2>&1
 
-# 东东世界
-20 20 * * * node /scripts/jd_ddworld.js >> /scripts/logs/jd_ddworld.log 2>&1
 # 许愿池
 40 0,2 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 # 跳跳乐
