@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 年货签到
+3 14 * * * node /scripts/jd_xiao_wind_nh_sign.js >> /scripts/logs/jd_xiao_wind_nh_sign.log 2>&1
 # 我的理想家
 3 1,8 * * * node /scripts/jd_xiao_wind_lxLottery.js >> /scripts/logs/jd_xiao_wind_lxLottery.log 2>&1
 # 金榜
