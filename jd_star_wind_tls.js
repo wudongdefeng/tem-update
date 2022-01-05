@@ -1,7 +1,7 @@
 /*
  特仑苏京东超级品牌日
  结束日期：1-8
- 蚊子腿豆子
+ 蚊子腿豆子,建议自己设定时，人一多会挂掉
  cron 23 1,21 5-8 1 * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_tls.js
 * */
 const jdCookieNode = require('./jdCookie.js');
