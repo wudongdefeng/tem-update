@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 城城分现金
+0 0-18/6 * * * node /scripts/jd_smiek_gua_city.js >> /scripts/logs/jd_smiek_gua_city.log 2>&1
 # 年货签到
 3 14 * * * node /scripts/jd_xiao_wind_nh_sign.js >> /scripts/logs/jd_xiao_wind_nh_sign.log 2>&1
 # 我的理想家
