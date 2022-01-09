@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 年兽
+0 0-18/5 * * * node /scripts/jd_kingran_wind_zhanianshou.js >> /scripts/logs/jd_kingran_wind_zhanianshou.log 2>&1
 # 城城分现金
 0 0-18/6 * * * node /scripts/jd_smiek_gua_city.js >> /scripts/logs/jd_smiek_gua_city.log 2>&1
 # 年货签到
