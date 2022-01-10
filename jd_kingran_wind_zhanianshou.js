@@ -1,5 +1,5 @@
 if (!["true"].includes(process.env.JD_ZNS)) {
-    console.log("避免自动运行请设置环境变量JD_ZNS为\"true\"来运行本脚本")
+    console.log("可能黑号,运行前最少手动进去过一次，避免自动运行请设置环境变量JD_ZNS为\"true\"来运行本脚本")
     return
 }
 
@@ -53,6 +53,7 @@ $.shareCodesArr = [];
             await getUA()
         }
     }
+    $.newShareCodes = []
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {
             cookie = cookiesArr[i];
@@ -63,24 +64,23 @@ $.shareCodesArr = [];
             message = '';
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
             //   await shareCodesFormat()
-            $.newShareCodes = []
-            for (let i = 0; i < $.newShareCodes.length && true; ++i) {
-                console.log(`\n开始助力 【${$.newShareCodes[i]}】`)
-                let res = await getInfo($.newShareCodes[i])
-                if (res && res['data'] && res['data']['bizCode'] === 0) {
-                    if (res['data']['result']['toasts'] && res['data']['result']['toasts'][0] && res['data']['result']['toasts'][0]['status'] === '3') {
-                        console.log(`助力次数已耗尽，跳出`)
-                        break
-                    }
-                    if (res['data']['result']['toasts'] && res['data']['result']['toasts'][0]) {
-                        console.log(`助力 【${$.newShareCodes[i]}】:${res.data.result.toasts[0].msg}`)
-                    }
-                }
-                if ((res && res['status'] && res['status'] === '3') || (res && res.data && res.data.bizCode === -11)) {
-                    // 助力次数耗尽 || 黑号
-                    break
-                }
-            }
+            // for (let i = 0; i < $.newShareCodes.length && true; ++i) {
+            //     console.log(`\n开始助力 【${$.newShareCodes[i]}】`)
+            //     let res = $.newShareCodes[i]
+            //     if (res && res['data'] && res['data']['bizCode'] === 0) {
+            //         if (res['data']['result']['toasts'] && res['data']['result']['toasts'][0] && res['data']['result']['toasts'][0]['status'] === '3') {
+            //             console.log(`助力次数已耗尽，跳出`)
+            //             break
+            //         }
+            //         if (res['data']['result']['toasts'] && res['data']['result']['toasts'][0]) {
+            //             console.log(`助力 【${$.newShareCodes[i]}】:${res.data.result.toasts[0].msg}`)
+            //         }
+            //     }
+            //     if ((res && res['status'] && res['status'] === '3') || (res && res.data && res.data.bizCode === -11)) {
+            //         // 助力次数耗尽 || 黑号
+            //         break
+            //     }
+            // }
             try {
                 await get_secretp()
 
@@ -157,6 +157,9 @@ $.shareCodesArr = [];
                                 }
                                 break
                             case 21:
+                                if (process.env.FS_LEVEL != 'card') {
+                                    console.log('默认不开卡，设置FS_LEVEL为card开卡')
+                                }else{
                                     for (var o = 0; o < task.brandMemberVos.length; o++) {
                                         if (task.brandMemberVos[o].status == 1) {
                                             console.log(`\n\n ${task.brandMemberVos[o].title}`)
@@ -167,6 +170,7 @@ $.shareCodesArr = [];
                                         }
 
                                     }
+                                }
                         }
 
                     }
@@ -198,8 +202,8 @@ function transform(str) {
     var REQUEST = new Object,
         data = str.slice(str.indexOf("?") + 1, str.length - 1),
         aParams = data.substr(1).split("&");
-    for (i = 0; i < aParams.length; i++) {　　
-        var aParam = aParams[i].split("=");　　
+    for (i = 0; i < aParams.length; i++) {
+        var aParam = aParams[i].split("=");
         REQUEST[aParam[0]] = aParam[1]
     }
     return REQUEST
