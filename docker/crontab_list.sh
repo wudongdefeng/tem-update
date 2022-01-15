@@ -5,6 +5,8 @@
 
 ##############短期活动##############
 
+# 通天塔
+30 16 * * * node /scripts/jd_kingran_wind_babel_sign.js >> /scripts/logs/jd_kingran_wind_babel_sign.log 2>&1
 # 天天压岁钱
 0 0,12 * * * node /scripts/jd_kingran_wind_ttysq.js >> /scripts/logs/jd_kingran_wind_ttysq.log 2>&1
 # 年货签到
