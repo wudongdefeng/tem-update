@@ -133,6 +133,9 @@ if __name__ == '__main__':
         cks = re.findall(r'Cookie[0-9]*="(pt_key=.*?;pt_pin=.*?;)"', f.read())
         f.close()
     for ck in cks:
+        ck = ck.strip()
+        if ck[-1] != ';':
+            ck += ';'
         ptpin = re.findall(r"pt_pin=(.*?);", ck)[0]
         try:
             if remarkinfos[ptpin]!='':
