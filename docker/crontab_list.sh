@@ -4,7 +4,8 @@
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
 ##############短期活动##############
-
+# 年兽
+33 0,6-23/2 * * * node /scripts/jd_kingran_wind_travel.js >> /scripts/logs/jd_kingran_wind_travel.log 2>&1
 # 通天塔
 30 16 * * * node /scripts/jd_kingran_wind_babel_sign.js >> /scripts/logs/jd_kingran_wind_babel_sign.log 2>&1
 # 天天压岁钱
