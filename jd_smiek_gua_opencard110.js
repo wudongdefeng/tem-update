@@ -26,7 +26,7 @@ guaopenwait110="0"
 
 All变量适用
 ————————————————
-入口：[ 1.21~1.28 年货不打烊 好物带回家 (https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=dzlhkkkbblnt20220121A&shareUuid=4a18d9d3a3a04d8abaff01e6e792f87d)]
+入口：[ 1.21~1.28 年货不打烊 好物带回家 (https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=dzlhkkkbblnt20220121A&shareUuid=c2b6865e5761403682f474a176eba015)]
 
 请求太频繁会被黑ip
 过10分钟再执行
@@ -101,7 +101,7 @@ let activityCookie =''
     return;
   }
   $.activityId = "dzlhkkkbblnt20220121A"
-  $.shareUuid = "4a18d9d3a3a04d8abaff01e6e792f87d"
+  $.shareUuid = "c2b6865e5761403682f474a176eba015"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
 
   for (let i = 0; i < cookiesArr.length; i++) {
