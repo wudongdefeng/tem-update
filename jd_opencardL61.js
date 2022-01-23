@@ -55,7 +55,7 @@ let activityCookie =''
   $.userId = '10299171'
   $.actId = 'b2d6a99babf64595aac5_220123'
   $.MixNicks = ''
-  $.inviteNick = 'k1Nobb+P0er+C2sysxnx/P2KELO9izRVpwCyqu0eqVZ5aW7RHzlMobrzJ/e9r/uf'
+  $.inviteNick = 'clgbkabWGOqxDYqcXo0rh2BUh0gimxufjFRMgNwy0cYiU+N6ZQy0LI2KZrs00RAY'
   console.log(`活动地址:https://jinggengjcq-isv.isvjcloud.com/fronth5/#/pages/unitedCardNew20220123/unitedCardNew20220123?actId=b2d6a99babf64595aac5_220123`)
   console.log(`请自行测试有水无水。`)
   for (let i = 0; i < cookiesArr.length; i++) {
