@@ -53,7 +53,7 @@
 #粉丝互动
 34 6,18 * * * node /scripts/jd_star_wind_fan.js >> /scripts/logs/jd_star_wind_fan.log 2>&1
 #店铺签到
-12 13 * * * node /scripts/jd_shop_sign.js >> /scripts/logs/jd_shop_sign.log 2>&1
+12 13 * * * node /scripts/jd_kingran_wind_dpqd.js >> /scripts/logs/jd_kingran_wind_dpqd.log 2>&1
 #早起福利
 30 6 * * * node /scripts/jd_wind_goodMorning.js >> /scripts/logs/jd_wind_goodMorning.log 2>&1
 # MM领京豆
