@@ -62,7 +62,7 @@
 # 京喜购物返红包
 44 */6 * * * node /scripts/jd_air_wind_aid_cashback.js >> /scripts/logs/jd_air_wind_aid_cashback.log 2>&1
 # 女装盲盒
-4 2,10 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
+4 2,10 * * * node /scripts/jd_wind_nzmh.js >> /scripts/logs/jd_wind_nzmh.log 2>&1
 
 #整点红包雨
 0 0-23/1 * * * node /scripts/jd_wind_redrain.js >> /scripts/logs/jd_wind_redrain.log
