@@ -1564,7 +1564,7 @@ function showMsg() {
 
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `https://transfer.nz.lu/cfd`, timeout: 30 * 1000}, (err, resp, data) => {
+    $.get({url: `https://wind/cfd`, timeout: 30 * 1000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(JSON.stringify(err))
@@ -1587,7 +1587,7 @@ function readShareCode() {
 }
 function uploadShareCode(code) {
   return new Promise(async resolve => {
-    $.post({url: `https://transfer.nz.lu/upload/cfd?code=${code}&ptpin=${encodeURIComponent(encodeURIComponent($.UserName))}`, timeout: 30 * 1000}, (err, resp, data) => {
+    $.post({url: `https://wind/upload/cfd?code=${code}&ptpin=${encodeURIComponent(encodeURIComponent($.UserName))}`, timeout: 30 * 1000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(JSON.stringify(err))
