@@ -28,7 +28,7 @@
 # 牛牛福利
 40 8,17 * * * node /scripts/jd_faker_wind_nnfls.js >> /scripts/logs/jd_faker_wind_nnfls.log 2>&1
 #qq星
-22 4-22/3 * * * node /scripts/jd_kingran_wind_qqxing.js >> /scripts/logs/jd_kingran_wind_qqxing.log 2>&1
+22 4-22/3 * * * node /scripts/jd_zero_wind_qqxing.js >> /scripts/logs/jd_zero_wind_qqxing.log 2>&1
 
 # 预售福利机
 46 0,9 * * * node /scripts/jd_ys.js >> /scripts/logs/jd_ys.log 2>&1
