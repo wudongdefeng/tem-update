@@ -6,10 +6,10 @@
 感谢aburd ch大佬的指导抓包
 项目名称:jd_health_exchange.py
 Author: 一风一燕
-功能：滴滴app多走多赚签到
+功能：健康兑换
 Date: 2021-12-19
 cron: 1 0 0 * * * jd_health_exchange.py
-new Env('滴滴app多走多赚兑换福利金');
+new Env('健康兑换');
 
 2022-1-7 updata:兑换改版，更新脚本
 
