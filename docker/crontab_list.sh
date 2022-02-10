@@ -5,18 +5,8 @@
 
 ##############短期活动##############
 
-# 年货节
-30 13 * * * node /scripts/jd_star_js_sjnhj.js >> /scripts/logs/jd_star_js_sjnhj.log 2>&1
-# 年兽
-33 0,6-23/2 * * * node /scripts/jd_kingran_wind_travel.js >> /scripts/logs/jd_kingran_wind_travel.log 2>&1
-# 通天塔
-30 16 * * * node /scripts/jd_kingran_wind_babel_sign.js >> /scripts/logs/jd_kingran_wind_babel_sign.log 2>&1
 # 天天压岁钱
 0 0,12 * * * node /scripts/jd_kingran_wind_ttysq.js >> /scripts/logs/jd_kingran_wind_ttysq.log 2>&1
-# 年货签到
-3 14 * * * node /scripts/jd_xiao_wind_nh_sign.js >> /scripts/logs/jd_xiao_wind_nh_sign.log 2>&1
-# 我的理想家
-3 1,8 * * * node /scripts/jd_xiao_wind_lxLottery.js >> /scripts/logs/jd_xiao_wind_lxLottery.log 2>&1
 # 金榜
 33 0,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 # 饭粒

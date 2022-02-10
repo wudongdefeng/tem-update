@@ -100,7 +100,7 @@ if ($.isNode()) {
     await $.wait(1000)
     res = await getAuthorShareCode('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/cfd.json')
   }
-  let res2 = await getAuthorShareCode('https://raw.githubusercontent.com/zero205/updateTeam/main/shareCodes/cfd.json')
+  let res2 = await getAuthorShareCode('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/cfd.json')
   if (!res2) {
     await $.wait(1000)
     res2 = await getAuthorShareCode('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/cfd.json')
