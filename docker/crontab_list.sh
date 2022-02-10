@@ -85,8 +85,8 @@
 # 摇京豆
 6 0,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 东东农场
-15 6-18/6 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
-36 20 * * * node /scripts/zero_fruit.js >> /scripts/logs/zero_fruit.log 2>&1
+15 6-18/6 * * * node /scripts/jd_zero_wind_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
+36 6,10 * * * node /scripts/jd_kingran_wind_fruit_help.js >> /scripts/logs/jd_fruit.log 2>&1
 # 东东乐园
 30 7 * * * node /scripts/jd_wen_wind_ddnc_farmpark.js >> /scripts/logs/jd_wen_wind_ddnc_farmpark.log 2>&1
 # 宠汪汪
@@ -102,11 +102,12 @@
 # 摇钱树
 23 */2 * * * node /scripts/jd_moneyTree.js >> /scripts/logs/jd_moneyTree.log 2>&1
 # 东东萌宠
-35 6-18/6 * * * node /scripts/jd_kingran_wind_pet.js >> /scripts/logs/jd_pet.log 2>&1
+35 6-18/6 * * * node /scripts/jd_zero_wind_pet.js >> /scripts/logs/jd_pet.log 2>&1
 35 0,4 * * * node /scripts/jd_kingran_wind_pet_help.js >> /scripts/logs/jd_pet.log 2>&1
 
 # 京东种豆得豆
 10 7-22/1 * * * node /scripts/jd_kingran_wind_plantBean.js >> /scripts/logs/jd_kingran_wind_plantBean.log 2>&1
+35 8,10 * * * node /scripts/jd_kingran_wind_plantBean_help.js >> /scripts/logs/jd_plantBean.log 2>&1
 # 进店领豆
 6 0 * * * node /scripts/jd_shop.js >> /scripts/logs/jd_shop.log 2>&1
 # 东东超市
@@ -163,7 +164,8 @@
 #京东直播（又回来了）
 30-50/5 12,23 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
 #京东健康社区
-13 1,6,22 * * * node /scripts/jd_health.js >> /scripts/logs/jd_health.log 2>&1
+13 1,6,22 * * * node /scripts/jd_zero_wind_health.js >> /scripts/logs/jd_health.log 2>&11
+3 2,10 * * * node /scripts/jd_zero_wind_health_help.js >> /scripts/logs/jd_health.log 2>&1
 #京东健康社区收集健康能量
 5-45/20 * * * * node /scripts/jd_health_collect.js >> /scripts/logs/jd_health_collect.log 2>&1
 # 幸运大转盘
