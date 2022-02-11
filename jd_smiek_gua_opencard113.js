@@ -25,7 +25,7 @@ guaopenwait113="0"
 
 All变量适用
 ————————————————
-入口：[ 2.11~2.22 遇见爱 遇见你 (https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=qrj20220211udn6m4p8pqh7lc2&shareUuid=a2ebc982d94b4355a649639c06dc8357)]
+入口：[ 2.11~2.22 遇见爱 遇见你 (https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=qrj20220211udn6m4p8pqh7lc2&shareUuid=24497a50cd90454f8ed1238d31701151)]
 
 请求太频繁会被黑ip
 过10分钟再执行
@@ -105,7 +105,7 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*
     return;
   }
   $.activityId = "qrj20220211udn6m4p8pqh7lc2"
-  $.shareUuid = "a2ebc982d94b4355a649639c06dc8357"
+  $.shareUuid = "24497a50cd90454f8ed1238d31701151"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   let shareUuidArr = [$.shareUuid,"169ab13bd67144bcb197cca88ae7341d","d31ba80ac0ac48b393d72c92d1c9e6d3","668ac645e21e48438881cd7e157efef9","5c99866d54b9478dadf820bc1aa2d3f2","cfde85b912f243f398d3cb7448ae2208","2f85f9219aef46fc9be6a4cd1c02e1be","4121f4286704415780a462eef0394f49","f1f7e7edef4241209ea67e6f97200008"]
   let s = Math.floor((Math.random()*10))
