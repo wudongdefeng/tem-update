@@ -406,6 +406,7 @@ def get_task(cookies,sid,account):
         print (e)
         msg("【账号{0}】浏览任务已全部完成".format(account))
 
+
 #获取加购任务信息
 def get_task2(cookies,sid,account):
     try:
@@ -440,6 +441,7 @@ def get_task2(cookies,sid,account):
     except Exception as e:
         print (e)
         msg("【账号{0}】加购任务已全部完成".format(account))
+        return [],[],[]
 
 
 #做任务
