@@ -106,7 +106,7 @@
 35 0,4 * * * node /scripts/jd_kingran_wind_pet_help.js >> /scripts/logs/jd_pet.log 2>&1
 
 # 京东种豆得豆
-10 7-22/1 * * * node /scripts/jd_kingran_wind_plantBean.js >> /scripts/logs/jd_kingran_wind_plantBean.log 2>&1
+10 7-22/1 * * * node /scripts/jd_zero_wind_plantBean.js >> /scripts/logs/jd_zero_wind_plantBean.log 2>&1
 35 8,10 * * * node /scripts/jd_kingran_wind_plantBean_help.js >> /scripts/logs/jd_plantBean.log 2>&1
 # 进店领豆
 6 0 * * * node /scripts/jd_shop.js >> /scripts/logs/jd_shop.log 2>&1
