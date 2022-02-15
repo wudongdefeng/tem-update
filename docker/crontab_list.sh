@@ -74,7 +74,7 @@
 #京东试用
 15 12 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 # 签到
-7 0,17 * * * cd /scripts && node jd_zero_wind_bean_sign.js >> /scripts/logs/jd_zero_wind_bean_sign.log 2>&1
+7 0,17 * * * node /scripts/jd_zero_wind_bean_sign.js >> /scripts/logs/jd_zero_wind_bean_sign.log 2>&1
 #京喜签到
 11 0 * * * node /scripts/jx_sign.js >> /scripts/logs/jx_sign.log 2>&1
 # 东东超市兑换奖品#
@@ -105,8 +105,6 @@
 # 京东种豆得豆
 10 7-22/1 * * * node /scripts/jd_zero_wind_plantBean.js >> /scripts/logs/jd_zero_wind_plantBean.log 2>&1
 35 8,10 * * * node /scripts/jd_kingran_wind_plantBean_help.js >> /scripts/logs/jd_plantBean.log 2>&1
-# 进店领豆
-6 0 * * * node /scripts/jd_shop.js >> /scripts/logs/jd_shop.log 2>&1
 # 东东超市
 31 0,1-23/2 * * * node /scripts/jd_superMarket.js >> /scripts/logs/jd_superMarket.log 2>&1
 # 取关京东店铺商品
@@ -158,8 +156,6 @@
 18 0-23/1 * * * node /scripts/jd_zero_wind_cfd.js >> /scripts/logs/jd_smiek_gua_wealth_island.log 2>&1
 # 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
 #20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
-#京东直播（又回来了）
-30-50/5 12,23 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
 #京东健康社区
 13 1,6,22 * * * node /scripts/jd_zero_wind_health.js >> /scripts/logs/jd_health.log 2>&11
 3 2,10 * * * node /scripts/jd_zero_wind_health_help.js >> /scripts/logs/jd_health.log 2>&1
