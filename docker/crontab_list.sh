@@ -17,8 +17,6 @@
 33 14,20 * * * node /scripts/jd_star_wind_productZ4Brand.js >> /scripts/logs/jd_star_wind_productZ4Brand.log 2>&1
 # 牛牛福利
 40 8,17 * * * node /scripts/jd_faker_wind_nnfls.js >> /scripts/logs/jd_faker_wind_nnfls.log 2>&1
-# 元宵
-30 0,20 * * * node /scripts/jd_gua_HappyNewYear_Shares.js >> /scripts/logs/jd_gua_HappyNewYear_Shares.log 2>&1
 
 # 微信签到领红包
 30 9,20 * * * node /scripts/jd_wq_wxsign.js >> /scripts/logs/jd_wq_wxsign.log 2>&1
@@ -132,7 +130,7 @@
 # 京东快递签到
 47 1 * * * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log 2>&1
 # 领京豆额外奖励(每日可获得3京豆)
-23 1,12,22 * * * node /scripts/jd_zero_wind_bean_home.js >> /scripts/logs/jd_zero_wind_bean_home.log 2>&1
+23 1,12,22 * * * node /scripts/jd_bean_home.js >> /scripts/logs/jd_bean_home.log 2>&1
 # 微信小程序京东赚赚
 6 0-5/1,11 * * * node /scripts/jd_kingran_wind_jdzz.js >> /scripts/logs/jd_kingran_wind_jdzz.log 2>&1
 # 导到所有互助码
