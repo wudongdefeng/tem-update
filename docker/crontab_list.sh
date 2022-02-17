@@ -30,8 +30,8 @@
 40 0,2 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 #内容鉴赏官
 30 10,15 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
-#京东极速版红包(活动时间：2021-5-5至2021-5-31)
-45 0,23 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
+#京东极速版红包(活动时间：2021-5-5至2021-5-31)容易黑号删除
+#45 0,23 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
 #汪汪乐园养joy
 11 1-23/4 * * * node /scripts/jd_wind_joypark_joy.js >> /scripts/logs/jd_wind_joypark_joy.log 2>&1
 #汪汪乐园每日任务
@@ -108,7 +108,6 @@
 35 6-18/6 * * * node /scripts/jd_zero_wind_pet.js >> /scripts/logs/jd_pet.log 2>&1
 35 0,4 * * * node /scripts/jd_kingran_wind_pet_help.js >> /scripts/logs/jd_pet.log 2>&1
 #京东极速版红包
-35 0,4 * * * node /scripts/jd_kingran_wind_speed_redpocke.js >> /scripts/logs/jd_kingran_wind_speed_redpocke.log 2>&1
 35 4 * * * node /scripts/jd_kingran_wind_speed_signfree.js >> /scripts/logs/jd_kingran_wind_speed_signfree.log 2>&1
 # 京东种豆得豆
 10 7-22/1 * * * node /scripts/jd_zero_wind_plantBean.js >> /scripts/logs/jd_zero_wind_plantBean.log 2>&1
@@ -164,8 +163,6 @@
 10 22,23 * * * node /scripts/jd_kingran_wind_exchangewindbeans.js >> /scripts/logs/jd_kingran_wind_exchangewindbeans.log 2>&1
 #微信签到
 10 1 * * * node /scripts/jd_kingran_wind_wq_wxsign.js >> /scripts/logs/jd_kingran_wind_wq_wxsign.log 2>&1
-#图形签到
-10 1,9 * * * node /scripts/jd_sign_graphics_validate.js >> /scripts/logs/jd_sign_graphics_validate.log 2>&1
 #金榜签到
 10 1,9 * * * node /scripts/jd_kingran_wind_gold_sign.js >> /scripts/logs/jd_kingran_wind_gold_sign.log 2>&1
 #美丽研究院
