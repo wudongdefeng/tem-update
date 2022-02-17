@@ -66,6 +66,8 @@
 0 0-23/4 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 ##############长期活动##############
 
+# 极速版领券
+59 6,9,14,17,20 * * * node /scripts/jd_kingran_wind_5_2.js >> /scripts/logs/jd_kingran_wind_5_2.log 2>&1
 # 运费券提醒
 33 19 * * * node /scripts/jd_wind_yfcoupon.js >> /scripts/logs/jd_wind_yfcoupon.log 2>&1
 # 领卷中心签到
