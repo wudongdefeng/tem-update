@@ -1,6 +1,6 @@
 /*
  粉丝互动
- cron 10 1 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_fan.js
+ cron 10 0 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_fan.js
  蚊子腿活动，不定时更新
  环境变量：RUHUI,是否自动入会，默认不如会，设置RUHUI=1，则会自动入会
  环境变量：RUNCK,执行多少CK，默认全执行，设置RUNCK=10，则脚本只会运行前10个CK
@@ -22,7 +22,7 @@ if ($.isNode()) {
         $.getdata("CookieJD2"),
         ...$.toObj($.getdata("CookiesJD") || "[]").map((item) => item.cookie)].filter((item) => !!item);
 }
-    {'id':'21c655646f2342bda3d0f1dd668a51d4','endTime':1646063999000},
+let activityList = [
     {'id':'027ba51d1ee44a3eb9dddfb06ee4f9e6','endTime':1646063999000},//2022-02-10---2022-02-28 blueriver蓝河官方自营旗舰店
     {'id':'42df4494bd1e4d8b87f867887eb0bc9a','endTime':1645977600000},//2022-02-10---2022-02-28 小米京东自营旗舰店
     {'id':'2a00758adec643e680bb2eaa490a483c','endTime':1645631999000},//2022-02-08---2022-02-23 西部数据京东自营旗舰店
