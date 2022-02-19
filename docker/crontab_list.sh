@@ -4,6 +4,8 @@
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
 ##############短期活动##############
+# 骁龙翻卡
+30 0,22 1-28 2 * node /scripts/jd_star_wind_xiaolongfan.js >> /scripts/logs/jd_star_wind_xiaolongfan.log 2>&1
 # 粉丝
 0 14 * * * node /scripts/jd_kingran_wind_fan.js >> /scripts/logs/jd_kingran_wind_fan.log 2>&1
 # 电竞经理

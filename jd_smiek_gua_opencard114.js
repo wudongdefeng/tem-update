@@ -25,7 +25,7 @@ guaopenwait114="0"
 
 All变量适用
 ————————————————
-入口：[ 2.19～2.26 奢宠会员 瓜分百万京豆 (https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=unionkbblnt20220218dzlhkk&shareUuid=cfa3d62fa8ae4ee780b86e6a1277e5a8)]
+入口：[ 2.19～2.26 奢宠会员 瓜分百万京豆 (https://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=unionkbblnt20220218dzlhkk&shareUuid=43b77c3d00734bd59f14067f7d96a0e5)]
 
 请求太频繁会被黑ip
 过10分钟再执行
@@ -100,9 +100,9 @@ let activityCookie =''
     return;
   }
   $.activityId = "unionkbblnt20220218dzlhkk"
-  $.shareUuid = "cfa3d62fa8ae4ee780b86e6a1277e5a8"
+  $.shareUuid = "43b77c3d00734bd59f14067f7d96a0e5"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
-  let shareUuidArr = [$.shareUuid,"5e66f6287a0f4cbeadec1bbaf8bf74bb","e7312720f90e47d7909a19678d5765f6","2a05f8917811495ea666e8fa96cc11ff","511fb1ae101e4206a007ae9a382f78d5","d84c86c301a045e295fa6c27a91dbe23","7f321ccb87bc4c45a6cc95876cab5b35","e1906436ecaf4aa5ad55374d98a4dcbc","a3ccf84c6384422ea3c6ca4751b2115e","4ca4df19c4b84bed8ac6238ab5f7a076"]
+let shareUuidArr = [$.shareUuid,735ce1af56c646e78e145524cf02f6c3]
   let s = Math.floor((Math.random()*10))
   let n = 0
   if(s <= 2) n = Math.floor((Math.random()*shareUuidArr.length))
