@@ -371,10 +371,12 @@ function interactive_done(type, projectId, assignmentId, itemId, actionType = ''
 }
 async function sign_interactive_done(type, projectId, assignmentId) {
   let functionId = 'interactive_done'
-  let body = {"assignmentId":assignmentId,"type":type,"projectId":projectId}
-  let sign = await getSign(functionId, body)
+  let body = JSON.stringify({"assignmentId":assignmentId,"type":type,"projectId":projectId})
+  let uuid = randomString(40)
+  let sign = await getSign(functionId, body, uuid)
+  let url = `${JD_API_HOST}client.action?functionId=${functionId}&client=apple&clientVersion=10.1.0&uuid=${uuid}&${sign}`
   return new Promise(resolve => {
-    $.post(taskPostUrl(functionId, sign), (err, resp, data) => {
+    $.post(taskPostUrl(url, body), (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -439,10 +441,12 @@ function interactive_accept(type, projectId, assignmentId, itemId) {
 }
 async function qryViewkitCallbackResult(encryptProjectId, encryptAssignmentId, itemId) {
   let functionId = 'qryViewkitCallbackResult'
-  let body = {"dataSource":"babelInteractive","method":"customDoInteractiveAssignmentForBabel","reqParams":`{\"itemId\":\"${itemId}\",\"encryptProjectId\":\"${encryptProjectId}\",\"encryptAssignmentId\":\"${encryptAssignmentId}\"}`}
-  let sign = await getSign(functionId, body)
+  let body = JSON.stringify({"dataSource":"babelInteractive","method":"customDoInteractiveAssignmentForBabel","reqParams":`{\"itemId\":\"${itemId}\",\"encryptProjectId\":\"${encryptProjectId}\",\"encryptAssignmentId\":\"${encryptAssignmentId}\"}`})
+  let uuid = randomString(40)
+  let sign = await getSign(functionId, body, uuid)
+  let url = `${JD_API_HOST}client.action?functionId=${functionId}&client=apple&clientVersion=10.1.0&uuid=${uuid}&${sign}`
   return new Promise(resolve => {
-    $.post(taskPostUrl(functionId, sign), (err, resp, data) => {
+    $.post(taskPostUrl(url, body), (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -571,10 +575,10 @@ function taskUrl(functionId, body) {
     }
   }
 }
-function taskPostUrl(functionId, body) {
+function taskPostUrl(url, body) {
   return {
-    url: `${JD_API_HOST}client.action?functionId=${functionId}`,
-    body,
+    url,
+    body: `body=${encodeURIComponent(body)}`,
     headers: {
       "Host": "api.m.jd.com",
       "Content-Type": "application/x-www-form-urlencoded",
@@ -589,21 +593,17 @@ function taskPostUrl(functionId, body) {
     }
   }
 }
-function getSign(functionId, body) {
+function getSign(functionid, body, uuid) {
   return new Promise(async resolve => {
     let data = {
-      functionId,
-      body: JSON.stringify(body),
+      "functionId":functionid,
+      "body":body,
+      "uuid":uuid,
       "client":"apple",
-      "clientVersion":"10.3.0"
+      "clientVersion":"10.1.0"
     }
-    let Host = ""
     let HostArr = ['jdsign.cf', 'signer.nz.lu']
-    if (process.env.SIGN_URL) {
-      Host = process.env.SIGN_URL
-    } else {
-      Host = HostArr[Math.floor((Math.random() * HostArr.length))]
-    }
+    let Host = HostArr[Math.floor((Math.random() * HostArr.length))]
     let options = {
       url: `https://cdn.nz.lu/ddo`,
       body: JSON.stringify(data),

@@ -178,7 +178,7 @@ if (process.env.GO_CQHTTP_LINK) {
   GO_CQHTTP_LINK = process.env.GO_CQHTTP_LINK;
 }
 
-let end_txt = "仅供用于学习";
+let end_txt = "tg频道 ：https://t.me/bean_plant";
 if (process.env.END_TXT) {
   end_txt = process.env.END_TXT;
 }

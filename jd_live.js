@@ -134,10 +134,12 @@ function getTaskList() {
 
 async function getauthorId(liveId) {
   let functionId = `liveDetailV910`
-  let body = {"liveId":liveId,"fromId":"","liveList":[],"sku":"","source":"17","d":"","direction":"","isNeedVideo":1}
-  let sign = await getSign(functionId, body)
+  let body = escape(JSON.stringify({"liveId":liveId,"fromId":"","liveList":[],"sku":"","source":"17","d":"","direction":"","isNeedVideo":1}))
+  let uuid = randomString(16)
+  let sign = await getSign(functionId, decodeURIComponent(body), uuid)
+  let url = `https://api.m.jd.com/client.action?functionId=${functionId}&build=167774&client=apple&clientVersion=10.1.0&uuid=${uuid}&${sign}`
   return new Promise(resolve => {
-    $.post(taskPostUrl(functionId, sign), async (err, resp, data) => {
+    $.post(taskPostUrl(functionId, body, url), async (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -158,10 +160,12 @@ async function getauthorId(liveId) {
 
 async function superTask(liveId, authorId) {
   let functionId = `liveChannelReportDataV912`
-  let body = {"liveId":liveId,"type":"viewTask","authorId":authorId,"extra":{"time":60}}
-  let sign = await getSign(functionId, body)
+  let body = escape(JSON.stringify({"liveId":liveId,"type":"viewTask","authorId":authorId,"extra":{"time":60}}))
+  let uuid = randomString(16)
+  let sign = await getSign(functionId, decodeURIComponent(body), uuid)
+  let url = `https://api.m.jd.com/client.action?functionId=${functionId}&build=167774&client=apple&clientVersion=10.1.0&uuid=${uuid}&${sign}`
   return new Promise(resolve => {
-    $.post(taskPostUrl(functionId, sign), async (err, resp, data) => {
+    $.post(taskPostUrl(functionId, body, url), async (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -278,21 +282,17 @@ function sign() {
   })
 }
 
-function getSign(functionId, body) {
+function getSign(functionid, body, uuid) {
   return new Promise(async resolve => {
     let data = {
-      functionId,
-      body: JSON.stringify(body),
-      client: "apple",
-      clientVersion: "10.3.0"
+      "functionId":functionid,
+      "body":body,
+      "uuid":uuid,
+      "client":"apple",
+      "clientVersion":"10.1.0"
     }
-    let Host = ""
     let HostArr = ['jdsign.cf', 'signer.nz.lu']
-    if (process.env.SIGN_URL) {
-      Host = process.env.SIGN_URL
-    } else {
-      Host = HostArr[Math.floor((Math.random() * HostArr.length))]
-    }
+    let Host = HostArr[Math.floor((Math.random() * HostArr.length))]
     let options = {
       url: `https://cdn.nz.lu/ddo`,
       body: JSON.stringify(data),
@@ -319,10 +319,12 @@ function getSign(functionId, body) {
   })
 }
 
-function taskPostUrl(function_id, body = "") {
+function taskPostUrl(function_id, body = {}, url=null) {
+  if (url && (function_id === "liveChannelReportDataV912" || function_id === "liveDetailV910")) body = `body=${body}`
+  if(!url) url = `https://api.m.jd.com/client.action?functionId=${function_id}`
   return {
-    url: `https://api.m.jd.com/client.action?functionId=${function_id}`,
-    body,
+    url: url,
+    body: body,
     headers: {
       "Host": "api.m.jd.com",
       "Content-Type": "application/x-www-form-urlencoded",
@@ -330,7 +332,8 @@ function taskPostUrl(function_id, body = "") {
       "Referer": "",
       "Cookie": cookie,
       "Origin": "https://h5.m.jd.com",
-      "Content-Type": 'application/x-www-form-urlencoded',
+      'Content-Type': 'application/x-www-form-urlencoded',
+      "Content-Length": "996",
       "User-Agent": "JD4iPhone/167774 (iPhone; iOS 14.7.1; Scale/3.00)",
       "Accept-Language": "zh-Hans-CN;q=1",
       "Accept-Encoding": "gzip, deflate, br"
@@ -339,7 +342,7 @@ function taskPostUrl(function_id, body = "") {
 }
 function taskUrl(function_id, body = {}) {
   return {
-    url: `${JD_API_HOST}?functionId=${function_id}&appid=h5-live&body=${encodeURIComponent(JSON.stringify(body))}&v=${new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000}&uuid=${uuid}`,
+    url: `${JD_API_HOST}?functionId=${function_id}&appid=h5-live&body=${escape(JSON.stringify(body))}&v=${new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000}&uuid=${uuid}`,
     headers: {
       "Host": "api.m.jd.com",
       "Accept": "application/json, text/plain, */*",
