@@ -28,7 +28,7 @@ const $ = new Env('东东农场');
 console.log('\n====================Hello World====================\n');
 
 let cookiesArr = [], cookie = '', notify, newShareCodes, allMessage = '';
-let shareCodes = ['']
+let shareCodes = ['7c3b3c449fd45448736a6b870bd9da9@80ac4d3970114f1abdd063df69bc48e2']
 let message = '', subTitle = '', option = {}, isFruitFinished = false;
 const retainWater = 100;//保留水滴大于多少g,默认100g;
 let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
