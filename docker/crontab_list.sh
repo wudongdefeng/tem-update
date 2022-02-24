@@ -109,7 +109,7 @@
 # 摇钱树
 23 */2 * * * node /scripts/jd_moneyTree.js >> /scripts/logs/jd_moneyTree.log 2>&1
 # 东东萌宠
-35 6-18/6 * * * node /scripts/jd_zero_wind_pet.js >> /scripts/logs/jd_pet.log 2>&1
+35 6-18/6 * * * node /scripts/jd_hello_wind_pet.js >> /scripts/logs/jd_pet.log 2>&1
 35 0,4 * * * node /scripts/jd_kingran_wind_pet_help.js >> /scripts/logs/jd_pet.log 2>&1
 #京东极速版红包
 35 4 * * * node /scripts/jd_kingran_wind_speed_signfree.js >> /scripts/logs/jd_kingran_wind_speed_signfree.log 2>&1
