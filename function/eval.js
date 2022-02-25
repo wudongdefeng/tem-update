@@ -1,16 +1,13 @@
 function mainEval($) {
     return `
 !(async () => {
-    jdcookie = process.env.JD_COOKIE ? process.env.JD_COOKIE.split("&") : require("./jdCookie").cookie;
+    jdcookie = process.env.JD_COOKIE ? process.env.JD_COOKIE.split("&") : require("./function/jdcookie").cookie;
     cookies={
         'all':jdcookie,
         'help': typeof(help) != 'undefined' ? [...jdcookie].splice(0,parseInt(help)):[]
     }
     $.sleep=cookies['all'].length * 500
     taskCookie=cookies['all']
-    if($.config[\`\${$.runfile}_limit\`]){
-        taskCookie = cookies['all'].slice(0,parseInt($.config[\`\${$.runfile}_limit\`]))
-    }
     jxAlgo = new common.jxAlgo();
     if ($.readme) {
             console.log(\`使用说明:\\n\${$.readme}\\n以上内容仅供参考,有需求自行添加\\n\`,)
