@@ -51,10 +51,10 @@ if (process.env.SEVENDAY_LIST && process.env.SEVENDAY_LIST != "") {
     activityIdList = process.env.SEVENDAY_LIST.split(',');
 }
 if (process.env.SEVENDAY_LIST2 && process.env.SEVENDAY_LIST2 != "") {
-    activityIdList2 = process.env.SEVENDAY_LIST.split(',');
+    activityIdList2 = process.env.SEVENDAY_LIST2.split(',');
 }
 if (process.env.SEVENDAY_LIST3 && process.env.SEVENDAY_LIST3 != "") {
-    activityIdList3 = process.env.SEVENDAY_LIST.split(',');
+    activityIdList3 = process.env.SEVENDAY_LIST3.split(',');
 }
 
 if ($.isNode()) {
