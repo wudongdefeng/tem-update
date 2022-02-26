@@ -46,7 +46,7 @@ if ($.isNode()) {
   if (process.env.PIGPETSHARECODE) {
     shareId = process.env.PIGPETSHARECODE
   } else{
-    let res = await getAuthorShareCode('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodespigPet.json')
+    let res = await getAuthorShareCode('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/pigPet.json')
     if (res){
       shareId = res[Math.floor((Math.random() * res.length))];
     }
@@ -73,7 +73,7 @@ if ($.isNode()) {
     }
   }
   console.log(`\n======开始大转盘助力======\n`);
-  $.helpId = await getAuthorShareCode('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodespig.json');
+  $.helpId = await getAuthorShareCode('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/pig.json');
   $.shareCodes = [...$.shareCodes, ...($.helpId || [])]
   for (let j = 0; j < cookiesArr.length; j++) {
     cookie = cookiesArr[j];

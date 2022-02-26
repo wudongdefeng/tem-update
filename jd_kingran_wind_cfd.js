@@ -93,7 +93,7 @@ if ($.isNode()) {
       await $.wait(3000);
     }
   }
-//  let res = await getAuthorShareCode('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodescfd.json')
+//  let res = await getAuthorShareCode('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/cfd.json')
 //  $.strMyShareIds = [...(res || [])]
 //  await shareCodesFormat()
 //  for (let i = 0; i < cookiesArr.length; i++) {

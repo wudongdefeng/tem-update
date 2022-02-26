@@ -52,7 +52,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
     let authorCode = "";
     if(helpAuthorFlag){
         try{
-            helpAuthorInfo = await getAuthorShareCode('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodesyqyl.json');
+            helpAuthorInfo = await getAuthorShareCode('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/yqyl.json');
         }catch (e) {}
         if(!helpAuthorInfo){
             helpAuthorInfo = [];

@@ -44,7 +44,7 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
   let redIds = await getRedRainIds(jd_redrain_half_url);
   if (!redIds) {
     await $.wait(1000)
-    redIds = await getRedRainIds('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodesredrain_half.json')
+    redIds = await getRedRainIds('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/redrain_half.json')
   }
   if (!redIds.length) {
     $.log(`\n今日龙王🐲出差，天气晴朗☀️，改日再来～\n`);

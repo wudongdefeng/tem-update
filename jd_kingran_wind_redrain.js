@@ -46,7 +46,7 @@ if ($.isNode()) {
     let RedRainIds = await getRedRainIds(jd_redrain_url);
 	if (!RedRainIds) {
     await $.wait(1000)
-    RedRainIds = await getRedRainIds('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodesredrain.json')
+    RedRainIds = await getRedRainIds('https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/redrain.json')
 	}
     for (let i = 0; i < 1; i++) {
       jd_redrain_activityId = RedRainIds[0];
