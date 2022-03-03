@@ -188,8 +188,10 @@ async function run() {
       await takePostRequest('activityContent');
     }
       $.runFalag = true
-     if(process.env.drawCardNum !=0){ 
+     if(process.env.drawCardNum >=1){ 
+     
       let count = parseInt($.score/100)
+      
       console.log(`抽奖次数为:${count}`)
       for(m=1;count--;m++){
         console.log(`第${m}次抽奖`)
@@ -200,9 +202,10 @@ async function run() {
           console.log("抽奖太多次，多余的次数请再执行脚本")
           break
         }
+        }
         await $.wait(parseInt(Math.random() * 2000 + 2000, 10))
       }
-      }
+    
     await takePostRequest('getCardInfo');
     if($.drawCardNum && $.compositeCard+"" == "true"){
       let count = $.drawCardNum
