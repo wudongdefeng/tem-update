@@ -24,26 +24,25 @@ let cookiesArr = [], cookie = '', message = '';
 // https://lzkj-isv.isvjcloud.com/sign/sevenDay/signActivity?activityId=
 let activityIdList = [
     '600fe9fc7a21450d9842c9056f3b0653',
+    // 'd1395f4e6b6e4eb993bf313d9d8cfd84',
 ]
 // https://lzkj-isv.isvjcloud.com/sign/signActivity2?activityId=
 let activityIdList2 = [
     '84e9d04debf4415989b6728ef6a605df',
-    'bfafaaa4961b441a8e2bcb4b7de6bdf1',
-    '241f469b4a8a41388bdb1644331d9017',
-    '0260f46de12c4499bf9874f734add39a',
     '60c1fb112db749bf8b23a80e030061d3',
     '393ddb3a8ce04f19aed59fb458e2425f',
     'b27cf28cb13e41c7a1c4a8f144c567a0',
-    '6d58dc7941a8427e8d2220cbfdc7da60',
-    'b10be16dc4ed48409e434f71fd3af3bc',
-    '5c4a8fc391b6416c97687b3aa6803d43',
-    '04048ae2f40f4b5c844c3f1187112847',
-    '25e4df8c3afc4825822fd420bf24150e',
+    '305dc7e23f284675a999e638321394f6',
+    '61f22cf58f814211a06dfd1db2852ba7',
+    'd493e2e4e96b447d9a39b151a0a81119',
+    'eaa9ea5d7e1943c09805ea222a58c701',
+    'a5dc177d0ef8437d987468789e673b04',
+    'c2560ac2bcc94894ae41bb66e5921640',
 ]
 // https://cjhy-isv.isvjcloud.com/sign/signActivity?activityId=
 let activityIdList3 = [
-    '91526fcd5fb0456582d6e4c936b4add1',
-    'e4a77379ca4043b7b20fe09f006b7588',
+    'e9691d1d181a470cbc8119e34d3cb891',
+    'd227aaeb83c0409fb00e37a32dfd1d40',
 ]
 let lz_cookie = {}
 
