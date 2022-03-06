@@ -156,7 +156,7 @@ async function refresh_perl() {
         "User-Agent": UA,
         "Accept-Language": "zh-cn",
       },
-      timeout: 0
+      timeout: 10000
     }, async (err, resp, data) => {
       try {
         if (err) {
@@ -193,7 +193,7 @@ function taskUrl_perl(function_path, dwLvl,dwIsRandHb,ddwVirHb,strPoolName) {
       "User-Agent": UA,
       "Accept-Language": "zh-cn",
     },
-    timeout: 0
+    timeout: 10000
   }
 }
 

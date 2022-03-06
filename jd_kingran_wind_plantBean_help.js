@@ -289,7 +289,7 @@ function requestGet(function_id, body = {}) {
         'Accept-Encoding': 'gzip, deflate, br',
         'Content-Type': "application/x-www-form-urlencoded"
       },
-      timeout: 0,
+      timeout: 10000,
     };
     $.get(option, (err, resp, data) => {
       try {
@@ -424,7 +424,7 @@ function taskUrl(function_id, body) {
       "Accept-Encoding": "gzip, deflate, br",
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    timeout: 0,
+    timeout: 10000,
   }
 }
 function getParam(url, name) {

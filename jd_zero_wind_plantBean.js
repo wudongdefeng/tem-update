@@ -565,7 +565,7 @@ async function plantBeanIndex() {
 }
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `https://transfer.nz.lu/bean`, timeout: 0}, (err, resp, data) => {
+    $.get({url: `https://transfer.nz.lu/bean`, timeout: 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -665,7 +665,7 @@ function requestGet(function_id, body = {}) {
         'Accept-Encoding': 'gzip, deflate, br',
         'Content-Type': "application/x-www-form-urlencoded"
       },
-      timeout: 0,
+      timeout: 10000,
     };
     $.get(option, (err, resp, data) => {
       try {
@@ -765,7 +765,7 @@ function taskUrl(function_id, body) {
       "Accept-Encoding": "gzip, deflate, br",
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    timeout: 0,
+    timeout: 10000,
   }
 }
 function getParam(url, name) {

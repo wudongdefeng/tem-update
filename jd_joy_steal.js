@@ -339,7 +339,7 @@ function getFriends(currentPage = '1') {
         "lkt": lkt,
         "lks": lks
       },
-      timeout: 0
+      timeout: 10000
     }
     $.get(options, (err, resp, data) => {
       try {
