@@ -489,7 +489,7 @@ async function showMsg() {
 
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `https://cdn.jsdelivr.net/gh/wudongdefeng/jd-temporary@main/wind_pet.json${randomCount}`, 'timeout': 10000}, (err, resp, data) => {
+    $.get({url: `https://cdn.jsdelivr.net/gh/wudongdefeng/jd-temporary@main/wind_pet.json`, 'timeout': 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
