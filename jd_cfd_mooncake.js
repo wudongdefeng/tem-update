@@ -641,7 +641,7 @@ function showMsg() {
 
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `https://cdn.jsdelivr.net/gh/wudongdefeng/jd-temporary@main/wind_cfd.json`, timeout: 10000}, (err, resp, data) => {
+    $.get({url: `http://transfer.nz.lu/cfd`, timeout: 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(JSON.stringify(err))
