@@ -4,7 +4,7 @@ Last Modified time: 2021-5-11 09:27:09
 增加京东APP首页超级摇一摇(不定时有活动)
 增加超级品牌日做任务及抽奖
 增加 京东小魔方 抽奖
-Modified from https://github.com/Zero-S1/JD_tools/raw/master/JD_vvipclub.py
+Modified from https://github.com/Zero-S1/JD_tools/blob/master/JD_vvipclub.py
 已支持IOS双京东账号,Node.js支持N个京东账号
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 ============QuantumultX==============
