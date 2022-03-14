@@ -10,8 +10,13 @@ let activityIdList = [
 let lz_cookie = {}
 
 if (process.env.RUSH_LZCLIENT && process.env.RUSH_LZCLIENT != "") {
-    activityIdList = process.env.RUSH_LZCLIENT.split(',');
-}
+    if (process.env.RUSH_LZCLIENT.indexOf('&') > -1) {
+        activityIdList = process.env.RUSH_LZCLIENT.split('&');
+    } else {
+        activityIdList = [process.env.RUSH_LZCLIENT];
+    }
+  }
+  activityIdList = [...new Set(activityIdList.filter(item => !!item))]
 
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
@@ -27,7 +32,7 @@ if ($.isNode()) {
     cookiesArr.reverse();
     cookiesArr = cookiesArr.filter(item => !!item);
 }
-!(async () => {
+    //activityIdList = await getActivityIdList('https://raw.githubusercontent.com/FKPYW/dongge/master/code/gameType.json')
     if (!cookiesArr[0]) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
