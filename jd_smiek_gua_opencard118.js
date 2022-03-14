@@ -20,7 +20,7 @@ guaopenwait118="0"
 
 All变量适用
 ————————————————
-入口：[ 海蓝之谜邀请入会有礼 (https://lzkjdz-isv.isvjcloud.com/m/1000410747/99/2203100041074702/?helpUuid=76f9a4f1df2e42fd98c05997c0c9bc7d)]
+入口：[ 海蓝之谜邀请入会有礼 (https://lzkjdz-isv.isvjcloud.com/m/1000410747/99/2203100041074702/?helpUuid=3b546b0e6d304a1285eb70dab88a6fb7)]
 
 请求太频繁会被黑ip
 过10分钟再执行
@@ -79,9 +79,9 @@ let activityCookie =''
     return;
   }
   $.activityId = "2203100041074702"
-  $.shareUuid = "76f9a4f1df2e42fd98c05997c0c9bc7d"
+  $.shareUuid = "3b546b0e6d304a1285eb70dab88a6fb7"
   console.log(`入口:\nhttps://lzkjdz-isv.isvjcloud.com/m/1000410747/99/${$.activityId}/?helpUuid=${$.shareUuid}`)
-  let shareUuidArr = [$.shareUuid,"0b040fd16d334886a60c9194ed39e156","76f9a4f1df2e42fd98c05997c0c9bc7d","d52668543e964836af3bcf9b62a908ce","6668e423b315482284cd4dd8c08e85f0","b10938a3b47c451793edbab377e83d5c","5dc7f645b7cb436fb1be649aeb346059","cb09c5068c894ecd8dd83e3a4c0e151f","5899b188f737424197406bbcfefda7a9","23aa9b317397423ebc152277aff1f5d4","2761691b20fb49cbba0b2db2ca6ffcb0","0420d21c7e164d898bb48d7ef3215ce9"]
+let shareUuidArr = [$.shareUuid,"85a8da56e5b44831afd53113acb2439b"]
   let s = Math.floor((Math.random()*10))
   let n = 0
   if(s >= 1 && s<= 5) n = Math.floor((Math.random()*shareUuidArr.length))
