@@ -32,7 +32,7 @@ if ($.isNode()) {
     cookiesArr.push(...[$.getdata('CookieJD2'), $.getdata('CookieJD')]);
     cookiesArr.reverse();
     cookiesArr = cookiesArr.filter(item => !!item);
-    //activityIdList = await getActivityIdList('https://raw.githubusercontent.com/FKPYW/dongge/master/code/gameType.json')
+}
     //activityIdList = await getActivityIdList('https://raw.githubusercontent.com/FKPYW/dongge/master/code/gameType.json')
     !(async () => {
     if (!cookiesArr[0]) {
