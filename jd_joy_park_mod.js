@@ -105,8 +105,9 @@ message = ""
       }
       //下地后还有有钱买Joy并且买了Joy
       $.hasJoyCoin = true
-      let joyBaseInfo = getJoyBaseInfo(undefined, undefined, undefined, true);
-      //await getJoyBaseInfo(undefined, undefined, undefined, true);
+      await getJoyBaseInfo(undefined, undefined, undefined, true);
+      let joyBaseInfo = $.joyBaseInfo
+      //console.log(joyBaseInfo)
       await $.wait(2000)
       if (joyBaseInfo.level < 30) {
         $.activityJoyList = []
@@ -126,6 +127,8 @@ message = ""
       }
       //等级奖励领取-微信提现
       await getLevelList()
+      //每个号做完等半个小时再做下一个号
+      await $.wait(30*60*1000)
       
     }
   }
