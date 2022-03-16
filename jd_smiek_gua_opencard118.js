@@ -102,7 +102,7 @@ let shareUuidArr = [$.shareUuid,"85a8da56e5b44831afd53113acb2439b"]
       await run();
       if(i == 0 && !$.actorUuid) break
       if($.outFlag || $.activityEnd) break
-    }
+let shareUuidArr = [$.shareUuid,"e192ecd39ba441c295b49cdcb4eb5dbf"]
   }
   cookie = cookiesArr[0];
   if (cookie && $.assistStatus && !$.outFlag && !$.activityEnd) {
