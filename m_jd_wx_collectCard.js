@@ -107,6 +107,12 @@ $.logic = async function () {
     await api('crm/pageVisit/insertCrmPageVisit',
         `venderId=${$.venderId}&elementId=${encodeURIComponent(
             '邀请')}&pageId=${$.activityId}&pin=${encodeURIComponent($.Pin)}`);
+    
+      await api('wxCollectCard/drawCard',
+        `sourceId=${$.shareUuid}&activityId=${$.activityId}&type=1&pinImg=${encodeURIComponent(
+            $.attrTouXiang)}&pin=${encodeURIComponent(
+            $.Pin)}&jdNick=${encodeURIComponent(
+            $.nickname)}`);
     let saveSource = await api('wxCollectCard/saveSource',
         `activityId=${$.activityId}&pinImg=${encodeURIComponent(
             $.attrTouXiang)}&pin=${encodeURIComponent(
