@@ -4,9 +4,13 @@ const {Env} = mode ? require('./magic') : require('./magic')
 const $ = new Env('M集卡抽奖');
 $.lz = 'LZ_TOKEN_KEY=lztokef1eb8494b0af868bd18bdaf8;LZ_TOKEN_VALUE=Aa5RE8RuY4X3zA==;';
 
-$.activityUrl = process.env.M_WX_COLLECT_CARD_URL
-    ? process.env.M_WX_COLLECT_CARD_URL
-    : '';
+//$.activityUrl = process.env.M_WX_COLLECT_CARD_URL
+//    ? process.env.M_WX_COLLECT_CARD_URL
+//    : '';
+let activityUrls = []
+if (process.env.M_WX_COLLECT_CARD_URL) {
+  activityUrls = [...process.env.M_WX_COLLECT_CARD_URL.split('@'),...activityUrls]
+}
 if (mode) {
     $.activityUrl = 'https://lzkjdz-isv.isvjcloud.com/wxCollectCard/activity/2149304?activityId=84a8b50d3a0c48f9bc7804be9da5deac'
     $.activityUrl = 'https://lzkjdz-isv.isvjcloud.com/wxCollectCard/activity/1193422?activityId=cb4d9c7ca992427db5a52ec1c0bcc42e'
@@ -16,16 +20,19 @@ let stop = false;
 $.s = 1
 const all = new Set();
 $.logic = async function () {
-    if (stop) {
-        return;
-    }
+  if (stop) {
+      return;
+  }
+  for (var j = 0; j < activityUrls.length; j++) {
+    
+    $.activityUrl=activityUrls[j]
     $.activityUrl = $.activityUrl.replace("#","&")
     $.activityId = $.getQueryString($.activityUrl, 'activityId')
     if (!$.activityId || !$.activityUrl) {
         $.log(`活动id不存在`);
         return
     }
-    $.log(`活动id: ${$.activityId}`, `活动url: ${$.activityUrl}`)
+    $.log(`第${j}个活动id: ${$.activityId}`, `活动url: ${$.activityUrl}`)
     $.domain = $.activityUrl.match(/https?:\/\/([^/]+)/) && $.activityUrl.match(
         /https?:\/\/([^/]+)/)[1] || ''
     $.UA = `jdapp;iPhone;10.2.2;13.1.2;${$.uuid()};M/5.0;network/wifi;ADID/;model/iPhone8,1;addressid/2308460611;appBuild/167863;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1;`
@@ -107,12 +114,6 @@ $.logic = async function () {
     await api('crm/pageVisit/insertCrmPageVisit',
         `venderId=${$.venderId}&elementId=${encodeURIComponent(
             '邀请')}&pageId=${$.activityId}&pin=${encodeURIComponent($.Pin)}`);
-    
-      await api('wxCollectCard/drawCard',
-        `sourceId=${$.shareUuid}&activityId=${$.activityId}&type=1&pinImg=${encodeURIComponent(
-            $.attrTouXiang)}&pin=${encodeURIComponent(
-            $.Pin)}&jdNick=${encodeURIComponent(
-            $.nickname)}`);
     let saveSource = await api('wxCollectCard/saveSource',
         `activityId=${$.activityId}&pinImg=${encodeURIComponent(
             $.attrTouXiang)}&pin=${encodeURIComponent(
@@ -187,7 +188,7 @@ $.logic = async function () {
         }
         $.putMsg(Array.from(has).join(','))
     }
-
+  }
 }
 $.after = async function () {
     if ($.msg.length > 0) {
