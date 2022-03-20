@@ -2,9 +2,13 @@ let mode = __dirname.includes('magic')
 const {Env} = mode ? require('../magic') : require('./magic')
 const $ = new Env('M加购有礼');
 $.lz = 'LZ_TOKEN_KEY=lztokef1eb8494b0af868bd18bdaf8;LZ_TOKEN_VALUE=Aa5RE8RuY4X3zA==;';
-$.activityUrl = process.env.M_WX_ADD_CART_URL
-    ? process.env.M_WX_ADD_CART_URL
-    : '';
+//$.activityUrl = process.env.M_WX_ADD_CART_URL
+//    ? process.env.M_WX_ADD_CART_URL
+//    : '';
+let activityUrls = []
+if (process.env.M_WX_ADD_CART_URL) {
+  activityUrls = [...process.env.M_WX_ADD_CART_URL.split('@'),...activityUrls]
+}
 if (mode) {
     // $.activityUrl = 'https://lzkj-isv.isvjcloud.com/wxCollectionActivity/activity2/12945e62d4334a6a9fd76253941d7c08?activityId=12945e62d4334a6a9fd76253941d7c08'
     // $.activityUrl = 'https://lzkj-isv.isvjcloud.com/wxCollectionActivity/activity2/2f3c55901805489ab47b7cb657ce7a7f?activityId=2f3c55901805489ab47b7cb657ce7a7f'
@@ -13,14 +17,6 @@ if (mode) {
     $.activityUrl = 'https://lzkj-isv.isvjcloud.com/wxCollectionActivity/activity2/c3058177366745e08a7884382290b344?activityId=c3058177366745e08a7884382290b344'
 }
 
-$.s = 1
-if ($.activityUrl.includes('activityId') > -1) {
-    $.activityId = $.activityUrl.match(/activityId=([^&]+)/)
-        && $.activityUrl.match(
-            /activityId=([^&]+)/)[1] || ''
-}
-$.domain = $.activityUrl.match(/https?:\/\/([^/]+)/) && $.activityUrl.match(
-    /https?:\/\/([^/]+)/)[1] || ''
 let stop = false;
 $.shopName = '';
 $.shareMpTitle = '';
@@ -28,13 +24,25 @@ $.logic = async function () {
     if (stop) {
         return;
     }
+    for (var j = 0; j < activityUrls.length; j++) {
+    
+    $.activityUrl=activityUrls[j]
+    $.s = 1
+    if ($.activityUrl.includes('activityId') > -1) {
+        $.activityId = $.activityUrl.match(/activityId=([^&]+)/)
+            && $.activityUrl.match(
+                /activityId=([^&]+)/)[1] || ''
+    }
+    $.domain = $.activityUrl.match(/https?:\/\/([^/]+)/) && $.activityUrl.match(
+    /https?:\/\/([^/]+)/)[1] || ''
+    
     $.activityUrl = $.activityUrl.replace("#","&")
     if (!$.activityId || !$.activityUrl) {
         stop = true;
         $.log(`活动不存在`);
         return
     }
-    $.log(`活动地址: ${$.activityUrl}`)
+    $.log(`第${j}个活动地址: ${$.activityUrl}`)
     $.UA = `jdapp;iPhone;10.2.2;13.1.2;${$.uuid()};M/5.0;network/wifi;ADID/;model/iPhone8,1;addressid/2308460611;appBuild/167863;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1;`
     let lzToken = await getLzToken();
     if (typeof lzToken.data == 'string') {
@@ -65,8 +73,9 @@ $.logic = async function () {
     let myPing = await api('customer/getMyPing',
         `userId=${$.venderId}&token=${$.Token}&fromType=APP`)
     if (!myPing.result) {
-        $.putMsg(`获取pin失败`);
-        return
+        $.putMsg(`获取pin失败,跳过`);
+        //return
+        continue
     }
     $.Pin = myPing.data.secretPin;
     await api('common/accessLogWithAD',
@@ -82,9 +91,11 @@ $.logic = async function () {
     let content = activityContent.data;
     delete content.rule
     if (!content.drawInfo.name.includes('京豆')) {
-        $.log('不是京豆,不再跑脚本')
-        stop = true;
-        return;
+        //$.log('不是京豆,不再跑脚本')
+        //stop = true;
+        //return;
+        $.log('不是京豆,跑下一个店铺')
+        continue
     }
     let shopInfo = await api('wxCollectionActivity/shopInfo',
         `activityId=${$.activityId}`)
@@ -108,7 +119,8 @@ $.logic = async function () {
     let oneKeyAddCart = content.oneKeyAddCart * 1 === 1;
     if (hasCollectionSize >= needCollectionSize) {
         $.putMsg('已经加购过了')
-        return
+        //return
+        continue
     }
     //$.log(`needCollectionSize:${needCollectionSize} needFollow:${needFollow}`, );
     $.log('drawInfo', JSON.stringify(content.drawInfo));
@@ -143,7 +155,8 @@ $.logic = async function () {
             $.log(`加购完成，本次加购${carInfo.data.hasAddCartSize}个商品`)
         } else {
             console.log(JSON.stringify(carInfo))
-            return
+            //return
+            continue
         }
     }
     let prize = await api('wxCollectionActivity/getPrize',
@@ -152,6 +165,7 @@ $.logic = async function () {
         $.putMsg(`获得 ${prize.data.name}`);
     } else {
         $.putMsg(`${prize.errorMessage}`);
+    }
     }
 }
 $.after = async function () {
@@ -215,4 +229,3 @@ async function getLzToken() {
     let {data} = await $.request($.activityUrl, headers)
     return data;
 }
-
