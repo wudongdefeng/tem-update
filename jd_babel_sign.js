@@ -5,6 +5,7 @@ TG频道：https://t.me/sheeplost
 cron 2 0,7 * * * jd_babel_sign.js
 */
 let token = []
+let e = ""
 if (process.env.TTTQDTK) {
   if (process.env.TTTQDTK.includes('\n')) {
     token = [...process.env.TTTQDTK.split('\n'),...token]
