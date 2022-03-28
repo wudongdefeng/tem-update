@@ -3,6 +3,8 @@
 export jd_mhurlList=""
 
 即时任务，无需cron
+7 7 7 7 7
+作者: http://github.com/msechen/jdv5
  */
 
 const $ = new Env('盲盒任务抽京豆');
