@@ -4,16 +4,12 @@
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
 ##############短期活动##############
-# 金榜
-33 0,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
 # 饭粒
 40 9,13 * * * node /scripts/jd_wind_fanli_Mod.js >> /scripts/logs/jd_wind_fanli_Mod.log 2>&1
 # 逛好物 赚京豆 
 39 18 * * * node /scripts/jd_tsuk_wind_GuangHaoWu_enc.js >> /scripts/logs/jd_tsuk_wind_GuangHaoWu_enc.log 2>&1
 # 特物
 33 14,20 * * * node /scripts/jd_star_wind_productZ4Brand.js >> /scripts/logs/jd_star_wind_productZ4Brand.log 2>&1
-# 牛牛福利
-40 8,17 * * * node /scripts/jd_faker_wind_nnfls.js >> /scripts/logs/jd_faker_wind_nnfls.log 2>&1
 
 # 微信签到领红包
 30 9,20 * * * node /scripts/jd_wq_wxsign.js >> /scripts/logs/jd_wq_wxsign.log 2>&1
@@ -73,25 +69,11 @@
 #京喜签到
 11 0 * * * node /scripts/jx_sign.js >> /scripts/logs/jx_sign.log 2>&1
 30 1 * * * node /scripts/jd_wind_sign_xd.js >> /scripts/logs/jd_wind_sign_xd.log 2>&1
-# 东东超市兑换奖品#
-59 23 * * * node /scripts/jd_blueCoin.js >> /scripts/logs/jd_blueCoin.log 2>&1
 # 摇京豆
 6 0,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 东东农场
 15 6-18/6 * * * node /scripts/jd_hello_wind_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
 36 6,10 * * * node /scripts/jd_kingran_wind_fruit_help.js >> /scripts/logs/jd_fruit.log 2>&1
-# 东东乐园
-30 7 * * * node /scripts/jd_wen_wind_ddnc_farmpark.js >> /scripts/logs/jd_wen_wind_ddnc_farmpark.log 2>&1
-# 宠汪汪
-#59 7,15,23 * * * node /scripts/jd_joy_reward.js >> /scripts/logs/jd_joy_reward.log 2>&1
-#59 7,15 * * * node /scripts/jd_hello_wind_joy_reward_20.js >> /scripts/logs/jd_hello_wind_joy_reward_20.log 2>&1
-#59 23 * * * node /scripts/jd_hello_wind_joy_reward_new.js >> /scripts/logs/jd_hello_wind_joy_reward_new.log 2>&1
-# 宠汪汪赛跑
-#45 9,14,19 * * * node /scripts/jd_joy_run.js >> /scripts/logs/jd_joy_run.log 2>&1
-#宠汪汪任务喂食
-#35 */4 * * * node /scripts/jd_joy.js >> /scripts/logs/jd_joy.log 2>&1
-#宠汪汪偷狗粮
-#10 5,9,13 * * * node /scripts/jd_joy_steal.js >> /scripts/logs/jd_joy_steal.log 2>&1
 # 摇钱树
 23 */2 * * * node /scripts/jd_moneyTree.js >> /scripts/logs/jd_moneyTree.log 2>&1
 # 东东萌宠
@@ -102,18 +84,12 @@
 # 京东种豆得豆
 10 7-22/1 * * * node /scripts/jd_zero_wind_plantBean.js >> /scripts/logs/jd_zero_wind_plantBean.log 2>&1
 35 8,10 * * * node /scripts/jd_kingran_wind_plantBean_help.js >> /scripts/logs/jd_plantBean.log 2>&1
-# 东东超市
-31 0,1-23/2 * * * node /scripts/jd_superMarket.js >> /scripts/logs/jd_superMarket.log 2>&1
 # 取关京东店铺商品
 45 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
 # 京豆变动通知
 20 10,21 * * * node /scripts/jd_wind_bean_change.js >> /scripts/logs/jd_wind_bean_change.log 2>&1
-#天天加速
-5 18,23 * * * node /scripts/jd_speed.js >> /scripts/logs/jd_speed.log 2>&1
 # 京东排行榜
 21 9 * * * node /scripts/jd_rankingList.js >> /scripts/logs/jd_rankingList.log 2>&1
-# 天天提鹅
-28 * * * * node /scripts/jd_daily_egg.js >> /scripts/logs/jd_daily_egg.log 2>&1
 # 金融养猪
 32 0-23/6 * * * node /scripts/jd_faker_wind_pigPet.js >> /scripts/logs/jd_faker_wind_pigPet.log 2>&1
 # 京喜工厂
@@ -121,8 +97,6 @@
 0 5,10,15,20 * * * node /scripts/jd_star_wind_dreamFactory_tuan.js >> /scripts/logs/jd_star_wind_dreamFactory_tuan.log 2>&1
 # 京喜工厂列表
 0 0 * * * node /scripts/jd_kingran_wind_windgckc.js >> /scripts/logs/jd_kingran_wind_windgckc.log 2>&1
-# 东东小窝
-46 6,23 * * * node /scripts/jd_small_home.js >> /scripts/logs/jd_small_home.log 2>&1
 # 东东工厂
 26 * * * * node /scripts/jd_jdfactory.js >> /scripts/logs/jd_jdfactory.log 2>&1
 # 赚京豆(微信小程序)
@@ -142,9 +116,7 @@
 # 极速版赚金币
 30 0,20 * * * node /scripts/jd_zero_wind_speed_sign.js >> /scripts/logs/jd_zero_wind_speed_sign.log 2>&1
 # 签到领现金
-10 */4 * * * node /scripts/jd_cash.js >> /scripts/logs/jd_cash.log 2>&1
-# 闪购盲盒
-47 8,22 * * * node /scripts/jd_kingran_wind_sgmh.js >> /scripts/logs/jd_kingran_wind_sgmh.log 2>&1
+10 */4 * * * node /scripts/jd_wind_cash_Mod.js >> /scripts/logs/jd_wind_cash_Mod.log 2>&1
 # 京东秒秒币
 10 6,21 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
 # 兑换过期京豆为喜豆
@@ -175,15 +147,3 @@
 15 */2 * * * node /scripts/jd_faker_wind_windmc.js >> /scripts/logs/jd_jxmc.log 2>&1
 #京喜牧场红包
 0 0 * * * node /scripts/jd_faker_wind_windmc_hb.js >> /scripts/logs/jd_faker_wind_windmc_hb.log 2>&1
-#牛牛福利
-0 4 * * * node /scripts/jd_faker_wind_windnn.js >> /scripts/logs/jd_faker_wind_windnn.log 2>&1
-#京东到家果园
-#10 0,3,8,11,17 * * * node /scripts/jd_winddj_fruit.js >> /scripts/logs/jd_winddj_fruit.log 2>&1
-#京东到家鲜豆任务
-0 0 */1 * * node /scripts/jd_winddj_bean.js >> /scripts/logs/jd_winddj_bean.log 2>&1
-#京东到家收集水车水滴
-#5 */2 * * * node /scripts/jd_winddj_fruit_collectWater.js >> /scripts/logs/jd_winddj_fruit_collectWater.log 2>&1
-#京东到家收集庄园水滴
-10 */2 * * * node /scripts/jd_winddj_getPoints.js >> /scripts/logs/jd_winddj_getPoints.log 2>&1
-#京东到家庄园浇水
-15 0 * * * node /scripts/jd_winddj_plantBeans.js >> /scripts/logs/jd_winddj_plantBeans.log 2>&1
