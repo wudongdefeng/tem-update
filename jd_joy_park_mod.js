@@ -107,7 +107,6 @@ message = ""
       $.hasJoyCoin = true
       await getJoyBaseInfo(undefined, undefined, undefined, true);
       let joyBaseInfo = $.joyBaseInfo
-      //console.log(joyBaseInfo)
       await $.wait(2000)
       if (joyBaseInfo.level < 30) {
         $.activityJoyList = []
@@ -127,9 +126,10 @@ message = ""
       }
       //等级奖励领取-微信提现
       await getLevelList()
-      //每个号做完等半个小时再做下一个号
-      await $.wait(30*60*1000)
-      
+      //每个号做完等3分钟
+      let mergeInfo = $.mergeInfo
+      await $.wait(3*60*1000)
+
     }
   }
 })()
@@ -151,8 +151,8 @@ async function getJoyBaseInfo(taskId = '', inviteType = '', inviterPin = '', pri
             $.log(`等级: ${data.data.level}|金币: ${data.data.joyCoin}`);
             if (data.data.level >= 30 && $.isNode()) {
               await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】${$.nickName || $.UserName}\n当前等级: ${data.data.level}\n已达到单次最高等级奖励\n请尽快前往活动查看领取\n活动入口：京东极速版APP->汪汪乐园\n更多脚本->"https://github.com/zero205/JD_tencent_scf"`);
-              $.log(`\n开始解锁新场景...\n`);
-              await doJoyRestart()
+              //$.log(`\n开始解锁新场景...\n`);
+              //await doJoyRestart()
             }
           }
           $.joyBaseInfo = data.data
@@ -184,8 +184,8 @@ function getJoyList(printLog = false) {
               $.log(`id:${data.data.activityJoyList[i].id}|name: ${data.data.activityJoyList[i].name}|level: ${data.data.activityJoyList[i].level}`);
               if (data.data.activityJoyList[i].level >= 30 && $.isNode()) {
                 await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】${$.nickName || $.UserName}\n当前等级: ${data.data.level}\n已达到单次最高等级奖励\n请尽快前往活动查看领取\n活动入口：京东极速版APP->汪汪乐园\n更多脚本->"https://github.com/zero205/JD_tencent_scf"`);
-                $.log(`\n开始解锁新场景...\n`);
-                await doJoyRestart()
+                //$.log(`\n开始解锁新场景...\n`);
+                //await doJoyRestart()
               }
             }
             $.log("\n在铲土的joy⬇️⬇️⬇️⬇️⬇️⬇️⬇️⬇️")
@@ -309,17 +309,28 @@ async function doJoyMergeAll(activityJoyList) {
   let minLevel = Math.min.apply(Math, activityJoyList.map(o => o.level))
   let joyMinLevelArr = activityJoyList.filter(row => row.level === minLevel);
   let joyBaseInfo = await getJoyBaseInfo()
+  $.log(joyBaseInfo)
   await $.wait(2000)
   let fastBuyLevel = joyBaseInfo.fastBuyLevel
   if (joyMinLevelArr.length >= 2) {
     $.log(`开始合成 ${minLevel} ${joyMinLevelArr[0].id} <=> ${joyMinLevelArr[1].id} 【限流严重，5秒后合成！如失败会重试】`);
     await $.wait(5000)
     await doJoyMerge(joyMinLevelArr[0].id, joyMinLevelArr[1].id);
-    await $.wait(2000)
-    await getJoyList()
-    await $.wait(2000)
-    await doJoyMergeAll($.activityJoyList)
-    await $.wait(2000)
+    let mergeInfo = $.mergeInfo
+    if (mergeInfo.code != '1006')
+    {
+      await $.wait(2000)
+      await getJoyList()
+      await $.wait(2000)
+      await doJoyMergeAll($.activityJoyList)
+      await $.wait(2000)
+    }
+    else
+    {
+      $.log("黑号，不再继续合成，开始下地干活！")
+      await doJoyMoveUpAll($.activityJoyList, $.workJoyInfoList)
+      await $.wait(2000)
+    }
   } else if (joyMinLevelArr.length === 1 && joyMinLevelArr[0].level < fastBuyLevel) {
     let buyResp = await doJoyBuy(joyMinLevelArr[0].level, $.activityJoyList);
     await $.wait(2000)
@@ -386,6 +397,7 @@ function doJoyMerge(joyId1, joyId2) {
         } else {
           data = JSON.parse(data);
           $.log(`合成 ${joyId1} <=> ${joyId2} ${data.success ? `成功！` : `失败！【${data.errMsg}】 code=${data.code}`}`)
+          $.mergeInfo = data
         }
       } catch (e) {
         $.logErr(e, resp)
@@ -627,6 +639,8 @@ async function getLevelList() {
               //console.log(data.data.gameBigPrizeVO);
               await cashOut(data.data.gameBigPrizeVO.prizeTypeVO.id,data.data.gameBigPrizeVO.prizeTypeVO.poolBaseId,data.data.gameBigPrizeVO.prizeTypeVO.prizeGroupId,data.data.gameBigPrizeVO.prizeTypeVO.prizeBaseId)
               await $.wait(2000)
+              $.log(`\n开始解锁新场景...\n`);
+              await doJoyRestart()
             }
           }
         }
