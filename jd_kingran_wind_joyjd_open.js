@@ -56,7 +56,7 @@ if ($.isNode()) {
     }
     if (!activityIDList) {
         $.log(`没有通用ID任务，尝试获取远程`);
-        let data = await getData("https://codeberg.org/wudongdefeng/updateTeam/raw/branch/main/shareCodes/joyjd_open.json")
+        let data = await getData("https://cdn.jsdelivr.net/gh/KingRan/shareCodes@master/joyjd_open.json")
         if (data.activityIDList && data.activityIDList.length) {
             $.log(`获取到远程且有数据`);
             activityIDList = data.activityIDList.join('@')
