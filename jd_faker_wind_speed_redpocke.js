@@ -21,6 +21,9 @@ cron "20 0,22 * * *" script-path=jd_speed_redpocke.js,tag=京东极速版红包
 
 ============小火箭=========
 京东极速版红包 = type=cron,script-path=jd_speed_redpocke.js, cronexpr="20 0,22 * * *", timeout=3600, enable=true
+
+默认吃有金币助力,介意别跑,加密防搬运白嫖
+
 */
 const $ = new Env('京东极速版红包');
 const notify = $.isNode() ? require('./sendNotify') : '';
