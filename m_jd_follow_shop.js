@@ -56,7 +56,7 @@ $.after = async function () {
         $.msg.push($.activityUrl);
     }
 }
-$.run({whitelist: ['1-5'], wait: [1000, 3000]}).catch(reason => $.log(reason))
+$.run({whitelist: [], wait: [1000, 3000]}).catch(reason => $.log(reason))
 
 async function drawShopGift() {
     $.log('店铺信息', $.shopId, $.venderId, $.activityId)
