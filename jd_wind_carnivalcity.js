@@ -172,7 +172,7 @@ function doBrowseHead(taskIndex, taskId, taskType) {
           if (data) {
             data = JSON.parse(data);
             if (data.code === 200) {
-              await $.wait(6000)
+              await $.wait(8000)
               await getHeadBrowsePrize(data.data.browseId)
             }
           }
@@ -239,7 +239,7 @@ async function doHotProducttask() {
   if ($.hotProductList && $.hotProductList.length) console.log(`开始 【浏览热销手机产品】任务,需等待6秒`)
   for (let item of $.hotProductList) {
     await doBrowse(item['id'], "", "hot", "browse", "browseHotSku");
-    await $.wait(1000 * 6);
+    await $.wait(1000 * 8);
     if ($.browseId) {
       await getBrowsePrize($.browseId)
     }
@@ -325,7 +325,7 @@ function brandTaskInfo(brandId) {
               console.log(`\n开始做 品牌手机 【${data['data']['brandName']}】 任务`)
               console.log(`开始浏览 1-F 单品区 任务 ${sku['name']}`);
               await doBrowse(sku['id'], brandId, "brand", "presell", "browseSku");
-              await $.wait(1000 * 6);
+              await $.wait(1000 * 8);
               if ($.browseId) await getBrowsePrize($.browseId, brandId);
             }
             for (let sku of $.shopTask.filter(vo => !!vo && vo['status'] !== '4')){
