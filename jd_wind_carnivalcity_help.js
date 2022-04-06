@@ -252,7 +252,7 @@ function getAuthorShareCode(url) {
 
 function readShareCode() {
   return new Promise(async resolve => {
-    $.get({url: `https://transfer.nz.lu/carnivalcity`, 'timeout': 20000}, (err, resp, data) => {
+    $.get({url: `https://api.jdsharecode.xyz/api/carnivalcity/50`, 'timeout': 20000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -278,9 +278,9 @@ function shareCodesFormat() {
     $.newShareCodes = [];
     const readShareCodeRes = await readShareCode();
     if (readShareCodeRes && readShareCodeRes.code === 200) {
-      $.newShareCodes = [...new Set([...$.shareCodes, ...(readShareCodeRes.data || [])])];
+      $.newShareCodes = [...new Set([...$.shareCodes, ...$.updatePkActivityIdRes, ...(readShareCodeRes.data || [])])];
     } else {
-      $.newShareCodes = [...new Set([...$.shareCodes])];
+      $.newShareCodes = [...new Set([...$.shareCodes, ...$.updatePkActivityIdRes])];
     }
     console.log(`\n\n您将要助力的好友${JSON.stringify($.newShareCodes)}`)
     resolve();
