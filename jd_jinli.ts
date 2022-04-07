@@ -16,13 +16,11 @@ let min: number[] = [0.02, 0.12, 0.3, 0.4, 0.6, 0.7, 0.8, 1, 1.2, 2, 3.6], needL
 
 !(async () => {
   cookiesArr = await requireConfig(false)
-  if (new Date().getHours() < 6) {
-    cookiesArr = cookiesArr.slice(0, 9)
-  }
+  cookiesArr = cookiesArr.slice(0, 9)
   await join()
   await getShareCodeSelf()
   await help()
-  // await open(true)
+  // await open(false)
 })()
 
 async function join() {
@@ -50,21 +48,26 @@ async function join() {
   }
 }
 
-async function getShareCodeSelf() {
-  for (let [index, value] of cookiesArr.entries()) {
-    try {
-      cookie = value
-      UserName = decodeURIComponent(cookie.match(/pt_pin=([^;]*)/)![1])
-      console.log(`\n开始【京东账号${index + 1}】${UserName}\n`)
-      res = await api('h5activityIndex', {"isjdapp": 1})
-      console.log('红包ID：', res.data.result.redpacketInfo.id)
-      shareCodesSelf.push(res.data.result.redpacketInfo.id)
-      await wait(1000)
-    } catch (e) {
-      console.log(e)
+async function getShareCodeSelf(one: boolean = false) {
+  if (one) {
+    res = await api('h5activityIndex', {"isjdapp": 1})
+    return res.data.result.redpacketInfo.id
+  } else {
+    for (let [index, value] of cookiesArr.entries()) {
+      try {
+        cookie = value
+        UserName = decodeURIComponent(cookie.match(/pt_pin=([^;]*)/)![1])
+        console.log(`\n开始【京东账号${index + 1}】${UserName}\n`)
+        res = await api('h5activityIndex', {"isjdapp": 1})
+        console.log('红包ID：', res.data.result.redpacketInfo.id)
+        shareCodesSelf.push(res.data.result.redpacketInfo.id)
+        await wait(1000)
+      } catch (e) {
+        console.log(e)
+      }
     }
+    o2s(shareCodesSelf)
   }
-  o2s(shareCodesSelf)
 }
 
 async function open(autoOpen: boolean = false) {
@@ -76,7 +79,6 @@ async function open(autoOpen: boolean = false) {
       cookie = value
       UserName = decodeURIComponent(cookie.match(/pt_pin=([^;]*)/)![1])
       console.log(`\n开始【京东账号${index + 1}】${UserName}\n`)
-
       let j: number = 1
       res = await api('h5activityIndex', {"isjdapp": 1})
       for (let t of res.data.result.redpacketConfigFillRewardInfo) {
@@ -129,8 +131,9 @@ async function help() {
       //   shareCodes = Array.from(new Set([...shareCodesHW, ...shareCodesSelf]))
       // }
 
+      let me: string = await getShareCodeSelf(true)
       for (let code of shareCodes) {
-        if (!fullCode.includes(code)) {
+        if (!fullCode.includes(code) && code !== me) {
           console.log(`账号${index + 1} ${UserName} 去助力 ${code} ${shareCodesSelf.includes(code) ? '*内部*' : ''}`)
 
           res = await api('jinli_h5assist', {"redPacketId": code, "followShop": 0})
@@ -168,7 +171,6 @@ async function api(fn: string, body: object) {
       log: log.match(/"log":"(.*)"/)[1]
     })
   }
-  console.log(fn, body)
   let {data} = await axios.post(`https://api.m.jd.com/api?appid=jinlihongbao&functionId=${fn}&loginType=2&client=jinlihongbao&clientVersion=10.2.4&osVersion=AndroidOS&d_brand=Xiaomi&d_model=Xiaomi`, `body=${encodeURIComponent(JSON.stringify(body))}`, {
     headers: {
       "origin": "https://h5.m.jd.com",
