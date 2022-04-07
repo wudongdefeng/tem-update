@@ -38,7 +38,8 @@ const urlSchema = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%2
 let llhelp = true;
 let WP_APP_TOKEN_ONE = "";
 let lnrun = 0;
-let NoNeedCodes = []
+let llgetshare = false;
+let NoNeedCodes = [];
 !(async () => {
   await requireConfig();
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -984,7 +985,7 @@ function shareCodesFormat() {
     } else {
       console.log(`由于您第${$.index}个京东账号未提供shareCode,将采纳本脚本自带的助力码\n`)
       const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
-      newShareCodes = shareCodes[tempIndex] ? shareCodes[tempIndex].split('@') : []
+      newShareCodes = shareCodes[tempIndex].split('@');
     }
     const readShareCodeRes = await readShareCode();
     if (readShareCodeRes && readShareCodeRes.code === 200) {
