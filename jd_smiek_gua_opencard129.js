@@ -23,7 +23,7 @@ guaopenwait129="0"
 
 All变量适用
 ————————————————
-入口：[ 4.8~4.22 早鸟派对好物来袭 (https://lzdz1-isv.isvjcloud.com/dingzhi/april/springUnion2/activity?activityId=dz40c5c3a14fd59a0c47466d63f0c7&shareUuid=533c04cedd474c9a9693899099a949c8)]
+入口：[ 4.8~4.22 早鸟派对好物来袭 (https://lzdz1-isv.isvjcloud.com/dingzhi/april/springUnion2/activity?activityId=dz40c5c3a14fd59a0c47466d63f0c7&shareUuid=a2a7fdd0443746d080a0a68d3b82b1e9)]
 
 请求太频繁会被黑ip
 过10分钟再执行
@@ -100,9 +100,9 @@ let activityCookie =''
     return;
   }
   $.activityId = "dz40c5c3a14fd59a0c47466d63f0c7"
-  $.shareUuid = "533c04cedd474c9a9693899099a949c8"
+  $.shareUuid = "a2a7fdd0443746d080a0a68d3b82b1e9"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/april/springUnion2/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
-  let shareUuidArr = [$.shareUuid,"c885c0ed1cc44ed2bda23c6fdee6b3fd","92663523bfaa416c9147fede3e894ac4","592025348a364d03b7b5a58405727b68","55a0654302e74a5bb8c94bf82d570370","9c0c2ffc0d03439db4497d968a6face1","a159efcd0c5b47a5a0413a7e143890f9","2f6369aba87a4196b81bdd94d40ff8ca","29c84f07e6334437b43b388608ca979e","9a38abc2e23e4089ae2d4a047765e069"]
+  let shareUuidArr = [$.shareUuid,"c885c0ed1cc44ed2bda23c6fdee6b3fd","3b4441956a4d40488422eb4d320ef9bf","592025348a364d03b7b5a58405727b68","55a0654302e74a5bb8c94bf82d570370","9c0c2ffc0d03439db4497d968a6face1","a159efcd0c5b47a5a0413a7e143890f9","2f6369aba87a4196b81bdd94d40ff8ca","29c84f07e6334437b43b388608ca979e","9a38abc2e23e4089ae2d4a047765e069"]
   let s = Math.floor((Math.random()*10))
   let n = 0
   if(s >= 1 && s<= 6) n = Math.floor((Math.random()*shareUuidArr.length))
