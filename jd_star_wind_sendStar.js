@@ -1,7 +1,6 @@
 /**
  特务Z
- 明星送好礼，估计是一次性的
- 地址：https://prodev.m.jd.com/mall/active/31GFSKyRbD3ehsHih2rQKArxfb8c/index.html?_ts=1649195676773&utm_source=iosapp
+ 明星送好礼
  cron 23 10,11 * * * https://raw.githubusercontent.com/star261/jd/main/scripts/jd_sendStar.js
  */
 const $ = new Env('明星送好礼');
@@ -20,7 +19,7 @@ if ($.isNode()) {
         ...$.toObj($.getdata("CookiesJD") || "[]").map((item) => item.cookie)].filter((item) => !!item);
 }
 !(async () => {
-    if(Date.now() > 1649260800000){
+    if(Date.now() > 1649865600000){
         console.log('结束');
         return
     }
@@ -45,7 +44,7 @@ if ($.isNode()) {
 })().catch((e) => {$.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')}).finally(() => {$.done();})
 
 async function main() {
-    let activityInfo = await taskPost('superBrandTaskList',`{"source":"star_gift","activityId":1010000}`)
+    let activityInfo = await taskPost('superBrandTaskList',`{"source":"star_gift","activityId":1010001}`)
     if(activityInfo && activityInfo.data && activityInfo.data.result && activityInfo.data.result.taskList && activityInfo.data.result.taskList.length > 0){
         console.log(`获取活动详情成功`);
     }else{
@@ -60,41 +59,41 @@ async function main() {
             console.log(`任务：${oneTask.assignmentName},已完成`);
             continue;
         }
-        if(Number(oneTask.assignmentType) === 3 && oneTask.encryptAssignmentId === 'r3RNnmCik2fRhuso1TUfNrGAjAN'){
+        if(Number(oneTask.assignmentType) === 3 && oneTask.encryptAssignmentId === '3YnNt8oWLb22uvE5hg39ds3ckjrs'){
             let infoList = oneTask.ext.followShop
             console.log(`任务：${oneTask.assignmentName},去执行`);
             for (let j = 0; j < infoList.length; j++) {
-                let doTask = await taskPost('superBrandDoTask',`{"source":"star_gift","activityId":1010000,"encryptProjectId":"2wbf88MtHk5wVBHtHxJuzApLQiZk","encryptAssignmentId":"${oneTask.encryptAssignmentId}","assignmentType":${oneTask.assignmentType},"itemId":"${infoList[j].itemId}","actionType":0}`)
+                let doTask = await taskPost('superBrandDoTask',`{"source":"star_gift","activityId":1010001,"encryptProjectId":"4XEquivyhh7UPjWU28zyADgKt4VL","encryptAssignmentId":"${oneTask.encryptAssignmentId}","assignmentType":${oneTask.assignmentType},"itemId":"${infoList[j].itemId}","actionType":0}`)
                 console.log(JSON.stringify(doTask))
                 await $.wait(1000);
             }
         }
-        if(Number(oneTask.assignmentType) === 1  && oneTask.encryptAssignmentId === '2Df5LMjQr6J4rZG7q3xqJCZiwiFG'){
+        if(Number(oneTask.assignmentType) === 1  && oneTask.encryptAssignmentId === '3LBVdtczcCTjuQ34YqEXQKUUPMeq'){
             let infoList = oneTask.ext.shoppingActivity
             console.log(`任务：${oneTask.assignmentName},去执行`);
             for (let j = 0; j < infoList.length; j++) {
-                let doTask = await taskPost('superBrandDoTask',`{"source":"star_gift","activityId":1010000,"encryptProjectId":"2wbf88MtHk5wVBHtHxJuzApLQiZk","encryptAssignmentId":"${oneTask.encryptAssignmentId}","assignmentType":${oneTask.assignmentType},"itemId":"${infoList[j].itemId}","actionType":1}`)
+                let doTask = await taskPost('superBrandDoTask',`{"source":"star_gift","activityId":1010001,"encryptProjectId":"4XEquivyhh7UPjWU28zyADgKt4VL","encryptAssignmentId":"${oneTask.encryptAssignmentId}","assignmentType":${oneTask.assignmentType},"itemId":"${infoList[j].itemId}","actionType":1}`)
                 console.log(JSON.stringify(doTask))
                 await $.wait(8000);
-                let doTask2 = await taskPost('superBrandDoTask',`{"source":"star_gift","activityId":1010000,"encryptProjectId":"2wbf88MtHk5wVBHtHxJuzApLQiZk","encryptAssignmentId":"${oneTask.encryptAssignmentId}","assignmentType":${oneTask.assignmentType},"itemId":"${infoList[j].itemId}","actionType":0}`)
+                let doTask2 = await taskPost('superBrandDoTask',`{"source":"star_gift","activityId":1010001,"encryptProjectId":"4XEquivyhh7UPjWU28zyADgKt4VL","encryptAssignmentId":"${oneTask.encryptAssignmentId}","assignmentType":${oneTask.assignmentType},"itemId":"${infoList[j].itemId}","actionType":0}`)
                 console.log(JSON.stringify(doTask2))
             }
         }
-        if(Number(oneTask.assignmentType) === 1 && oneTask.encryptAssignmentId === '2651tjTy7JRZfKqHA4ghT5WuZLqN'){
+        if(Number(oneTask.assignmentType) === 1 && oneTask.encryptAssignmentId === '2kFCroePMjEf9L3DqNmTgybo6f49'){
             let infoList = oneTask.ext.productsInfo
             console.log(`任务：${oneTask.assignmentName},去执行`);
             for (let j = 0; j < infoList.length; j++) {
                 if(infoList[j].status !== 1){
                     continue;
                 }
-                let doTask2 = await taskPost('superBrandDoTask',`{"source":"star_gift","activityId":1010000,"encryptProjectId":"2wbf88MtHk5wVBHtHxJuzApLQiZk","encryptAssignmentId":"${oneTask.encryptAssignmentId}","assignmentType":${oneTask.assignmentType},"itemId":"${infoList[j].itemId}","actionType":0}`)
+                let doTask2 = await taskPost('superBrandDoTask',`{"source":"star_gift","activityId":1010001,"encryptProjectId":"4XEquivyhh7UPjWU28zyADgKt4VL","encryptAssignmentId":"${oneTask.encryptAssignmentId}","assignmentType":${oneTask.assignmentType},"itemId":"${infoList[j].itemId}","actionType":0}`)
                 console.log(JSON.stringify(doTask2))
                 await $.wait(1000)
             }
         }
-        if(Number(oneTask.assignmentType) === 30 && oneTask.encryptAssignmentId === '4SLXcW17SuefVx6bViFTDeEntxrW'){
+        if(Number(oneTask.assignmentType) === 30 && oneTask.encryptAssignmentId === '2az4fzBi5DnSg2GGM53jDtbyH7DX'){
             console.log(`\n进行抽奖`);
-            let doTask2 = await taskPost('superBrandTaskLottery',`{"source":"star_gift","activityId":1010000,"encryptProjectId":"2wbf88MtHk5wVBHtHxJuzApLQiZk"}`)
+            let doTask2 = await taskPost('superBrandTaskLottery',`{"source":"star_gift","activityId":1010001,"encryptProjectId":"4XEquivyhh7UPjWU28zyADgKt4VL"}`)
             console.log(JSON.stringify(doTask2))
             await $.wait(1000)
         }
