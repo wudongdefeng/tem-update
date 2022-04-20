@@ -49,5 +49,5 @@ jobs:
          curl -O https://raw.githubusercontent.com/Yiov/wool/main/ks.js
          curl -O https://raw.githubusercontent.com/Yiov/wool/main/ks_fruit.js
          git add .
-         git commit "init"
+         git commit -m "init"
          git push -u wool
