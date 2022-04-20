@@ -50,4 +50,4 @@ jobs:
          curl -O https://raw.githubusercontent.com/Yiov/wool/main/ks_fruit.js
          git add .
          git commit -m "init"
-         git push origin wool
+         git push -f origin wool
