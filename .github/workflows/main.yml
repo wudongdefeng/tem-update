@@ -30,9 +30,12 @@ jobs:
         run: |         
          git config --global user.name "Actions"
          git config --global user.email "actions@github.com" 
-         git checkout --orphan wool
-         git rm -rf .
-         echo 'hello!' > README.md
+         git checkout wool
+         git clone https://gitee.com/xiecoll/radish-script.git
+         git clone https://gitee.com/soy-tool/app-script.git
+         git clone https://gitee.com/gossh520/script.git
+         git clone https://github.com/shaolin-kongfu/js_scripts.git
+         git clone https://github.com/Yiov/wool.git         
          git add .
-         git commit -m "init"
-         git push -u origin wool
+         git commit "init"
+         git push -u wool
