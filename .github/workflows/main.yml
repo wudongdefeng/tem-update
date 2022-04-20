@@ -30,6 +30,7 @@ jobs:
         run: |         
          git config --global user.name "Actions"
          git config --global user.email "actions@github.com" 
+         git branch -a
          git checkout wool
          git clone https://gitee.com/xiecoll/radish-script.git
          git clone https://gitee.com/soy-tool/app-script.git
