@@ -33,10 +33,21 @@ jobs:
          git branch -a
          git checkout -b wool
          git clone https://gitee.com/xiecoll/radish-script.git
+         cp -r ./radish-script/*.js ./
+         rm -rf ./radish-script
          git clone https://gitee.com/soy-tool/app-script.git
+         cp -r ./app-script/*.js ./
+         rm -rf ./app-script
          git clone https://gitee.com/gossh520/script.git
+         cp -r ./script/*.js ./
+         rm -rf ./script
          git clone https://github.com/shaolin-kongfu/js_scripts.git
-         git clone https://github.com/Yiov/wool.git         
+         cp -r ./js_scripts/*.js ./
+         rm -rf ./js_scripts
+         curl -O https://raw.githubusercontent.com/Yiov/wool/main/kgdzb.js
+         curl -O https://raw.githubusercontent.com/Yiov/wool/main/kgyy.js
+         curl -O https://raw.githubusercontent.com/Yiov/wool/main/ks.js
+         curl -O https://raw.githubusercontent.com/Yiov/wool/main/ks_fruit.js
          git add .
          git commit "init"
          git push -u wool
