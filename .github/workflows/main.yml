@@ -31,7 +31,7 @@ jobs:
          git config --global user.name "Actions"
          git config --global user.email "actions@github.com" 
          git checkout wool
-         git init
+         git rm rf .
          git add .
          git commit -m "init" || echo "no change"
          git push -u origin wool
