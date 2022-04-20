@@ -33,5 +33,5 @@ jobs:
          git checkout -b wool
          touch sendNotify.js
          git add .
-         git commit -m "init" || echo "no change
+         git commit -m "init" || echo "no change"
          git push -u origin wool
