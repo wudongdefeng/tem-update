@@ -72,8 +72,8 @@
 # 摇京豆
 6 0,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
 # 东东农场
-15 6-18/6 * * * node /scripts/jd_hello_wind_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
-36 6,10 * * * node /scripts/jd_kingran_wind_fruit_help.js >> /scripts/logs/jd_fruit.log 2>&1
+15 6-18/6 * * * node /scripts/jd_fruit_Mod.js >> /scripts/logs/jd_fruit.log 2>&1
+
 # 摇钱树
 23 */2 * * * node /scripts/jd_moneyTree.js >> /scripts/logs/jd_moneyTree.log 2>&1
 # 东东萌宠
