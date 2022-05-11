@@ -1,5 +1,5 @@
-# 每3天的23:50分清理一次日志(互助码不清理，proc_file.sh对该文件进行了去重)
-50 23 */3 * * find /scripts/logs -name '*.log' | grep -v 'sharecodeCollection' | xargs rm -rf
+# 每5天的23:50分清理一次日志(互助码不清理，proc_file.sh对该文件进行了去重)
+50 23 */5 * * find /scripts/logs -name '*.log' | grep -v 'sharecodeCollection' | xargs rm -rf
 #收集助力码
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
@@ -13,27 +13,12 @@
 
 # 微信签到领红包
 30 9,20 * * * node /scripts/jd_wq_wxsign.js >> /scripts/logs/jd_wq_wxsign.log 2>&1
-# 京东小魔方
-31 2,8 * * * node /scripts/jd_zero_wind_xmf.js >> /scripts/logs/jd_zero_wind_xmf.log 2>&1
 
 # 许愿池
 40 0,2 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
-#内容鉴赏官
-30 10,15 * * * node /scripts/jd_connoisseur.js >> /scripts/logs/jd_connoisseur.log 2>&1
-#京东极速版红包(活动时间：2021-5-5至2021-5-31)容易黑号删除
 #45 0,23 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
-#汪汪乐园养joy
-11 1-23/4 * * * node /scripts/jd_wind_joypark_joy.js >> /scripts/logs/jd_wind_joypark_joy.log 2>&1
-#汪汪乐园每日任务
-11 13 * * * node /scripts/jd_wind_joypark_task.js >> /scripts/logs/jd_wind_joypark_task.log 2>&1
-#汪汪乐园
-11 12 * * * node /scripts/jd_zero_wind_joy_park.js >> /scripts/logs/jd_zero_wind_joy_park.log 2>&1
-#超级直播间红包雨(活动时间不定期，出现异常提示请忽略。红包雨期间会正常)
-1,31 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
 #粉丝互动
 34 6,18 * * * node /scripts/jd_star_wind_fan.js >> /scripts/logs/jd_star_wind_fan.log 2>&1
-#早起福利
-30 6 * * * node /scripts/jd_wind_goodMorning.js >> /scripts/logs/jd_wind_goodMorning.log 2>&1
 # MM领京豆
 20 9 * * * node /scripts/jd_smiek_gua_MMdou.js >> /scripts/logs/jd_smiek_gua_MMdou.log 2>&1
 #魔方兑换
@@ -99,8 +84,6 @@
 0 0 * * * node /scripts/jd_kingran_wind_windgckc.js >> /scripts/logs/jd_kingran_wind_windgckc.log 2>&1
 # 东东工厂
 26 * * * * node /scripts/jd_jdfactory.js >> /scripts/logs/jd_jdfactory.log 2>&1
-# 赚京豆(微信小程序)
-12 0,9 * * * node /scripts/jd_faker_wind_syj.js >> /scripts/logs/jd_faker_wind_syj.log 2>&1
 # 送豆得豆(京东赚赚)
 47 2,13 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
 # 京东快递签到
