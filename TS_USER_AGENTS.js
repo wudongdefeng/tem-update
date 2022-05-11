@@ -36,14 +36,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
     }
 };
 exports.__esModule = true;
-exports.post = exports.get = exports.jdpingou = exports.randomWord = exports.getShareCodePool = exports.getshareCodeHW = exports.randomNumString = exports.o2s = exports.randomString = exports.exceptCookie = exports.getJxToken = exports.getRandomNumberByRange = exports.wait = exports.getCookie = exports.getFarmShareCode = exports.getBeanShareCode = void 0;
+exports.USER_AGENTS_ARR = exports.post = exports.get = exports.jdpingou = exports.randomWord = exports.getShareCodePool = exports.getshareCodeHW = exports.randomNumString = exports.o2s = exports.randomString = exports.exceptCookie = exports.getJxToken = exports.getRandomNumberByRange = exports.wait = exports.getCookie = exports.getFarmShareCode = exports.getBeanShareCode = void 0;
 var axios_1 = require("axios");
 var ts_md5_1 = require("ts-md5");
 var dotenv = require("dotenv");
 var fs_1 = require("fs");
 var sendNotify_1 = require("./sendNotify");
 dotenv.config();
-var USER_AGENTS = [
+var USER_AGENTS_ARR = [
     "jdapp;android;10.0.2;10;network/wifi;Mozilla/5.0 (Linux; Android 10; ONEPLUS A5010 Build/QKQ1.191014.012; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045230 Mobile Safari/537.36",
     "jdapp;iPhone;10.0.2;14.3;network/4g;Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
     "jdapp;android;10.0.2;9;network/4g;Mozilla/5.0 (Linux; Android 9; Mi Note 3 Build/PKQ1.181007.001; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/045131 Mobile Safari/537.36",
@@ -81,12 +81,13 @@ var USER_AGENTS = [
     "jdapp;android;10.0.2;10;network/wifi;Mozilla/5.0 (Linux; Android 10; MI 8 Build/QKQ1.190828.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/77.0.3865.120 MQQBrowser/6.2 TBS/045227 Mobile Safari/537.36",
     "jdapp;iPhone;10.0.2;14.1;network/wifi;Mozilla/5.0 (iPhone; CPU iPhone OS 14_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1",
 ];
+exports.USER_AGENTS_ARR = USER_AGENTS_ARR;
 function getRandomNumberByRange(start, end) {
     end <= start && (end = start + 100);
     return Math.floor(Math.random() * (end - start) + start);
 }
 exports.getRandomNumberByRange = getRandomNumberByRange;
-var USER_AGENT = USER_AGENTS[getRandomNumberByRange(0, USER_AGENTS.length)];
+var USER_AGENT = USER_AGENTS_ARR[getRandomNumberByRange(0, USER_AGENTS_ARR.length)];
 function getBeanShareCode(cookie) {
     var _a, _b;
     return __awaiter(this, void 0, void 0, function () {
@@ -217,9 +218,9 @@ function checkCookie(cookie) {
         });
     });
 }
-function wait(timeout) {
+function wait(ms) {
     return new Promise(function (resolve) {
-        setTimeout(resolve, timeout);
+        setTimeout(resolve, ms);
     });
 }
 exports.wait = wait;
