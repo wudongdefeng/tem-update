@@ -1,7 +1,7 @@
 /**
 特务之明星送好礼
 一次性脚本。请禁用！
-cron 36 18 * * * jd_superBrandStar.js
+cron 36 22 * * * jd_superBrandStar.js
  */
 const $ = new Env('特务之明星送好礼');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -199,7 +199,7 @@ function getRequest(url) {
         'Cookie': $.cookie,
         'Connection': `keep-alive`,
         'Accept': `application/json, text/plain, */*`,
-        'Referer': `https://prodev.m.jd.com/mall/active/31GFSKyRbD3ehsHih2rQKArxfb8c/index.html`,
+        'Referer': `https://prodev.m.jd.com/mall/active/3XbzM8XrNaiKRVuD9jHZhj9vYG8d/index.html`,
         'Host': `api.m.jd.com`,
         'User-Agent': UA,
         'Accept-Language': `zh-cn`,
