@@ -3,21 +3,12 @@ let CryptoJS = require('crypto-js');
 let qs = require('querystring');
 let urls = require('url');
 let path = require('path');
-let notify = require('./sendNotify');
-let mainEval = require("./eval");
+let notify = require(./sendNotify);
+let eval = require("./eval");
 let assert = require('assert');
 let jxAlgo = require("./jxAlgo");
-let config = require("./config");
-let user = {}
-try {
-    user = require("./user")
-} catch (e) {}
 class env {
     constructor(name) {
-        this.config = { ...config,
-            ...process.env,
-            ...user,
-        };
         this.name = name;
         this.message = [];
         this.sharecode = [];
@@ -54,49 +45,47 @@ class env {
         this.options.headers.cookie = cookie
     }
     jsonParse(str) {
-        try {
-            return JSON.parse(str);
-        } catch (e) {
+        if (typeof str == "string") {
             try {
-                let data = this.match([/try\s*\{\w+\s*\(([^\)]+)/, /\w+\s*\(([^\)]+)/], str)
-                return JSON.parse(data);
-            } catch (ee) {
+                return JSON.parse(str);
+            } catch (e) {
                 try {
-                    let cb = this.match(/try\s*\{\s*(\w+)/, str)
-                    if (cb) {
-                        let func = "";
-                        let data = str.replace(cb, `func=`)
-                        eval(data);
-                        return func
-                    }
-                } catch (eee) {
+                    str = str.match(/try\s*\{\w+\s*\(([^\)]+)/)[1]
+                    return JSON.parse(str);
+                } catch (ee) {
                     return str
                 }
             }
         }
     }
-    curl(params, extra = '') {
+    curl(params) {
         if (typeof(params) != 'object') {
             params = {
                 'url': params
             }
         }
+        //if (params.url.match(/jd.com\/|jingxi.com\//)) {
+        // 只有访问京东链接才带cookie
         params = Object.assign({ ...this.options
         }, params);
+        //}
         params.method = params.body ? 'POST' : 'GET';
-        if (params.hasOwnProperty('cookie')) {
-            params.headers.cookie = params.cookie
+        if (params.ua) {
+            this.options.headers['user-agent'] = params.ua;
         }
-        if (params.hasOwnProperty('ua') || params.hasOwnProperty('useragent')) {
-            params.headers['user-agent'] = params.ua
+        if (params.referer) {
+            this.options.headers.referer = params.referer;
         }
-        if (params.hasOwnProperty('referer')) {
-            params.headers.referer = params.referer
+        if (params.cookie) {
+            this.options.headers.cookie = params.cookie;
         }
-        if (params.hasOwnProperty('params')) {
+        if (params.headers) {
+            this.options.headers = params.headers;
+        }
+        if (params.params) {
             params.url += '?' + qs.stringify(params.params)
         }
-        if (params.hasOwnProperty('form')) {
+        if (params.form) {
             params.method = 'POST'
         }
         return new Promise(resolve => {
@@ -106,9 +95,6 @@ class env {
                         console.log(data)
                     }
                     this.source = this.jsonParse(data);
-                    if (extra) {
-                        this[extra] = this.source
-                    }
                 } catch (e) {
                     console.log(e, resp)
                 } finally {
@@ -218,12 +204,12 @@ class env {
     }
     filename(file, rename = '') {
         if (!this.runfile) {
-            this.runfile = path.basename(file).replace(".js", '').replace(/-/g, '_')
+            this.runfile = path.basename(file).replace(".js", '')
         }
         if (rename) {
-            rename = `_${rename}`;
+            rename = `-${rename}`;
         }
-        return path.basename(file).replace(".js", rename).replace(/-/g, '_');
+        return path.basename(file).replace(".js", rename);
     }
     rand(n, m) {
         var random = Math.floor(Math.random() * (m - n + 1) + n);
@@ -246,25 +232,10 @@ class env {
         }
         return return_array;
     }
-    compact(lists, keys) {
-        let array = {};
-        for (let i of keys) {
-            if (lists[i]) {
-                array[i] = lists[i];
-            }
-        }
-        return array;
-    }
-    unique(arr) {
-        return Array.from(new Set(arr));
-    }
-    end(args) {
-        return args[args.length - 1]
-    }
 }
 module.exports = {
     env,
-    eval: mainEval,
+    eval,
     assert,
     jxAlgo,
 }
