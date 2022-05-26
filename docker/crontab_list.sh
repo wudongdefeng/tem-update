@@ -4,21 +4,17 @@
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
 ##############短期活动##############
-# 饭粒
-40 9,13 * * * node /scripts/jd_wind_fanli_Mod.js >> /scripts/logs/jd_wind_fanli_Mod.log 2>&1
-# 逛好物 赚京豆 
-39 18 * * * node /scripts/jd_tsuk_wind_GuangHaoWu_enc.js >> /scripts/logs/jd_tsuk_wind_GuangHaoWu_enc.log 2>&1
+# 探味奇遇记
+31 0,13 26-31,1-16 5,6 * node /scripts/jd_star_wind_xm618.js >> /scripts/logs/jd_star_wind_xm618.log 2>&1
+# 小米618瓜分千万豆
+5 17 25-31,1-18 5,6 * node /scripts/jd_kingran_wind_xiaomi.js >> /scripts/logs/jd_kingran_wind_xiaomi.log 2>&1
 # 特物
 33 14,20 * * * node /scripts/jd_star_wind_productZ4Brand.js >> /scripts/logs/jd_star_wind_productZ4Brand.log 2>&1
 
-# 微信签到领红包
-30 9,20 * * * node /scripts/jd_wq_wxsign.js >> /scripts/logs/jd_wq_wxsign.log 2>&1
 
 # 许愿池
 40 0,2 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
 #45 0,23 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
-#粉丝互动
-34 6,18 * * * node /scripts/jd_star_wind_fan.js >> /scripts/logs/jd_star_wind_fan.log 2>&1
 # MM领京豆
 20 9 * * * node /scripts/jd_smiek_gua_MMdou.js >> /scripts/logs/jd_smiek_gua_MMdou.log 2>&1
 #魔方兑换
@@ -27,12 +23,6 @@
 44 */6 * * * node /scripts/jd_air_wind_aid_cashback.js >> /scripts/logs/jd_air_wind_aid_cashback.log 2>&1
 # 女装盲盒
 4 2,10 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
-#整点红包雨
-0 0-23/1 * * * node /scripts/jd_kingran_wind_redrain.js >> /scripts/logs/jd_wind_redrain.log
-#半点红包雨
-30 20-23/1 * * * node /scripts/jd_kingran_wind_redrain_half.js >> /scripts/logs/jd_kingran_wind_redrain_half.log
-#5G超级盲盒(活动时间：2021-06-2到2021-07-31)
-0 0-23/4 * * * node /scripts/jd_mohe.js >> /scripts/logs/jd_mohe.log 2>&1
 ##############长期活动##############
 
 # 极速版领券
@@ -73,10 +63,6 @@
 45 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
 # 京豆变动通知
 20 10,21 * * * node /scripts/jd_wind_bean_change.js >> /scripts/logs/jd_wind_bean_change.log 2>&1
-# 京东排行榜
-21 9 * * * node /scripts/jd_rankingList.js >> /scripts/logs/jd_rankingList.log 2>&1
-# 金融养猪
-32 0-23/6 * * * node /scripts/jd_faker_wind_pigPet.js >> /scripts/logs/jd_faker_wind_pigPet.log 2>&1
 # 京喜工厂
 50 * * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
 0 5,10,15,20 * * * node /scripts/jd_star_wind_dreamFactory_tuan.js >> /scripts/logs/jd_star_wind_dreamFactory_tuan.log 2>&1
@@ -94,8 +80,6 @@
 6 0-5/1,11 * * * node /scripts/jd_faker_wind_jdzz.js >> /scripts/logs/jd_faker_wind_jdzz.log 2>&1
 # 导到所有互助码
 23 7 * * * node /scripts/jd_get_share_code.js >> /scripts/logs/jd_get_share_code.log 2>&1
-# 口袋书店
-38 8,12,18 * * * node /scripts/jd_bookshop.js >> /scripts/logs/jd_bookshop.log 2>&1
 # 极速版赚金币
 30 0,20 * * * node /scripts/jd_zero_wind_speed_sign.js >> /scripts/logs/jd_zero_wind_speed_sign.log 2>&1
 # 签到领现金
@@ -104,10 +88,6 @@
 10 6,21 * * * node /scripts/jd_ms.js >> /scripts/logs/jd_ms.log 2>&1
 # 兑换过期京豆为喜豆
 10 22,23 * * * node /scripts/jd_faker_wind_exchangewindbeans.js >> /scripts/logs/jd_faker_wind_exchangewindbeans.log 2>&1
-#微信签到
-10 1 * * * node /scripts/jd_faker_wind_wq_wxsign.js >> /scripts/logs/jd_faker_wind_wq_wxsign.log 2>&1
-#金榜签到
-10 1,9 * * * node /scripts/jd_faker_wind_gold_sign.js >> /scripts/logs/jd_faker_wind_gold_sign.log 2>&1
 #美丽研究院
 41 7,12,19 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
 #京东极速版签到+赚现金任务
