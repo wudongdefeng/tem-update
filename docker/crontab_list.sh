@@ -25,6 +25,8 @@
 4 2,10 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
 ##############长期活动##############
 
+# 签到领现金
+30 0,22 * * * node /scripts/jd_kingran_wind_cash_windfgg.js >> /scripts/logs/jd_kingran_wind_cash_windfgg.log 2>&1
 # 极速版领券
 59 6,9,14,17,20 * * * node /scripts/jd_kingran_wind_5_2.js >> /scripts/logs/jd_kingran_wind_5_2.log 2>&1
 # 运费券提醒
