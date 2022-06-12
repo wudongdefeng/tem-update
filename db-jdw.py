@@ -1,24 +1,19 @@
 # 京乐玩-瓜分京豆 通用模板 create by doubi
 # openid 留空即可，不建议青龙使用，青龙玩不动，最好本地，本地在同目录下创建一个‘cklist.txt，将ck放在里面’
 # 目前新号助力10豆/人 老号助力2豆/人 
-from secrets import choice
-import sys
 import re
 import random, asyncio, datetime, json, time, random, hashlib, os
-from unittest import result
-
 import httpx
 from urllib.parse import quote_plus, unquote_plus
-from functools import partial
 import logging
-from requests import ConnectTimeout
+from secrets import choice
 
 activatyname = "京乐玩-瓜分京豆"
 salt = "cXRofWK6"
-me = ""  # 小程序openid 留空
-group_size = 200 # 并发数建议 50-1500 
+me = ""  # 小程序openid 留空不用填
+group_size = 100 # 并发数建议 50-1500 
 
-inveteck = 'pt_key='  # 车头子ck
+inveteck = ''车头cookie
 
 logging.basicConfig(
     level=logging.INFO,
@@ -166,13 +161,14 @@ async def index(ck, ua):
                 "content-type": "application/json",
             }
             body = {}
-            res = (await httpx_client.post(url=url, headers=headers, data=json.dumps(body))).text
-            res_json = json.loads(res)
-            if res_json["success"]:
+            res = (await httpx_client.post(url=url, headers=headers, data=json.dumps(body)))
+            res_json = json.loads(res.text)
+            if res_json["success"] and 'live' in str(res_json):
                 data = res_json["data"]
                 for key in data:
                     if "live" in key.keys():
                         return {"success": True, "data": key["live"]}
+                    
             else:
                 return {"success": False}
         except:
@@ -226,6 +222,7 @@ def get_token(viewId, actId):
 # promotion/invite
 async def post_url(def_id, ck, body):
     while 1:
+        success = 0
         try:
             url = "https://jnk.m.jd.com/" + def_id
             headers = {
@@ -238,72 +235,69 @@ async def post_url(def_id, ck, body):
                 "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/8.0.18(0x1800123f) NetType/WIFI Language/zh_CN",
             }
             bdoy = json.dumps(body)
-            res = (await httpx_client.post(url=url, headers=headers, data=json.dumps(body))).text
+            res = (await httpx_client.post(url=url, headers=headers, data=json.dumps(body),timeout=None)).text
             pin = re.findall(r"(pt_pin=([^; ]+)(?=;?))", ck)[0][1]
             logger.info(f'post_url:{unquote_plus(pin)}:{res}')
             res_json = json.loads(res)
             # return json.dumps(res_json,indent=2,ensure_ascii=False)
             return res_json
         except:
-            pass
-
-# 检查pin
-def checkpin(cks: list, pin):
-     for ck in cks:
-         if pin in ck:
-             return ck
-         else:
-             None
+            success +=1
+            if success >=3:
+                break
 
 async def task(ck, promotionId):
     pin = re.findall(r"(pt_pin=([^; ]+)(?=;?))", ck)[0][1]
     logger.info(f"您好[{pin}]")
-    result = await post_url(
-        "mission/user/promotion/status", ck, {"promotionId": promotionId}
-    )
-    res = get_viewId(pin, str(promotionId))
-    viewId = res["viewId"]
-    result = await post_url("viewlog/user/recordLog", ck, res)
-    await asyncio.sleep(25)
-    success = 0
-    while True:
-        token = get_token(viewId, str(promotionId))
-        result = await post_url("viewlog/user/recordLog", ck, token)
-        if result['code']==-100 or '未登录' in str(result):
-            return
-        if result["code"] == 0 and success == 5:
-            logger.info(result["msg"])
-            break
-        if success == 2 or success == 3:
-            result = await post_url(
-                "mission/user/promotion/join",
-                ck,
-                {
-                    "promotionId": promotionId,
-                    "nickName": "微信用户",
-                    "avatarUrl": "https://static-alias-1.360buyimg.com/jzt/mp/images/default_user_img.png",
-                    "openId": "",
-                },
-            )
-            if result['code']==1:
+    try:
+        result = await post_url(
+            "mission/user/promotion/status", ck, {"promotionId": promotionId}
+        )
+        res = get_viewId(pin, str(promotionId))
+        viewId = res["viewId"]
+        result = await post_url("viewlog/user/recordLog", ck, res)
+        await asyncio.sleep(25)
+        success = 0
+        while True:
+            token = get_token(viewId, str(promotionId))
+            result = await post_url("viewlog/user/recordLog", ck, token)
+            if result['code']==-100 or '未登录' in str(result):
+                return
+            if result["code"] == 0 and success == 5:
+                logger.info(result["msg"])
                 break
+            if success == 2 or success == 3:
+                result = await post_url(
+                    "mission/user/promotion/join",
+                    ck,
+                    {
+                        "promotionId": promotionId,
+                        "nickName": "微信用户",
+                        "avatarUrl": "https://static-alias-1.360buyimg.com/jzt/mp/images/default_user_img.png",
+                        "openId": "",
+                    },
+                )
+                if result['code']==1:
+                    break
+                else:
+                    success += 1
+                    continue
             else:
                 success += 1
                 continue
-        else:
-            success += 1
-            continue
-    await post_url("mission/user/promotion/status", ck, {"promotionId": promotionId})
-    await post_url(
-        "mission/user/promotion/join",
-        ck,
-        {
-            "promotionId": promotionId,
-            "nickName": "微信用户",
-            "avatarUrl": "https://static-alias-1.360buyimg.com/jzt/mp/images/default_user_img.png",
-            "openId": "",
-        },
-    )
+        await post_url("mission/user/promotion/status", ck, {"promotionId": promotionId})
+        await post_url(
+            "mission/user/promotion/join",
+            ck,
+            {
+                "promotionId": promotionId,
+                "nickName": "微信用户",
+                "avatarUrl": "https://static-alias-1.360buyimg.com/jzt/mp/images/default_user_img.png",
+                "openId": "",
+            },
+        )
+    except:
+        pass
 
 async def promotionCreate(ck):
     number = '123456789'
@@ -325,29 +319,31 @@ async def search(ck,ua):
             result = await index(ck, ua)  # 获取频道信息
             if not result["success"]:
                 logger.warn("目前没有任何直播间信息")
-                return [],None
-            liveres = []
-            for n, live in enumerate(result["data"], 1):
-                liveId = live["liveId"]  # 直播id
-                result = await post_url('mission/user/promotion/invite',ck,{
-                                                                                "nickName":"微信用户",
-                                                                                "avatarUrl":"https://static-alias-1.360buyimg.com/jzt/mp/images/default_user_img.png",
-                                                                                "openId":str(''),"liveId":liveId})
-                if result['success']:
-                    if result['msg'] is None:
-                        liveId = result['data']['liveId']
-                        liveres.append(str(liveId))
-                    if '未注册' in str(result):
-                        result = await promotionCreate(ck)
-                        if result['success']:
-                            print('注册成功')
-                        else:
-                            print('注册失败log:'+str(result))
-                else:
-                    print(result['msg'])
-                    continue
-                
-            return liveres
+                return []
+            else:
+                liveres = []
+                for n, live in enumerate(result["data"], 1):
+                    liveId = live["liveId"]  # 直播id
+                    result = await post_url('mission/user/promotion/invite',ck,{
+                                                                                    "nickName":"微信用户",
+                                                                                    "avatarUrl":"https://static-alias-1.360buyimg.com/jzt/mp/images/default_user_img.png",
+                                                                            "openId":str(''),"liveId":liveId})
+                    logger.info(result)       
+                    if result['success']:
+                        if result['msg'] is None:
+                            liveId = result['data']['liveId']
+                            liveres.append(str(liveId))
+                        if '未注册' in str(result):
+                            result = await promotionCreate(ck)
+                            if result['success']:
+                                print('注册成功')
+                            else:
+                                print('注册失败log:'+str(result))
+                    else:
+                        print(result['msg'])
+                        continue
+                    
+                return liveres
         except:
             pass
 
@@ -359,19 +355,19 @@ async def main():
         with open('cklist.txt','r') as f:
             cks = f.read().split('\n')
     logger.info(f"共:{len(cks)}个CK")
+    ua = randomuserAgent()  # 随机ua
     
     while True:
         logger.info("------轮询------")
         logger.info(f"轮询ck")
-        rand_ck = choice(cks[5:15])
-        ua = randomuserAgent()  # 随机ua
         if inveteck == '':
             logger.info(f"没有配置车头子ck，快去填写吧")
             return
+        rand_ck = random.choice(cks[0:len(cks)])
         liveres = await search(rand_ck, ua)
         if len(liveres) == 0:
             logger.info("暂无活动,等待")
-            await asyncio.sleep(5)   # 等待时间
+            await asyncio.sleep(1)   # 等待时间
             continue
         
         liveId1 = liveres[0]
@@ -391,7 +387,7 @@ async def main():
                 result = await promotionCreate(inveteck)
                 if result['success']:
                     print('注册成功')
-                    break
+                    continue
             if '火爆' in str(result):
                 continue
             if "promotionId" in result["data"]:
