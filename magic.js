@@ -22,6 +22,7 @@ let wxBlackCookiePin = process.env.M_WX_BLACK_COOKIE_PIN
 Object.keys(jdCookieNode).forEach((item) => {
     cookies.push(jdCookieNode[item])
 })
+let LZ_AES_PIN = process.env.M_LZ_AES_PIN ? process.env.M_LZ_AES_PIN : ""
 
 const JDAPP_USER_AGENTS = [
     `jdapp;android;10.0.2;9;${uuid()};network/wifi;Mozilla/5.0 (Linux; Android 9; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044942 Mobile Safari/537.36`,
@@ -669,8 +670,8 @@ class Env {
         let scs = data?.headers['set-cookie'] || data?.headers['Set-Cookie']
             || ''
         if (!scs) {
-            if (data?.data?.LZ_TOKEN_KEY && data?.data?.LZ_TOKEN_VALUE) {
-                this.lz = `LZ_TOKEN_KEY=${data.data.LZ_TOKEN_KEY};LZ_TOKEN_VALUE=${data.data.LZ_TOKEN_VALUE};`;
+            if (data?.data?.LZ_TOKEN_KEY && data?.data?.LZ_TOKEN_VALUE && data?.data?.LZ_AES_PIN) {
+                this.lz = `LZ_TOKEN_KEY=${data.data.LZ_TOKEN_KEY};LZ_TOKEN_VALUE=${data.data.LZ_TOKEN_VALUE};LZ_AES_PIN=${data.data.LZ_AES_PIN};`;
             }
             return;
         }
@@ -684,6 +685,8 @@ class Env {
                     / /g, '') + ';' : ''
                 name.includes('LZ_TOKEN_VALUE=')
                     ? LZ_TOKEN_VALUE = name.replace(/ /g, '') + ';' : ''
+                name.includes('LZ_AES_PIN=') ? LZ_AES_PIN = name.replace(
+                    / /g, '') + ';' : ''
                 name.includes('JSESSIONID=') ? JSESSIONID = name.replace(/ /g,
                     '') + ';' : ''
                 name.includes('jcloud_alb_route=')
@@ -692,7 +695,9 @@ class Env {
                     '') + ';' : ''
             }
         }
-        if (JSESSIONID && LZ_TOKEN_KEY && LZ_TOKEN_VALUE) {
+        if (JSESSIONID && LZ_TOKEN_KEY && LZ_TOKEN_VALUE && LZ_AES_PIN) {
+            this.lz = `${JSESSIONID}${LZ_TOKEN_KEY}${LZ_TOKEN_VALUE}${LZ_AES_PIN}`
+        } else if (JSESSIONID && LZ_TOKEN_KEY && LZ_TOKEN_VALUE) {
             this.lz = `${JSESSIONID}${LZ_TOKEN_KEY}${LZ_TOKEN_VALUE}`
         } else if (LZ_TOKEN_KEY && LZ_TOKEN_VALUE) {
             this.lz = `${LZ_TOKEN_KEY}${LZ_TOKEN_VALUE}`
@@ -946,6 +951,7 @@ class Env {
         let ck = `IsvToken=${this.Token};` + this.lz + (this.Pin
             && "AUTH_C_USER=" + this.Pin + ";" || "")
         this.domain.includes('cjhy') ? ck += 'APP_ABBR=CJHY;' : ''
+        if (fn.includes('followShop')) ck += `${LZ_AES_PIN}`
         let headers = {
             "Host": this.domain,
             "Accept": "application/json",
