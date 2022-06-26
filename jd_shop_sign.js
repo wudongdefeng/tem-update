@@ -30,7 +30,6 @@ const token = [
 "1756CCA49D5D3C59B135BDC626472920",//27号删除
 "3676E6F564E5D04A8FC8D045BAD0B623",//28号删除
 "3968E5EB1C28E3CBF69337BDE60093F6",//30号删除
-
 ]
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
