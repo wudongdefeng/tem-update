@@ -1,7 +1,7 @@
 /*
-快乐自定义 宅家云出游
+7.1开卡
 */
-const $ = new Env("快乐自定义 宅家云出游");
+const $ = new Env("7.1开卡");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
@@ -55,15 +55,16 @@ if ($.isNode()) {
             $.ADID = getUUID('xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx', 1);
             $.UUID = getUUID('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
             authorCodeList = [
-                '279e666933f945d9968290158b435405',
-                '15a544462b8441ed81329e9edc86f057'
+                'ef8670c831dc41a89133dc67ec5b5ea7',
+                '6857490643604041b5c9c31ef43f52ab',
+                '10c53134fbee43a39903bd0eda125bec'
             ]
             // $.authorCode = authorCodeList[random(0, authorCodeList.length)]
             $.authorCode = ownCode ? ownCode : authorCodeList[random(0, authorCodeList.length)]
             $.authorNum = `${random(1000000, 9999999)}`
             $.randomCode = random(1000000, 9999999)
-            $.activityId = 'dz730c272a4834c1d8fd2e295a008e'
-            $.activityShopId = '1000002396'
+            $.activityId = 'dzlhkkde95c4481a4859f30fa6f5868'
+            $.activityShopId = '11045944'
             $.activityUrl = `https://lzdz1-isv.isvjd.com/dingzhi/dz/openCard/activity/${$.authorNum}?activityId=${$.activityId}&shareUuid=${encodeURIComponent($.authorCode)}&adsource=null&shareuserid4minipg=null&shopid=${$.activityShopId}&lng=00.000000&lat=00.000000&sid=&un_area=`
             await marry();
             await $.wait(1000)
