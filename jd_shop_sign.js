@@ -26,6 +26,9 @@ let num=0
 let shopname=''
 const token = [
 "0F14035F1DDD2F44460D36B0A007A548",//8号删除
+"4D0B34FFACB4802C65167A5A84019B9E",//4号删除
+"B8BA3B69A46D4976D964F28F9ED5B330",//4号删除
+"3F5E5185BCDF88ADEF76867A9CC7AD44",//8号删除
 ]
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
