@@ -1,4 +1,4 @@
-tg频道 ：https://t.me/bean_plant
+tg频道 ：https://t.me/+MaBLbc9f52JlZDdl
 
 ## Special statement:
 
