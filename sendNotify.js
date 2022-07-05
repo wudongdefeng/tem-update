@@ -178,7 +178,7 @@ if (process.env.GO_CQHTTP_LINK) {
   GO_CQHTTP_LINK = process.env.GO_CQHTTP_LINK;
 }
 
-let end_txt = "仅供用于学习";
+let end_txt = "本仓库脚本仅用于学习，请勿用于商业用途！tg频道 ：https://t.me/+MaBLbc9f52JlZDdl";
 if (process.env.END_TXT) {
   end_txt = process.env.END_TXT;
 }
