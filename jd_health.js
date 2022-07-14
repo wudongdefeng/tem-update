@@ -24,12 +24,13 @@ const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 const notify = $.isNode() ? require('./sendNotify') : "";
 let cookiesArr = [], cookie = "", allMessage = "", message;
 const inviteCodes = [
-  `T0225KkcRh9P9FbRKUygl_UJcgCjVfnoaW5kRrbA@T0159KUiH11Mq1bSKBoCjVfnoaW5kRrbA@T018v_hzQhwZ8FbUIRib1ACjVfnoaW5kRrbA`,
-  `T0225KkcRh9P9FbRKUygl_UJcgCjVfnoaW5kRrbA@T0159KUiH11Mq1bSKBoCjVfnoaW5kRrbA@T018v_hzQhwZ8FbUIRib1ACjVfnoaW5kRrbA`,
-  `T0225KkcRh9P9FbRKUygl_UJcgCjVfnoaW5kRrbA@T0159KUiH11Mq1bSKBoCjVfnoaW5kRrbA@T018v_hzQhwZ8FbUIRib1ACjVfnoaW5kRrbA`,
+,
+,
+,
 ]
 const ZLC = !(process.env.JD_JOIN_ZLC && process.env.JD_JOIN_ZLC === 'false')
 let reward = process.env.JD_HEALTH_REWARD_NAME ? process.env.JD_HEALTH_REWARD_NAME : ''
+const JD_ZLC_URL=process.env.JD_ZLC_URL?process.env.JD_ZLC_URL:"http://zlc1.chaoyi996.com:8880";
 const randomCount = $.isNode() ? 20 : 5;
 function oc(fn, defaultVal) {//optioanl chaining
   try {
@@ -87,7 +88,6 @@ async function main() {
     if (reward) {
       await getCommodities()
     }
-
     $.score = 0
     $.earn = false
     await getTaskDetail(-1)
@@ -103,6 +103,8 @@ async function main() {
     await helpFriends()
     await getTaskDetail(22);
     await getTaskDetail(-1)
+
+   
 
   } catch (e) {
     $.logErr(e)
@@ -150,23 +152,6 @@ function getTaskDetail(taskId = '') {
               if (oc(() => data.data.result.taskVos)) {
                 console.log(`\n【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${oc(() => data.data.result.taskVos[0].assistTaskDetailVo.taskToken)}\n`);
                 // console.log('好友助力码：' + oc(() => data.data.result.taskVos[0].assistTaskDetailVo.taskToken))
-                // ***************************
-                // 报告运行次数
-                if (ZLC) {
-                  if (oc(() => data.data.result.taskVos[0].assistTaskDetailVo.taskToken)) {
-                    $.code = data.data.result.taskVos[0].assistTaskDetailVo.taskToken
-                    for (let k = 0; k < 5; k++) {
-                      try {
-                        await runTimes()
-                        break
-                      } catch (e) {
-                      }
-                      await $.wait(Math.floor(Math.random() * 10 + 3) * 1000)
-                    }
-                  }
-                }
-                // ***************************
-
               }
             } else if (taskId === 22) {
               console.log(`${oc(() => data.data.result.taskVos[0].taskName)}任务，完成次数：${oc(() => data.data.result.taskVos[0].times)}/${oc(() => data.data.result.taskVos[0].maxTimes)}`)
@@ -213,21 +198,6 @@ function getTaskDetail(taskId = '') {
           resolve()
         }
       })
-  })
-}
-function runTimes() {
-  return new Promise((resolve, reject) => {
-    $.get({
-      url: `https://api.jdsharecode.xyz/api/runTimes?activityId=health&sharecode=${$.code}`
-    }, (err, resp, data) => {
-      if (err) {
-        console.log('上报失败', err)
-        reject(err)
-      } else {
-        console.log(data)
-        resolve()
-      }
-    })
   })
 }
 async function getCommodities() {
@@ -366,10 +336,10 @@ function safeGet(data) {
 }
 
 function readShareCode() {
-  console.log(`开始`)
+  console.log(`当前使用助力池${JD_ZLC_URL}`);
   return new Promise(async resolve => {
     $.get({
-      url: `https://api.jdsharecode.xyz/api/health/${randomCount}`,
+      url: `${JD_ZLC_URL}/health`,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
