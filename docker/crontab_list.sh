@@ -3,105 +3,87 @@
 #收集助力码
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
-##############短期活动##############
-# 头文字D
-59 8,15 * 3-6 * node /scripts/jd_faker_wind_mpdzcar.js >> /scripts/logs/jd_faker_wind_mpdzcar.log 2>&1
-# 探味奇遇记
-31 0,13 26-31,1-16 5,6 * node /scripts/jd_star_wind_xm618.js >> /scripts/logs/jd_star_wind_xm618.log 2>&1
-# 小米618瓜分千万豆
-5 17 25-31,1-18 5,6 * node /scripts/jd_kingran_wind_xiaomi.js >> /scripts/logs/jd_kingran_wind_xiaomi.log 2>&1
-# 特物
-33 14,20 * * * node /scripts/jd_star_wind_productZ4Brand.js >> /scripts/logs/jd_star_wind_productZ4Brand.log 2>&1
-11 10,15,20 * * * node /scripts/jd_kingran_wind_superBrandJK.js >> /scripts/logs/jd_kingran_wind_superBrandJK 2>&1
-5 8 * * * node /scripts/jd_superBrandSign.js >> /scripts/logs/jd_superBrandSign.log 2>&1
-
-# 许愿池
+55 2 * * * node /scripts/jd_kingran_wind_shangou.js >> /scripts/logs/jd_kingran_wind_shangou.log 2>&1
+38 22 * * * node /scripts/jd_wind_fcwb_help.js >> /scripts/logs/jd_wind_fcwb_help.log 2>&1
+6 6 6 6 * node /scripts/jd_kingran_wind_wxFansInterActionActivity.js >> /scripts/logs/jd_kingran_wind_wxFansInterActionActivity.log 2>&1
+40 11 * * * node /scripts/jd_kingran_wind_zdjr.js >> /scripts/logs/jd_kingran_wind_zdjr.log 2>&1
+45 3,15,23 * * * node /scripts/jd_shop_sign.js >> /scripts/logs/jd_shop_sign.log 2>&1
+30 4,16 * * * node /scripts/jd_kingran_wind_carplay.js >> /scripts/logs/jd_kingran_wind_carplay.log 2>&1
 40 0,2 * * * node /scripts/jd_kingran_wind_wish.js >> /scripts/logs/jd_kingran_wind_wish.log 2>&1
-#45 0,23 * * * node /scripts/jd_speed_redpocke.js >> /scripts/logs/jd_speed_redpocke.log 2>&1
-# MM领京豆
-20 9 * * * node /scripts/jd_smiek_gua_MMdou.js >> /scripts/logs/jd_smiek_gua_MMdou.log 2>&1
-# 女装盲盒
-4 2,10 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log 2>&1
-##############长期活动##############
-
-# 签到领现金
-30 0,22 * * * node /scripts/jd_kingran_wind_cash_windfgg.js >> /scripts/logs/jd_kingran_wind_cash_windfgg.log 2>&1
-# 极速版领券
-59 6,9,14,17,20 * * * node /scripts/jd_kingran_wind_5_2.js >> /scripts/logs/jd_kingran_wind_5_2.log 2>&1
-# 运费券提醒
-33 19 * * * node /scripts/jd_wind_yfcoupon.js >> /scripts/logs/jd_wind_yfcoupon.log 2>&1
-# 京东保价
-48 */8 * * * node /scripts/jd_faker_wind_price.js >> /scripts/logs/jd_faker_wind_price.log 2>&1
-# 清空购物车
-22 19 * * * node /scripts/jd_faker_wind_cleancart.js >> /scripts/logs/jd_faker_wind_cleancart.log 2>&1
-#玩一玩成就
-48 11 * * * node /scripts/jd_tsuk_wind_wyw.js >> /scripts/logs/jd_tsuk_wind_wyw.log 2>&1
-#京东试用
-15 12 * * * node /scripts/jd_faker_wind_try.js >> /scripts/logs/jd_faker_wind_try.log 2>&1
-# 签到
-7 0,17 * * * node /scripts/jd_zero_wind_bean_sign.js >> /scripts/logs/jd_zero_wind_bean_sign.log 2>&1
-#京喜签到
-11 0 * * * node /scripts/jx_sign.js >> /scripts/logs/jx_sign.log 2>&1
-30 1 * * * node /scripts/jd_wind_sign_xd.js >> /scripts/logs/jd_wind_sign_xd.log 2>&1
-# 摇京豆
-6 0,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
-# 东东农场
-15 6-18/6 * * * node /scripts/jd_fruit_Mod.js >> /scripts/logs/jd_fruit.log 2>&1
-
-# 摇钱树
-23 */2 * * * node /scripts/jd_moneyTree.js >> /scripts/logs/jd_moneyTree.log 2>&1
-# 东东萌宠
-35 6-18/6 * * * node /scripts/jd_hello_wind_pet.js >> /scripts/logs/jd_pet.log 2>&1
-35 0,4 * * * node /scripts/jd_kingran_wind_pet_help.js >> /scripts/logs/jd_pet.log 2>&1
-#京东极速版红包
-35 4 * * * node /scripts/jd_faker_wind_speed_signfree.js >> /scripts/logs/jd_faker_wind_speed_signfree.log 2>&1
-# 京东种豆得豆
-10 7-22/1 * * * node /scripts/jd_zero_wind_plantBean.js >> /scripts/logs/jd_zero_wind_plantBean.log 2>&1
-35 8,10 * * * node /scripts/jd_kingran_wind_plantBean_help.js >> /scripts/logs/jd_plantBean.log 2>&1
-# 取关京东店铺商品
-45 23 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log 2>&1
-# 京豆变动通知
-20 10,21 * * * node /scripts/jd_wind_bean_change.js >> /scripts/logs/jd_wind_bean_change.log 2>&1
-# 京喜工厂
-50 * * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
-0 5,10,15,20 * * * node /scripts/jd_star_wind_dreamFactory_tuan.js >> /scripts/logs/jd_star_wind_dreamFactory_tuan.log 2>&1
-# 京喜工厂列表
-0 0 * * * node /scripts/jd_kingran_wind_windgckc.js >> /scripts/logs/jd_kingran_wind_windgckc.log 2>&1
-# 东东工厂
-26 * * * * node /scripts/jd_jdfactory.js >> /scripts/logs/jd_jdfactory.log 2>&1
-# 送豆得豆(京东赚赚)
-47 2,13 * * * node /scripts/jd_sendBeans.js >> /scripts/logs/jd_sendBeans.log 2>&1
-# 京东快递签到
-47 1 * * * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log 2>&1
-# 领京豆额外奖励(每日可获得3京豆)
-23 1,12,22 * * * node /scripts/jd_kingran_wind_bean_home.js >> /scripts/logs/jd_kingran_wind_bean_home.log 2>&1
-# 微信小程序京东赚赚
-6 0-5/1,11 * * * node /scripts/jd_faker_wind_jdzz.js >> /scripts/logs/jd_faker_wind_jdzz.log 2>&1
-# 导到所有互助码
-23 7 * * * node /scripts/jd_get_share_code.js >> /scripts/logs/jd_get_share_code.log 2>&1
-# 极速版赚金币
-30 0,20 * * * node /scripts/jd_zero_wind_speed_sign.js >> /scripts/logs/jd_zero_wind_speed_sign.log 2>&1
-# 兑换过期京豆为喜豆
-10 22,23 * * * node /scripts/jd_faker_wind_exchangewindbeans.js >> /scripts/logs/jd_faker_wind_exchangewindbeans.log 2>&1
-#美丽研究院
-41 7,12,19 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
-#京东极速版签到+赚现金任务
-21 1,6 * * * node /scripts/jd_speed_sign.js >> /scripts/logs/jd_speed_sign.log 2>&1
-#京喜财富岛
-18 0-23/1 * * * node /scripts/jd_cfd.js >> /scripts/logs/jd_cfd.log 2>&118 0,18 * * * * * * node /scripts/jd_kingran_wind_cfd_help.js >> /scripts/logs/jd_kingran_wind_cfd_help.log 2>&1
-
-# 删除优惠券(默认注释，如需要自己开启，如有误删，已删除的券可以在回收站中还原，慎用)
-#20 9 * * 6 node /scripts/jd_delCoupon.js >> /scripts/logs/jd_delCoupon.log 2>&1
-#京东健康社区
-13 1,6,22 * * * node /scripts/jd_zero_wind_health.js >> /scripts/logs/jd_health.log 2>&11
-3 2,10 * * * node /scripts/jd_zero_wind_health_help.js >> /scripts/logs/jd_health.log 2>&1
-#京东健康社区收集健康能量
+23 1,18 * * * node /scripts/jd_kingran_wind_bean_home.js >> /scripts/logs/jd_kingran_wind_bean_home.log 2>&1
+27 10 * * * node /scripts/jd_kingran_wind_insight.js >> /scripts/logs/jd_kingran_wind_insight.log 2>&1
+18 9,20 * * * node /scripts/jd_kingran_wind_supermh.js >> /scripts/logs/jd_kingran_wind_supermh.log 2>&1
+35 18 1-30 6-8 * node /scripts/jd_kingran_wind_wyjg.js >> /scripts/logs/jd_kingran_wind_wyjg.log 2>&1
+36 14 * * * node /scripts/jd_kingran_wind_superBrandSign.js >> /scripts/logs/jd_kingran_wind_superBrandSign.log 2>&1
+49 14 * * * node /scripts/m_jd_fav_shop_gift.js >> /scripts/logs/m_jd_fav_shop_gift.log 2>&1
+40 0,15 * * * node /scripts/jd_kingran_wind_cleancart.js >> /scripts/logs/jd_kingran_wind_cleancart.log 2>&1
+1 1 * * * node /scripts/jd_kingran_wind_wxCollectCard.js >> /scripts/logs/jd_kingran_wind_wxCollectCard.log 2>&1
+31 21,22 * * * node /scripts/msechen_half_rain.js >> /scripts/logs/msechen_half_rain.log 2>&1
+3 0,12,18 * * * node /scripts/wind_shop_sign.js >> /scripts/logs/wind_shop_sign.log 2>&1
+9 2,11 * * * node /scripts/jd_xiaoshou_jr_sign.js >> /scripts/logs/jd_xiaoshou_jr_sign.log 2>&1
+2 0-23/4 * * * node /scripts/jd_wind_cash_Mod_Panda.js >> /scripts/logs/jd_wind_cash_Mod_Panda.log 2>&1
+20 20 * * * node /scripts/jd_try_notify.py >> /scripts/logs/jd_try_notify.log 2>&1
+8 0-23/3 * * * node /scripts/jd_speed.js >> /scripts/logs/jd_speed.log 2>&1
+10 0 * * * node /scripts/jd_shop.js >> /scripts/logs/jd_shop.log 2>&1
+50 12-14 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
+9 3 * * * node /scripts/jd_kingran_wind_wsdlb.js >> /scripts/logs/jd_kingran_wind_wsdlb.log 2>&1
+2 10,18,20 * * * node /scripts/jd_kingran_wind_superBrandJK.js >> /scripts/logs/jd_kingran_wind_superBrandJK.log 2>&1
+13 1,22,23 * * * node /scripts/jd_kingran_wind_daily_lottery.js >> /scripts/logs/jd_kingran_wind_daily_lottery.log 2>&1
+9 3 * * * node /scripts/jd_kingran_wind_cash_wx.js >> /scripts/logs/jd_kingran_wind_cash_wx.log 2>&1
+9 3 * * * node /scripts/jd_kingran_wind_bean_info.js >> /scripts/logs/jd_kingran_wind_bean_info.log 2>&1
+0 * * * * node /scripts/jd_joy_park_run.ts >> /scripts/logs/jd_joy_park_run.ts 2>&1
+10 0 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
+9 3 * * * node /scripts/wind_dreamFactory_tuan.js >> /scripts/logs/wind_dreamFactory_tuan.log 2>&1
+50 4,12,21 * * * node /scripts/m_jd_farm_automation.js >> /scripts/logs/m_jd_farm_automation.log 2>&1
+15,30,45 0 * * * node /scripts/jd_zjd.ts >> /scripts/logs/jd_zjd.ts 2>&1
+9 3 * * * node /scripts/jd_zero_wind_mofang_ex.js >> /scripts/logs/jd_zero_wind_mofang_ex.log 2>&1
+30 6,18 * * * node /scripts/jd_xiaoshou.mf.js >> /scripts/logs/jd_xiaoshou.mf.log 2>&1
+9 3 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
+0 0,12 * * * node /scripts/jd_wind_red.js >> /scripts/logs/jd_wind_red.log 2>&1
+40 6,12,23 * * * node /scripts/jd_wind_bean_change.js >> /scripts/logs/jd_wind_bean_change.log 2>&1
+30 7 * * * node /scripts/jd_wen_wind_ddnc_farmpark.js >> /scripts/logs/jd_wen_wind_ddnc_farmpark.log 2>&1
+9 3 * * * node /scripts/jd_star_wind_twCard.js >> /scripts/logs/jd_star_wind_twCard.log 2>&1
+9 9 * * * node /scripts/jd_star_wind_productZ4Brand.js >> /scripts/logs/jd_star_wind_productZ4Brand.log 2>&1
+21 9 * * * node /scripts/jd_smiek_gua_MMdou.js >> /scripts/logs/jd_smiek_gua_MMdou.log 2>&1
+9 3 * * * node /scripts/jd_rush_wind_wxCollectionActivity.js >> /scripts/logs/jd_rush_wind_wxCollectionActivity.log 2>&1
+9 3 * * * node /scripts/jd_rush_wind_sevenDay.js >> /scripts/logs/jd_rush_wind_sevenDay.log 2>&1
+9 4 * * * node /scripts/jd_rush_lzclient.js >> /scripts/logs/jd_rush_lzclient.log 2>&1
+39 3 * * * node /scripts/jd_kingran_wind_m_sign.js >> /scripts/logs/jd_kingran_wind_m_sign.log 2>&1
+11 1,15 * * * node /scripts/jd_kingran_wind_joymanor_task.js >> /scripts/logs/jd_kingran_wind_joymanor_task.log 2>&1
+5 2,18 * * * node /scripts/jd_kingran_wind_joyjd_open.js >> /scripts/logs/jd_kingran_wind_joyjd_open.log 2>&1
+40 0-20/4 * * * node /scripts/jd_kingran_wind_fc_winner.js >> /scripts/logs/jd_kingran_wind_fc_winner.log 2>&1
+10 0 * * * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log 2>&1
+0 7,19 * * * node /scripts/jd_hello_wind_speed_coin.js >> /scripts/logs/jd_hello_wind_speed_coin.log 2>&1
+19 2 * * * node /scripts/jd_hello_wind_queryBean.js >> /scripts/logs/jd_hello_wind_queryBean.log 2>&1
 5-45/20 * * * * node /scripts/jd_health_collect.js >> /scripts/logs/jd_health_collect.log 2>&1
-# 幸运大转盘
-10 10,23 * * * node /scripts/jd_market_lottery.js >> /scripts/logs/jd_market_lottery.log 2>&1
-# 领金贴
-5 0 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
-#京喜牧场
-15 */2 * * * node /scripts/jd_faker_wind_windmc.js >> /scripts/logs/jd_jxmc.log 2>&1
-#京喜牧场红包
-0 0 * * * node /scripts/jd_faker_wind_windmc_hb.js >> /scripts/logs/jd_faker_wind_windmc_hb.log 2>&1
+13 1,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log 2>&1
+20 13 * * node /scripts/6 jd_get_share_code.js >> /scripts/logs/6 jd_get_share_code.log 2>&1
+5 6-18/6 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log 2>&1
+9 8 * * * node /scripts/jd_faker_wind_wq_wxsign.js >> /scripts/logs/jd_faker_wind_wq_wxsign.log 2>&1
+20 * * * * node /scripts/jd_faker_wind_windmc.js >> /scripts/logs/jd_faker_wind_windmc.log 2>&1
+9 3 * * * node /scripts/jd_faker_wind_unsubscribe_xh.js >> /scripts/logs/jd_faker_wind_unsubscribe_xh.log 2>&1
+55 23 * * * node /scripts/jd_faker_wind_unsubscribe.js >> /scripts/logs/jd_faker_wind_unsubscribe.log 2>&1
+9 0,8,22 * * * node /scripts/jd_faker_wind_speed_signfree.js >> /scripts/logs/jd_faker_wind_speed_signfree.log 2>&1
+21 3,12 * * * node /scripts/jd_faker_wind_speed_sign.js >> /scripts/logs/jd_faker_wind_speed_sign.log 2>&1
+20 0,22 * * * node /scripts/jd_faker_wind_speed_redpocke.js >> /scripts/logs/jd_faker_wind_speed_redpocke.log 2>&1
+9 1,8 * * * node /scripts/jd_faker_wind_sign.js >> /scripts/logs/jd_faker_wind_sign.log 2>&1
+29 4 * * * node /scripts/jd_faker_wind_share.js >> /scripts/logs/jd_faker_wind_share.log 2>&1
+20 8 * * * node /scripts/jd_faker_wind_sgmh.js >> /scripts/logs/jd_faker_wind_sgmh.log 2>&1
+30 21,22 * * * node /scripts/jd_faker_wind_redrain_half.js >> /scripts/logs/jd_faker_wind_redrain_half.log 2>&1
+39 20 * * * node /scripts/jd_faker_wind_price.js >> /scripts/logs/jd_faker_wind_price.log 2>&1
+9 3 * * * node /scripts/jd_faker_wind_mpdzcar.js >> /scripts/logs/jd_faker_wind_mpdzcar.log 2>&1
+3 0-23/2 * * * node /scripts/jd_faker_wind_moneyTree.js >> /scripts/logs/jd_faker_wind_moneyTree.log 2>&1
+10 0 * * * node /scripts/jd_faker_wind_jdzz.js >> /scripts/logs/jd_faker_wind_jdzz.log 2>&1
+20 0-23/3 * * * node /scripts/jd_faker_wind_jdtj_winner.js >> /scripts/logs/jd_faker_wind_jdtj_winner.log 2>&1
+5 4,14 * * * node /scripts/jd_health.js >> /scripts/logs/jd_health.log 2>&1
+5 0,23 * * * node /scripts/jd_faker_wind_club_lottery.js >> /scripts/logs/jd_faker_wind_club_lottery.log 2>&1
+50 * * * * node /scripts/jd_faker_wind_cfd_hb.js >> /scripts/logs/jd_faker_wind_cfd_hb.log 2>&1
+9 0,4 * * * node /scripts/jd_faker_wind_bean_sign.js >> /scripts/logs/jd_faker_wind_bean_sign.log 2>&1
+50 * * * * node /scripts/jd_dreamFactory.js >> /scripts/logs/jd_dreamFactory.log 2>&1
+5 0,23 * * * node /scripts/jd_club_lottery.js >> /scripts/logs/jd_club_lottery.log 2>&1
+1 * * * * node /scripts/jd_cfd.js >> /scripts/logs/jd_cfd.log 2>&1
+1 7,12,19 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
+10 0,6-23 * * * node /scripts/jd_jdfactory.js >> /scripts/logs/jd_jdfactory.log 2>&1
+15 6-18/6 * * * node /scripts/jd_pet.js >> /scripts/logs/jd_pet.log 2>&1
+1 7-21/2 * * * node /scripts/jd_plantBean.js >> /scripts/logs/jd_plantBean.log 2>&1
+20 8 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log 2>&1
