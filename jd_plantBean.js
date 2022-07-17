@@ -564,10 +564,10 @@ async function helpShare(plantUuid) {
 async function plantBeanIndex() {
   $.plantBeanIndexResult = await request('plantBeanIndex');//plantBeanIndexBody
 }
-function readShareCode() {
+function readShareCode(code) {
   console.log(`当前使用助力池${JD_ZLC_URL}`)
   return new Promise(async resolve => {
-    $.get({ url: JD_ZLC_URL +`/bean`, timeout: 10000}, (err, resp, data) => {
+    $.get({ url: JD_ZLC_URL +`/bean?code=`+code, timeout: 10000}, (err, resp, data) => {
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
@@ -603,7 +603,8 @@ function shareCodesFormat() {
     if (!ZLC) {
       console.log(`您设置了不加入助力池，跳过\n`)
     } else {
-      const readShareCodeRes = await readShareCode();
+        
+      const readShareCodeRes = await readShareCode(jdPlantBeanShareArr[$.index - 1]);
       if (readShareCodeRes && readShareCodeRes.code === 200) {
         newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
       }
