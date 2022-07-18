@@ -39,7 +39,7 @@ let newShareCodes = [];
 let shareCodes = []
 let jdFruitShareArr = []
 let message = '', subTitle = '', option = {}, isFruitFinished = false;
-let shareCodes = ['64af0fffd7b3478585b2b71b377613ce@9fe344f3887243339369fd1f564ec49e@141be55835d4494fb06b0ac4e895ddef@17c3b3c449fd45448736a6b870bd9da9@68fba463096440108923e553a8a8391b']
+const retainWater = $.isNode() ? (process.env.retainWater ? process.env.retainWater : 100) : ($.getdata('retainWater') ? $.getdata('retainWater') : 100);//保留水滴大于多少g,默认100g;
 let jdNotify = false;//是否关闭通知，false打开通知推送，true关闭通知推送
 let jdFruitBeanCard = false;//农场使用水滴换豆卡(如果出现限时活动时100g水换20豆,此时比浇水划算,推荐换豆),true表示换豆(不浇水),false表示不换豆(继续浇水),脚本默认是浇水
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
@@ -1133,7 +1133,6 @@ async function GetCollect() {
             newShareCodes = newShareCodes.concat([...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])]);
         }
         console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify(newShareCodes)}`)
-        await $.wait(1000000);
     } catch (e) {
         $.logErr(e);
     }
