@@ -71,7 +71,7 @@
 39 20 * * * node /scripts/jd_faker_wind_price.js >> /scripts/logs/jd_faker_wind_price.log 2>&1
 9 3 * * * node /scripts/jd_faker_wind_mpdzcar.js >> /scripts/logs/jd_faker_wind_mpdzcar.log 2>&1
 3 0-23/2 * * * node /scripts/jd_faker_wind_moneyTree.js >> /scripts/logs/jd_faker_wind_moneyTree.log 2>&1
-10 0 * * * node /scripts/jd_faker_wind_jdzz.js >> /scripts/logs/jd_faker_wind_jdzz.log 2>&1
+10 0 * * * node /scripts/jd_xiao_wind_jdzz.js >> /scripts/logs/jd_xiao_wind_jdzz.log 2>&1
 20 0-23/3 * * * node /scripts/jd_faker_wind_jdtj_winner.js >> /scripts/logs/jd_faker_wind_jdtj_winner.log 2>&1
 5 4,14 * * * node /scripts/jd_health.js >> /scripts/logs/jd_health.log 2>&1
 5 0,23 * * * node /scripts/jd_faker_wind_club_lottery.js >> /scripts/logs/jd_faker_wind_club_lottery.log 2>&1
