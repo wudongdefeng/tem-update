@@ -7,7 +7,7 @@ jd_cjhy_activityUrl 活动地址 必需
 1 1 1 1 1 1 jd_cjzdgf.js, tag=CJ组队瓜分京豆, enabled=true
 let jd_cjhy_activityId = "2584bc5fb137415c87cedbb2e56bda3c" // 活动ID
 let jd_cjhy_activityUrl = "https://cjhydz-isv.isvjcloud.com" // 活动地址
-
+*/
 const $ = new Env('CJ组队瓜分京豆');
 
 const notify = $.isNode() ? require('./sendNotify') : '';
