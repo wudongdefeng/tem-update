@@ -1,4 +1,4 @@
-tg频道 ：https://t.me/+MaBLbc9f52JlZDdl
+tg频道 ：https://t.me/+MmaqAfh4_dIwZjBl
 
 ## Special statement:
 
