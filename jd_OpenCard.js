@@ -47,7 +47,7 @@ message = '';
       $.index = i + 1;
       message = '';
       $.nickName = '';
-      await TotalBean();
+      //await TotalBean();
       $.UserName = $.nickName || $.UserName;
       console.log(`\n******开始【京东账号${$.index}】${$.UserName}*********\n`);
       await getUA()
