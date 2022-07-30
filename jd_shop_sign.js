@@ -43,7 +43,7 @@ const token = [
 "5B8C563721003510747DD47BD8D5297A",//7.31删
 "C36E42C7BA5F40A75AB1BF3D38C007A7",//8.3删
 "C1B3B8D4BBE96E6A3EF0C12F27F868D3",//8.5删
-"97FB8DEB90959B4495E90B45B3781508",//8.3删
+"5ADCA39CC24D5F7A9203D485CB6E315E",//8.3删
 ]
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -73,7 +73,7 @@ if ($.isNode()) {
       $.isLogin = true;
       $.nickName = '';
       message = '';
-      //await TotalBean();
+      ////await TotalBean();
       console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
