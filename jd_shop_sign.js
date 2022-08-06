@@ -26,21 +26,9 @@ let num=0
 let shopname=''
 const token = [
 "E0087463F85940305DCA705308208EBB",//8.20
-"BB2830653B594DA6F552E0E6A3A3152A",//8.1删
-"9958AB926F4070AF8E14B236DD3CB2C0",//8.1删
 "C5340B6B972F2A6519E2AA5C8D1CA66E",//8.22
-"8DB49116004EED1D0D944A55F7F33003",//8.3删
-"AC959DB80E29F4F7CA1EA409C165793B",//8.3删
-"C84F63CEFA39F70F461F7F4FAF3DD08A",//8.3删
-"27EB8334680B0408C8E6A7A0C1418248",//8.1删
-"E9901BA2CAD9B9DFE202DD443980A1B3",//8.1删
-"F0A7971BFC6A5C12B06A45080B6C04CF",//8.3删
-"FFBDF3107D647C955CF223B3B0A4A52D",//8.3删
-"C36E42C7BA5F40A75AB1BF3D38C007A7",//8.3删
-"C1B3B8D4BBE96E6A3EF0C12F27F868D3",//8.5删
-"5ADCA39CC24D5F7A9203D485CB6E315E",//8.3删
-"0D42F0A3359FBC13F816F22201F91EE6",//8.6删
-"AB549463C778127E4A3EA0F9AE447F43",//8.2删
+"C5576C87F366A2A17143E6888A76DB5D",//8.8删除
+"77D662C4B5D4A0B3DF95382F7243BA99",//8.8删除
 ]
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -70,7 +58,7 @@ if ($.isNode()) {
       $.isLogin = true;
       $.nickName = '';
       message = '';
-      ////await TotalBean();
+      //////await TotalBean();
       console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
