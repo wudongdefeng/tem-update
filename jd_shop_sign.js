@@ -29,6 +29,11 @@ const token = [
 "C5340B6B972F2A6519E2AA5C8D1CA66E",//8.22
 "C5576C87F366A2A17143E6888A76DB5D",//8.8删除
 "77D662C4B5D4A0B3DF95382F7243BA99",//8.8删除
+"F622ED582F3A063A4D39FAB572C103C4",//8.13删
+"FB61ABDA3E3EBF8DD84139912EDE1F08",//8.22删
+"ADB94B3930FA201BE1B7B9495AEDCAFB",//8.13删
+"DB2F47D1868FB2E217D22195AA081FC3",//8.13删
+"E2EBE09A5DD3BE4805E0CCBBD0E80A42",//8.9删
 ]
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
@@ -58,7 +63,7 @@ if ($.isNode()) {
       $.isLogin = true;
       $.nickName = '';
       message = '';
-      //////await TotalBean();
+      ////////await TotalBean();
       console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
