@@ -14,7 +14,7 @@ let testMode = process.env.TEST_MODE?.includes('on') ? true
 let mode = process.env.MODE ? process.env.MODE : "local"
 
 let apiToken = process.env.M_API_TOKEN ? process.env.M_API_TOKEN : ""
-let apiSignUrl = process.env.M_API_SIGN_URL ? process.env.M_API_SIGN_URL : "http://imagic.eu.org:17840/sign"
+let apiSignUrl = process.env.M_API_SIGN_URL ? process.env.M_API_SIGN_URL : "http://ailoveu.eu.org:19840/sign"
 
 let wxBlackCookiePin = process.env.M_WX_BLACK_COOKIE_PIN
     ? process.env.M_WX_BLACK_COOKIE_PIN : ''
@@ -22,7 +22,6 @@ let wxBlackCookiePin = process.env.M_WX_BLACK_COOKIE_PIN
 Object.keys(jdCookieNode).forEach((item) => {
     cookies.push(jdCookieNode[item])
 })
-let LZ_AES_PIN = process.env.M_LZ_AES_PIN ? process.env.M_LZ_AES_PIN : ""
 
 const JDAPP_USER_AGENTS = [
     `jdapp;android;10.0.2;9;${uuid()};network/wifi;Mozilla/5.0 (Linux; Android 9; MHA-AL00 Build/HUAWEIMHA-AL00; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/66.0.3359.126 MQQBrowser/6.2 TBS/044942 Mobile Safari/537.36`,
@@ -123,9 +122,9 @@ class Env {
         blacklist: [],
         whitelist: []
     }) {
-        //console.log('运行参数：', data);
+        console.log('运行参数：', data);
         this.filename = process.argv[1];
-        //console.log(`${this.name} ${this.filename} 开始运行...`);
+        console.log(`${this.now()} ${this.name} ${this.filename} 开始运行...`);
         this.start = this.timestamp();
         let accounts = "";
         if (__dirname.includes("magic")) {
@@ -148,14 +147,14 @@ class Env {
             this.bot = data.bot;
         }
 
-        //console.log('账号总数：', cookies.length)
+        console.log('原始ck长度', cookies.length)
         if (data?.blacklist?.length > 0) {
             for (const cki of this.__as(data.blacklist)) {
                 delete cookies[cki - 1];
             }
         }
         this.delBlackCK()
-        //console.log('排除黑号：', cookies.length)
+        console.log('排除黑名单后ck长度', cookies.length)
         if (data?.whitelist?.length > 0) {
             let cks = []
             for (const cki of this.__as(data.whitelist)) {
@@ -165,7 +164,7 @@ class Env {
             }
             cookies = cks;
         }
-        console.log('运行账号：', cookies.length)
+        console.log('设置白名单后ck长度', cookies.length)
 
         if (data?.random) {
             cookies = this.randomArray(cookies)
@@ -231,7 +230,7 @@ class Env {
             }
         }
         await this.after()
-        console.log(`${this.name} 运行结束,耗时 ${this.timestamp()
+        console.log(`${this.now()} ${this.name} 运行结束,耗时 ${this.timestamp()
         - this.start}ms\n`)
         testMode && this.msg.length > 0 ? console.log(this.msg.join("\n")) : ''
         if (!data?.o2o) {
@@ -312,7 +311,7 @@ class Env {
     async send() {
         if (this.msg?.length > 0) {
             this.msg.push(
-                `\n时间：时长：${((this.timestamp() - this.start)
+                `\n时间：${this.now()} 时长：${((this.timestamp() - this.start)
                     / 1000).toFixed(2)}s`)
             if (this.bot) {
                 await notify.sendNotify("/" + this.name,
@@ -401,7 +400,7 @@ class Env {
 
     log(...msg) {
         this.s ? console.log(...msg) : console.log(
-            `${this.accounts[this.username] || this.username}`,
+            `${this.now()} ${this.accounts[this.username] || this.username}`,
             ...msg)
     }
 
@@ -670,13 +669,13 @@ class Env {
         let scs = data?.headers['set-cookie'] || data?.headers['Set-Cookie']
             || ''
         if (!scs) {
-            if (data?.data?.LZ_TOKEN_KEY && data?.data?.LZ_TOKEN_VALUE && data?.data?.LZ_AES_PIN) {
-                this.lz = `LZ_TOKEN_KEY=${data.data.LZ_TOKEN_KEY};LZ_TOKEN_VALUE=${data.data.LZ_TOKEN_VALUE};LZ_AES_PIN=${data.data.LZ_AES_PIN};`;
+            if (data?.data?.LZ_TOKEN_KEY && data?.data?.LZ_TOKEN_VALUE) {
+                this.lz = `LZ_TOKEN_KEY=${data.data.LZ_TOKEN_KEY};LZ_TOKEN_VALUE=${data.data.LZ_TOKEN_VALUE};`;
             }
             return;
         }
         let LZ_TOKEN_KEY = '', LZ_TOKEN_VALUE = '', JSESSIONID = '',
-            jcloud_alb_route = '', ci_session = ''
+            jcloud_alb_route = '', ci_session = '', LZ_AES_PIN= ''
         let sc = typeof scs != 'object' ? scs.split(',') : scs
         for (let ck of sc) {
             let name = ck.split(";")[0].trim()
@@ -685,29 +684,22 @@ class Env {
                     / /g, '') + ';' : ''
                 name.includes('LZ_TOKEN_VALUE=')
                     ? LZ_TOKEN_VALUE = name.replace(/ /g, '') + ';' : ''
-                name.includes('LZ_AES_PIN=') ? LZ_AES_PIN = name.replace(
-                    / /g, '') + ';' : ''
                 name.includes('JSESSIONID=') ? JSESSIONID = name.replace(/ /g,
                     '') + ';' : ''
                 name.includes('jcloud_alb_route=')
                     ? jcloud_alb_route = name.replace(/ /g, '') + ';' : ''
                 name.includes('ci_session=') ? ci_session = name.replace(/ /g,
                     '') + ';' : ''
+                name.includes('LZ_AES_PIN=') ? this.LZ_AES_PIN = name.replace(/ /g, '')
+                    + ';' : ''
+
             }
         }
-        if (JSESSIONID && LZ_TOKEN_KEY && LZ_TOKEN_VALUE && LZ_AES_PIN) {
-            this.lz = `${JSESSIONID}${LZ_TOKEN_KEY}${LZ_TOKEN_VALUE}${LZ_AES_PIN}`
-        } else if (JSESSIONID && LZ_TOKEN_KEY && LZ_TOKEN_VALUE) {
-            this.lz = `${JSESSIONID}${LZ_TOKEN_KEY}${LZ_TOKEN_VALUE}`
+
+        if (JSESSIONID && LZ_TOKEN_KEY && LZ_TOKEN_VALUE) {
+            this.lz = `${JSESSIONID}${LZ_TOKEN_KEY}${LZ_TOKEN_VALUE}${this.LZ_AES_PIN||''}`
         } else if (LZ_TOKEN_KEY && LZ_TOKEN_VALUE) {
-            this.lz = `${LZ_TOKEN_KEY}${LZ_TOKEN_VALUE}`
-        } else if (JSESSIONID && jcloud_alb_route) {
-            this.lz = `${JSESSIONID}${jcloud_alb_route}`
-        } else if (JSESSIONID) {
-            this.lz = `${JSESSIONID}`
-        }
-        if (ci_session) {
-            this.lz = `${ci_session}`
+            this.lz = `${LZ_TOKEN_KEY}${LZ_TOKEN_VALUE}${this.LZ_AES_PIN||''}`
         }
         // testMode ? this.log('lz', this.lz) : ''
     }
@@ -858,17 +850,27 @@ class Env {
     }
 
     async sign(fn, body = {}) {
-        let b = {"fn": fn, "body": body};
-        let h = {"key": "fMQ8sw1y5zF4RZgT"}
-        try {
-            let {data} = await this.request(`http://imagic.eu.org:17840/sign`,h, b);
-            //console.log(data)
-            return {fn: data.fn, sign: data.body};
-        } catch (e) {
-            console.log("sign接口异常")
-            //console.log("请自行配置sign实现")
+        if ('isvObfuscator'===fn){
+            let b = {"functionId": fn, "body": JSON.stringify(body)};
+            let  h= {"Content-Type": "application/json","Cookie":"HELLO WORLD"}
+            try {
+                let {data} = await this.request('https://api.lfyouse.org/jdsign', h, b);
+                console.log(data)
+                return {fn: fn, sign: data};
+            } catch (e) {
+                console.log("isvObfuscator sign接口异常")
+            }
+        }else {
+            let b = {"fn": fn, "body": body};
+            let h = {"token": apiToken}
+            try {
+                let {data} = await this.request(apiSignUrl, h, b);
+                return {fn: data.fn, sign: data.body};
+            } catch (e) {
+                console.log("sign接口异常")
+            }
+            return {fn: "", sign: ""};
         }
-        return {fn: "", sign: ""};
     }
 
     async _algo() {
@@ -920,19 +922,12 @@ class Env {
     }
 
     async isvObfuscator() {
-        let url = `https://api.m.jd.com/client.action?functionId=isvObfuscator`
         let body = ''
-        switch (this.domain) {
-            case 'cjhy-isv.isvjcloud.com':
-            case 'lzkj-isv.isvjcloud.com':
-            case 'txzj-isv.isvjcloud.com':
-            case 'lzdz-isv.isvjcloud.com':
-            case 'cjhydz-isv.isvjcloud.com':
-                body = this.randomArray(ISV_OBFUSCATOR[this.domain], 1)[0]
-                break
-            default:
-                body = 'adid=7B411CD9-D62C-425B-B083-9AFC49B94228&area=16_1332_42932_43102&body=%7B%22url%22%3A%22https%3A%5C/%5C/cjhydz-isv.isvjcloud.com%22%2C%22id%22%3A%22%22%7D&build=167541&client=apple&clientVersion=9.4.0&d_brand=apple&d_model=iPhone8%2C1&eid=eidId10b812191seBCFGmtbeTX2vXF3lbgDAVwQhSA8wKqj6OA9J4foPQm3UzRwrrLdO23B3E2wCUY/bODH01VnxiEnAUvoM6SiEnmP3IPqRuO%2By/%2BZo&isBackground=N&joycious=48&lang=zh_CN&networkType=wifi&networklibtype=JDNetworkBaseAF&openudid=2f7578cb634065f9beae94d013f172e197d62283&osVersion=13.1.2&partner=apple&rfs=0000&scope=11&screen=750%2A1334&sign=60bde51b4b7f7ff6e1bc1f473ecf3d41&st=1613720203903&sv=110&uts=0f31TVRjBStG9NoZJdXLGd939Wv4AlsWNAeL1nxafUsZqiV4NLsVElz6AjC4L7tsnZ1loeT2A8Z5/KfI/YoJAUfJzTd8kCedfnLG522ydI0p40oi8hT2p2sNZiIIRYCfjIr7IAL%2BFkLsrWdSiPZP5QLptc8Cy4Od6/cdYidClR0NwPMd58K5J9narz78y9ocGe8uTfyBIoA9aCd/X3Muxw%3D%3D&uuid=hjudwgohxzVu96krv/T6Hg%3D%3D&wifiBssid=9cf90c586c4468e00678545b16176ed2'
+        let newVar = await this.sign('isvObfuscator', {'id': '', 'url': `https://${this.domain}`});
+        if (newVar.sign) {
+            body = newVar.sign;
         }
+        let url = `https://api.m.jd.com/client.action?functionId=isvObfuscator`
         let headers = {
             "Accept": "*/*",
             "Accept-Encoding": "gzip, deflate, br",
@@ -952,7 +947,6 @@ class Env {
         let ck = `IsvToken=${this.Token};` + this.lz + (this.Pin
             && "AUTH_C_USER=" + this.Pin + ";" || "")
         this.domain.includes('cjhy') ? ck += 'APP_ABBR=CJHY;' : ''
-        if (fn.includes('followShop')) ck += `${LZ_AES_PIN}`
         let headers = {
             "Host": this.domain,
             "Accept": "application/json",
@@ -966,6 +960,7 @@ class Env {
             "User-Agent": this.UA
         }
         let {data} = await this.request(url, headers, body);
+        console.log(JSON.stringify(data))
         return data;
     }
 
