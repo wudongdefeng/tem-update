@@ -135,7 +135,7 @@ async function openCardNew() {
                     } else {
                         $.log("已经是会员了")
                     }
-                    await $.wait(500)
+                    await $.wait(800)
                 }
             }
             console.log('6.加入购物车 ->')
