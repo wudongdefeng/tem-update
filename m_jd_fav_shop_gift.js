@@ -63,7 +63,7 @@ $.logic = async function () {
     }
     await DelShopFav()
 };
-$.run({wait: [300, 1000],whitelist: ['1-5']})
+$.run({wait: [300, 1000],whitelist: []})
 .catch(reason => $.log(reason))
 
 async function GiveShopGift() {
