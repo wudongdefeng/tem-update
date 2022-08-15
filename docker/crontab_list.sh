@@ -89,3 +89,4 @@
 20 10,18,20 * * * node /scripts/jd_kingran_wind_SuperBrandJXZ.js >> /scripts/logs/jd_kingran_wind_SuperBrandJXZ.log 2>&1
 20 10,18,20 * * * node /scripts/jd_kingran_wind_try.js >> /scripts/logs/jd_kingran_wind_try.log 2>&1
 20 10,23 * * * node /scripts/jd_kingran_wind_xiaomi.js >> /scripts/logs/jd_kingran_wind_xiaomi.log 2>&1
+11 11 * * * node /scripts/jd_rush_wind_sevenDay.js >> /scripts/logs/jd_rush_wind_sevenDay.log 2>&1
