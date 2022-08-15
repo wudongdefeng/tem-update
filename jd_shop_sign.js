@@ -28,20 +28,16 @@ const token = [
 "E0087463F85940305DCA705308208EBB",//8.20
 "C5340B6B972F2A6519E2AA5C8D1CA66E",//8.22
 "FB61ABDA3E3EBF8DD84139912EDE1F08",//8.22删
-"7E0EE0A6B139C761E2AD7CA94817E1AF",// 8月15日删
-"D79D2769E0556E07B52E9698CACABC21",// 8月15日删
 "668A190FA1CE95B3D928B5DB5FB4F03E",//08.25删
 "97C4276B406682BDB390124E674881DB",//08.17删
 "4ABF0BCF38C7A513E32436A70B6896D0",//08.17删
 "560EAB0D7416E30F81A778366D7305DE",//08.17删
 "97C4276B406682BDB390124E674881DB",//08.17删
 "82F90028D4BC03EA158006E9229DDAF5",//08.17删
-"EEE3CE0E98CAA371BF548D1A78A88D46",//08.15
 "93C049896859A8BA43DF7AAEF841DA87",//08.17
 "0903CFF8DCB8B5A701D911BEEBF285F3",//08.27
 "B555EE1A9313D0DFD3074C2DE96604AC",//08.17
 "75196DED685B6BF6EB7B55FBD9E45A77",//08.17
-"F3C218A429625D0E11930539BD7F5EF6",//08.15
 "D3844B12DE64F3F4C3FDE0B7849FC803",//08.17
 ]
 if ($.isNode()) {
@@ -72,7 +68,7 @@ if ($.isNode()) {
       $.isLogin = true;
       $.nickName = '';
       message = '';
-      ////////////await TotalBean();
+      //////////////await TotalBean();
       console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
