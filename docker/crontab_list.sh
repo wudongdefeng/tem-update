@@ -28,6 +28,7 @@
 2 10,18,20 * * * node /scripts/jd_kingran_wind_superBrandJK.js >> /scripts/logs/jd_kingran_wind_superBrandJK.log 2>&1
 13 1,22,23 * * * node /scripts/jd_kingran_wind_daily_lottery.js >> /scripts/logs/jd_kingran_wind_daily_lottery.log 2>&1
 9 3 * * * node /scripts/jd_kingran_wind_cash_wx.js >> /scripts/logs/jd_kingran_wind_cash_wx.log 2>&1
+2 0-23/4 * * * node /scripts/jd_cash_Mod.js >> /scripts/logs/jd_cash_Mod.log 2>&1
 9 3 * * * node /scripts/jd_kingran_wind_bean_info.js >> /scripts/logs/jd_kingran_wind_bean_info.log 2>&1
 0 * * * * node /scripts/jd_joy_park_run.ts >> /scripts/logs/jd_joy_park_run.ts 2>&1
 10 0 * * * node /scripts/jd_jin_tie.js >> /scripts/logs/jd_jin_tie.log 2>&1
