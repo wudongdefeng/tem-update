@@ -190,12 +190,16 @@ const DATA = {
     "product": "embed",
     "lang": "zh_CN",
 };
-const SERVER = 'iv.jd.com';
+let SERVER = 'iv.jd.com';
+if (process.env.JDJR_SERVER) {
+    SERVER = process.env.JDJR_SERVER
+}
 class JDJRValidator {
     constructor() {
         this.data = {};
         this.x = 0;
         this.t = Date.now();
+        this.n = 0;
     }
     async run() {
         const tryRecognize = async () => {
@@ -211,7 +215,7 @@ class JDJRValidator {
         const pos = new MousePosFaker(puzzleX).run();
         const d = getCoordinate(pos);
         // console.log(pos[pos.length-1][2] -Date.now());
-          await sleep(4500);
+        await sleep(3000);
         //await sleep(pos[pos.length - 1][2] - Date.now());
         const result = await JDJRValidator.jsonp('/slide/s.html', {
             d,
@@ -221,7 +225,11 @@ class JDJRValidator {
             // console.log(result);
             // console.log('JDJRValidator: %fs', (Date.now() - this.t) / 1000);
             return result;
-        } else {  
+        } else {
+            if (this.n > 60) {
+                return;
+            }
+            this.n++;
             return await this.run();
         }
     }
@@ -362,7 +370,7 @@ function getCoordinate(c) {
     }
     return b.join("")
 }
-const HZ = 25;
+const HZ = 32;
 class MousePosFaker {
     constructor(puzzleX) {
         this.x = parseInt(Math.random() * 20 + 20, 10);
@@ -375,7 +383,7 @@ class MousePosFaker {
         // this.puzzleX = puzzleX;
         this.puzzleX = puzzleX + parseInt(Math.random() * 2 - 1, 10);
         this.STEP = parseInt(Math.random() * 6 + 5, 10);
-        this.DURATION = parseInt(Math.random() * 7 + 14, 10) * 100;
+        this.DURATION = parseInt(Math.random() * 7 + 12, 10) * 100;
         // [9,1600] [10,1400]
         this.STEP = 9;
         // this.DURATION = 2000;
@@ -419,7 +427,7 @@ class MousePosFaker {
             this.moveToAndCollect({
                 x: deviation,
                 y: parseInt(Math.random() * 8 - 3, 10),
-                duration: 250,
+                duration: 100,
             });
         }
     }
@@ -445,8 +453,8 @@ class MousePosFaker {
             movedX += perX + Math.random() * 2 - 1;
             movedY += perY;
             movedT += this.minDuration + rDuration;
-            const currX = parseInt(this.x + movedX, 10);
-            const currY = parseInt(this.y + movedY, 10);
+            const currX = parseInt(this.x + 20, 10);
+            const currY = parseInt(this.y + 20, 10);
             const currT = this.t + movedT;
             this.pos.push([currX, currY, currT]);
         }
@@ -454,5 +462,5 @@ class MousePosFaker {
         this.y += y;
         this.t += Math.max(duration, movedT);
     }
-} 
-exports.JDJRValidator = JDJRValidator 
+}
+exports.JDJRValidator = JDJRValidator
