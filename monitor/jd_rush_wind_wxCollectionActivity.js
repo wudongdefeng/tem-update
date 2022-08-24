@@ -14,8 +14,8 @@ pinBlackLists 黑名单,不跑的ck & 分开
 
 */
 const $ = new Env('加购物车抽奖');
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const notify = $.isNode() ? require('./sendNotify') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
+const notify = $.isNode() ? require('../sendNotify') : '';
 let cookiesArr = [], cookie = message = '' ,isPush = false;
 let activityIdList = [ 
 ]

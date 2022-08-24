@@ -4,8 +4,8 @@ actId 活动id
 7 7 7 7 7
 */
 const $ = new Env("大牌联合");
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const notify = $.isNode() ? require('./sendNotify') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
+const notify = $.isNode() ? require('../sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 let ownCode = null;
 let actId = process.env.actId ?? '';
