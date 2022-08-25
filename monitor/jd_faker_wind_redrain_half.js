@@ -17,9 +17,9 @@ cron "30 21,22 * * *" script-path=https://raw.githubusercontent.com/msechen/jdra
 */
 const $ = new Env('半点京豆雨');
 let allMessage = '', id = '';
-const notify = $.isNode() ? require('../sendNotify') : '';
+const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
-const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
+const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', message;
 let jd_redrain_half_url = '';

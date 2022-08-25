@@ -18,8 +18,8 @@ SEVENDAY_LIST,SEVENDAY_LIST2,SEVENDAY_LIST3, 多活动id , 分开,活动具体�
 
 */
 const $ = new Env('超级无线店铺签到');
-const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
-const notify = $.isNode() ? require('../sendNotify') : '';
+const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 // https://lzkj-isv.isvjcloud.com/sign/sevenDay/signActivity?activityId=
 let activityIdList = [
