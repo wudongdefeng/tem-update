@@ -29,7 +29,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_redrain_half_url",
-            "enable": true,
+            "enable": true
         },
         "jd_cjhy_wxCollectionActivityId": {
            "name":"cj加购",
@@ -37,7 +37,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_cjhy_wxCollectionActivityId",
-            "enable": true,
+            "enable": true
         },
         "jd_cjhy_activityId": {
            "name":"cj组队瓜分",
@@ -45,7 +45,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_cjhy_activityId",
-            "enable": true,
+            "enable": true
         },
         "jd_drawCenter_activityId": {
            "name":"刮刮乐",
@@ -53,7 +53,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_drawCenter_activityId",
-            "enable": true,
+            "enable": true
         },
         "jd_lzkj_wxCollectionActivityId": {
            "name":"lzk加购",
@@ -61,7 +61,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_lzkj_wxCollectionActivityId",
-            "enable": true,
+            "enable": true
         },
         "jd_wdz_activityId": {
            "name":"微定制",
@@ -69,7 +69,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_wdz_activityId",
-            "enable": true,
+            "enable": true
         },
         "jd_wxCartKoi_activityId": {
            "name":"购物车锦鲤",
@@ -77,7 +77,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_wxCartKoi_activityId",
-            "enable": true,
+            "enable": true
         },
         "jd_zdjr_activityId": {
            "name":"lz组队瓜分",
@@ -85,7 +85,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_zdjr_activityId",
-            "enable": true,
+            "enable": true
         },
         "comm_activityIDList": {
            "name":"电脑配件",
@@ -93,7 +93,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "comm_activityIDList",
-            "enable": true,
+            "enable": true
         },
         "JD_JOYOPEN": {
            "name":"joy开卡",
@@ -101,7 +101,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "JD_JOYOPEN",
-            "enable": true,
+            "enable": true
         },
         "LUCK_DRAW_URL": {
            "name":"kingran幸运抽奖",
@@ -109,7 +109,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "LUCK_DRAW_URL",
-            "enable": true,
+            "enable": true
         },
         "jd_fxyl_activityId": {
            "name":"分享有礼",
@@ -117,7 +117,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_fxyl_activityId",
-            "enable": true,
+            "enable": true
         },
         "jd_wxCollectCard_activityId": {
            "name":"kingran集卡有礼",
@@ -125,7 +125,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_wxCollectCard_activityId",
-            "enable": true,
+            "enable": true
         },
         "jd_wxFansInterActionActivity_activityId": {
            "name":"粉丝加购",
@@ -133,7 +133,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_wxFansInterActionActivity_activityId",
-            "enable": true,
+            "enable": true
         },
         "jd_wxSecond_activityId": {
            "name":"读秒拼手速",
@@ -141,7 +141,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_wxSecond_activityId",
-            "enable": true,
+            "enable": true
         },
         "jd_wxShareActivity_activityId": {
            "name":"分享有礼ID",
@@ -149,7 +149,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_wxShareActivity_activityId",
-            "enable": true,
+            "enable": true
         },
         "jd_wxShopFollowActivity_activityId": {
            "name":"关注有礼ID",
@@ -157,7 +157,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_wxShopFollowActivity_activityId",
-            "enable": true,
+            "enable": true
         },
         "jd_wxUnPackingActivity_activityId": {
            "name":"拆红包ID",
@@ -165,7 +165,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_wxUnPackingActivity_activityId",
-            "enable": true,
+            "enable": true
         },
         "DPLHTY": {
            "name":"大牌联合",
@@ -173,7 +173,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "DPLHTY",
-            "enable": true,
+            "enable": true
         },
         "actId": {
            "name":"大牌联合小埋",
@@ -181,7 +181,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "actId",
-            "enable": true,
+            "enable": true
         },
         "RUSH_LZCLIENT": {
            "name":"lz抽奖ID",
@@ -189,7 +189,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "RUSH_LZCLIENT",
-            "enable": true,
+            "enable": true
         },
         "WXGAME_ACT_ID": {
            "name":"打豆豆",
@@ -197,7 +197,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "WXGAME_ACT_ID",
-            "enable": true,
+            "enable": true
         },
         "ACTIVITY_ID": {
            "name":"加购抽奖wxgame",
@@ -205,7 +205,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "ACTIVITY_ID",
-            "enable": true,
+            "enable": true
         },
         "M_FAV_SHOP_ARGV": {
            "name":"收藏有礼",
@@ -213,7 +213,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "M_FAV_SHOP_ARGV",
-            "enable": true,
+            "enable": true
         },
         "M_FOLLOW_SHOP_ARGV": {
            "name":"关注有礼",
@@ -221,7 +221,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "M_FOLLOW_SHOP_ARGV",
-            "enable": true,
+            "enable": true
         },
         "M_WX_ADD_CART_URL": {
            "name":"加购抽奖",
@@ -229,7 +229,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "M_WX_ADD_CART_URL",
-            "enable": true,
+            "enable": true
         },
         "M_WX_CENTER_DRAW_URL": {
            "name":"刮刮乐URL",
@@ -237,7 +237,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "M_WX_CENTER_DRAW_URL",
-            "enable": true,
+            "enable": true
         },
         "M_WX_COLLECT_CARD_URL": {
            "name":"集卡URL",
@@ -245,7 +245,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "M_WX_COLLECT_CARD_URL",
-            "enable": true,
+            "enable": true
         },
         "M_WX_LUCK_DRAW_URL": {
            "name":"M幸运抽奖",
@@ -253,7 +253,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "M_WX_LUCK_DRAW_URL",
-            "enable": true,
+            "enable": true
         },
         "SHOP_TOKENS": {
            "name":"店铺签到",
@@ -261,7 +261,7 @@
             "wait": 5,
             "queue": true,
             "queue_name": "SHOP_TOKENS",
-            "enable": true,
+            "enable": true
         }
     }
 }
