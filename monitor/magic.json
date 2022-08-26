@@ -87,14 +87,6 @@
             "queue_name": "jd_zdjr_activityId",
             "enable": true,
         },
-        "jd_drawCenter_activityId": {
-           "name":"M幸运抽奖",
-            "file": "jd_kingran_wind_drawCenter.js",
-            "wait": 5,
-            "queue": true,
-            "queue_name": "jd_drawCenter_activityId",
-            "enable": true,
-        },
         "comm_activityIDList": {
            "name":"M幸运抽奖",
             "file": "jd_kingran_wind_joyjd_open.js",
@@ -125,14 +117,6 @@
             "wait": 5,
             "queue": true,
             "queue_name": "jd_fxyl_activityId",
-            "enable": true,
-        },
-        "jd_wxCartKoi_activityId": {
-           "name":"M幸运抽奖",
-            "file": "jd_kingran_wind_wxCartKoi.js",
-            "wait": 5,
-            "queue": true,
-            "queue_name": "jd_wxCartKoi_activityId",
             "enable": true,
         },
         "jd_wxCollectCard_activityId": {
@@ -231,12 +215,12 @@
             "queue_name": "M_FAV_SHOP_ARGV",
             "enable": true,
         },
-        "M_FAV_SHOP_ARGV": {
+        "M_FOLLOW_SHOP_ARGV": {
            "name":"M幸运抽奖",
             "file": "m_jd_follow_shop.js",
             "wait": 5,
             "queue": true,
-            "queue_name": "M_FAV_SHOP_ARGV",
+            "queue_name": "M_FOLLOW_SHOP_ARGV",
             "enable": true,
         },
         "M_WX_ADD_CART_URL": {
