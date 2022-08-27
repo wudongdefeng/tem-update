@@ -21,7 +21,7 @@
     "monitor_auto_stops": [
         "jd_AutoOpenCard"
     ],
-    "monitor_scripts_path": "/ql/scripts/wudongdefeng_tem-update/monitor",
+    "monitor_scripts_path": "/ql/repo/wudongdefeng_tem-update/monitor",
     "monitor_scripts": {
         "jd_redrain_half_url": {
            "name":"半点直播雨",
