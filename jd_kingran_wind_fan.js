@@ -23,10 +23,8 @@ if ($.isNode()) {
         ...$.toObj($.getdata("CookiesJD") || "[]").map((item) => item.cookie)].filter((item) => !!item);
 }
 let activityList = [
-    {'id':'f3ccd0727e97466ba2036b7af6516a5e','endTime':1662130800000},
-    {'id':'ce054fb7e5184d3c9fe9daa224b833bf','endTime':1661961599000},
-    {'id':'86884467d2344d008501ea00ae42dda4','endTime':1661875200000},
-    {'id':'cd4bd85f8c5e4aecbd3e2bf50f49aab6','endTime':1663977600000},//2022-08-24至2022-09-24 dodie京东自营官方旗舰店 
+    {'id':'f1c859ad23124013a17cfd8e8791f160','endTime':1656626274000},//
+
 		
 ];
 !(async()=>{
