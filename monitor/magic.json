@@ -21,7 +21,7 @@
     "monitor_auto_stops": [
         "jd_AutoOpenCard"
     ],
-    "monitor_scripts_path": "/ql/repo/wudongdefeng_tem-update/monitor",
+    "monitor_scripts_path": "/ql/scripts/wudongdefeng_tem-update",
     "monitor_scripts": {
         "jd_redrain_half_url": {
            "name":"半点直播雨",
@@ -175,16 +175,40 @@
             "queue_name": "DPLHTY",
             "enable": true
         },
-        "M_FAV_SHOP_ARGV": {
-           "name":"收藏有礼",
+         "M_FAV_SHOP_ARGV": {
+            "name": "收藏有礼",
             "file": "m_jd_fav_shop_gift.js",
             "wait": 5,
             "queue": true,
             "queue_name": "M_FAV_SHOP_ARGV",
             "enable": true
         },
+         "M_WX_BUILD_DRAW_URL": {
+            "name": "M盖楼领奖",
+            "file": "m_jd_wx_buildDraw.js",
+            "wait": 5,
+            "queue": true,
+            "queue_name": "M_WX_BUILD_DRAW_URL",
+            "enable": true
+        },
+         "M_WX_FOLLOW_DRAW_URL": {
+            "name": "M关注有礼抽奖",
+            "file": "m_jd_wx_followDraw.js",
+            "wait": 5,
+            "queue": true,
+            "queue_name": "M_WX_FOLLOW_DRAW_URL",
+            "enable": true
+        },
+        "M_WX_SHOP_GIFT_URL": {
+            "name": "M关注有礼无线",
+            "file": "m_jd_wx_shopGift.js",
+            "wait": 5,
+            "queue": true,
+            "queue_name": "M_WX_SHOP_GIFT_URL",
+            "enable": true
+        },                
         "M_FOLLOW_SHOP_ARGV": {
-           "name":"关注有礼",
+            "name": "关注有礼",
             "file": "m_jd_follow_shop.js",
             "wait": 5,
             "queue": true,
@@ -192,7 +216,7 @@
             "enable": true
         },
         "M_WX_ADD_CART_URL": {
-           "name":"加购抽奖",
+            "name": "加购抽奖",
             "file": "m_jd_wx_addCart.js",
             "wait": 5,
             "queue": true,
@@ -200,7 +224,7 @@
             "enable": true
         },
         "M_WX_CENTER_DRAW_URL": {
-           "name":"刮刮乐URL",
+            "name": "刮刮乐URL",
             "file": "m_jd_wx_centerDraw.js",
             "wait": 5,
             "queue": true,
@@ -208,7 +232,7 @@
             "enable": true
         },
         "M_WX_COLLECT_CARD_URL": {
-           "name":"集卡URL",
+            "name": "集卡URL",
             "file": "m_jd_wx_collectCard.js",
             "wait": 5,
             "queue": true,
@@ -216,7 +240,7 @@
             "enable": true
         },
         "M_WX_LUCK_DRAW_URL": {
-           "name":"M幸运抽奖",
+            "name": "M幸运抽奖",
             "file": "m_jd_wx_luckDraw.js",
             "wait": 5,
             "queue": true,
@@ -224,7 +248,7 @@
             "enable": true
         },
         "SHOP_TOKENS": {
-           "name":"店铺签到",
+            "name": "店铺签到",
             "file": "wind_shop_sign.js",
             "wait": 5,
             "queue": true,
