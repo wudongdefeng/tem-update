@@ -175,38 +175,6 @@
             "queue_name": "DPLHTY",
             "enable": true
         },
-        "actId": {
-           "name":"大牌联合小埋",
-            "file": "jd_rush_dapai.js",
-            "wait": 5,
-            "queue": true,
-            "queue_name": "actId",
-            "enable": true
-        },
-        "RUSH_LZCLIENT": {
-           "name":"lz抽奖ID",
-            "file": "jd_rush_lzclient.js",
-            "wait": 5,
-            "queue": true,
-            "queue_name": "RUSH_LZCLIENT",
-            "enable": true
-        },
-        "WXGAME_ACT_ID": {
-           "name":"打豆豆",
-            "file": "jd_rush_wind_dadoudou.js",
-            "wait": 5,
-            "queue": true,
-            "queue_name": "WXGAME_ACT_ID",
-            "enable": true
-        },
-        "ACTIVITY_ID": {
-           "name":"加购抽奖wxgame",
-            "file": "jd_rush_wind_wxCollectionActivity.js",
-            "wait": 5,
-            "queue": true,
-            "queue_name": "ACTIVITY_ID",
-            "enable": true
-        },
         "M_FAV_SHOP_ARGV": {
            "name":"收藏有礼",
             "file": "m_jd_fav_shop_gift.js",
