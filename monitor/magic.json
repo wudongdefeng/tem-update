@@ -89,7 +89,7 @@
         },
         "comm_activityIDList": {
            "name":"电脑配件",
-            "file": "jd_kingran_wind_joyjd_open.js",
+            "file": "jd_faker_wind_computer.js",
             "wait": 5,
             "queue": true,
             "queue_name": "comm_activityIDList",
