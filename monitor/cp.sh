@@ -10,7 +10,7 @@ cp -r /ql/scripts/wudongdefeng_tem-update/jd_kingran_wind_wxUnPackingActivity.js
 cp -r /ql/scripts/wudongdefeng_tem-update/m_jd_fav_shop_gift.js /ql/scripts
 cp -r /ql/scripts/wudongdefeng_tem-update/m_jd_wx_addCart.js /ql/scripts
 cp -r /ql/scripts/wudongdefeng_tem-update/m_jd_wx_luckDraw.js /ql/scripts
-cp -r /ql/scripts/wudongdefeng_tem-update/magic.json /ql/scripts
+#cp -r /ql/scripts/wudongdefeng_tem-update/magic.json /ql/scripts
 cp -r /ql/scripts/wudongdefeng_tem-update/ /ql/scripts
 cp -r /ql/scripts/wudongdefeng_tem-update/ /ql/scripts
 cp -r /ql/scripts/wudongdefeng_tem-update/ /ql/scripts
