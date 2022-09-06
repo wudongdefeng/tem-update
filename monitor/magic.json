@@ -55,6 +55,22 @@
             "queue_name": "jd_drawCenter_activityId",
             "enable": true
         },
+        "jd_cjhy_wxKnowledgeActivity_activityId": {
+           "name":"cj知识达人",
+            "file": "jd_feverrun_wind_cjhy_wxKnowledgeActivity.js",
+            "wait": 5,
+            "queue": true,
+            "queue_name": "jd_cjhy_wxKnowledgeActivity_activityId",
+            "enable": true
+        },
+        "jd_lzkj_wxKnowledgeActivity_activityId": {
+           "name":"lzkj知识达人",
+            "file": "jd_feverrun_wind_lzkj_wxKnowledgeActivity.js ",
+            "wait": 5,
+            "queue": true,
+            "queue_name": "jjd_lzkj_wxKnowledgeActivity_activityId",
+            "enable": true
+        },
         "jd_lzkj_wxCollectionActivityId": {
            "name":"lzk加购",
             "file": "jd_feverrun_wind_lzkj_wxCollectionActivity.js",
