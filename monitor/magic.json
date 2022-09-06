@@ -68,7 +68,7 @@
             "file": "jd_feverrun_wind_lzkj_wxKnowledgeActivity.js ",
             "wait": 5,
             "queue": true,
-            "queue_name": "jjd_lzkj_wxKnowledgeActivity_activityId",
+            "queue_name": "jd_lzkj_wxKnowledgeActivity_activityId",
             "enable": true
         },
         "jd_lzkj_wxCollectionActivityId": {
