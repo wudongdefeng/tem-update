@@ -110,7 +110,7 @@
             "queue": true,
             "queue_name": "LUCK_DRAW_URL",
             "enable": true
-        },
+        },        
         "jd_fxyl_activityId": {
            "name":"分享有礼",
             "file": "jd_kingran_wind_share.js",
@@ -229,6 +229,22 @@
             "wait": 5,
             "queue": true,
             "queue_name": "M_WX_CENTER_DRAW_URL",
+            "enable": true
+        },
+        "M_WX_SECOND_DRAW_URL": {
+            "name": "M读秒手速",
+            "file": "m_jd_wx_secondDraw.js",
+            "wait": 5,
+            "queue": true,
+            "queue_name": "M_WX_SECOND_DRAW_URL",
+            "enable": true
+        },
+        "M_WX_LEVEL_BIRTH_URL": {
+            "name": "生日礼包",
+            "file": "m_jd_wx_levelBirth.js",
+            "wait": 5,
+            "queue": true,
+            "queue_name": "M_WX_LEVEL_BIRTH_URL",
             "enable": true
         },
         "M_WX_COLLECT_CARD_URL": {
