@@ -221,7 +221,7 @@
         {
             "isOpen": true,
             "name": "M读秒手速",
-            "envName":"M读秒手速",
+            "envName":"M_WX_SECOND_DRAW_URL",
             "scriptPath":"/ql/scripts/wudongdefeng_tem-update/m_jd_wx_secondDraw.js"
         },
         {
