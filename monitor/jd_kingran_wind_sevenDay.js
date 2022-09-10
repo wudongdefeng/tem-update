@@ -14,7 +14,7 @@ export LZKJ_SIGN="xxxx,xxxx,xxxxx"
 export CJHY_SEVENDAY="xxxx,xxxx,xxxxx"
 export CJHY_SIGN="xxxx,xxxx,xxxxx"
 
-cron: 7 7 7 7 7 jd_sevenDay.js
+7 7 7 7 7 jd_sevenDay.js
 
 */
 
