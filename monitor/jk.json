@@ -238,6 +238,12 @@
         },
         {
             "isOpen": true,
+            "name": "入会有礼",
+            "envName":"M_WX_WDZ_ID",
+            "scriptPath":"/ql/scripts/wudongdefeng_tem-update/jd_feverrun_wind_card_force.js"
+        },          
+        {
+            "isOpen": true,
             "name": "微定制",
             "envName":"M_WX_WDZ_ID",
             "scriptPath":"/ql/scripts/wudongdefeng_tem-update/m_jd_wx_microDz.js"
