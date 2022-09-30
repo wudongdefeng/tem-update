@@ -220,7 +220,13 @@ async function sendNotify(
     gotifyNotify(text, desp),//gotify
   ]);
 }
-
+if (desp.indexOf('已可领取') > -1 || desp.indexOf('填写收货地址') > -1 || desp.match(/100.0[0-9]%/))
+  {
+    QYWX_AM = process.env.QYWX_AM2;
+    await Promise.all([
+      qywxamNotify(text, desp), //企业微信应用消息推送
+    ])
+  }
 function gotifyNotify(text, desp) {
   return new Promise((resolve) => {
     if (GOTIFY_URL && GOTIFY_TOKEN) {
