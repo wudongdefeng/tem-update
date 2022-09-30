@@ -219,7 +219,7 @@ async function sendNotify(
     gobotNotify(text, desp),//go-cqhttp
     gotifyNotify(text, desp),//gotify
   ]);
-   if (desp.indexOf('已可领取') > -1 || desp.indexOf('填写收货地址') > -1 || desp.match(/100.0[0-9]%/))
+   if (desp.indexOf('已可领取') > -1 || desp.indexOf('填写收货地址') > -1 || desp.indexOf('可免费领取') > -1 || desp.indexOf('问卷') > -1 || desp.match(/100.0[0-9]%/))
   {
     QYWX_AM = process.env.QYWX_AM2;
     await Promise.all([
