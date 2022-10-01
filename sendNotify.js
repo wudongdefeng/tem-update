@@ -225,6 +225,7 @@ async function sendNotify(
     await Promise.all([
       qywxamNotify(text, desp), //企业微信应用消息推送
     ])
+    QYWX_AM = '';
   }
 }
 
