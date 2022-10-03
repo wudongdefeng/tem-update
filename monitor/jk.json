@@ -250,6 +250,30 @@
         },
         {
             "isOpen": true,
+            "name": "LZ盖楼有礼",
+            "envName":"jd_wxBuildActivity_activityId",
+            "scriptPath":"/ql/scripts/wudongdefeng_tem-update/jd_kingran_wind_wxBuildActivity.js"
+        },
+        {
+            "isOpen": true,
+            "name": "LZ每日抢好礼",
+            "envName":"jd_daily_activityId",
+            "scriptPath":"/ql/scripts/wudongdefeng_tem-update/jd_kingran_wind_daily.js"
+        },
+        {
+            "isOpen": true,
+            "name": "完善信息有礼",
+            "envName":"jd_completeInfoActivity_activityId",
+            "scriptPath":"/ql/scripts/wudongdefeng_tem-update/jd_kingran_wind_completeInfoActivity.js"
+        },
+        {
+            "isOpen": true,
+            "name": "txzj抽奖",
+            "envName":"jd_txzj_lottery_id",
+            "scriptPath":"/ql/scripts/wudongdefeng_tem-update/jd_feverrun_wind_txzj_lottery.js"
+        },
+        {
+            "isOpen": true,
             "name": "店铺签到",
             "envName":"SHOP_TOKENS",
             "scriptPath":"/ql/scripts/wudongdefeng_tem-update/wind_shop_sign.js"
