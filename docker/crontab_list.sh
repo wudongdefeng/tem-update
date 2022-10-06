@@ -4,9 +4,6 @@
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
 55 2 * * * node /scripts/jd_kingran_wind_shangou.js >> /scripts/logs/jd_kingran_wind_shangou.log 2>&1
-38 22 * * * node /scripts/jd_wind_fcwb_help.js >> /scripts/logs/jd_wind_fcwb_help.log 2>&1
-#6 6 6 6 * node /scripts/jd_kingran_wind_wxFansInterActionActivity.js >> /scripts/logs/jd_kingran_wind_wxFansInterActionActivity.log 2>&1
-40 11 * * * node /scripts/jd_kingran_wind_zdjr.js >> /scripts/logs/jd_kingran_wind_zdjr.log 2>&1
 45 3,15,23 * * * node /scripts/jd_shop_sign.js >> /scripts/logs/jd_shop_sign.log 2>&1
 30 4,16 * * * node /scripts/jd_kingran_wind_carplay.js >> /scripts/logs/jd_kingran_wind_carplay.log 2>&1
 40 0,2 * * * node /scripts/jd_kingran_wind_wish.js >> /scripts/logs/jd_kingran_wind_wish.log 2>&1
@@ -20,7 +17,7 @@
 #31 21,22 * * * node /scripts/msechen_half_rain.js >> /scripts/logs/msechen_half_rain.log 2>&1
 #3 0,12,18 * * * node /scripts/wind_shop_sign.js >> /scripts/logs/wind_shop_sign.log 2>&1
 9 2,11 * * * node /scripts/jd_xiaoshou_wind_sign.js >> /scripts/logs/jd_xiaoshou_wind_sign.log 2>&1
-20 20 * * * node /scripts/jd_try_notify.py >> /scripts/logs/jd_try_notify.log 2>&1
+20 20 * * * node /scripts/jd_kingran_wind_try_notify.js >> /scripts/logs/jd_kingran_wind_try_notify.log 2>&1
 8 0-23/3 * * * node /scripts/jd_speed.js >> /scripts/logs/jd_speed.log 2>&1
 10 0 * * * node /scripts/jd_shop.js >> /scripts/logs/jd_shop.log 2>&1
 50 12-14 * * * node /scripts/jd_live.js >> /scripts/logs/jd_live.log 2>&1
@@ -49,7 +46,6 @@
 #9 4 * * * node /scripts/jd_rush_lzclient.js >> /scripts/logs/jd_rush_lzclient.log 2>&1
 39 3 * * * node /scripts/jd_kingran_wind_m_sign.js >> /scripts/logs/jd_kingran_wind_m_sign.log 2>&1
 11 1,15 * * * node /scripts/jd_kingran_wind_joymanor_task.js >> /scripts/logs/jd_kingran_wind_joymanor_task.log 2>&1
-#5 2,18 * * * node /scripts/jd_kingran_wind_joy_open.js >> /scripts/logs/jd_kingran_wind_joy_open.log 2>&1
 40 0-20/4 * * * node /scripts/jd_kingran_wind_fc_winner.js >> /scripts/logs/jd_kingran_wind_fc_winner.log 2>&1
 10 0 * * * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log 2>&1
 0 7,19 * * * node /scripts/jd_hello_wind_speed_coin.js >> /scripts/logs/jd_hello_wind_speed_coin.log 2>&1
@@ -66,7 +62,6 @@
 21 3,12 * * * node /scripts/jd_faker_wind_speed_sign.js >> /scripts/logs/jd_faker_wind_speed_sign.log 2>&1
 20 0,22 * * * node /scripts/jd_faker_wind_speed_redpocke.js >> /scripts/logs/jd_faker_wind_speed_redpocke.log 2>&1
 9 1,8 * * * node /scripts/jd_faker_wind_sign.js >> /scripts/logs/jd_faker_wind_sign.log 2>&1
-29 4 * * * node /scripts/jd_faker_wind_share.js >> /scripts/logs/jd_faker_wind_share.log 2>&1
 20 8 * * * node /scripts/jd_faker_wind_sgmh.js >> /scripts/logs/jd_faker_wind_sgmh.log 2>&1
 30 21,22 * * * node /scripts/jd_faker_wind_redrain_half.js >> /scripts/logs/jd_faker_wind_redrain_half.log 2>&1
 39 20 * * * node /scripts/jd_faker_wind_price.js >> /scripts/logs/jd_faker_wind_price.log 2>&1
@@ -88,5 +83,5 @@
 20 8 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log 2>&1
 20 10,18,20 * * * node /scripts/jd_kingran_wind_SuperBrandJXZ.js >> /scripts/logs/jd_kingran_wind_SuperBrandJXZ.log 2>&1
 20 10,18,20 * * * node /scripts/jd_kingran_wind_try.js >> /scripts/logs/jd_kingran_wind_try.log 2>&1
-20 10,23 * * * node /scripts/jd_kingran_wind_xiaomi.js >> /scripts/logs/jd_kingran_wind_xiaomi.log 2>&1
-11 11 * * * node /scripts/jd_rush_wind_sevenDay.js >> /scripts/logs/jd_rush_wind_sevenDay.log 2>&1
+11 11 * * * node /scripts/monitor/jd_kingran_wind_sevenDay.js >> /scripts/logs/jd_kingran_wind_sevenDay.log 2>&1
+9 9 * * 5 node /scripts/jd_rush_wind_vipgrowth.js >> /scripts/logs/jd_rush_wind_vipgrowth.log 2>&1
