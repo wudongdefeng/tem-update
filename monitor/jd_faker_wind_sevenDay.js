@@ -2,12 +2,13 @@
 超级无线店铺签到
 不能并发,超级无线黑号不能跑,建议别跑太多号
 环境变量:
+默认只跑10个CK，可设置变量SEVENNUM
 SEVENDAY_LIST 活动链节 https://lzkj-isv.isvjcloud.com/sign/sevenDay/signActivity?activityId=
 SEVENDAY_LIST2 活动链节 https://lzkj-isv.isvjcloud.com/sign/signActivity2?activityId=
 SEVENDAY_LIST3 活动链节 https://cjhy-isv.isvjcloud.com/sign/signActivity?activityId=
 多id 用 & 分开
 
-0 0 * * * jd_sevenDay.js
+1 1 * * * jd_sevenDay.js
 */
 const $ = new Env('超级无线店铺签到');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -15,23 +16,47 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
 // https://lzkj-isv.isvjcloud.com/sign/sevenDay/signActivity?activityId=
 let activityIdList = [
+    '4dba6f1f51f34d5a85a4bf03353d4517',
+    //'f3207d49ac8e4fcfbd542befc1338916',
+    //'ba2d672b1fc44814aef1c3ee4c3ac5fa',
+    //'f46601936b40496b97a85de2b5ab97eb',
+    //'13126645fcb2477fa1090a94cb7f3ca2',
+    //'202f8daefb63452ebcdd68ef2d3db135',
+    //'3a9885564c6a4633b55b6bfcd083d3a4',
+    //'e181d252d0354331ad6226c407745ad6',
+    //'52a339445cba489f8df00cf18666d2be',
+    //'eaf0e5313fa1484db90c3fc467af33e5',
 ]
 // https://lzkj-isv.isvjcloud.com/sign/signActivity2?activityId=
 let activityIdList2 = [
+    //'af38e0ae3c534e5882a2c29cbd08a355',
+    //'478c9f15a4fc43f691db0451d956cfef',
+    //'b688a802471443d092343821a8403531',
+    //'ab51ff694beb41948a554aade50d5608',
+    //'462aae0d426443cd962257afce4b760f',
+    //'c3fde07f69bb43e79f12686013b45f8b',
+    //'d7d28539c7e54d0896cec5089f1b82f2',
+    //'e170e27eb0374b01bfed88138a82f968',
+    //'bea32e6d4a6749ec98a990dbf276278f',
+    //'7fb38e10addf49b487c84f579971cbd4',
+    //'393ddb3a8ce04f19aed59fb458e2425f',
+    //'cbf22d6dfbde42ac98fb3f693530132e',
+    //'2a20095bf87e408bb70fdf537ea3f57f',
 ]
-// https://cjhy-isv.isvjcloud.com/sign/signActivity?activityId=
 let activityIdList3 = [
+    //'456de0f620024cbda71e9a9cbaaf95e1',
+    //'0dee39bb7c9b48828d8cdc08af4875e7',
 ]
 let lz_cookie = {}
-
+let runnum = process.env.SEVENNUM || 10;
 if (process.env.SEVENDAY_LIST && process.env.SEVENDAY_LIST != "") {
     activityIdList = process.env.SEVENDAY_LIST.split('&');
 }
 if (process.env.SEVENDAY_LIST2 && process.env.SEVENDAY_LIST2 != "") {
-    activityIdList2 = process.env.SEVENDAY_LIST.split('&');
+    activityIdList2 = process.env.SEVENDAY_LIST2.split('&');
 }
 if (process.env.SEVENDAY_LIST3 && process.env.SEVENDAY_LIST3 != "") {
-    activityIdList3 = process.env.SEVENDAY_LIST.split('&');
+    activityIdList3 = process.env.SEVENDAY_LIST3.split('&');
 }
 
 if ($.isNode()) {
@@ -55,7 +80,7 @@ if ($.isNode()) {
     }
     $.actList = activityIdList.length + activityIdList.length + activityIdList.length
 
-    for (let i = 0; i < cookiesArr.length; i++) {
+    for (let i = 0; i < runnum; i++) {
         if ($.actList === 0) {
             console.log("请设置无线签到活动id,看脚本说明")
             break
@@ -217,10 +242,14 @@ function task(function_id, body, isCommon = 0) {
                                     if(data){
                                         // console.log(data);
                                         if (data.isOk) {
-                                            console.log("签到成功");
-                                            // console.log(data);
-                                        } else {
-                                            console.log(data);
+                                          console.log("结果 -> 签到成功");
+                                          if (data.signResult.gift != null) {
+                                              console.log("🎉 获得奖品：" + data.signResult.gift.giftName);
+                                          }
+                                      } else {
+                                          console.log("结果 -> " + data.msg);
+
+
                                         }
                                     }
                                     break
@@ -228,10 +257,13 @@ function task(function_id, body, isCommon = 0) {
                                     if(data){
                                         // console.log(data);
                                         if (data.isOk) {
-                                            console.log("签到成功");
-                                            // console.log(data);
-                                        } else {
-                                            console.log(data);
+                                          console.log("结果 -> 签到成功");
+                                          if (data.gift != null) {
+                                              console.log("🎉 获得奖品：" + data.gift.giftName);
+                                          }
+                                      } else {
+                                          console.log("结果 -> " + data.msg);
+
                                         }
                                     }
                                     break
@@ -281,24 +313,27 @@ function task2(function_id, body, isCommon = 0) {
                                 case 'sign/sevenDay/wx/signUp':
                                     if(data){
                                         if (data.isOk) {
-                                            console.log("签到成功");
-                                            if (data.signResult.giftName) {
-                                                console.log(data.signResult.giftName);
-                                            }
-                                        } else {
-                                            console.log(data.msg);
+                                          console.log("结果 -> 签到成功");
+                                          if (data.signResult.gift != null) {
+                                              console.log("🎉 获得奖品：" + data.signResult.gift.giftName);
+                                          }
+                                      } else {
+                                          console.log("结果 -> " + data.msg);
+
                                         }
                                     }
                                     break
                                 case 'sign/wx/signUp':
                                     if(data){
                                         if (data.isOk) {
-                                            console.log("签到成功");
-                                            if (data.gift.giftName) {
-                                                console.log(data.gift.giftName);
-                                            }
-                                        } else {
-                                            console.log(data.msg);
+                                          console.log("结果 -> 签到成功");
+                                          if (data.gift != null) {
+                                              console.log("🎉 获得奖品：" + data.gift.giftName);
+                                          }
+                                      } else {
+                                          console.log("结果 -> " + data.msg);
+
+
                                         }
                                     }
                                     break
@@ -493,7 +528,8 @@ function getFirstLZCK() {
         })
     })
 }
-function getToken() {
+async function getToken() {
+	let  body = await getSign('isvObfuscator',{"id":"","url":"https://lzkj-isv.isvjcloud.com"})
     let opt = {
         url: `https://api.m.jd.com/client.action?functionId=isvObfuscator`,
         headers: {
@@ -506,7 +542,7 @@ function getToken() {
             'Accept-Language': 'zh-Hans-CN;q=1',
             'Accept-Encoding': 'gzip, deflate, br',
         },
-        body: `body=%7B%22url%22%3A%20%22https%3A//lzdz1-isv.isvjcloud.com%22%2C%20%22id%22%3A%20%22%22%7D&uuid=72124265217d48b7955781024d65bbc4&client=apple&clientVersion=9.4.0&st=1621796702000&sv=120&sign=14f7faa31356c74e9f4289972db4b988`
+        body
     }
     return new Promise(resolve => {
         $.post(opt, (err, resp, data) => {
@@ -535,6 +571,39 @@ function random(min, max) {
 
     return Math.floor(Math.random() * (max - min)) + min;
 
+}
+function getSign(functionId, body) {
+  let opt = {
+    url: "https://api.nolanstore.top/sign",
+    body: JSON.stringify({
+      "body": JSON.stringify(body),
+      "fn": functionId
+    }),
+    headers: {
+      'Content-Type': 'application/json',
+    }
+    , timeout: 30000
+  }
+  return new Promise((resolve) => {
+    $.post(opt, (err, resp, data) => {
+      try {
+        if (err) {
+          console.log(JSON.stringify(err));
+        } else {
+          if (data) {
+            data = JSON.parse(data);
+            data = data.body;
+          } else {
+            $.log('获取失败');
+          }
+        }
+      } catch (e) {
+        console.log(e, resp);
+      } finally {
+        resolve(data);
+      }
+    })
+  })
 }
 function getUUID(format = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', UpperCase = 0) {
     return format.replace(/[xy]/g, function (c) {
