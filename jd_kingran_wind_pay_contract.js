@@ -150,13 +150,13 @@ const PAY_CONTRACT = new class {
     let matches = cookies[i].match(/pt_pin=([^;\s]+)/)
     if (!matches) {
       sendNotify = true
-      console.log(`*********【京东账户${i + 1}】*********\nCookie 格式错误，请检查\n${cookies[i]}\n`)
+      console.log(`1111*【京东账户${i + 1}】1111*\nCookie 格式错误，请检查\n${cookies[i]}\n`)
       LOGS.push(`【京东账户${i + 1}】`)
       LOGS.push(`Cookie 格式错误，请检查\n`)
       continue
     }
     let pin = matches[1]
-    console.log(`*********【京东账户${i + 1}】${decodeURIComponent(pin)}*********\n`)
+    console.log(`1111*【京东账户${i + 1}】${decodeURIComponent(pin)}1111*\n`)
     LOGS.push(`【京东账户${i + 1}】${decodeURIComponent(pin)}`)
     if (ignorePins.indexOf(pin) !== -1) {
       console.log(`🙅‍♀️该账户已被设定为跳过检查\n`)

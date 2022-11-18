@@ -1222,7 +1222,7 @@ function Env(name, opts) {
             }
         }
 
-        /**
+        /1
          *
          * 示例:$.time('yyyy-MM-dd qq HH:mm:ss.S')
          *    :$.time('yyyyMMddHHmmssS')
@@ -1248,7 +1248,7 @@ function Env(name, opts) {
             return fmt
         }
 
-        /**
+        /1
          * 系统通知
          *
          * > 通知参数: 同时支持 QuanX 和 Loon 两种格式, EnvJs根据运行环境自动转换, Surge 环境不支持多媒体通知

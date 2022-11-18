@@ -5,11 +5,11 @@
 
 请使用本地IP环境 请使用本地IP环境 请使用本地IP环境
 
-cron:11 11 11 11 **
+cron:11 11 11 11 1
 ============Quantumultx===============
 [task_local]
 #邀请入会赢好礼
-11 11 11 11 ** jd_jinggeng_showInviteJoin.js, tag=邀请入会赢好礼, enabled=true
+11 11 11 11 1 jd_jinggeng_showInviteJoin.js, tag=邀请入会赢好礼, enabled=true
 */
 
 const $ = new Env("邀请入会赢好礼（京耕）");
