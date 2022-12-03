@@ -1,4 +1,4 @@
-1
+/*
 特务之明星送好礼
 一次性脚本。请禁用！
 cron 36 2,19 * * * jd_superBrandStar.js

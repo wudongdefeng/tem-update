@@ -229,7 +229,7 @@ function getTaskList() {
   })
 }
 
-1
+/*
  * 互助
  * @param taskId
  * @param inviteType
