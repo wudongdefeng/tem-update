@@ -83,6 +83,6 @@
 20 8 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log 2>&1
 20 10,18,20 * * * node /scripts/jd_kingran_wind_SuperBrandJXZ.js >> /scripts/logs/jd_kingran_wind_SuperBrandJXZ.log 2>&1
 20 10,18,20 * * * node /scripts/jd_kingran_wind_try.js >> /scripts/logs/jd_kingran_wind_try.log 2>&1
-#11 11 * * * node /scripts/monitor/jd_red_change.js >> /scripts/logs/jd_kingran_wind_sevenDay.log 2>&1
+#11 11 * * * node /scripts/monitor/jd_kingran_wind_sevenDay.js >> /scripts/logs/jd_kingran_wind_sevenDay.log 2>&1
 9 9 * * 5 node /scripts/jd_rush_wind_vipgrowth.js >> /scripts/logs/jd_rush_wind_vipgrowth.log 2>&1
-11 9,21 * * * node /scripts/jd_kingran_wind_sevenDay.js >> /scripts/logs/jd_red_change.log 2>&1
+9 9,21 * * * node /scripts/jd_red_change.js >> /scripts/logs/jd_red_change.log 2>&1
