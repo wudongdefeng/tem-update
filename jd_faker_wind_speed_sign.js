@@ -9,7 +9,7 @@
 ============Quantumultx===============
 [task_local]
 #京东极速版
-15 2,14 * * * jd_speed_sign.js,
+5 0,8 * * * jd_speed_sign.js,
 ================Loon==============
 [Script]
 cron "15 2,14 * * *" script-path=jd_speed_sign.js,tag=京东极速版
