@@ -86,3 +86,4 @@
 #11 11 * * * node /scripts/monitor/jd_kingran_wind_sevenDay.js >> /scripts/logs/jd_kingran_wind_sevenDay.log 2>&1
 9 9 * * 5 node /scripts/jd_rush_wind_vipgrowth.js >> /scripts/logs/jd_rush_wind_vipgrowth.log 2>&1
 9 9,21 * * * node /scripts/jd_red_change.js >> /scripts/logs/jd_red_change.log 2>&1
+9 19,21 * * * node /scripts/jd_faker_wind_city.js >> /scripts/logs/jd_faker_wind_city.js 2>&1
