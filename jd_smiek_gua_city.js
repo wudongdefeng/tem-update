@@ -3,7 +3,7 @@
 
 [task_local]
 #城城领现金
-0 0-23/5,22 * 12 * gua_city.js, tag=城城领现金, enabled=true
+0 0-23/5,22 29-31,1-2 12,1 * gua_city.js, tag=城城领现金, enabled=true
 
  */
 const $ = new Env('城城领现金');
@@ -140,6 +140,7 @@ $.token = process.env.gua_log_token || token // token
                         console.log(`助力 【${$.newShareCodes[i]}】:${res.data.result.toasts[0].msg}`)
                     }
                 }
+                // {"code":410} 疑似黑ip
                 if ((res && res['status'] && res['status'] === '3') || (res && res.data && res.data.bizCode === -11)) {
                     // 助力次数耗尽 || 黑号
                     break
@@ -179,8 +180,8 @@ $.token = process.env.gua_log_token || token // token
                 }
             } else {
                 var times = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000)
-                //默认10.29开启抽奖
-                if ($.time("MM", times) == "12" && $.time("dd", times) >= 12) {
+                //默认1.2开启抽奖
+                if ($.time("MM", times) == 1 && $.time("dd", times) >= 2) {
                     const res = await city_lotteryAward();//抽奖
                     if (res && res > 0) {
                         for (let i = 0; i < new Array(res).fill('').length; i++) {
@@ -508,7 +509,7 @@ async function getLogs(functionId, body = {}) {
         $.joyytokenb = await gettoken("50999")
     }
     joyytokenb = $.joyytokenb
-    let resBody = { "fn": "city", "id": functionId, "riskData": '', "pin": $.UserName, "joyytoken": joyytoken, "uid": $.uid || "", "joyytokenb": joyytokenb }
+    let resBody = { "fn": "city1", "id": functionId, "riskData": '', "pin": $.UserName, "joyytoken": joyytoken, "uid": $.uid || "", "joyytokenb": joyytokenb }
     let log_res = await getLog(resBody)
     res = log_res.data
     let resCount = 0
