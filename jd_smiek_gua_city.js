@@ -3,7 +3,7 @@
 
 [task_local]
 #城城领现金
-0 0-23/5,22 29-31,1-2 12,1 * gua_city.js, tag=城城领现金, enabled=true
+0 0-23/5,22 6-9 1 * gua_city.js, tag=城城领现金, enabled=true
 
  */
 const $ = new Env('城城领现金');
@@ -75,7 +75,7 @@ $.token = process.env.gua_log_token || token // token
     } else {
         console.log(`脚本不会自动抽奖，建议活动快结束开启，默认关闭(在12.12日自动开启抽奖),如需自动抽奖请设置环境变量  JD_CITY_EXCHANGE 为true`);
     }
-    $.collectAllCount = 0
+    $.collectAllCount = 5
     $.inviteIdCodesArr = {}
     for (let i = 0; i < cookiesArr.length && true; i++) {
         if (cookiesArr[i]) {
@@ -85,12 +85,18 @@ $.token = process.env.gua_log_token || token // token
             await getUA()
             await getInviteId();
             await $.wait(3000)
-            if($.index >= (5 + $.collectAllCount)) {
-                console.log(`已获取超过5个`)
+            if(Object.getOwnPropertyNames($.inviteIdCodesArr).length >= $.collectAllCount) {
+                console.log(`已获取超过${$.collectAllCount}个`)
                 break
             }
         }
     }
+    // let sssss = ''
+    // for(let i in $.inviteIdCodesArr){
+    //     sssss += $.inviteIdCodesArr[i]+"&";
+    // }
+    // console.log(sssss);
+    // return
     if (Object.getOwnPropertyNames($.inviteIdCodesArr).length > 0) {
         for (let i = 0; i < cookiesArr.length && true; i++) {
             if (cookiesArr[i]) {
@@ -146,7 +152,7 @@ $.token = process.env.gua_log_token || token // token
                     // 助力次数耗尽 || 黑号
                     break
                 }
-                if(/火爆|已有账号参与活动/.test($.toStr(res, res))){
+                if(/火爆|已有账号参与活动|结束/.test($.toStr(res, res))){
                     break
                 }else if(/登陆失败/.test($.toStr(res, res))){
                     isLogin = false
@@ -181,8 +187,8 @@ $.token = process.env.gua_log_token || token // token
                 }
             } else {
                 var times = new Date(new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*60*60*1000)
-                //默认1.2开启抽奖
-                if ($.time("MM", times) == 1 && $.time("dd", times) >= 2) {
+                //默认1.9开启抽奖
+                if ($.time("MM", times) == 1 && $.time("dd", times) >= 9) {
                     const res = await city_lotteryAward();//抽奖
                     if (res && res > 0) {
                         for (let i = 0; i < new Array(res).fill('').length; i++) {
