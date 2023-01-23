@@ -34,7 +34,7 @@ logging.basicConfig(
 logger = logging.getLogger(activity_name)
 index = 0
 h5st_appid = 'd06f1'
-appCode = 'msc588d6d5'
+appCode = 'ms2362fc9e'
 activeId = '63526d8f5fe613a6adb48f03'
 not_tx=[]
 cashExchangeRuleList=[
