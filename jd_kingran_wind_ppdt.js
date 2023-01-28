@@ -29,6 +29,8 @@ if ($.isNode()) {
             $.index = i + 1;
             $.isLogin = true;
             $.nickName = '';
+			$.ban='';
+			$.done='';
             $.UA = require('./USER_AGENTS').UARAM();
             //await TotalBean();
             console.log(`\n111开始【京东账号${$.index}】${$.nickName || $.UserName}1111*\n`);
