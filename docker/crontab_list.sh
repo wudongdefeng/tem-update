@@ -15,7 +15,6 @@
 40 0,15 * * * node /scripts/jd_kingran_wind_cleancart.js >> /scripts/logs/jd_kingran_wind_cleancart.log 2>&1
 1 1 * * * node /scripts/jd_kingran_wind_wxCollectCard.js >> /scripts/logs/jd_kingran_wind_wxCollectCard.log 2>&1
 #31 21,22 * * * node /scripts/msechen_half_rain.js >> /scripts/logs/msechen_half_rain.log 2>&1
-#3 0,12,18 * * * node /scripts/wind_shop_sign.js >> /scripts/logs/wind_shop_sign.log 2>&1
 9 2,11 * * * node /scripts/jd_xiaoshou_wind_sign.js >> /scripts/logs/jd_xiaoshou_wind_sign.log 2>&1
 20 20 * * * node /scripts/jd_kingran_wind_try_notify.js >> /scripts/logs/jd_kingran_wind_try_notify.log 2>&1
 8 0-23/3 * * * node /scripts/jd_speed.js >> /scripts/logs/jd_speed.log 2>&1
@@ -41,9 +40,6 @@
 9 3 * * * node /scripts/jd_star_wind_twCard.js >> /scripts/logs/jd_star_wind_twCard.log 2>&1
 9 9 * * * node /scripts/jd_star_wind_productZ4Brand.js >> /scripts/logs/jd_star_wind_productZ4Brand.log 2>&1
 21 9 * * * node /scripts/jd_smiek_gua_MMdou.js >> /scripts/logs/jd_smiek_gua_MMdou.log 2>&1
-#9 3 * * * node /scripts/jd_rush_wind_wxCollectionActivity.js >> /scripts/logs/jd_rush_wind_wxCollectionActivity.log 2>&1
-#9 3 * * * node /scripts/jd_rush_wind_sevenDay.js >> /scripts/logs/jd_rush_wind_sevenDay.log 2>&1
-#9 4 * * * node /scripts/jd_rush_lzclient.js >> /scripts/logs/jd_rush_lzclient.log 2>&1
 39 3 * * * node /scripts/jd_kingran_wind_m_sign.js >> /scripts/logs/jd_kingran_wind_m_sign.log 2>&1
 11 1,15 * * * node /scripts/jd_kingran_wind_joymanor_task.js >> /scripts/logs/jd_kingran_wind_joymanor_task.log 2>&1
 40 0-20/4 * * * node /scripts/jd_kingran_wind_fc_winner.js >> /scripts/logs/jd_kingran_wind_fc_winner.log 2>&1
@@ -83,7 +79,6 @@
 20 8 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log 2>&1
 20 10,18,20 * * * node /scripts/jd_kingran_wind_SuperBrandJXZ.js >> /scripts/logs/jd_kingran_wind_SuperBrandJXZ.log 2>&1
 20 10,18,20 * * * node /scripts/jd_kingran_wind_try.js >> /scripts/logs/jd_kingran_wind_try.log 2>&1
-#11 11 * * * node /scripts/monitor/jd_kingran_wind_sevenDay.js >> /scripts/logs/jd_kingran_wind_sevenDay.log 2>&1
 9 9 * * 5 node /scripts/jd_rush_wind_vipgrowth.js >> /scripts/logs/jd_rush_wind_vipgrowth.log 2>&1
 9 9,21 * * * node /scripts/jd_red_change.js >> /scripts/logs/jd_red_change.log 2>&1
 9 0,14,21 * * * node /scripts/jd_smiek_gua_city.js >> /scripts/logs/jd_smiek_gua_city.js 2>&1
