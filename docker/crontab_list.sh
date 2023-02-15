@@ -81,4 +81,3 @@
 20 10,18,20 * * * node /scripts/jd_kingran_wind_try.js >> /scripts/logs/jd_kingran_wind_try.log 2>&1
 9 9 * * 5 node /scripts/jd_rush_wind_vipgrowth.js >> /scripts/logs/jd_rush_wind_vipgrowth.log 2>&1
 9 9,21 * * * node /scripts/jd_red_change.js >> /scripts/logs/jd_red_change.log 2>&1
-9 0,14,21 * * * node /scripts/jd_smiek_gua_city.js >> /scripts/logs/jd_smiek_gua_city.js 2>&1
