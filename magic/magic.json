@@ -1,9 +1,9 @@
 {
-    "api_id": 4072867,
-    "api_hash": "0c123a1d54392c4508fcbf40e8c08023",
-    "bot_id": 5657431478,
-    "bot_token": "5657431478:AAFMgQy_RlwA-hvFBbyaeZG-jCXk4ZLPy28",
-    "user_id": 1079526697,
+    "api_id": 123,
+    "api_hash": "123",
+    "bot_id": 123,
+    "bot_token": "123",
+    "user_id": 123,
     "proxy": true,
     "proxy_type": "socks5",
     "proxy_addr": "127.0.0.1",
@@ -13,18 +13,11 @@
     "proxy_secret": "",
     "log_path": "/ql/log",
     "log_send": false,
-    "log_send_id": 5657431478,
+    "log_send_id": 123,
     "monitor_cache_size": 100,
-    "monitor_cars": [
-        -1001752593373,      
-        -1001718225453,        
-        -1001401411583,
+    "monitor_cars": [        
         -1001641077559,
-        -1001681761718,
-        -1001780328966,
-        -1001749005484,
-        -1001657127252,
-        5657431478
+        123
     ],
     "monitor_auto_stops": [
         "jd_AutoOpenCard"
