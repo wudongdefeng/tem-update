@@ -461,6 +461,7 @@ def doTask(actorUuid, pin, taskType):
         data = res['data']
         if data['score'] == 0:
             print("\t获得 💨💨💨")
+            sys.exit()
         else:
             print(f"\t🎉获得{data['score']}积分")
     else:
