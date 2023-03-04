@@ -42,7 +42,7 @@ redis_port = os.environ.get("redis_port") if os.environ.get("redis_port") else "
 redis_pwd = os.environ.get("redis_pwd") if os.environ.get("redis_pwd") else ""
 jd_joinCommonId = os.environ.get("jd_joinCommonId") if os.environ.get("jd_joinCommonId") else ""
 inviterUuid = os.environ.get("jd_joinCommon_uuid") if os.environ.get("jd_joinCommon_uuid") else ""
-
+run_coincommon = os.environ.get("run_coincommon") if os.environ.get("run_coincommon") else "false"
 if not jd_joinCommonId:
     print("⚠️未发现有效活动变量,退出程序!")
     sys.exit()
@@ -325,7 +325,12 @@ def activityContent(pin, pinImg, nickname):
     refresh_cookies(response)
     res = response.json()
     if res['result']:
-        return res['data']
+        print(res['data']['scoreName'])
+        if "金币" in res['data']['scoreName'] and run_coincommon == "false" :            
+            print("金币卡自动退出")
+            sys.exit()
+        else:
+            return res['data']    
     else:
         print(res['errorMessage'])
         if "活动已结束" in res['errorMessage']:
