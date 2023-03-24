@@ -38,6 +38,7 @@ $.newShareCode = [];
 let codeType = 0;
 const ZLC = true
 const JD_ZLC_URL = process.env.JD_ZLC_URL ? process.env.JD_ZLC_URL : "https://zlc1.chaoyi996.com";
+const OPEN_ZLC = process.env.OPEN_ZLC ? process.env.OPEN_ZLC : "TRUE";
 
 let message = '',
     subTitle = '',
@@ -295,7 +296,11 @@ function shareCodesFormat() {
         newShareCodes = [];
         const readShareCodeRes = await readShareCode(jdFruitShareArr[$.index - 1]);
         if (readShareCodeRes && readShareCodeRes.code === 200) {
+            if (OPEN_ZLC === true) {
             newShareCodes = [...new Set([...newShareCodes, ...(readShareCodeRes.data || [])])];
+                } else {
+            newShareCodes = [...new Set([...newShareCodes, ...([] || [])])];    
+                }
         }
         console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify(newShareCodes)}`)
         resolve();
