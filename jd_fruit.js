@@ -301,7 +301,7 @@ function shareCodesFormat() {
       const tempIndex = $.index > shareCodes.length ? (shareCodes.length - 1) : ($.index - 1);
       newShareCodes = shareCodes[tempIndex].split('@');
     }
-    const readShareCodeRes = await readShareCode();
+    const readShareCodeRes = await readShareCode(jdFruitShareArr[$.index - 1]);
     if (readShareCodeRes && readShareCodeRes.code === 200) {
         if ( OPEN_ZLC === true) {        
       // newShareCodes = newShareCodes.concat(readShareCodeRes.data || []);
