@@ -340,7 +340,7 @@ async function showMsg() {
     await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】${$.nickName}\n${message}`);
   }
   if ($.exportResult != "") {
-      await notify.sendNotify("店铺签到变量", `export DPQDTK=\"${$.exportResult}\"`)
+      await notify.sendNotify("店铺签到变量", `export SHOP_TOKENS=\"${$.exportResult}\"`)
   }
 }
 
