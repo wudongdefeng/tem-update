@@ -1,6 +1,6 @@
 tg频道 ：https://t.me/+MmaqAfh4_dIwZjBl
 
-推荐这个机场15块钱200g流量，只跑监控够用了。
+推荐这个机场16块钱200g流量，只跑监控够用了。
 https://xn--l6qx3l9s1a.com/#/register?code=K2A07dKD
 
 ## Special statement:
