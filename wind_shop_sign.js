@@ -11,13 +11,13 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 
-$.Token = process.env.SHOP_TOKENS ? process.env.SHOP_TOKENS : "";
+$.Token = process.env.DPQDTK ? process.env.DPQDTK : "";
 let token = []
-if (process.env.SHOP_TOKENS) {
-  token = [...process.env.SHOP_TOKENS.split('&'),...token]
+if (process.env.DPQDTK) {
+  token = [...process.env.DPQDTK.split('&'),...token]
 }
 if (!token.length) {
-  console.log('无店铺签到token,不执行.需自备token:环境变SHOP_TOKENS: tk1&tk2. 详细说明请入群查看频道信息.')
+  console.log('无店铺签到token,不执行.需自备token:环境变DPQDTK: tk1&tk2. 详细说明请入群查看频道信息.')
   return
 }
 
@@ -340,7 +340,7 @@ async function showMsg() {
     await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName}`, `【京东账号${$.index}】${$.nickName}\n${message}`);
   }
   if ($.exportResult != "") {
-      await notify.sendNotify("店铺签到变量", `export SHOP_TOKENS=\"${$.exportResult}\"`)
+      await notify.sendNotify("店铺签到变量", `export DPQDTK=\"${$.exportResult}\"`)
   }
 }
 
