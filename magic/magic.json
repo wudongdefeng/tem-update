@@ -107,14 +107,14 @@
             "queue": true,
             "queue_name": "M_FAV_SHOP_ARGV",
             "enable": false
-        },
+        },                
         "M_FOLLOW_SHOP_ARGV": {
             "name": "M关注有礼",
             "task": "task wudongdefeng_tem-update/m_jd_follow_shop.js",
             "wait": 10,
             "queue": true,
             "queue_name": "M_FOLLOW_SHOP_ARGV",
-            "enable": false
+            "enable": true
         },
         "jd_wxCollectionActivityUrl": {
             "name": "HarbourJ加购",
@@ -131,6 +131,14 @@
             "queue": true,
             "queue_name": "M_WX_ADD_CART_URL",
             "enable": false
+        },
+        "M_WX_CENTER_DRAW_URL": {
+            "name": "M老虎机抽奖",
+            "task": "task wudongdefeng_tem-update/m_jd_wx_centerDraw.js",
+            "wait": 10,
+            "queue": true,
+            "queue_name": "M_WX_CENTER_DRAW_URL",
+            "enable": true
         },
         "jd_lzkj_loreal_draw_url": {
             "name": "kingran_lzkj_loreal抽奖",
@@ -154,7 +162,7 @@
             "wait": 10,
             "queue": true,
             "queue_name": "M_WX_KNOWLEDGE_URL",
-            "enable": false
+            "enable": true
         },
         "M_WX_SHARE_URL": {
             "name": "M分享有礼",
@@ -162,7 +170,7 @@
             "wait": 10,
             "queue": true,
             "queue_name": "M_WX_SHARE_URL",
-            "enable": false
+            "enable": true
         },
         "M_WX_FOLLOW_DRAW_URL": {
             "name": "M关注有礼抽奖",
@@ -170,7 +178,7 @@
             "wait": 10,
             "queue": true,
             "queue_name": "M_WX_FOLLOW_DRAW_URL",
-            "enable": false
+            "enable": true
         },
         "M_WX_LEVEL_BIRTH_URL": {
             "name": "M等级/生日礼包",
@@ -178,7 +186,7 @@
             "wait": 10,
             "queue": true,
             "queue_name": "M_WX_LEVEL_BIRTH_URL",
-            "enable": false
+            "enable": true
         },
         "M_WX_LUCK_DRAW_URL": {
             "name": "M无线店铺抽奖",
@@ -186,7 +194,7 @@
             "wait": 10,
             "queue": true,
             "queue_name": "M_WX_LUCK_DRAW_URL",
-            "enable": false
+            "enable": true
         },
         "M_WX_GAME_URL": {
             "name": "M无线游戏",
@@ -194,7 +202,7 @@
             "wait": 10,
             "queue": true,
             "queue_name": "M_WX_GAME_URL",
-            "enable": false
+            "enable": true
         },
         "M_WX_SHOP_GIFT_URL": {
             "name": "M关注有礼无线",
@@ -218,7 +226,7 @@
             "wait": 10,
             "queue": true,
             "queue_name": "LUCK_DRAW_URL",
-            "enable": true
+            "enable": false
         },
         "jd_wxCartKoi_activityId": {
             "name": "购物车锦鲤",
@@ -242,7 +250,7 @@
             "wait": 10,
             "queue": true,
             "queue_name": "jd_wxMcLevelAndBirthGifts_activityId",
-            "enable": true
+            "enable": false
         },
         "jd_wxShopFollowId": {
             "name": "HarbourJ-关注店铺有礼",
@@ -258,7 +266,7 @@
             "wait": 10,
             "queue": true,
             "queue_name": "jd_wxShopGiftId",
-            "enable": true
+            "enable": false
         },
         "jd_wdz_activityId": {
             "name": "HarbourJ-微定制",
@@ -282,7 +290,7 @@
             "wait": 10,
             "queue": true,
             "queue_name": "jd_drawCenter_activityId",
-            "enable": true
+            "enable": false
         },
         "jd_lzkj_loreal_invite_url": {
             "name": "kingran-lzkj_loreal邀请好友",
@@ -334,7 +342,7 @@
         },
         "jd_wxBulidActivityId": {
             "name": "HarbourJ-建楼有礼",
-            "task": "task wudongdefeng_tem-update/jd_wxBulidActivity.py",
+            "task": "task HarbourJ/jd_wxBulidActivity.py",
             "wait": 10,
             "queue": true,
             "queue_name": "jd_wxBulidActivityId",
@@ -346,7 +354,7 @@
             "wait": 10,
             "queue": true,
             "queue_name": "jd_wxgame_activityId",
-            "enable": true
+            "enable": false
         },
         "jd_wxKnowledgeActivity_activityUrl ": {
             "name": "kingran知识达人",
@@ -354,7 +362,7 @@
             "wait": 10,
             "queue": true,
             "queue_name": "jd_wxKnowledgeActivity_activityUrl ",
-            "enable": true
+            "enable": false
         },
         "jd_wxUnPackingActivity_activityId": {
             "name": "kingran-幸运福袋",
@@ -485,8 +493,8 @@
             "enable": true
         },
         "VENDER_ID": {
-            "name": "feverun-强制入会",
-            "task": "task wudongdefeng_tem-update/jd_card_force.js",
+            "name": "kingran-强制入会",
+            "task": "task wudongdefeng_tem-update/jd_OpenCard_Force.js",
             "wait": 10,
             "queue": true,
             "queue_name": "VENDER_ID",
