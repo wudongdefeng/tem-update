@@ -36,7 +36,7 @@
             "env": "export jd_cjhy_activityId=\"%s\""
         },
         "^(?=(.|\\n)*jd_lzkj_wxBuildActivity_activityId)(.|\\n)*$": {
-            "env": "export jd_wxBuildActivity_activityId=\"%s\""
+            "env": "export jd_wxBulidActivityId=\"%s\""
         },
         "^(?=(.|\\n)*jd_lzkj_wxGameActivity_activityId)(.|\\n)*$": {
             "env": "export jd_wxgame_activityId=\"%s\""
@@ -63,7 +63,7 @@
             "env": "export jd_zdjr_activityId=\"%s\""
         },
         "^(?=(.|\\n)*jd_cjhy_completeInfoActivity_Ids)(.|\\n)*$": {
-            "env": "export jd_wxCompleteInfoId=\"%s\""
+            "env": "export jd_completeInfoActivity_activityId=\"%s\""
         },
         "^(?=(.|\\n)*jd_wxBirthGiftsId)(.|\\n)*$": {
             "env": "export jd_wxMcLevelAndBirthGifts_activityId=\"%s\""
@@ -92,8 +92,11 @@
         "((?=.*jd_lzkj_loreal_invite_url)(?=.*https)^.*$)": {
             "env": "export jd_lzkjInteractUrl=\"%s\""
         },
-        "((?=.*jd_wxShopGift_activityUrl)(?=.*https)^.*$)": {
-            "env": "export M_WX_SHOP_GIFT_URL=\"%s\""
+        "M_WX_SHOP_GIFT_URL|url2id": {
+            "env": "export jd_wxShopGiftId=\"%s\""
+        },
+        "jd_wxShopGift_activityUrl|url2id": {
+            "env": "export jd_wxShopGiftId=\"%s\""
         }
     },
     "monitor_scripts": {
