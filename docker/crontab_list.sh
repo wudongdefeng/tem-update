@@ -3,7 +3,6 @@
 #收集助力码
 30 * * * * sh +x /scripts/docker/auto_help.sh collect >> /scripts/logs/auto_help_collect.log 2>&1
 
-20 5,12,21 * * * node /scripts/m_jd_farm_automation.js >> /scripts/logs/m_jd_farm_automation.log
 30 6-20/3 * * * node /scripts/jd_xinruimz.js >> /scripts/logs/jd_xinruimz.log
 22 21 * * * node /scripts/jd_xiaoshou_wind_sign.js >> /scripts/logs/jd_xiaoshou_wind_sign.log
 22 21 * * * node /scripts/jd_xiaoshou_sendBean.js >> /scripts/logs/jd_xiaoshou_sendBean.log
