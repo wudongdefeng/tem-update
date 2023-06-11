@@ -1,8 +1,8 @@
 /*
 积分换话费
 入口：首页-生活·缴费-积分换话费 
-update：2023/6/10
-33 3,18 * * * jd_dwapp.js
+update：2023/6/10 by:6dy
+33 7 * * * jd_dwapp.js
 */
 
 const $ = new Env('积分换话费');
@@ -183,7 +183,11 @@ async function tasklist() {
                 } else {
                     data = JSON.parse(data)
                     if (data) {
-                        $.tasklist = data.data
+                        if(data.code == 200) {
+													$.tasklist = data.data
+												} else {
+                            console.log(data.msg);
+                        }
                     }
                 }
             } catch (e) {
