@@ -31,7 +31,7 @@
 20 8 * * * node /scripts/jd_sgmh.js >> /scripts/logs/jd_sgmh.log
 0 9,22 * * * node /scripts/jd_red_change.js >> /scripts/logs/jd_red_change.log
 15 7-21/2 * * * node /scripts/jd_plantBean.js >> /scripts/logs/jd_plantBean.log
-15 6-18/6 * * * node /scripts/jd_pet.js >> /scripts/logs/jd_pet.log
+15 5,9,16 * * * node /scripts/jd_plantBean_help.js >> /scripts/logs/jd_plantBean_help.log
 22 21 * * * node /scripts/jd_nzmh.js >> /scripts/logs/jd_nzmh.log
 22 21 * * * node /scripts/jd_kingran_wind_yqlxj_help.js >> /scripts/logs/jd_kingran_wind_yqlxj_help.log
 #22 21 * * * node /scripts/jd_kingran_wind_wskey_logout.js >> /scripts/logs/jd_kingran_wind_wskey_logout.log
@@ -64,14 +64,14 @@
 #22 21 * * * node /scripts/jd_hello_wind_fruit_plant.js >> /scripts/logs/jd_hello_wind_fruit_plant.log
 23 11,13,21 * * * node /scripts/jd_health_plant.py >> /scripts/logs/jd_health_plant.log
 9 1,15 * * * node /scripts/jd_health_exchange.py >> /scripts/logs/jd_health_exchange.log
-5-45/20 * * * * node /scripts/jd_health_collect.js >> /scripts/logs/jd_health_collect.log
 13 0,6,22 * * * node /scripts/jd_health.js >> /scripts/logs/jd_health.log
 21 9 * * * node /scripts/jd_gua_MMdou_Mod.js >> /scripts/logs/jd_gua_MMdou_Mod.log
 13 1,22 * * * node /scripts/jd_gold_creator.js >> /scripts/logs/jd_gold_creator.log
 22 21 * * * node /scripts/jd_getred.py >> /scripts/logs/jd_getred.log
 20 13 * * 6 node /scripts/jd_get_share_code.js >> /scripts/logs/jd_get_share_code.log
-15 6-18/6 * * * node /scripts/jd_fruit_task.js >> /scripts/logs/jd_fruit_task.log
-5 6-18/6 * * * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log
+15 4,8 * * * node /scripts/jd_fruit_help.js >> /scripts/logs/jd_fruit_help.log
+5 6-18/6 * * * node /scripts/jd_fruit_task.js >> /scripts/logs/jd_fruit_task.log
+15 5,9 * * * node /scripts/jd_fruit_friend.js >> /scripts/logs/jd_fruit_friend.log
 22 21 * * * node /scripts/jd_faker_wind_unsubscribe_xh.js >> /scripts/logs/jd_faker_wind_unsubscribe_xh.log
 22 21 * * * node /scripts/jd_faker_wind_unsubscribe.js >> /scripts/logs/jd_faker_wind_unsubscribe.log
 22 21 * * * node /scripts/jd_faker_wind_signFree.js >> /scripts/logs/jd_faker_wind_signFree.log
