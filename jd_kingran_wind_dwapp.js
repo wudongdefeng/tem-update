@@ -42,25 +42,29 @@ if ($.isNode()) {
             }
             $.UUID = getUUID('xxxxxxxxxxxxxxxx');
             await main()
+						await $.wait(parseInt(Math.random() * 3000 + 3200, 10))
         }
     }
 })().catch((e) => { $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '') }).finally(() => { $.done(); })
 
 async function main() {
     $.log("去签到")
-    await usersign()
+    await $.wait(parseInt(Math.random() * 1000 + 1000, 10))
+		await usersign()
+		await $.wait(parseInt(Math.random() * 2000 + 3200, 10))
     await tasklist();
     if ($.tasklist) {
         for (let i of $.tasklist) {
             if (i.viewStatus == 0) {
                 console.log(`去做 ${i.taskDesc}`);
                 await taskrecord(i.id);
-                await $.wait(3000);
+                await $.wait(parseInt(Math.random() * 2000 + 2200, 10))
                 console.log(`去领积分`);
                 await taskreceive(i.id)
             } else if (i.viewStatus == 2) {
                 console.log(`去领积分`);
                 await taskreceive(i.id);
+								await $.wait(parseInt(Math.random() * 2000 + 2200, 10))
             } else if (i.viewStatus == 1) {
                 $.log(`${i.name} 已完成浏览`);
             }
@@ -71,7 +75,7 @@ async function taskrecord(id) {
     enc = await sign(id + "1")
     let body = { "id": id, "agentNum": "m", "taskType": 1, "followChannelStatus": "", ...enc }
     return new Promise(resolve => {
-        $.post(taskPostUrl("task/dwRecord", body), (err, resp, data) => {
+        $.post(taskPostUrl1("task/dwRecord", body), (err, resp, data) => {
             try {
                 if (err) {
                     console.log(`${err}`)
@@ -104,7 +108,7 @@ async function taskreceive(id) {
     enc = await sign(id)
     let body = { "id": id, ...enc }
     return new Promise(resolve => {
-        $.post(taskPostUrl("task/dwReceive", body), (err, resp, data) => {
+        $.post(taskPostUrl1("task/dwReceive", body), (err, resp, data) => {
             try {
                 if (err) {
                     console.log(`${err}`)
@@ -133,7 +137,7 @@ async function taskreceive(id) {
 async function usersign() {
     body = await sign()
     return new Promise(resolve => {
-        $.post(taskPostUrl("dwSignInfo", body), (err, resp, data) => {
+        $.post(taskPostUrl("DATAWALLET_USER_SIGN", body), (err, resp, data) => {
             try {
                 if (err) {
                     console.log(`${err}`)
@@ -145,8 +149,12 @@ async function usersign() {
                         if (data.code === 200) {
                             console.log(`签到成功：获得积分${data.data.signInfo.signNum}`);
                             $.log(`总积分：${data.data.totalNum}\n`);
+                        } else if (data.code === 451) {
+                            console.log(data.msg);
+                        } else if (data.code === 302) {
+                            console.log(data.msg);
                         } else {
-                            console.log("似乎签到完成了\n");
+                            console.log(data.msg);
                         }
                     }
                 }
@@ -199,7 +207,7 @@ async function tasklist() {
     })
 }
 
-function taskPostUrl(function_id, body) {
+function taskPostUrl1(function_id, body) {
     return {
         url: `https://dwapp.jd.com/user/${function_id}`,
         body: JSON.stringify(body),
@@ -213,6 +221,24 @@ function taskPostUrl(function_id, body) {
             "Referer": "https://prodev.m.jd.com/mall/active/eEcYM32eezJB7YX4SBihziJCiGV/index.html",
             "Accept-Encoding": "gzip, deflate, br",
             "Content-Type": "application/json",
+            "Cookie": cookie,
+        }
+    }
+}
+
+function taskPostUrl(function_id, body) {
+    return {
+        url: `https://api.m.jd.com/api?functionId=${function_id}`,
+        body: `appid=h5-sep&functionId=DATAWALLET_USER_SIGN&body=${encodeURIComponent(JSON.stringify(body))}&client=m&clientVersion=6.0.0`,
+        headers: {
+            "Origin": "https://prodev.m.jd.com",
+            "Connection": "keep-alive",
+            "Accept": "*/*",
+            "User-Agent": `jdapp;iPhone;10.1.0;13.5;${$.UUID};network/wifi;model/iPhone11,6;addressid/4596882376;appBuild/167774;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1`,
+            "Accept-Language": "zh-cn",
+            "Referer": "https://prodev.m.jd.com/mall/active/eEcYM32eezJB7YX4SBihziJCiGV/index.html",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Content-Type": "application/x-www-form-urlencoded",
             "Cookie": cookie,
         }
     }
