@@ -75,7 +75,7 @@ async function taskrecord(id) {
     enc = await sign(id + "1")
     let body = { "id": id, "agentNum": "m", "taskType": 1, "followChannelStatus": "", ...enc }
     return new Promise(resolve => {
-        $.post(taskPostUrl1("task/dwRecord", body), (err, resp, data) => {
+        $.post(taskPostUrl("task/dwRecord", body), (err, resp, data) => {
             try {
                 if (err) {
                     console.log(`${err}`)
@@ -108,7 +108,7 @@ async function taskreceive(id) {
     enc = await sign(id)
     let body = { "id": id, ...enc }
     return new Promise(resolve => {
-        $.post(taskPostUrl1("task/dwReceive", body), (err, resp, data) => {
+        $.post(taskPostUrl("task/dwReceive", body), (err, resp, data) => {
             try {
                 if (err) {
                     console.log(`${err}`)
@@ -135,9 +135,21 @@ async function taskreceive(id) {
 }
 
 async function usersign() {
-    body = await sign()
+    body = await sign();
+    body.channelSource = 'txzs';
+    let opt = {
+        url: `https://api.m.jd.com/user/color/task/dwSign`,
+        body: `appid=txsm-m&client=h5&functionId=DATAWALLET_USER_SIGN&body=${encodeURIComponent(JSON.stringify(body))}`,
+        headers: {
+            "Origin": "https://txsm-m.jd.com",
+            "Accept": "*/*",
+            "User-Agent": `jdapp;iPhone;10.1.0;13.5;${$.UUID};network/wifi;model/iPhone11,6;addressid/4596882376;appBuild/167774;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1`,
+            "Referer": "https://txsm-m.jd.com/",
+            "Cookie": cookie,
+        }
+    }
     return new Promise(resolve => {
-        $.post(taskPostUrl("DATAWALLET_USER_SIGN", body), (err, resp, data) => {
+        $.post(opt, (err, resp, data) => {
             try {
                 if (err) {
                     console.log(`${err}`)
@@ -207,7 +219,7 @@ async function tasklist() {
     })
 }
 
-function taskPostUrl1(function_id, body) {
+function taskPostUrl(function_id, body) {
     return {
         url: `https://dwapp.jd.com/user/${function_id}`,
         body: JSON.stringify(body),
@@ -225,25 +237,6 @@ function taskPostUrl1(function_id, body) {
         }
     }
 }
-
-function taskPostUrl(function_id, body) {
-    return {
-        url: `https://api.m.jd.com/api?functionId=${function_id}`,
-        body: `appid=h5-sep&functionId=DATAWALLET_USER_SIGN&body=${encodeURIComponent(JSON.stringify(body))}&client=m&clientVersion=6.0.0`,
-        headers: {
-            "Origin": "https://prodev.m.jd.com",
-            "Connection": "keep-alive",
-            "Accept": "*/*",
-            "User-Agent": `jdapp;iPhone;10.1.0;13.5;${$.UUID};network/wifi;model/iPhone11,6;addressid/4596882376;appBuild/167774;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 13_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148;supportJDSHWK/1`,
-            "Accept-Language": "zh-cn",
-            "Referer": "https://prodev.m.jd.com/mall/active/eEcYM32eezJB7YX4SBihziJCiGV/index.html",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Cookie": cookie,
-        }
-    }
-}
-
 function TotalBean() {
     return new Promise(async resolve => {
         const options = {
