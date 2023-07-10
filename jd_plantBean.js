@@ -31,7 +31,7 @@ let lastRoundId = null;//上期id
 let roundList = [];
 let awardState = '';//上期活动的京豆是否收取
 let num;
-
+let lnrun = 0;
 $.shareCodesArr = [];
 
 notify = $.isNode() ? require('./sendNotify') : '';
@@ -679,10 +679,10 @@ function shareCodesFormat() {
     return new Promise(async resolve => {
         let readShareCodeRes = await readShareCode();
         if (readShareCodeRes && readShareCodeRes.code === 0) {
+            newShareCodes = [...new Set([...(readShareCodeRes.data || [])])];
             newShareCodes.push("54i3jbri2l6fomplj6zedpwt4ifexs242jkgaai");
             newShareCodes.push("4npkonnsy7xi2fqmflib7amovspi4y7hybdrapa");
             newShareCodes.push("tnmcphpjys5icwjpxfmm3gwodgjirglqb6pnm4q");  
-            newShareCodes = [...new Set([...(readShareCodeRes.data || [])])];                    
         }
         console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify(newShareCodes)}`)
         resolve();
