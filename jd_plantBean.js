@@ -7,7 +7,7 @@ https://t.me/proenvc
 注：会自动关注任务中的店铺跟商品，介意者勿使用。
 每个京东账号每天只能帮助3个人。多出的助力码将会助力失败。
 
-cron "1 5,11,15,19 * * *" script-path=jd_plantBean.js,tag=京东种豆得豆
+cron "41 5,11,15,19 * * *" script-path=jd_plantBean.js,tag=京东种豆得豆
 */
 let global_agent_http_proxy_isopen = false;
 if (process.env.GLOBAL_AGENT_HTTP_PROXY_OPEN == "true"){
