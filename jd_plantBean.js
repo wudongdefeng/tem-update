@@ -40,7 +40,7 @@ if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
         cookiesArr.push(jdCookieNode[item]);
     });
-    console.log(`如果出现提示 ?.data. 错误，请升级nodejs版本(进入容器后，apk add nodejs-current)`)
+    console.log(`如果出现提示 ?.data. 错误，请进入容器后，apk add nodejs-current)`)
     if (process.env.JD_DEBUG && process.env.JD_DEBUG === "false") console.log = () => {};
 } else {
     cookiesArr = [$.getdata("CookieJD"), $.getdata("CookieJD2"), ...$.toObj($.getdata("CookiesJD") || "[]").map((item) => item.cookie)].filter((item) => !!item);
@@ -67,7 +67,13 @@ if ($.isNode()) {
             subTitle = '';
             option = {};
             await shareCodesFormat();
+            lnrun++;
             await jdPlantBean();
+            if (lnrun == 3) {
+              console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);
+              await $.wait(60 * 1000);
+              lnrun = 0;
+             }
             await showMsg();
 
             if (global_agent_http_proxy_isopen == false) {
@@ -673,10 +679,10 @@ function shareCodesFormat() {
     return new Promise(async resolve => {
         let readShareCodeRes = await readShareCode();
         if (readShareCodeRes && readShareCodeRes.code === 0) {
-            newShareCodes = [...new Set([...(readShareCodeRes.data || [])])];
             newShareCodes.push("54i3jbri2l6fomplj6zedpwt4ifexs242jkgaai");
             newShareCodes.push("4npkonnsy7xi2fqmflib7amovspi4y7hybdrapa");
-            newShareCodes.push("tnmcphpjys5icwjpxfmm3gwodgjirglqb6pnm4q");          
+            newShareCodes.push("tnmcphpjys5icwjpxfmm3gwodgjirglqb6pnm4q");  
+            newShareCodes = [...new Set([...(readShareCodeRes.data || [])])];                    
         }
         console.log(`第${$.index}个京东账号将要助力的好友${JSON.stringify(newShareCodes)}`)
         resolve();
