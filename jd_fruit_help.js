@@ -235,10 +235,10 @@ function shareCodesFormat() {
     return new Promise(async resolve => {
         let readShareCodeRes = await readShareCode();
         if (readShareCodeRes && readShareCodeRes.code === 0) {
+            newShareCodes = [...new Set([...(readShareCodeRes.data || [])])];   
             newShareCodes.push('64af0fffd7b3478585b2b71b377613ce');
             newShareCodes.push('9fe344f3887243339369fd1f564ec49e');
             newShareCodes.push('141be55835d4494fb06b0ac4e895ddef');
-            newShareCodes = [...new Set([...(readShareCodeRes.data || [])])];            
         }
         resolve();
     })
