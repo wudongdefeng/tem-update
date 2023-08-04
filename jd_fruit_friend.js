@@ -273,7 +273,7 @@ async function getFullCollectionReward() {
   })
 }
 
-/*
+/**
  * 领取10次浇水奖励API
  */
 async function totalWaterTaskForFarm() {
@@ -300,7 +300,7 @@ async function userMyCardForFarm(cardType) {
   const functionId = arguments.callee.name.toString();
   $.userMyCardRes = await request(functionId, { "cardType": cardType });
 }
-/*
+/**
  * 领取浇水过程中的阶段性奖励
  * @param type
  * @returns {Promise<void>}
@@ -346,7 +346,7 @@ async function browserForTurntableFarm2(type) {
   const body = { "type": 2, "adId": type, "version": 4, "channel": 1 };
   $.browserForTurntableFarm2Res = await request('browserForTurntableFarm', body);
 }
-/*
+/**
  * 天天抽奖拿好礼-助力API(每人每天三次助力机会)
  */
 async function lotteryMasterHelp() {
@@ -401,7 +401,7 @@ async function masterHelp() {
     channel: 1
   });
 }
-/*
+/**
  * 水滴雨API
  */
 async function waterRainForFarm() {
@@ -409,7 +409,7 @@ async function waterRainForFarm() {
   const body = { "type": 1, "hongBaoTimes": 100, "version": 3 };
   $.waterRain = await request(functionId, body);
 }
-/*
+/**
  * 打卡领水API
  */
 async function clockInInitForFarm() {
@@ -456,7 +456,7 @@ async function gotThreeMealForFarm() {
   const functionId = arguments.callee.name.toString();
   $.threeMeal = await request(functionId);
 }
-/*
+/**
  * 浏览广告任务API
  * type为0时, 完成浏览任务
  * type为1时, 领取浏览任务奖励
@@ -478,7 +478,7 @@ async function signForFarm() {
   const functionId = arguments.callee.name.toString();
   $.signResult = await request(functionId);
 }
-/*
+/**
  * 初始化农场, 可获取果树及用户信息API
  */
 async function initForFarm() {
