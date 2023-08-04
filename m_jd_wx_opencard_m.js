@@ -15,7 +15,7 @@ if (mode) {
 }
 
 //前n个号有机会成为队长
-let leaderNumber = parseInt(process.env.M_WX_OPENCARD_M_LEADER_NUM || 7)
+let leaderNumber = parseInt(process.env.M_WX_OPENCARD_M_LEADER_NUM || 1)
 //每开4个卡等待时长
 let min = parseInt(process.env.M_WX_OPENCARD_M_MIN_WAIT || 1000);
 let max = parseInt(process.env.M_WX_OPENCARD_M_MAX_WAIT || 2000);
