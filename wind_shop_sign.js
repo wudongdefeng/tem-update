@@ -13,7 +13,7 @@ cron:1 1 1 1 *
 const $ = new Env('常规店铺签到');
 const sendNotify = $.isNode() ? require("./sendNotify") : "",
     jdCookie = $.isNode() ? require("./jdCookie") : "",
-    h5st = require("./function/h5st41.js"),
+    h5st = require("./function/h5st.js"),
     crypto = require("crypto-js"),
     _0x4f7e32 = "KLMNOPQRSTABCDEFGHIJUVWXYZabcdopqrstuvwxefghijklmnyz0123456789+/";
 
