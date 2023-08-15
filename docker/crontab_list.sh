@@ -28,7 +28,6 @@
 20 12,20 * * * node /scripts/jd_jdkd.js >> /scripts/logs/jd_jdkd.log
 40 12,20 * * * node /scripts/jd_jksq.js >> /scripts/logs/jd_jksq.log
 40 0,10 * * * node /scripts/jd_jrsign.js >> /scripts/logs/jd_jrsign.log
-1 9 * * * node /scripts/jd_lzkj_ttljd_exchange.js >> /scripts/logs/jd_lzkj_ttljd_exchange.log
 1 3 * * * node /scripts/jd_marketmh.js >> /scripts/logs/jd_marketmh.log
 1 5,11,15,19 * * * node /scripts/jd_plantBean.js >> /scripts/logs/jd_plantBean.log
 12 1,9 * * * node /scripts/jd_sign_graphics1.js >> /scripts/logs/jd_sign_graphics1.log
