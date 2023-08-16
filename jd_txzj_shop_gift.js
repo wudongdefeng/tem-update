@@ -5,6 +5,7 @@
 
 */
 
+
 const $ = new Env('店铺礼包（收藏大师）')
 const notify = $.isNode() ? require('./sendNotify') : ''
 const jdCookieNode = $.isNode() ? require('./jdCookie') : ''

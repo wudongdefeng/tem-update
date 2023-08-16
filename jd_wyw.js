@@ -11,6 +11,7 @@ cron "9 9 * * *" script-path=jd_wyw.js,tag=玩一玩成就
 ============小火箭=========
 玩一玩成就 = type=cron,script-path=jd_wyw.js, cronexpr="9 9 * * *", timeout=3600, enable=true
 */
+
 const $ = new Env('玩一玩成就值');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 

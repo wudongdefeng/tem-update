@@ -22,6 +22,7 @@ cron "20 0,22 * * *" script-path=jd_speed_redpocke.js,tag=京喜特价红包
 京喜特价红包 = type=cron,script-path=jd_speed_redpocke.js, cronexpr="20 0,22 * * *", timeout=3600, enable=true
 jd_tj_sign.js
 */
+
 const $ = new Env('京喜特价红包');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;

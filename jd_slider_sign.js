@@ -19,6 +19,7 @@ const signList = [
     { "name": "PLUS天天领京豆", "id": 1265, "url": "https://pro.m.jd.com/mall/active/N9MpLQdxZgiczZaMx2SzmSfZSvF/index.html" }
 ]
 
+
 const $ = new Env('京东滑块签到');
 const b4 = $.isNode() ? require('./sendNotify') : '',
     b5 = $.isNode() ? require('./jdCookie.js') : '',

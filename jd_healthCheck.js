@@ -5,11 +5,11 @@
 
 ⚠ 请勿定时或频繁运行！
 
-cron:1 1 1 1 1
+cron:1 1 1 1 *
 ============Quantumultx===============
 [task_local]
 #账号健康检查
-1 1 1 1 1 jd_healthCheck.js, tag=账号健康检查, enabled=true
+1 1 1 1 * jd_healthCheck.js, tag=账号健康检查, enabled=true
 
 */
 

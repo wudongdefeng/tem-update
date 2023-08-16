@@ -14,6 +14,7 @@ jd_shopSign_joinMember // 是否入会（true/false），默认不入会
 cron: 7 7 7 7 7 jd_shopSign.js
 */
 
+
 const $ = new Env('无线店铺签到（超级无线/超级会员）')
 const l1l1I = require("./jdCookie"),
   iIlI1I = $.isNode() ? require("./sendNotify") : "",

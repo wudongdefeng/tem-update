@@ -16,6 +16,7 @@ cron:1 1 1 1 *
 1 1 1 1 * jd_lzkj_loreal_share.js, tag=lzkj_loreal分享有礼, enabled=true
 */
 
+
 const $ = new Env("分享有礼（lzkj_loreal）");
 const iiii1 = $.isNode() ? require("./sendNotify") : "",
   l1li1I = $.isNode() ? require("./jdCookie.js") : "",

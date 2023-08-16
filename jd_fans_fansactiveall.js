@@ -7,6 +7,7 @@ cron:1 1 1 1 *
 #粉丝福利红包
 1 1 1 1 * jd_fans_fansactiveall.js, tag=粉丝福利红包, enabled=true
  */
+
 const $=new Env('粉丝福利红包');
 const notify = $.isNode() ? require("./sendNotify") : "",
   jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";

@@ -2,6 +2,7 @@
 1，5，10豆，黑子擦肩
 定时随机
  */
+
 const $ = new Env('每日抽豆');
 const liIiI11I = $.isNode() ? require("./sendNotify") : "",
   lIl1Ill = $.isNode() ? require("./jdCookie.js") : "",

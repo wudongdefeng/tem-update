@@ -11,6 +11,7 @@ cron:1 1 1 1 *
 1 1 1 1 * jd_lzkj_loreal_followShop.js, tag=lzkj_loreal关注有礼, enabled=true
 */
 
+
 const $ = new Env("关注有礼（lzkj_loreal）");
 
 const notify = $.isNode() ? require("./sendNotify") : "";

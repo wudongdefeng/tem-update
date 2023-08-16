@@ -5,6 +5,7 @@
 
 */
 
+
 const $ = new Env('加购有礼（京耕）')
 const notify = $.isNode() ? require('./sendNotify') : ''
 const jdCookieNode = $.isNode() ? require('./jdCookie') : ''

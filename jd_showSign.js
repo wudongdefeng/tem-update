@@ -5,6 +5,7 @@
 
 */
 
+
 const $ = new Env('店铺签到（京耕）')
 const notify = $.isNode() ? require('./sendNotify') : ''
 const jdCookieNode = $.isNode() ? require('./jdCookie') : ''

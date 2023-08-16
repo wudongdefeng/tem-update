@@ -5,6 +5,7 @@
 33 2 1 1 * https://raw.githubusercontent.com/6dylan6/jdpro/main/jd_fen2bean.js
 问题建议TG -> https://t.me/dylan_jdpro
 */
+
 const $ = new Env("物流积分换豆");
 const _0x43cfd3 = $.isNode() ? require("./sendNotify") : "",
     _0x379fa0 = $.isNode() ? require("./jdCookie.js") : "";

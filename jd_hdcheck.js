@@ -4,6 +4,7 @@
 https://raw.githubusercontent.com/6dylan6/jdpro/main/jd_hdcheck.js
 updatetime:22023/04/23
  */
+
 const $ = new Env('互动消息检查');
 const _0x4af652 = $.isNode() ? require("./sendNotify") : "";
 const _0xcf5167 = $.isNode() ? require("./jdCookie.js") : "",
