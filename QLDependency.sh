@@ -38,24 +38,24 @@ echo
 
 echo
 "当前node版本(如果没有node，请自行安装): "
-#node -v
+node -v
 
 echo
 "当前npm版本(如果没有npm，请自行安装): "
 npm -v
-#apk add python3 g++ lxml zlib-dev gcc jpeg-dev python3-dev musl-dev freetype-dev
+apk add python3 g++ lxml zlib-dev gcc jpeg-dev python3-dev musl-dev freetype-dev
 pip3 install requests
 npm config set registry https://registry.npmmirror.com
 DIR="/ql/data/scripts"
 if [ -d "$DIR" ]; then
   echo "青龙版本2.12以上"
   cd /ql/data/scripts
-  pnpm install png-js date-fns axios@v0.27.2 crypto-js ts-md5 tslib @types/node requests tough-cookie jsdom download tunnel fs ws form-data jsdom js-base64 got tslib redis png-js md5 dotenv moment ds qrcode-terminal silly-datetime cheerio
-  #pip3 install requests pycryptodome redis telethon pillow jieba cacheout prettytable bs4 python-socks
+  pnpm install png-js date-fns axios@v0.27.2 crypto-js ts-md5 tslib @types/node requests tough-cookie jsdom download tunnel fs ws form-data jsdom js-base64 got tslib redis png-js md5 dotenv moment ds qrcode-terminal silly-datetime
+  pip3 install requests pycryptodome redis telethon pillow jieba cacheout prettytable bs4 python-socks
   else
   echo "青龙版本2.12以下"
   cd /ql/scripts
-  pnpm install png-js date-fns axios@v0.27.2 crypto-js ts-md5 tslib @types/node requests tough-cookie jsdom download tunnel fs ws form-data jsdom js-base64 got tslib redis png-js md5 dotenv moment ds qrcode-terminal silly-datetime cheerio
+  pnpm install png-js date-fns axios@v0.27.2 crypto-js ts-md5 tslib @types/node requests tough-cookie jsdom download tunnel fs ws form-data jsdom js-base64 got tslib redis png-js md5 dotenv moment ds qrcode-terminal silly-datetime
 fi
 
 
