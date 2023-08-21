@@ -42,7 +42,7 @@ echo
 
 echo
 "当前npm版本(如果没有npm，请自行安装): "
-#npm -v
+npm -v
 #apk add python3 g++ lxml zlib-dev gcc jpeg-dev python3-dev musl-dev freetype-dev
 pip3 install requests
 npm config set registry https://registry.npmmirror.com
