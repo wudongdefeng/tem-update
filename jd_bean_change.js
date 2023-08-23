@@ -1,6 +1,7 @@
 /*
 cron "30 12,21 * * *" jd_bean_change.js, tag:资产变化强化版by-ccwav
  */
+let lnrun = 0;
 
 //详细说明参考 https://github.com/ccwav/QLScript2
 
@@ -346,6 +347,7 @@ if(DisableIndex!=-1){
 			strGuoqi="";
 			
 			console.log(`******开始查询【京东账号${$.index}】${$.nickName || $.UserName}*********`);
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
 			await TotalBean();			
 		    //await TotalBean2();
 			if ($.beanCount == 0) {
@@ -1285,6 +1287,7 @@ function jingBeanDetail() {
 				body = strsign.body;
 			}
 			else */
+let lnrun = 0;
 			//body = await getSignfromNolan('jingBeanDetail', { "pageSize": "20", "page": "1" });
 			body=get_sign('jingBeanDetail',{ "pageSize": "20", "page": "1" },"android","11.2.8").convertUrl
 

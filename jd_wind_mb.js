@@ -6,6 +6,7 @@ https://xinrui2-isv.isvjcloud.com/jd-tourism/load_app/load_app.html
 #全民摸冰
 6  9,12 * * * https://raw.githubusercontent.com/Wenmoux/scripts/wen/jd/jd_mb.js, tag=全民摸冰, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 */
+let lnrun = 0;
 const $ = new Env('全民摸冰');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -44,6 +45,7 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
                 $.nickName = '';
                 $.Authorization = "Bearer undefined"
                 console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
                 if (!$.isLogin) {
                     $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {
                         "open-url": "https://bean.m.jd.com/bean/signIndex.action"

@@ -17,6 +17,7 @@ cron "45 3 1-31/7 * *" script-path=https://raw.githubusercontent.com/KingRan/JDJ
 红包使用情况统计 = type=cron,script-path=https://raw.githubusercontent.com/KingRan/JDJB/main/jd_hbCount.js, cronexpr="45 3 1-31/7 * *", timeout=3600, enable=true
 *
 */
+let lnrun = 0;
 const $ = new Env('历史红包统计');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -44,6 +45,7 @@ if ($.isNode()) {
         $.nickName = '';
         message = '';
         console.log(`\n******开始【京东账号${$.index}】${$.UserName || $.UserName}*********\n`);
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
 
         await getinfo();
         await $.wait(2000)

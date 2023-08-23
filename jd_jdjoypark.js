@@ -5,6 +5,7 @@
 跑会黑，自己决定！！！
 6dy  2022/12/31
 */
+let lnrun = 0;
 
 const $ = new Env("汪汪庄园");
 const _0x519374 = $.isNode() ? require("./jdCookie.js") : "",
@@ -58,6 +59,7 @@ message = "";
                 continue;
             }
             console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
             $.hasJoyCoin = true;
             await _0x5cd243(true);
             await $.wait(500);

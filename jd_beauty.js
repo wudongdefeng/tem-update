@@ -7,6 +7,7 @@ https://raw.githubusercontent.com/aTenb/jdOpenSharePicker/master/jd_beautyStudy.
 活动入口：京东app首页-美妆馆-底部中间按钮
 定时自定义，集中访问可能炸
  */
+let lnrun = 0;
 const $ = new Env('美丽研究院');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -52,6 +53,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
       $.token = '';
       //await TotalBean();
       console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/`, {"open-url": "https://bean.m.jd.com/"});
 

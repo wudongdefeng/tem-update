@@ -4,6 +4,7 @@
 
 随机定时
 */
+let lnrun = 0;
 const $ = new Env('京东快递');
 const got = require('got');
 

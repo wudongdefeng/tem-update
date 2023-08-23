@@ -15,6 +15,7 @@ JOY_COIN_MAXIMIZE =      最大化硬币收益，如果合成后全部挖土后�
 #特价版-牛牛乐园
 1 1 1 1 * jd_tj_nnly.js, tag=特价版-牛牛乐园, enabled=true
 */
+let lnrun = 0;
 
 const $ = new Env('特价版-牛牛乐园');
 const _0x3d92d8 = $.isNode() ? require("./jdCookie.js") : "",
@@ -64,6 +65,7 @@ message = "";
         continue;
       }
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
       $.krbreak = false;
       if ($.isNode()) {
         if (process.env.HELP_JOYPARK && process.env.HELP_JOYPARK == "false") {} else {

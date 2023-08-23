@@ -18,6 +18,7 @@ cron "39 20 * * *" script-path=https://raw.githubusercontent.com/KingRan/JDJB/ma
 ============小火箭=========
 京东保价 = type=cron,script-path=https://raw.githubusercontent.com/KingRan/JDJB/main/jd_price.js, cronexpr="39 20 * * *", timeout=3600, enable=true
  */
+let lnrun = 0;
 
 const $ = new Env('京东保价');
 const notify = $.isNode() ? require('./sendNotify') : '';
@@ -53,6 +54,7 @@ const JD_API_HOST = 'https://api.m.jd.com/';
       $.tryCount = 0;
       // await TotalBean();
       console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
       if (!$.isLogin) {
         $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
 

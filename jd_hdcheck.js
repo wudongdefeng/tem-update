@@ -4,6 +4,7 @@
 https://raw.githubusercontent.com/6dylan6/jdpro/main/jd_hdcheck.js
 updatetime:22023/08/14 屏蔽种豆和签到消息
  */
+let lnrun = 0;
 
 
 const $ = new Env('互动消息检查');
@@ -45,6 +46,7 @@ if ($.isNode()) {
       $.UA = _0x1aff54.UARAM ? _0x1aff54.UARAM() : _0x1aff54.USER_AGENT;
       await _0x173bb7();
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
       if (!$.isLogin) {
         const _0x3a15fe = {
           "open-url": "https://bean.m.jd.com/bean/signIndex.action"

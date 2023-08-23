@@ -6,6 +6,7 @@ cron:45 10,17,19 * * *
 
 45 10,17,19 * * * jd_superBrandJK_1.js
 */
+let lnrun = 0;
 
 const $ = new Env('特务集卡');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -39,6 +40,7 @@ $.flag = false
 			$.isLogin=true;
 			$.nickName='';
 			console.log('\n******开始【京东账号'+$.index+'】'+($.nickName||$.UserName)+'*********\n');
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
 			if(!$.isLogin){
 				$.msg($.name,'【提示】cookie已失效','京东账号'+$.index+' '+($.nickName||$.UserName)+'\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action',{'open-url':'https://bean.m.jd.com/bean/signIndex.action'});
 				if($.isNode()){

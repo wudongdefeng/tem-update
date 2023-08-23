@@ -3,6 +3,7 @@
   京喜特价,先下单,第二天开始签到
   18 8,20 * * * jd_speed_signfree.js 签到免单
 */
+let lnrun = 0;
 const $ = new Env('京喜特价签到免单');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -36,6 +37,7 @@ const JD_API_HOST = 'https://api.m.jd.com/';
             $.nickName = '';
             message = '';
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
             //msg.push(($.nickName || $.UserName) + ':')
             first_flag = true
             await sign_all()

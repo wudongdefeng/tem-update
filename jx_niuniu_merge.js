@@ -4,6 +4,7 @@
 跑会黑，一周后解，循环
 updatetime:2023/07/29
 */
+let lnrun = 0;
 
 const $ = new Env('牛牛乐园合成');
 const _0xe307a6 = $.isNode() ? require("./jdCookie.js") : "",
@@ -52,6 +53,7 @@ message = "";
         continue;
       }
       console.log("\n\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
       $.hasJoyCoin = true;
       await _0x2cb5ae();
       await $.wait(200);

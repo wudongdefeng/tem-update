@@ -11,6 +11,7 @@ cron:11 11 11 11 *
 #头文字J
 11 11 11 11 * jd_car_play_exchange.js, tag=头文字J兑换, enabled=true
 */
+let lnrun = 0;
 
 const $ = new Env("头文字J兑换");
 const l1lilii = $.isNode() ? require("./jdCookie.js") : "",
@@ -54,6 +55,7 @@ $.prizeInfoId = process.env.jd_car_play_exchangeid ? process.env.jd_car_play_exc
       $.hotFlag = false;
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
       $.UA = await i11i111();
       await llI11Ii();
       if ($.outFlag || $.activityEnd) break;

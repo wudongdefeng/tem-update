@@ -3,6 +3,7 @@
 入口：京东APP-更多-超市盲盒
 11 14 * * *  jd_marketmh.js
  */
+let lnrun = 0;
 
 
 const $ = new Env('超市盲盒');

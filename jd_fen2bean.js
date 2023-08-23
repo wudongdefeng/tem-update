@@ -5,6 +5,7 @@
 33 2 1 1 * https://raw.githubusercontent.com/6dylan6/jdpro/main/jd_fen2bean.js
 问题建议TG -> https://t.me/dylan_jdpro
 */
+let lnrun = 0;
 
 const $ = new Env("物流积分换豆");
 const _0x43cfd3 = $.isNode() ? require("./sendNotify") : "",
@@ -39,6 +40,7 @@ if ($.isNode()) {
             $.nickName = "";
             await _0x5bae1c();
             console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
             if (!$.isLogin) {
                 const _0x3b1109 = {
                     "open-url": "https://bean.m.jd.com/bean/signIndex.action"

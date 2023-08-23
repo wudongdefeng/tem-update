@@ -17,6 +17,7 @@ cron:11 11 11 11 *
 11 11 11 11 * jd_XLDT.js, tag=骁龙答题, enabled=true
 
 */
+let lnrun = 0;
 
 
 const $ = new Env('骁龙答题')
@@ -66,6 +67,7 @@ let iIlill = "",
       $.hotFlag = false;
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
       $.UA = await Ii1Ii($.UserName);
       await Ii1II();
       await $.wait(3000);

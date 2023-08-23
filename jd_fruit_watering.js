@@ -3,6 +3,7 @@
 默认使用快速浇水卡，成熟了自动收取红包和种植新的水果
 11 11 11 11 * jd_fruit_watering.js, tag=东东农场快速浇水, enabled=true
 */
+let lnrun = 0;
 
 
 const $ = new Env('东东农场快速浇水');
@@ -31,6 +32,7 @@ const JD_API_HOST = "https://api.m.jd.com/client.action";
       $.isLogin = true;
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
       if (!$.isLogin) {
         $.msg($.name, "【提示】cookie已失效", "京东账号" + $.index + " " + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action", {
           "open-url": "https://bean.m.jd.com/bean/signIndex.action"

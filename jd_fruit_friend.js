@@ -23,6 +23,7 @@ cron "10 2 * * *" script-path=jd_fruit_friend.js,tag=东东农场好友删减奖
 
 
 */
+let lnrun = 0;
 const $ = new Env('东东农场好友删减奖励');
 let cookiesArr = [], cookie = '', isBox = false, notify,allMessage = '';
 let newShareCodes=[];
@@ -113,6 +114,7 @@ let llgetshare = false;
             $.nickName = '';
             await TotalBean();
             console.log(`\n开始【京东账号${$.index}】${$.nickName || $.UserName}\n`);
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
             if (!$.isLogin) {
                 $.msg($.name, `【提示】cookie已失效`, `京东账号${$.index} ${$.nickName || $.UserName}\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action`, { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
 
@@ -276,6 +278,7 @@ async function getFullCollectionReward() {
 /**
  * 领取10次浇水奖励API
  */
+let lnrun = 0;
 async function totalWaterTaskForFarm() {
   const functionId = arguments.callee.name.toString();
   $.totalWaterReward = await request(functionId);
@@ -305,6 +308,7 @@ async function userMyCardForFarm(cardType) {
  * @param type
  * @returns {Promise<void>}
  */
+let lnrun = 0;
 async function gotStageAwardForFarm(type) {
   $.gotStageAwardForFarmRes = await request(arguments.callee.name.toString(), { 'type': type });
 }
@@ -349,6 +353,7 @@ async function browserForTurntableFarm2(type) {
 /**
  * 天天抽奖拿好礼-助力API(每人每天三次助力机会)
  */
+let lnrun = 0;
 async function lotteryMasterHelp() {
   $.lotteryMasterHelpRes = await request(`initForFarm`, {
     imageUrl: "",
@@ -404,6 +409,7 @@ async function masterHelp() {
 /**
  * 水滴雨API
  */
+let lnrun = 0;
 async function waterRainForFarm() {
   const functionId = arguments.callee.name.toString();
   const body = { "type": 1, "hongBaoTimes": 100, "version": 3 };
@@ -412,6 +418,7 @@ async function waterRainForFarm() {
 /**
  * 打卡领水API
  */
+let lnrun = 0;
 async function clockInInitForFarm() {
   const functionId = arguments.callee.name.toString();
   $.clockInInit = await request(functionId);
@@ -461,6 +468,7 @@ async function gotThreeMealForFarm() {
  * type为0时, 完成浏览任务
  * type为1时, 领取浏览任务奖励
  */
+let lnrun = 0;
 async function browseAdTaskForFarm(advertId, type) {
   const functionId = arguments.callee.name.toString();
   if (type === 0) {
@@ -481,6 +489,7 @@ async function signForFarm() {
 /**
  * 初始化农场, 可获取果树及用户信息API
  */
+let lnrun = 0;
 async function initForFarm() {
   const functionId = arguments.callee.name.toString();
   $.farmInfo = await request(functionId, {"babelChannel":"121","sid":"3c52b5f17ab2a42398939a27887eaf8w","version":18,"channel":1});

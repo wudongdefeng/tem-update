@@ -9,6 +9,7 @@ cron:1 1 1 1 *
 #粉丝福利红包fansvideo
 1 1 1 1 * jd_fans_videofangrowth.js, tag=粉丝福利videofangrowth, enabled=true
  */
+let lnrun = 0;
 
 
 const $ = new Env('粉丝福利videofangrowth');
@@ -42,6 +43,7 @@ let _0x25879d = Date.now(),
       $.nickName = "";
       message = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
       if (!$.isLogin) {
         $.msg($.name, "【提示】cookie已失效", "京东账号" + $.index + " " + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action", {
           "open-url": "https://bean.m.jd.com/bean/signIndex.action"

@@ -3,6 +3,7 @@ cron "35 11 * * *" jd_insight.js, tag:京洞察问卷通知
 
 by 青蛙
  */
+let lnrun = 0;
 const $ = new Env('京东调研问卷 京洞察')
 const notify = $.isNode() ? require('./sendNotify') : ''
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -40,6 +41,7 @@ if ($.isNode()) {
             $.UserName = decodeURIComponent($.cookie.match(/pin=([^; ]+)(?=;?)/) && $.cookie.match(/pin=([^; ]+)(?=;?)/)[1]);
             $.isLogin = true;
             console.log(`\n=====开始【京东账号${$.index}】${$.nickName || $.UserName}=====\n`);
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
             await getUA()
             await TotalBean();
             if (!$.isLogin) {

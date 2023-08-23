@@ -4,6 +4,7 @@
 updatetime: 2022/10/5
 author: https://github.com/6dylan6/jdpro
 */
+let lnrun = 0;
 
 
 const signList = [
@@ -74,6 +75,7 @@ if ($.isNode()) {
             $.index = g + 1;
             $.nickName = '';
             console.log('\n开始【京东账号' + $.index + '】' + ($.nickName || $.UserName) + '\n');
+      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
             bj = 0;
             bn = 0;
             bo = 0;
