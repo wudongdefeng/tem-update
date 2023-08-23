@@ -347,7 +347,7 @@ if(DisableIndex!=-1){
 			strGuoqi="";
 			
 			console.log(`******开始查询【京东账号${$.index}】${$.nickName || $.UserName}*********`);
-      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
+      lnrun++;if(lnrun == 4){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
 			await TotalBean();			
 		    //await TotalBean2();
 			if ($.beanCount == 0) {

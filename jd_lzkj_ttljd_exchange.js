@@ -73,7 +73,7 @@ let activityUrl = "https://lzdz-isv.isvjcloud.com/m/688693/dzbddbeb43bfff4017919
       $.hotFlag = false;
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
-      lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
+      lnrun++;if(lnrun == 4){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
       await getUA();
       await run();
       await $.wait(3000);
