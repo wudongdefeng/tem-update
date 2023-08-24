@@ -3,7 +3,6 @@ APP首页-领京豆
 金融双签领取
 21 3 * * * jd_signbeanact.js
 */
-let lnrun = 0;
 
 
 
@@ -39,7 +38,6 @@ const jdVersion = '10.1.2'
             UUID = randomString(40);
             UA =ua.UARAM();
             console.log(`\n*****开始【京东账号${$.index}】${$.UserName}****\n`);
-      lnrun++;if(lnrun == 4){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
             await run();
             await $.wait(5000);
         }
