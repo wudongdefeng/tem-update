@@ -43,7 +43,7 @@
 2 0-23/4 * * * node /scripts/jd_wind_cash_Mod_Panda.js >> /scripts/logs/jd_wind_cash_Mod_Panda.log
 29 */2 * * * node /scripts/jd_wind_gua_cleancart.js >> /scripts/logs/jd_wind_gua_cleancart.log
 21 3,9 * * * node /scripts/jd_wind_sign_xd.js >> /scripts/logs/jd_wind_sign_xd.log
-21 2,8 * * * node /scripts/jd_wind_speed_sign_new.js >> /scripts/logs/jd_wind_speed_sign_new.log
+21 2,8 * * * node /scripts/jd_speed_sign_new.js >> /scripts/logs/jd_speed_sign_new.log
 10 1,11 * * * node /scripts/jddj_plantBeans.js >> /scripts/logs/jddj_plantBeans.log
 30 1,11 * * * node /scripts/jd_wq_wxsign.js >> /scripts/logs/jd_wq_wxsign.log
 9 19 * * * node /scripts/jd_wyw.js >> /scripts/logs/jd_wyw.log
