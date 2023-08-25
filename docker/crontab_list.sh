@@ -40,8 +40,7 @@
 30 21 * * * node /scripts/jd_superBrandStar.js >> /scripts/logs/jd_superBrandStar.log
 39 */2 * * * node /scripts/jd_unsubscribe.js >> /scripts/logs/jd_unsubscribe.log
 39 20 * * * node /scripts/jd_vipgrowth.js >> /scripts/logs/jd_vipgrowth.log
-2 0-23/4 * * * node /scripts/jd_wind_cash_Mod_Panda.js >> /scripts/logs/jd_wind_cash_Mod_Panda.log
-29 */2 * * * node /scripts/jd_wind_gua_cleancart.js >> /scripts/logs/jd_wind_gua_cleancart.log
+29 */2 * * * node /scripts/jd_clean_car.js >> /scripts/logs/jd_clean_car.js
 21 3,9 * * * node /scripts/jd_wind_sign_xd.js >> /scripts/logs/jd_wind_sign_xd.log
 21 2,8 * * * node /scripts/jd_speed_sign_new.js >> /scripts/logs/jd_speed_sign_new.log
 10 1,11 * * * node /scripts/jddj_plantBeans.js >> /scripts/logs/jddj_plantBeans.log
