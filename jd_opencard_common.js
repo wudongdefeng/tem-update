@@ -9,6 +9,7 @@ export jd_lzdz1_openCard="1"                #常规卡是否开卡 0-不开卡  
 
 cron "2 2 29 2 *" jd_opencard_common.js
 */
+let lnrun = 0;
 const $ = new Env('常规卡通用')
 
 

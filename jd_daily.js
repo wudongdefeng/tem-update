@@ -17,6 +17,7 @@ cron:1 1 1 1 *
 
 
 */
+let lnrun = 0;
 
 
 const $ = new Env('每日抢好礼（超级无线/超级会员）')

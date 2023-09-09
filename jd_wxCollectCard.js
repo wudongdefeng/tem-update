@@ -6,6 +6,7 @@
 默认助力第一个CK，第一个CK失效会退出脚本
 
 */
+let lnrun = 0;
 
 
 const $ = new Env('集卡有礼（超级无线）')
@@ -57,6 +58,7 @@ jd_wxCollectCard_activityId = $.isNode() ? process.env.jd_wxCollectCard_activity
       $.hotFlag = false;
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       await getUA();
       await run();
       await $.wait(3000);
@@ -75,6 +77,7 @@ jd_wxCollectCard_activityId = $.isNode() ? process.env.jd_wxCollectCard_activity
       $.hotFlag = false;
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       await $.wait(parseInt(Math.random() * 2000 + 2000, 10));
       await getUA();
       await runs();

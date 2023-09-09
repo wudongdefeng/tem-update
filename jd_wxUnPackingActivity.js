@@ -7,6 +7,7 @@
 脚本自动入会，不想入会勿跑！
 
 */
+let lnrun = 0;
 
 
 const $ = new Env('让福袋飞（超级无线）')
@@ -55,6 +56,7 @@ jd_wxUnPackingActivity_activityId = $.isNode() ? process.env.jd_wxUnPackingActiv
       $.hotFlag = false;
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       await getUA();
       await run();
       await $.wait(3000);
@@ -74,6 +76,7 @@ jd_wxUnPackingActivity_activityId = $.isNode() ? process.env.jd_wxUnPackingActiv
         $.hotFlag = false;
         $.nickName = "";
         console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "领取奖励******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
         await getUA();
         await getPrize();
         if (_0x463110 == 0 && !$.actorUuid) break;

@@ -16,6 +16,7 @@ cron:10 11 1 1 *
 10 11 1 1 * jd_categoryUnion.js, tag=品类联合任务 , enabled=true
 
 */
+let lnrun = 0;
 
 const $ = new Env('品类联合任务');
 const jdCookieNode = $.isNode() ? require("./jdCookie") : "";

@@ -15,6 +15,7 @@ cron:1 1 1 1 *
 1 1 1 1 * jd_prodev.js, tag=邀请好友入会得好礼, enabled=true
 
 */
+let lnrun = 0;
 
 
 const $ = new Env('邀请好友入会得好礼')
@@ -53,6 +54,7 @@ const i1lIil = Object.keys(ii1iI).map(IIIli => ii1iI[IIIli]).filter(ii1i1 => ii1
     $.uuid = "16" + IIIil.genUuid("xxxxxxxxxxxxxxxxxxxxx", "0123456789");
     $.message = IIIii.create($.index, $.UserName);
     console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
     await III11l();
     if ($.runEnd) break;
   }
@@ -67,6 +69,7 @@ const i1lIil = Object.keys(ii1iI).map(IIIli => ii1iI[IIIli]).filter(ii1i1 => ii1
       $.uuid = "16" + IIIil.genUuid("xxxxxxxxxxxxxxxxxxxxx", "0123456789");
       $.message = IIIii.create($.index, $.UserName);
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + " 领取奖品******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       let iIi1I = 0;
       for (const liIIl of $.rewardArray) {
         $.prizeStage += 1;

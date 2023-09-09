@@ -18,6 +18,7 @@ cron:1 1 1 1 *
 
 
 */
+let lnrun = 0;
 
 
 const $ = new Env('组队瓜分奖品（超级无线/超级会员）')
@@ -72,6 +73,7 @@ const iliI1 = Object.keys(illI11).map(Illli => illI11[Illli]).filter(i11il => i1
       $.message = ll11Il.create($.index, $.UserName);
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       await i11iI();
       if ($.outFlag || $.runEnd) break;
     }
@@ -88,6 +90,7 @@ const iliI1 = Object.keys(illI11).map(Illli => illI11[Illli]).filter(i11il => i1
       $.message = ll11Il.create($.index, $.UserName);
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       await i11iI();
       if ($.outFlag || $.runEnd) break;
     }

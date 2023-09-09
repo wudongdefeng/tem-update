@@ -15,6 +15,7 @@ cron:1 1 1 1 *
 1 1 1 1 * jd_wxSecond.js, tag=读秒拼手速通用活动, enabled=true
 
 */
+let lnrun = 0;
 
 
 const $ = new Env('读秒拼手速（超级无线）')
@@ -76,6 +77,7 @@ Il11I && (Il11I.includes("activityId=") ? activityId = Iil1I("" + Il11I, "activi
       $.hotFlag = false;
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       $.UA = await l1iiil($.UserName);
       await li1lli();
       await $.wait(2000);
@@ -84,6 +86,7 @@ Il11I && (Il11I.includes("activityId=") ? activityId = Iil1I("" + Il11I, "activi
   }
   l1iiii = illl1i[0];
   l1iiii && $.assistStatus && !$.outFlag && !$.activityEnd && ($.UserName = decodeURIComponent(l1iiii.match(/pt_pin=([^; ]+)(?=;?)/) && l1iiii.match(/pt_pin=([^; ]+)(?=;?)/)[1]), $.index = 1, message = "", $.bean = 0, $.hotFlag = false, $.nickName = "", console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n"), await $.wait(parseInt(Math.random() * 2000 + 4000, 10)), $.UA = await l1iiil($.UserName), await li1lli());
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
   if ($.outFlag) {
     let iilliI = "此ip已被限制，请过10分钟后再执行脚本";
     $.msg($.name, "", "" + iilliI);

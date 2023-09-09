@@ -19,6 +19,7 @@ cron: 1 1 1 1 * jd_sevenDay.js
 updatetime:2023/05/21
 
 */
+let lnrun = 0;
 
 const $ = new Env('超级无线店铺签到');
 
@@ -94,6 +95,7 @@ ilIIIlI1();
       $.isLogin = true;
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       $.UA = IiiIi1il.UARAM ? IiiIi1il.UARAM() : IiiIi1il.USER_AGENT;
       await IiII1lI1();
       if (!$.isLogin) {

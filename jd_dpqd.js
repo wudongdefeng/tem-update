@@ -9,6 +9,7 @@ cron:1 1 1 1 *
 #常规店铺签到
 1 1 1 1 * jd_dpqd.js, tag=常规店铺签到, enabled=true
 */
+let lnrun = 0;
 
 const $ = new Env('常规店铺签到');
 const _0xf90bf0 = $.isNode() ? require("./sendNotify") : "",
@@ -55,6 +56,7 @@ if ($.isNode()) {
       $.nickName = "";
       _0x1f6712 = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       if (!$.isLogin) {
         $.msg($.name, "【提示】cookie已失效", "京东账号" + $.index + " " + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action", {
           "open-url": "https://bean.m.jd.com/bean/signIndex.action"

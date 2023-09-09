@@ -6,6 +6,7 @@
          jd_wxShopFollowActivity_openCard // 是否开卡，默认不开卡
 
 */
+let lnrun = 0;
 
 
 const $ = new Env('关注店铺有礼（超级无线/超级会员）')
@@ -71,6 +72,7 @@ let domains = "https://" + $.domain;
       $.bean = 0;
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       await getUA();
       await run();
       await $.wait(1000);

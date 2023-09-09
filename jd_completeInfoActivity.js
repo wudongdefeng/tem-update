@@ -6,6 +6,7 @@
 		 jd_completeInfoActivity_openCard // 是否开卡，默认不开卡
 
 */
+let lnrun = 0;
 
 
 const $ = new Env('完善信息有礼（超级会员）')
@@ -63,6 +64,7 @@ isGetCookie && (GetCookie(), $.done());
       $.nickName = "";
       $.activityEnd = false;
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       if (!$.isLogin) {
         $.msg($.name, "【提示】cookie已失效", "京东账号" + $.index + " " + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/", {
           "open-url": "https://bean.m.jd.com/"

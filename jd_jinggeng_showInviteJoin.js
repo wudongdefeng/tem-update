@@ -11,6 +11,7 @@ cron:11 11 11 11 **
 #邀请入会赢好礼
 11 11 11 11 ** jd_jinggeng_showInviteJoin.js, tag=邀请入会赢好礼, enabled=true
 */
+let lnrun = 0;
 
 
 const $ = new Env("邀请入会赢好礼（京耕）");

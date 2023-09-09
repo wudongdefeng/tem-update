@@ -26,6 +26,7 @@ cron:1 1 1 1 *
 1 1 1 1 * jd_luck_draw.js, tag=店铺抽奖通用活动, enabled=true
 
 */
+let lnrun = 0;
 
 
 const $ = new Env('店铺抽奖（超级无线/超级会员）');
@@ -129,6 +130,7 @@ lllllII();
       $.message = ilIillii.create($.index, $.UserName);
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       await i1liIiII();
       if ($.outFlag || $.runEnd) break;
     }

@@ -4,6 +4,7 @@
 环境变量：VENDER_ID // venderId或vendorId的值，多个用&、@或逗号连接，但是不要混用
 
 */
+let lnrun = 0;
 
 
 const $ = new Env('强制入会')
@@ -42,6 +43,7 @@ message = "";
       $.nickName = "";
       $.UserName = $.nickName || $.UserName;
       console.log("\n******开始【京东账号" + $.index + "】" + $.UserName + "******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       await getUA();
       await run();
     }

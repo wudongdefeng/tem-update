@@ -6,6 +6,7 @@ TG: https://t.me/HarbourToulu
 变量：export jd_joyOpenId="xxxxxxxxxxxxxxxxxxxx"
 
 */
+let lnrun = 0;
 
 const $ = new Env('joy通用开卡');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -47,6 +48,7 @@ message = ""
       await getUA()
       $.nickName = '';
       console.log(`\n\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       $.configCode = joyOpenId
       await run();
       if($.bean > 0) message += `【京东账号${$.index}】获得${$.bean}京豆\n`

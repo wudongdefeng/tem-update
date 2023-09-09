@@ -14,6 +14,7 @@ cron:1 1 1 1 *
 #店铺左侧刮刮乐
 1 1 1 1 * jd_shopDraw.js, tag=店铺刮刮乐, enabled=true
  */
+let lnrun = 0;
 
 
 const $ = new Env('店铺左侧刮刮乐');

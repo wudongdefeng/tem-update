@@ -5,6 +5,7 @@
          jd_wxShareActivity_helpnum // 需要助力的账号数量
 
 */
+let lnrun = 0;
 
 
 const $ = new Env('分享有礼（超级无线）')
@@ -62,6 +63,7 @@ if ($.isNode()) {
       $.isLogin = true;
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + " 获取助力码******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       if (!$.isLogin) {
         $.msg($.name, "【提示】cookie已失效", "京东账号" + $.index + " " + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action", {
           "open-url": "https://bean.m.jd.com/bean/signIndex.action"
@@ -129,6 +131,7 @@ if ($.isNode()) {
       $.nickName = "";
       $.errorMessage = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + " 助力******\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       if (!$.isLogin) {
         $.msg($.name, "【提示】cookie已失效", "京东账号" + $.index + " " + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action", {
           "open-url": "https://bean.m.jd.com/bean/signIndex.action"

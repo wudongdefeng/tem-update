@@ -15,6 +15,7 @@ cron:1 1 1 1 *
 #lzkj_loreal分享有礼
 1 1 1 1 * jd_lzkj_loreal_share.js, tag=lzkj_loreal分享有礼, enabled=true
 */
+let lnrun = 0;
 
 
 const $ = new Env("分享有礼（lzkj_loreal）");
@@ -121,6 +122,7 @@ let Ii1lI = "https://" + $.domain;
       $.isLogin = true;
       $.nickName = "";
       console.log("\n开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       if (!$.isLogin) {
         $.msg($.name, "【提示】cookie已失效", "京东账号" + $.index + " " + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/", {
           "open-url": "https://bean.m.jd.com/"
@@ -255,6 +257,7 @@ let Ii1lI = "https://" + $.domain;
       $.isLogin = true;
       $.nickName = "";
       console.log("\n开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "\n");
+      lnrun++;if(lnrun == 8){console.log(`\n【访问接口次数达到7次，休息一分钟.....】\n`);await $.wait(300 * 1000);lnrun = 0}
       if (!$.isLogin) {
         $.msg($.name, "【提示】cookie已失效", "京东账号" + $.index + " " + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/", {
           "open-url": "https://bean.m.jd.com/"
