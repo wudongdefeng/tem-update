@@ -48,7 +48,7 @@ message = ""
       await getUA()
       $.nickName = '';
       console.log(`\n\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
-      lnrun++;if(lnrun == 7){console.log(`\n【访问接口次数达到6次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
+      lnrun++;if(lnrun == 7){console.log(`\n【访问接口次数达到6次，休息一分钟.....】\n`);await $.wait(120 * 1000);lnrun = 0}
       $.configCode = joyOpenId
       await run();
       if($.bean > 0) message += `【京东账号${$.index}】获得${$.bean}京豆\n`
