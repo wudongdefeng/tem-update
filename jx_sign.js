@@ -675,7 +675,6 @@ function decrypt(time, stk, type, url) {
  * @param name
  * @returns {string}
  */
-let lnrun = 0;
 function getUrlData(url, name) {
   if (typeof URL !== "undefined") {
     let urls = new URL(url);
@@ -698,7 +697,6 @@ function getUrlData(url, name) {
  * 模拟生成 fingerprint
  * @returns {string}
  */
-let lnrun = 0;
 function generateFp() {
   let e = "0123456789";
   let a = 13;
