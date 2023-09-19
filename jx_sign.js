@@ -557,7 +557,6 @@ function jsonParse(str) {
 /*
 修改时间戳转换函数，京喜工厂原版修改
  */
-let lnrun = 0;
 Date.prototype.Format = function (fmt) {
   var e,
       n = this, d = fmt, l = {
