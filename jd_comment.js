@@ -6,88 +6,99 @@ cron 21 15 * * * jd_comment.js
 let lnrun = 0;
 const $ = new Env('带图评价');
 
-const II1lIiII = $.isNode() ? require("./sendNotify") : "",
-    iillIill = $.isNode() ? require("./jdCookie.js") : "",
-    liIiiI11 = require("./function/dylanx");
+const _0x6089f0 = $.isNode() ? require("./sendNotify") : "",
+    _0x34c8af = $.isNode() ? require("./jdCookie.js") : "",
+    _0x3e511c = require("./function/dylanx");
 
-let iIliI1l1 = [],
-    I11iIIlI = "";
+let _0x5a43b7 = [],
+    _0x2a758b = "";
 
 if ($.isNode()) {
-    Object.keys(iillIill).forEach(l1I11I1i => {
-        iIliI1l1.push(iillIill[l1I11I1i]);
+    Object.keys(_0x34c8af).forEach(_0x204536 => {
+        _0x5a43b7.push(_0x34c8af[_0x204536]);
     });
-    if (process.env.JD_DEBUG && process.env.JD_DEBUG === "false") console.log = () => { };
+
+    if (process.env.JD_DEBUG && process.env.JD_DEBUG === "false") {
+        console.log = () => { };
+    }
 } else {
-    let lIIliiiI = $.getdata("CookiesJD") || "[]";
-    lIIliiiI = jsonParse(lIIliiiI);
-    iIliI1l1 = lIIliiiI.map(iIi1iII => iIi1iII.cookie);
-    iIliI1l1.reverse();
-    iIliI1l1.push(...[$.getdata("CookieJD2"), $.getdata("CookieJD")]);
-    iIliI1l1.reverse();
-    iIliI1l1 = iIliI1l1.filter(IiIlIIlI => IiIlIIlI !== "" && IiIlIIlI !== null && IiIlIIlI !== undefined);
+    let _0xffedb = $.getdata("CookiesJD") || "[]";
+
+    _0xffedb = jsonParse(_0xffedb);
+    _0x5a43b7 = _0xffedb.map(_0x4b456e => _0x4b456e.cookie);
+
+    _0x5a43b7.reverse();
+
+    _0x5a43b7.push(...[$.getdata("CookieJD2"), $.getdata("CookieJD")]);
+
+    _0x5a43b7.reverse();
+
+    _0x5a43b7 = _0x5a43b7.filter(_0x5aa2fa => _0x5aa2fa !== "" && _0x5aa2fa !== null && _0x5aa2fa !== undefined);
 }
 
-let i1lIiiii = process.env.userKeyWords && process.env.userKeyWords.split("@") || [],
-    II1i1I1l = process.env.wordcount ?? 6,
-    l11IiIlI = process.env.isCommentPic ?? false,
-    IIIliI1 = ["很垃圾", "质量差", "此用户未填写评价内容"],
-    IIllilI = ["网上购物这么激烈，没想到店家的服务这么好，商品质量好而价低廉，我太感谢你了。", "质量非常好，真出乎我的意料，包装非常仔细，非常感谢，祝生意兴隆。", "这家店还好吧，来买过几次了，服务老客户非常周到，以后还常来。", "卖家的服务态度真好，发货很快。商品质量也相当不错。太喜欢了，谢谢。", "几以前几乎从未认真评价过，也不知道浪费了多少分。我听说评价中有100多个单词，基本上是每周访问一次。在京东购物太方便了，根本停不下来。从那时起，购买日用品时首先想到的就是京东，它是真正的。起初我很担心。现在我习惯了，这真的很好。现在我必须给更多的折扣。我下次会再来。我一直在购物。它仍然是一个非常好的宝贝。真的很好。这是值得的。网上买一次也没用。它还没有安装。我一次买了两个。大品牌值得信赖。", "我真的非常喜欢它，非常支持它，质量非常好，和卖家描述的一模一样，我非常满意。我真的很喜欢它，它完全超出了预期的价值，交货速度非常快，包装非常仔细和紧凑，物流公司有一个良好的服务态度，交货速度非常快，我非常满意购物", "质量非常好，与卖家描述的完全一致，非常满意，真 的很喜欢，完全超出期望值，发货速度非常快，包 装非常仔细、严实，物流公司服务态度很好，运送 速度很快，很满意的一次购质量很好，希望更多的 朋友信赖．店主态度特好，我会再次光顾的，可不 可以再便宜点，我带朋友来你家", "东西收到，很满意！！京东平台真的是超级好的卖家，解答疑问不厌其烦，细致认真，关键是东西好，而且货物发得超快，包装仔细，值得信赖！", "这个价格仍然很划算。经济、便宜、质量非常好，与卖方描述的完全一样。非常满意，完全出乎意料，超划算，划算，购物比实体店便宜多了，非常满意网上购物。我希望卖家的生意会越来越红火，物流会越来越快，包装会越来越结实。六星表扬，多一星不怕你骄傲，犹豫不决的朋友会很快下单，这是良心的推荐。它真的很好，而且价格也很高，所以你将来可以在这里买。给三个好评就满足了！满意了！满意了", "让我们先说说商品的质量：产品总体上是好的，包装很紧。让我们来谈谈商家服务：喜欢它。最后，快递：快递非常快。毕竟，廉价商品更真实。我希望商店能提供更多的折扣，及时通知老客户，并促进回购。祝你生意兴隆。"];
+let _0x2d2778 = process.env.userKeyWords && process.env.userKeyWords.split("@") || [],
+    _0x203393 = process.env.wordcount ?? 6,
+    _0x3cba3c = process.env.isCommentPic ?? false,
+    _0x3c7b88 = ["很垃圾", "质量差", "此用户未填写评价内容"],
+    _0x136b32 = ["网上购物这么激烈，没想到店家的服务这么好，商品质量好而价低廉，我太感谢你了。", "质量非常好，真出乎我的意料，包装非常仔细，非常感谢，祝生意兴隆。", "这家店还好吧，来买过几次了，服务老客户非常周到，以后还常来。", "卖家的服务态度真好，发货很快。商品质量也相当不错。太喜欢了，谢谢。", "几以前几乎从未认真评价过，也不知道浪费了多少分。我听说评价中有100多个单词，基本上是每周访问一次。在京东购物太方便了，根本停不下来。从那时起，购买日用品时首先想到的就是京东，它是真正的。起初我很担心。现在我习惯了，这真的很好。现在我必须给更多的折扣。我下次会再来。我一直在购物。它仍然是一个非常好的宝贝。真的很好。这是值得的。网上买一次也没用。它还没有安装。我一次买了两个。大品牌值得信赖。", "我真的非常喜欢它，非常支持它，质量非常好，和卖家描述的一模一样，我非常满意。我真的很喜欢它，它完全超出了预期的价值，交货速度非常快，包装非常仔细和紧凑，物流公司有一个良好的服务态度，交货速度非常快，我非常满意购物", "质量非常好，与卖家描述的完全一致，非常满意，真 的很喜欢，完全超出期望值，发货速度非常快，包 装非常仔细、严实，物流公司服务态度很好，运送 速度很快，很满意的一次购质量很好，希望更多的 朋友信赖．店主态度特好，我会再次光顾的，可不 可以再便宜点，我带朋友来你家", "东西收到，很满意！！京东平台真的是超级好的卖家，解答疑问不厌其烦，细致认真，关键是东西好，而且货物发得超快，包装仔细，值得信赖！", "这个价格仍然很划算。经济、便宜、质量非常好，与卖方描述的完全一样。非常满意，完全出乎意料，超划算，划算，购物比实体店便宜多了，非常满意网上购物。我希望卖家的生意会越来越红火，物流会越来越快，包装会越来越结实。六星表扬，多一星不怕你骄傲，犹豫不决的朋友会很快下单，这是良心的推荐。它真的很好，而且价格也很高，所以你将来可以在这里买。给三个好评就满足了！满意了！满意了", "让我们先说说商品的质量：产品总体上是好的，包装很紧。让我们来谈谈商家服务：喜欢它。最后，快递：快递非常快。毕竟，廉价商品更真实。我希望商店能提供更多的折扣，及时通知老客户，并促进回购。祝你生意兴隆。"];
+
 !(async () => {
-    if (!iIliI1l1[0]) {
-        $.msg($.name, "【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取", "https://bean.m.jd.com/bean/signIndex.action", {
+    if (!_0x5a43b7[0]) {
+        const _0x36cd7f = {
             "open-url": "https://bean.m.jd.com/bean/signIndex.action"
-        });
+        };
+        $.msg($.name, "【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取", "https://bean.m.jd.com/bean/signIndex.action", _0x36cd7f);
         return;
     }
 
-    if (l11IiIlI === false) {
+    if (_0x3cba3c === false) {
         console.log("默认不执行, 需要执行请环境变量设置 isCommentPic 为 true");
         return;
     }
 
-    let il1Iii11 = 0;
-    iIliI1l1.length > 10 ? il1Iii11 = 10 : il1Iii11 = iIliI1l1.length;
+    let _0x51f2e9 = 0;
+    _0x5a43b7.length > 20 ? _0x51f2e9 = 20 : _0x51f2e9 = _0x5a43b7.length;
 
-    for (let IiliiIi = 0; IiliiIi < il1Iii11; IiliiIi++) {
-        UA = "jdapp;iPhone;10.0.8;14.6;" + i1i1l1Il() + ";network/wifi;JDEbook/openapp.jdreader;model/iPhone9,2;addressid/2214222493;appBuild/168841;jdSupportDarkMode/0;Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/16E158;supportJDSHWK/1";
+    for (let _0x3b6a18 = 0; _0x3b6a18 < _0x51f2e9; _0x3b6a18++) {
+        UA = "okhttp/3.12.16;jdmall;android;version/12.1.0;build/98891;";
 
-        if (iIliI1l1[IiliiIi]) {
-            I11iIIlI = iIliI1l1[IiliiIi];
-            $.UserName = decodeURIComponent(I11iIIlI.match(/pt_pin=([^; ]+)(?=;?)/) && I11iIIlI.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
-            $.index = IiliiIi + 1;
+        if (_0x5a43b7[_0x3b6a18]) {
+            _0x2a758b = _0x5a43b7[_0x3b6a18];
+            $.UserName = decodeURIComponent(_0x2a758b.match(/pt_pin=([^; ]+)(?=;?)/) && _0x2a758b.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+            $.index = _0x3b6a18 + 1;
             $.isLogin = true;
             $.nickName = "";
             $.commentWareList = "";
             $.commentInfoList = "";
-            await iIil1iiI();
+            await _0x18268d();
             console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
       lnrun++;if(lnrun == 4){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
 
             if (!$.isLogin) {
-                $.msg($.name, "【提示】cookie已失效", "京东账号" + $.index + " " + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action", {
+                const _0x396ae4 = {
                     "open-url": "https://bean.m.jd.com/bean/signIndex.action"
-                });
-                $.isNode() && (await II1lIiII.sendNotify($.name + "cookie已失效 - " + $.UserName, "京东账号" + $.index + " " + $.UserName + "\n请重新登录获取cookie"));
+                };
+                $.msg($.name, "【提示】cookie已失效", "京东账号" + $.index + " " + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action", _0x396ae4);
+                $.isNode() && (await _0x6089f0.sendNotify($.name + "cookie已失效 - " + $.UserName, "京东账号" + $.index + " " + $.UserName + "\n请重新登录获取cookie"));
                 continue;
             }
 
-            await l11lllIi();
+            await _0x16ff42();
             console.log("等待...");
             await $.wait(20000);
         }
     }
-})().catch(IIl11l11 => {
-    $.log("", "❌ " + $.name + ", 失败! 原因: " + IIl11l11 + "!", "");
+})().catch(_0x22daf1 => {
+    $.log("", "❌ " + $.name + ", 失败! 原因: " + _0x22daf1 + "!", "");
 }).finally(() => {
     $.done();
 });
 
-async function l11lllIi() {
-    let IiiliiII = [],
-        IlIIIli1 = [],
-        iIi1Ii1l = [];
-    await ilIIIll();
+async function _0x16ff42() {
+    let _0x2abf39 = [],
+        _0x52b704 = [],
+        _0x2fa953 = [];
+    await _0x366de2();
 
     if (!$.maxPage) {
         console.log("获取待评价数据失败");
@@ -95,75 +106,96 @@ async function l11lllIi() {
     }
 
     await $.wait(2000);
-    await ilIIIll($.maxPage);
-    let i1iII1I1 = $.commentWareList;
+    await _0x366de2($.maxPage);
+    await $.wait(1000);
+    let _0x544908 = $.commentWareList;
 
-    if (i1iII1I1) {
-        await IlIiIII1(i1iII1I1.wareId);
+    if (_0x544908) {
+        await _0x5a8297(_0x544908.wareId);
         await $.wait(2000);
-        let II11Il1i = $.commentInfoList;
+        let _0x501d68 = $.commentInfoList;
 
-        for (const Ii1l11I1 of II11Il1i) {
-            if (Ii1l11I1.commentInfo.pictureInfoList) {
-                for (const I1lIIllI of Ii1l11I1.commentInfo.pictureInfoList || {}) {
-                    if (I1lIIllI.mediaType != "2") {
-                        if (I1lIIllI.picURL.indexOf("dpg") !== -1) picURL = I1lIIllI.picURL.replace(/s[0-9]{3}x[0-9]{3}_(.*).dpg/g, "$1"); else {
-                            if (I1lIIllI.picURL.indexOf("webp") !== -1) picURL = I1lIIllI.picURL.replace(/s[0-9]{3}x[0-9]{3}_(.*).webp/g, "$1"); else I1lIIllI.picURL.indexOf("avif") !== -1 && (picURL = I1lIIllI.picURL.replace(/s[0-9]{3}x[0-9]{3}_(.*).avif/g, "$1"));
+        if (!_0x501d68) {
+            return;
+        }
+
+        for (const _0x498fbd of _0x501d68) {
+            if (_0x498fbd.commentInfo.pictureInfoList) {
+                for (const _0x3ab8ad of _0x498fbd.commentInfo.pictureInfoList || {}) {
+                    if (_0x3ab8ad.mediaType != "2") {
+                        if (_0x3ab8ad.picURL.indexOf("dpg") !== -1) {
+                            picURL = _0x3ab8ad.picURL.replace(/s[0-9]{3}x[0-9]{3}_(.*).dpg/g, "$1");
+                        } else {
+                            if (_0x3ab8ad.picURL.indexOf("webp") !== -1) {
+                                picURL = _0x3ab8ad.picURL.replace(/s[0-9]{3}x[0-9]{3}_(.*).webp/g, "$1");
+                            } else {
+                                if (_0x3ab8ad.picURL.indexOf("avif") !== -1) {
+                                    picURL = _0x3ab8ad.picURL.replace(/s[0-9]{3}x[0-9]{3}_(.*).avif/g, "$1");
+                                }
+                            }
                         }
-                        IiiliiII.push(picURL);
+
+                        _0x2abf39.push(picURL);
                     }
                 }
             }
 
-            Ii1l11I1.commentInfo.commentScore === "5" && Ii1l11I1.commentInfo.commentData.length > II1i1I1l && IlIIIli1.push(Ii1l11I1.commentInfo.commentData);
+            _0x498fbd.commentInfo.commentScore === "5" && _0x498fbd.commentInfo.commentData.length > _0x203393 && _0x52b704.push(_0x498fbd.commentInfo.commentData);
         }
 
         nullKeyword = "";
 
-        for (let iiill1ii of IIIliI1) i1lIiiii.push(iiill1ii);
+        for (let _0x51fcd6 of _0x3c7b88) _0x2d2778.push(_0x51fcd6);
 
-        for (let ll1iIlli of IlIIIli1) {
-            if (i1lIiiii.some(iI1lI1i => ll1iIlli.includes(iI1lI1i) ? nullKeyword = iI1lI1i : "")) {
+        for (let _0x4f8a58 of _0x52b704) {
+            if (_0x2d2778.some(_0x5cc7b0 => _0x4f8a58.includes(_0x5cc7b0) ? nullKeyword = _0x5cc7b0 : "")) {
                 console.log("评价内容被过滤，含有关键词-【" + nullKeyword + "】");
-            } else iIi1Ii1l.push(ll1iIlli);
+            } else {
+                _0x2fa953.push(_0x4f8a58);
+            }
         }
 
-        let lII111li = [{
-            "picUrl": IiiliiII[0]
-        }, {
-            "picUrl": IiiliiII[1]
-        }],
-            il1IiIIi = ll11lI1l(IIllilI);
+        const _0x1a6a41 = {
+            "picUrl": _0x2abf39[0]
+        };
+        const _0x30a317 = {
+            "picUrl": _0x2abf39[1]
+        };
 
-        if (IiiliiII.length >= 2 && iIi1Ii1l.length >= 2) {
-            console.log("去评价 ---> " + i1iII1I1.wname + "\n成功获取到图片，去带图评价!\n");
-            await ii11il("pubComment", {
-                "productId": i1iII1I1.wareId,
+        let _0x469ac8 = [_0x1a6a41, _0x30a317],
+            _0x11fceb = _0x3bc746(_0x136b32);
+
+        if (_0x2abf39.length >= 2 && _0x2fa953.length >= 2) {
+            console.log("去评价 ---> " + _0x544908.wname + "\n成功获取到图片，去带图评价!\n");
+            const _0x1ddfa0 = {
+                "mediasExt": "[{\"VideoIsEditCover\":\"0\",\"ImagePropId\":\"0\",\"ImageTakePhotoFilterId\":\"0\",\"ImageIsCrop\":\"0\",\"VideoIsEditCrop\":\"0\",\"VideoEditFilterId\":\"0\",\"VideoMusicId\":\"0\",\"ImageEditFilterId\":\"0\",\"VideoPropId\":\"0\",\"TakeRate\":\"0\",\"VideoRecordIsMakup\":\"0\",\"ImageTakePhotoIsMakup\":\"0\",\"VideoRecordFilterId\":\"0\",\"ImageFontId\":\"0\",\"FromType\":\"1\",\"ImageStrickId\":\"0\"},{\"VideoIsEditCover\":\"0\",\"ImagePropId\":\"0\",\"ImageTakePhotoFilterId\":\"0\",\"ImageIsCrop\":\"0\",\"VideoIsEditCrop\":\"0\",\"VideoEditFilterId\":\"0\",\"VideoMusicId\":\"0\",\"ImageEditFilterId\":\"0\",\"VideoPropId\":\"0\",\"TakeRate\":\"0\",\"VideoRecordIsMakup\":\"0\",\"ImageTakePhotoIsMakup\":\"0\",\"VideoRecordFilterId\":\"0\",\"ImageFontId\":\"0\",\"FromType\":\"1\",\"ImageStrickId\":\"0\"}]"
+            };
+            const _0x1d8478 = {
+                "productId": _0x544908.wareId,
                 "kocSynFlag": "0",
-                "categoryList": i1iII1I1.categoryList,
+                "categoryList": _0x544908.categoryList,
                 "voucherStatus": "0",
-                "extInfo": {
-                    "mediasExt": "[{\"VideoIsEditCover\":\"0\",\"ImagePropId\":\"0\",\"ImageTakePhotoFilterId\":\"0\",\"ImageIsCrop\":\"0\",\"VideoIsEditCrop\":\"0\",\"VideoEditFilterId\":\"0\",\"VideoMusicId\":\"0\",\"ImageEditFilterId\":\"0\",\"VideoPropId\":\"0\",\"TakeRate\":\"0\",\"VideoRecordIsMakup\":\"0\",\"ImageTakePhotoIsMakup\":\"0\",\"VideoRecordFilterId\":\"0\",\"ImageFontId\":\"0\",\"FromType\":\"1\",\"ImageStrickId\":\"0\"},{\"VideoIsEditCover\":\"0\",\"ImagePropId\":\"0\",\"ImageTakePhotoFilterId\":\"0\",\"ImageIsCrop\":\"0\",\"VideoIsEditCrop\":\"0\",\"VideoEditFilterId\":\"0\",\"VideoMusicId\":\"0\",\"ImageEditFilterId\":\"0\",\"VideoPropId\":\"0\",\"TakeRate\":\"0\",\"VideoRecordIsMakup\":\"0\",\"ImageTakePhotoIsMakup\":\"0\",\"VideoRecordFilterId\":\"0\",\"ImageFontId\":\"0\",\"FromType\":\"1\",\"ImageStrickId\":\"0\"}]"
-                },
+                "extInfo": _0x1ddfa0,
                 "officerScore": "1699",
                 "anonymousFlag": "1",
                 "commentScore": "5",
                 "shopType": "0",
-                "orderId": i1iII1I1.orderId,
-                "shopId": i1iII1I1.shopId,
+                "orderId": _0x544908.orderId,
+                "shopId": _0x544908.shopId,
                 "addPictureFlag": "0",
-                "commentData": il1IiIIi,
-                "pictureInfoList": lII111li,
+                "commentData": _0x11fceb,
+                "pictureInfoList": _0x469ac8,
                 "officerLevel": "3",
                 "isCommentTagContent": "0"
-            });
+            };
+            await _0xb72019("pubComment", _0x1d8478);
         } else {
-            if (IiiliiII.length >= 2 && iIi1Ii1l.length < 2) {
-                console.log("去评价 ---> " + i1iII1I1.wname + "\n成功获取到图片，且没有获取到评价内容，采用脚本自带评价，去带图评价!\n");
-                await ii11il("pubComment", {
-                    "productId": i1iII1I1.wareId,
+            if (_0x2abf39.length >= 2 && _0x2fa953.length < 2) {
+                console.log("去评价 ---> " + _0x544908.wname + "\n成功获取到图片，且没有获取到评价内容，采用脚本自带评价，去带图评价!\n");
+                await _0xb72019("pubComment", {
+                    "productId": _0x544908.wareId,
                     "kocSynFlag": "0",
-                    "categoryList": i1iII1I1.categoryList,
+                    "categoryList": _0x544908.categoryList,
                     "voucherStatus": "0",
                     "extInfo": {
                         "mediasExt": "[{\"VideoIsEditCover\":\"0\",\"ImagePropId\":\"0\",\"ImageTakePhotoFilterId\":\"0\",\"ImageIsCrop\":\"0\",\"VideoIsEditCrop\":\"0\",\"VideoEditFilterId\":\"0\",\"VideoMusicId\":\"0\",\"ImageEditFilterId\":\"0\",\"VideoPropId\":\"0\",\"TakeRate\":\"0\",\"VideoRecordIsMakup\":\"0\",\"ImageTakePhotoIsMakup\":\"0\",\"VideoRecordFilterId\":\"0\",\"ImageFontId\":\"0\",\"FromType\":\"1\",\"ImageStrickId\":\"0\"},{\"VideoIsEditCover\":\"0\",\"ImagePropId\":\"0\",\"ImageTakePhotoFilterId\":\"0\",\"ImageIsCrop\":\"0\",\"VideoIsEditCrop\":\"0\",\"VideoEditFilterId\":\"0\",\"VideoMusicId\":\"0\",\"ImageEditFilterId\":\"0\",\"VideoPropId\":\"0\",\"TakeRate\":\"0\",\"VideoRecordIsMakup\":\"0\",\"ImageTakePhotoIsMakup\":\"0\",\"VideoRecordFilterId\":\"0\",\"ImageFontId\":\"0\",\"FromType\":\"1\",\"ImageStrickId\":\"0\"}]"
@@ -172,61 +204,70 @@ async function l11lllIi() {
                     "anonymousFlag": "1",
                     "commentScore": "5",
                     "shopType": "0",
-                    "orderId": i1iII1I1.orderId,
-                    "shopId": i1iII1I1.shopId,
+                    "orderId": _0x544908.orderId,
+                    "shopId": _0x544908.shopId,
                     "addPictureFlag": "0",
-                    "commentData": il1IiIIi,
-                    "pictureInfoList": lII111li,
+                    "commentData": _0x11fceb,
+                    "pictureInfoList": _0x469ac8,
                     "officerLevel": "3",
                     "isCommentTagContent": "0"
                 });
             } else {
-                if (IiiliiII.length < 2 && iIi1Ii1l.length >= 2) {
-                    console.log("去评价 ---> " + i1iII1I1.wname + "\n没有获取到图片，且获取到评价，去评价!\n");
-                    await ii11il("pubComment", {
-                        "productId": i1iII1I1.wareId,
+                if (_0x2abf39.length < 2 && _0x2fa953.length >= 2) {
+                    console.log("去评价 ---> " + _0x544908.wname + "\n没有获取到图片，且获取到评价，去评价!\n");
+                    const _0x4fb26e = {
+                        "productId": _0x544908.wareId,
                         "kocSynFlag": "0",
-                        "categoryList": i1iII1I1.ategoryList,
+                        "categoryList": _0x544908.ategoryList,
                         "voucherStatus": "0",
                         "officerScore": "1699",
                         "anonymousFlag": "1",
                         "commentScore": "5",
                         "shopType": "0",
-                        "orderId": i1iII1I1.orderId,
-                        "shopId": i1iII1I1.shopId,
+                        "orderId": _0x544908.orderId,
+                        "shopId": _0x544908.shopId,
                         "addPictureFlag": "0",
-                        "commentData": il1IiIIi,
+                        "commentData": _0x11fceb,
                         "pictureInfoList": "",
                         "officerLevel": "3",
                         "isCommentTagContent": "0"
-                    });
-                } else II11Il1i.length <= 1 && (console.log("去评价 ---> " + i1iII1I1.wname + "\n没有获取到评价内容,采用脚本自带评价\n"), await ii11il("pubComment", {
-                    "productId": i1iII1I1.wareId,
-                    "kocSynFlag": "0",
-                    "categoryList": i1iII1I1.ategoryList,
-                    "voucherStatus": "0",
-                    "officerScore": "1699",
-                    "anonymousFlag": "1",
-                    "commentScore": "5",
-                    "shopType": "0",
-                    "orderId": i1iII1I1.orderId,
-                    "shopId": i1iII1I1.shopId,
-                    "addPictureFlag": "0",
-                    "commentData": il1IiIIi,
-                    "pictureInfoList": "",
-                    "officerLevel": "3",
-                    "isCommentTagContent": "0"
-                }));
+                    };
+                    await _0xb72019("pubComment", _0x4fb26e);
+                } else {
+                    if (_0x501d68.length <= 1) {
+                        console.log("去评价 ---> " + _0x544908.wname + "\n没有获取到评价内容,采用脚本自带评价\n");
+                        const _0x1257ea = {
+                            "productId": _0x544908.wareId,
+                            "kocSynFlag": "0",
+                            "categoryList": _0x544908.ategoryList,
+                            "voucherStatus": "0",
+                            "officerScore": "1699",
+                            "anonymousFlag": "1",
+                            "commentScore": "5",
+                            "shopType": "0",
+                            "orderId": _0x544908.orderId,
+                            "shopId": _0x544908.shopId,
+                            "addPictureFlag": "0",
+                            "commentData": _0x11fceb,
+                            "pictureInfoList": "",
+                            "officerLevel": "3",
+                            "isCommentTagContent": "0"
+                        };
+                        await _0xb72019("pubComment", _0x1257ea);
+                    }
+                }
             }
         }
-    } else console.log("没有待评价!!");
+    } else {
+        console.log("没有待评价!!");
+    }
 }
 
-async function IlIiIII1(lIiiiiiI) {
-    s = await ii11il("getCommentListWithCard", {
+async function _0x5a8297(_0x4d7861) {
+    const _0x1e9c75 = {
         "sortType": "5",
         "isCurrentSku": false,
-        "sku": lIiiiiiI,
+        "sku": _0x4d7861,
         "pictureCommentType": "A",
         "shieldCurrentComment": "1",
         "shopType": "0",
@@ -234,116 +275,127 @@ async function IlIiIII1(lIiiiiiI) {
         "shadowMainSku": "0",
         "offset": "1",
         "num": "10"
-    });
+    };
+    s = await _0xb72019("getCommentListWithCard", _0x1e9c75);
     $.commentInfoList = s.commentInfoList;
     console.log("准备获取评价...");
 }
 
-async function ilIIIll(I1iliI1i = "1") {
-    s = await ii11il("getCommentWareList", {
+async function _0x366de2(_0x51e39b = "1") {
+    const _0x269a97 = {
         "status": "1",
         "planType": "1",
-        "pageIndex": I1iliI1i,
+        "pageIndex": _0x51e39b,
         "pageSize": "10"
-    });
+    };
+    s = await _0xb72019("getCommentWareList", _0x269a97);
     $.maxPage = s.commentWareListInfo?.["maxPage"];
     $.commentWareList = s.commentWareListInfo?.["commentWareList"]["reverse"]()[0];
 }
 
-async function ii11il(lII1li11, Illli1l) {
-    return s = liIiiI11.getbody(lII1li11, Illli1l), opt = {
-        "url": "https://api.m.jd.com/client.action?functionId=" + lII1li11,
-        "body": "fuctionId=" + lII1li11 + "&" + s,
+async function _0xb72019(_0x320f52, _0x22f5d9) {
+    s = await _0x3e511c.getbody(_0x320f52, _0x22f5d9, "11.2.2");
+    opt = {
+        "url": "https://api.m.jd.com/client.action?functionId=" + _0x320f52,
+        "body": "fuctionId=" + _0x320f52 + "&" + s,
         "headers": {
             "Host": "api.m.jd.com",
-            "content-type": "application/x-www-form-urlencoded",
             "accept": "*/*",
             "user-agent": UA,
             "accept-language": "zh-Hans-JP;q=1, en-JP;q=0.9, zh-Hant-TW;q=0.8, ja-JP;q=0.7, en-US;q=0.6",
-            "Cookie": I11iIIlI
+            "Cookie": _0x2a758b
         }
-    }, new Promise(IlIliiI => {
-        $.post(opt, (IiiilIiI, lIIl1iIl, IIIi1iIl) => {
+    };
+    return new Promise(_0x58de20 => {
+        $.post(opt, (_0x529a16, _0x1cdea1, _0x509738) => {
             try {
-                IiiilIiI ? console.log(IiiilIiI) : IIIi1iIl = JSON.parse(IIIi1iIl);
+                _0x529a16 ? console.log(_0x529a16) : _0x509738 = JSON.parse(_0x509738);
 
-                switch (lII1li11) {
+                switch (_0x320f52) {
                     case "pubComment":
-                        IIIi1iIl.message && console.log(IIIi1iIl.message);
+                        _0x509738.message && console.log(_0x509738.message);
                         break;
 
                     default:
                         break;
                 }
-            } catch (ilIIlI11) {
-                console.log(ilIIlI11);
+            } catch (_0x37bc0e) {
+                console.log(_0x37bc0e);
             } finally {
-                IlIliiI(IIIi1iIl);
+                _0x58de20(_0x509738);
             }
         });
     });
 }
 
-function i1i1l1Il() {
+function _0x4074bc() {
     return Math.random().toString(16).slice(2, 10) + Math.random().toString(16).slice(2, 10) + Math.random().toString(16).slice(2, 10) + Math.random().toString(16).slice(2, 10) + Math.random().toString(16).slice(2, 10);
 }
 
-function ll11lI1l(liliil) {
-    return liliil[Math.floor(Math.random() * liliil.length)];
+function _0x3bc746(_0x244aa2) {
+    return _0x244aa2[Math.floor(Math.random() * _0x244aa2.length)];
 }
 
-function I1i1ilII(ill1Ilii, Il1I1I1I) {
-    const II1liiii = {
-        "url": "http://fakermetaverse.xyz/sign",
-        "body": JSON.stringify({
-            "fn": ill1Ilii,
-            "body": Il1I1I1I
-        }),
-        "headers": {
-            "Content-Type": "application/json"
-        }
+function _0x3a79d0(_0xa14445, _0x327565) {
+    const _0x5b1782 = {
+        "fn": _0xa14445,
+        "body": _0x327565
     };
-    return new Promise(iIIlIi => {
-        $.post(II1liiii, async (lli1iI, liiIi1I, ll1lill) => {
+    const _0x53559a = {
+        "Content-Type": "application/json"
+    };
+    const _0x51b76f = {
+        "url": "http://fakermetaverse.xyz/sign",
+        "body": JSON.stringify(_0x5b1782),
+        "headers": _0x53559a
+    };
+    return new Promise(_0x50e9c4 => {
+        $.post(_0x51b76f, async (_0x58755e, _0x4cec0f, _0x372637) => {
             try {
-                lli1iI ? console.log(lli1iI) : ll1lill = JSON.parse(ll1lill);
-            } catch (I1IiiiIl) {
-                $.logErr(I1IiiiIl, liiIi1I);
+                _0x58755e ? console.log(_0x58755e) : _0x372637 = JSON.parse(_0x372637);
+            } catch (_0x3de00c) {
+                $.logErr(_0x3de00c, _0x4cec0f);
             } finally {
-                iIIlIi(ll1lill || "");
+                _0x50e9c4(_0x372637 || "");
             }
         });
     });
 }
 
-function iIil1iiI() {
-    return new Promise(async lI1lli1 => {
-        const lll1ll11 = {
+function _0x18268d() {
+    return new Promise(async _0x4fb357 => {
+        const _0x45568b = {
             "url": "https://wq.jd.com/user_new/info/GetJDUserInfoUnion?sceneval=2",
-            "headers": {
-                "Host": "wq.jd.com",
-                "Accept": "*/*",
-                "Connection": "keep-alive",
-                "Cookie": I11iIIlI,
-                "User-Agent": UA,
-                "Accept-Language": "zh-cn",
-                "Referer": "https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&",
-                "Accept-Encoding": "gzip, deflate, br"
-            }
+            "headers": {}
         };
-        $.get(lll1ll11, (li1i1ilI, I1iIiiIl, i1il1Il1) => {
+        _0x45568b.headers.Host = "wq.jd.com";
+        _0x45568b.headers.Accept = "*/*";
+        _0x45568b.headers.Connection = "keep-alive";
+        _0x45568b.headers.Cookie = _0x2a758b;
+        _0x45568b.headers["User-Agent"] = UA;
+        _0x45568b.headers["Accept-Language"] = "zh-cn";
+        _0x45568b.headers.Referer = "https://home.m.jd.com/myJd/newhome.action?sceneval=2&ufc=&";
+        _0x45568b.headers["Accept-Encoding"] = "gzip, deflate, br";
+        $.get(_0x45568b, (_0x1e7773, _0x154e9f, _0x2ee0b1) => {
             try {
-                if (li1i1ilI) $.logErr(li1i1ilI); else {
-                    if (i1il1Il1) {
-                        if (1001 === (i1il1Il1 = JSON.parse(i1il1Il1)).retcode) return void ($.isLogin = !1);
-                        0 === i1il1Il1.retcode && i1il1Il1.data && i1il1Il1.data.hasOwnProperty("userInfo") && ($.nickName = i1il1Il1.data.userInfo.baseInfo.nickname);
-                        0 === i1il1Il1.retcode && i1il1Il1.data && i1il1Il1.data.assetInfo && ($.beanCount = i1il1Il1.data && i1il1Il1.data.assetInfo.beanNum);
-                    } else console.log("京东服务器返回空数据");
+                if (_0x1e7773) {
+                    $.logErr(_0x1e7773);
+                } else {
+                    if (_0x2ee0b1) {
+                        if (1001 === (_0x2ee0b1 = JSON.parse(_0x2ee0b1)).retcode) {
+                            return void ($.isLogin = !1);
+                        }
+
+                        0 === _0x2ee0b1.retcode && _0x2ee0b1.data && _0x2ee0b1.data.hasOwnProperty("userInfo") && ($.nickName = _0x2ee0b1.data.userInfo.baseInfo.nickname);
+                        0 === _0x2ee0b1.retcode && _0x2ee0b1.data && _0x2ee0b1.data.assetInfo && ($.beanCount = _0x2ee0b1.data && _0x2ee0b1.data.assetInfo.beanNum);
+                    } else {
+                        console.log("京东服务器返回空数据");
+                    }
                 }
-            } catch (IIliilII) {
-                $.logErr(IIliilII);
+            } catch (_0x178a0f) {
+                $.logErr(_0x178a0f);
             } finally {
-                lI1lli1();
+                _0x4fb357();
             }
         });
     });
