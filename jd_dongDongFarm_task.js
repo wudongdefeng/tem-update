@@ -12,7 +12,7 @@ JD_Farm_PROXY_TUNNRL      // 代理池代理地址变量，默认不开启，仅
 JD_Farm_PROXY_URL      // API代理地址变量，默认不开启，仅支持 数据格式:txt;提取数量:每次一个，格式为：http://api.xxx.xxx
 JD_Farm_NO_PROXY      // 禁止走代理，默认 127.0.0.1,*.baidu.com 需要自行修改
 
-cron:1 1 1 1 *
+cron:45 2-22/6 * * *
 ============Quantumultx===============
 [task_local]
 #新东东农场任务
