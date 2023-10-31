@@ -11,6 +11,7 @@
          LUCK_DRAW_CONC // 是否启用并发模式（true/false），默认不开启
          LUCK_DRAW_CONC_THREADS // 控制并发线程数（正整数），默认3         
          LUCK_DRAW_MAX_MISS // 最大连续未抽中次数（正整数），达到此次数后会跳过运行对应账号，默认不启用此功能
+		 LUCK_DRAW_CONC_RETRY // 并发模式下接口请求的最大重试次数（正整数），默认0即不重试
 		 LUCK_DRAW_NUM //运行账号数量，默认运行前7
 		 LUCK_DRAW_Number // 连续无次数跳出，默认 7 次，火爆账号请设置黑名单，否则也会占用次数
 		 LUCK_DRAW_BLACKLIST 黑名单 用&隔开 pin值
