@@ -49,4 +49,6 @@
 9 7 * * * node /scripts/jd_xiaoshou_sendBean.js >> /scripts/logs/jd_xiaoshou_sendBean.log
 7 7 7 7 7 node /scripts/jd_fruit_watering.js >> /scripts/logs/jd_fruit_watering.log
 10 0,9 * * * node /scripts/jd_fruit_help.js >> /scripts/logs/jd_fruit_help.log
+10 4,20 * * * node /scripts/jd_fruit_new_help.js >> /scripts/logs/jd_fruit_new_help.log
+30 6,12,20 * * * node /scripts/jd_fruit_new.js >> /scripts/logs/jd_fruit_new.log
 30 0-18/6 * * * node /scripts/jd_fruit_task.js >> /scripts/logs/jd_fruit.log
