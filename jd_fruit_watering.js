@@ -6,7 +6,6 @@
 每月或每周只能领2次红包，由于常规浇水太慢，脚本优先使用快速浇水卡
 
 */
-let lnrun = 0;
 
 
 const $ = new Env('东东农场快速浇水')
@@ -35,7 +34,6 @@ const cookiesArr = Object.keys(jdCookie).map(l11ii1Ii => jdCookie[l11ii1Ii]).fil
       $.message = notify.create($.index, $.UserName);
       $.UA = common.genUA($.UserName);
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
-      lnrun++;if(lnrun == 4){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
       await Main();
     }
   }
@@ -46,12 +44,7 @@ const cookiesArr = Object.keys(jdCookie).map(l11ii1Ii => jdCookie[l11ii1Ii]).fil
 })().catch(II1I1l1 => $.logErr(II1I1l1)).finally(() => $.done());
 async function Main() {
   let Ill1iiII = false;
-  try {
-    const IilIliII = await common.getLoginStatus(cookie);
-    if (!IilIliII && typeof IilIliII !== undefined) {
-      console.log("账号无效");
-      return;
-""
+  try {    
     await initForFarm();
     if ($.farmInfo?.["farmUserPro"]) {
       if ($.farmInfo?.["treeState"] === 2 || $.farmInfo?.["treeState"] === 3) {
