@@ -47,11 +47,11 @@ const cookiesArr = Object.keys(jdCookie).map(l11ii1Ii => jdCookie[l11ii1Ii]).fil
 async function Main() {
   let Ill1iiII = false;
   try {
-    const IilIliII = "";
-    if (!IilIliII && typeof IilIliII !== undefined) {
-      console.log("账号无效");
-      return;
-    }
+ 
+ 
+ 
+ 
+ 
     await initForFarm();
     if ($.farmInfo?.["farmUserPro"]) {
       if ($.farmInfo?.["treeState"] === 2 || $.farmInfo?.["treeState"] === 3) {
