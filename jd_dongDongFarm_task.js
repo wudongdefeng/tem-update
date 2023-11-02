@@ -94,12 +94,12 @@ async function IIlI1I() {
   $.canWatering = true;
   $.hotproxy = false;
   try {
-
-
-
-
-
-    }
+    const I1I1Il = await iIIll1.getLoginStatus(IiIiIi);
+    if (!I1I1Il && typeof I1I1Il !== undefined) {
+      console.log("账号无效");
+      $.message.fix("账号无效");
+      return;
+""
     await l1Iil("farm_home");
     if ($.farm_home.bizCode === 0) {
       const l1l1I = $.farm_home?.["result"]?.["treeFullStage"],
