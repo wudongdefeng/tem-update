@@ -94,11 +94,11 @@ async function IIlI1I() {
   $.canWatering = true;
   $.hotproxy = false;
   try {
- 
- 
- 
- 
- 
+
+
+
+
+
     }
     await l1Iil("farm_home");
     if ($.farm_home.bizCode === 0) {

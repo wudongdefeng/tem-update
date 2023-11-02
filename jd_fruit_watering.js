@@ -47,11 +47,11 @@ const cookiesArr = Object.keys(jdCookie).map(l11ii1Ii => jdCookie[l11ii1Ii]).fil
 async function Main() {
   let Ill1iiII = false;
   try {
- 
- 
- 
- 
- 
+
+
+
+
+    }
     await initForFarm();
     if ($.farmInfo?.["farmUserPro"]) {
       if ($.farmInfo?.["treeState"] === 2 || $.farmInfo?.["treeState"] === 3) {
