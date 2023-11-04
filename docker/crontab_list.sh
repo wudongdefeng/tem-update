@@ -52,3 +52,4 @@
 10 4,20 * * * node /scripts/jd_fruit_new_help.js >> /scripts/logs/jd_fruit_new_help.log
 30 6,12,20 * * * node /scripts/jd_fruit_new.js >> /scripts/logs/jd_fruit_new.log
 30 0-18/6 * * * node /scripts/jd_fruit_task.js >> /scripts/logs/jd_fruit.log
+30 10 * * * node /scripts/jd_dongDongFarm_draw.js >> /scripts/logs/jd_dongDongFarm_draw.log
