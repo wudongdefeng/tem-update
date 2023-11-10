@@ -1,132 +1,208 @@
-const _0x8da1c6 = require("ds").DS,
-  _0x269d6c = require("got");
-const _0x135f1b = require("./dylanx");
-class _0x392694 {
-  constructor(_0x546231 = 0, _0x4e2f43 = null) {
-    this.ttl = _0x546231 || 0;
-    this.file = _0x4e2f43;
-    _0x4e2f43 ? this.data = new _0x8da1c6(_0x4e2f43) : this.data = new _0x8da1c6();
-  }
-  ["now"]() {
-    return new Date().getTime();
-  }
-  ["_0x5c09x3e"]() {
-    if (this.file) {
-      this.data.save(this.file);
-    }
-    return this;
-  }
-  ["_0x5c09x3f"](_0x5417ed) {
-    delete this.data[_0x5417ed];
-    this._0x5c09x3e();
-    return this;
-  }
-  ["get"](_0x2420ed, _0x136bf3) {
-    let _0xf58704 = null,
-      _0x157cb0 = this.data[_0x2420ed];
-    if (_0x157cb0) {
-      if (_0x157cb0.expires == 0 || this.now() < _0x157cb0.expires) {
-        _0xf58704 = _0x157cb0.val;
-      } else {
-        _0xf58704 = null;
-        this._0x5c09x3f(_0x2420ed);
-      }
-    }
-    if (_0x136bf3) {
-      _0x136bf3(_0xf58704);
-    }
-    return _0xf58704;
-  }
-  ["del"](_0x406631, _0x5b8082) {
-    let _0x596e78 = this.get(_0x406631);
-    this._0x5c09x3f(_0x406631);
-    _0x5b8082 && _0x5b8082(_0x596e78);
-    return _0x596e78;
-  }
-  ["put"](_0x208090, _0x224d4d = null, _0x497e3e = 0, _0x516146) {
-    if (_0x497e3e == 0) {
-      _0x497e3e = this.ttl;
-    }
-    let _0x33557b = _0x497e3e == 0 ? 0 : this.now() + _0x497e3e;
-    var _0x5afbe5 = this.del(_0x208090);
-    if (_0x224d4d !== null) {
-      const _0x24ccdd = {
-        "expires": _0x33557b,
-        "val": _0x224d4d
-      };
-      this.data[_0x208090] = _0x24ccdd;
-      this._0x5c09x3e();
-    }
-    _0x516146 && _0x516146(_0x5afbe5);
-    return _0x5afbe5;
-  }
+const _0xff9278 = require("ds").DS,
+    _0x33e9ee = require("got"),
+    _0x3faa32 = require("./dylanx");
+
+if (process.env.DY_PROXY) {
+    const _0x3d8b48 = require("./proxy.js");
+
+    _0x356326 = _0x3d8b48.intoRequest(_0x356326.bind(global));
 }
-let _0x3093cd = 900000;
-let _0xa9835e = new _0x392694(_0x3093cd, __dirname + "/cache/token.json");
-function _0x444e77(_0x2880da = "", _0xffc8ed) {
-  let _0x5a261a = _0xffc8ed.exec(_0x2880da);
-  if (_0x5a261a && _0x5a261a.length > 0) {
-    return _0x5a261a[0].trim();
-  }
-  return "";
-}
-function _0x5c9c65(_0x3beda2, _0x13f811) {
-  let _0x43b85d = new Date().getHours();
-  if (_0x43b85d >= 0 && _0x43b85d <= 3) {
-    return _0x3beda2;
-  }
-  return _0x3beda2 + "_" + _0x13f811;
-}
-function _0x424449(_0x39b03e) {
-  return new Promise(_0x5b8759 => setTimeout(_0x5b8759, _0x39b03e));
-}
-async function _0xbb5e87(_0x45f1bf, _0x205c87) {
-  let _0x162c92 = "";
-  try {
-    let _0x263cb4 = _0x444e77(_0x45f1bf, /(?<=pt_pin=)([^;]+)/);
-    if (_0x263cb4) {
-      let _0x3afed7 = _0x5c9c65(_0x263cb4, _0x205c87);
-      _0x162c92 = _0xa9835e.get(_0x3afed7) || "";
-      if (_0x162c92 === "") {
-        const _0x4da6c0 = {
-          "url": _0x205c87,
-          "id": ""
-        };
-        let _0x30e012 = _0x135f1b.getbody("isvObfuscator", _0x4da6c0),
-          _0x26b938 = await _0x269d6c.post("https://api.m.jd.com/client.action?functionId=isvObfuscator", {
-            "headers": {
-              "Host": "api.m.jd.com",
-              "Content-Type": "application/x-www-form-urlencoded",
-              "Cookie": _0x45f1bf,
-              "User-Agent": "JD4iPhone/167650 (iPhone; iOS 13.7; Scale/3.00)",
-              "Accept-Language": "zh-Hans-CN;q=1",
-              "Accept-Encoding": "gzip, deflate, br"
-            },
-            "body": _0x30e012
-          }).json().catch(async _0x1890dc => {
-            if (_0x1890dc.response) {
-              console.log("🚫 getToken API请求失败 ➜ Response code " + (_0x1890dc.response.statusCode || "") + " (" + (_0x1890dc.response.statusMessage || "") + ")");
-            } else {
-              console.log("🚫 getToken API请求失败\n" + (_0x1890dc.message || "") + "\n");
-            }
-          });
-        if (_0x26b938) {
-          if (_0x26b938.code === "0") {
-            _0x162c92 = _0x26b938.token;
-            _0xa9835e.put(_0x3afed7, _0x162c92, _0x3093cd);
-            console.log("获取token成功\n");
-          } else {
-            _0x26b938.code === "3" && _0x26b938.errcode === 264 ? console.log("🚫 getToken API请求失败 ➜ 账号无效") : console.log("🚫 getToken API接口返回异常 ➜ " + JSON.stringify(_0x26b938));
-          }
+
+class _0x14f994 {
+    constructor(_0x1d1630 = 0, _0x297d49 = null) {
+        this.ttl = _0x1d1630 || 0;
+        this.file = _0x297d49;
+
+        if (_0x297d49) {
+            this.data = new _0xff9278(_0x297d49);
+        } else {
+            this.data = new _0xff9278();
         }
-      } else {
-        console.log("已读取本地缓存token\n");
-      }
     }
-  } catch (_0x2c0d3f) {
-    console.log(_0x2c0d3f);
-    console.log("getToken API请求失败");
-  }
-  return _0x162c92;
+
+    now() {
+        return new Date().getTime();
+    }
+
+    _0x5c09x3e() {
+        if (this.file) {
+            this.data.save(this.file);
+        }
+
+        return this;
+    }
+
+    _0x5c09x3f(_0x39477d) {
+        delete this.data[_0x39477d];
+
+        this._0x5c09x3e();
+
+        return this;
+    }
+
+    get(_0x1e1e7f, _0x5c203d) {
+        let _0x26acb3 = null,
+            _0x4c3e94 = this.data[_0x1e1e7f];
+        _0x4c3e94 && (_0x4c3e94.expires == 0 || this.now() < _0x4c3e94.expires ? _0x26acb3 = _0x4c3e94.val : (_0x26acb3 = null, this._0x5c09x3f(_0x1e1e7f)));
+        _0x5c203d && _0x5c203d(_0x26acb3);
+        return _0x26acb3;
+    }
+
+    del(_0x4b2417, _0x185432) {
+        let _0x5d8647 = this.get(_0x4b2417);
+
+        this._0x5c09x3f(_0x4b2417);
+
+        _0x185432 && _0x185432(_0x5d8647);
+        return _0x5d8647;
+    }
+
+    put(_0x14bc78, _0x346b05 = null, _0x3f8f45 = 0, _0x6dd648) {
+        _0x3f8f45 == 0 && (_0x3f8f45 = this.ttl);
+
+        let _0x3e94e8 = _0x3f8f45 == 0 ? 0 : this.now() + _0x3f8f45;
+
+        var _0x54d6bb = this.del(_0x14bc78);
+
+        if (_0x346b05 !== null) {
+            const _0x5b9439 = {
+                expires: _0x3e94e8,
+                val: _0x346b05
+            };
+            this.data[_0x14bc78] = _0x5b9439;
+
+            this._0x5c09x3e();
+        }
+
+        _0x6dd648 && _0x6dd648(_0x54d6bb);
+        return _0x54d6bb;
+    }
+
 }
-module.exports = _0xbb5e87;
+
+let _0x2f68dd = 1200000,
+    _0x1bc5cf = new _0x14f994(_0x2f68dd, __dirname + "/cache/token.json");
+
+function _0x3a1f74(_0x91278f = "", _0x42569b) {
+    let _0x25dac5 = _0x42569b.exec(_0x91278f);
+
+    if (_0x25dac5 && _0x25dac5.length > 0) {
+        return _0x25dac5[0].trim();
+    }
+
+    return "";
+}
+
+function _0x417f6a(_0x1ec9a0, _0x30f57f) {
+    return _0x1ec9a0;
+}
+
+function _0x33e346(_0x2a0d45) {
+    return new Promise(_0xfdda08 => setTimeout(_0xfdda08, _0x2a0d45));
+}
+
+function _0x356326(_0x215610, _0x377ffd = () => { }) {
+    const {
+        url: _0x146680,
+        ..._0x1fb37d
+    } = _0x215610;
+
+    _0x33e9ee.post(_0x146680, _0x1fb37d).then(_0x5611c1 => {
+        const {
+            statusCode: _0x31fcbd,
+            statusCode: _0x1326b0,
+            headers: _0x349224,
+            body: _0x2a276a
+        } = _0x5611c1,
+            _0x3fd436 = {
+                status: _0x31fcbd,
+                statusCode: _0x1326b0,
+                headers: _0x349224,
+                body: _0x2a276a
+            };
+
+        _0x377ffd(null, _0x3fd436, _0x2a276a);
+    }, _0x2c7f4c => {
+        const {
+            message: _0x53f754,
+            response: _0xbc4980
+        } = _0x2c7f4c;
+
+        _0x377ffd(_0x53f754, _0xbc4980, _0xbc4980 && _0xbc4980.body);
+    });
+}
+
+async function _0x210264(_0xe8e959, _0x28ae95) {
+    const _0x5b8186 = {
+        url: _0x28ae95,
+        id: ""
+    };
+
+    let _0x16005e = await _0x3faa32.getbody("isvObfuscator", _0x5b8186),
+        _0x2f6897;
+
+    if (!_0x16005e) {
+        return "";
+    }
+
+    const _0x232f2f = {
+        Host: "api.m.jd.com",
+        "Content-Type": "application/x-www-form-urlencoded",
+        Cookie: _0xe8e959,
+        "User-Agent": "okhttp/3.12.16;jdmall;android;version/12.1.0;build/98891;",
+        "Accept-Language": "zh-Hans-CN;q=1",
+        "Accept-Encoding": "gzip, deflate, br"
+    };
+    const _0x2f8ee3 = {
+        url: "https://api.m.jd.com/client.action?functionId=isvObfuscator",
+        body: _0x16005e,
+        headers: _0x232f2f,
+        timeout: 30000
+    };
+    return new Promise(_0xe09e12 => {
+        _0x356326(_0x2f8ee3, (_0xda56b2, _0x48c2cd, _0x1bf70e) => {
+            try {
+                _0xda56b2 ? console.log("Token请求失败 " + (_0x48c2cd.statusCode || "")) : _0x2f6897 = JSON.parse(_0x1bf70e);
+            } catch (_0x716241) {
+                console(_0x716241, _0x48c2cd);
+            } finally {
+                _0xe09e12(_0x2f6897);
+            }
+        });
+    });
+}
+
+async function _0x2b19a8(_0x1ea376, _0x20f6ba) {
+    let _0x20ccd1 = "";
+
+    try {
+        let _0x8cfcda = _0x3a1f74(_0x1ea376, /(?<=pt_pin=)([^;]+)/);
+
+        if (_0x8cfcda) {
+            let _0x51ec34 = _0x417f6a(_0x8cfcda, _0x20f6ba);
+
+            _0x20ccd1 = _0x1bc5cf.get(_0x51ec34) || "";
+
+            if (_0x20ccd1 === "") {
+                let _0x4bf21f = await _0x210264(_0x1ea376, _0x20f6ba);
+
+                if (_0x4bf21f) {
+                    if (_0x4bf21f.code === "0") {
+                        _0x4bf21f.errcode == 264 ? console.log("" + _0x4bf21f.message) : (_0x20ccd1 = _0x4bf21f.token, _0x1bc5cf.put(_0x51ec34, _0x20ccd1, _0x2f68dd), console.log("获取token成功\n"));
+                    } else {
+                        _0x4bf21f.code === "3" && _0x4bf21f.errcode === 264 ? console.log("获取Token失败 ： 账号无效") : console.log("获取Token异常 ： " + JSON.stringify(_0x4bf21f));
+                    }
+                }
+            } else {
+                console.log("已读取本地缓存token\n");
+            }
+        }
+    } catch (_0x5e32d4) {
+        console.log(_0x5e32d4);
+        console.log("Token请求失败");
+    }
+
+    return _0x20ccd1;
+}
+
+module.exports = _0x2b19a8;
