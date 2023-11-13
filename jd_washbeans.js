@@ -42,7 +42,7 @@ if ($.isNode()) {
     for (let _0x5ce76a = 0; _0x5ce76a < _0x33dbdd.length; _0x5ce76a++) {
         if (_0x33dbdd[_0x5ce76a]) {
             _0x3d214c = _0x33dbdd[_0x5ce76a], $.UserName = decodeURIComponent(_0x3d214c.match(/pt_pin=([^; ]+)(?=;?)/) && _0x3d214c.match(/pt_pin=([^; ]+)(?=;?)/)[1]), $.index = _0x5ce76a + 1, $.isLogin = true, $.nickName = '', _0x50984c = 0, await _0x3ed848(), console.log('\n******开始【京东账号' + $.index + '】' + ($.nickName || $.UserName) + '*********\n');
-      let Interval = process.env.jd_task_interval || "60 * 1000";console.log("环境变量jd_task_interval默认为60s");lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait($jd_task_interval);lnrun = 0}
+      let Interval = process.env.jd_task_interval || "60 * 1000";console.log("环境变量jd_task_interval默认为60s");lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到2次，休息一分钟.....】\n`);await $.wait($jd_task_interval);lnrun = 0}
             if (!$.isLogin) {
                 const _0x4cdb05 = {};
                 _0x4cdb05['open-url'] = 'https://bean.m.jd.com/bean/signIndex.action', $.msg($.name, '【提示】cookie已失效', '京东账号' + $.index + ' ' + ($.nickName || $.UserName) + '\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action', _0x4cdb05);

@@ -111,7 +111,7 @@ let _0x4c0b21 = _0x2ff18a.existsSync("/ql/data/config") ? "/ql/data/config/confi
             }
 
             console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******");
-      let Interval = process.env.jd_jk_interval || "60 * 1000";console.log("环境变量jd_jk_interval默认为60s");lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait($jd_jk_interval);lnrun = 0}
+      let Interval = process.env.jd_jk_interval || "60 * 1000";console.log("环境变量jd_jk_interval默认为60s");lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到2次，休息一分钟.....】\n`);await $.wait($jd_jk_interval);lnrun = 0}
 
             if (!$.isLogin) {
                 const _0x530298 = {

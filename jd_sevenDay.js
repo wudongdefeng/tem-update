@@ -95,7 +95,7 @@ ilIIIlI1();
       $.isLogin = true;
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
-      let Interval = process.env.jd_jk_interval || "60 * 1000";console.log("环境变量jd_jk_interval默认为60s");lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait($jd_jk_interval);lnrun = 0}
+      let Interval = process.env.jd_jk_interval || "60 * 1000";console.log("环境变量jd_jk_interval默认为60s");lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到2次，休息一分钟.....】\n`);await $.wait($jd_jk_interval);lnrun = 0}
       $.UA = IiiIi1il.UARAM ? IiiIi1il.UARAM() : IiiIi1il.USER_AGENT;
       await IiII1lI1();
       if (!$.isLogin) {
