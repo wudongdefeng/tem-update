@@ -111,7 +111,7 @@ let _0x4c0b21 = _0x2ff18a.existsSync("/ql/data/config") ? "/ql/data/config/confi
             }
 
             console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******");
-      lnrun++;if(lnrun == 7){console.log(`\n【访问接口次数达到6次，休息一分钟.....】\n`);await $.wait(120 * 1000);lnrun = 0}
+      lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
 
             if (!$.isLogin) {
                 const _0x530298 = {

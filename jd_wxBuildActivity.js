@@ -54,7 +54,7 @@ const defaultWordsArr = ["%E4%B8%8D%E9%94%99%EF%BC%8C%E6%88%91%E6%9D%A5%E4%BA%86
       $.hotFlag = false;
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
-      lnrun++;if(lnrun == 7){console.log(`\n【访问接口次数达到6次，休息一分钟.....】\n`);await $.wait(120 * 1000);lnrun = 0}
+      lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
       await getUA();
       await run();
       await $.wait(2000);

@@ -72,7 +72,7 @@ let _0x2d2778 = process.env.userKeyWords && process.env.userKeyWords.split("@") 
             $.commentInfoList = "";
             await _0x18268d();
             console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
-      lnrun++;if(lnrun == 4){console.log(`\n【访问接口次数达到3次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
+      lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
 
             if (!$.isLogin) {
                 const _0x396ae4 = {
