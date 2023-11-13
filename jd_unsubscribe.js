@@ -94,7 +94,7 @@ const iII11I = process.env.JD_SIGN_KRAPI || "",
         $.isLogin = true;
         $.nickName = "";
         console.log("\n****开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*****\n");
-      lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait(60 * 1000);lnrun = 0}
+      let Interval = process.env.jd_task_interval || "60 * 1000";console.log(环境变量jd_task_interval默认为60s);lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait($jd_task_interval);lnrun = 0}
         if (args_xh.except.includes($.UserName)) {
           console.log("跳过账号：" + ($.nickName || $.UserName));
           continue;
