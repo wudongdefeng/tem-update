@@ -65,7 +65,7 @@ let lIiIlI = iiIi(2, "1234567890") + "-" + iiIi(4, "1234567890") + "-" + iiIi(4,
       $.isLogin = true;
       $.nickName = "";
       console.log("\n开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "\n");
-      let Interval = process.env.jd_task_interval || "60 * 1000";console.log(环境变量jd_task_interval默认为60s);lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait($jd_task_interval);lnrun = 0}
+      let Interval = process.env.jd_task_interval || "60 * 1000";console.log("环境变量jd_task_interval默认为60s");lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait($jd_task_interval);lnrun = 0}
       if (!$.isLogin) {
         $.msg($.name, "【提示】cookie已失效", "京东账号" + $.index + " " + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action", {
           "open-url": "https://bean.m.jd.com/bean/signIndex.action"

@@ -118,7 +118,7 @@ if ($.isNode()) {
       $.message = iIi1I1l1.create($.index, $.UserName);
       $.nickName = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
-      let Interval = process.env.jd_jk_interval || "60 * 1000";console.log(环境变量jd_jk_interval默认为60s);lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait($jd_jk_interval);lnrun = 0}
+      let Interval = process.env.jd_jk_interval || "60 * 1000";console.log("环境变量jd_jk_interval默认为60s");lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait($jd_jk_interval);lnrun = 0}
       await lllIlI1l();
       iil1ilii.unsetCookie();
       if ($.outFlag || $.runEnd) {

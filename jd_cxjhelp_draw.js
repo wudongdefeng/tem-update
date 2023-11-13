@@ -65,7 +65,7 @@ if ($.isNode()) {
       $.canUseCoinAmount = 0;
       console.log("");
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
-      let Interval = process.env.jd_task_interval || "60 * 1000";console.log(环境变量jd_task_interval默认为60s);lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait($jd_task_interval);lnrun = 0}
+      let Interval = process.env.jd_task_interval || "60 * 1000";console.log("环境变量jd_task_interval默认为60s");lnrun++;if(lnrun == 2){console.log(`\n【访问接口次数达到1次，休息一分钟.....】\n`);await $.wait($jd_task_interval);lnrun = 0}
       $.UA = IllllIl.genUA($.UserName);
       for (let lIi1lI = 0; lIi1lI < lil11il.length; lIi1lI++) {
         IiiiIl = lil11il[lIi1lI];
