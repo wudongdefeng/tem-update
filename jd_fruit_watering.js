@@ -35,6 +35,8 @@ const cookiesArr = Object.keys(jdCookie).map(l11ii1Ii => jdCookie[l11ii1Ii]).fil
       $.UA = common.genUA($.UserName);
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "******\n");
       await Main();
+      console.log('账号等待间隔1分钟');
+      await $.wait(60000);   
     }
   }
   if (isNotify && notify.getMessage()) {
