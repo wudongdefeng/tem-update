@@ -40,7 +40,7 @@ if ($.isNode()) {
             message = '';
             //await TotalBean();
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
-      let Interval = process.env.jd_task_interval || "60 * 1000";console.log("环境变量jd_task_interval默认为60s");lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到2次，休息一分钟.....】\n`);await $.wait($Interval);lnrun = 0}
+      let Interval = process.env.jd_task_interval || "60 * 1000";console.log("环境变量jd_task_interval已设置为"+Interval/1000+"秒");lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到2次，休息一分钟.....】\n`);await $.wait(Interval);lnrun = 0}
 
             get_UA();
             $.log("去签到")
