@@ -98,7 +98,7 @@ for (let i in productsArr) {
             $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
             $.index = i + 1;
             console.log(`\n******开始【京东账号${$.index}】${$.nickName || $.UserName}*********\n`);
-      let Interval = process.env.jd_task_interval || "60 * 1000";console.log("环境变量jd_task_interval已设置为"+Interval/1000+"秒");lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到2次，休息一分钟.....】\n`);await $.wait(Interval);lnrun = 0}
+      let Interval = process.env.jd_task_interval || 60 * 1000;console.log("环境变量jd_task_interval已设置为"+Interval/1000+"秒");lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到2次，休息一分钟.....】\n`);await $.wait(Interval);lnrun = 0}
             if (cleancartProductsAll[$.UserName]) {
                 $.cleancartProductsArr = cleancartProductsAll[$.UserName]
             } else if (cleancartProductsAll["*"]) {
