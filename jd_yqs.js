@@ -11,7 +11,6 @@ cron "25 4,16 * * *" script-path=jd_yqs.js, tag=摇钱树任务
 let lnrun = 0;
 const $ = new Env('摇钱树任务');
 
-l1ilIlli && (version_ = l1ilIlli);
 const iliiIli = $.isNode() ? require('./sendNotify') : '',
     iI1lli1l = $.isNode() ? require('./jdCookie.js') : '',
     iIiiII1l = require('./function/h5st41.js');
