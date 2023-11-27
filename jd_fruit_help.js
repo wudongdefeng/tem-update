@@ -4,7 +4,7 @@
 东东农场-助力
 cron "5 4,7,14,20 * * *" jd_fruits_help.js
 */
-let lnrun == 0;
+let lnrun = 0;
 let global_agent_http_proxy_isopen = false;
 if (process.env.GLOBAL_AGENT_HTTP_PROXY_OPEN == "true"){
     global_agent_http_proxy_isopen = true;
