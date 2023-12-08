@@ -121,7 +121,7 @@ async function I1IlII() {
       await III1l1();
       await l1IIl();
       !process.env.DO_TEN_WATER_AGAIN ? await lIiIll() : console.log("不执行再次浇水，攒水滴");
-      await Il111();
+      //await Il111();
     } else {
       if ($.farmInfo?.["code"] == 3) {
         console.log("农场初始化异常：" + $.farmInfo?.["code"] + "，未登录");
