@@ -30,7 +30,7 @@ let _0x1da43d = [],
     _0x39a21a = 0;
 
 if ($.isNode()) {
-  var _0x4e8680 = new Buffer.from("64796C616E", "Hex").toString("utf8");
+
 
   Object.keys(_0x309e6f).forEach(_0x31cfad => {
     _0x1da43d.push(_0x309e6f[_0x31cfad]);
@@ -44,10 +44,7 @@ if ($.isNode()) {
 }
 
 !(async () => {
-  if (!__filename.includes(_0x4e8680)) {
-    console.log("ERR!!!");
-    return;
-  }
+
 
   if (!_0x1da43d[0]) {
     const _0x414209 = {
