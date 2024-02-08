@@ -66,7 +66,7 @@ if ($.isNode()) {
 
 async function main() {
   let encryptAssignmentId, exchangeRate, scoreExchangeId
-  let queryInteractiveInfo = await doApi("queryInteractiveInfo", { "encryptProjectId": "3DjrZKeV9CaXMnvuty59heYXkE79", "ext": { "rewardEncryptAssignmentId": null, "needNum": 50 }, "sourceCode": "acerwq20220316" })
+  let queryInteractiveInfo = await doApi("queryInteractiveInfo", { "encryptProjectId": "2GyKMFX6wDiTfFXTn6DNDwGrqQJJ", "ext": { "rewardEncryptAssignmentId": null, "needNum": 50 }, "sourceCode": "acerwq20220316" })
   for (let key of Object.keys(queryInteractiveInfo.assignmentList)) {
     let vo = queryInteractiveInfo.assignmentList[key]
     if (vo.userVerificationInfo.userQulification) {
@@ -75,10 +75,10 @@ async function main() {
         for (let key of Object.keys(vo.ext.shoppingActivity)) {
           let exttt = vo.ext.shoppingActivity[key]
           if (exttt.status !== 2) {
-            let do2 = await doApi("doInteractiveAssignment", { "encryptProjectId": "3DjrZKeV9CaXMnvuty59heYXkE79", "encryptAssignmentId": vo.encryptAssignmentId, "itemId": exttt.itemId, "sourceCode": "acerwq20220316",actionType : 1 })
+            let do2 = await doApi("doInteractiveAssignment", { "encryptProjectId": "2GyKMFX6wDiTfFXTn6DNDwGrqQJJ", "encryptAssignmentId": vo.encryptAssignmentId, "itemId": exttt.itemId, "sourceCode": "acerwq20220316",actionType : 1 })
             console.log(JSON.stringify(do2));
             await $.wait(5000)
-            let doInteractiveAssignment = await doApi("doInteractiveAssignment", { "encryptProjectId": "3DjrZKeV9CaXMnvuty59heYXkE79", "encryptAssignmentId": vo.encryptAssignmentId, "itemId": exttt.itemId, "sourceCode": "acerwq20220316" })
+            let doInteractiveAssignment = await doApi("doInteractiveAssignment", { "encryptProjectId": "2GyKMFX6wDiTfFXTn6DNDwGrqQJJ", "encryptAssignmentId": vo.encryptAssignmentId, "itemId": exttt.itemId, "sourceCode": "acerwq20220316" })
             if (doInteractiveAssignment.subCode === "0") {
               for (let key of Object.keys(doInteractiveAssignment.rewardsInfo.successRewards)) {
                 let successRewards = doInteractiveAssignment.rewardsInfo.successRewards[key]
@@ -100,14 +100,14 @@ async function main() {
       return
     }
   }
-  let queryInteractiveRewardInfo = await doApi("queryInteractiveRewardInfo", { "encryptProjectId": "3DjrZKeV9CaXMnvuty59heYXkE79", "ext": { "detailEncryptAssignmentIds": [], "needExchangeRestScore": 1, "detailTypeFlag": "1" }, "sourceCode": "acerwq20220316" })
+  let queryInteractiveRewardInfo = await doApi("queryInteractiveRewardInfo", { "encryptProjectId": "2GyKMFX6wDiTfFXTn6DNDwGrqQJJ", "ext": { "detailEncryptAssignmentIds": [], "needExchangeRestScore": 1, "detailTypeFlag": "1" }, "sourceCode": "acerwq20220316" })
   let lotteryNum, usedScore
   if (queryInteractiveRewardInfo.subCode === "0") {
     usedScore = queryInteractiveRewardInfo.exchangeRestScoreMap[scoreExchangeId]
     lotteryNum = Math.floor(usedScore / exchangeRate)
     console.log(`\n可以抽奖${lotteryNum}次`)
     for (let i = lotteryNum; i > 0; i--) {
-      let doInteractiveAssignment = await doApi("doInteractiveAssignment", { "encryptProjectId": "3DjrZKeV9CaXMnvuty59heYXkE79", "encryptAssignmentId": encryptAssignmentId, "completionFlag": true, "ext": { "exchangeNum": 1 }, "sourceCode": "acerwq20220316" })
+      let doInteractiveAssignment = await doApi("doInteractiveAssignment", { "encryptProjectId": "2GyKMFX6wDiTfFXTn6DNDwGrqQJJ", "encryptAssignmentId": encryptAssignmentId, "completionFlag": true, "ext": { "exchangeNum": 1 }, "sourceCode": "acerwq20220316" })
       console.log(JSON.stringify(doInteractiveAssignment));
       await $.wait(2000)
     }
