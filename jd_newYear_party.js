@@ -3,60 +3,58 @@
 
 只做任务，抽奖  无助力
 
-cron "55 5 * * *" script-path=jd_newYear_party.js, tag=京东看春晚抽奖
+cron "1 0 * * *" script-path=jd_newYear_party.js, tag=京东看春晚抽奖
 
  */
-let lnrun = 0;
-const $ = new Env('京东看春晚抽奖')
-const IliIIl = $.isNode() ? require("./sendNotify") : "",
-      I1il1l = $.isNode() ? require("./jdCookie") : "",
-      lI1l1l = require("./utils/Rebels_jdCommon"),
-      {
-  H5st: IIliII
-} = require("./utils/Rebels_H");
 
-let Ill11I = "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM",
-    I1il1i = "0123456789",
-    IliIIi = "qwertyuiopasdfghjklzxcvbnm",
-    lI1l1i = "jdd01" + iIIilI(111, I1il1i + Ill11I).toUpperCase(),
-    i1iil = "jdd03" + iIIilI(123, I1il1i + Ill11I).toUpperCase();
-const llI11l = {
-  "1": "[空气]",
-  "2": "[支付券]",
-  "3": "[优惠券]",
-  "4": "[京东超市卡]",
-  "5": "[红包]",
-  "6": "[实物券]",
-  "8": "[红包]"
+const $ = new Env('京东看春晚抽奖')
+const notify = $.isNode() ? require('./sendNotify') : ''
+const jdCookieNode = $.isNode() ? require('./jdCookie') : ''
+const common = require('./function/jdCommon')
+const { H5st } = require('./function/jdCrypto')
+
+let ALL_CHAR = "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM",
+    ALL_DIGIT = "0123456789",
+    ALL_ALPHABET = "qwertyuiopasdfghjklzxcvbnm",
+    sdkToken = "jdd01" + randomString(111, ALL_DIGIT + ALL_CHAR).toUpperCase(),
+    jsToken = "jdd03" + randomString(123, ALL_DIGIT + ALL_CHAR).toUpperCase();
+const prize_type = {
+  1: "[空气]",
+  2: "[支付券]",
+  3: "[优惠券]",
+  4: "[京东超市卡]",
+  5: "[红包]",
+  6: "[实物券]",
+  8: "[红包]"
 },
-      I1llIl = ["order"];
-let i1iii = [],
-    I1llIi = "",
-    IIii1I;
+      skip_task = ["order"];
+let cookiesArr = [],
+    cookie = "",
+    message;
 
 if ($.isNode()) {
-  Object.keys(I1il1l).forEach(Ii1iil => {
-    i1iii.push(I1il1l[Ii1iil]);
+  Object.keys(jdCookieNode).forEach(il1lIIll => {
+    cookiesArr.push(jdCookieNode[il1lIIll]);
   });
   if (process.env.JD_DEBUG && process.env.JD_DEBUG === "false") console.log = () => {};
-} else i1iii = [$.getdata("CookieJD"), $.getdata("CookieJD2"), ...l1l1il($.getdata("CookiesJD") || "[]").map(Ilil1i => Ilil1i.cookie)].filter(iili1 => !!iili1);
+} else cookiesArr = [$.getdata("CookieJD"), $.getdata("CookieJD2"), ...jsonParse($.getdata("CookiesJD") || "[]").map(IlIllll1 => IlIllll1.cookie)].filter(lII1Ii1i => !!lII1Ii1i);
 
 !(async () => {
-  if (!i1iii[0]) {
+  if (!cookiesArr[0]) {
     $.msg($.name, "【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取", "https://bean.m.jd.com/bean/signIndex.action", {
       "open-url": "https://bean.m.jd.com/bean/signIndex.action"
     });
     return;
   }
 
-  for (let Ii1iiI = 0; Ii1iiI < i1iii.length; Ii1iiI++) {
-    if (i1iii[Ii1iiI]) {
-      I1llIi = i1iii[Ii1iiI];
-      $.UserName = decodeURIComponent(I1llIi.match(/pt_pin=([^; ]+)(?=;?)/) && I1llIi.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
-      $.index = Ii1iiI + 1;
+  for (let lii1lI1i = 0; lii1lI1i < cookiesArr.length; lii1lI1i++) {
+    if (cookiesArr[lii1lI1i]) {
+      cookie = cookiesArr[lii1lI1i];
+      $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+      $.index = lii1lI1i + 1;
       $.isLogin = true;
       $.nickName = "";
-      IIii1I = "";
+      message = "";
       console.log("\n******开始【京东账号" + $.index + "】" + ($.nickName || $.UserName) + "*********\n");
       let Interval = process.env.jd_task_interval || 60 * 1000;console.log("环境变量jd_task_interval已设置为"+Interval/1000+"秒");lnrun++;if(lnrun == 3){console.log(`\n【访问接口次数达到2次，休息一分钟.....】\n`);await $.wait(Interval);lnrun = 0}
 
@@ -64,397 +62,410 @@ if ($.isNode()) {
         $.msg($.name, "【提示】cookie已失效", "京东账号" + $.index + " " + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action", {
           "open-url": "https://bean.m.jd.com/bean/signIndex.action"
         });
-        $.isNode() && (await IliIIl.sendNotify($.name + "cookie已失效 - " + $.UserName, "京东账号" + $.index + " " + $.UserName + "\n请重新登录获取cookie"));
+        $.isNode() && (await notify.sendNotify($.name + "cookie已失效 - " + $.UserName, "京东账号" + $.index + " " + $.UserName + "\n请重新登录获取cookie"));
         continue;
       }
 
-      $.jda = "__jda=" + il1l1("1xxxxxxxx.164xxxxxxxxxxxxxxxxxxx.164xxxxxxx.165xxxxxx.165xxxxxx.1xx");
-      $.UA = lI1l1l.genUA($.UserName);
-      await llI11i();
+      $.jda = "__jda=" + _jda("1xxxxxxxx.164xxxxxxxxxxxxxxxxxxx.164xxxxxxx.165xxxxxx.165xxxxxx.1xx");
+      $.UA = common.genUA($.UserName);
+      await Main();
       await $.wait(parseInt(Math.random() * 1000 + 2000, 10));
     }
   }
-})().catch(Iil1ii => {
-  $.log("", "❌ " + $.name + ", 失败! 原因: " + Iil1ii + "!", "");
+})().catch(li1IIii1 => {
+  $.log("", "❌ " + $.name + ", 失败! 原因: " + li1IIii1 + "!", "");
 }).finally(() => {
   $.done();
 });
 
-async function llI11i() {
+async function Main() {
   $.can_draw = true;
   $.nowcontinue = false;
-  await l1l1ii();
+  await party_task_list();
   await $.wait(parseInt(Math.random() * 1000 + 1000, 10));
-  await iliIi1();
+  await party_home();
   await $.wait(parseInt(Math.random() * 1000 + 1000, 10));
 }
 
-function i1iIi1(II11l) {
+function safeGet(iIl1iIll) {
   try {
-    if (typeof JSON.parse(II11l) == "object") return true;
-  } catch (iI1Iil) {
-    return console.log(iI1Iil), console.log("京东服务器访问数据为空，请检查自身设备网络情况"), false;
+    if (typeof JSON.parse(iIl1iIll) == "object") return true;
+  } catch (Ii11ll1l) {
+    return console.log(Ii11ll1l), console.log("京东服务器访问数据为空，请检查自身设备网络情况"), false;
   }
 }
 
-function l1l1il(il1iI) {
-  if (typeof il1iI == "string") try {
-    return JSON.parse(il1iI);
-  } catch (i1iIil) {
-    return console.log(i1iIil), $.msg($.name, "", "请勿随意在BoxJs输入框修改内容\n建议通过脚本去获取cookie"), [];
+function jsonParse(IiiiIliI) {
+  if (typeof IiiiIliI == "string") {
+    try {
+      return JSON.parse(IiiiIliI);
+    } catch (l111I11i) {
+      return console.log(l111I11i), $.msg($.name, "", "请勿随意在BoxJs输入框修改内容\n建议通过脚本去获取cookie"), [];
+    }
   }
 }
 
-async function I11i1I() {
-  return new Promise(async i1iIlI => {
-    const liI1lI = {
-      "appId": "c06b7",
+async function party_popUp() {
+  return new Promise(async liIlii1 => {
+    const Iill1liI = {
+      "appId": "b1660",
       "functionId": "party_popUp",
       "appid": "spring_h5",
-      "clientVersion": "12.3.1",
-      "client": "ios",
+      "clientVersion": "1.0.0",
+      "client": "wh5",
       "body": {},
-      "version": "4.3",
+      "version": "4.4",
       "ua": $.UA,
       "t": true
     },
-          lIIiI1 = await IIliII.getH5st(liI1lI);
-    let ll1I1 = {
+          Illl1llI = await H5st.getH5st(Iill1liI);
+    let I1li = {
       "url": "https://api-x.m.jd.com/",
-      "body": lIIiI1.params,
+      "body": Illl1llI.params,
       "headers": {
         "origin": "https://prodev.m.jd.com",
         "Referer": "https://prodev.m.jd.com/mall/active/2wVcxotdeVGtYzshpn4gBQkx2cnN/index.html",
         "User-Agent": $.UA,
-        "Cookie": I1llIi,
+        "Cookie": cookie,
         "content-type": "application/x-www-form-urlencoded",
         "accept": "application/json, text/plain, */*"
       },
       "timeout": 20 * 1000
     };
-    console.log(ll1I1);
-    $.post(ll1I1, async (lliiIi, iiIi1I, IllIl1) => {
+    console.log(I1li);
+    $.post(I1li, async (liIii, ilIlI, iIII111) => {
       try {
-        lliiIi ? console.log("" + JSON.stringify(lliiIi)) : (IllIl1 = JSON.parse(IllIl1), console.log(IllIl1), IllIl1?.["code"] == 0 ? IllIl1?.["data"]?.["bizCode"] == 0 ? (await l1l1ii(), await $.wait(parseInt(Math.random() * 1000 + 1000, 10)), await iliIi1(), await $.wait(parseInt(Math.random() * 1000 + 1000, 10))) : console.log("进入活动失败," + (IllIl1?.["code"] || "") + "," + (IllIl1?.["message"] || "")) : console.log("进入活动失败," + (IllIl1?.["code"] || "") + "," + (IllIl1?.["message"] || "")));
-      } catch (ill1II) {
-        $.logErr(ill1II, iiIi1I);
+        if (liIii) console.log("" + JSON.stringify(liIii));else {
+          iIII111 = JSON.parse(iIII111);
+          console.log(iIII111);
+
+          if (iIII111?.["code"] == 0) {
+            if (iIII111?.["data"]?.["bizCode"] == 0) await party_task_list(), await $.wait(parseInt(Math.random() * 1000 + 1000, 10)), await party_home(), await $.wait(parseInt(Math.random() * 1000 + 1000, 10));else {
+              console.log("进入活动失败," + (iIII111?.["code"] || "") + "," + (iIII111?.["message"] || ""));
+            }
+          } else console.log("进入活动失败," + (iIII111?.["code"] || "") + "," + (iIII111?.["message"] || ""));
+        }
+      } catch (i11l1lII) {
+        $.logErr(i11l1lII, ilIlI);
       } finally {
-        i1iIlI();
+        liIlii1();
       }
     });
   });
 }
 
-async function iliIi1() {
-  return new Promise(async Ii1I1I => {
-    const l1iI1 = {
-      "appId": "c06b7",
+async function party_home() {
+  return new Promise(async Il1lIi11 => {
+    const IiIi1ill = {
+      "appId": "b1660",
       "functionId": "party_home",
       "appid": "spring_h5",
-      "clientVersion": "12.3.1",
-      "client": "ios",
-      "body": {},
-      "version": "4.3",
-      "ua": $.UA,
-      "t": true
+      "clientVersion": "1.0.0",
+      "client": "wh5",
+      "body": {
+        "areaInfo": "",
+        "unpl": "",
+        "sendTime": Date.now(),
+        "refresh": null
+      },
+      "version": "4.4",
+      "ua": $.UA
     },
-          lliiI1 = await IIliII.getH5st(l1iI1);
-    let IiiI1 = {
+          IilI11l1 = await H5st.getH5st(IiIi1ill);
+    let IliIIl1i = {
       "url": "https://api-x.m.jd.com/",
-      "body": lliiI1.params,
+      "body": IilI11l1.params + "&d_model=0-2-999&osVersion=17.3",
       "headers": {
-        "origin": "https://prodev.m.jd.com",
-        "Referer": "https://prodev.m.jd.com/mall/active/2wVcxotdeVGtYzshpn4gBQkx2cnN/index.html",
+        "origin": "https://pro.m.jd.com",
+        "Referer": "https://pro.m.jd.com/mall/active/4TeSpXMCG6Kwy63rTeRDUp6wfL4n/index.html",
         "User-Agent": $.UA,
-        "Cookie": I1llIi,
+        "Cookie": cookie,
         "content-type": "application/x-www-form-urlencoded",
         "accept": "application/json, text/plain, */*"
       },
       "timeout": 20 * 1000
     };
-    $.post(IiiI1, async (lilII, IIIiI, iii1i1) => {
+    $.post(IliIIl1i, async (i1il11l1, l1lil, Iil1li1I) => {
       try {
-        if (lilII) {
-          console.log("" + JSON.stringify(lilII));
-        } else {
-          iii1i1 = JSON.parse(iii1i1);
+        if (i1il11l1) console.log("" + JSON.stringify(i1il11l1));else {
+          Iil1li1I = JSON.parse(Iil1li1I);
 
-          if (iii1i1?.["code"] == 0) {
-            if (iii1i1?.["data"]?.["bizCode"] == 0) {
-              let ii1Ii = iii1i1?.["data"]?.["result"]?.["round"]?.["remainTimes"] || 0;
-              console.log("可以抽奖" + ii1Ii + "次");
+          if (Iil1li1I?.["code"] == 0) {
+            if (Iil1li1I?.["data"]?.["bizCode"] == 0) {
+              let ill11l11 = Iil1li1I?.["data"]?.["result"]?.["round"]?.["remainTimes"] || 0;
+              console.log("可以抽奖" + ill11l11 + "次");
 
-              while (ii1Ii-- > 0 && $.can_draw) {
+              while (ill11l11-- > 0 && $.can_draw) {
                 await $.wait(parseInt(Math.random() * 1000 + 2000, 10));
-                await Ii1iii();
+                await party_lottery();
                 await $.wait(parseInt(Math.random() * 1000 + 5000, 10));
               }
-            } else console.log("进入首页失败," + (iii1i1?.["code"] || "") + "," + (iii1i1?.["message"] || ""));
-          } else console.log("进入首页失败," + (iii1i1?.["code"] || "") + "," + (iii1i1?.["message"] || ""));
+            } else console.log("进入首页失败," + (Iil1li1I?.["code"] || "") + "," + (Iil1li1I?.["message"] || ""));
+          } else console.log("进入首页失败," + (Iil1li1I?.["code"] || "") + "," + (Iil1li1I?.["message"] || ""));
         }
-      } catch (ii1il) {
-        $.logErr(ii1il, IIIiI);
+      } catch (I1lIl11I) {
+        $.logErr(I1lIl11I, l1lil);
       } finally {
-        Ii1I1I();
+        Il1lIi11();
       }
     });
   });
 }
 
-async function l1l1ii() {
-  return new Promise(async llIl1l => {
-    const ii1i1 = {
-      "appId": "c06b7",
+async function party_task_list() {
+  return new Promise(async lI11111i => {
+    const ll1l1ll1 = {
+      "appId": "b1660",
       "functionId": "party_task_list",
       "appid": "spring_h5",
-      "clientVersion": "12.3.1",
-      "client": "ios",
+      "clientVersion": "1.0.0",
+      "client": "wh5",
       "body": {},
-      "version": "4.3",
+      "version": "4.4",
       "ua": $.UA,
       "t": true
     },
-          Iiii = await IIliII.getH5st(ii1i1);
-    let llIl11 = {
+          IIIi11ii = await H5st.getH5st(ll1l1ll1);
+    let llilili = {
       "url": "https://api-x.m.jd.com/",
-      "body": Iiii.params,
+      "body": IIIi11ii.params,
       "headers": {
         "origin": "https://prodev.m.jd.com",
         "Referer": "https://prodev.m.jd.com/mall/active/2wVcxotdeVGtYzshpn4gBQkx2cnN/index.html",
         "User-Agent": $.UA,
-        "Cookie": I1llIi,
+        "Cookie": cookie,
         "content-type": "application/x-www-form-urlencoded",
         "accept": "application/json, text/plain, */*"
       },
       "timeout": 20 * 1000
     };
-    $.post(llIl11, async (IIIll, I1I1il, l1llii) => {
+    $.post(llilili, async (IlI111l, lIilIi1l, ilIIiiI) => {
       try {
-        if (IIIll) console.log("" + JSON.stringify(IIIll));else {
-          l1llii = JSON.parse(l1llii);
+        if (IlI111l) console.log("" + JSON.stringify(IlI111l));else {
+          ilIIiiI = JSON.parse(ilIIiiI);
 
-          if (l1llii?.["code"] == 0) {
-            if (l1llii?.["data"]?.["bizCode"] == 0) {
-              let l1llil = l1llii?.["data"]?.["result"]?.["taskList"] || [];
+          if (ilIIiiI?.["code"] == 0) {
+            if (ilIIiiI?.["data"]?.["bizCode"] == 0) {
+              let lI11iiI1 = ilIIiiI?.["data"]?.["result"]?.["taskList"] || [];
 
-              for (let IIIlIi of l1llil.filter(llIl1I => !llIl1I.completionFlag)) {
-                let i1lIl1 = [],
-                    liIli1 = IIIlIi?.["ext"]?.["extraType"] || "";
-                if (I1llIl.includes(liIli1)) continue;
-                liIli1 && (i1lIl1 = IIIlIi?.["ext"][liIli1] || [], i1lIl1 = i1lIl1.filter(IIIlI => IIIlI.status == 1));
+              for (let ii1iII1i of lI11iiI1.filter(llI1iII => !llI1iII.completionFlag)) {
+                let lIlI1Iil = [],
+                    iii1I1i = ii1iII1i?.["ext"]?.["extraType"] || "";
+                if (skip_task.includes(iii1I1i)) continue;
+                iii1I1i && (lIlI1Iil = ii1iII1i?.["ext"][iii1I1i] || [], lIlI1Iil = lIlI1Iil.filter(II1iiIIi => II1iiIIi.status == 1));
 
-                for (let IiiI = IIIlIi.completionCnt; IiiI < IIIlIi.assignmentTimesLimit; IiiI++) {
-                  let iIi1i = undefined;
+                for (let I1IlIiIi = ii1iII1i.completionCnt; I1IlIiIi < ii1iII1i.assignmentTimesLimit; I1IlIiIi++) {
+                  let iiiIIil1 = undefined;
 
-                  if (i1lIl1?.["length"]) {
-                    let l1iIll = i1lIl1.pop();
-                    iIi1i = l1iIll?.["itemId"];
+                  if (lIlI1Iil?.["length"]) {
+                    let IllIllI1 = lIlI1Iil.pop();
+                    iiiIIil1 = IllIllI1?.["itemId"];
                   }
 
                   await $.wait(parseInt(Math.random() * 1000 + 2000, 10));
-                  await Il1i1I(IIIlIi, 1, iIi1i);
+                  await party_do_task(ii1iII1i, 1, iiiIIil1);
                   await $.wait(parseInt(Math.random() * 1000 + 5000, 10));
                 }
               }
-            } else console.log("查询任务失败," + (l1llii?.["code"] || "") + "," + (l1llii?.["message"] || ""));
-          } else console.log("查询任务失败," + (l1llii?.["code"] || "") + "," + (l1llii?.["message"] || ""));
+            } else console.log("查询任务失败," + (ilIIiiI?.["code"] || "") + "," + (ilIIiiI?.["message"] || ""));
+          } else console.log("查询任务失败," + (ilIIiiI?.["code"] || "") + "," + (ilIIiiI?.["message"] || ""));
         }
-      } catch (i1lIlI) {
-        $.logErr(i1lIlI, I1I1il);
+      } catch (I1lliIil) {
+        $.logErr(I1lliIil, lIilIi1l);
       } finally {
-        llIl1l();
+        lI11111i();
       }
     });
   });
 }
 
-async function Il1i1I(I1I1iI, IIIlII, iiIiI1) {
-  return new Promise(async llii1l => {
-    let llii1i = IIIlII == 0 ? "完成" : "开始";
-    const ll11il = {
-      "appId": "c06b7",
+async function party_do_task(i1ill11, llIi1lIl, lilIiIi) {
+  return new Promise(async Ili1lliI => {
+    let i1l11ilI = llIi1lIl == 0 ? "完成" : "开始";
+    const I1Il1ilI = {
+      "appId": "b1660",
       "functionId": "party_do_task",
       "appid": "spring_h5",
-      "clientVersion": "12.3.1",
-      "client": "ios",
+      "clientVersion": "1.0.0",
+      "client": "wh5",
       "body": {
-        "itemId": iiIiI1,
-        "actionType": IIIlII,
-        "taskType": I1I1iI.assignmentType,
-        "assignmentId": I1I1iI.encryptAssignmentId,
-        "extraType": I1I1iI?.["ext"]?.["extraType"] || ""
+        "itemId": lilIiIi,
+        "actionType": llIi1lIl,
+        "taskType": i1ill11.assignmentType,
+        "assignmentId": i1ill11.encryptAssignmentId,
+        "extraType": i1ill11?.["ext"]?.["extraType"] || ""
       },
-      "version": "4.3",
+      "version": "4.4",
       "ua": $.UA,
       "t": true
     },
-          iI1lIl = await IIliII.getH5st(ll11il);
-    let iiIiII = {
+          IIli1I11 = await H5st.getH5st(I1Il1ilI);
+    let IIIlilli = {
       "url": "https://api-x.m.jd.com/",
-      "body": iI1lIl.params,
+      "body": IIli1I11.params,
       "headers": {
         "origin": "https://prodev.m.jd.com",
         "Referer": "https://prodev.m.jd.com/mall/active/2wVcxotdeVGtYzshpn4gBQkx2cnN/index.html",
         "User-Agent": $.UA,
-        "Cookie": I1llIi,
+        "Cookie": cookie,
         "content-type": "application/x-www-form-urlencoded",
         "accept": "application/json, text/plain, */*"
       },
       "timeout": 20 * 1000
     };
-    $.post(iiIiII, async (Iil1, ll11lI, llliI1) => {
+    $.post(IIIlilli, async (I1IllII1, lIilII1I, ililIlli) => {
       try {
-        if (Iil1) {
-          console.log("" + JSON.stringify(Iil1));
-        } else {
-          llliI1 = JSON.parse(llliI1);
+        if (I1IllII1) console.log("" + JSON.stringify(I1IllII1));else {
+          ililIlli = JSON.parse(ililIlli);
 
-          if (llliI1?.["code"] == 0) {
-            if (llliI1?.["data"]?.["bizCode"] == 0) {
-              console.log(llii1i + "任务[" + I1I1iI.assignmentName + "]成功");
+          if (ililIlli?.["code"] == 0) {
+            if (ililIlli?.["data"]?.["bizCode"] == 0) {
+              console.log(i1l11ilI + "任务[" + i1ill11.assignmentName + "]成功");
 
-              if (IIIlII == 1) {
-                if (I1I1iI?.["ext"]?.["waitDuration"]) await $.wait(I1I1iI?.["ext"]?.["waitDuration"] * 1000);else I1I1iI?.["ext"]?.["extraType"] == "shoppingActivity" && (await $.wait(6000));
-                ret = await Il1i1I(I1I1iI, 0, iiIiI1);
+              if (llIi1lIl == 1) {
+                if (i1ill11?.["ext"]?.["waitDuration"]) await $.wait(i1ill11?.["ext"]?.["waitDuration"] * 1000);else i1ill11?.["ext"]?.["extraType"] == "shoppingActivity" && (await $.wait(6000));
+                ret = await party_do_task(i1ill11, 0, lilIiIi);
                 await $.wait(parseInt(Math.random() * 1000 + 3000, 10));
               } else ret = true;
-            } else llliI1?.["data"]?.["code"] == 103 ? console.log("完成任务失败," + (llliI1?.["data"]?.["bizMsg"] || "")) : console.log("完成任务失败," + (llliI1?.["data"]?.["bizMsg"] || ""));
-          } else console.log("完成任务失败," + (llliI1?.["code"] || "") + "," + (llliI1?.["message"] || ""));
+            } else ililIlli?.["data"]?.["code"] == 103 ? console.log("完成任务失败," + (ililIlli?.["data"]?.["bizMsg"] || "")) : console.log("完成任务失败," + (ililIlli?.["data"]?.["bizMsg"] || ""));
+          } else console.log("完成任务失败," + (ililIlli?.["code"] || "") + "," + (ililIlli?.["message"] || ""));
         }
-      } catch (liIliI) {
-        $.logErr(liIliI, ll11lI);
+      } catch (ili1Iiil) {
+        $.logErr(ili1Iiil, lIilII1I);
       } finally {
-        llii1l();
+        Ili1lliI();
       }
     });
   });
 }
 
-async function Ii1iii() {
-  return new Promise(async iI1lI1 => {
-    const l1i11 = {
-      "appId": "c06b7",
+async function party_lottery() {
+  return new Promise(async I1iIilll => {
+    const iIIIlii = {
+      "appId": "b1660",
       "functionId": "party_lottery",
       "appid": "spring_h5",
-      "clientVersion": "12.3.1",
-      "client": "ios",
+      "clientVersion": "1.0.0",
+      "client": "wh5",
       "body": {
         "areaInfo": "0_0_0_0",
         "deviceInfo": JSON.stringify({
-          "sdkToken": lI1l1i,
-          "jsToken": i1iil
+          "sdkToken": sdkToken,
+          "jsToken": jsToken
         }),
-        "unpl": iIIilI(220, IliIIi),
+        "unpl": randomString(220, ALL_ALPHABET),
         "qdPageId": "MO-J2011-1",
         "mdClickId": "Babel_dev_other_11lotterystart"
       },
-      "version": "4.3",
+      "version": "4.4",
       "ua": $.UA,
       "t": true
     },
-          IlI1li = await IIliII.getH5st(l1i11);
-    let IlI1ll = {
+          IiillIi = await H5st.getH5st(iIIIlii);
+    let iiilIIli = {
       "url": "https://api-x.m.jd.com/",
-      "body": IlI1li.params,
+      "body": IiillIi.params + "&d_model=0-2-999&osVersion=17.3",
       "headers": {
         "origin": "https://prodev.m.jd.com",
         "Referer": "https://prodev.m.jd.com/mall/active/2wVcxotdeVGtYzshpn4gBQkx2cnN/index.html",
         "User-Agent": $.UA,
-        "Cookie": I1llIi,
+        "Cookie": cookie,
         "content-type": "application/x-www-form-urlencoded",
         "accept": "application/json, text/plain, */*"
       },
       "timeout": 20 * 1000
     };
-    $.post(IlI1ll, async (liIll1, l1llli, iI1lII) => {
+    $.post(iiilIIli, async (i111i1lI, iIllliil, Iill1IIl) => {
       try {
-        if (liIll1) console.log("" + JSON.stringify(liIll1));else {
-          iI1lII = JSON.parse(iI1lII);
+        if (i111i1lI) {
+          console.log("" + JSON.stringify(i111i1lI));
+        } else {
+          Iill1IIl = JSON.parse(Iill1IIl);
 
-          if (iI1lII?.["code"] == 0) {
-            if (iI1lII?.["data"]?.["bizCode"] == 0) {
-              let liiiil = [],
-                  IIIIli = iI1lII?.["data"]?.["result"]?.["awardList"] || [];
+          if (Iill1IIl?.["code"] == 0) {
+            if (Iill1IIl?.["data"]?.["bizCode"] == 0) {
+              let li1IIil1 = [],
+                  IIll1iI1 = Iill1IIl?.["data"]?.["result"]?.["awardList"] || [];
 
-              for (let lllIi of IIIIli) {
-                let lllIl = llI11l[lllIi.type] || "[type=" + lllIi.type + "]",
-                    Iliii = "";
+              for (let ilillli of IIll1iI1) {
+                let IiilIlIi = prize_type[ilillli.type] || "[type=" + ilillli.type + "]",
+                    iI1IIIIi = "";
 
-                switch (lllIi.type) {
+                switch (ilillli.type) {
                   case 1:
                     {
-                      Iliii = lllIl;
+                      iI1IIIIi = IiilIlIi;
                       break;
                     }
 
                   case 2:
                     {
-                      Iliii = lllIl + (lllIi.discount + "元");
+                      iI1IIIIi = IiilIlIi + (ilillli.discount + "元");
                       break;
                     }
 
                   case 3:
                     {
-                      Iliii = lllIl + lllIi.name;
+                      iI1IIIIi = IiilIlIi + ilillli.name;
                       break;
                     }
 
                   case 8:
                   case 5:
                     {
-                      Iliii = lllIl + (lllIi.value + "元");
+                      iI1IIIIi = IiilIlIi + (ilillli.value + "元");
                       break;
                     }
 
                   case 6:
                     {
-                      Iliii = lllIl + lllIi.name;
-                      console.log("抽到实物: " + Iliii);
+                      iI1IIIIi = IiilIlIi + ilillli.name;
+                      console.log("抽到实物: " + iI1IIIIi);
                       break;
                     }
 
                   case 4:
                   default:
                     {
-                      Iliii = lllIl + lllIi.name;
+                      iI1IIIIi = IiilIlIi + ilillli.name;
                       break;
                     }
                 }
 
-                !llI11l[lllIi.type] && console.log("抽奖未知类型: " + JSON.stringify(lllIi));
-                liiiil.push(Iliii);
+                !prize_type[ilillli.type] && console.log("抽奖未知类型: " + JSON.stringify(ilillli));
+                li1IIil1.push(iI1IIIIi);
               }
 
-              !liiiil.length && liiiil.push("[空气]");
-              console.log("抽奖: " + liiiil.join(", "));
-            } else console.log("抽奖失败," + (iI1lII?.["code"] || "") + "," + (iI1lII?.["message"] || "")), iI1lII?.["includes"]("抽奖次数不足") && ($.can_draw = false);
-          } else console.log("抽奖失败," + (iI1lII?.["code"] || "") + "," + (iI1lII?.["message"] || ""));
+              !li1IIil1.length && li1IIil1.push("[空气]");
+              console.log("抽奖: " + li1IIil1.join(", "));
+            } else console.log("抽奖失败," + (Iill1IIl?.["code"] || "") + "," + (Iill1IIl?.["message"] || "")), Iill1IIl?.["includes"]("抽奖次数不足") && ($.can_draw = false);
+          } else console.log("抽奖失败," + (Iill1IIl?.["code"] || "") + "," + (Iill1IIl?.["message"] || ""));
         }
-      } catch (Iliil) {
-        $.logErr(Iliil, l1llli);
+      } catch (iI11llIl) {
+        $.logErr(iI11llIl, iIllliil);
       } finally {
-        iI1lI1();
+        I1iIilll();
       }
     });
   });
 }
 
-function iIIilI(l1ilI1) {
-  l1ilI1 = l1ilI1 || 32;
-  let lil1I = "abcdef0123456789",
-      l1l1Ii = lil1I.length,
-      IIIIlI = "";
+function randomString(iiiI1lll) {
+  iiiI1lll = iiiI1lll || 32;
+  let iIIlIi1i = "abcdef0123456789",
+      IlIiilIl = iIIlIi1i.length,
+      lliI1lII = "";
 
-  for (i = 0; i < l1ilI1; i++) IIIIlI += lil1I.charAt(Math.floor(Math.random() * l1l1Ii));
+  for (i = 0; i < iiiI1lll; i++) lliI1lII += iIIlIi1i.charAt(Math.floor(Math.random() * IlIiilIl));
 
-  return IIIIlI;
+  return lliI1lII;
 }
 
-function il1l1(IliiI = "xxxxxxxxxxxxxxxxxxxx") {
-  return IliiI.replace(/[xy]/g, function (IIiiIi) {
-    var l1ilIi = Math.random() * 10 | 0,
-        l11iIi = IIiiIi == "x" ? l1ilIi : l1ilIi & 3 | 8;
-    return jdaid = l11iIi.toString(), jdaid;
+function _jda(IiIil11l = "xxxxxxxxxxxxxxxxxxxx") {
+  return IiIil11l.replace(/[xy]/g, function (IlI1111i) {
+    var ilii1Ii1 = Math.random() * 10 | 0,
+        IIiI1l1 = IlI1111i == "x" ? ilii1Ii1 : ilii1Ii1 & 3 | 8;
+    return jdaid = IIiI1l1.toString(), jdaid;
   });
 }
 // prettier-ignore
