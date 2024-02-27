@@ -83,6 +83,11 @@ let QYWX_AM = '';
 //此处填您iGot的信息(推送key，例如：https://push.hellyw.com/XXXXXXXX)
 let IGOT_PUSH_KEY = '';
 
+// =======================================飞书机器人设置区域=======================================
+// 官方文档：https://www.feishu.cn/hc/zh-CN/articles/360024984973
+// FSKEY 飞书机器人的 FSKEY
+let FSKEY = '';
+
 // =======================================push+设置区域=======================================
 //官方文档：http://www.pushplus.plus/
 //PUSH_PLUS_TOKEN：微信扫码登录后一对一推送或一对多推送下面的token(您的Token)，不提供PUSH_PLUS_USER则默认为一对一推送
@@ -216,6 +221,7 @@ async function sendNotify(
     qywxBotNotify(text, desp), //企业微信机器人
     qywxamNotify(text, desp), //企业微信应用消息推送
     iGotNotify(text, desp, params), //iGot
+    fsBotNotify(text, desp), // 飞书机器人
     gobotNotify(text, desp),//go-cqhttp
     gotifyNotify(text, desp),//gotify
   ]);
@@ -796,6 +802,42 @@ function iGotNotify(text, desp, params = {}) {
               console.log('iGot发送通知消息成功🎉\n');
             } else {
               console.log(`iGot发送通知消息失败：${data.errMsg}\n`);
+            }
+          }
+        } catch (e) {
+          $.logErr(e, resp);
+        } finally {
+          resolve(data);
+        }
+      });
+    } else {
+      resolve();
+    }
+  });
+}
+
+function fsBotNotify(text, desp) {
+  return new Promise((resolve) => {
+    if (FSKEY) {
+      const options = {
+        url: `https://open.feishu.cn/open-apis/bot/v2/hook/${FSKEY}`,
+        json: { msg_type: 'text', content: { text: `${text}\n\n${desp}` } },
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        timeout,
+      };
+      $.post(options, (err, resp, data) => {
+        try {
+          if (err) {
+            console.log('发送通知调用API失败！！\n');
+            console.log(err);
+          } else {
+            data = JSON.parse(data);
+            if (data.StatusCode === 0) {
+              console.log('飞书发送通知消息成功🎉\n');
+            } else {
+              console.log(`${data.msg}\n`);
             }
           }
         } catch (e) {
