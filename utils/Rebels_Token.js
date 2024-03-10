@@ -27,339 +27,330 @@
 new Env('Rebels_Token');
 */
 
-const iliIiI = require("got"),
-      II11iI = require("./Rebels_jdCommon");
+const Rebels_0xcdb492 = require("path");
 
-let Il1i1l = null,
-    Iil1ii = 29;
+const Rebels_0x4400a1 = require("./Rebels_jdCommon");
+
+let Rebels_0x1ac8b4 = null;
+let Rebels_0x412d92 = 29;
 
 try {
-  let II11I = parseInt(process.env.JD_ISV_TOKEN_CACHE_EXPIRE_MINUTES || "29");
-  Iil1ii = II11I;
-} catch {}
+  let Rebels_0x4e4125 = parseInt(process.env.JD_ISV_TOKEN_CACHE_EXPIRE_MINUTES || "29");
+  Rebels_0x412d92 = Rebels_0x4e4125;
+} catch { }
 
-const lill1I = Iil1ii * 60 * 1000,
-      Ii1ii1 = require("./cache/index"),
-      Ilil11 = new Ii1ii1(lill1I, process.env.JD_ISV_TOKEN_CUSTOM_CACHE || __dirname + "/cache/token.json"),
-      i1ii1 = (process.env.JD_ISV_TOKEN_LZKJ_PIN_FILTER || "").split("@"),
-      il1ii = (process.env.JD_ISV_TOKEN_LZKJ_LOREAL_PIN_FILTER || "").split("@"),
-      llI111 = (process.env.JD_ISV_TOKEN_CJHY_PIN_FILTER || "").split("@"),
-      i1iIiI = process.env.JD_ISV_GLOBAL_PROXY === "true";
+const Rebels_0xa67ada = Rebels_0x412d92 * 60 * 1000;
 
-if (i1iIiI) try {
-  require("global-agent/bootstrap");
+const Rebels_0x2df960 = require("./cache/index");
 
-  console.log("🌐 已启用全局代理");
-} catch (il1i1) {
-  console.log("❌ getToken 代理模块加载失败 ➜ " + il1i1.message);
-}
-const IlllI1 = process.env.JD_ISV_TOKEN_PROXY || "",
-      I1il11 = process.env.JD_ISV_TOKEN_PROXY_API || "";
-let lI1l11 = process.env.JD_ISV_TOKEN_PROXY_API_MAX || "1",
-    II11l = 0,
-    II11i = null,
-    iI1Iii = null;
+const Rebels_0x2db769 = new Rebels_0x2df960(Rebels_0xa67ada, process.env.JD_ISV_TOKEN_CUSTOM_CACHE || __dirname + "/cache/token.json");
+const Rebels_0x4d57fa = (process.env.JD_ISV_TOKEN_LZKJ_PIN_FILTER || "").split("@");
+const Rebels_0x2de69b = (process.env.JD_ISV_TOKEN_LZKJ_NEW_PIN_FILTER || process.env.JD_ISV_TOKEN_LZKJ_LOREAL_PIN_FILTER || "").split("@");
+const Rebels_0x42e7f8 = (process.env.JD_ISV_TOKEN_CJHY_PIN_FILTER || "").split("@");
+let Rebels_0x2ef67f;
+let Rebels_0x52507d;
 
-if ((IlllI1 || I1il11) && !i1iIiI) {
-  try {
-    II11i = require("hpagent").HttpsProxyAgent;
-    IlllI1 && !I1il11 && (iI1Iii = new II11i({
-      "keepAlive": true,
-      "keepAliveMsecs": 1000,
-      "maxSockets": 256,
-      "maxFreeSockets": 256,
-      "scheduling": "lifo",
-      "proxy": IlllI1
-    }));
-    console.log("🧩 已启用 getToken 代理");
-  } catch (lIIiIi) {
-    console.log("❌ getToken 代理模块加载失败 ➜ " + lIIiIi.message);
-  }
+try {
+  const Rebels_0x2b50f5 = process.env.RS_ISV_TOKEN_PROXY_TUNNRL || process.env.JD_ISV_TOKEN_PROXY || "";
 
-  try {
-    lI1l11 = parseInt(lI1l11);
-    (isNaN(lI1l11) || lI1l11 < 1) && (lI1l11 = 1);
-  } catch {
-    lI1l11 = 1;
-  }
-}
+  if (Rebels_0x2b50f5) {
+    const Rebels_0xda3ec7 = Rebels_0x4400a1._getProxyConfig(Rebels_0x2b50f5);
 
-const liI1ii = process.env.JD_ISV_TOKEN_REDIS_CACHE_URL || "",
-      lIIiIl = process.env.JD_ISV_TOKEN_REDIS_CACHE_KEY || "",
-      iI1Iil = !(process.env.JD_ISV_TOKEN_REDIS_CACHE_SUBMIT === "false"),
-      il1iI = /<pt_pin>/.test(lIIiIl);
-let i1iIii = null;
-
-if (liI1ii) {
-  let liI1iI = null;
-
-  try {
-    liI1iI = require("redis");
-  } catch (iI1Il1) {
-    console.log("❌ getToken Redis模块加载失败 ➜ " + iI1Il1.message);
-  }
-
-  if (liI1iI) try {
-    i1iIii = liI1iI.createClient({
-      "url": liI1ii
-    });
-  } catch (i1iIl1) {
-    console.log("❌ Redis 数据库连接异常 ➜ " + (i1iIl1.message || i1iIl1));
-  }
-}
-
-async function i1iIil(i1lli1, llIlII, IIlII = true) {
-  let i1iIlI = "";
-
-  try {
-    const llIIl1 = decodeURIComponent(II11iI.getCookieValue(i1lli1, "pt_pin"));
-
-    if (llIIl1) {
-      if (!Il1i1l) {
-        const iii1i1 = module?.["parent"]?.["path"],
-              IllIll = module?.["parent"]?.["filename"];
-        Il1i1l = iii1i1 && IllIll ? IllIll.replace(iii1i1, "").replace(/\.js/g, "") : null;
-      }
-
-      if (IIlII) {
-        let i1lllI = [];
-        if (llIlII.includes("lzkj")) Il1i1l.startsWith("jd_lzkj_loreal") ? i1lllI = il1ii : i1lllI = i1ii1;else llIlII.includes("cjhy") && (i1lllI = llI111);
-        if (i1lllI.length > 0 && (i1lllI.includes(llIIl1) || i1lllI.includes(encodeURIComponent(llIIl1)))) return console.log("已设置跳过运行该账号（全局屏蔽）"), "";
-        i1iIlI = Ilil11.get(llIIl1) || "";
-        if (i1iIlI) return i1iIlI;
-
-        if (i1iIii) {
-          try {
-            await i1iIii.connect();
-          } catch {}
-
-          try {
-            const l1i1II = encodeURIComponent(il1iI ? lIIiIl.replace(/<pt_pin>/g, llIIl1) : "" + lIIiIl + llIIl1);
-            i1iIlI = await i1iIii.get(l1i1II);
-            if (i1iIlI) return i1iIlI;
-          } catch (ili111) {
-            console.log("🚫 getToken Redis缓存异常 ➜ " + (ili111.message || ili111));
-          }
-        }
-      }
+    if (Rebels_0xda3ec7) {
+      Rebels_0x2ef67f = Rebels_0xda3ec7;
+      console.log("\n===============启用 getToken 代理池代理===============\n");
+    } else {
+      console.log("❌ 提供的代理地址无效，跳过启用 getToken 代理池代理");
     }
+  } else {
+    const Rebels_0xc5337c = process.env.RS_ISV_TOKEN_PROXY_API || process.env.JD_ISV_TOKEN_PROXY_API || "";
 
-    const ill1Il = await II11iI.getSign("isvObfuscator", {
-      "url": llIlII,
-      "id": ""
-    });
-
-    if (!ill1Il) {
-      return console.log("🚫 getToken 签名获取失败"), "";
-    }
-
-    const i1lll1 = II11iI.genUA(llIIl1),
-          Ii1I1I = "https://api.m.jd.com/client.action?functionId=isvObfuscator";
-    let l1i1Ii = {
-      "headers": {
-        "Host": "api.m.jd.com",
-        "Content-Type": "application/x-www-form-urlencoded",
-        "User-Agent": i1lll1 || "JD4iPhone/167650 (iPhone; iOS 13.7; Scale/3.00)",
-        "Accept-Language": "zh-Hans-CN;q=1",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Cookie": i1lli1
-      },
-      "body": ill1Il,
-      "timeout": IlllI1 || I1il11 ? 60000 : 30000
-    };
-
-    if ((IlllI1 || I1il11) && !i1iIiI) {
-      const IllIli = await II11iI.getLoginStatus(i1lli1);
-
-      if (!IllIli && typeof IllIli === "boolean") {
-        return console.log("🚫 getToken 账号无效"), "";
-      }
-
-      if (I1il11) {
-        II11l >= lI1l11 && (II11l = 0);
-
-        if (II11l === 0) {
-          iI1Iii = null;
-          const iI1Ill = await liI1il(I1il11);
-          if (iI1Ill) await llIlIl("http://" + iI1Ill);else return "";
-        }
-      }
-
-      if (iI1Iii) l1i1Ii.agent = {
-        "https": iI1Iii
-      };else return "";
-    }
-
-    const l1iI1 = IlllI1 || I1il11 ? 3 : 1;
-    let lliiI1 = 0,
-        IiiI1 = null,
-        lilII,
-        IIIiI;
-
-    while (lliiI1 < l1iI1) {
-      if (IlllI1 || I1il11) II11l += 1;
-      lilII = null;
-      IIIiI = false;
+    if (Rebels_0xc5337c) {
+      const Rebels_0x2a6c25 = {
+        api: null,
+        proxyConfig: null,
+        useLimit: null,
+        timeLimit: null,
+        fetchFailContinue: null,
+        extractTimestamp: null,
+        lastUseTimeStamp: null,
+        usedTimes: null
+      };
+      Rebels_0x52507d = Rebels_0x2a6c25;
+      Rebels_0x52507d.api = Rebels_0xc5337c;
+      const Rebels_0x507170 = process.env.RS_ISV_TOKEN_PROXY_USE_LIMIT || process.env.JD_ISV_TOKEN_PROXY_API_MAX || "0";
 
       try {
-        lilII = await iliIiI.post(Ii1I1I, l1i1Ii);
-      } catch (i1llli) {
-        if (i1llli?.["response"]) {
-          i1llli = i1llli.response;
-          if (typeof i1llli === "string" && i1llli.includes("Timeout awaiting 'request'")) IiiI1 = "请求超时，请检查网络重试", IIIiI = true;else {
-            const i1llll = lilII?.["statusCode"];
-            if (i1llll) IiiI1 = "Response code " + i1llll;else {
-              IiiI1 = "" + (i1llli.message || i1llli);
-            }
-          }
-        } else i1llli?.["response"]?.["body"] ? IiiI1 = "请求失败 " + i1llli.response.body + " " : IiiI1 = "请求失败 " + (i1llli || "") + " ";
-
-        lliiI1++;
+        Rebels_0x52507d.useLimit = parseInt(Rebels_0x507170);
+      } catch {
+        Rebels_0x52507d.useLimit = 1;
       }
 
-      if (lilII?.["body"]) {
-        try {
-          const iI1111 = JSON.parse(lilII.body);
+      const Rebels_0x4afec6 = process.env.RS_ISV_TOKEN_PROXY_TIME_LIMIT || "10000";
 
-          if (iI1111.code === "0") {
-            i1iIlI = iI1111.token;
-            llIlIi(llIIl1, i1iIlI);
+      try {
+        Rebels_0x52507d.timeLimit = parseInt(Rebels_0x4afec6);
+      } catch {
+        Rebels_0x52507d.timeLimit = 10000;
+      }
 
-            if (i1iIii && iI1Iil) {
-              try {
-                await i1iIii.connect();
-              } catch {}
+      Rebels_0x52507d.fetchFailContinue = (process.env.RS_ISV_TOKEN_PROXY_FETCH_FAIL_CONTINUE || "true") === "true";
+      console.log("\n===============启用 getToken API代理===============\n");
+    }
+  }
 
-              const I1I1lI = encodeURIComponent(il1iI ? lIIiIl.replace(/<pt_pin>/g, llIIl1) : "" + lIIiIl + llIIl1),
-                    ii1il = i1iIlI,
-                    l1iIlI = Math.floor((Date.now() + lill1I) / 1000);
+  const Rebels_0xca635f = process.env.RS_ISV_TOKEN_GLOBAL_PROXY === "true";
 
-              try {
-                await i1iIii.set(I1I1lI, ii1il);
-                await i1iIii.EXPIREAT(I1I1lI, l1iIlI);
-              } catch (IIIlI1) {
-                console.log("🚫 getToken Redis缓存失败 ➜ " + (IIIlI1.message || IIIlI1));
-              }
-            }
+  if (Rebels_0xca635f) {
+    try {
+      require("global-agent/bootstrap");
+
+      console.log("\n===============启用 getToken 代理池代理===============\n");
+    } catch (Rebels_0x33cb2d) {
+      console.log("❌ getToken 代理模块加载失败 ➜ " + Rebels_0x33cb2d.message);
+    }
+  }
+} catch { }
+
+const Rebels_0x3ed061 = process.env.JD_ISV_TOKEN_REDIS_CACHE_URL || "";
+const Rebels_0xdff559 = process.env.JD_ISV_TOKEN_REDIS_CACHE_KEY || "";
+const Rebels_0x474d6e = !(process.env.JD_ISV_TOKEN_REDIS_CACHE_SUBMIT === "false");
+const Rebels_0x2277e0 = /<pt_pin>/.test(Rebels_0xdff559);
+let Rebels_0x410b86 = null;
+
+if (Rebels_0x3ed061) {
+  let Rebels_0x181e4a = null;
+
+  try {
+    Rebels_0x181e4a = require("redis");
+  } catch (Rebels_0xa3a489) {
+    console.log("❌ getToken Redis模块加载失败 ➜ " + Rebels_0xa3a489.message);
+  }
+
+  if (Rebels_0x181e4a) {
+    try {
+      const Rebels_0xf3abb3 = {
+        url: Rebels_0x3ed061
+      };
+      Rebels_0x410b86 = Rebels_0x181e4a.createClient(Rebels_0xf3abb3);
+    } catch (Rebels_0x3d38e6) {
+      console.log("❌ Redis 数据库连接异常 ➜ " + (Rebels_0x3d38e6.message || Rebels_0x3d38e6));
+    }
+  }
+}
+
+async function Rebels_0xbf119c(_0x4c59f9, _0x5085bc, _0x3bcd29 = true) {
+  let _0x8d2787 = "";
+
+  try {
+    const _0x5f315b = decodeURIComponent(Rebels_0x4400a1.getCookieValue(_0x4c59f9, "pt_pin"));
+
+    if (_0x5f315b) {
+      if (!Rebels_0x1ac8b4) {
+        const _0x12461b = require.main.filename;
+        Rebels_0x1ac8b4 = Rebels_0xcdb492.basename(_0x12461b, ".js");
+      }
+
+      if (_0x3bcd29) {
+        let _0x3b79c7 = [];
+
+        if (_0x5085bc.includes("lzkj")) {
+          if (Rebels_0x1ac8b4.startsWith("jd_lzkj_")) {
+            _0x3b79c7 = Rebels_0x2de69b;
           } else {
-            if (iI1111.code === "3" && iI1111.errcode === 264) console.log("🚫 getToken API响应异常 ➜ 账号无效");else {
-              console.log("🚫 getToken API响应异常 ➜ " + JSON.stringify(iI1111));
-            }
-          }
-        } catch (l1lli1) {
-          console.log("🚫 getToken API响应处理异常 ➜ " + (l1lli1.message || l1lli1));
-        }
-
-        break;
-      } else IiiI1 = "无响应数据", lliiI1++, IIIiI = true;
-
-      if (I1il11 && IIIiI && !i1iIiI && lliiI1 < l1iI1) {
-        const ii1l1i = await liI1il(I1il11);
-        ii1l1i && (iI1Iii = null, II11l = 0, await llIlIl("http://" + ii1l1i));
-      }
-    }
-
-    return lliiI1 >= l1iI1 && console.log("🚫 getToken API请求失败 ➜ " + IiiI1), i1iIlI;
-  } catch (IIIil) {
-    return console.log("🚫 getToken 在处理请求时遇到了错误"), console.log(IIIil), i1iIlI;
-  } finally {
-    if (i1iIii) try {
-      await i1iIii.disconnect();
-    } catch {}
-  }
-}
-
-async function liI1il(I1I1l1) {
-  let i1lIii = "";
-
-  try {
-    const iIi1i = I1I1l1;
-    let l1iIll = {
-      "timeout": 30000
-    };
-    const l1iIli = 1;
-    let iIi1l = 0,
-        i1lIlI = null,
-        l1lliI;
-
-    while (iIi1l < l1iIli) {
-      l1lliI = null;
-
-      try {
-        l1lliI = await iliIiI.post(iIi1i, l1iIll);
-      } catch (IIIlII) {
-        if (IIIlII?.["response"]) {
-          IIIlII = IIIlII.response;
-          if (typeof IIIlII === "string" && IIIlII.includes("Timeout awaiting 'request'")) i1lIlI = "请求超时，请检查网络重试";else {
-            const ili1Il = l1lliI?.["statusCode"];
-            ili1Il ? i1lIlI = "Response code " + ili1Il : i1lIlI = "" + (IIIlII.message || IIIlII);
+            _0x3b79c7 = Rebels_0x4d57fa;
           }
         } else {
-          if (IIIlII?.["response"]?.["body"]) i1lIlI = "请求失败 " + IIIlII.response.body + " ";else {
-            i1lIlI = "请求失败 " + (IIIlII || "") + " ";
+          if (_0x5085bc.includes("cjhy")) {
+            _0x3b79c7 = Rebels_0x42e7f8;
           }
         }
 
-        iIi1l++;
-      }
+        if (_0x3b79c7.length > 0 && (_0x3b79c7.includes(_0x5f315b) || _0x3b79c7.includes(encodeURIComponent(_0x5f315b)))) {
+          console.log("已设置跳过运行该账号（全局屏蔽）");
+          return "";
+        }
 
-      if (l1lliI?.["body"]) {
-        try {
-          const Iilll1 = /\b(?:\d{1,3}\.){3}\d{1,3}(?::\d{1,5})?\b/;
-          let ll11I = l1lliI.body;
+        _0x8d2787 = Rebels_0x2db769.get(_0x5f315b) || "";
+
+        if (_0x8d2787) {
+          return _0x8d2787;
+        }
+
+        if (Rebels_0x410b86) {
+          try {
+            await Rebels_0x410b86.connect();
+          } catch { }
 
           try {
-            ll11I = JSON.parse(ll11I);
+            const _0x3d859f = encodeURIComponent(Rebels_0x2277e0 ? Rebels_0xdff559.replace(/<pt_pin>/g, _0x5f315b) : "" + Rebels_0xdff559 + _0x5f315b);
 
-            if (ll11I.hasOwnProperty("data")) {
-              let iIi1I = ll11I.data;
+            _0x8d2787 = await Rebels_0x410b86.get(_0x3d859f);
 
-              if (Array.isArray(iIi1I) && iIi1I.length > 0) {
-                iIi1I = iIi1I[0];
-                if (iIi1I?.["ip"] && iIi1I?.["port"]) i1lIii = iIi1I.ip + ":" + iIi1I.port;else iIi1I?.["IP"] && iIi1I?.["Port"] ? i1lIii = iIi1I.IP + ":" + iIi1I.Port : i1lIlI = JSON.stringify(ll11I);
-              } else iIi1I.hasOwnProperty("proxy_list") && Array.isArray(iIi1I.proxy_list) && iIi1I.proxy_list.length > 0 ? i1lIii = iIi1I.proxy_list[0] : i1lIlI = JSON.stringify(ll11I);
-
-              i1lIii && !Iilll1.test(i1lIii) && (i1lIlI = JSON.stringify(ll11I), i1lIii = "");
-            } else i1lIlI = JSON.stringify(ll11I);
-          } catch {
-            const llii1l = ll11I.match(Iilll1);
-
-            if (llii1l) {
-              i1lIii = llii1l[0];
-            } else i1lIlI = ll11I;
+            if (_0x8d2787) {
+              return _0x8d2787;
+            }
+          } catch (_0x270dbf) {
+            console.log("🚫 getToken Redis缓存异常 ➜ " + (_0x270dbf.message || _0x270dbf));
           }
-
-          return i1lIlI && console.log("🚫 getToken 提取代理地址失败 ➜ " + i1lIlI), i1lIii;
-        } catch (iiIiII) {
-          i1lIlI = iiIiII.message || iiIiII;
         }
-
-        break;
-      } else i1lIlI = "无响应数据", iIi1l++;
+      }
     }
 
-    iIi1l >= l1iIli && console.log("🚫 getToken 提取代理地址失败 ➜ " + i1lIlI);
-  } catch (Iili) {
-    console.log("🚫 getToken 在处理请求代理API时遇到了错误");
-    console.log(Iili);
+    const _0x5454f8 = {
+      url: _0x5085bc,
+      id: ""
+    };
+
+    const _0x58a77b = await Rebels_0x4400a1.getSign("isvObfuscator", _0x5454f8);
+
+    if (!_0x58a77b) {
+      console.log("🚫 getToken 签名获取失败");
+      return "";
+    }
+
+    let _0x1b9203 = null;
+    let _0x25bd93 = false;
+
+    if (Rebels_0x2ef67f || Rebels_0x52507d) {
+      if (Rebels_0x2ef67f) {
+        _0x1b9203 = Rebels_0x2ef67f;
+      } else {
+        if (Rebels_0x52507d) {
+          if (Rebels_0x52507d.proxyConfig) {
+            _0x1b9203 = Rebels_0x52507d.proxyConfig;
+            _0x25bd93 = true;
+          } else {
+            const _0x5280e3 = await Rebels_0x4400a1.getProxyAddressWithApi(Rebels_0x52507d.api);
+
+            const _0x5119d5 = Rebels_0x4400a1._getProxyConfig(_0x5280e3);
+
+            if (_0x5119d5) {
+              Rebels_0x52507d.extractTimestamp = Date.now();
+              Rebels_0x52507d.usedTimes = 0;
+              Rebels_0x52507d.proxyConfig = _0x5119d5;
+              _0x1b9203 = _0x5119d5;
+              _0x25bd93 = true;
+            } else {
+              if (!Rebels_0x52507d.fetchFailContinue) {
+                console.log("🚫 getToken 请求错误 ➜ 获取动态代理地址失败，已设置跳过请求");
+                return "";
+              }
+            }
+          }
+        }
+      }
+    }
+
+    const _0x2ce9ba = {
+      Host: "api.m.jd.com",
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": Rebels_0x4400a1.genUA(_0x5f315b) || "JD4iPhone/167650 (iPhone; iOS 13.7; Scale/3.00)",
+      "Accept-Language": "zh-Hans-CN;q=1",
+      "Accept-Encoding": "gzip, deflate, br",
+      "J-E-H": Rebels_0x4400a1.getJEH(),
+      "J-E-C": Rebels_0x4400a1.getJEC(_0x5f315b),
+      Cookie: _0x4c59f9
+    };
+    const _0xc205a6 = {
+      url: "https://api.m.jd.com/client.action?functionId=isvObfuscator",
+      method: "POST",
+      headers: _0x2ce9ba,
+      proxy: _0x1b9203,
+      data: _0x58a77b,
+      debug: false,
+      timeout: 60000
+    };
+    const _0x4ed969 = 2;
+    let _0x4d13d5 = 0;
+    let _0xd78ae1 = null;
+
+    while (_0x4d13d5 < _0x4ed969) {
+      const _0x2530c9 = await Rebels_0x4400a1.request(_0xc205a6);
+
+      if (_0x25bd93) {
+        Rebels_0x52507d.lastUseTimeStamp = Date.now();
+        Rebels_0x52507d.usedTimes++;
+
+        const _0x2603e4 = Rebels_0x52507d.useLimit > 0 && Rebels_0x52507d.usedTimes >= Rebels_0x52507d.useLimit;
+
+        const _0x34db48 = Rebels_0x52507d.timeLimit > 0 && Date.now() - Rebels_0x52507d.extractTimestamp >= Rebels_0x52507d.timeLimit;
+
+        if (_0x2603e4 || _0x34db48) {
+          Rebels_0x52507d.proxyConfig = null;
+          Rebels_0x52507d.lastUseTimeStamp = null;
+          Rebels_0x52507d.extractTimestamp = null;
+          Rebels_0x52507d.usedTimes = 0;
+        }
+      }
+
+      if (!_0x2530c9.success) {
+        _0xd78ae1 = "❌ getToken 请求失败 ➜ " + _0x2530c9.error;
+        _0x4d13d5++;
+        continue;
+      }
+
+      if (!_0x2530c9.data) {
+        _0xd78ae1 = "🚫 getToken 请求失败 ➜ 无响应数据";
+        _0x4d13d5++;
+        continue;
+      }
+
+      try {
+        const _0x27c3ad = _0x2530c9.data || {};
+
+        if (_0x27c3ad.code === "0") {
+          _0x8d2787 = _0x27c3ad.token;
+          Rebels_0x2db769.put(_0x5f315b, _0x8d2787, Rebels_0xa67ada);
+
+          if (Rebels_0x410b86 && Rebels_0x474d6e) {
+            try {
+              await Rebels_0x410b86.connect();
+            } catch { }
+
+            const _0x2da27d = encodeURIComponent(Rebels_0x2277e0 ? Rebels_0xdff559.replace(/<pt_pin>/g, _0x5f315b) : "" + Rebels_0xdff559 + _0x5f315b);
+
+            const _0x31974e = _0x8d2787;
+
+            const _0x465093 = Math.floor((Date.now() + Rebels_0xa67ada) / 1000);
+
+            try {
+              await Rebels_0x410b86.set(_0x2da27d, _0x31974e);
+              await Rebels_0x410b86.EXPIREAT(_0x2da27d, _0x465093);
+            } catch (_0x47a888) {
+              console.log("🚫 getToken Redis缓存失败 ➜ " + (_0x47a888.message || _0x47a888));
+            }
+          }
+        } else {
+          if (_0x27c3ad.code === "3" && _0x27c3ad.errcode === 264) {
+            console.log("🚫 getToken 接口响应异常 ➜ 账号无效");
+          } else {
+            console.log("🚫 getToken 接口响应异常 ➜ " + JSON.stringify(_0x27c3ad));
+          }
+        }
+      } catch (_0x27451a) {
+        console.log("🚫 getToken 在处理接口响应时遇到了错误 ➜ " + (_0x27451a.message || _0x27451a));
+      }
+
+      break;
+    }
+
+    if (_0x4d13d5 >= _0x4ed969) {
+      console.log(_0xd78ae1);
+    }
+
+    return _0x8d2787;
+  } catch (_0x5264f5) {
+    console.log("🚫 getToken 在处理请求时遇到了错误");
+    console.log(_0x5264f5);
+    return _0x8d2787;
+  } finally {
+    if (Rebels_0x410b86) {
+      try {
+        await Rebels_0x410b86.disconnect();
+      } catch { }
+    }
   }
-
-  return i1lIii;
 }
 
-function llIlIi(Iil1, ll11lI) {
-  Ilil11.put(Iil1, ll11lI, lill1I);
-}
-
-async function llIlIl(llliI1) {
-  II11i && (iI1Iii = new II11i({
-    "keepAlive": true,
-    "keepAliveMsecs": 1000,
-    "maxSockets": 256,
-    "maxFreeSockets": 256,
-    "scheduling": "lifo",
-    "proxy": llliI1
-  }));
-}
-
-module.exports = i1iIil;
+module.exports = Rebels_0xbf119c;
