@@ -11,34 +11,43 @@
 let lnrun = 0;
 
 const $ = new Env('Jd转赚红包');
-const _0x257616 = $.isNode() ? require("./sendNotify") : "",
-      _0x3ef39d = $.isNode() ? require("./jdCookie.js") : "",
-      _0x354be1 = require("./function/dylano"),
-      _0x2627e0 = require("./USER_AGENTS");
+const _0x14d782 = $.isNode() ? require("./sendNotify") : "",
+      _0x2ed679 = $.isNode() ? require("./jdCookie.js") : "",
+      _0x42fe77 = require("./function/dylanw"),
+      _0x414f66 = require("./USER_AGENTS"),
+      _0x1090fd = require("./function/dylib");
 
-let _0x5de884 = true,
-    _0x8e1902 = [],
-    _0x457890 = [],
-    _0x11ec3e = [],
-    _0x2a036e = [],
-    _0x195b79 = {},
-    _0x20e845 = [],
-    _0x5c6358 = "",
-    _0xdaa36e = "",
-    _0x270f65 = "",
-    _0x3695b0 = "",
-    _0x5b909d;
-const _0x3688d3 = process.env.JDZHBNUM || "9999",
-      _0x24f6ab = process.env.HLDELAY || "1",
-      _0x40e7d6 = process.env.JDZHBTORED || false,
-      _0x3a3c33 = process.env.JDZHBTOPPIN || "",
-      _0x148e48 = process.env.ZZHBCODE || "";
+let _0x29599e = true,
+    _0x2dbc78 = [],
+    _0x120737 = [],
+    _0x20f4d1 = [],
+    _0x175ebb = [],
+    _0xc48219 = {},
+    _0x2bfcb3 = [],
+    _0x20410d = "",
+    _0xe153bb = "",
+    _0x45bbbb = "",
+    _0xd143a3 = "",
+    _0x5020bf;
+const _0x57a760 = process.env.JDZHBNUM || "9999",
+      _0x5a3286 = process.env.JDZHBLTNUM || "-1",
+      _0x2f997e = process.env.JDZHBDELAY || "1",
+      _0x359207 = process.env.TXDELAY || "5",
+      _0x5319bd = process.env.HLDELAY || "1",
+      _0x4301fe = process.env.TXIVAL || "1",
+      _0x235f1f = process.env.JDZHBTORED || false,
+      _0x311ad0 = process.env.JDZHBTOPPIN || "",
+      _0x54c6c5 = process.env.TXSILENT || false,
+      _0x4ba4a9 = process.env.ZZHBCODE || "",
+      _0x3d8acc = process.env.CXJLJQ_COUNT || "10",
+      _0x180fef = process.env.TX_MODE || "0",
+      _0x34024b = process.env.NOTX ? process.env.NOTX : false;
 
 if (process.env.DY_PROXY) {
   try {
-    _0x195b79 = require("./function/proxy.js");
-    $.dget = _0x195b79.intoRequest($.get.bind($));
-    $.dpost = _0x195b79.intoRequest($.post.bind($));
+    _0xc48219 = require("./function/proxy.js");
+    $.dget = _0xc48219.intoRequest($.get.bind($));
+    $.dpost = _0xc48219.intoRequest($.post.bind($));
   } catch {
     $.dget = $.get;
     $.dpost = $.post;
@@ -49,139 +58,367 @@ if (process.env.DY_PROXY) {
 }
 
 if ($.isNode()) {
-  Object.keys(_0x3ef39d).forEach(_0x3f44f5 => {
-    _0x20e845.push(_0x3ef39d[_0x3f44f5]);
+  Object.keys(_0x2ed679).forEach(_0x3d0138 => {
+    _0x2bfcb3.push(_0x2ed679[_0x3d0138]);
   });
 
   if (process.env.JD_DEBUG && process.env.JD_DEBUG === "false") {
     console.log = () => {};
   }
 } else {
-  _0x20e845 = [$.getdata("CookieJD"), $.getdata("CookieJD2"), ..._0xdc9443($.getdata("CookiesJD") || "[]").map(_0x2816c5 => _0x2816c5.cookie)].filter(_0x389f18 => !!_0x389f18);
+  _0x2bfcb3 = [$.getdata("CookieJD"), $.getdata("CookieJD2"), ..._0x407d48($.getdata("CookiesJD") || "[]").map(_0x78e7be => _0x78e7be.cookie)].filter(_0x5d7071 => !!_0x5d7071);
 }
 
 !(async () => {
-  if (!_0x20e845[0]) {
-    const _0x51cee0 = {
+  if (!_0x2bfcb3[0]) {
+    $.msg($.name, "【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取", "https://bean.m.jd.com/bean/signIndex.action", {
       "open-url": "https://bean.m.jd.com/bean/signIndex.action"
-    };
-    $.msg($.name, "【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取", "https://bean.m.jd.com/bean/signIndex.action", _0x51cee0);
+    });
     return;
   }
 
-  $.log("\n❗❗❗每天1次助力次数，0点刷新，仅助力❗❗❗");
-  $.log("\n当前版本：20240305");
-  console.log("执行流程，车头开团--助力");
+  $.log("\n❗❗❗每天1次助力次数，0点刷新❗❗❗");
+  $.log("\n当前版本：20240310");
+  console.log("执行流程，车头开团--助力車頭--車頭抽獎--車頭提現");
   console.log("TG频道：https://t.me/dylan_jdpro");
   $.log("\n环境变量清单（可选项）：");
-  $.log("  指定PIN车头，不指定默认CK1  JDZHBTOPPIN='jdpin'\n  指定助力CODE，都去助力TA  ZZHBCODE='xxx'\n  多少助力停止，默认9999个  JDZHBNUM='100'\n  运行一次抽奖次数,默认抽完  JDZHBLTNUM='200'\n  抽奖间隔，默认1秒  JDZHBDELAY='3'\n  提现间隔，默认5秒  TXDELAY='3'\n  助力间隔，默认1秒  HLDELAY='3'\n  提现范围，默认1天内，太大会403  TXIVAL='3'\n  开启提现到上限转红包  JDZHBTORED='true'\n  开启代理API DY_PROXY='apiurl'\n  关闭提现  NOTX='true'\n");
+  $.log("  指定PIN车头：不指定默认CK1  JDZHBTOPPIN='jdpin'\n  指定助力CODE：都去助力TA  ZZHBCODE='xxx'\n  多少助力停止：默认9999个  JDZHBNUM='100'\n  抽奖次数：默认抽完  JDZHBLTNUM='200'\n  抽奖间隔：默认1秒  JDZHBDELAY='3'\n  提现间隔：默认5秒  TXDELAY='3'\n  助力间隔：默认1秒  HLDELAY='3'\n  提现范围：默认1天内，太大会403  TXIVAL='3'\n  开启提现到上限转红包：JDZHBTORED='true'\n  开启代理：API DY_PROXY='apiurl'\n  垃圾券数量：默认10次，CXJLJQ_COUNT='20'\n  提现模式：默认提当前所得，设置1开启查列表提现，TX_MODE='1'\n  关闭提现：NOTX='true'\n");
 
-  let _0x2e04e6 = [];
+  let _0x5b48a1 = [];
 
-  if (_0x3a3c33) {
-    console.log("\n已指定PIN：" + _0x3a3c33);
+  if (_0x311ad0) {
+    console.log("\n已指定PIN：" + _0x311ad0);
 
-    let _0x41d16e = _0x20e845.findIndex(_0x464436 => _0x464436.includes(_0x3a3c33));
+    let _0x63e3ad = _0x2bfcb3.findIndex(_0xf0fb07 => _0xf0fb07.includes(_0x311ad0));
 
-    if (_0x41d16e == -1) {
+    if (_0x63e3ad == -1) {
       console.log("运行的CK中没找到指定的PIN，停止执行");
       return;
     }
 
-    _0xdaa36e = _0x20e845[_0x41d16e];
+    _0xe153bb = _0x2bfcb3[_0x63e3ad];
   } else {
     console.log("\n未指定PIN默认CK1车头");
-    _0xdaa36e = _0x20e845[0];
+    _0xe153bb = _0x2bfcb3[0];
   }
 
-  _0x5c6358 = _0xdaa36e;
-  $.UserName = decodeURIComponent(_0x5c6358.match(/pt_pin=([^; ]+)(?=;?)/) && _0x5c6358.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+  _0x20410d = _0xe153bb;
+  $.UserName = decodeURIComponent(_0x20410d.match(/pt_pin=([^; ]+)(?=;?)/) && _0x20410d.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
   $.isLogin = true;
   $.nickName = "";
-  $.UA = _0x2627e0.UARAM ? _0x2627e0.UARAM() : _0x2627e0.USER_AGENT;
+  $.UA = _0x414f66.UARAM ? _0x414f66.UARAM() : _0x414f66.USER_AGENT;
   console.log("\n————————————————————车头开团——————————————————————————");
   console.log("账号：" + ($.nickName || $.UserName));
-  await _0x40c4c8();
+  await _0xc8ef7d();
 
   if (!$.isLogin) {
-    const _0x47b734 = {
+    const _0x4c05df = {
       "open-url": "https://bean.m.jd.com/bean/signIndex.action"
     };
-    $.msg($.name, "【提示】cookie已失效", "账号" + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action", _0x47b734);
-    $.isNode() && (await _0x257616.sendNotify($.name + "cookie已失效 - " + $.UserName, "账号 " + $.UserName + "\n请重新登录获取cookie"));
+    $.msg($.name, "【提示】cookie已失效", "账号" + ($.nickName || $.UserName) + "\n请重新登录获取\nhttps://bean.m.jd.com/bean/signIndex.action", _0x4c05df);
+    $.isNode() && (await _0x14d782.sendNotify($.name + "cookie已失效 - " + $.UserName, "账号 " + $.UserName + "\n请重新登录获取cookie"));
     return;
   }
 
-  await _0xc5e14a(1);
+  await _0x2bc1ee(1);
   await $.wait(1000);
 
-  if (_0x2e04e6.length != 0) {
-    let _0x4f1f8e = _0x2e04e6[Math.floor(Math.random() * _0x2e04e6.length)];
+  if (_0x5b48a1.length != 0) {
+    let _0x50d8dd = _0x5b48a1[Math.floor(Math.random() * _0x5b48a1.length)];
 
     console.log("车头去助力 -> 作者");
-    $.UserName = decodeURIComponent(_0x5c6358.match(/pt_pin=([^; ]+)(?=;?)/) && _0x5c6358.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
-    $.UA = _0x2627e0.UARAM ? _0x2627e0.UARAM() : _0x2627e0.USER_AGENT;
-    await _0x3895aa(_0x4f1f8e);
+    $.UserName = decodeURIComponent(_0x20410d.match(/pt_pin=([^; ]+)(?=;?)/) && _0x20410d.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+    $.UA = _0x414f66.UARAM ? _0x414f66.UARAM() : _0x414f66.USER_AGENT;
+    await _0x8b4be1(_0x50d8dd);
     await $.wait(2000);
   }
 
   console.log("——————————————————————————————————————————————————————");
-  console.log("\n\n———————开始助力车头(助力间隔" + _0x24f6ab + "秒)———————————");
-  _0x148e48 && (console.log("\n已指定助力CODE,那抛弃车头去助力TA"), _0x8e1902 = [], _0x8e1902.push(_0x148e48));
-  _0x5b909d = 0;
+  console.log("\n\n———————————开始助力车头(助力间隔" + _0x5319bd + "秒)—————————————");
+  _0x4ba4a9 && (console.log("\n已指定助力CODE,那抛弃车头去助力TA"), _0x2dbc78 = [], _0x2dbc78.push(_0x4ba4a9));
+  _0x5020bf = 0;
 
-  for (let _0x3ef6d5 of _0x8e1902) {
-    if (_0x20e845.length === 1) {
+  for (let _0x4551fd of _0x2dbc78) {
+    if (_0x2bfcb3.length === 1) {
       console.log("");
       break;
     }
 
-    console.log("\n去助力-> " + _0x3ef6d5);
+    console.log("\n去助力-> " + _0x4551fd);
     $.suc = 0;
 
-    for (let _0x4591bb = _0x5b909d; _0x4591bb < _0x20e845.length; _0x4591bb++) {
-      if (_0x20e845[_0x4591bb]) {
-        _0x5c6358 = _0x20e845[_0x4591bb];
-        $.UserName = decodeURIComponent(_0x5c6358.match(/pt_pin=([^; ]+)(?=;?)/) && _0x5c6358.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
-        $.index = _0x4591bb + 1;
+    for (let _0x579753 = _0x5020bf; _0x579753 < _0x2bfcb3.length; _0x579753++) {
+      if (_0x2bfcb3[_0x579753]) {
+        _0x20410d = _0x2bfcb3[_0x579753];
+        $.UserName = decodeURIComponent(_0x20410d.match(/pt_pin=([^; ]+)(?=;?)/) && _0x20410d.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+        $.index = _0x579753 + 1;
         $.isLogin = true;
         $.nickName = "";
-        $.UA = _0x2627e0.UARAM ? _0x2627e0.UARAM() : _0x2627e0.USER_AGENT;
+        $.UA = _0x414f66.UARAM ? _0x414f66.UARAM() : _0x414f66.USER_AGENT;
         console.log("\n开始【账号" + $.index + "】 " + ($.nickName || $.UserName) + "\n");
-        await _0x3895aa(_0x3ef6d5);
-        _0x195b79.swip && (await _0x195b79.swip());
+        await _0x8b4be1(_0x4551fd);
+        _0xc48219.swip && (await _0xc48219.swip());
 
-        if ($.suc >= Number(_0x3688d3)) {
+        if ($.suc >= Number(_0x57a760)) {
           $.log("已达目标助力数，跳出！");
-          _0x5b909d = _0x4591bb + 1;
+          _0x5020bf = _0x579753 + 1;
           break;
         }
 
-        await $.wait(_0x24f6ab * 1000);
+        await $.wait(_0x5319bd * 1000);
       }
     }
 
-    if ($.index === _0x20e845.length) {
+    if ($.index === _0x2bfcb3.length) {
       console.log("\n没有可用于助力的ck，跳出！");
       break;
     }
   }
-})().catch(_0x1c3946 => {
-  $.log("", "❌ " + $.name + ", 失败! 原因: " + _0x1c3946 + "!", "");
+
+  console.log("\n\n—————————————————开始车头抽奖和提现—————————————————");
+  _0x5a3286 > -1 && console.log("\n已设置本次运行抽奖次数：" + _0x5a3286);
+
+  let _0x255641 = new Date();
+
+  _0x255641.setDate(_0x255641.getDate() - _0x4301fe);
+
+  _0x20410d = _0xe153bb;
+  $.UserName = decodeURIComponent(_0x20410d.match(/pt_pin=([^; ]+)(?=;?)/) && _0x20410d.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+  $.isLogin = true;
+  $.nickName = "";
+  $.fail = 0;
+  _0x120737 = [];
+  _0x20f4d1 = [];
+  txjscore = [];
+  $.txj = true;
+  $.fg = 1;
+  $.txfull = false;
+  $.nocashnum = 0;
+  $.end = false;
+  $.hotflag = false;
+  $.toredfailnum = 0;
+  $.txjsuc = false;
+  $.banip = false;
+  $.UA = _0x414f66.UARAM ? _0x414f66.UARAM() : _0x414f66.USER_AGENT;
+
+  let _0x4b993c = await _0x2bc1ee(0);
+
+  await $.wait(1000);
+
+  if (_0x4b993c.code != "0") {
+    return;
+  }
+
+  $.log("本轮已抽奖次数：" + _0x4b993c.data.drawPrizeNum);
+  $.log("本轮剩余抽奖次数：" + $.times);
+
+  if (_0x4b993c.data.cashVo) {
+    if (_0x4b993c.data?.["cashVo"]?.["state"] === 1) {
+      $.log("本轮提现金进度：" + _0x4b993c.data.cashVo.amount + "/" + _0x4b993c.data.cashVo.totalAmount + "(-" + _0x4b993c.data.cashVo.leftAmount + ")");
+    } else {
+      _0x4b993c.data?.["cashVo"]?.["state"] === 3 && ($.log("本轮提现金达成：" + _0x4b993c.data.cashVo.amount + "/" + _0x4b993c.data.cashVo.totalAmount), $.txj = false, $.txjsuc = true);
+    }
+  } else {
+    $.txj = false;
+  }
+
+  $.log("本轮结束时间： " + _0x468ab9(new Date(Date.now() + _0x4b993c.data.countDownTime)));
+
+  for (let _0x4743a8 = 0; _0x4743a8 < (_0x5a3286 > -1 && _0x5a3286 < $.times ? _0x5a3286 : $.times); _0x4743a8++) {
+    process.stdout.write("\n第" + (_0x4743a8 + 1) + "次抽奖结果：");
+
+    for (let _0x2019d9 of Array(3)) {
+      await _0x47aa6a(_0x2019d9 + 1);
+
+      if (!$.hotflag) {
+        break;
+      }
+
+      await $.wait(Math.random() * 500 + _0x2f997e * 1000);
+    }
+
+    if ($.end || $.banip) {
+      break;
+    }
+
+    $.txj && (await _0xf59345());
+    await $.wait(Math.random() * 500 + _0x2f997e * 1000);
+
+    if ($.fail > _0x3d8acc) {
+      $.log("连续垃圾券，不继续抽了");
+      break;
+    }
+  }
+
+  _0x20f4d1.length !== 0 && $.log("\n\n本次抽奖获得红包总计：" + _0x20f4d1.reduce((_0x2e9983, _0x10168e) => _0x2e9983 + _0x10168e * 100, 0) / 100 + "元");
+  _0x120737.length !== 0 && $.log("\n\n本次抽奖获得现金总计：" + _0x120737.reduce((_0x2da51e, _0x1add61) => _0x2da51e + _0x1add61 * 100, 0) / 100 + "元");
+
+  if (txjscore.length !== 0) {
+    let _0x13462c = txjscore.reduce((_0x39bb49, _0x5e3cf5) => _0x39bb49 + _0x5e3cf5 * 100, 0) / 100;
+
+    $.log("\n\n本次抽奖获得提现金：" + _0x13462c + "个, 平均" + (_0x13462c / (_0x5a3286 > -1 ? Math.min.apply(null, [_0x5a3286, $.times]) : $.times)).toFixed(4) + "个/抽");
+  }
+
+  if ($.end) {
+    return;
+  }
+
+  if (_0x34024b != "true") {
+    if (new Date().getHours() < 6 && _0x54c6c5) {
+      return;
+    }
+
+    $.log("\n——————————————开始提现（间隔" + _0x359207 + "秒）————————————————");
+    $.log("\n当前提现模式：" + (_0x180fef == "1" ? _0x4301fe + "天内历史" : "本次所抽现金"));
+    $.log("上限转红包：" + (_0x235f1f ? "开启" : "关闭(续期♻️)"));
+    $.txsuc = [];
+    $.toredsuc = [];
+    $.failtxlist = [];
+    $.banip = false;
+
+    if (_0x180fef == "1") {
+      for (let _0x546d38 = 0; _0x546d38 < 500; _0x546d38++) {
+        process.stdout.write("\n" + (_0x546d38 + 1) + "页：");
+
+        if ($.nocashnum > 2 || $.toredfailnum > 4 || $.banip) {
+          break;
+        }
+
+        let _0x4d0ea5 = await _0x502562(_0x546d38 + 1);
+
+        _0x4d0ea5 == "" && (await $.wait(5000), await _0x502562(_0x546d38 + 1));
+
+        if (!$.baglist || $.baglist.length === 0) {
+          break;
+        }
+
+        for (let _0x31fc39 of $.baglist) {
+          if (Math.max.apply(null, [new Date(_0x31fc39.createTime), new Date(_0x31fc39.startTime)]) < _0x255641 || $.toredfailnum > 4) {
+            $.nocashnum = 5;
+            break;
+          }
+
+          if (_0x31fc39.prizeType == 4) {
+            $.txfail = false;
+
+            if (_0x31fc39.state == 0 || _0x31fc39.state == 2) {
+              process.stdout.write("" + Number(_0x31fc39.amount));
+
+              let _0x554ca1 = await _0x445d83(_0x31fc39, Number(_0x31fc39.amount));
+
+              if ($.txfail) {
+                await $.wait(5000);
+                _0x554ca1 = await _0x445d83(_0x31fc39, Number(_0x31fc39.amount));
+              }
+
+              $.txfail && $.failtxlist.push(_0x31fc39);
+
+              if (_0x554ca1.data.message.includes("上限") && _0x235f1f == "true" && $.toredfailnum < 5) {
+                await _0x356a93(_0x31fc39, Number(_0x31fc39.amount));
+              }
+
+              await $.wait(_0x359207 * 1000);
+            } else {
+              _0x31fc39.state == 8;
+            }
+          }
+        }
+
+        await $.wait(3000);
+      }
+
+      $.banip = false;
+
+      while ($.failtxlist.length > 0) {
+        console.log("\n\n" + $.failtxlist.length);
+
+        for (let _0x546348 = 0; _0x546348 < $.failtxlist.length;) {
+          let _0x2d1702 = $.failtxlist[_0x546348];
+
+          if (_0x2d1702.prizeType == 4) {
+            $.txfail = false;
+            process.stdout.write("" + Number(_0x2d1702.amount));
+
+            let _0x5ddf69 = await _0x445d83(_0x2d1702, Number(_0x2d1702.amount));
+
+            $.txfail && (await $.wait(5000), _0x5ddf69 = await _0x445d83(_0x2d1702, Number(_0x2d1702.amount)));
+
+            if ($.txfail) {
+              _0x546348++;
+            } else {
+              $.failtxlist.splice(_0x546348, 1);
+            }
+
+            if (_0x5ddf69.data.message.includes("上限") && _0x235f1f == "true" && $.toredfailnum < 5) {
+              await _0x356a93(_0x2d1702, Number(_0x2d1702.amount));
+            }
+
+            await $.wait(_0x359207 * 1000);
+          }
+        }
+      }
+    } else {
+      for (let _0x2eea49 = 0; _0x2eea49 < 1; _0x2eea49++) {
+        if ($.nocashnum > 2 || $.toredfailnum > 4) {
+          break;
+        }
+
+        while (_0x175ebb.length > 0) {
+          console.log("\n" + _0x175ebb.length);
+
+          for (let _0x2a93bb = 0; _0x2a93bb < _0x175ebb.length;) {
+            let _0x3877da = _0x175ebb[_0x2a93bb];
+
+            if (_0x3877da.prizeType == 4) {
+              $.txfail = false;
+              process.stdout.write("" + Number(_0x3877da.amount));
+
+              let _0x4aa2ee = await _0x445d83(_0x3877da, Number(_0x3877da.amount));
+
+              if ($.txfail) {
+                await $.wait(5000);
+                _0x4aa2ee = await _0x445d83(_0x3877da, Number(_0x3877da.amount));
+              }
+
+              $.txfail ? _0x2a93bb++ : _0x175ebb.splice(_0x2a93bb, 1);
+
+              if (_0x4aa2ee.data.message.includes("上限") && _0x235f1f == "true" && $.toredfailnum < 5) {
+                await _0x356a93(_0x3877da, Number(_0x3877da.amount));
+              }
+
+              await $.wait(_0x359207 * 1000);
+            }
+          }
+
+          await $.wait(2000);
+        }
+      }
+    }
+
+    $.txsuc.length !== 0 && $.log("\n\n本次成功提现总计：" + $.txsuc.reduce((_0xe492ac, _0x57ff0e) => _0xe492ac + _0x57ff0e * 100, 0) / 100 + "元");
+    $.toredsuc.length !== 0 && $.log("\n\n本次成功转红包总计：" + $.toredsuc.reduce((_0x432bd3, _0x114d1f) => _0x432bd3 + _0x114d1f * 100, 0) / 100 + "元");
+  } else {
+    $.log("\n\n⚠已设置不提现！");
+  }
+
+  _0x175ebb = [];
+  await $.wait(2000);
+})().catch(_0xd5e3b6 => {
+  $.log("", "❌ " + $.name + ", 失败! 原因: " + _0xd5e3b6 + "!", "");
 }).finally(() => {
   $.done();
 });
 
-async function _0xc5e14a(_0x12b58f) {
-  const _0x1f146b = {
+async function _0x2bc1ee(_0x4b98c7) {
+  const _0x294b37 = {
     linkId: "3orGfh1YkwNLksxOcN8zWQ",
     inviter: ""
   };
-  let _0x549e1a = _0x1f146b,
-      _0xadc0bb = {
+  let _0x2ecc54 = _0x294b37,
+      _0x1aa149 = {
     appId: "eb67b",
     fn: "inviteFissionHome",
-    body: _0x549e1a,
+    body: _0x2ecc54,
     apid: "activities_platform",
     ver: $.UA.split(";")[2],
     cl: "ios",
@@ -190,51 +427,51 @@ async function _0xc5e14a(_0x12b58f) {
     xcr: 1,
     ua: $.UA
   };
-  _0x549e1a = await _0x354be1.getbody(_0xadc0bb);
+  _0x2ecc54 = await _0x42fe77.getbody(_0x1aa149);
 
-  if (!_0x549e1a) {
+  if (!_0x2ecc54) {
     return;
   }
 
-  return new Promise(async _0x558fad => {
-    $.dpost(_0x224cf6(_0x549e1a), async (_0x34a459, _0x546a48, _0x4e0aa1) => {
+  return new Promise(async _0x5317bb => {
+    $.dpost(_0x59bcbf(_0x2ecc54), async (_0x35c8e5, _0x535754, _0xdaf148) => {
       try {
-        if (_0x34a459) {
-          console.log("" + JSON.stringify(_0x34a459));
+        if (_0x35c8e5) {
+          console.log("" + JSON.stringify(_0x35c8e5));
           console.log("homeinfo请求失败，请检查网路重试");
         } else {
-          _0x4e0aa1 = JSON.parse(_0x4e0aa1);
+          _0xdaf148 = JSON.parse(_0xdaf148);
 
-          if (_0x4e0aa1.code == 0) {
-            $.times = _0x4e0aa1.data.prizeNum;
+          if (_0xdaf148.code == 0) {
+            $.times = _0xdaf148.data.prizeNum;
 
-            if (_0x12b58f) {
-              console.log("我的助力码：" + _0x4e0aa1.data.inviter);
+            if (_0x4b98c7) {
+              console.log("我的助力码：" + _0xdaf148.data.inviter);
             }
 
-            _0x8e1902.push(_0x4e0aa1.data.inviter);
+            _0x2dbc78.push(_0xdaf148.data.inviter);
           } else {
-            console.log(_0x4e0aa1.errMsg);
+            console.log(_0xdaf148.errMsg);
           }
         }
-      } catch (_0x105ade) {
-        $.logErr(_0x105ade, _0x546a48);
+      } catch (_0x116df6) {
+        $.logErr(_0x116df6, _0x535754);
       } finally {
-        _0x558fad(_0x4e0aa1);
+        _0x5317bb(_0xdaf148);
       }
     });
   });
 }
 
-async function _0x2d8e9b() {
-  const _0x43f470 = {
+async function _0xf59345() {
+  const _0x10f5f1 = {
     linkId: "3orGfh1YkwNLksxOcN8zWQ"
   };
-  let _0x11d14a = _0x43f470,
-      _0x4a80e5 = {
+  let _0xf12460 = _0x10f5f1,
+      _0x319a79 = {
     appId: "b8469",
     fn: "inviteFissionReceive",
-    body: _0x11d14a,
+    body: _0xf12460,
     apid: "activities_platform",
     ver: $.UA.split(";")[2],
     cl: "ios",
@@ -243,52 +480,52 @@ async function _0x2d8e9b() {
     ua: $.UA
   };
   $.fg == 1 && ($.fg = 0);
-  _0x11d14a = await _0x354be1.getbody(_0x4a80e5);
+  _0xf12460 = await _0x42fe77.getbody(_0x319a79);
 
-  if (!_0x11d14a) {
+  if (!_0xf12460) {
     return;
   }
 
-  return new Promise(async _0x567411 => {
-    $.dpost(_0x224cf6(_0x11d14a), async (_0x1d33b2, _0x1cf29b, _0x7bd9e6) => {
+  return new Promise(async _0x487bea => {
+    $.dpost(_0x59bcbf(_0xf12460), async (_0x37827b, _0x4f36f8, _0x5a4f50) => {
       try {
-        if (_0x1d33b2) {
-          console.log("" + JSON.stringify(_0x1d33b2));
+        if (_0x37827b) {
+          console.log("" + JSON.stringify(_0x37827b));
           console.log("receive请求失败，请检查网路重试");
-          _0x1d33b2.includes("403") && ($.banip = true);
+          _0x37827b.includes("403") && ($.banip = true);
         } else {
-          _0x7bd9e6 = JSON.parse(_0x7bd9e6);
+          _0x5a4f50 = JSON.parse(_0x5a4f50);
 
-          if (_0x7bd9e6.code == 0) {
-            process.stdout.write("----提现金" + _0x7bd9e6.data.amount + "(+" + _0x7bd9e6.data.receiveList[0].amount + ")");
-            txjscore.push(_0x7bd9e6.data.receiveList[0].amount);
-            _0x7bd9e6.data?.["state"] == 3 && (process.stdout.write("----恭喜达成"), $.txj = false, $.txjsuc = true);
+          if (_0x5a4f50.code == 0) {
+            process.stdout.write("----提现金" + _0x5a4f50.data.amount + "(+" + _0x5a4f50.data.receiveList[0].amount + ")");
+            txjscore.push(_0x5a4f50.data.receiveList[0].amount);
+            _0x5a4f50.data?.["state"] == 3 && (process.stdout.write("----恭喜达成"), $.txj = false, $.txjsuc = true);
           } else {
-            if (_0x7bd9e6.code == 80208) {
+            if (_0x5a4f50.code == 80208) {
               process.stdout.write("----送的抽奖次数没有提现金");
             } else {
-              _0x7bd9e6.code == 80209 ? (process.stdout.write("----完成标识"), $.txj = false) : console.log(JSON.stringify(_0x7bd9e6));
+              _0x5a4f50.code == 80209 ? (process.stdout.write("----完成标识"), $.txj = false) : console.log(JSON.stringify(_0x5a4f50));
             }
           }
         }
-      } catch (_0x371df5) {
-        $.logErr(_0x371df5, _0x1cf29b);
+      } catch (_0x4c3c74) {
+        $.logErr(_0x4c3c74, _0x4f36f8);
       } finally {
-        _0x567411(_0x7bd9e6);
+        _0x487bea(_0x5a4f50);
       }
     });
   });
 }
 
-async function _0x1a00b3(_0x4f54cc) {
-  const _0x3274da = {
+async function _0x47aa6a(_0x16091d) {
+  const _0x5679ff = {
     linkId: "3orGfh1YkwNLksxOcN8zWQ"
   };
-  let _0x9bad3 = _0x3274da,
-      _0x4d3246 = {
+  let _0x2253bd = _0x5679ff,
+      _0x355a72 = {
     appId: "c02c6",
     fn: "inviteFissionDrawPrize",
-    body: _0x9bad3,
+    body: _0x2253bd,
     apid: "activities_platform",
     ver: $.UA.split(";")[2],
     cl: "ios",
@@ -298,104 +535,105 @@ async function _0x1a00b3(_0x4f54cc) {
     ua: $.UA
   };
   $.fg == 1 && ($.fg = 0);
-  _0x9bad3 = await _0x354be1.getbody(_0x4d3246);
+  _0x2253bd = await _0x42fe77.getbody(_0x355a72);
 
-  if (!_0x9bad3) {
+  if (!_0x2253bd) {
     return;
   }
 
-  return new Promise(async _0x5bb709 => {
-    $.dpost(_0x224cf6(_0x9bad3), async (_0x11e957, _0x1bb176, _0x4f1145) => {
+  return new Promise(async _0x1ebac7 => {
+    $.dpost(_0x59bcbf(_0x2253bd), async (_0x53ae19, _0x40bb17, _0x3c8e69) => {
       try {
-        if (_0x11e957) {
-          console.log("" + JSON.stringify(_0x11e957));
+        if (_0x53ae19) {
+          console.log("" + JSON.stringify(_0x53ae19));
           console.log("lottery请求失败，请检查网路重试");
-          _0x11e957.includes("403") && ($.banip = true);
+          _0x53ae19.includes("403") && ($.banip = true);
         } else {
-          _0x4f1145 = JSON.parse(_0x4f1145);
+          _0x3c8e69 = JSON.parse(_0x3c8e69);
 
-          if (_0x4f1145.code == 0) {
-            const _0x356815 = _0x4f1145.data.prizeType;
+          if (_0x3c8e69.code == 0) {
+            const _0x122047 = _0x3c8e69.data.prizeType;
 
-            if (!_0x356815) {
+            if (!_0x122047) {
               fail++;
             }
 
-            switch (_0x356815) {
+            switch (_0x122047) {
               case 1:
-                process.stdout.write("垃.圾.券😤");
+                process.stdout.write("垃.圾.券⚫");
                 $.txjsuc && $.fail++;
+                $.fail++;
                 $.hotflag = false;
                 break;
 
               case 4:
-                let _0x1464c9 = parseFloat(_0x4f1145.data.prizeValue).toFixed(2);
+                let _0x56b8e4 = parseFloat(_0x3c8e69.data.prizeValue).toFixed(2);
 
-                process.stdout.write(_0x1464c9 + "现金💰️");
-                _0x457890.push(_0x1464c9);
-                const _0x566c67 = {
-                  prizeValue: _0x4f1145.data.prizeValue,
-                  id: _0x4f1145.data.id,
-                  poolBaseId: _0x4f1145.data.poolBaseId,
-                  prizeGroupId: _0x4f1145.data.prizeGroupId,
-                  prizeBaseId: _0x4f1145.data.prizeBaseId,
-                  prizeType: _0x4f1145.data.prizeType,
-                  amount: _0x4f1145.data.amount
+                process.stdout.write(_0x56b8e4 + "现金💰️");
+                _0x120737.push(_0x56b8e4);
+                const _0x86a92 = {
+                  prizeValue: _0x3c8e69.data.prizeValue,
+                  id: _0x3c8e69.data.id,
+                  poolBaseId: _0x3c8e69.data.poolBaseId,
+                  prizeGroupId: _0x3c8e69.data.prizeGroupId,
+                  prizeBaseId: _0x3c8e69.data.prizeBaseId,
+                  prizeType: _0x3c8e69.data.prizeType,
+                  amount: _0x3c8e69.data.amount
                 };
-                _0x2a036e.push(_0x566c67);
+                _0x175ebb.push(_0x86a92);
                 $.fail = 0;
                 $.hotflag = false;
                 break;
 
               case 2:
-                let _0x539a41 = parseFloat(_0x4f1145.data.prizeValue).toFixed(2);
+                let _0x1debe1 = parseFloat(_0x3c8e69.data.prizeValue).toFixed(2);
 
-                process.stdout.write(_0x539a41 + "红包🧧");
-                _0x11ec3e.push(_0x539a41);
+                process.stdout.write(_0x1debe1 + "红包🧧");
+                _0x20f4d1.push(_0x1debe1);
                 $.fail = 0;
                 $.hotflag = false;
                 break;
 
               default:
                 $.hotflag = false;
-                console.log(JSON.stringify(_0x4f1145.data));
+                console.log(JSON.stringify(_0x3c8e69.data));
             }
           } else {
-            if (_0x4f1145.errMsg.includes("火爆")) {
+            if (_0x3c8e69.errMsg.includes("火爆")) {
               process.stdout.write("未中奖 ");
               $.hotflag = true;
             } else {
-              if (_0x4f1145.errMsg.includes("结束")) {
+              if (_0x3c8e69.errMsg.includes("结束")) {
                 $.end = true;
                 $.hotflag = false;
-                console.log(_0x4f1145.errMsg);
+                console.log(_0x3c8e69.errMsg);
               } else {
-                _0x4f1145.errMsg.includes("未登录") ? ($.end = true, $.hotflag = false, console.log(_0x4f1145.errMsg)) : ($.hotflag = false, console.log(_0x4f1145.errMsg));
+                _0x3c8e69.errMsg.includes("未登录") ? ($.end = true, $.hotflag = false, console.log(_0x3c8e69.errMsg)) : ($.hotflag = false, console.log(_0x3c8e69.errMsg));
               }
             }
           }
         }
-      } catch (_0x2d704c) {
-        $.logErr(_0x2d704c, _0x1bb176);
+      } catch (_0x4fc9ff) {
+        $.logErr(_0x4fc9ff, _0x40bb17);
       } finally {
-        _0x5bb709(_0x4f1145);
+        _0x1ebac7(_0x3c8e69);
       }
     });
   });
 }
 
-async function _0x401f50(_0xf57e2a) {
-  const _0x2b93ff = {
-    pageNum: _0xf57e2a,
+async function _0x502562(_0x283b7c) {
+  const _0x46088a = {
+    pageNum: _0x283b7c,
     pageSize: 100,
     linkId: "3orGfh1YkwNLksxOcN8zWQ",
     business: "fission"
   };
-  let _0x303945 = _0x2b93ff,
-      _0x340fd8 = {
+  let _0x41b4f5 = _0x46088a,
+      _0x547a1d = {
     appId: "f2b1d",
     fn: "superRedBagList",
-    body: _0x303945,
+    body: _0x41b4f5,
     apid: "activities_platform",
     ver: $.UA.split(";")[2],
     cl: "ios",
@@ -403,36 +641,61 @@ async function _0x401f50(_0xf57e2a) {
     code: 1,
     ua: $.UA
   };
-  _0x303945 = await _0x354be1.getbody(_0x340fd8);
+  _0x41b4f5 = await _0x42fe77.getbody(_0x547a1d);
 
-  if (!_0x303945) {
+  if (!_0x41b4f5) {
     return;
   }
 
-  return new Promise(async _0x1102f3 => {
-    $.dget(_0x224cf6(_0x303945), async (_0x465857, _0x42f013, _0xe9c8de) => {
+  const _0x44d35b = {
+    url: "https://api.m.jd.com/api",
+    body: _0x41b4f5 + "&loginType=2&loginWQBiz=wegame&uuid=" + $.uuid + "&build=169088&screen=414*736&networkType=wifi&d_brand=iPhone&d_model=iPhone10,2&lang=zh_CN&osVersion=&partner=-1&cthr=1",
+    headers: {},
+    ciphers: _0x1090fd.cpstr
+  };
+  _0x44d35b.headers.Accept = "application/json, text/plain, */*";
+  _0x44d35b.headers["x-rp-client"] = "h5_1.0.0";
+  _0x44d35b.headers["Accept-Language"] = "zh-cn";
+  _0x44d35b.headers["Accept-Encoding"] = "gzip, deflate, br";
+  _0x44d35b.headers["Content-Type"] = "application/x-www-form-urlencoded";
+  _0x44d35b.headers.Origin = "https://pro.m.jd.com";
+  _0x44d35b.headers["User-Agent"] = $.UA;
+  _0x44d35b.headers.Referer = "https://pro.m.jd.com/";
+  _0x44d35b.headers["x-referer-page"] = "https://pro.m.jd.com/";
+  _0x44d35b.headers["request-from"] = "native";
+  _0x44d35b.headers.Cookie = _0x20410d;
+  return new Promise(async _0x703e75 => {
+    $.dpost(_0x44d35b, async (_0x404eb3, _0x280190, _0x5a6fd6) => {
       try {
-        _0x465857 ? (console.log("" + JSON.stringify(_0x465857)), console.log(" API请求失败，请检查网路重试"), _0x465857.includes("403") && ($.banip = true), _0xe9c8de = "") : (_0xe9c8de = JSON.parse(_0xe9c8de), _0xe9c8de.code == 0 ? $.baglist = _0xe9c8de.data.items : console.log(_0xe9c8de.errMsg));
-      } catch (_0x166404) {
-        $.logErr(_0x166404, _0x42f013);
+        if (_0x404eb3) {
+          console.log("" + JSON.stringify(_0x404eb3));
+          console.log(" API请求失败，请检查网路重试");
+          _0x404eb3.includes("403") && ($.banip = true);
+          _0x5a6fd6 = "";
+        } else {
+          _0x5a6fd6 = JSON.parse(_0x5a6fd6);
+          _0x5a6fd6.code == 0 ? $.baglist = _0x5a6fd6.data.items : console.log(_0x5a6fd6.errMsg);
+        }
+      } catch (_0x432ec2) {
+        $.logErr(_0x432ec2, _0x280190);
       } finally {
-        _0x1102f3(_0xe9c8de);
+        _0x703e75(_0x5a6fd6);
       }
     });
   });
 }
 
-async function _0x3895aa(_0x52c8cf) {
-  const _0x37fa49 = {
+async function _0x8b4be1(_0x5b3bf0) {
+  const _0x2416c5 = {
     linkId: "3orGfh1YkwNLksxOcN8zWQ",
     isJdApp: true,
-    inviter: _0x52c8cf
+    inviter: _0x5b3bf0
   };
-  let _0x5876d7 = _0x37fa49,
-      _0x46e669 = {
+  let _0x521c05 = _0x2416c5,
+      _0x256ab1 = {
     appId: "c5389",
     fn: "inviteFissionhelp",
-    body: _0x5876d7,
+    body: _0x521c05,
     apid: "activities_platform",
     ver: $.UA.split(";")[2],
     cl: "ios",
@@ -441,232 +704,229 @@ async function _0x3895aa(_0x52c8cf) {
     xcr: 1,
     ua: $.UA
   };
-  _0x5876d7 = await _0x354be1.getbody(_0x46e669);
+  _0x521c05 = await _0x42fe77.getbody(_0x256ab1);
 
-  if (!_0x5876d7) {
+  if (!_0x521c05) {
     return;
   }
 
-  return new Promise(async _0x6365b9 => {
-    $.dpost(_0x224cf6(_0x5876d7), async (_0x5022af, _0xec167c, _0x4ae366) => {
+  return new Promise(async _0x22e67f => {
+    $.dpost(_0x59bcbf(_0x521c05), async (_0x564b53, _0x2d5ea5, _0x3d06c0) => {
       try {
-        if (_0x5022af) {
-          console.log("" + JSON.stringify(_0x5022af));
+        if (_0x564b53) {
+          console.log("" + JSON.stringify(_0x564b53));
           console.log("help请求失败，请检查网路重试");
-          _0x5022af.includes("403") && ($.banip = true);
-        } else {
-          _0x4ae366 = JSON.parse(_0x4ae366);
 
-          if (_0x4ae366.code == 0) {
-            if (!_0x4ae366.data.helpFlg) {
+          if (_0x564b53.includes("403")) {
+            $.banip = true;
+          }
+        } else {
+          _0x3d06c0 = JSON.parse(_0x3d06c0);
+
+          if (_0x3d06c0.code == 0) {
+            if (!_0x3d06c0.data.helpFlg) {
               $.log("结果：不能助力自己！");
               return;
             }
 
-            if (_0x4ae366.data.helpResult == 1) {
+            if (_0x3d06c0.data.helpResult == 1) {
               $.suc++;
               console.log("结果：助力成功 ✅ " + ($.suc || ""));
             } else {
-              if (_0x4ae366.data.helpResult == 6) {
+              if (_0x3d06c0.data.helpResult == 6) {
                 console.log("结果：已经助力过TA！");
               } else {
-                if (_0x4ae366.data.helpResult == 3) {
+                if (_0x3d06c0.data.helpResult == 3) {
                   console.log("结果：没有次数！");
                 } else {
-                  if (_0x4ae366.data.helpResult == 2) {
+                  if (_0x3d06c0.data.helpResult == 2) {
                     $.log("结果：太火爆了 💣");
                     $.hot = true;
                   } else {
-                    if (_0x4ae366.data.helpResult == 4) {
+                    if (_0x3d06c0.data.helpResult == 4) {
                       $.log("结果：没有助力次数！");
                     } else {
-                      _0x4ae366.data.helpResult == 8 ? $.log("结果：TA未开启新的一轮 💤") : console.log("结果：" + _0x4ae366.data?.["helpResult"]);
+                      _0x3d06c0.data.helpResult == 8 ? $.log("结果：TA未开启新的一轮 💤") : console.log("结果：" + _0x3d06c0.data?.["helpResult"]);
                     }
                   }
                 }
               }
             }
           } else {
-            console.log(_0x4ae366.errMsg);
+            console.log(_0x3d06c0.errMsg);
           }
         }
-      } catch (_0x3c94e8) {
-        $.logErr(_0x3c94e8, _0xec167c);
+      } catch (_0x1668eb) {
+        $.logErr(_0x1668eb, _0x2d5ea5);
       } finally {
-        _0x6365b9(_0x4ae366);
+        _0x22e67f(_0x3d06c0);
       }
     });
   });
 }
 
-async function _0x27a63d(_0x3141e3, _0x326e9d) {
-  let _0x4b38ee = "functionId=apCashWithDraw&body={\"linkId\":\"3orGfh1YkwNLksxOcN8zWQ\",\"businessSource\":\"NONE\",\"base\":{\"id\":" + _0x3141e3.id + ",\"business\":\"fission\",\"poolBaseId\":" + _0x3141e3.poolBaseId + ",\"prizeGroupId\":" + _0x3141e3.prizeGroupId + ",\"prizeBaseId\":" + _0x3141e3.prizeBaseId + ",\"prizeType\":4}}&t=" + Date.now() + "&appid=activities_platform&client=ios&clientVersion=" + $.UA.split(";")[2];
+async function _0x445d83(_0x5346ef, _0xcb0ec8) {
+  let _0x56a232 = "functionId=apCashWithDraw&body={\"linkId\":\"3orGfh1YkwNLksxOcN8zWQ\",\"businessSource\":\"NONE\",\"base\":{\"id\":" + _0x5346ef.id + ",\"business\":\"fission\",\"poolBaseId\":" + _0x5346ef.poolBaseId + ",\"prizeGroupId\":" + _0x5346ef.prizeGroupId + ",\"prizeBaseId\":" + _0x5346ef.prizeBaseId + ",\"prizeType\":4}}&t=" + Date.now() + "&appid=activities_platform&client=ios&clientVersion=" + $.UA.split(";")[2];
 
-  return new Promise(async _0x48f3c7 => {
-    $.dpost(_0x224cf6(_0x4b38ee), async (_0x3032a6, _0x5da577, _0x5a6dbd) => {
+  return new Promise(async _0x2b6194 => {
+    $.dpost(_0x59bcbf(_0x56a232), async (_0x1035d2, _0x25e6de, _0x19b0f9) => {
       try {
-        if (_0x3032a6) {
-          console.log("" + JSON.stringify(_0x3032a6));
+        if (_0x1035d2) {
+          console.log("" + JSON.stringify(_0x1035d2));
           console.log("apCashWithDraw请求失败，请检查网路重试");
-          _0x3032a6.includes("403") && ($.banip = true);
+          _0x1035d2.includes("403") && ($.banip = true);
         } else {
-          _0x5a6dbd = JSON.parse(_0x5a6dbd);
+          _0x19b0f9 = JSON.parse(_0x19b0f9);
 
-          if (_0x5a6dbd.code == 0) {
-            if (_0x5a6dbd.data.message.indexOf("待发放") > -1) {
-              process.stdout.write("❎");
+          if (_0x19b0f9.code == 0) {
+            if (_0x19b0f9.data.message.indexOf("待发放") > -1) {
+              process.stdout.write("" + (!$.txfail ? "❌" : "❌ "));
               $.txfail = true;
             } else {
-              if (_0x5a6dbd.data.message.includes("上限")) {
-                !_0x40e7d6 && console.log("提现到上限");
+              if (_0x19b0f9.data.message.includes("上限")) {
+                !_0x235f1f && process.stdout.write("♻️ ");
                 $.txfull = true;
                 $.txfail = false;
               } else {
-                _0x5a6dbd.data.message.includes("提现") ? (process.stdout.write("✅ "), $.txsuc.push(_0x326e9d), $.txfail = false) : console.log(_0x5a6dbd.data.message);
+                _0x19b0f9.data.message.includes("提现") ? (process.stdout.write("✔️ "), $.txsuc.push(_0xcb0ec8), $.txfail = false) : console.log(_0x19b0f9.data.message);
               }
             }
           } else {
-            console.log(_0x5a6dbd.errMsg);
+            console.log(_0x19b0f9.errMsg);
           }
         }
-      } catch (_0x3e22d0) {
-        $.logErr(_0x3e22d0, _0x5da577);
+      } catch (_0x36bb53) {
+        $.logErr(_0x36bb53, _0x25e6de);
       } finally {
-        _0x48f3c7(_0x5a6dbd);
+        _0x2b6194(_0x19b0f9);
       }
     });
   });
 }
 
-async function _0x12cb26(_0x244913, _0x6cf3c7) {
-  let _0x6a7824 = "functionId=apRecompenseDrawPrize&body={\"drawRecordId\":" + _0x244913.id + ",\"business\":\"fission\",\"poolId\":" + _0x244913.poolBaseId + ",\"prizeGroupId\":" + _0x244913.prizeGroupId + ",\"prizeId\":" + _0x244913.prizeBaseId + ",\"linkId\":\"3orGfh1YkwNLksxOcN8zWQ\"}&t=" + Date.now() + "&appid=activities_platform&client=ios&clientVersion=" + $.UA.split(";")[2];
+async function _0x356a93(_0x458409, _0x1d25db) {
+  let _0x3e1613 = "functionId=apRecompenseDrawPrize&body={\"drawRecordId\":" + _0x458409.id + ",\"business\":\"fission\",\"poolId\":" + _0x458409.poolBaseId + ",\"prizeGroupId\":" + _0x458409.prizeGroupId + ",\"prizeId\":" + _0x458409.prizeBaseId + ",\"linkId\":\"3orGfh1YkwNLksxOcN8zWQ\"}&t=" + Date.now() + "&appid=activities_platform&client=ios&clientVersion=" + $.UA.split(";")[2];
 
-  const _0x3ef9ac = {
+  const _0x3d1d4d = {
     Host: "api.m.jd.com",
     Origin: "https://prodev.m.jd.com",
     "Content-Type": "application/x-www-form-urlencoded",
     "User-Agent": $.UA,
-    Cookie: _0x5c6358
+    Cookie: _0x20410d
   };
-  const _0x82673e = {
+  const _0x273c5b = {
     url: "https://api.m.jd.com/api",
-    body: _0x6a7824,
-    headers: _0x3ef9ac
+    body: _0x3e1613,
+    headers: _0x3d1d4d
   };
-  return new Promise(async _0x30b91c => {
-    $.dpost(_0x82673e, async (_0x1a0171, _0x22af5d, _0x4b6b2c) => {
+  return new Promise(async _0x5d2daa => {
+    $.dpost(_0x273c5b, async (_0x4bfe9a, _0x2de8f1, _0x3a2aff) => {
       try {
-        if (_0x1a0171) {
-          console.log("" + JSON.stringify(_0x1a0171));
+        if (_0x4bfe9a) {
+          console.log("" + JSON.stringify(_0x4bfe9a));
           console.log("apRecompenseDrawPrize 请求失败，请检查网路重试");
-          _0x1a0171.includes("403") && ($.banip = true);
+          _0x4bfe9a.includes("403") && ($.banip = true);
         } else {
-          _0x4b6b2c = JSON.parse(_0x4b6b2c);
+          _0x3a2aff = JSON.parse(_0x3a2aff);
 
-          if (_0x4b6b2c.code == 0) {
-            if (_0x4b6b2c.data.resCode === "0") {
-              process.stdout.write("🧧 ");
-              $.toredsuc.push(_0x6cf3c7);
-            } else {
-              process.stdout.write("❎ ");
-              $.toredfailnum++;
-            }
+          if (_0x3a2aff.code == 0) {
+            _0x3a2aff.data.resCode === "0" ? (process.stdout.write("🧧 "), $.toredsuc.push(_0x1d25db)) : (process.stdout.write("❎ "), $.toredfailnum++);
           } else {
-            _0x4b6b2c.errMsg === "失败" ? (process.stdout.write("❎ "), $.toredfailnum++) : console.log(_0x4b6b2c.errMsg);
+            _0x3a2aff.errMsg === "失败" ? (process.stdout.write("❎ "), $.toredfailnum++) : console.log(_0x3a2aff.errMsg);
           }
         }
-      } catch (_0x18c248) {
-        $.logErr(_0x18c248, _0x22af5d);
+      } catch (_0x40dfe9) {
+        $.logErr(_0x40dfe9, _0x2de8f1);
       } finally {
-        _0x30b91c(_0x4b6b2c);
+        _0x5d2daa(_0x3a2aff);
       }
     });
   });
 }
 
-function _0x224cf6(_0x3bc099) {
-  const _0x394ace = {
+function _0x59bcbf(_0x31e7be) {
+  const _0x2a5215 = {
     Host: "api.m.jd.com",
     Origin: "https://pro.m.jd.com",
     Referer: "https://pro.m.jd.com/",
     "User-Agent": $.UA,
-    Cookie: _0x5c6358
+    Cookie: _0x20410d
   };
-  const _0x57541d = {
-    url: "https://api.m.jd.com/?" + _0x3bc099,
-    headers: _0x394ace
+  const _0x2a5fba = {
+    url: "https://api.m.jd.com/?" + _0x31e7be,
+    headers: _0x2a5215
   };
-  return _0x57541d;
+  return _0x2a5fba;
 }
 
-function _0x40c4c8() {
-  return new Promise(_0x49b977 => {
-    const _0x4fdfba = {
-      Cookie: _0x5c6358,
-      referer: "https://h5.m.jd.com/",
-      "User-Agent": $.UA
-    };
-    const _0x253e94 = {
+function _0xc8ef7d() {
+  return new Promise(_0x14bdcd => {
+    const _0x5df64b = {
       url: "https://plogin.m.jd.com/cgi-bin/ml/islogin",
-      headers: _0x4fdfba,
+      headers: {},
       timeout: 10000
     };
-    $.get(_0x253e94, (_0xe5a879, _0x482779, _0x4f318d) => {
+    _0x5df64b.headers.Cookie = _0x20410d;
+    _0x5df64b.headers.referer = "https://h5.m.jd.com/";
+    _0x5df64b.headers["User-Agent"] = $.UA;
+    $.get(_0x5df64b, (_0x294ab4, _0x367f1a, _0x579726) => {
       try {
-        if (_0x4f318d) {
-          _0x4f318d = JSON.parse(_0x4f318d);
+        if (_0x579726) {
+          _0x579726 = JSON.parse(_0x579726);
 
-          if (!(_0x4f318d.islogin === "1")) {
-            _0x4f318d.islogin === "0" && ($.isLogin = false);
+          if (!(_0x579726.islogin === "1")) {
+            if (_0x579726.islogin === "0") {
+              $.isLogin = false;
+            }
           }
         }
-      } catch (_0x409281) {
-        console.log(_0x409281);
+      } catch (_0x2d8f72) {
+        console.log(_0x2d8f72);
       } finally {
-        _0x49b977();
+        _0x14bdcd();
       }
     });
   });
 }
 
-function _0x426bc3() {
-  return new Promise(_0x252807 => {
-    !_0x5de884 ? $.msg($.name, "", "" + _0x270f65) : $.log("京东账号" + $.index + $.nickName + "\n" + _0x270f65);
+function _0x555f4c() {
+  return new Promise(_0x3cf9c6 => {
+    !_0x29599e ? $.msg($.name, "", "" + _0x45bbbb) : $.log("京东账号" + $.index + $.nickName + "\n" + _0x45bbbb);
 
-    _0x252807();
+    _0x3cf9c6();
   });
 }
 
-function _0x189c74(_0x334e00) {
+function _0x2e714b(_0x21905d) {
   try {
-    if (typeof JSON.parse(_0x334e00) == "object") {
+    if (typeof JSON.parse(_0x21905d) == "object") {
       return true;
     }
-  } catch (_0x27a158) {
-    console.log(_0x27a158);
+  } catch (_0x5314ef) {
+    console.log(_0x5314ef);
     console.log("京东服务器访问数据为空，请检查自身设备网络情况");
     return false;
   }
 }
 
 
-function _0x292508(_0x5e8587) {
-  const _0x405758 = _0x5e8587.getFullYear(),
-        _0x22e813 = ("0" + (_0x5e8587.getMonth() + 1)).slice(-2),
-        _0x18d1b1 = ("0" + _0x5e8587.getDate()).slice(-2),
-        _0x54bf84 = ("0" + _0x5e8587.getHours()).slice(-2),
-        _0x478dfa = ("0" + _0x5e8587.getMinutes()).slice(-2),
-        _0x80f1ca = ("0" + _0x5e8587.getSeconds()).slice(-2);
+function _0x468ab9(_0x46daa7) {
+  const _0x34892d = _0x46daa7.getFullYear(),
+        _0x2e4b19 = ("0" + (_0x46daa7.getMonth() + 1)).slice(-2),
+        _0x380111 = ("0" + _0x46daa7.getDate()).slice(-2),
+        _0x2ae36b = ("0" + _0x46daa7.getHours()).slice(-2),
+        _0xdb3808 = ("0" + _0x46daa7.getMinutes()).slice(-2),
+        _0x33fa7a = ("0" + _0x46daa7.getSeconds()).slice(-2);
 
-  return _0x405758 + "/" + _0x22e813 + "/" + _0x18d1b1 + " " + _0x54bf84 + ":" + _0x478dfa + ":" + _0x80f1ca;
+  return _0x34892d + "/" + _0x2e4b19 + "/" + _0x380111 + " " + _0x2ae36b + ":" + _0xdb3808 + ":" + _0x33fa7a;
 }
 
-function _0xdc9443(_0x51f26e) {
-  if (typeof _0x51f26e == "string") {
+function _0x407d48(_0xe0a428) {
+  if (typeof _0xe0a428 == "string") {
     try {
-      return JSON.parse(_0x51f26e);
-    } catch (_0xbf7502) {
-      console.log(_0xbf7502);
+      return JSON.parse(_0xe0a428);
+    } catch (_0x3c4552) {
+      console.log(_0x3c4552);
       $.msg($.name, "", "请勿随意在BoxJs输入框修改内容\n建议通过脚本去获取cookie");
       return [];
     }
