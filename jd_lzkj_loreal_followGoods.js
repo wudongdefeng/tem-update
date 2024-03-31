@@ -14,6 +14,7 @@ cron:1 1 1 1 *
 #关注商品有礼（超级无线）
 1 1 1 1 * jd_lzkj_loreal_followGoods.js, tag=关注商品有礼（超级无线）, enabled=true
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

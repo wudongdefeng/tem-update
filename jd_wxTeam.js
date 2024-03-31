@@ -17,6 +17,7 @@
 cron: 7 7 7 7 * jd_wxTeam.js
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

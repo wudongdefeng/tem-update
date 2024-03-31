@@ -5,6 +5,7 @@
          jd_showInviteJoin_address // 实物奖品收货地址信息
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

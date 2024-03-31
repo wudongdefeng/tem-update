@@ -16,6 +16,7 @@ cron:1 1 1 1 *
 1 1 1 1 * jd_prodev.js, tag=邀请好友入会得好礼, enabled=true
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

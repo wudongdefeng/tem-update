@@ -10,6 +10,7 @@ cron:1 1 1 1 *
 #lzkj_loreal关注有礼
 1 1 1 1 * jd_lzkj_loreal_followShop.js, tag=lzkj_loreal关注有礼, enabled=true
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

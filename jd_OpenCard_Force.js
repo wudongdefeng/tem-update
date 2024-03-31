@@ -4,6 +4,7 @@
 环境变量：VENDER_ID // venderId或vendorId的值，多个用&、@或逗号连接，但是不要混用
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

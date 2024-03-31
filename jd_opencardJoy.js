@@ -6,6 +6,7 @@ TG: https://t.me/HarbourToulu
 变量：export jd_joyOpenId="xxxxxxxxxxxxxxxxxxxx"
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 const $ = new Env('joy通用开卡');

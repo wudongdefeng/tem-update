@@ -7,6 +7,7 @@
 		jd_lzkj_loreal_pointsExchange_break // 493后继续执行，默认退出运行（true/false）
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

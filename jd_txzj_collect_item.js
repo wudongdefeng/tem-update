@@ -4,6 +4,7 @@
 环境变量：jd_collect_item_activityUrl // 活动链接
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

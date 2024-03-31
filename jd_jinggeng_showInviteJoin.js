@@ -11,6 +11,7 @@ cron:11 11 11 11 **
 #邀请入会赢好礼
 11 11 11 11 ** jd_jinggeng_showInviteJoin.js, tag=邀请入会赢好礼, enabled=true
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

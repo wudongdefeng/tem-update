@@ -5,6 +5,7 @@
          jd_wxShareActivity_helpnum // 需要助力的账号数量
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

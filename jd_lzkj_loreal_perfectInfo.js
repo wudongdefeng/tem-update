@@ -16,6 +16,7 @@ cron:1 1 1 1 *
 1 1 1 1 * jd_lzkj_loreal_perfectInfo.js, tag=完善有礼（超级无线）, enabled=true
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

@@ -5,6 +5,7 @@
 		 jd_wxMcLevelAndBirthGifts_openCard // 是否开卡，默认开卡
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

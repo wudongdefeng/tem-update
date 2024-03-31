@@ -15,6 +15,7 @@ cron:1 1 1 1 *
 1 1 1 1 * jd_wxSecond.js, tag=读秒拼手速通用活动, enabled=true
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

@@ -7,6 +7,7 @@
          jd_wxGameActivity_endScore // 指定游戏分数，默认不指定，填0也为不指定
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

@@ -5,6 +5,7 @@
          jd_wxBuildActivity_openCard // 是否开卡，默认不开卡
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

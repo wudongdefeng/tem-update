@@ -19,6 +19,7 @@ cron: 1 1 1 1 * jd_sevenDay.js
 updatetime:2023/05/21
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 const $ = new Env('超级无线店铺签到');

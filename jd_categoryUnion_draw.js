@@ -16,6 +16,7 @@ cron:10 11 1 1 *
 10 11 1 1 * jd_categoryUnion_draw.js, tag=品类联合抽奖 , enabled=true
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 const $ = new Env('品类联合抽奖');

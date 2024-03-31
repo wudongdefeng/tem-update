@@ -6,6 +6,7 @@
 默认助力第一个CK，第一个CK失效会退出脚本
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

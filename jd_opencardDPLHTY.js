@@ -23,6 +23,7 @@
 #大牌联合通用开卡
 1 1 1 1 * jd_opencardDPLHTY.js, tag=大牌联合通用开卡, enabled=true
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 

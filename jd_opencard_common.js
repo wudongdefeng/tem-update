@@ -13,6 +13,7 @@ export jd_card_waitTime="60"                #表示账号之间延迟, 填60表�
 
 cron "2 2 29 2 *" jd_opencard_common.js
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 const $ = new Env('常规卡通用')
 

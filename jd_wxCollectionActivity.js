@@ -22,6 +22,7 @@ cron:1 1 1 1 *
 1 1 1 1 * jd_wxCollectionActivity.js, tag=加购有礼通用-加密, enabled=true
 
 */
+if (process.env.proxy_wind === 'true') {const setGlobalHttpProxy = require('./utils/proxy-wind.js');setGlobalHttpProxy();}
 let lnrun = 0;
 
 
