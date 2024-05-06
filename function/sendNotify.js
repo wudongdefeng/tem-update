@@ -21,7 +21,7 @@ const querystring = require('querystring');
 const exec = require('child_process').exec;
 const $ = new Env();
 const timeout = 15000; //超时时间(单位毫秒)
-console.log("加载sendNotify，当前版本: 20230314");
+console.log("加载sendNotify，当前版本: 20230712");
 // =======================================go-cqhttp通知设置区域===========================================
 //gobot_url 填写请求地址http://127.0.0.1/send_private_msg
 //gobot_token 填写在go-cqhttp文件设置的访问密钥
@@ -1916,7 +1916,7 @@ function PushDeerNotify(text, desp) {
       desp = desp.replace(/%0A/g, '%0A%0A');
       const options = {
         url: `https://api2.pushdeer.com/message/push`,
-        body: `pushkey=${PUSHDEER_KEY}&text=${text}&desp=${desp}&type=markdown`,
+        body: `pushkey=${PUSHDEER_KEY}&text=${text}&desp=${desp}&type="markdown"`,
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',
         },
