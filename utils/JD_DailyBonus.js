@@ -1,12 +1,14 @@
-
 /*
+
 京东多合一签到脚本
+
 更新时间: 2021.09.09 20:20 v2.1.3
 有效接口: 20+
 脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
 电报频道: @NobyDa 
 问题反馈: @NobyDa_bot 
 如果转载: 请注明出处
+
 如需获取京东金融签到Body, 可进入"京东金融"APP (iOS), 在"首页"点击"签到"并签到一次, 返回抓包app搜索关键字 h5/m/appSign 复制请求体填入json串数据内即可
 */
 
@@ -152,10 +154,10 @@ async function all(cookie, jrBody) {
   }
   await Promise.all([
     //TotalSteel(), //总钢镚查询
-    TotalCash(), //总红包查询
-    TotalBean(), //总京豆查询
-    TotalSubsidy(), //总金贴查询
-    TotalMoney() //总现金查询
+    //TotalCash(), //总红包查询
+    //TotalBean(), //总京豆查询
+    //TotalSubsidy(), //总金贴查询
+    //TotalMoney() //总现金查询
   ]);
   await notify(); //通知模块
 }
@@ -184,7 +186,7 @@ function notify() {
         notify += merge[i].notify ? "\n" + merge[i].notify : ""
       }
       var Cash = merge.TotalCash && merge.TotalCash.TCash ? `${merge.TotalCash.TCash}红包` : ""
-      //var Steel = merge.TotalSteel && merge.TotalSteel.TSteel ? `${merge.TotalSteel.TSteel}钢镚` : ``
+      var Steel = merge.TotalSteel && merge.TotalSteel.TSteel ? `${merge.TotalSteel.TSteel}钢镚` : ``
       var beans = merge.TotalBean && merge.TotalBean.Qbear ? `${merge.TotalBean.Qbear}京豆${Steel?`, `:``}` : ""
       var Money = merge.TotalMoney && merge.TotalMoney.TMoney ? `${merge.TotalMoney.TMoney}现金${Cash?`, `:``}` : ""
       var Subsidy = merge.TotalSubsidy && merge.TotalSubsidy.TSubsidy ? `${merge.TotalSubsidy.TSubsidy}金贴${Money||Cash?", ":""}` : ""
@@ -199,20 +201,20 @@ function notify() {
       var one = `【签到概览】:  ${Ts+Tf+Te}${Ts||Tf||Te?`\n`:`获取失败\n`}`
       var two = Tbean || TSteel ? `【签到奖励】:  ${Tbean+TSteel}\n` : ``
       var three = TCash || TSubsidy || TMoney ? `【其他奖励】:  ${TCash+TSubsidy+TMoney}\n` : ``
-      var four = `【账号总计】:  ${beans+Steel}${beans||Steel?`\n`:`获取失败\n`}`
-      var five = `【其他总计】:  ${Subsidy+Money+Cash}${Subsidy||Money||Cash?`\n`:`获取失败\n`}`
+      //var four = `【账号总计】:  ${beans+Steel}${beans||Steel?`\n`:`获取失败\n`}`
+      //var five = `【其他总计】:  ${Subsidy+Money+Cash}${Subsidy||Money||Cash?`\n`:`获取失败\n`}`
       var DName = merge.TotalBean && merge.TotalBean.nickname ? merge.TotalBean.nickname : "获取失败"
       var cnNum = ["零", "一", "二", "三", "四", "五", "六", "七", "八", "九", "十"];
       const Name = DualKey || OtherKey.length > 1 ? `【签到号${cnNum[$nobyda.num]||$nobyda.num}】:  ${DName}\n` : ``
       const disables = $nobyda.read("JD_DailyBonusDisables")
       const amount = disables ? disables.split(",").length : 0
       const disa = !notify || amount ? `【温馨提示】:  检测到${$nobyda.disable?`上次执行意外崩溃, `:``}已禁用${notify?`${amount}个`:`所有`}接口, 如需开启请前往BoxJs或查看脚本内第118行注释.\n` : ``
-      $nobyda.notify("", "", Name + one + two + three + four + five + disa + notify, {
+      $nobyda.notify("", "", Name + one + two + three  + disa + notify, {
         'media-url': $nobyda.headUrl || 'https://cdn.jsdelivr.net/gh/NobyDa/mini@master/Color/jd.png'
       });
       $nobyda.headUrl = null;
       if ($nobyda.isJSBox) {
-        $nobyda.st = (typeof($nobyda.st) == 'undefined' ? '' : $nobyda.st) + Name + one + two + three + four + five + "\n"
+        $nobyda.st = (typeof($nobyda.st) == 'undefined' ? '' : $nobyda.st) + Name + one + two + three  + "\n"
       }
     } catch (eor) {
       $nobyda.notify("通知模块 " + eor.name + "‼️", JSON.stringify(eor), eor.message)
@@ -275,13 +277,12 @@ function JingDongBean(s) {
     if (disable("JDBean")) return resolve()
     setTimeout(() => {
       const JDBUrl = {
-        url: 'https://api.m.jd.com/client.action',
+        url: 'https://api.m.jd.com/client.action?functionId=signBeanAct&body=%7B%22fp%22%3A%22-1%22%2C%22shshshfp%22%3A%22-1%22%2C%22shshshfpa%22%3A%22-1%22%2C%22referUrl%22%3A%22-1%22%2C%22userAgent%22%3A%22-1%22%2C%22jda%22%3A%22-1%22%2C%22rnVersion%22%3A%223.9%22%7D&appid=ld&client=android&clientVersion=11.3.6',
         headers: {
           Cookie: KEY
-        },
-        body: 'functionId=signBeanIndex&appid=ld'
+        }
       };
-      $nobyda.post(JDBUrl, function(error, response, data) {
+      $nobyda.get(JDBUrl, function(error, response, data) {
         try {
           if (error) {
             throw new Error(error)
