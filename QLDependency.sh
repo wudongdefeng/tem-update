@@ -35,46 +35,24 @@ echo
 sleep 3
 echo
 echo
-npm_ver=$(pnpm -v | awk -F. '{print $1}')
-if [[ $npm_ver -ge 7 ]]; then
-    export PNPM_HOME="/root/.local/share/pnpm"
-    export PATH="$PNPM_HOME:$PATH"
+
+echo
+
+#apk add python3 g++ lxml zlib-dev gcc jpeg-dev python3-dev musl-dev freetype-dev
+
+npm config set registry https://registry.npmmirror.com
+DIR="/ql/data/scripts"
+if [ -d "$DIR" ]; then
+  echo "青龙版本2.12以上"
+  cd /ql/data/scripts
+  pnpm install png-js date-fns axios@v0.27.2 crypto-js ts-md5 tslib @types/node requests tough-cookie jsdom download tunnel fs ws form-data jsdom js-base64 got tslib redis png-js md5 dotenv moment ds qrcode-terminal silly-datetime cheerio
+  #pip3 install telebot bs4 pysocks socks cacheout requests canvas ping3 jieba PyExecJS aiohttp redis pycryptodome pytz typescript httpx success --upgrade pip pip telethon
+  else
+  echo "青龙版本2.12以下"
+  cd /ql/scripts
+  pnpm install telebot bs4 pysocks socks cacheout requests canvas ping3 jieba PyExecJS aiohttp redis pycryptodome pytz typescript httpx success --upgrade pip pip telethon
+  #pip3 install telebot bs4 pysocks socks cacheout requests canvas ping3 jieba PyExecJS aiohttp redis pycryptodome pytz typescript httpx success --upgrade pip pip telethon
 fi
-
-echo -e "安装脚本所需依赖，不一定一次全部安装成功，请自己检查\n"
-echo -e "开始安装............\n"
-
-#apk add g++ make pixman-dev pango-dev cairo-dev pkgconf --no-cache
-apk add g++ make --no-cache
-pnpm config set registry https://registry.npmmirror.com
-pnpm install -g
-pnpm install -g ds
-pnpm install -g adler-32
-pnpm install -g png-js
-pnpm install -g date-fns
-pnpm install -g axios@1.6.7
-pnpm install -g crypto-js
-pnpm install -g ts-md5
-pnpm install -g tslib
-pnpm install -g global-agent
-pnpm install -g @types/node
-pnpm install -g request
-pnpm install -g jsdom
-pnpm install -g crc
-pnpm install -g qs
-pnpm install -g moment
-pnpm install -g cheerio
-pnpm install -g dotenv
-pnpm install -g got@11.8.6
-pnpm install -g tough-cookie
-pnpm install -g https-proxy-agent@7.0.2
-pnpm install -g http-cookie-agent
-pnpm install -g console-table-printer@2.12.0
-pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple/ jieba
-pip3 install -i https://pypi.tuna.tsinghua.edu.cn/simple/ requests
-rm -rf /usr/local/pnpm-global/5/node_modules/.pnpm/canvas*
-rm -rf /root/.local/share/pnpm/global/5/.pnpm/canvas*
-echo -e "\n所需依赖安装完成，请检查有没有报错，可尝试再次运行"
 
 
 echo
