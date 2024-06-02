@@ -59,7 +59,7 @@
 3 3 29 2 * node /scripts/jd_618redp.js >> /scripts/logs/jd_618redp.log
 3 3 29 2 * node /scripts/jd_CheckCK.js >> /scripts/logs/jd_CheckCK.log
 3 3 29 2 * node /scripts/jd_MideaSuper.js >> /scripts/logs/jd_MideaSuper.log
-3 3 29 2 * node /scripts/jd_OpenCard_Force.js >> /scripts/logs/jd_OpenCard_Force.log
+#3 3 29 2 * node /scripts/jd_OpenCard_Force.js >> /scripts/logs/jd_OpenCard_Force.log
 3 3 29 2 * node /scripts/jd_car_draw.js >> /scripts/logs/jd_car_draw.log
 3 3 29 2 * node /scripts/jd_cashtored.js >> /scripts/logs/jd_cashtored.log
 3 3 29 2 * node /scripts/jd_categoryUnion.js >> /scripts/logs/jd_categoryUnion.log
@@ -125,8 +125,8 @@
 3 3 29 2 * node /scripts/jd_lzkj_v2_sign.js >> /scripts/logs/jd_lzkj_v2_sign.log
 3 3 29 2 * node /scripts/jd_mkredrain.js >> /scripts/logs/jd_mkredrain.log
 3 3 29 2 * node /scripts/jd_newfarmlottery.js >> /scripts/logs/jd_newfarmlottery.log
-3 3 29 2 * node /scripts/jd_opencardDPLHTY.js >> /scripts/logs/jd_opencardDPLHTY.log
-3 3 29 2 * node /scripts/jd_opencardJoy.js >> /scripts/logs/jd_opencardJoy.log
+#3 3 29 2 * node /scripts/jd_opencardDPLHTY.js >> /scripts/logs/jd_opencardDPLHTY.log
+#3 3 29 2 * node /scripts/jd_opencardJoy.js >> /scripts/logs/jd_opencardJoy.log
 3 3 29 2 * node /scripts/jd_pointExgBeans.js >> /scripts/logs/jd_pointExgBeans.log
 3 3 29 2 * node /scripts/jd_pointExgHb.js >> /scripts/logs/jd_pointExgHb.log
 3 3 29 2 * node /scripts/jd_pointExgShiWu.js >> /scripts/logs/jd_pointExgShiWu.log
