@@ -192,3 +192,6 @@
 3 3 29 2 * node /scripts/jd_zzhb_new.js >> /scripts/logs/jd_zzhb_new.log
 3 3 29 2 * node /scripts/jd_wanyiwan.js >> /scripts/logs/jd_wanyiwan.log
 3 3 29 2 * node /scripts/jd_wyw_worldCupGuess.js >> /scripts/logs/jd_wyw_worldCupGuess.log
+3 3 29 2 * node /scripts/jd_jr_fish_help.js >> /scripts/logs/jd_jr_fish_help.log
+3 3 29 2 * node /scripts/jd_jr_sign.js >> /scripts/logs/jd_jr_sign.log
+3 3 29 2 * node /scripts/jd_yaoyao.js >> /scripts/logs/jd_yaoyao.log
