@@ -131,3 +131,4 @@
 3 3 29 2 * node /scripts/jd_zwb.js >> /scripts/logs/jd_zwb.log
 3 3 29 2 * node /scripts/jd_zzhb.js >> /scripts/logs/jd_zzhb.log
 3 3 29 2 * node /scripts/jd_fanV618.js >> /scripts/logs/jd_fanV618.log
+3 3 29 2 * node /scripts/jd_tchlx.js >> /scripts/logs/jd_tchlx.log
