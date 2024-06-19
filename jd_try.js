@@ -213,20 +213,20 @@ let args_xh = {
                 await showMsg();
             }
         }
-        if ($.index % args_xh.sendNum === 0) {
-            $.sentNum++;
-            console.log(`正在进行第 ${$.sentNum} 次发送通知，发送数量：${args_xh.sendNum}`);
-            await $.notify.sendNotify(`${$.name}`, `${notifyMsg}`);
-            notifyMsg = "";
-        }
+        // if ($.index % args_xh.sendNum === 0) {
+        //     $.sentNum++;
+        //     console.log(`正在进行第 ${$.sentNum} 次发送通知，发送数量：${args_xh.sendNum}`);
+        //     await $.notify.sendNotify(`${$.name}`, `${notifyMsg}`);
+        //     notifyMsg = "";
+        // }
     }
-    if ($.except === false) {
-        if ($.cookiesArr.length - $.sentNum * args_xh.sendNum < args_xh.sendNum && notifyMsg.length != 0) {
-            console.log(`正在进行最后一次发送通知，发送数量：${$.cookiesArr.length - $.sentNum * args_xh.sendNum}`);
-            await $.notify.sendNotify(`${$.name}`, `${notifyMsg}`);
-            notifyMsg = "";
-        }
-    }
+    // if ($.except === false) {
+    //     if ($.cookiesArr.length - $.sentNum * args_xh.sendNum < args_xh.sendNum && notifyMsg.length != 0) {
+    //         console.log(`正在进行最后一次发送通知，发送数量：${$.cookiesArr.length - $.sentNum * args_xh.sendNum}`);
+    //         await $.notify.sendNotify(`${$.name}`, `${notifyMsg}`);
+    //         notifyMsg = "";
+    //     }
+    // }
 })()
     .catch((e) => {
         console.error(`❗️ ${$.name} 运行错误！\n${e}`);
