@@ -137,3 +137,4 @@
 3 3 29 2 * node /scripts/jd_medical.js >> /scripts/logs/jd_medical.log
 3 3 29 2 * node /scripts/jd_dplhbshop.js >> /scripts/logs/jd_dplhbshop.log
 3 3 29 2 * node /scripts/jd_MktV50.js >> /scripts/logs/jd_MktV50.log
+3 3 29 2 * node /scripts/jd_dplh0620.js >> /scripts/logs/jd_dplh0620.log
