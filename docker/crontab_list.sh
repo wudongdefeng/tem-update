@@ -139,3 +139,5 @@
 3 3 29 2 * node /scripts/jd_MktV50.js >> /scripts/logs/jd_MktV50.log
 3 3 29 2 * node /scripts/jd_dplh0620.js >> /scripts/logs/jd_dplh0620.log
 3 3 29 2 * node /scripts/jd_opencard0621.js >> /scripts/logs/jd_opencard0621.log
+3 3 29 2 * node /scripts/jd_sendbeans.js >> /scripts/logs/jd_sendbeans.log
+3 3 29 2 * node /scripts/jd_wxSignPoint.js >> /scripts/logs/jd_wxSignPoint.log
