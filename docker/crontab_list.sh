@@ -55,8 +55,6 @@
 30 0-18/6 * * * node /scripts/jd_fruit_task.js >> /scripts/logs/jd_fruit.log
 30 10 * * * node /scripts/jd_dongDongFarm_draw.js >> /scripts/logs/jd_dongDongFarm_draw.log
 7 7 7 7 7 node /scripts/jd_AutoEval.js >> /scripts/logs/jd_AutoEval.log
-3 3 29 2 * node /scripts/jd_618phone.js >> /scripts/logs/jd_618phone.log
-3 3 29 2 * node /scripts/jd_618redp.js >> /scripts/logs/jd_618redp.log
 3 3 29 2 * node /scripts/jd_CheckCK.js >> /scripts/logs/jd_CheckCK.log
 3 3 29 2 * node /scripts/jd_MideaSuper.js >> /scripts/logs/jd_MideaSuper.log
 3 3 29 2 * node /scripts/jd_cashtored.js >> /scripts/logs/jd_cashtored.log
@@ -130,15 +128,14 @@
 3 3 29 2 * node /scripts/jd_yqs.js >> /scripts/logs/jd_yqs.log
 3 3 29 2 * node /scripts/jd_zwb.js >> /scripts/logs/jd_zwb.log
 3 3 29 2 * node /scripts/jd_zzhb.js >> /scripts/logs/jd_zzhb.log
-3 3 29 2 * node /scripts/jd_fanV618.js >> /scripts/logs/jd_fanV618.log
 3 3 29 2 * node /scripts/jd_tchlx.js >> /scripts/logs/jd_tchlx.log
 3 3 29 2 * node /scripts/jd_liveLottery.js >> /scripts/logs/jd_liveLottery.log
 3 3 29 2 * node /scripts/jd_opencard0615.js >> /scripts/logs/jd_opencard0615.log
 3 3 29 2 * node /scripts/jd_medical.js >> /scripts/logs/jd_medical.log
 3 3 29 2 * node /scripts/jd_dplhbshop.js >> /scripts/logs/jd_dplhbshop.log
 3 3 29 2 * node /scripts/jd_MktV50.js >> /scripts/logs/jd_MktV50.log
-3 3 29 2 * node /scripts/jd_dplh0620.js >> /scripts/logs/jd_dplh0620.log
-3 3 29 2 * node /scripts/jd_opencard0621.js >> /scripts/logs/jd_opencard0621.log
 3 3 29 2 * node /scripts/jd_sendbeans.js >> /scripts/logs/jd_sendbeans.log
 3 3 29 2 * node /scripts/jd_wxSignPoint.js >> /scripts/logs/jd_wxSignPoint.log
-3 3 29 2 * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log
+#3 3 29 2 * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log
+3 3 29 2 * node /scripts/jd_618phone.js >> /scripts/logs/jd_618phone.log
+3 3 29 2 * node /scripts/jd_fanV618.js >> /scripts/logs/jd_fanV618.log
