@@ -141,3 +141,4 @@
 3 3 29 2 * node /scripts/jd_opencard0621.js >> /scripts/logs/jd_opencard0621.log
 3 3 29 2 * node /scripts/jd_sendbeans.js >> /scripts/logs/jd_sendbeans.log
 3 3 29 2 * node /scripts/jd_wxSignPoint.js >> /scripts/logs/jd_wxSignPoint.log
+3 3 29 2 * node /scripts/jd_fruit.js >> /scripts/logs/jd_fruit.log
