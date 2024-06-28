@@ -141,3 +141,4 @@
 3 3 29 2 * node /scripts/jd_fanV618.js >> /scripts/logs/jd_fanV618.log
 3 3 29 2 * node /scripts/jd_dplh0624.js >> /scripts/logs/jd_dplh0624.log
 3 3 29 2 * node /scripts/jd_delLjq.js >> /scripts/logs/jd_delLjq.log
+3 3 29 2 * node /scripts/jd_code2url.js >> /scripts/logs/jd_code2url.log
