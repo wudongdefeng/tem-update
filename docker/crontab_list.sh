@@ -143,3 +143,6 @@
 3 3 29 2 * node /scripts/jd_delLjq.js >> /scripts/logs/jd_delLjq.log
 3 3 29 2 * node /scripts/jd_code2url.js >> /scripts/logs/jd_code2url.log
 3 3 29 2 * node /scripts/jd_dplh0701.js >> /scripts/logs/jd_dplh0701.log
+3 3 29 2 * node /scripts/jd_pointExgECard.js >> /scripts/logs/jd_pointExgECard.log
+3 3 29 2 * node /scripts/jd_wxCollectionActivity2.js >> /scripts/logs/jd_wxCollectionActivity2.log
+3 3 29 2 * node /scripts/jd_wxShopFollowActivity.js >> /scripts/logs/jd_wxShopFollowActivity.log
