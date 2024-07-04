@@ -146,3 +146,4 @@
 3 3 29 2 * node /scripts/jd_pointExgECard.js >> /scripts/logs/jd_pointExgECard.log
 3 3 29 2 * node /scripts/jd_wxCollectionActivity2.js >> /scripts/logs/jd_wxCollectionActivity2.log
 3 3 29 2 * node /scripts/jd_wxShopFollowActivity.js >> /scripts/logs/jd_wxShopFollowActivity.log
+3 3 29 2 * node /scripts/jd_opencard0705.js >> /scripts/logs/jd_opencard0705.log
