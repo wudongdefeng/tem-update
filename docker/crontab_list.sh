@@ -148,3 +148,5 @@
 3 3 29 2 * node /scripts/jd_wxShopFollowActivity.js >> /scripts/logs/jd_wxShopFollowActivity.log
 3 3 29 2 * node /scripts/jd_opencard0705.js >> /scripts/logs/jd_opencard0705.log
 3 3 29 2 * node /scripts/jd_qqxing.js >> /scripts/logs/jd_qqxing.log
+3 3 29 2 * node /scripts/jd_dplh0706.js >> /scripts/logs/jd_dplh0706.log
+3 3 29 2 * node /scripts/jd_dplh0708.js >> /scripts/logs/jd_dplh0708.log
