@@ -153,3 +153,4 @@
 3 3 29 2 * node /scripts/jd_dplh0710.js >> /scripts/logs/jd_dplh0710.log
 3 3 29 2 * node /scripts/jd_mktV50.js >> /scripts/logs/jd_mktV50.log
 3 3 29 2 * node /scripts/jd_opencard0715.js >> /scripts/logs/jd_opencard0715.log
+3 3 29 2 * node /scripts/jd_dplh0720.js >> /scripts/logs/jd_dplh0720.log
