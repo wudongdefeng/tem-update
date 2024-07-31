@@ -157,3 +157,4 @@
 3 3 29 2 * node /scripts/jd_opencard0723.js >> /scripts/logs/jd_opencard0723.log
 3 3 29 2 * node /scripts/jd_opencard0724.js >> /scripts/logs/jd_opencard0724.log
 3 3 29 2 * node /scripts/jd_dplh0725.js >> /scripts/logs/jd_dplh0725.log
+3 3 29 2 * node /scripts/jd_plus2bean.js >> /scripts/logs/jd_plus2bean.log
