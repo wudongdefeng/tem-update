@@ -159,3 +159,4 @@
 3 3 29 2 * node /scripts/jd_dplh0725.js >> /scripts/logs/jd_dplh0725.log
 3 3 29 2 * node /scripts/jd_plus2bean.js >> /scripts/logs/jd_plus2bean.log
 3 3 29 2 * node /scripts/jd_dplh0801.js >> /scripts/logs/jd_dplh0801.log
+3 3 29 2 * node /scripts/jd_mybbphdyh.js >> /scripts/logs/jd_mybbphdyh.log
