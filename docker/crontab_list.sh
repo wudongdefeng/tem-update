@@ -162,3 +162,4 @@
 3 3 29 2 * node /scripts/jd_mybbphdyh.js >> /scripts/logs/jd_mybbphdyh.log
 3 3 29 2 * node /scripts/jd_dplh0806.js >> /scripts/logs/jd_dplh0806.log
 3 3 29 2 * node /scripts/jd_cacheIsvToken.js >> /scripts/logs/jd_cacheIsvToken.log
+3 3 29 2 * node /scripts/jd_dplh0810.js >> /scripts/logs/jd_dplh0810.log
