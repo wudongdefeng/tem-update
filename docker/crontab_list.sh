@@ -164,3 +164,4 @@
 3 3 29 2 * node /scripts/jd_cacheIsvToken.js >> /scripts/logs/jd_cacheIsvToken.log
 3 3 29 2 * node /scripts/jd_dplh0810.js >> /scripts/logs/jd_dplh0810.log
 3 3 29 2 * node /scripts/jd_dplh0809.js >> /scripts/logs/jd_dplh0809.log
+3 3 29 2 * node /scripts/jd_drawShopGift.js >> /scripts/logs/jd_drawShopGift.log
