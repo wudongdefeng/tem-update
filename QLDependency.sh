@@ -45,7 +45,7 @@ DIR="/ql/data/scripts"
 if [ -d "$DIR" ]; then
   echo "青龙版本2.12以上"
   cd /ql/data/scripts
-  pnpm install png-js date-fns axios@v0.27.2 crypto-js ts-md5 tslib @types/node requests tough-cookie jsdom download tunnel fs ws form-data jsdom js-base64 got tslib redis png-js md5 dotenv moment ds qrcode-terminal silly-datetime cheerio
+  pnpm install adler-32 png-js date-fns axios@1.6.7 crypto-js ts-md5 tslib global-agent @types/node request jsdom crc qs moment cheerio dotenv got@11.8.6 sharp@0.32.6 tough-cookie https-proxy-agent@7.0.2 http-cookie-agent console-table-printer@2.12.0
   #pip3 install telebot bs4 pysocks socks cacheout requests canvas ping3 jieba PyExecJS aiohttp redis pycryptodome pytz typescript httpx success --upgrade pip pip telethon
   else
   echo "青龙版本2.12以下"
