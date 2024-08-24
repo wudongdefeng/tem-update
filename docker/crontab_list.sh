@@ -172,3 +172,4 @@
 3 3 29 2 * node /scripts/jd_dplh0820.js >> /scripts/logs/jd_dplh0820.log
 3 3 29 2 * node /scripts/jd_jdgift.js >> /scripts/logs/jd_jdgift.log
 3 3 29 2 * node /scripts/jd_yzj.js >> /scripts/logs/jd_yzj.log
+3 3 29 2 * node /scripts/jd_kxbbp.js >> /scripts/logs/jd_kxbbp.log
