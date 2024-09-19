@@ -1085,7 +1085,7 @@ class BaseUtils {
 
     getIosAppDetail() {
         let s = "";
-        // console.log('不支持获取IOS应用信息')
+        console.log('不支持获取IOS应用信息')
         // var u = this.getDefaultVal(typeof $request != "undefined");
         // var h = this.getDefaultVal((typeof $httpClient != "undefined"));
         // var p = this.getDefaultVal(typeof $task != "undefined");

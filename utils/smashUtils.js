@@ -228,7 +228,7 @@ class SmashUtils {
     }
 
     getInterfaceData(e) {
-        // console.debug(`getInterfaceData -> ${JSON.stringify(e)}`);
+        console.debug(`getInterfaceData -> ${JSON.stringify(e)}`);
     }
 
     setIdData(e, t) {
