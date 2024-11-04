@@ -199,3 +199,4 @@
 3 3 29 2 * node /scripts/jd_ybdraw.js >> /scripts/logs/jd_ybdraw.log
 3 3 29 2 * node /scripts/jd_5hongbao.js >> /scripts/logs/jd_5hongbao.log
 3 3 29 2 * node /scripts/jd_star.js >> /scripts/logs/jd_star.log
+3 3 29 2 * node /scripts/jd_dplh1105.js >> /scripts/logs/jd_dplh1105.log
