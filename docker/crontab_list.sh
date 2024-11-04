@@ -198,3 +198,4 @@
 3 3 29 2 * node /scripts/jd_5hb.js >> /scripts/logs/jd_5hb.log
 3 3 29 2 * node /scripts/jd_ybdraw.js >> /scripts/logs/jd_ybdraw.log
 3 3 29 2 * node /scripts/jd_5hongbao.js >> /scripts/logs/jd_5hongbao.log
+3 3 29 2 * node /scripts/jd_star.js >> /scripts/logs/jd_star.log
