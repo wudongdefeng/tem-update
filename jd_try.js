@@ -82,7 +82,7 @@ $.innerKeyWords = [
 ];
 //下面很重要，遇到问题请把下面注释看一遍再来问
 let args_xh = {
-  h5st_server: process.env.H5ST_SERVER || 'https://jd1.zhx47.xyz',
+  h5st_server: process.env.H5ST_SERVER || 'https://jd.zhx47.top',
   /*
    * 控制一次最多跑几个号，默认10个
    */
@@ -356,7 +356,7 @@ async function try_apply(title, activityId) {
       },
       'x-api-eid-token': $.jsToken,
     },
-    '20241020185421353;1o2o2rcsbkd2oob3;35fa0;tk03wa89a1cc518n9ZP1SOIb8Pc1YYoGhRS77lgzvyvQJ2UgI7sI61yIMnWsVSbzlrknsxqwCUFtLWlyUGX9IwK4uCHZ;fbadddbc42bb81b641a319315b6e78dd;4.8;1729421661353;TKmWZt2OjOg7nNT9rNg6zNvKnNj7lOUOcOU6wNUO2uWLkSTOcO07zJwO2W0UqO0JhOg_0JgJxNjKjOwKx5T9zNQKjKjJxJT9kCjJiSjJyNUOcOU6Qlg90Bg50WUOMm0Oh2TJ0FD9zJQKdOA9z1jKwBA_kGTJyJDIdSwJdWjJ0BzO2uzOjRw5oRg_0WUOMm0OkeUIoGz53BQ7t9g-h2wO2uzOgNUO2uWL0Cf9MxDE09TIDRgF0W0I0ig7ydA_kNUO2uWL0OjKoxgB0W0I0_Q60WUOMmE32W0UmW0I02D50NUO2WUOMm0O0W0I06D50NUO2WUOMmEJkW0I0_D50NUO2WUOMmUK2uzOhCv_0WUO2W0UqWTOcOUJhNwO2WUO2uWLm6TOcOkKhNwO2WUO2uWLliUOcO0KhNwO2WUO2uWL0CzLleUK3BQ5tlwO2uzOlCv_0WUO2W0UqWTOcOk8fNUO2WUOMmEJ2uzOjlwO2WUO2uWLmW0I0mwO2WUO2uWLmW0I0Gg50WUO2W0UbV0I0Gw7xFP4xNUO2uWLZVUOMO09hGAKeOzJhCg_eKjJ3Fw80W0I0ST60WUO2W0UbV0I0WP60WUOMm0Oi_T42qTJgeA8-VkImeUKlWUBIVk6fZQ9oxgB0W0I0SA5jNUO2um4;8ca0bcf93cae914dfdd88b7cc3a6f4e4',
+    '35fa0',
   );
 
   setBaseCookie();
@@ -604,7 +604,7 @@ async function try_feedsList(tabId, page) {
       },
       'x-api-eid-token': $.jsToken,
     },
-    '20241020185331946;rdbso1cxc2kckcx8;35fa0;tk03w88961b8118nluC1DXb3DJMhGhAmD6LtSaZ85XeFEwgip5Y5pfJHB9iGxLTBVGXsi3oh9EbyayfKW5iC09GkS4Ty;4fd2fc17a1ef09a6bb36b9716c77b1ee;4.8;1729421611946;TKmWZt2Oe2f_rJg8kKQ4zRj7jNQ9kNUOcOU6wNUO2uWLkSTOcO07zJwO2W0UqO0JhOg_0JgJxNjKjOwKx5T9zNQKjKjJxJT9kCjJiSjJyNUOcOU6Qlg90Bg50WUOMm0Oh2TJ0FD9zJQKdOA9z1jKwBA_kGTJyJDIdSwJdWjJ0BzO2uzOjRw5oRg_0WUOMm0OkeUIoGz53BQ7t9g-h2wO2uzOgNUO2uWL0CQBlayDq1SImFgC0W0I0ig7ydA_kNUO2uWL0OjKoxgB0W0I0_Q60WUOMmE32W0UmW0I02D50NUO2WUOMm0O0W0I06D50NUO2WUOMmkJlW0I0_D50NUO2WUOMmUK2uzOhCv_0WUO2W0UqWTOcOUJhNwO2WUO2uWLf_TOcOkKhNwO2WUO2uWLliUOcO0KhNwO2WUO2uWL0CzLleUK3BQ5tlwO2uzOlCv_0WUO2W0UqWTOcOk8fNUO2WUOMmEJ2uzOjlwO2WUO2uWLmW0I0mwO2WUO2uWLmW0I0Gg50WUO2W0UbV0I0Gw7xFP4xNUO2uWLZVUOMO09hGAKeOzJhCg_eKjJ3Fw80W0I0ST60WUO2W0UbV0I0WP60WUOMm0Oi_T42qTJgeA8-VkImeUKlWUBIVk6fZQ9oxgB0W0I0SA5jNUO2um4;cd3b5aecc1a5b56a0af543c68634c201',
+    '35fa0',
   );
 
   try {
@@ -729,7 +729,7 @@ async function try_feedsList(tabId, page) {
   }
 }
 
-async function h5stSign(body, h5st, version = '4.8.2') {
+async function h5stSign(body, appId, version = '4.9.1') {
   const options = {
     method: 'POST',
     url: `${args_xh.h5st_server}/h5st`,
@@ -739,7 +739,7 @@ async function h5stSign(body, h5st, version = '4.8.2') {
       pin: $.UserName,
       ua: $.userAgent,
       body,
-      h5st,
+      appId,
     },
   };
 
