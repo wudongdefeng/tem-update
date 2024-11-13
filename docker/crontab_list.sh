@@ -201,3 +201,4 @@
 3 3 29 2 * node /scripts/jd_star.js >> /scripts/logs/jd_star.log
 3 3 29 2 * node /scripts/jd_dplh1105.js >> /scripts/logs/jd_dplh1105.log
 3 3 29 2 * node /scripts/jd_dplh1108.js >> /scripts/logs/jd_dplh1108.log
+3 3 29 2 * node /scripts/jd_indeps.js >> /scripts/logs/jd_indeps.log
