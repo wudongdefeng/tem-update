@@ -205,3 +205,4 @@
 3 3 29 2 * node /scripts/jd_pcSign.js >> /scripts/logs/jd_pcSign.log
 3 3 29 2 * node /scripts/jd_dplh1120.js >> /scripts/logs/jd_dplh1120.log
 3 3 29 2 * node /scripts/jd_dplh1201.js >> /scripts/logs/jd_dplh1201.log
+3 3 29 2 * node /scripts/jd_dplh1205.js >> /scripts/logs/jd_dplh1205.log
