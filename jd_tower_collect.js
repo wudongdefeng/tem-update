@@ -4,7 +4,7 @@
         jd_tower_collect_notify // 是否推送通知（true/false），默认不推送
         jd_tower_collect_pinFilter // 账号pin过滤，多个用@进行分割
 
-cron:1 1 1 1 *
+cron:59 23 29 2 *
 
 */
 
