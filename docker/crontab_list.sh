@@ -209,3 +209,4 @@
 3 3 29 2 * node /scripts/jd_dplh1215.js >> /scripts/logs/jd_dplh1215.log
 3 3 29 2 * node /scripts/jd_dplh1220.js >> /scripts/logs/jd_dplh1220.log
 3 3 29 2 * node /scripts/jd_dplh1221.js >> /scripts/logs/jd_dplh1221.log
+3 3 29 2 * node /scripts/jd_nhj.js >> /scripts/logs/jd_nhj.log
