@@ -216,3 +216,7 @@
 3 3 29 2 * node /scripts/jd_jdCasarteUnionPet.js >> /scripts/logs/jd_jdCasarteUnionPet.log
 3 3 29 2 * node /scripts/jd_dplh0112.js >> /scripts/logs/jd_dplh0112.log
 3 3 29 2 * node /scripts/jd_jdNewYearGoods1230.js >> /scripts/logs/jd_jdNewYearGoods1230.log
+3 3 29 2 * node /scripts/jd_kd.js >> /scripts/logs/jd_kd.log
+3 3 29 2 * node /scripts/jd_querryBeans.js >> /scripts/logs/jd_querryBeans.log
+3 3 29 2 * node /scripts/jd_qyhb.js >> /scripts/logs/jd_qyhb.log
+3 3 29 2 * node /scripts/jd_superbrandhall.js >> /scripts/logs/jd_superbrandhall.log
