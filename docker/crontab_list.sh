@@ -220,3 +220,4 @@
 3 3 29 2 * node /scripts/jd_querryBeans.js >> /scripts/logs/jd_querryBeans.log
 3 3 29 2 * node /scripts/jd_qyhb.js >> /scripts/logs/jd_qyhb.log
 3 3 29 2 * node /scripts/jd_superbrandhall.js >> /scripts/logs/jd_superbrandhall.log
+3 3 29 2 * node /scripts/jd_dplh0117.js >> /scripts/logs/jd_dplh0117.log
