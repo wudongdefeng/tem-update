@@ -7,13 +7,10 @@ const path = require('path');
 
 const qlDir = '/ql';
 const fs = require('fs');
-let Fileexists280 = fs.existsSync('/ql/data/db/keyv.sqlite');
 let Fileexists = fs.existsSync('/ql/data/config/auth.json');
-let authFile = "";
-if (Fileexists280&&process.env.QL_BRANCH.slice(1,5)>=2.18)
-    authFile = "/ql/data/db/keyv.sqlite"
-else if (Fileexists)
-    authFile = "/ql/data/config/auth.json"
+let authFile="";
+if (Fileexists) 
+	authFile="/ql/data/config/auth.json"
 else
 	authFile="/ql/config/auth.json"
 //const authFile = path.join(qlDir, 'config/auth.json');
@@ -24,9 +21,8 @@ const api = got.extend({
 });
 
 async function getToken() {
-    const authConfig = await readFile(authFile);
-    // console.log(authConfig.toString().match(/"token":"(.*?)",/)[1])
-    return authConfig.toString().match(/"token":"(.*?)",/)[1];
+  const authConfig = JSON.parse(await readFile(authFile));
+  return authConfig.token;
 }
 
 module.exports.getEnvs = async () => {  
