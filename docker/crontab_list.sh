@@ -231,3 +231,4 @@
 3 3 29 2 * node /scripts/jd_jdEggUnionDriscoll.js >> /scripts/logs/jd_jdEggUnionDriscoll.log
 3 3 29 2 * node /scripts/jd_dplh0325.js >> /scripts/logs/jd_dplh0325.log
 3 3 29 2 * node /scripts/jd_dplh0401.js >> /scripts/logs/jd_dplh0401.log
+3 3 29 2 * node /scripts/jd_dplh0405.js >> /scripts/logs/jd_dplh0405.log
