@@ -244,3 +244,5 @@
 3 3 29 2 * node /scripts/jd_opencard0521.js >> /scripts/logs/jd_opencard0521.log
 3 3 29 2 * node /scripts/jd_opencard05211.js >> /scripts/logs/jd_opencard05211.log
 3 3 29 2 * node /scripts/jd_tjfb.js >> /scripts/logs/jd_tjfb.log
+3 3 29 2 * node /scripts/jd_dplh0524.js >> /scripts/logs/jd_dplh0524.log
+3 3 29 2 * node /scripts/jd_dplh052402.js >> /scripts/logs/jd_dplh052402.log
