@@ -268,3 +268,4 @@
 3 3 29 2 * node /scripts/jd_beanguagua.js >> /scripts/logs/jd_beanguagua.log
 3 3 29 2 * node /scripts/jd_dplh1023.js >> /scripts/logs/jd_dplh1023.log
 3 3 29 2 * node /scripts/jd_dplh1025.js >> /scripts/logs/jd_dplh1025.log
+3 3 29 2 * node /scripts/jd_dplh1031.js >> /scripts/logs/jd_dplh1031.log
